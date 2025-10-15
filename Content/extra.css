@@ -1,0 +1,182 @@
+table.master>thead>tr>th {
+    border-bottom: solid!important;
+    border-bottom-color: #ddd!important;
+    border-bottom-width: 1px!important;
+}
+table.master>tbody>tr>th {
+    height: auto;
+}
+.master {
+    margin-bottom: 20px;
+}
+table.master>tbody>tr>td {
+    height: auto;
+    font-weight: bold;
+}
+table.data tbody td {
+    height: 0!important;
+    font-weight: bold!important;
+    font-family: Nunito-SemiBold!important;
+    padding: .25rem!important;
+}
+table.data tbody th {
+    font-family: Nunito-Light!important;
+    padding: .25rem!important;
+}
+table.data thead th {
+    border-bottom: solid!important;
+    font-family: 'Nunito-Light';
+    background-color: #05162a;
+    color: #fff;
+    text-transform: uppercase;
+    padding: .25rem!important;
+}
+.bolder {
+    font-weight: bold!important;
+    font-family: Nunito-SemiBold!important;
+}
+.fixed-height {
+    height: 70px;
+}
+.height {
+    height: 35px;
+}
+.NoLtRtPad {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+.topPad {
+    padding-top: 20px;
+}
+.super {
+    font-size: xx-small!important;
+    vertical-align: top!important;
+}
+.btn-red {
+    background-color: red!important;
+    color: #fff!important;
+}
+.btn-small {
+    padding: 5px 8px 4px!important;
+    height: auto!important;
+}
+.modalBackground {
+    background-color: #000;
+    filter: alpha(opacity=90);
+    opacity: .8;
+}
+.modalPopup {
+    background-color: #fff;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #000;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 800px;
+    height: 650px;
+}
+.min-height {
+    height: 604px;
+}
+.direct a:link {
+    color: #337ab7!important;
+    text-decoration: underline!important;
+    font-weight: bold;
+}
+.direct a:visited {
+    color: #337ab7!important;
+    text-decoration: underline!important;
+}
+.direct a:hover {
+    color: #00c!important;
+    text-decoration: underline!important;
+}
+.hidden {
+    display: none;
+}
+table.ginfo {
+    border: 1px solid #333!important;
+    padding: 10px!important;
+    margin: 20px auto!important;
+    width: 80%!important;
+}
+table.ginfo thead th {
+    border: 1px solid #fff;
+    font-family: 'Nunito-SemiBold';
+    background-color: #05162a;
+    color: #fff;
+    text-transform: uppercase;
+}
+table.ginfo tbody {
+    border: 1px solid #333;
+}
+.ginfo td, .ginfo th {
+    border: 1px solid #333!important;
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+}
+.ginfo tfoot th {
+    color: red;
+}
+.hbl th, .hbl td {
+    font-size: 14px!important;
+}
+table.inland {
+    border: 1px solid #333!important;
+    padding: 10px!important;
+    width: 100%!important;
+}
+.inland td, .inland th {
+    border: 1px solid #333!important;
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+}
+table.inland tr {
+    border: 1px solid #333!important;
+}
+.leftcol {
+    width: 10%;
+    font-weight: bold!important;
+}
+.full {
+    width: 100%!important;
+}
+.headerText {
+    font-size: 58px;
+    max-width: 1220px;
+    margin: 50px auto;
+}
+.tablefix {
+    vertical-align: top!important;
+}
+div.btn-group {
+    width: 100%}
+table.btn-table {
+    padding: 10px!important;
+    margin: 20px auto!important;
+}
+.btn-group tbody td {
+    background-color: #04aa6d!important;
+}
+.btn-group button {
+    background-color: #04aa6d;
+    color: #fff;
+    padding: 10px 24px;
+    cursor: pointer;
+}
+.noTopBtmPad {
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+}
+.btn-group button:not(:last-child) {
+    border-right: none;
+}
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
