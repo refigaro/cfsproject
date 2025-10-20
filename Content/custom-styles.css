@@ -320,6 +320,20 @@
         box-shadow:var(--shadow-sm);
    }
 
+   .hbl-master-list .hbl-list-grid {
+        display: grid;
+        grid-template-columns: 200px 75px 75px 75px minmax(280px, auto) minmax(185px, auto) 50px 45px 152px;
+        /* Opcional: para definir explícitamente una sola fila */
+        grid-template-rows: auto; 
+        gap:0; /* Opcional: para añadir espacio entre columnas */
+        align-items: center; /* Opcional: para alinear verticalmente el contenido */
+        justify-content:stretch;
+    }
+
+    .hbl-master-list .hbl-list-grid div:first-child{
+        padding-left:12px;
+    }
+
         .hbl-master-list .hbl-list-item:hover {
             background:var(--clr-blue-light-bg);
             color:black;
@@ -336,6 +350,7 @@
             opacity:0;
             text-wrap: nowrap;
             border-radius:100px;
+            font-weight:700;
         }
 
             .hbl-master-list .hbl-list-item:hover button.details{

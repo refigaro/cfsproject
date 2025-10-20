@@ -253,39 +253,51 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 p-5 d-flex flex-column gap-2">
-                <h2 class="font-family-dm-serif text-xl text-navy-800">HBL List</h2>
+                <div class="hbl-list-grid font-family-sora lh-1 text-uppercase text-xs">
+                        <div>
+                            <h2 class="font-family-dm-serif text-xl text-navy-800">HBL List</h2> 
+                        </div>
+                        <div class="d-flex justify-content-end px-2">QTY</div>
+                        <div class="d-flex justify-content-end px-2">CBM</div>
+                        <div class="d-flex justify-content-end px-2">LBS</div>
+                        <div>Status</div>
+                        <div>Holds</div>
+                        <div class="d-flex justify-content-center">Cust entry</div>
+                        <div class="d-flex justify-content-center">OBL</div>
+                        <div>Charges</div>
+                </div>    
                 <!-- HBL List Item 1 -->
                 <div data-bs-toggle="offcanvas" href="#hbl-item-details-1" role="button" aria-controls="hbl-item-details-1">
-                    <div class="row hbl-list-item">
-                        <div class="col-md-3 col-lg-2 d-flex">MNSLOS2507067 
+                    <div class="hbl-list-item hbl-list-grid">
+                        <div class="d-flex">MNSLOS2507067 
                             <button class="details btn btn-sm btn-link">Details +</button>
                         </div>
-                        <div class="col col-auto">7892.55</div>
-                        <div class="col col-auto">7892.55</div>
-                        <div class="col col-auto">7892.55</div>
-                        <div class="col-3 text-nowrap"><span class="badge rounded-pill local-pickup">SHIPMENT PICKED UP ON 8/12/25</span></div>
-                        <div class="col-auto">MARK, PCS, NVO, CUST</div>
-                        <div class="col-auto"><i class="bi bi-check"></i></div>
-                        <div class="col-auto"><i class="bi bi-dash"></i></div>
-                        <div class="col-auto py-1 d-inline-flex">
+                        <div class="d-flex justify-content-end px-2">7892.55</div>
+                        <div class="d-flex justify-content-end px-2">7892.55</div>
+                        <div class="d-flex justify-content-end px-2">7892.55</div>
+                        <div><span class="badge rounded-pill local-pickup">SHIPMENT PICKED UP ON 8/12/25</span></div>
+                        <div>MARK, PCS, NVO, CUST</div>
+                        <div class="d-flex justify-content-center"><i class="bi bi-check text-success"></i></div>
+                        <div class="d-flex justify-content-center"><i class="bi bi-dash"></i></div>
+                        <div class="py-1 d-inline-flex">
                             <button class="btn btn-sm btn-info rounded-full font-bold text-nowrap text-white text-sm hover-scale-97">Settle charges <i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
                 </div> <!-- ** HBL List Item 1 -->
-                 <!-- HBL List Item 2 -->
-                <div data-bs-toggle="offcanvas" href="#hbl-item-details-1" role="button" aria-controls="hbl-item-details-1">
-                    <div class="row hbl-list-item">
-                        <div class="col-md-3 col-lg-2 d-flex">MNSLOS2507067 
+                <!-- HBL List Item 2 -->
+                <div data-bs-toggle="offcanvas" href="#hbl-item-details-2" role="button" aria-controls="hbl-item-details-2">
+                    <div class="hbl-list-item hbl-list-grid">
+                        <div class="d-flex">MNSLOS2507067 
                             <button class="details btn btn-sm btn-link">Details +</button>
                         </div>
-                        <div class="col col-auto">7892.55</div>
-                        <div class="col col-auto">7892.55</div>
-                        <div class="col col-auto">7892.55</div>
-                        <div class="col-3 text-nowrap"><span class="badge rounded-pill local-pickup">SHIPMENT PICKED UP ON 8/12/25</span></div>
-                        <div class="col-auto">MARK, PCS, NVO, CUST</div>
-                        <div class="col-auto"><i class="bi bi-check"></i></div>
-                        <div class="col-auto"><i class="bi bi-dash"></i></div>
-                        <div class="col-auto py-1 d-inline-flex">
+                        <div class="d-flex justify-content-end px-2">7892.55</div>
+                        <div class="d-flex justify-content-end px-2">7892.55</div>
+                        <div class="d-flex justify-content-end px-2">7892.55</div>
+                        <div><span class="badge rounded-pill local-pickup">SHIPMENT PICKED UP ON 8/12/25</span></div>
+                        <div>MARK, PCS, NVO, CUST</div>
+                        <div class="d-flex justify-content-center"><i class="bi bi-check text-success"></i></div>
+                        <div class="d-flex justify-content-center"><i class="bi bi-dash"></i></div>
+                        <div class="py-1 d-inline-flex">
                             <button class="btn btn-sm btn-info rounded-full font-bold text-nowrap text-white text-sm hover-scale-97">Settle charges <i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
@@ -295,6 +307,15 @@
         </div>
         <div class="hbl-details-container">
             <div class="offcanvas offcanvas-end hbl-item-details-modal" data-bs-scroll="true" tabindex="-1" id="hbl-item-details-1" aria-labelledby="hbl-item-details-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">MNSLOS2507071 / 3</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>Try scrolling the rest of the page to see this option in action.</p>
+                </div>
+            </div>
+            <div class="offcanvas offcanvas-end hbl-item-details-modal" data-bs-scroll="true" tabindex="-1" id="hbl-item-details-2" aria-labelledby="hbl-item-details-2">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title">MNSLOS2507071 / 3</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
