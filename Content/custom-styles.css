@@ -191,12 +191,178 @@
     line-height:1em;
 }
 
+.availavility-v2 .form-control {
+    appearance: auto;
+}
+
+
 .mbl-details {
-    background:#F4F6FA;
+    background:var(--clr-azure-95);
     padding:36px 0;
     margin-top:var(--space-5);
 }
 
-.form-control {
-    appearance: auto;
+
+.mbl-master-table {
+    text-align:center;
+    border-radius:var(--border-radius-md);
+    border:1px solid var(--clr-azure-85);
+    box-shadow: var(--shadow-md);
+    margin-bottom:-38px;
+    z-index:1;
+    position:relative;
+    background:white;
+    display:inline-flex;
+    align-self:flex-end;
 }
+
+    .mbl-master-table .table-col {
+        border-right:1px solid var(--clr-azure-85);
+        padding:0;
+    }
+
+    .mbl-master-table .table-header {
+        font-family: var(--font-secondary);
+        color: var(--clr-azure-46);
+        font-size: var(--font-size-xs); line-height:1.1em;
+        border-bottom:1px solid var(--clr-azure-85);
+        padding:var(--space-3);
+        text-transform: uppercase;
+        text-wrap: no-wrap;
+    }
+
+    .mbl-master-table .table-data {
+        font-family: var(--font-primary);
+        font-weight:bolder;
+        padding:var(--space-3);
+        font-size:var(--font-size-base); line-height:1.1em;
+        align-items:center;
+    }
+
+.terminal-appt-status {
+    border-radius:var(--border-radius-md);
+    background:white;
+    margin-top:var(--space-6);
+    line-height:1em;
+    display:flex;
+    align-items:center;
+}
+
+    .terminal-appt-status span:first-child{
+        background: var(--clr-cyan-47) url('../_images/terminal-status-arrow.webp') no-repeat 101% center / auto 100%;
+        display:inline-block;
+        padding:var(--space-4);
+            padding-right:40px;
+        border-top-left-radius: var(--border-radius-md);
+        border-bottom-left-radius: var(--border-radius-md);
+        color:white;
+        font-family: var(--font-secondary);
+        font-weight:bolder;
+    }
+
+    .terminal-appt-status .status {
+        border-radius:var(--border-radius-md);
+        background:white;
+        margin-left:var(--space-2);
+        padding:var(--space-4);
+        font-family:var(--font-primary);
+        font-size:var(--font-size-lg);
+    }
+
+.milestone-v2 {
+    font-family:var(--font-primary);
+    line-height:1em;
+    align-items:center;
+    justify-content: space-between;
+}
+
+    .milestone-v2  .col-auto {
+        align-items: center;
+        display:flex;
+        flex-direction: column;
+    }
+
+    .milestone-v2 .check {
+        border-bottom:1px solid var(--clr-grey-75);
+        padding-bottom:var(--space-2);
+        font-weight:bolder;
+    }
+
+    .milestone-v2 .date {
+        padding-top:var(--space-2);
+        font-weight:bolder;
+        color: var(--clr-success);
+            color: var(--clr-grey-50);
+    }
+
+    .milestone-v2 .icon-64 {
+        width:auto;
+        height:2.125vw;
+        object-fit:contain;
+        object-position: bottom center;
+        margin-top:var(--space-3);
+    }
+
+.hbl-master-list {
+    background:var(--clr-azure-95);
+}
+
+   .hbl-master-list .hbl-list-item {
+        background:var(--clr-white); 
+        margin-left:0; margin-right:0; /* This fixes .row negative margins */
+        border-radius:8px;
+        font-family:var(--font-primary);
+        justify-content: space-between;
+        align-items: center;
+        cursor:pointer;
+        transition:background-color .3s ease;
+        min-height:40px;
+        box-shadow:var(--shadow-sm);
+   }
+
+        .hbl-master-list .hbl-list-item:hover {
+            background:var(--clr-blue-light-bg);
+            color:black;
+            text-decoration: none;
+        }
+            .hbl-master-list .hbl-list-item:hover div{
+                text-decoration: none;
+            }
+
+        .hbl-master-list .hbl-list-item button.details {
+            transition:all .3s ease;
+            position:relative;
+            right:-10px;
+            opacity:0;
+            text-wrap: nowrap;
+            border-radius:100px;
+        }
+
+            .hbl-master-list .hbl-list-item:hover button.details{
+                right:0px;
+                opacity:1;
+            }
+
+            .hbl-master-list .hbl-list-item:hover button.details:hover {
+                background:var(--clr-blue-light-bg);
+                border:var(--clr-blue-light-bg);
+            }
+
+        .hbl-master-list .hbl-list-item button:hover {
+            background: var(--clr-azure-09);
+            border:var(--clr-azure-09);
+        }
+
+
+   .hbl-master-list .hbl-list-item .badge.local-pickup {
+        background:var(--clr-info-light);
+        color:var(--clr-info-dark);
+   }
+   .hbl-master-list .hbl-list-item .badge.ipi-tracing {
+        background:var(--clr-success-light);
+        color:var(--clr-success-dark);
+   }
+
+   .hbl-master-list .hbl-item-details-modal {
+    min-width:90vw;
+   }

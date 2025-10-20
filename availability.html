@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,13 +22,13 @@
     <link rel="stylesheet" href="Content/css.css">
     <link rel="stylesheet" href="Content/custom-styles.css">
 </head>
-<body>
+<body class="availavility-v2">
 <header id="header">
     <div class="availability-menu">
         <div class="availability-menu-top">
             <div class="container-fluid">
                 <div class="row align-items-center position-relative">
-                    <div class="col col-m-7 col-sm-5  d-flex gap-16 justify-start items-center">
+                    <div class="col col-md-7 col-sm-5  d-flex gap-16 justify-start items-center">
                         <div class="mob-logo ">
                             <a href="/">
                                 <img alt="IMPERIAL CFS" src="/_images/logo-w.png">
@@ -40,7 +39,7 @@
                             <span class="font-family-archivo text-white">MBL No. SMLMSEL5J5243700 </span>
                         </p>
                     </div>
-                    <div class="col col-m-3 col-sm-6 d-flex items-center justify-end gap-4 search-bar">
+                    <div class="col col-md-3 col-sm-6 d-flex items-center justify-end gap-4 search-bar">
                         <button type="button" class="btn btn-outline-light btn-sm rounded-full transition hover-scale-97 font-family-archivo text-nowrap" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Search</button>
                         <div class="row collapse" id="collapseExample">
                             <div class="nav-search-bar col-12">
@@ -61,7 +60,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col col-m-2 col-sm-1 ar">
+                    <div class="col col-md-2 col-sm-1 ar">
                         <div class="availability-menu-link clears">
                             <div class="hamburger-menu fr">
                                 <div class="bar"></div>
@@ -134,14 +133,178 @@
 </section>
 <section> <!-- TITLE -->
     <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <h1 class="text-3xl font-family-dm-serif text-navy-700">Master Bill of Lading</h1>
+        <div class="row justify-content-between">
+            <div class="col-3">
+                <h1 class="text-3xl font-family-dm-serif text-navy-800">Master Bill of Lading</h1>
+            </div>
+            <div class="col-auto">
+                <div class="mbl-master-table"> <!-- mbl-master-table component-->
+                    <div class="col-auto table-col">
+                        <div class="col-12 table-header" >MBL No.</div> <!-- table-header-->
+                        <div class="col-12 table-data">SMLMSEL5J5243700 </div> <!-- table-data-->
+                    </div>
+                    <div class="col-auto table-col">
+                        <div class="col-12 table-header" >Container No.</div> <!-- table-header-->
+                        <div class="col-12 table-data">CAAU5252832 </div> <!-- table-data-->
+                    </div>
+                    <div class="col-auto table-col">
+                        <div class="col-12 table-header" >Vessel</div> <!-- table-header-->
+                        <div class="col-12 table-data">SM BUSAN </div> <!-- table-data-->
+                    </div>
+                    <div class="col-auto table-col">
+                        <div class="col-12 table-header">Terminal</div> <!-- table-header-->
+                        <div class="col-12 table-data">PRICE TRANSFER (CET)</div> <!-- table-data-->
+                    </div>
+                    <div class="col-auto table-col">
+                        <div class="col-12 table-header">ETA</div> <!-- table-header-->
+                        <div class="col-12 table-data">07/25/25</div> <!-- table-data-->
+                    </div>
+                    <div class="col-auto table-col">
+                        <div class="col-12 table-header">Terminal LFD</div> <!-- table-header-->
+                        <div class="col-12 table-data">07/31/25</div> <!-- table-data-->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 <section class="mbl-details">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col px-5">
+                <div class="terminal-appt-status">
+                    <span>Terminal Appt/Stat</span>
+                    <span class="status">HOT!️ | CET EXAM | Hold: 7/31 | Ready: 8/8 | P/UP Fees Due | UPDATE: 8-11 PM</span>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-12 justify-content-between px-5">
+            <div class="col-lg-auto">
+                <div class="milestone-v2 row">
+                    <div class="col-auto">
+                        <div class="check"><i class="bi bi-check-circle-fill text-success"></i> On Vessel</div>
+                        <div class="date text-success">08/23/25</div>
+                        <img src="/_images/milestone/vessel_light_green.png" class="icon-64">
+                    </div>
+                    <div class="col-auto px-1">
+                        <i class="bi bi-chevron-right text-navy-900"></i>
+                    </div>
+                    <div class="col-auto">
+                        <div class="check"><i class="bi bi-check-circle-fill"></i> Terminal Available</div>
+                        <div class="date">08/23/25</div>
+                        <img src="/_images/milestone/terminal_light_green.png" class="icon-64">
+                    </div>
+                    <div class="col-auto px-1">
+                        <i class="bi bi-chevron-right text-navy-900"></i>
+                    </div>
+                    <div class="col-auto">
+                        <div class="check"><i class="bi bi-check-circle-fill"></i> Dispatched</div>
+                        <div class="date">08/23/25</div>
+                        <img src="/_images/milestone/dispatched_light_green.png" class="icon-64">
+                    </div>
+                    <div class="col-auto px-1">
+                        <i class="bi bi-chevron-right text-navy-900"></i>
+                    </div>
+                    <div class="col-auto">
+                        <div class="check"><i class="bi bi-check-circle-fill"></i> Arrived CFS</div>
+                        <div class="date">08/23/25</div>
+                        <img src="/_images/milestone/cfs_light_green.png" class="icon-64">
+                    </div>
+                    <div class="col-auto px-1">
+                        <i class="bi bi-chevron-right text-navy-900"></i>
+                    </div>
+                    <div class="col-auto">
+                        <div class="check"><i class="bi bi-check-circle-fill"></i> Devanning</div>
+                        <div class="date">08/23/25</div>
+                        <img src="/_images/milestone/devan_light_green.png" class="icon-64">
+                    </div>
+                    <div class="col-auto px-1">
+                        <i class="bi bi-chevron-right text-navy-900"></i>
+                    </div>
+                    <div class="col-auto">
+                        <div class="check"><i class="bi bi-check-circle-fill"></i> Freight Available</div>
+                        <div class="date">08/23/25</div>
+                        <img src="/_images/milestone/frt_ready_light_green.png" class="icon-64">
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-auto d-flex flex-column font-family-archivo gap-2 justify-content-evenly ml-auto">
+                <div class="d-flex align-items-center lh-1 text-navy-500 text-left">
+                    <i class="bi bi-exclamation-circle-fill mr-4"></i>
+                    <div>
+                        <span class="font-bold text-base">08/23/25</span> <br>
+                        <span class="text-sm">(LAST FREE DATE)</span>
+                    </div>
+                </div>
+                <div  class="d-flex align-items-center lh-1 text-danger-dark">
+                    <i class="bi bi-exclamation-circle-fill  mr-4"></i> 
+                    <div>
+                        <span class="font-bold text-base">08/23/25</span> <br>
+                        <span class="text-sm">(GO DATE)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<section class="hbl-master-list pt-6">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 p-5 d-flex flex-column gap-2">
+                <h2 class="font-family-dm-serif text-xl text-navy-800">HBL List</h2>
+                <!-- HBL List Item 1 -->
+                <div data-bs-toggle="offcanvas" href="#hbl-item-details-1" role="button" aria-controls="hbl-item-details-1">
+                    <div class="row hbl-list-item">
+                        <div class="col-md-3 col-lg-2 d-flex">MNSLOS2507067 
+                            <button class="details btn btn-sm btn-link">Details +</button>
+                        </div>
+                        <div class="col col-auto">7892.55</div>
+                        <div class="col col-auto">7892.55</div>
+                        <div class="col col-auto">7892.55</div>
+                        <div class="col-3 text-nowrap"><span class="badge rounded-pill local-pickup">SHIPMENT PICKED UP ON 8/12/25</span></div>
+                        <div class="col-auto">MARK, PCS, NVO, CUST</div>
+                        <div class="col-auto"><i class="bi bi-check"></i></div>
+                        <div class="col-auto"><i class="bi bi-dash"></i></div>
+                        <div class="col-auto py-1 d-inline-flex">
+                            <button class="btn btn-sm btn-info rounded-full font-bold text-nowrap text-white text-sm hover-scale-97">Settle charges <i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div> <!-- ** HBL List Item 1 -->
+                 <!-- HBL List Item 2 -->
+                <div data-bs-toggle="offcanvas" href="#hbl-item-details-1" role="button" aria-controls="hbl-item-details-1">
+                    <div class="row hbl-list-item">
+                        <div class="col-md-3 col-lg-2 d-flex">MNSLOS2507067 
+                            <button class="details btn btn-sm btn-link">Details +</button>
+                        </div>
+                        <div class="col col-auto">7892.55</div>
+                        <div class="col col-auto">7892.55</div>
+                        <div class="col col-auto">7892.55</div>
+                        <div class="col-3 text-nowrap"><span class="badge rounded-pill local-pickup">SHIPMENT PICKED UP ON 8/12/25</span></div>
+                        <div class="col-auto">MARK, PCS, NVO, CUST</div>
+                        <div class="col-auto"><i class="bi bi-check"></i></div>
+                        <div class="col-auto"><i class="bi bi-dash"></i></div>
+                        <div class="col-auto py-1 d-inline-flex">
+                            <button class="btn btn-sm btn-info rounded-full font-bold text-nowrap text-white text-sm hover-scale-97">Settle charges <i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div> <!-- ** HBL List Item 2 -->
+            </div>
+            
+        </div>
+        <div class="hbl-details-container">
+            <div class="offcanvas offcanvas-end hbl-item-details-modal" data-bs-scroll="true" tabindex="-1" id="hbl-item-details-1" aria-labelledby="hbl-item-details-1">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">MNSLOS2507071 / 3</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>Try scrolling the rest of the page to see this option in action.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>

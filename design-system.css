@@ -3,6 +3,7 @@
 1. Declaración de Fuentes Locales (@font-face)
 ================================================================
 */
+/* --- Archivo Narrow --- */
 @font-face {
     font-family: 'Archivo Narrow';
     src: url('../fonts/ArchivoNarrow-Regular.woff') format('woff');
@@ -83,29 +84,23 @@ IMPERIAL CFS - DESIGN SYSTEM
 :root {
     /* == Colores == */
     /* Paleta de Azul Marino (Nuevo) */
-    --clr-navy-900: #0A192F; /* Para cabeceras y pies de página */
-    --clr-navy-800: #1C2A4E; /* Tono ligeramente más claro */
-    --clr-navy-700: #1C2A4E; /* Tono ligeramente más claro */
-    
-
-    /* Azure colors */
-    --clr-azure-09: #05162A;
-    --clr-azure-19: #14264F;
+    --clr-azure-09: #05162A; /* Para cabeceras y pies de página */
+    --clr-azure-19: #14264F; /* Tono ligeramente más claro */
     --clr-azure-42: #0A58CA;
     --clr-azure-44: #0B5ED7;
     --clr-azure-46: #337AB7;
     --clr-azure-70: #A6B1BD;
     --clr-azure-80: #B1BDC9;
     --clr-azure-85: #C9D2D9;
-    --clr-azure-89: #DEE2E6;
-    --clr-azure-95: #E7ECF7;
-
+    --clr-azure-89: #DEE2E6; 
+    
     /* Paleta de Cyan (Azul) */
     --clr-cyan-47: #09B4E6;
     --clr-cyan-80: #4CD4FC;
     --clr-cyan-95: #8CE5FF;
     --clr-cyan-primary: var(--clr-cyan-47); /* Alias para el color principal */
     
+
     /* Paleta de Azul de Marca (Nuevo) */
     --clr-blue-brand: #00A9E0; /* Color de los botones y enlaces principales */
     --clr-blue-light-bg: #F0F5FA; /* Fondo para secciones destacadas */
@@ -123,7 +118,7 @@ IMPERIAL CFS - DESIGN SYSTEM
     --clr-background-card: var(--clr-white);
     --clr-text-primary: var(--clr-grey-20);
     --clr-text-secondary: var(--clr-grey-50);
-    --clr-text-headings: var(--clr-navy-900);
+    --clr-text-headings: var(--clr-azure-09);
     --clr-border: var(--clr-grey-65);
     
     /* Colores para estados (pueden ser ajustados) */
@@ -138,7 +133,7 @@ IMPERIAL CFS - DESIGN SYSTEM
     --clr-warning-light: #ffedd5; /* Fondo para pill de advertencia */
     --clr-warning-dark: #9a3412;  /* Texto para pill de advertencia */
     --clr-danger-light: #fee2e2;  /* Fondo para pill de peligro */
-    --clr-danger-dark: #58151C;   /* Texto para pill de peligro */
+    --clr-danger-dark: #991b1b;   /* Texto para pill de peligro */
     --clr-info-light: #e0f2fe;    /* Fondo para pill de información */
     --clr-info-dark: #075985;     /* Texto para pill de información */
 
@@ -204,8 +199,8 @@ IMPERIAL CFS - DESIGN SYSTEM
     --transition-duration-fast: 150ms;
     --transition-duration-normal: 300ms;
 
-    --transform-scale-sm: 0.99; /* Para efecto de "presionado" */
-    --transform-scale-lg: 1.0025; /* Para efecto de "hover" sutil */
+    --transform-scale-sm: 0.98; /* Para efecto de "presionado" */
+    --transform-scale-lg: 1.02; /* Para efecto de "hover" sutil */
     --transform-translate-y-sm: -4px; /* Para levantar un elemento */
 
     /* == Breadcrums == */
@@ -335,7 +330,7 @@ h1, h2, h3 {
 .mr-8 { margin-right: var(--space-8); } .pr-8 { padding-right: var(--space-8); }
 
 /* == Tipografía == */
-.text-2xs { font-size: var(--font-size-2xs); }  /* 10px */
+.text-2xs { font-size: var(--font-size-2xs); }   /* 10px */
 .text-xs { font-size: var(--font-size-xs); }    /* 12px */
 .text-sm { font-size: var(--font-size-sm); }    /* 14px */
 .text-base { font-size: var(--font-size-base); }    /* 15px -> 16px */
@@ -344,8 +339,7 @@ h1, h2, h3 {
 .text-2xl { font-size: var(--font-size-2xl); }  /* 20px -> 24px */
 .text-3xl { font-size: var(--font-size-3xl); }  /* 24px -> 30px */
 .text-4xl { font-size: var(--font-size-4xl); }  /* 28px -> 36px */
-.text-5xl { font-size: var(--font-size-5xl); }  /* 36px -> 48px */
-    
+.text-5xl { font-size: var(--font-size-5xl); }  /* 36px -> 48px */     
 
 .font-regular { font-weight: var(--font-weight-regular); }
 .font-medium { font-weight: var(--font-weight-medium); }
@@ -379,7 +373,6 @@ h1, h2, h3 {
 .text-blue-light { color: var(--clr-blue-light-bg); }
 .text-grey-95 { color: var(--clr-grey-95); }
 
-
 /* == Fondos == */
 .bg-success-light { background-color: var(--clr-success-light); }
 .bg-danger-light { background-color: var(--clr-danger-light); }
@@ -388,9 +381,9 @@ h1, h2, h3 {
 
 /* Clases de Fondos Comunes (Nuevo) */
 .bg-white { background-color: var(--clr-white); }
-.bg-navy-900 { background-color: var(--clr-navy-900); }
-.bg-navy-800 { background-color: var(--clr-navy-800); }
-.bg-navy-700 { background-color: var(--clr-navy-700); }
+.bg-navy-900 { background-color: var(--clr-azure-09); }
+.bg-navy-800 { background-color: var(--clr-azure-19); }
+.bg-navy-700 { background-color: var(--clr-azure-42); }
 .bg-blue-brand { background-color: var(--clr-blue-brand); }
 .bg-blue-light { background-color: var(--clr-blue-light-bg); }
 .bg-grey-95 { background-color: var(--clr-grey-95); }
@@ -429,7 +422,7 @@ h1, h2, h3 {
 .hover-scale-97,
 .hover-translate-y-sm { transition:transform .2s ease}
 .hover-scale-102:hover { transform: scale(var(--transform-scale-lg)); }
-.hover-scale-97:hover { transform: scale(99%); }
+.hover-scale-97:hover { transform: scale(97%); }
 .hover-translate-y-sm:hover { transform: translateY(var(--transform-translate-y-sm)); }
 .hover-shadow-lg:hover { box-shadow: var(--shadow-lg); }
 
