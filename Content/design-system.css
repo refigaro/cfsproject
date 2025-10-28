@@ -86,6 +86,7 @@ IMPERIAL CFS - DESIGN SYSTEM
     --clr-navy-900: #0A192F; /* Para cabeceras y pies de página */
     --clr-navy-800: #1C2A4E; /* Tono ligeramente más claro */
     --clr-navy-700: #1C2A4E; /* Tono ligeramente más claro */
+    --clr-navy-500: #57687A;
     
 
     /* Azure colors */
@@ -97,8 +98,9 @@ IMPERIAL CFS - DESIGN SYSTEM
     --clr-azure-70: #A6B1BD;
     --clr-azure-80: #B1BDC9;
     --clr-azure-85: #C9D2D9;
-    --clr-azure-89: #DEE2E6;
-    --clr-azure-95: #E7ECF7;
+    --clr-azure-89: #DCE2EF;
+    --clr-azure-95: #EDF0F6;
+    --clr-azure-99: #F3F9FC;
 
     /* Paleta de Cyan (Azul) */
     --clr-cyan-47: #09B4E6;
@@ -107,7 +109,7 @@ IMPERIAL CFS - DESIGN SYSTEM
     --clr-cyan-primary: var(--clr-cyan-47); /* Alias para el color principal */
     
     /* Paleta de Azul de Marca (Nuevo) */
-    --clr-blue-brand: #00A9E0; /* Color de los botones y enlaces principales */
+    --clr-blue-brand: #0062A9; /* Color de los botones y enlaces principales */
     --clr-blue-light-bg: #F0F5FA; /* Fondo para secciones destacadas */
 
     /* Paleta de Grises */
@@ -127,7 +129,7 @@ IMPERIAL CFS - DESIGN SYSTEM
     --clr-border: var(--clr-grey-65);
     
     /* Colores para estados (pueden ser ajustados) */
-    --clr-success: #16a34a; 
+    --clr-success: #14AE5C; 
     --clr-warning: #f97316;
     --clr-danger: #dc2626;
     --clr-info: #2563eb;
@@ -138,7 +140,7 @@ IMPERIAL CFS - DESIGN SYSTEM
     --clr-warning-light: #ffedd5; /* Fondo para pill de advertencia */
     --clr-warning-dark: #9a3412;  /* Texto para pill de advertencia */
     --clr-danger-light: #fee2e2;  /* Fondo para pill de peligro */
-    --clr-danger-dark: #58151C;   /* Texto para pill de peligro */
+    --clr-danger-dark: #8A0200;   /* Texto para pill de peligro */
     --clr-info-light: #e0f2fe;    /* Fondo para pill de información */
     --clr-info-dark: #075985;     /* Texto para pill de información */
 
@@ -371,6 +373,7 @@ h1, h2, h3 {
 .text-navy-700 { color: var(--clr-azure-42); }
 .text-navy-600 { color: var(--clr-azure-44); }
 .text-navy-500 { color: var(--clr-azure-46); }
+.text-navy-450 { color:#57687A}
 .text-navy-400 { color: var(--clr-azure-70); }
 .text-navy-300 { color: var(--clr-azure-80); }
 .text-navy-200 { color: var(--clr-azure-85); }
@@ -378,6 +381,8 @@ h1, h2, h3 {
 .text-blue-brand { color: var(--clr-blue-brand); }
 .text-blue-light { color: var(--clr-blue-light-bg); }
 .text-grey-95 { color: var(--clr-grey-95); }
+.text-grey-65 { color: var(--clr-grey-65); }
+.text-grey-50 { color: var(--clr-grey-50); }
 
 
 /* == Fondos == */
@@ -391,6 +396,8 @@ h1, h2, h3 {
 .bg-navy-900 { background-color: var(--clr-navy-900); }
 .bg-navy-800 { background-color: var(--clr-navy-800); }
 .bg-navy-700 { background-color: var(--clr-navy-700); }
+.bg-navy-100 { background-color: var(--clr-azure-89); }
+.bg-azure-95 { background-color: var(--clr-azure-95); }
 .bg-blue-brand { background-color: var(--clr-blue-brand); }
 .bg-blue-light { background-color: var(--clr-blue-light-bg); }
 .bg-grey-95 { background-color: var(--clr-grey-95); }
@@ -459,3 +466,27 @@ h1, h2, h3 {
     box-shadow: 0 0 0 3px var(--clr-info-light);
 }
 
+
+.p-5 {padding:var(--space-5)!important}
+.px-5 {padding-left:var(--space-5)!important; padding-right:var(--space-5)!important}
+
+.text-not-uppercase {
+  text-transform: none!important;
+}
+
+.gap-3 { gap: var(--space-3)!important; }
+.gap-4 { gap: var(--space-4)!important; }
+.gap-5 { gap: var(--space-5)!important; }
+
+.row {
+    margin-right: calc(-.5 * var(--bs-gutter-x))
+    !important;
+    margin-left: calc(-.5 * var(--bs-gutter-x))!important;
+}
+
+.pl-0 { padding-left:0!important;}
+
+.btn {
+    border-radius: 0;
+    height: auto!important;
+}
