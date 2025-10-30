@@ -139,29 +139,29 @@
             </div>
             <div class="col-auto">
                 <div class="mbl-master-table"> <!-- mbl-master-table component-->
-                    <div class="col-auto table-col">
-                        <div class="col-12 table-header" >MBL No.</div> <!-- table-header-->
-                        <div class="col-12 table-data">SMLMSEL5J5243700 </div> <!-- table-data-->
+                    <div class="col-12 col-sm-auto table-col table-col-mbl">
+                        <div class="col-5 col-sm-12 table-header" >MBL No.</div> <!-- table-header-->
+                        <div class="col-sm-12 table-data">SMLMSEL5J5243700 </div> <!-- table-data-->
                     </div>
-                    <div class="col-auto table-col">
-                        <div class="col-12 table-header" >Container No.</div> <!-- table-header-->
-                        <div class="col-12 table-data">CAAU5252832 </div> <!-- table-data-->
+                    <div class="col-12 col-sm-auto table-col">
+                        <div class="col-5 col-sm-12 table-header" >Container No.</div> <!-- table-header-->
+                        <div class="col-sm-12 table-data">CAAU5252832 </div> <!-- table-data-->
                     </div>
-                    <div class="col-auto table-col">
-                        <div class="col-12 table-header" >Vessel</div> <!-- table-header-->
-                        <div class="col-12 table-data">SM BUSAN </div> <!-- table-data-->
+                    <div class="col-12 col-sm-auto table-col">
+                        <div class="col-5 col-sm-12 table-header" >Vessel</div> <!-- table-header-->
+                        <div class="col-sm-12 table-data">SM BUSAN </div> <!-- table-data-->
                     </div>
-                    <div class="col-auto table-col">
-                        <div class="col-12 table-header">Terminal</div> <!-- table-header-->
-                        <div class="col-12 table-data">PRICE TRANSFER (CET)</div> <!-- table-data-->
+                    <div class="col-12 col-sm-auto table-col">
+                        <div class="col-5 col-sm-12 table-header">Terminal</div> <!-- table-header-->
+                        <div class="col-sm-12 table-data">PRICE TRANSFER (CET)</div> <!-- table-data-->
                     </div>
-                    <div class="col-auto table-col">
-                        <div class="col-12 table-header">ETA</div> <!-- table-header-->
-                        <div class="col-12 table-data">07/25/25</div> <!-- table-data-->
+                    <div class="col-12 col-sm-auto table-col">
+                        <div class="col-5 col-sm-12 table-header">ETA</div> <!-- table-header-->
+                        <div class="col-sm-12 table-data">07/25/25</div> <!-- table-data-->
                     </div>
-                    <div class="col-auto table-col">
-                        <div class="col-12 table-header">Terminal LFD</div> <!-- table-header-->
-                        <div class="col-12 table-data">07/31/25</div> <!-- table-data-->
+                    <div class="col-12 col-sm-auto table-col">
+                        <div class="col-5 col-sm-12 table-header">Terminal LFD</div> <!-- table-header-->
+                        <div class="col-sm-12 table-data">07/31/25</div> <!-- table-data-->
                     </div>
                 </div>
             </div>
@@ -304,23 +304,36 @@
                 <!-- HBL List Item 2 -->
                 <div>
                     <div class="hbl-list-item hbl-list-grid">
-                        <div class="d-flex font-bold align-items-center">
-                            <a data-bs-toggle="offcanvas" href="#hbl-item-details-2" role="button" aria-controls="hbl-item-details-2">MNSLOS2507067</a> 
+                        <div class="d-flex font-bold align-items-center hbl">
+                            <a  data-bs-toggle="offcanvas" href="#hbl-item-details-2" role="button" aria-controls="hbl-item-details-2">MNSLOS2507067</a> 
                         </div>
-                        <div class="d-flex justify-content-end px-2">7892.55</div>
-                        <div class="d-flex justify-content-end px-2">7892.55</div>
-                        <div class="d-flex justify-content-end px-2">7892.55</div>
-                        <div class="d-flex justify-content-start align-items-center gap-2">
-                            <span class="badge rounded-pill local-pickup">SHIPMENT PICKED UP ON 8/12/25</span>
-                            <div class="ipi-warehouse-buttons">
-                                <a href="#"><i class="bi bi-truck"></i> IPI Tracing</a>
-                                <a href="#"><i class="bi bi-shop-window"></i> Warehouse</a>
+                        <div class="d-flex justify-content-end quantity align-items-center gap-2"><p class="hide-label">QTY:</p>7892.55</div>
+                        <div class="d-flex justify-content-end quantity align-items-center gap-2">
+                            <p class="hide-label">CBM:</p>7892.55</div>
+                        <div class="d-flex justify-content-end quantity align-items-center gap-2">
+                            <p class="hide-label">LBS:</p>7892.55</div>
+                        <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
+                            <p class="hide-label">STATUS:</p>
+                            <div class="d-flex gap-2 justify-content-start">
+                                <span class="badge rounded-pill local-pickup align-self-center">
+                                    SHIPMENT PICKED UP ON 8/12/25</span>
+                                <div class="ipi-warehouse-buttons">
+                                    <a href="#"><i class="bi bi-truck"></i> IPI Tracing</a>
+                                    <a href="#"><i class="bi bi-shop-window"></i> Warehouse</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="text-danger">MARK, PCS, <span class="text-grey-65">NVO, CUST</span></div>
-                        <div class="d-flex justify-content-center"><i class="bi bi-check"></i></div>
-                        <div class="d-flex justify-content-center"><i class="bi bi-dash"></i></div>
-                        <div class="py-1 d-inline-flex">
+                        <div class="d-flex text-danger flex-column">
+                            <p class="hide-label">HOLDS:</p>
+                            <p>MARK, <span class="text-grey-65">PCS, NVO, CUST</span></p></div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <p class="hide-label">CUST ENTRY:</p>
+                            <i class="bi bi-check"></i></div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <p class="hide-label">OBL:</p>
+                            <i class="bi bi-dash"></i></div>
+                        <div class="py-1 d-inline-flex align-items-center">
+                            <p class="hide-label">Charges:</p>
                             <button class="btn btn-sm btn-info rounded-full font-bold text-nowrap text-white text-sm mr-2">Settle charges <i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
@@ -514,22 +527,22 @@
                         <h2 class="d-inline-block mr-6 ">Photos</h2>
                         <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Download all pictures</i></button>
                         <div class="row mt-6 photo-gallery-thumbnails gap-3">
-                            <div class="col-auto pr-0">
+                            <div class="col-auto">
                                 <a href="_images/photo-placeholder.jpeg">
                                 <img class="photo-thumbnail" src="_images/photo-placeholder.jpeg" alt="">
                                 </a>
                             </div>
-                            <div class="col-auto px-0">
+                            <div class="col-auto">
                                 <a href="_images/photo-placeholder.jpeg">
                                 <img class="photo-thumbnail" src="_images/photo-placeholder.jpeg" alt="">
                                 </a>
                             </div>
-                            <div class="col-auto px-0">
+                            <div class="col-auto">
                                 <a href="_images/photo-placeholder.jpeg">
                                 <img class="photo-thumbnail" src="_images/photo-placeholder.jpeg" alt="">
                                 </a>
                             </div>
-                            <div class="col-auto px-0">
+                            <div class="col-auto">
                                 <a href="_images/photo-placeholder.jpeg">
                                 <img class="photo-thumbnail" src="_images/photo-placeholder.jpeg" alt="">
                                 </a>
@@ -548,8 +561,8 @@
                             <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">IT/ENTRY No.</div>
                             <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">IT/ENTRY Date</div>
                             <div class="d-flex justify-content-start px-2 text-navy-500 hide-header">Commodity</div>
-                            <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">Cust Rel.</div>
-                            <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">OBL</div>
+                            <div class="d-flex justify-content-center px-2 text-navy-500 hide-header">Cust Rel.</div>
+                            <div class="d-flex justify-content-center px-2 text-navy-500 hide-header">OBL</div>
                         </div>
                         <div class="ams-list-item ams-list-grid danger"><!-- AMS list item -->
                             <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
@@ -560,8 +573,8 @@
                             <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.:</p>9GK-0114066-8</div>
                             <div class="d-flex justify-content-end px-2"><p class="hide-label">IT/ENTRY Date:</p>07/18/25</div>
                             <div class="d-flex justify-content-start px-2 flex-column"><p class="hide-label">Commodity:</p>2BOX OF PARTS FOR KN CAGE WELDING MACHINES</div>
-                            <div class="d-flex justify-content-center flex-column"><p class="hide-label">Cust Rel.:</p><i class="bi bi-exclamation-circle-fill"></i></div>
-                            <div class="d-flex justify-content-center flex-column"><p class="hide-label">OBL:</p><i class="bi bi-exclamation-circle-fill"></i></div>
+                            <div class="d-flex justify-content-center flex-column align-items-center"><p class="hide-label">Cust Rel.:</p><i class="bi bi-exclamation-circle-fill"></i></div>
+                            <div class="d-flex justify-content-center flex-column align-items-center"><p class="hide-label">OBL:</p><i class="bi bi-exclamation-circle-fill"></i></div>
                         </div>
                         <div class="ams-list-item ams-list-grid"><!-- AMS list item -->
                             <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
@@ -572,8 +585,8 @@
                             <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.:</p>9GK-0114066-8</div>
                             <div class="d-flex justify-content-end px-2"><p class="hide-label">IT/ENTRY Date:</p>07/18/25</div>
                             <div class="d-flex justify-content-start px-2 flex-column"><p class="hide-label">Commodity:</p>2BOX OF PARTS FOR KN CAGE WELDING MACHINES</div>
-                            <div class="d-flex justify-content-center flex-column"><p class="hide-label">Cust Rel.:</p><i class="bi bi-exclamation-circle-fill"></i></div>
-                            <div class="d-flex justify-content-center flex-column"><p class="hide-label">OBL:</p><i class="bi bi-exclamation-circle-fill"></i></div>
+                            <div class="d-flex justify-content-center flex-column align-items-center"><p class="hide-label">Cust Rel.:</p><i class="bi bi-exclamation-circle-fill"></i></div>
+                            <div class="d-flex justify-content-center flex-column align-items-center"><p class="hide-label">OBL:</p><i class="bi bi-exclamation-circle-fill"></i></div>
                         </div>
                     </section>
 

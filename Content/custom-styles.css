@@ -219,6 +219,7 @@
     .mbl-master-table .table-col {
         border-right:1px solid var(--clr-azure-85);
         padding:0;
+        flex-grow:2;
     }
 
     .mbl-master-table .table-header {
@@ -258,6 +259,8 @@
         color:white;
         font-family: var(--font-secondary);
         font-weight:bolder;
+        align-self:stretch;
+        align-content:center;
     }
 
     .terminal-appt-status .status {
@@ -337,12 +340,11 @@
 .hbl-master-list .hbl-list-grid {
     display: grid;
     grid-template-columns: 200px 75px 75px 75px minmax(280px, auto) minmax(185px, auto) 50px 45px 152px;
-    /* Opcional: para definir explícitamente una sola fila */
     grid-template-rows: auto; 
-    gap:0; /* Opcional: para añadir espacio entre columnas */
-    align-items: center; /* Opcional: para alinear verticalmente el contenido */
+    gap:12px;
+    align-items: center; 
     justify-content:stretch;
-    overflow:scroll;
+    
 }
 
     .hbl-master-list .hbl-list-grid div:first-child{
@@ -709,6 +711,10 @@ line-height: initial;
     }
 
     @media screen and (max-width:992px){
+        .mbl-master-table {
+            flex-wrap:wrap;
+        }
+
         .hbl-master-list .hbl-list-grid .status {
             min-width:40%;
         }
@@ -754,6 +760,51 @@ line-height: initial;
     }
 
     @media screen and (max-width:768px){
+        .mbl-master-table {
+            margin-top:12px;
+        }
+
+        .mbl-master-table div:nth-child(n + 4) {
+            border-top:1px solid var(--clr-azure-85);
+        }
+
+        .table-col-mbl {
+            min-width:40%;
+        }
+
+        .milestone-v2 {
+            flex-direction:column;
+            margin-bottom:12px;
+        }
+
+        .milestone-v2 > .col-auto {
+            display:flex;
+            flex-direction: row;
+            align-items:center;
+            gap:12px;
+            justify-content: start;
+            width:100%;
+        }
+
+         .milestone-v2 > .col-auto .check {
+            padding-bottom:0;
+            border:0;
+            order:2;
+            min-width:30%
+         }
+         .milestone-v2 > .col-auto .date {
+            padding-top:0;
+            border:0;
+            order:3;
+         }
+
+         .milestone-v2 > .col-auto .icon-64 {
+            margin-top:0;
+            height:40px;
+            order: 1;
+            aspect-ratio: 1;
+         }
+
         .hbl-item-details-modal .main-content {
             grid-template-columns: 1fr!important;
             grid-template-rows: 1fr auto;
@@ -770,6 +821,18 @@ line-height: initial;
     }
 
     @media screen and (max-width:576px){
+        .mbl-master-table .table-col {
+            display:flex;
+            flex-direction:row;
+            text-align:left;
+            border:0!important;
+            align-self:baseline;
+        }
+        .mbl-master-table .table-col .table-header {
+            border:0!important;
+            align-self:baseline;
+        }
+
         .hbl-master-list .hbl-list-grid .hbl{
             font-size:16px;
         }
