@@ -166,7 +166,7 @@
     align-items:center;
     gap:8px;
     justify-content:end;
-    padding:12px;"
+    padding:12px;
 }
 
     .nav-search-bar select,
@@ -321,16 +321,29 @@
         box-shadow:var(--shadow-sm);
    }
 
-   .hbl-master-list .hbl-list-grid {
-        display: grid;
-        grid-template-columns: 200px 75px 75px 75px minmax(280px, auto) minmax(185px, auto) 50px 45px 152px;
-        /* Opcional: para definir explícitamente una sola fila */
-        grid-template-rows: auto; 
-        gap:0; /* Opcional: para añadir espacio entre columnas */
-        align-items: center; /* Opcional: para alinear verticalmente el contenido */
-        justify-content:stretch;
-        overflow:scroll;
+
+    .hide-label { 
+        display:none; 
+        font-family:var(--font-secondary);
+        line-height:1em;
+        text-transform:uppercase;
+        font-size:var(--font-size-xs);
+        color:#57687A;
     }
+
+
+   /* ----    HBL Table layout.    ----- */
+
+.hbl-master-list .hbl-list-grid {
+    display: grid;
+    grid-template-columns: 200px 75px 75px 75px minmax(280px, auto) minmax(185px, auto) 50px 45px 152px;
+    /* Opcional: para definir explícitamente una sola fila */
+    grid-template-rows: auto; 
+    gap:0; /* Opcional: para añadir espacio entre columnas */
+    align-items: center; /* Opcional: para alinear verticalmente el contenido */
+    justify-content:stretch;
+    overflow:scroll;
+}
 
     .hbl-master-list .hbl-list-grid div:first-child{
         padding-left:12px;
@@ -512,10 +525,9 @@
     .ams-header-grid {
             display: grid;
             grid-template-columns: 180px 40px 40px 70px 70px 120px 140px minmax(320px, auto) 74px 64px;
-            /* Opcional: para definir explícitamente una sola fila */
             grid-template-rows: auto; 
-            gap:0; /* Opcional: para añadir espacio entre columnas */
-            align-items: center; /* Opcional: para alinear verticalmente el contenido */
+            gap:0; 
+            align-items: center; 
             justify-content:stretch;
         }
 
@@ -613,7 +625,7 @@ line-height: initial;
 .ipi-warehouse-buttons {
     display:flex;
     flex-direction:column;
-    gap:2;
+    gap:2px;
     font-size:var(--font-size-xs);
     color:var(--clr-azure-19);
     text-transform:uppercase;
@@ -631,3 +643,204 @@ line-height: initial;
         height:2.5vw;
     }
 }
+
+    @media screen and (max-width:1279px){
+
+        /* ----    HBL Table layout     ----- */
+        .hbl-master-list .hbl-list-grid {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                align-items: center;
+        }
+
+        .hbl-master-list .hbl-list-grid .hbl {
+            min-width:10em;
+        }
+
+        .hbl-master-list .hbl-list-grid .quantity {
+            max-width:5em;
+        }
+
+        .hbl-master-list .hbl-list-grid .status {
+            min-width:30em;
+        }
+
+        .hbl-master-list .hbl-list-grid div:first-child{
+            padding-left:12px;
+        }
+
+        .hbl-master-list .hbl-list-grid {
+            row-gap:8px;
+            column-gap: 16px;;
+            align-items:flex-start;
+        }
+        .hbl-master-list .hbl-list-grid .hbl{
+            min-width:100%;
+            padding:16px 12px;
+        }
+        .hbl-master-list .hbl-list-grid .status {
+            min-width:20em;
+            align-items:center;
+        }
+        .hide-label { display:inline-block; }
+        .hide-header { display: none!important; }
+
+        .hbl-master-list .hbl-list-grid .quantity {
+            max-width:none;
+        }
+
+        .hbl-master-list .hbl-list-grid > div {
+            padding:4px 12px;
+            flex-direction: column;
+            align-items:start!important;
+            gap:8px;
+        }   
+
+        /* Layout inside Offcanvas for AMS lists  */
+        .ams-list-grid,
+        .ams-header-grid {
+                display: flex;
+                gap:12px; 
+                align-items: center; 
+                justify-content:stretch;
+                flex-wrap;
+        }
+    }
+
+    @media screen and (max-width:992px){
+        .hbl-master-list .hbl-list-grid .status {
+            min-width:40%;
+        }
+        .hbl-master-list .hbl-list-grid {
+            gap:4px;
+            padding:8px;
+        }
+        /* Layout inside Offcanvas */
+        .hbl-item-details-modal .main-content {
+            grid-template-columns: 6fr 2.5fr!important;
+            grid-template-rows: 1fr auto;
+        }
+
+        .details-card.ipi-status {
+            grid-column: 2 / 3;
+            grid-row: 1 / -1;
+        }
+        .offcanvas-header {
+            flex-direction:column-reverse;
+        }
+
+        .offcanvas-hbl-header {
+            flex-wrap:wrap;
+        }
+            .offcanvas-hbl-header .info-item {
+            width:100%;
+        }
+
+        .ams-section .ams-list-item {
+            padding:12px;
+            flex-wrap:wrap;
+        }
+
+        .ams-section .ams-list-item .hbl {
+            font-size:16px;
+            min-width:33%;
+        }
+
+        .ams-section .ams-list-item > div {
+            flex-direction: column!important;
+            padding:8px 12px;
+        }
+    }
+
+    @media screen and (max-width:768px){
+        .hbl-item-details-modal .main-content {
+            grid-template-columns: 1fr!important;
+            grid-template-rows: 1fr auto;
+        }
+        .details-card.ipi-status {
+            grid-column: initial;
+            grid-row: initial;
+        }
+
+        .hbl-item-details-modal .info-bar {
+            flex-wrap:wrap!important;
+            gap:12px;
+        }
+    }
+
+    @media screen and (max-width:576px){
+        .hbl-master-list .hbl-list-grid .hbl{
+            font-size:16px;
+        }
+
+        .hbl-master-list .hbl-list-grid > div {
+            min-width:100%;
+            flex-direction: row!important;
+            justify-content: flex-start!important;
+            align-items:center!important;
+        }
+        .hbl-master-list .hbl-list-grid .quantity {
+            min-width:30%;
+        }
+
+        .hbl-master-list .hbl-list-grid .status {
+            border-top:1px solid var(--clr-azure-95);
+            width:100%;
+            justify-content:space-between!important;
+            align-items:flex-start!important;
+            padding-top:12px;
+        }
+            .hbl-master-list .hbl-list-grid .status>div{
+                flex-wrap:wrap;
+            }
+
+        .hbl-master-list .hbl-list-grid .status .hide-label {
+            padding-top:5px;
+        }
+
+        .hbl-master-list .hbl-list-grid .status .badge {
+            font-size:var(--font-size-sm);
+        }
+
+        .hbl-master-list .hbl-list-grid .status .ipi-warehouse-buttons {
+            flex-direction:row;
+            gap:12px;
+        }
+
+        /* Offcanvas open from bottom  */
+        .offcanvas-end.offcanvas {
+          transform: translateY(100%);
+          top: auto;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          height: auto;
+          max-height:85vh;
+          width: 100vw;
+          min-width: none;
+        }
+
+        .offcanvas-end.offcanvas.show {
+          /* Show the offcanvas from the bottom when open */
+          transform: translateY(0);
+        }
+
+        .logistic-details .aside-details {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            justify-content: space-between;
+            padding-top:12px;
+            padding-left:12px!important;
+        }
+        
+        .info-item-holds {
+            width:100%;
+        }
+
+        .ams-list-item {
+            flex-wrap:wrap;
+            gap:4px;
+        }
+    }
