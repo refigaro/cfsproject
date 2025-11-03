@@ -251,22 +251,26 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 p-5 d-flex flex-column gap-2 bg-navy-100 rounded-4">
+                <div>
+                    <h2 class="font-family-dm-serif text-xl text-navy-800 text-not-uppercase">HBL List</h2> 
+                </div>
                 <div class="hbl-list-grid font-family-sora lh-1 text-uppercase text-xs text-navy-450">
-                        <div>
-                            <h2 class="font-family-dm-serif text-xl text-navy-800 text-not-uppercase">HBL List</h2> 
-                        </div>
+                        <div class="d-flex justify-content-start hide-header">SEQ No.</div>
+                        <div class="d-flex justify-content-start hide-header">HBL</div>
                         <div class="d-flex justify-content-end hide-header">QTY</div>
                         <div class="d-flex justify-content-end hide-header">CBM</div>
                         <div class="d-flex justify-content-end hide-header">LBS</div>
-                        <div class="hide-header">Status</div>
-                        <div class="hide-header">Holds</div>
                         <div class="d-flex justify-content-center hide-header">Cust entry</div>
                         <div class="d-flex justify-content-center hide-header">OBL</div>
+                        <div class="hide-header">Status</div>
+                        <div class="hide-header">Holds</div>
                         <div class="hide-header">Charges</div>
+                        <div class="hide-header">IPI</div>
                 </div>    
                 <!-- HBL List Item 1 -->
                 <div>
                     <div class="hbl-list-item hbl-list-grid">
+                        <div class="d-flex justify-content-center quantity align-items-center gap-2"><p class="hide-label">SEQ No.:</p>1</div>
                         <div class="d-flex font-bold align-items-center hbl">
                             <a  data-bs-toggle="offcanvas" href="#hbl-item-details-1" role="button" aria-controls="hbl-item-details-1">MNSLOS2507067</a> 
                         </div>
@@ -275,35 +279,35 @@
                             <p class="hide-label">CBM:</p>7892.55</div>
                         <div class="d-flex justify-content-end quantity align-items-center gap-2">
                             <p class="hide-label">LBS:</p>7892.55</div>
-                        <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
-                            <p class="hide-label">STATUS:</p>
-                            <div class="d-flex gap-2 justify-content-start">
-                                <span class="badge rounded-pill local-pickup align-self-center">
-                                    SHIPMENT PICKED UP ON 8/12/25</span>
-                                <div class="ipi-warehouse-buttons">
-                                    <a href="#"><i class="bi bi-truck"></i> IPI Tracing</a>
-                                    <a href="#"><i class="bi bi-shop-window"></i> Warehouse</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex text-danger flex-column">
-                            <p class="hide-label">HOLDS:</p>
-                            <p>MARK, <span class="text-grey-65">PCS, NVO, CUST</span></p></div>
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="hide-label">CUST ENTRY:</p>
                             <i class="bi bi-check"></i></div>
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="hide-label">OBL:</p>
                             <i class="bi bi-dash"></i></div>
+                        <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
+                            <p class="hide-label">STATUS:</p>
+                            <div class="d-flex gap-2 justify-content-start">
+                                <span class="badge rounded-pill local-pickup align-self-center">
+                                    SHIPMENT PICKED UP ON 8/12/25</span>
+                            </div>
+                        </div>
+                        <div class="d-flex text-danger flex-column">
+                            <p class="hide-label">HOLDS:</p>
+                            <p>MARK, <span class="text-grey-65">PCS, NVO, CUST</span></p></div>
                         <div class="py-1 d-inline-flex align-items-center">
                             <p class="hide-label">Charges:</p>
-                            <button class="btn btn-sm btn-info rounded-full font-bold text-nowrap text-white text-sm mr-2">Settle charges <i class="bi bi-arrow-right"></i></button>
+                            <button class="btn btn-link font-bold text-nowrap text-sm mr-2">Charges</button>
                         </div>
+                        <div class="d-flex text-danger flex-column">
+                            <p class="hide-label">IPI:</p>
+                            <p class="text-grey-65">ABCDE</p></div>
                     </div>
                 </div> <!-- ** HBL List Item 1 -->
                 <!-- HBL List Item 2 -->
                 <div>
                     <div class="hbl-list-item hbl-list-grid">
+                        <div class="d-flex justify-content-center quantity align-items-center gap-2"><p class="hide-label">SEQ No.:</p>2</div>
                         <div class="d-flex font-bold align-items-center hbl">
                             <a  data-bs-toggle="offcanvas" href="#hbl-item-details-2" role="button" aria-controls="hbl-item-details-2">MNSLOS2507067</a> 
                         </div>
@@ -312,30 +316,30 @@
                             <p class="hide-label">CBM:</p>7892.55</div>
                         <div class="d-flex justify-content-end quantity align-items-center gap-2">
                             <p class="hide-label">LBS:</p>7892.55</div>
-                        <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
-                            <p class="hide-label">STATUS:</p>
-                            <div class="d-flex gap-2 justify-content-start">
-                                <span class="badge rounded-pill local-pickup align-self-center">
-                                    SHIPMENT PICKED UP ON 8/12/25</span>
-                                <div class="ipi-warehouse-buttons">
-                                    <a href="#"><i class="bi bi-truck"></i> IPI Tracing</a>
-                                    <a href="#"><i class="bi bi-shop-window"></i> Warehouse</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex text-danger flex-column">
-                            <p class="hide-label">HOLDS:</p>
-                            <p>MARK, <span class="text-grey-65">PCS, NVO, CUST</span></p></div>
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="hide-label">CUST ENTRY:</p>
                             <i class="bi bi-check"></i></div>
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="hide-label">OBL:</p>
                             <i class="bi bi-dash"></i></div>
+                        <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
+                            <p class="hide-label">STATUS:</p>
+                            <div class="d-flex gap-2 justify-content-start">
+                                <span class="badge rounded-pill local-pickup align-self-center">
+                                    SHIPMENT PICKED UP ON 8/12/25</span>
+                            </div>
+                        </div>
+                        <div class="d-flex text-danger flex-column">
+                            <p class="hide-label">HOLDS:</p>
+                            <p>MARK, <span class="text-grey-65">PCS, NVO, CUST</span></p></div>
                         <div class="py-1 d-inline-flex align-items-center">
                             <p class="hide-label">Charges:</p>
-                            <button class="btn btn-sm btn-info rounded-full font-bold text-nowrap text-white text-sm mr-2">Settle charges <i class="bi bi-arrow-right"></i></button>
+                            <button class="btn btn-link font-bold text-nowrap text-sm mr-2">Charges</button>
                         </div>
+                        <div class="d-flex text-danger flex-column">
+                            <p class="hide-label">IPI:</p>
+                            <p class="text-grey-65">ABCDE</p></div>
+                    </div>
                     </div>
                 </div> <!-- ** HBL List Item 2 -->
             </div>

@@ -339,7 +339,7 @@
 
 .hbl-master-list .hbl-list-grid {
     display: grid;
-    grid-template-columns: 200px 75px 75px 75px minmax(280px, auto) minmax(185px, auto) 50px 45px 152px;
+    grid-template-columns: 40px 130px 75px 75px 75px 60px 55px minmax(220px, auto) minmax(185px, auto) 120px 60px;
     grid-template-rows: auto; 
     gap:12px;
     align-items: center; 
@@ -348,7 +348,7 @@
 }
 
     .hbl-master-list .hbl-list-grid div:first-child{
-        padding-left:12px;
+        padding-left:0px;
     }
 
         .hbl-master-list .hbl-list-item:hover {
@@ -360,11 +360,10 @@
                 text-decoration: none;
             }
 
-        .hbl-master-list .hbl-list-item button:hover,
-        .hbl-details-container .btn-info:hover {
-            background: var(--clr-azure-09);
-            border:var(--clr-azure-09);
-        }
+            .hbl-master-list .btn-link:hover {
+                color:var(--clr-azure-19);
+            }
+
 
     .hbl-list-item .bi.bi-check,
     .hbl-list-item .bi.bi-dash {
