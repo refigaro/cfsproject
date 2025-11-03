@@ -339,7 +339,7 @@
 
 .hbl-master-list .hbl-list-grid {
     display: grid;
-    grid-template-columns: 40px 130px 75px 75px 75px 60px 55px minmax(220px, auto) minmax(185px, auto) 120px 60px;
+    grid-template-columns: 35px 130px 75px 75px 75px 68px 45px minmax(250px, auto) minmax(185px, auto) 120px 60px;
     grid-template-rows: auto; 
     gap:12px;
     align-items: center; 
@@ -373,11 +373,11 @@
         .hbl-list-item .bi.bi-check { color:var(--clr-success); }
         .hbl-list-item .bi.bi-dash { color:var(--clr-grey-65); }
 
-   .hbl-master-list .hbl-list-item .badge.local-pickup {
+   .hbl-master-list .hbl-list-item .badge.ipi-tracing {
         background:var(--clr-info-light);
         color:var(--clr-info-dark);
    }
-   .hbl-master-list .hbl-list-item .badge.ipi-tracing {
+   .hbl-master-list .hbl-list-item .badge.local-pickup {
         background:var(--clr-success-light);
         color:var(--clr-success-dark);
    }
@@ -672,6 +672,8 @@ line-height: initial;
         width:auto;
         height:2.5vw;
     }
+
+    .status { font-size:135%; }
 }
 
     @media screen and (max-width:1279px){
