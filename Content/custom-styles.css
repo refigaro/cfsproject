@@ -471,6 +471,12 @@
         background: var(--clr-azure-95);
     }
 
+    .logistic-details .main-details .detail-value {
+        font-size:var(--font-size-lg);
+        font-weight:bolder;
+        color:var(--clr-grey-20);
+    }
+
     .info-label,
     .detail-label {
         color:var(--clr-azure-46);
@@ -612,6 +618,29 @@ line-height: initial;
     .ipi-status .status-title {
         font-weight:bold;
     }
+
+        .ipi-status .status-title .status-meta {
+            font-weight:normal!important;
+        }
+
+        .status-item.border-top {
+            border-top:1px solid var(--clr-azure-85)!important;
+        }
+
+        .status-title.btn {
+            font-size:14px;
+        }
+
+        .status-title.btn i,
+        .view-history-link.btn i  {
+            transition:margin-left ease .2s;
+            font-size:120%;
+        }
+
+        .status-title.btn:hover i,
+        .view-history-link.btn:hover i {
+            margin-left:8px;
+        }
 
     .ipi-status .status-label {
         text-transform: uppercase;

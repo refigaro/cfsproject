@@ -233,13 +233,13 @@
                 <div class="d-flex align-items-center lh-1 text-navy-500 text-left">
                     <div>
                         <span class="text-xs">(LAST FREE DATE)</span><br>
-                        <span class="font-bold text-base">08/23/25</span> 
+                        <span class="font-bold text-lg">08/23/25</span> 
                     </div>
                 </div>
                 <div  class="d-flex align-items-center text-navy-500 lh-1">
                     <div>
                         <span class="text-xs">(GO DATE)</span><br>
-                        <span class="font-bold text-base">08/23/25</span>
+                        <span class="font-bold text-lg">08/23/25</span>
                     </div>
                 </div>
             </div>
@@ -351,7 +351,7 @@
                             <p class="info-value hbl-number font-family-sora lh-1 text-uppercase text-2xl font-bold mt-2">MNSLOS2507071 / 3</p>
                         </div>
                         <button class="btn btn-sm btn-info rounded-full font-bold text-nowrap text-white text-sm">Settle charges</button>
-                        <button class="btn btn-sm btn-outline-dark rounded-full font-bold text-nowrap text-sm">Print pick-up notice</button>
+                        <button class="btn btn-sm btn-outline-dark rounded-full font-bold text-nowrap text-sm">Print pickup Confirmation</button>
                     </div>
                     <div class="d-flex justify-content-end align-items-center gap-4">
                         <p class="hbl-subheader">HBL Detail Page</p>
@@ -516,9 +516,47 @@
                                     </div>
                                 </li>
                             </ul>
-                            <a href="#" class="view-history-link btn btn-link pl-0 pb-1">VIEW DETAILED HISTORY <i class="bi bi-arrow-right-circle ml-2"></i></a>
+                            <a href="#" class="view-history-link btn btn-link pl-0 pb-1">VIEW DETAILED HISTORY  <i class="bi bi-arrow-right-circle"></i></a>
                         </section>
 
+                        <!-- Column 4: Local Pickup -->
+                        <section class="details-card ipi-status">
+                            <h2>Pick up</h2>
+                            <ul class="status-timeline pt-3 mb-3 col-12">
+                                <li class="status-item">
+                                    <div class="status-marker">
+                                        <i class="bi bi-check-lg"></i>
+                                    </div>
+                                    <div class="status-info">
+                                        <p class="status-label">PICKED UP</p>
+                                        <p class="status-title">P/U Date:
+                                            <span class="status-meta">08/15/25</span>
+                                        </p>
+                                        <p class="status-title">P/U Trucker:
+                                            <span class="status-meta">12345678</span>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="status-item">
+                                    <div class="status-marker">
+                                        <i class="bi bi-dash-lg"></i>
+                                    </div>
+                                    <div class="status-info">
+                                        <p class="status-label">PARTIAL PICKUP</p>
+                                        <p class="status-title">Date:
+                                            <span class="status-meta">08/15/25</span>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="status-item border-top col-12">  
+                                    <div class="status-info">
+                                        <a class="status-title btn btn-link font-family-sora text-danger ps-0 text-capitalize text-base">Rejection Notice <i class="bi bi-arrow-right" href="#"></i></a>
+                                        <p class="status-meta"><b>Date:</b> 08/21/25</p>
+                                        <p class="status-meta"><b>ID:</b> (Pending)</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>                        
                     </main>
 
                     <!-- Photo Gallery -->
