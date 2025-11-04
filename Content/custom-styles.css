@@ -306,8 +306,13 @@
         object-fit:contain;
         object-position: bottom center;
         margin-top:var(--space-3);
-        filter: hue-rotate(52deg);
     }
+
+.mbl-details .lfd-godate {
+    background:white!important;
+    border-radius: 8px;
+    padding:8px 12px;
+}
 
 .hbl-master-list {
     background:var(--clr-azure-95);
@@ -624,6 +629,7 @@ line-height: initial;
         height:20px;
         text-align:center;
         display:flex; justify-content:center;
+        aspect-ratio: 1!important;
     }
 
     .ipi-status .pending .status-marker {
@@ -897,8 +903,8 @@ line-height: initial;
          }
 
         .hbl-item-details-modal .main-content {
-            grid-template-columns: 1fr!important;
-            grid-template-rows: 1fr auto;
+            display:flex;
+            flex-direction:column;
         }
         .hbl-master-list .hbl-list-grid .hbl{
             min-width:80%;
@@ -914,6 +920,20 @@ line-height: initial;
             flex-wrap:wrap!important;
             gap:12px;
         }
+
+        .milestone-v2 {
+            font-size:190%;
+        }
+
+        .milestone-v2 .bi.bi-chevron-right {
+            display:none;
+        }
+
+        .milestone-v2 .col-auto {
+            padding-left:12%;
+            margin-top:4px; margin-bottom:4px;
+        }
+
     }
 
     @media screen and (max-width:576px){
