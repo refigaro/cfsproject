@@ -426,10 +426,15 @@
             padding-right:12px;
             padding-left:12px;
             font-size:var(--font-size-sm);
+            min-width:60px;
     }
         .hbl-item-details-modal .badge.pill-hold.disabled {
             background:var(--clr-azure-95);
             color:var(--clr-azure-80);
+        }
+        .hbl-item-details-modal .badge.pill-hold.success {
+            background:var(--clr-success-light);
+            color:var(--clr-success-dark);
         }
 
 
@@ -484,7 +489,6 @@
     }
 
     .logistic-details .main-details .detail-value {
-        font-size:var(--font-size-2xl);
         font-weight:bolder;
         color:var(--clr-grey-20);
         line-height:1.4em!important;
@@ -514,20 +518,20 @@
 
     .hbl-item-details-modal .main-content {
         display:grid;
-        grid-template-columns: 6fr 4.25fr 2.5fr;
+        grid-template-columns: 6fr 2.25fr 2.5fr;
         grid-template-rows:1fr auto;
     }
 
         .hbl-item-details-modal .main-content .logistic-details {
-            grid-area: 1 / 1 / 3 / 2;
+            grid-area: 1 / 1 / 2 / 2;
         }
 
         .hbl-item-details-modal .main-content .notes-details {
-            grid-area: 1 / 2 / 2 / 3;
+            grid-area: 1 / 2 / 3 / 3;
         }
 
         .hbl-item-details-modal .main-content .exam-details {
-            grid-area: 2 / 2 / 3 / 3;
+            grid-area: 2 / 1 / 3 / 2;
         }
 
         .hbl-item-details-modal .main-content .ipi-status {
@@ -599,7 +603,6 @@
 }
 
 .main-content .detail-value {
-    font-size:var(--font-size-sm);
     line-height:0.5rem!important;
 }
 
@@ -707,13 +710,21 @@ line-height: initial;
 
 @media screen and (min-width:1366px){
     html { font-size:18px;}
-
-    .milestone-v2 .icon-64 {
-        width:auto;
-        height:3.25vw;
-    }
-
     .status { font-size:135%; }
+    .hbl-master-list .hbl-item-details-modal {
+        min-width: 75vw!important;
+    }
+}
+
+@media screen and (min-width:2000px){
+    html { font-size:20px;}
+    .status { font-size:150%; }
+    .container-fluid {
+        max-width:70vw;
+    }
+    .hbl-master-list .hbl-item-details-modal {
+        min-width: 70vw!important;
+    }
 }
 
     @media screen and (max-width:1279px){

@@ -281,7 +281,7 @@
                             <i class="bi bi-check"></i></div>
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="hide-label">OBL:</p>
-                            <i class="bi bi-x-lg"></i></div>
+                            <i class="bi bi-x-lg text-danger"></i></div> <!-- KEVIN: to remove red color remove .text-danger -->
                         <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
                             <p class="hide-label">STATUS:</p>
                             <div class="d-flex gap-2 justify-content-start">
@@ -298,7 +298,7 @@
                         </div>
                         <div class="d-flex text-danger flex-column">
                             <p class="hide-label">IPI:</p>
-                            <p class="text-grey-65">ABCDE</p></div>
+                            <p class="text-grey-65">ABCD</p></div>
                     </div>
                 </div> <!-- ** HBL List Item 1 -->
                 <!-- HBL List Item 2 -->
@@ -318,7 +318,7 @@
                             <i class="bi bi-check"></i></div>
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="hide-label">OBL:</p>
-                            <i class="bi bi-x-lg"></i></div>
+                            <i class="bi bi-x-lg text-danger"></i></div> <!-- KEVIN: to remove red color remove .text-danger -->
                         <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
                             <p class="hide-label">STATUS:</p>
                             <div class="d-flex gap-2 justify-content-start">
@@ -335,7 +335,7 @@
                         </div>
                         <div class="d-flex text-danger flex-column">
                             <p class="hide-label">IPI:</p>
-                            <p class="text-grey-65">ABCDE</p></div>
+                            <p class="text-grey-65">ABCD</p></div>
                     </div>
                     </div>
                 </div> <!-- ** HBL List Item 2 -->
@@ -365,18 +365,17 @@
                             <span class="info-value font-bold text-lg">SHIPMENT PICKED UP ON 8/18/25</span>
                         </div>
                         <div class="info-item">
-                            <p class="info-label">CUST</p>
-                            <div class="d-flex justify-content-center"><i class="bi bi-check"></i></div>
-                        </div>
-                        <div class="info-item">
-                            <p class="info-label ">OBL</p>
-                            <div class="d-flex justify-content-center"><i class="bi bi-dash"></i></div>
+                            <p class="info-label">RELEASE:</p>
+                            <div class="holds-tags">
+                                <span class="badge rounded-pill pill-hold">CUST</span>
+                                <span class="badge rounded-pill pill-hold success">OBL</span>
+                            </div>
                         </div>
                         <div class="info-item info-item-holds">
                             <p class="info-label">HOLDS:</p>
                             <div class="holds-tags">
-                                <span class="badge rounded-pill pill-hold disabled">MARK</span>
-                                <span class="badge rounded-pill pill-hold disabled">PCS</span>
+                                <span class="badge rounded-pill pill-hold success">MARK</span>
+                                <span class="badge rounded-pill pill-hold success">PCS</span>
                                 <span class="badge rounded-pill pill-hold">NVO</span>
                                 <span class="badge rounded-pill pill-hold">CUST</span>
                             </div>
@@ -396,28 +395,39 @@
                                 <div class="row mx-0">
                                     <div class="col-12">
                                         <div class="row main-details pb-2 mb-2">
-                                            <div class="detail-pair col-6 row">
-                                                <div class="col-auto pe-1">
-                                                    <span class="detail-label">RCV. QTY: /</span>
-                                                    <span class="detail-value">1</span>
-                                                </div>
-                                                <div class="col ps-0">
-                                                    <span class="detail-label">DOC. QTY:</span>
-                                                    <span class="detail-value">1</span>
+                                            <div class="detail-pair col-auto row">
+                                                <div class="col-auto d-flex justify-content-start flex-column mr-2">
+                                                    <span class="detail-label">RCV. / DOC. QTY:</span>
+                                                    <span class="detail-value text-3xl text-center">
+                                                        <span class="rcv-qty">1</span> / <span class="doc-qty">1</span> <!-- KEVIN: Here i separated the doc and rcv qty in 2 classes -->
+                                                    </span>
                                                 </div>
                                             </div>
-                                            <div class="detail-pair col-3">
+                                            <div class="detail-pair col text-center">
                                                 <span class="detail-label">CBM (m3):</span>
-                                                <span class="detail-value">2.04</span>
+                                                <span class="detail-value text-3xl">2.04</span>
                                             </div>
-                                            <div class="detail-pair col-3">
+                                            <div class="detail-pair col text-center">
                                                 <span class="detail-label">WEIGHT (lb):</span>
-                                                <span class="detail-value">828.28</span>
+                                                <span class="detail-value text-3xl">828.28</span>
+                                            </div>
+                                            <div class="col">
+                                                <div class="detail-pair mb-3 text-end">
+                                                    <span class="detail-label">EST. EXCH. PLT(S):</span>
+                                                    <span class="detail-value text-sm">2</span>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="detail-pair mb-3 text-end">
+                                                    <span class="detail-label">SHIPPER PKG(S):</span>
+                                                    <span class="detail-value text-sm">1</span>
+                                                </div>
                                             </div>
                                             <div class="col-12 mt-6">
                                                 <div class="detail-pair commodity">
                                                     <span class="detail-label">COMMODITY:</span>
-                                                    <p style="min-height:4em; line-height: 130%!important;">FARM TO FACE SHEET MASK - MANUKA HONEY X3 PEACH COOLING PREP GEL 100ML GL FARM TO FACE SHEET MASK - BULGARIAN ROSE X3</p>
+                                                    <p style="min-height:4em; line-height: 130%!important;">Lorem ipsum dolor sit amet, consectetur cras amet.
+                                                    </p>
                                                 </div>
                                             </div>
                                             <div class="col-12 mt-2 mb-1">
@@ -435,18 +445,6 @@
                                                 <div class="detail-pair">
                                                     <span class="detail-label">ENTRY/IT DATE:</span>
                                                     <span class="detail-value">08/08/25</span>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="detail-pair mb-3">
-                                                    <span class="detail-label">EST. EXCH. PLT(S):</span>
-                                                    <span class="detail-value">2</span>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="detail-pair mb-3">
-                                                    <span class="detail-label">SHIPPER PKG(S):</span>
-                                                    <span class="detail-value">1</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -545,7 +543,7 @@
                     </main>
 
                     <!-- Photo Gallery -->
-                    <section class="photo-gallery-section">
+                    <section class="photo-gallery-section hide"> <!-- KEVIN: .hide hides the photo section -->
                         <link rel="stylesheet" href="css/baguetteBox.min.css"> <!-- Styles for photo gallery -->
                         <h2 class="d-inline-block mr-6 ">Photos</h2>
                         <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Download all pictures</i></button>
@@ -598,14 +596,12 @@
                                 <p class="hide-label">IT/ENTRY Date:</p>
                                 <div class="d-flex gap-1">
                                     <span class="date d-none">07/18/25 </span>
-                                    <i class="bi bi-x-lg"></i>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center flex-column align-items-center">
                                 <p class="hide-label">FRT Rlse:</p>
                                 <div class="d-flex gap-1">
                                     <span class="date">07/18/25 </span>
-                                    <i class="bi bi-check-lg"></i>
                                 </div>
                             </div>
                         </div>
@@ -621,14 +617,12 @@
                                 <p class="hide-label">IT/ENTRY Date:</p>
                                 <div class="d-flex gap-1">
                                     <span class="date">07/18/25 </span>
-                                    <i class="bi bi-check-lg"></i>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center flex-column align-items-center">
                                 <p class="hide-label">FRT Rlse:</p>
                                 <div class="d-flex gap-1">
                                     <span class="date">07/18/25 </span>
-                                    <i class="bi bi-check-lg"></i>
                                 </div>
                             </div>
                         </div>
