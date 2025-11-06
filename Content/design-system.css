@@ -490,3 +490,7 @@ h1, h2, h3 {
     border-radius: 0;
     height: auto!important;
 }
+
+body, button, input, select, textarea {
+    font: initial / initial var(--font-primary);
+}
