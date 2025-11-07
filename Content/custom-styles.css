@@ -310,8 +310,8 @@
 
 .mbl-details .lfd-godate {
     background:white!important;
-    border-radius: 8px;
-    padding:8px 12px;
+    border-radius: .5rem;
+    padding:.5rem .75rem;
 }
 
 .hbl-master-list {
@@ -321,13 +321,13 @@
 
    .hbl-master-list .hbl-list-item {
         background:var(--clr-white); 
-        margin-left:0; margin-right:0; /* This fixes .row negative margins */
+        margin-left:0; margin-right:0;
         border-radius:8px;
         font-family:var(--font-primary);
         justify-content: space-between;
         align-items: center;
         transition:background-color .3s ease;
-        min-height:40px;
+        min-height:2.5rem;
         box-shadow:var(--shadow-sm);
    }
 
@@ -346,7 +346,7 @@
 
 .hbl-master-list .hbl-list-grid {
     display: grid;
-    grid-template-columns: 35px 120px 75px 75px 75px 68px 45px  230px minmax(61px, auto) minmax(95px, auto) minmax(250px, auto);
+    grid-template-columns: 2.1875rem 7.5rem 4.6875rem 4.6875rem 4.6875rem 4.25rem 2.8125rem 11.375rem 3.125rem minmax(5.9375rem, auto) minmax(15.625rem, auto);
     grid-template-rows: auto; 
     gap:12px;
     align-items: center; 
@@ -392,7 +392,7 @@
 
 
    .hbl-master-list .hbl-item-details-modal {
-        min-width: 90vw;
+        min-width: 93vw;
         font-family:var(--font-primary);
    }
 
@@ -488,7 +488,8 @@
         background: var(--clr-azure-95);
     }
 
-    .logistic-details .main-details .detail-value {
+    .logistic-details .main-details .detail-value,
+    .logistic-details .palet-details .detail-value {
         font-weight:bolder;
         color:var(--clr-grey-20);
         line-height:1.4em!important;
@@ -567,7 +568,7 @@
     .ams-list-grid,
     .ams-header-grid {
             display: grid;
-            grid-template-columns: 180px 58px 58px 78px 78px minmax(320px, auto) 150px 140px 140px;
+            grid-template-columns: 10rem 3.875rem 3.7rem 5.25rem 5.25rem minmax(21rem, auto) 7.5rem 6.7rem 6rem;
             grid-template-rows: auto; 
             gap:0; 
             align-items: center; 
@@ -605,10 +606,6 @@
     display:inline-block;
 }
 
-.main-content .detail-value {
-    line-height:0.5rem!important;
-}
-
 body, button, input, select, textarea {
 line-height: initial;
 }
@@ -622,12 +619,11 @@ line-height: initial;
 }
 
 .hbl-item-details-modal .main-content .detail-pair.commodity p {
-    max-height:2.5rem; 
+    max-height:4rem; 
     line-height:130%!important; 
     overflow-y:scroll!important;
     padding:0.5rem;
-    border:1px solid var(--clr-azure-85);
-    border-radius:.5rem;
+    border-radius:.25rem;
     background: var(--clr-azure-89);
 }
 
@@ -729,15 +725,11 @@ line-height: initial;
 }
 
 @media screen and (min-width:2000px){
-    html, body { 
-        font-size: clamp(16px, 1.5vw, 22px)!important; 
-    }
-    .status { font-size:150%!important; }
     .container-fluid {
         max-width:90vw;
     }
-    .hbl-master-list .hbl-item-details-modal {
-        min-width: 80vw!important;
+    html { 
+        font-size: clamp(20px, -16px + 1.875vw, 32px)!important;
     }
 }
 
