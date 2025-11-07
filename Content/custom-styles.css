@@ -594,6 +594,19 @@
             overflow-wrap: break-word;
         }
 
+a.link-offset-2 {
+    text-decoration:underline;
+}        
+
+a.link-disabled {
+    text-decoration: none;
+    cursor:auto;
+}
+
+a.link-disabled:hover {
+    color:#000;
+}
+
 /* Photo gallery in HBL details */
 
 .photo-thumbnail {
@@ -726,7 +739,7 @@ line-height: initial;
 
 @media screen and (min-width:2000px){
     .container-fluid {
-        max-width:90vw;
+        max-width:94vw;
     }
     html { 
         font-size: clamp(20px, -16px + 1.875vw, 32px)!important;

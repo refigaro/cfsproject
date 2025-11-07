@@ -288,16 +288,16 @@
                         </div>
                         <div class="d-flex text-danger flex-column">
                             <p class="hide-label">IPI:</p>
-                            <a href="#" class="link-offset-2 font-bold font-family-archivo text-uppercase text-sm text-gray-65">ABCD</a>
+                            <a href="#" class="link-offset-2 font-bold font-family-archivo text-uppercase text-sm text-gray-65 link-disabled">ABCD</a> <!-- KEVIN: .link-disabled removes the styling and cursor for the link -->
                         </div>
                         <div class="d-inline-flex align-items-center hbl-charges">
                             <p class="hide-label">Charges:</p>
-                            <a href="#" class="link-offset-2 font-bold font-family-archivo text-uppercase text-sm mr-2">Charges</a>
+                            <a href="#" class="link-offset-2 font-bold font-family-archivo text-uppercase text-sm mr-2 link-disabled">Charges</a>
                         </div>
                         <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
                             <p class="hide-label">STATUS:</p>
                             <div class="d-flex gap-2 justify-content-start">
-                                <span class="badge rounded-pill local-pickup align-self-center">
+                                <span class="badge rounded-pill align-self-center local-pickup">
                                     SHIPMENT PICKED UP ON 8/12/25</span>
                             </div>
                         </div>
@@ -336,8 +336,9 @@
                         <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
                             <p class="hide-label">STATUS:</p>
                             <div class="d-flex gap-2 justify-content-start">
-                                <span class="badge rounded-pill local-pickup align-self-center">
-                                    SHIPMENT PICKED UP ON 8/12/25</span>
+                                <span class="badge rounded-pill align-self-center ipi-tracing"> <!-- KEVIN: 
+                                    Toggle between green and blue badges with .local-pickup (green) .ipi-tracing (blue) -->
+                                    IN TRANSIT TO MICHIGAN</span>
                             </div>
                         </div>
                     </div>
