@@ -446,7 +446,11 @@
         gap:2rem;
     }
 
-    .hbl-item-details-modal .info-bar .date-with-icon {
+    .hbl-item-details-modal .frt-status {
+        max-width:21.875rem;
+    }
+
+    .hbl-item-details-modal  .date-with-icon {
         font-size:var(--font-size-2xl);
         font-weight:bolder;
         line-height:1.1em;
@@ -474,7 +478,7 @@
     .hbl-item-details-modal .details-card {
         border-radius:var(--border-radius-md);
         background:#F9F9F9;
-        padding:var(--space-3);
+        padding:var(--space-5);
     }
 
         .details-card .details-grid .main-details .border {
@@ -483,6 +487,13 @@
 
         .hbl-item-details-modal .details-card.ipi-status {
             padding:var(--space-5);
+        }
+
+        .details-card .main-details {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-row-gap: 1rem;
         }
 
     .details-card.logistic-details,
@@ -625,6 +636,12 @@ a.link-disabled:hover {
 .notes-details .detail-value {
     min-height:2.375rem;
     display:inline-block;
+}
+
+.notes-details .details-list {
+    height: 100%;
+    display: grid;
+    align-content: stretch;
 }
 
 body, button, input, select, textarea {
