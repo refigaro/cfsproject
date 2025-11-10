@@ -261,6 +261,7 @@
         font-weight:bolder;
         align-self:stretch;
         align-content:center;
+        flex-shrink:0;
     }
 
     .terminal-appt-status .status {
@@ -270,6 +271,7 @@
         padding:var(--space-4);
         font-family:var(--font-primary);
         font-size:var(--font-size-lg);
+        line-height: 120%;
     }
 
 .milestone-v2 {
@@ -316,7 +318,7 @@
 
 .hbl-master-list {
     background:var(--clr-azure-95);
-    min-height:calc(100vh - 15.9375rem - 28.75rem);
+    min-height:calc(100vh - 255px - 28.75rem);
 }
 
    .hbl-master-list .hbl-list-item {
@@ -596,11 +598,17 @@
 
 a.link-offset-2 {
     text-decoration:underline;
-}        
+    color:var(--clr-cyan-47);
+}   
+
+    a.link-offset-2:hover {
+        color:var(--clr-azure-20);
+    }   
 
 a.link-disabled {
     text-decoration: none;
     cursor:auto;
+    color:#000;
 }
 
 a.link-disabled:hover {
@@ -721,7 +729,7 @@ line-height: initial;
 }
 
 .container-fluid {
-    max-width:1400px;
+    max-width:112.8rem;
 }
 
 .exam-details .aside-details {
@@ -731,10 +739,14 @@ line-height: initial;
     gap: .75rem;
 }
 
-@media screen and (min-width:1366px){
-    html { font-size:18px;}
-    .status { font-size:120%; }
+html {
+    font-size: clamp(1rem, 0.5rem + 0.625vw, 1.25rem)!important;
+}
 
+@media screen and (min-width:1366px){
+    .container-fluid {
+        max-width:112.8rem;
+    }
 }
 
 @media screen and (min-width:1920px){
@@ -742,7 +754,15 @@ line-height: initial;
         max-width:94vw;
     }
     html { 
-        font-size: clamp(20px, -16px + 1.875vw, 30px)!important;
+        font-size: clamp(1.25rem, -0.5rem + 1.4583vw, 3rem)!important;
+    }
+}
+
+@media screen and (min-width:1279px) {
+    .hbl-master-list .hbl-list-item .badge {
+        text-wrap: auto;
+        max-width: 12rem;
+        margin: .5rem 0;
     }
 }
 
@@ -1053,3 +1073,4 @@ line-height: initial;
             gap:.25rem;
         }
     }
+

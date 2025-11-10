@@ -28,15 +28,15 @@
         <div class="availability-menu-top">
             <div class="container-fluid">
                 <div class="row align-items-center position-relative">
-                    <div class="col col-md-7 col-sm-5  d-flex gap-16 justify-start items-center">
+                    <div class="col col-md-7 col-sm-5  d-flex gap-16 justify-start items-baseline">
                         <div class="nav-logo ">
                             <a href="/">
                                 <img alt="IMPERIAL CFS" src="/_images/logo-w.png">
                             </a>
                         </div>
-                        <p class="ml-12 text-white font-family-dm-serif d-none d-lg-flex gap-4 text-sm">
+                        <p class="ml-12 text-white font-family-dm-serif d-none d-lg-flex gap-4 text-sm  align-items-center">
                             <b>Availability of:</b>
-                            <span class="font-family-archivo text-white">MBL No. SMLMSEL5J5243700 </span>
+                            <span class="font-family-archivo text-white text-uppercase">MBL No. SMLMSEL5J5243700 </span>
                         </p>
                     </div>
                     <div class="col col-md-3 col-sm-6 d-flex items-center justify-end gap-4 search-bar">
@@ -250,14 +250,14 @@
 <section class="hbl-master-list pt-6 pb-8">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 p-5 d-flex flex-column gap-2 bg-navy-100 rounded-4">
-                <div class="hbl-list-grid font-family-sora lh-1 text-uppercase text-xs text-navy-450">
-                        <div class="d-flex justify-content-start text-center hide-header">SEQ No.</div>
+            <div class="col-12 px-5 pb-5 pt-4 d-flex flex-column gap-2 bg-navy-100 rounded-4">
+                <div class="hbl-list-grid font-family-sora lh-1 text-uppercase text-xs text-navy-450 mb-2">
+                        <div class="d-flex justify-content-start text-center hide-header">SEQ</div>
                         <div class="d-flex justify-content-start hide-header">HBL</div>
                         <div class="d-flex justify-content-end hide-header">QTY</div>
                         <div class="d-flex justify-content-end hide-header">CBM</div>
                         <div class="d-flex justify-content-end hide-header">LBS</div>
-                        <div class="d-flex justify-content-center text-center hide-header">Cust entry</div>
+                        <div class="d-flex justify-content-center text-center hide-header">Cust</div>
                         <div class="d-flex justify-content-center hide-header">OBL</div>
                         <div class="hide-header">Holds</div>
                         <div class="hide-header">IPI</div>
@@ -281,18 +281,21 @@
                             <i class="bi bi-check"></i></div>
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="hide-label">OBL:</p>
-                            <i class="bi bi-x-lg text-danger"></i></div> <!-- KEVIN: to remove red color remove .text-danger -->
+                            <i class="text-danger">
+                                 <svg style="width:1.5rem" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+                            </i>
+                        </div> <!-- KEVIN: to remove red color remove .text-danger -->
                         <div class="d-flex text-danger flex-column hbl-holds">
                             <p class="hide-label">HOLDS:</p>
                             <p>MARK, <span class="text-grey-65">PCS, NVO, CUST</span></p>
                         </div>
-                        <div class="d-flex text-danger flex-column">
+                        <div class="d-flex flex-column">
                             <p class="hide-label">IPI:</p>
-                            <a href="#" class="link-offset-2 font-bold font-family-archivo text-uppercase text-sm text-gray-65 link-disabled">ABCD</a> <!-- KEVIN: .link-disabled removes the styling and cursor for the link -->
+                            <a href="#" class="link-offset-2 font-family-archivo text-uppercase text-sm link-disabled">ABCD</a> <!-- KEVIN: .link-disabled removes the styling and cursor for the link -->
                         </div>
                         <div class="d-inline-flex align-items-center hbl-charges">
                             <p class="hide-label">Charges:</p>
-                            <a href="#" class="link-offset-2 font-bold font-family-archivo text-uppercase text-sm mr-2 link-disabled">Charges</a>
+                            <a href="#" class="link-offset-2 font-family-archivo text-uppercase text-sm mr-2 link-disabled">Charges</a>
                         </div>
                         <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
                             <p class="hide-label">STATUS:</p>
@@ -320,18 +323,21 @@
                             <i class="bi bi-check"></i></div>
                         <div class="d-flex justify-content-center align-items-center">
                             <p class="hide-label">OBL:</p>
-                            <i class="bi bi-x-lg text-danger"></i></div> <!-- KEVIN: to remove red color remove .text-danger -->
+                            <i class="text-danger">
+                                <svg style="width:1.5rem" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+                            </i>
+                        </div> <!-- KEVIN: to remove red color remove .text-danger -->
                         <div class="d-flex text-danger flex-column hbl-holds">
                             <p class="hide-label">HOLDS:</p>
                             <p>MARK, <span class="text-grey-65">PCS, NVO, CUST</span></p>
                         </div>
-                        <div class="d-flex text-danger flex-column">
+                        <div class="d-flex flex-column">
                             <p class="hide-label">IPI:</p>
-                            <a href="#" class="link-offset-2 font-bold font-family-archivo text-uppercase text-sm text-gray-65">ABCD</a>
+                            <a href="#" class="link-offset-2 font-family-archivo text-uppercase text-sm text-gray-65">ABCD</a>
                         </div>
                         <div class="d-inline-flex align-items-center hbl-charges">
                             <p class="hide-label">Charges:</p>
-                            <a href="#" class="link-offset-2 font-bold font-family-archivo text-uppercase text-sm mr-2">Charges</a>
+                            <a href="#" class="link-offset-2 font-family-archivo text-uppercase text-sm mr-2">Charges</a>
                         </div>
                         <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
                             <p class="hide-label">STATUS:</p>
@@ -606,7 +612,9 @@
                                 <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
                                 <div class="d-flex gap-1">
                                     <span class="date d-none">07/18/25 </span>
-                                    <p class="text-center"><i class="bi bi-x-lg"></i></p> 
+                                    <p class="text-center">
+                                        <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+                                    </p> 
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center flex-column align-items-center">
@@ -614,7 +622,9 @@
                                 <div class="d-flex gap-1">
                                 <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
                                     <span class="date d-none">07/18/25 </span>
-                                    <p class="text-center"><i class="bi bi-x-lg"></i></p>
+                                    <p class="text-center">
+                                         <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+                                    </p>
                                 </div>
                             </div>
                         </div>
