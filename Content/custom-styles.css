@@ -712,6 +712,7 @@ line-height: initial;
         .ipi-status .status-marker i.bi{
             color:white;
             margin:auto;
+            line-height: 0!important;
         }       
 
     .ipi-status .status-item {
