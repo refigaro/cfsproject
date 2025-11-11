@@ -503,6 +503,8 @@
         }
 
     .details-card.logistic-details,
+    .details-card.notes-details,
+    .details-card.exam-details,
     .details-card.ipi-status {
         background: var(--clr-azure-95);
     }

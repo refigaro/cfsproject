@@ -384,6 +384,7 @@ h1, h2, h3 {
 .text-grey-95 { color: var(--clr-grey-95); }
 .text-grey-65 { color: var(--clr-grey-65); }
 .text-grey-50 { color: var(--clr-grey-50); }
+.text-grey-20 { color: var(--clr-grey-20); }
 
 
 /* == Fondos == */
