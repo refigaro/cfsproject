@@ -180,7 +180,7 @@
         </div>
         <div class="row mt-12 justify-content-between px-5">
             <div class="col-lg-auto">
-                <div class="milestone-v2 row">
+                <div class="milestone-v2 row mt-2">
                     <div class="col-auto">
                         <div class="check text-success"><i class="bi bi-check-circle-fill text-success"></i> On Vessel</div>
                         <div class="date text-base text-success">08/23/25</div>
@@ -232,13 +232,13 @@
             <div class="col-lg-auto d-flex flex-column font-family-archivo gap-2 justify-content-evenly ml-auto lfd-godate">
                 <div class="d-flex align-items-center lh-1 text-navy-500 text-left">
                     <div>
-                        <span class="text-lg">LAST FREE DATE</span><br>
+                        <span class="text-sm font-family-sora text-navy-450">LAST FREE DATE</span><br>
                         <span class="font-bold text-lg">08/23/25</span> 
                     </div>
                 </div>
                 <div  class="d-flex align-items-center text-navy-500 lh-1">
                     <div>
-                        <span class="text-lg">GO DATE</span><br>
+                        <span class="text-sm font-family-sora text-navy-450">GO DATE</span><br>
                         <span class="font-bold text-lg">08/23/25</span>
                     </div>
                 </div>
@@ -354,13 +354,10 @@
         </div>
         <div class="hbl-details-container"> 
             <!-- /// HBL Details Modals !! -->
-            <div class="offcanvas offcanvas-end hbl-item-details-modal" data-bs-scroll="true" tabindex="-1" id="hbl-item-details-2" aria-labelledby="hbl-item-details-2">
+            <div class="offcanvas offcanvas-end hbl-item-details-modal" tabindex="-1" id="hbl-item-details-2" aria-labelledby="hbl-item-details-2">
                 <div class="offcanvas-header border-bottom">
                     <div class="d-flex justify-content-start gap-4 align-items-center offcanvas-hbl-header">
-                        <div class="info-item">
-                            <p class="info-label font-family-sora lh-1 text-uppercase text-xs">HBL NO / SEQ NO:</p>
-                            <p class="info-value hbl-number font-family-sora lh-1 text-uppercase text-2xl font-bold mt-2">MNSLOS2507071 / 3</p>
-                        </div>
+                        <h2 class="text-2xl font-family-dm-serif text-navy-800">HBL Details Page</h2>
                     </div>
                     <div class="d-flex justify-content-end align-items-center gap-4">
                         <button class="btn btn-info btn-sm rounded-full font-bold text-nowrap text-white text-base">Charges</button>
@@ -368,65 +365,51 @@
                         <button type="button" class="btn btn-sm btn-outline-dark rounded-full close text-base" data-bs-dismiss="offcanvas" aria-label="Close"><b>Close <i class="bi bi-x-lg"></i></b></button>
                     </div>
                 </div>
-                <div class="offcanvas-body pt-4">
-                    <div class="mbl-master-table mb-0"> <!-- mbl-master-table component-->
-                        <div class="col-12 col-sm-auto table-col table-col-mbl frt-status">
-                            <div class="col-5 col-sm-12 table-header">FREIGHT STATUS:</div> <!-- table-header-->
-                            <div class="col-sm-12 table-data">SHIPMENT PICKED UP ON 8/18/25 </div> <!-- table-data-->
-                        </div>
-                        <div class="col-12 col-sm-auto table-col">
-                            <div class="col-5 col-sm-12 table-header">RELEASE:</div> <!-- table-header-->
-                            <div class="col-sm-12 table-data">
-                                <div class="holds-tags">
-                                    <span class="badge rounded-pill pill-hold disabled">CUST</span>
-                                    <span class="badge rounded-pill pill-hold success">OBL</span>
-                                </div>    
-                            </div> <!-- table-data-->
-                        </div>
-                        <div class="col-12 col-sm-auto table-col">
-                            <div class="col-5 col-sm-12 table-header">HOLDS:</div> <!-- table-header-->
-                            <div class="col-sm-12 table-data">
-                                <div class="holds-tags">
-                                    <span class="badge rounded-pill pill-hold disabled">MARK</span>
-                                    <span class="badge rounded-pill pill-hold disabled">PCS</span>
-                                    <span class="badge rounded-pill pill-hold">NVO</span>
-                                    <span class="badge rounded-pill pill-hold">CUST</span>
+                <div class="offcanvas-body pt-4 custom-scrollbar">
+                    <div class="row">
+                        <div class="col mb-3">
+                            <div class="d-flex justify-content-start gap-4 align-items-center offcanvas-hbl-header">
+                                <div class="info-item">
+                                    <p class="info-label font-family-sora lh-1 text-uppercase text-xs">HBL NO / SEQ NO</p>
+                                    <p class="info-value hbl-number font-family-sora lh-1 text-uppercase text-2xl font-bold mt-2">MNSLOS2507071 / 3</p>
                                 </div>
-                            </div> <!-- table-data-->
+                            </div>
                         </div>
-                        <div class="col-12 col-sm-auto table-col">
-                            <div class="col-5 col-sm-12 table-header">HBL LAST FREE DATE:</div> <!-- table-header-->
-                            <div class="col-sm-12 table-data">
-                                <span class="info-value date-with-icon"><i class="bi bi-clock"></i> 08/19/25</span>
-                            </div> <!-- table-data-->
+                        <div class="col-auto">
+                            <div class="mbl-master-table mb-0"> <!-- mbl-master-table component-->
+                                <div class="col-12 col-sm-auto table-col">
+                                    <div class="col-5 col-sm-12 table-header">LAST FREE DATE</div> <!-- table-header-->
+                                    <div class="col-sm-12 table-data">
+                                        <span class="info-value date-with-icon"><i class="bi bi-clock text-danger"></i> 08/19/25</span>
+                                    </div> <!-- table-data-->
+                                </div>
+                                <div class="col-12 col-sm-auto table-col">
+                                    <div class="col-5 col-sm-12 table-header">RELEASE</div> <!-- table-header-->
+                                    <div class="col-sm-12 table-data">
+                                        <div class="holds-tags">
+                                            <span class="badge rounded-pill pill-hold disabled">CUST</span>
+                                            <span class="badge rounded-pill pill-hold success">OBL</span>
+                                        </div>    
+                                    </div> <!-- table-data-->
+                                </div>
+                                <div class="col-12 col-sm-auto table-col">
+                                    <div class="col-5 col-sm-12 table-header">HOLDS</div> <!-- table-header-->
+                                    <div class="col-sm-12 table-data">
+                                        <div class="holds-tags">
+                                            <span class="badge rounded-pill pill-hold disabled">MARK</span>
+                                            <span class="badge rounded-pill pill-hold disabled">PCS</span>
+                                            <span class="badge rounded-pill pill-hold">NVO</span>
+                                            <span class="badge rounded-pill pill-hold">CUST</span>
+                                        </div>
+                                    </div> <!-- table-data-->
+                                </div>
+                                <div class="col-12 col-sm-auto table-col table-col frt-status">
+                                    <div class="col-5 col-sm-12 table-header">FREIGHT STATUS</div> <!-- table-header-->
+                                    <div class="col-sm-12 table-data">SHIPMENT PICKED UP ON 8/18/25 </div> <!-- table-data-->
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <section class="info-bar d-none">
-                        <div class="info-item info-status">
-                            <p class="info-label">FREIGHT STATUS:</p>
-                            <span class="info-value font-bold text-lg py-2">SHIPMENT PICKED UP ON 8/18/25</span>
-                        </div>
-                        <div class="info-item">
-                            <p class="info-label">RELEASE:</p>
-                            <div class="holds-tags">
-                                <span class="badge rounded-pill pill-hold disabled">CUST</span>
-                                <span class="badge rounded-pill pill-hold success">OBL</span>
-                            </div>
-                        </div>
-                        <div class="info-item info-item-holds">
-                            <p class="info-label">HOLDS:</p>
-                            <div class="holds-tags">
-                                <span class="badge rounded-pill pill-hold disabled">MARK</span>
-                                <span class="badge rounded-pill pill-hold disabled">PCS</span>
-                                <span class="badge rounded-pill pill-hold">NVO</span>
-                                <span class="badge rounded-pill pill-hold">CUST</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <p class="info-label">HBL LAST FREE DATE:</p>
-                            <span class="info-value date-with-icon"><i class="bi bi-clock"></i> 08/19/25</span>
-                        </div>
-                    </section>
 
                     <!-- Main Content (3-column grid) -->
                     <main class="main-content gap-5">
@@ -439,7 +422,7 @@
                                         <div class="row main-details pb-2 mb-2">
                                             <div class="detail-pair col-auto row">
                                                 <div class="col-auto d-flex justify-content-start flex-column">
-                                                    <span class="detail-label">RCV. / DOC. QTY:</span>
+                                                    <span class="detail-label">RCV. / DOC. QTY</span>
                                                     <span class="detail-value text-2xl text-center">
                                                         <span class="rcv-qty text-danger">10000</span>
                                                          / 
@@ -449,22 +432,22 @@
                                                 </div>
                                             </div>
                                             <div class="detail-pair col">
-                                                <span class="detail-label">CBM:</span>
+                                                <span class="detail-label">CBM</span>
                                                 <span class="detail-value text-2xl">2.04</span>
                                             </div>
                                             <div class="detail-pair col">
-                                                <span class="detail-label">LBS:</span>
+                                                <span class="detail-label">LBS</span>
                                                 <span class="detail-value text-2xl">828.28</span>
                                             </div>
                                             <div class="col">
                                                 <div class="detail-pair">
-                                                    <span class="detail-label">IT/ENTRY No:</span>
+                                                    <span class="detail-label">IT/ENTRY No</span>
                                                     <span class="detail-value text-2xl">9GK-0114066-8</span>
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="detail-pair">
-                                                    <span class="detail-label">ENTRY/IT DATE:</span>
+                                                    <span class="detail-label">ENTRY/IT DATE</span>
                                                     <span class="detail-value text-2xl">08/08/25</span>
                                                 </div>
                                             </div>
@@ -473,14 +456,14 @@
                                     <div class="col-3 palet-details">
                                         <div class="row">
                                             <div class="col-12">
-                                                <div class="detail-pair mb-3 text-end">
-                                                    <span class="detail-label">EST EX. PLT(S):</span>
+                                                <div class="detail-pair mb-3">
+                                                    <span class="detail-label">EST EX. PLT(S)</span>
                                                     <span class="detail-value text-2xl">2</span>
                                                 </div>
                                             </div>
                                             <div class="col-12">
-                                                <div class="detail-pair mb-3 text-end">
-                                                    <span class="detail-label">SHIP. PLT(S):</span>
+                                                <div class="detail-pair mb-3">
+                                                    <span class="detail-label">SHIP. PLT(S)</span>
                                                     <span class="detail-value text-2xl">1</span>
                                                 </div>
                                             </div>
@@ -490,8 +473,8 @@
                                 <div class="row mx-0 mt-2">
                                      <div class="col-12">
                                         <div class="detail-pair commodity">
-                                            <span class="detail-label">COMMODITY:</span>
-                                            <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere, arcu risus auctor mauris, nec consectetur purus. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere.</p>
+                                            <span class="detail-label">COMMODITY</span>
+                                            <p class="mt-2 custom-scrollbar">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere, arcu risus auctor mauris, nec consectetur purus. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -500,18 +483,18 @@
 
                         <!-- Column 2: Notes -->
                         <section class="details-card notes-details">
-                            <h2>Notes</h2>
+                            <h2 class="text-xl">Notes</h2>
                             <div class="details-list pt-3">
                                 <div class="detail-pair mb-2">
-                                    <p class="detail-label">DEVAN NOTES:</p>
+                                    <p class="detail-label">DEVAN NOTES</p>
                                     <span class="detail-value">2 W/C</span>
                                 </div>
                                 <div class="detail-pair mb-2">
-                                    <p class="detail-label">AVAILABILITY NOTES:</p>
+                                    <p class="detail-label">AVAILABILITY NOTES</p>
                                     <span class="detail-value">DLS LOG</span>
                                 </div>
                                 <div class="detail-pair mb-2">
-                                    <p class="detail-label">ACCOUNTING NOTES:</p>
+                                    <p class="detail-label">ACCOUNTING NOTES</p>
                                     <span class="detail-value">DLS LOG</span>
                                 </div>
                             </div>
@@ -523,23 +506,23 @@
                                 <div class="row mx-0">
                                     <div class="col aside-details gap-4">
                                         <div class="detail-pair col-auto">
-                                            <span class="detail-label">EXAM TYPE:</span>
+                                            <span class="detail-label">EXAM TYPE</span>
                                             <span class="detail-value">277-0196680-9</span>
                                         </div>
                                         <div class="detail-pair col-auto">
-                                            <span class="detail-label">EXAM SITE:</span>
+                                            <span class="detail-label">EXAM SITE</span>
                                             <span class="detail-value">277-0196680-9</span>
                                         </div>
                                         <div class="detail-pair col-auto">
-                                            <span class="detail-label">EXAM DATE:</span>
+                                            <span class="detail-label">EXAM DATE</span>
                                             <span class="detail-value">277-0196680-9</span>
                                         </div>
                                         <div class="detail-pair col-auto">
-                                            <span class="detail-label">GO NO:</span>
+                                            <span class="detail-label">GO NO</span>
                                             <span class="detail-value">277-0196680-9</span>
                                         </div>
                                         <div class="detail-pair col-auto">
-                                            <span class="detail-label">GO CARRIER DATE:</span>
+                                            <span class="detail-label">GO CARRIER DATE</span>
                                             <span class="detail-value">828.28</span>
                                         </div>
                                     </div>
@@ -549,7 +532,7 @@
 
                         <!-- Column 3: IPI Status -->
                         <section class="details-card ipi-status">
-                            <h2>IPI Status</h2>
+                            <h2 class="text-xl">IPI Status</h2>
                             <ul class="status-timeline pt-3">
                                 <li class="status-item completed">
                                     <div class="status-marker">
@@ -583,6 +566,45 @@
                             </ul>
                             <a href="#" class="view-history-link btn btn-link pl-0 pb-1">VIEW DETAILED HISTORY  <i class="bi bi-arrow-right-circle"></i></a>
                         </section>
+
+                        <!-- Column 4: Local Pickup -->
+                        <section class="details-card ipi-status local-pickup">
+                            <h2>Pick up</h2>
+                            <ul class="status-timeline local-pickup pt-3 pb-4 col-12">
+                                <li class="status-item">
+                                    <div class="status-marker">
+                                        <i class="bi bi-check-lg"></i>
+                                    </div>
+                                    <div class="status-info">
+                                        <p class="status-label">PICKED UP</p>
+                                        <p class="status-title">P/U Date:
+                                            <span class="status-meta">08/15/25</span>
+                                        </p>
+                                        <p class="status-title">P/U Trucker:
+                                            <span class="status-meta">12345678</span>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="status-item">
+                                    <div class="status-marker">
+                                        <i class="bi bi-dash-lg"></i>
+                                    </div>
+                                    <div class="status-info">
+                                        <p class="status-label">PARTIAL PICKUP</p>
+                                        <p class="status-title">Date:
+                                            <span class="status-meta">08/15/25</span>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="status-item border-top col-12 mt-auto">  
+                                    <div class="status-info">
+                                        <a class="status-title btn btn-link font-family-sora text-danger ps-0 text-capitalize text-base link-offset-2">Rejection Notice <i class="bi bi-arrow-right" href="#"></i></a>
+                                        <p class="status-meta"><b>Date:</b> 08/21/25</p>
+                                        <p class="status-meta"><b>ID:</b> (Pending)</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>    
 
                     
                     </main>
@@ -631,14 +653,14 @@
                         </div>
                         <div class="ams-list-item ams-list-grid"><!-- AMS list item -->
                             <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
-                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">QTY:</p>72</div>
-                            <div class="d-flex justify-content-start px-2 flex-column"><p class="hide-label">Unit:</p>BX</div>
-                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM:</p>2934.20</div>
-                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS:</p>2934.20</div>
-                            <div class="d-flex justify-content-start px-2 flex-column commodity"><p class="hide-label">Commodity:</p>2BOX OF PARTS FOR KN CAGE WELDING MACHINES</div>
-                            <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.:</p>9GK-0114066-8</div>
+                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">QTY</p>72</div>
+                            <div class="d-flex justify-content-start px-2 flex-column"><p class="hide-label">Unit</p>BX</div>
+                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM</p>2934.20</div>
+                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS</p>2934.20</div>
+                            <div class="d-flex justify-content-start px-2 flex-column commodity"><p class="hide-label">Commodity</p>2BOX OF PARTS FOR KN CAGE WELDING MACHINES</div>
+                            <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.</p>9GK-0114066-8</div>
                             <div class="d-flex justify-content-center flex-column align-items-center">
-                                <p class="hide-label">IT/ENTRY Date:</p>
+                                <p class="hide-label">IT/ENTRY Date</p>
                                 <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
                                 <div class="d-flex gap-1">
                                     <span class="date d-none">07/18/25 </span>
@@ -660,14 +682,14 @@
                         </div>
                         <div class="ams-list-item ams-list-grid"><!-- AMS list item -->
                             <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
-                            <div class="d-flex justify-content-end px-2 flex-column  text-end"><p class="hide-label">QTY:</p>72</div>
-                            <div class="d-flex justify-content-start px-2 flex-column"><p class="hide-label">Unit:</p>BX</div>
-                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM:</p>2934.20</div>
-                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS:</p>2934.20</div>
-                            <div class="d-flex justify-content-start px-2 flex-column commodity"><p class="hide-label">Commodity:</p>2BOX OF PARTS FOR KN CAGE WELDING MACHINES</div>
-                            <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.:</p>9GK-0114066-8</div>
+                            <div class="d-flex justify-content-end px-2 flex-column  text-end"><p class="hide-label">QTY</p>72</div>
+                            <div class="d-flex justify-content-start px-2 flex-column"><p class="hide-label">Unit</p>BX</div>
+                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM</p>2934.20</div>
+                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS</p>2934.20</div>
+                            <div class="d-flex justify-content-start px-2 flex-column commodity"><p class="hide-label">Commodity</p>2BOX OF PARTS FOR KN CAGE WELDING MACHINES</div>
+                            <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.</p>9GK-0114066-8</div>
                             <div class="d-flex justify-content-center flex-column align-items-center">
-                                <p class="hide-label">IT/ENTRY Date:</p>
+                                <p class="hide-label">IT/ENTRY Date</p>
                                 <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
                                 <div class="d-flex gap-1">
                                     <span class="date">07/18/25 </span>
@@ -677,7 +699,7 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center flex-column align-items-center">
-                                <p class="hide-label">FRT Rlse:</p>
+                                <p class="hide-label">FRT Rlse</p>
                                 <div class="d-flex gap-1">
                                 <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
                                     <span class="date d-none">07/18/25 </span>
