@@ -43,7 +43,7 @@
                         <button type="button" class="btn btn-outline-light btn-sm rounded-full transition hover-scale-97 font-family-archivo text-nowrap" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Search</button>
                         <div class="row collapse" id="collapseExample">
                             <div class="nav-search-bar col-12">
-                                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo"><b>New Search:</b>
+                                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo"><b class="hide-mobile">New Search:</b>
                                     <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
                                     <option selected="selected" value="mbl">Master Bill</option>
                                     <option value="cntr">Container Number</option>
@@ -178,8 +178,8 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-12 justify-content-between px-5">
-            <div class="col-lg-auto">
+        <div class="row mt-12 justify-content-between px-5 gap-3">
+            <div class="col-lg-12 col-xl-auto milestone-v2-container">
                 <div class="milestone-v2 row mt-2">
                     <div class="col-auto">
                         <div class="check text-success"><i class="bi bi-check-circle-fill text-success"></i> On Vessel</div>
@@ -229,17 +229,17 @@
 
                 </div>
             </div>
-            <div class="col-lg-auto d-flex flex-column font-family-archivo gap-2 justify-content-evenly ml-auto lfd-godate">
-                <div class="d-flex align-items-center lh-1 text-navy-500 text-left">
+            <div class="col-lg-12 col-xl-2 d-flex font-family-archivo gap-2 justify-content-evenly ml-auto lfd-godate">
+                <div class="col d-flex align-items-center lh-1 text-navy-500 text-left">
                     <div>
-                        <span class="text-sm font-family-sora text-grey-20 font-bold">LAST FREE DATE</span><br>
-                        <span class="font-bold text-lg text-danger">08/23/25</span> 
+                        <span class="text-sm font-family-sora text-grey-20 font-bold d-inline-block mb-1">LAST FREE DATE</span><br>
+                        <span class="font-bold text-lg text-danger"><i class="bi bi-clock text-danger"></i> 08/23/25</span> 
                     </div>
                 </div>
-                <div  class="d-flex align-items-center text-navy-500 lh-1">
+                <div  class="col d-flex align-items-center text-navy-500 lh-1">
                     <div>
-                        <span class="text-sm font-family-sora text-grey-20 font-bold">GO DATE</span><br>
-                        <span class="font-bold text-lg text-danger">08/23/25</span>
+                        <span class="text-sm font-family-sora text-grey-20 font-bold d-inline-block mb-1">GO DATE</span><br>
+                        <span class="font-bold text-lg text-danger"><i class="bi bi-clock text-danger"></i> 08/23/25</span>
                     </div>
                 </div>
             </div>
@@ -267,38 +267,38 @@
                 <!-- HBL List Item 1 -->
                 <div>
                     <div class="hbl-list-item hbl-list-grid">
-                        <div class="d-flex justify-content-center quantity align-items-center gap-2 seqno"><p class="hide-label">SEQ No.:</p>1</div>
+                        <div class="d-flex justify-content-center quantity align-items-center gap-2 seqno"><p class="hide-label">SEQ</p>1</div>
                         <div class="d-flex font-bold align-items-center hbl">
                             <a class="link-offset-2" data-bs-toggle="offcanvas" href="#hbl-item-details-1" role="button" aria-controls="hbl-item-details-1">MNSLOS2507067</a> 
                         </div>
-                        <div class="d-flex justify-content-end quantity align-items-center gap-2"><p class="hide-label">QTY:</p>7892.55</div>
+                        <div class="d-flex justify-content-end quantity align-items-center gap-2"><p class="hide-label">QTY</p>7892.55</div>
                         <div class="d-flex justify-content-end quantity align-items-center gap-2">
-                            <p class="hide-label">CBM:</p>7892.55</div>
+                            <p class="hide-label">CBM</p>7892.55</div>
                         <div class="d-flex justify-content-end quantity align-items-center gap-2">
-                            <p class="hide-label">LBS:</p>7892.55</div>
+                            <p class="hide-label">LBS</p>7892.55</div>
                         <div class="d-flex justify-content-center align-items-center">
-                            <p class="hide-label">CUST ENTRY:</p>
+                            <p class="hide-label">CUST</p>
                             <i class="bi bi-check"></i></div>
                         <div class="d-flex justify-content-center align-items-center">
-                            <p class="hide-label">OBL:</p>
+                            <p class="hide-label">OBL</p>
                             <i class="text-danger">
                                  <svg style="width:1.5rem" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
                             </i>
                         </div> <!-- KEVIN: to remove red color remove .text-danger -->
                         <div class="d-flex text-danger flex-column hbl-holds">
-                            <p class="hide-label">HOLDS:</p>
+                            <p class="hide-label">HOLDS</p>
                             <p>MARK, <span class="text-grey-65">PCS, NVO, CUST</span></p>
                         </div>
                         <div class="d-flex flex-column">
-                            <p class="hide-label">IPI:</p>
+                            <p class="hide-label">IPI</p>
                             <a href="#" class="link-offset-2 font-family-archivo text-uppercase text-sm link-disabled">ABCD</a> <!-- KEVIN: .link-disabled removes the styling and cursor for the link -->
                         </div>
                         <div class="d-inline-flex align-items-center hbl-charges">
-                            <p class="hide-label">Charges:</p>
+                            <p class="hide-label">Charges</p>
                             <a href="#" class="link-offset-2 font-family-archivo text-uppercase text-sm mr-2 link-disabled">Charges</a>
                         </div>
                         <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
-                            <p class="hide-label">STATUS:</p>
+                            <p class="hide-label">STATUS</p>
                             <div class="d-flex gap-2 justify-content-start">
                                 <span class="badge rounded-pill align-self-center local-pickup">
                                     SHIPMENT PICKED UP ON 8/12/25</span>
@@ -309,38 +309,38 @@
                 <!-- HBL List Item 2 -->
                 <div>
                     <div class="hbl-list-item hbl-list-grid">
-                        <div class="d-flex justify-content-center quantity align-items-center gap-2 seqno"><p class="hide-label">SEQ No.:</p>2</div>
+                        <div class="d-flex justify-content-center quantity align-items-center gap-2 seqno"><p class="hide-label">SEQ</p>2</div>
                         <div class="d-flex font-bold align-items-center hbl">
                             <a  class="link-offset-2"  data-bs-toggle="offcanvas" href="#hbl-item-details-2" role="button" aria-controls="hbl-item-details-2">MNSLOS2507067</a> 
                         </div>
-                        <div class="d-flex justify-content-end quantity align-items-center gap-2"><p class="hide-label">QTY:</p>7892.55</div>
+                        <div class="d-flex justify-content-end quantity align-items-center gap-2"><p class="hide-label">QTY</p>7892.55</div>
                         <div class="d-flex justify-content-end quantity align-items-center gap-2">
-                            <p class="hide-label">CBM:</p>7892.55</div>
+                            <p class="hide-label">CBM</p>7892.55</div>
                         <div class="d-flex justify-content-end quantity align-items-center gap-2">
-                            <p class="hide-label">LBS:</p>7892.55</div>
+                            <p class="hide-label">LBS</p>7892.55</div>
                         <div class="d-flex justify-content-center align-items-center">
-                            <p class="hide-label">CUST ENTRY:</p>
+                            <p class="hide-label">CUST</p>
                             <i class="bi bi-check"></i></div>
                         <div class="d-flex justify-content-center align-items-center">
-                            <p class="hide-label">OBL:</p>
+                            <p class="hide-label">OBL</p>
                             <i class="text-danger">
                                 <svg style="width:1.5rem" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
                             </i>
                         </div> <!-- KEVIN: to remove red color remove .text-danger -->
                         <div class="d-flex text-danger flex-column hbl-holds">
-                            <p class="hide-label">HOLDS:</p>
+                            <p class="hide-label">HOLDS</p>
                             <p>MARK, <span class="text-grey-65">PCS, NVO, CUST</span></p>
                         </div>
                         <div class="d-flex flex-column">
-                            <p class="hide-label">IPI:</p>
+                            <p class="hide-label">IPI</p>
                             <a href="#" class="link-offset-2 font-family-archivo text-uppercase text-sm text-gray-65">ABCD</a>
                         </div>
                         <div class="d-inline-flex align-items-center hbl-charges">
-                            <p class="hide-label">Charges:</p>
+                            <p class="hide-label">Charges</p>
                             <a href="#" class="link-offset-2 font-family-archivo text-uppercase text-sm mr-2">Charges</a>
                         </div>
                         <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
-                            <p class="hide-label">STATUS:</p>
+                            <p class="hide-label">STATUS</p>
                             <div class="d-flex gap-2 justify-content-start">
                                 <span class="badge rounded-pill align-self-center ipi-tracing"> <!-- KEVIN: 
                                     Toggle between green and blue badges with .local-pickup (green) .ipi-tracing (blue) -->
@@ -365,8 +365,8 @@
                         <button type="button" class="btn btn-sm btn-outline-dark rounded-full close text-base" data-bs-dismiss="offcanvas" aria-label="Close"><b>Close <i class="bi bi-x-lg"></i></b></button>
                     </div>
                 </div>
-                <div class="offcanvas-body pt-4 custom-scrollbar">
-                    <div class="row">
+                <div class="offcanvas-body custom-scrollbar">
+                    <div class="row hbl-details-body-main">
                         <div class="col mb-3">
                             <div class="d-flex justify-content-start gap-4 align-items-center offcanvas-hbl-header">
                                 <div class="info-item">
@@ -376,7 +376,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <div class="mbl-master-table mb-0"> <!-- mbl-master-table component-->
+                            <div class="mbl-master-table"> <!-- mbl-master-table component-->
                                 <div class="col-12 col-sm-auto table-col">
                                     <div class="col-5 col-sm-12 table-header">LAST FREE DATE</div> <!-- table-header-->
                                     <div class="col-sm-12 table-data">
@@ -418,7 +418,7 @@
                         <section class="details-card logistic-details p-3">
                             <div class="details-grid">
                                 <div class="row mx-0">
-                                    <div class="col-9">
+                                    <div class="col-12 col-sm-9">
                                         <div class="row main-details pb-2 mb-2">
                                             <div class="detail-pair col-auto row">
                                                 <div class="col-auto d-flex justify-content-start flex-column">
@@ -453,15 +453,15 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-3 palet-details">
+                                    <div class="col-12 col-sm-3 palet-details">
                                         <div class="row">
-                                            <div class="col-12">
+                                            <div class="col-6 col-sm-12">
                                                 <div class="detail-pair mb-3">
                                                     <span class="detail-label">EST EX. PLT(S)</span>
                                                     <span class="detail-value text-2xl">2</span>
                                                 </div>
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-6 col-sm-12">
                                                 <div class="detail-pair mb-3">
                                                     <span class="detail-label">SHIP. PLT(S)</span>
                                                     <span class="detail-value text-2xl">1</span>
@@ -570,7 +570,7 @@
                         <!-- Column 4: Local Pickup -->
                         <section class="details-card ipi-status local-pickup">
                             <h2>Pick up</h2>
-                            <ul class="status-timeline local-pickup pt-3 pb-4 col-12">
+                            <ul class="status-timeline local-pickup pt-3 col-12">
                                 <li class="status-item">
                                     <div class="status-marker align-self-start">
                                         <i class="bi bi-check-lg"></i>
@@ -596,7 +596,7 @@
                                         </p>
                                     </div>
                                 </li>
-                                <li class="status-item border-top col-12 mt-auto pt-2">  
+                                <li class="status-item border-top col-12 pt-2">  
                                     <div class="status-marker align-self-start">
                                         <i class="bi bi-dash-lg"></i>
                                     </div>
