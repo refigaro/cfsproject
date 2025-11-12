@@ -388,10 +388,17 @@ h1, h2, h3 {
 
 
 /* == Fondos == */
+.bg-success { background-color: var(--clr-success); }
 .bg-success-light { background-color: var(--clr-success-light); }
+.bg-success-dark { background-color: var(--clr-success-dark); }
+.bg-danger { background-color: var(--clr-danger); }
 .bg-danger-light { background-color: var(--clr-danger-light); }
+.bg-danger-dark { background-color: var(--clr-danger-dark); }
 .bg-info-light { background-color: var(--clr-info-light); }
+.bg-warning { background-color: var(--clr-warning); }
 .bg-warning-light { background-color: var(--clr-warning-light); }
+.bg-warning-dark { background-color: var(--clr-warning-dark); }
+
 
 /* Clases de Fondos Comunes (Nuevo) */
 .bg-white { background-color: var(--clr-white); }

@@ -203,6 +203,11 @@
     line-height:1em;
 }
 
+.btn-info:hover {
+    background-color:var(--clr-azure-09);
+    border-color:var(--clr-azure-09);
+}
+
 .availavility-v2 .form-control {
     appearance: auto;
     padding-right:1rem;
@@ -718,9 +723,40 @@ line-height: initial;
     color:var(--clr-grey-20);
 }
 
+    .ipi-status.local-pickup .status-marker .bi-check-lg,
+    .ipi-status.local-pickup .status-marker .bi-dash-lg,
+    .ipi-status.local-pickup .status-marker .bi-x-lg { display:none; } /* Set icons to display none to be able to enable them with parent classes */
+
+    .ipi-status .status-item.status-success .status-marker {
+        background:var(--clr-success);
+    }
+        .ipi-status.local-pickup .status-item.status-success .bi-check-lg {
+            display:block; /* Enables check for success parent class */
+        }
+
+    .ipi-status .status-item.status-disabled .status-marker {
+        background:var(--clr-azure-80);
+    }
+        .ipi-status.local-pickup .status-item.status-disabled .bi-dash-lg {
+            display:block; /* Enables dash for disabled parent class */
+        }
+    
+    .ipi-status .status-item.status-danger .status-marker {
+        background:var(--clr-danger);
+    }
+        .ipi-status.local-pickup .status-item.status-danger .bi-x-lg {
+            display:block; /* Enables X for danger parent class */
+        }
+        .ipi-status.local-pickup .status-item.status-danger .rejection-notice,
+        .ipi-status.local-pickup .status-item.status-danger .rejection-notice a {
+            color:var(--clr-danger);
+        }
+        .ipi-status.local-pickup .status-item.status-danger .rejection-notice a:hover {
+            color:var(--clr-danger-dark);
+        }
+
     .ipi-status .status-marker {
         border-radius:100%;
-        background:var(--clr-success);
         align-self:center;
         width:1.25rem;
         height:1.25rem;
