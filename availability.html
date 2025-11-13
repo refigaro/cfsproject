@@ -35,8 +35,7 @@
                             </a>
                         </div>
                         <p class="ml-12 text-white font-family-dm-serif d-none d-lg-flex gap-4 text-sm  align-items-center">
-                            <b>Availability of:</b>
-                            <span class="font-family-archivo text-white text-uppercase">MBL No. SMLMSEL5J5243700 </span>
+                            <b>Availability</b>
                         </p>
                     </div>
                     <div class="col col-md-3 col-sm-6 d-flex items-center justify-end gap-4 search-bar">
@@ -229,17 +228,17 @@
 
                 </div>
             </div>
-            <div class="col-lg-12 col-xl-2 d-flex font-family-archivo gap-2 justify-content-evenly ml-auto lfd-godate">
+            <div class="col-lg-12 col-xl-auto d-flex font-family-archivo gap-2 justify-content-evenly ml-auto lfd-godate">
                 <div class="col d-flex align-items-center lh-1 text-navy-500 text-left">
                     <div>
                         <span class="text-sm font-family-sora text-grey-20 font-bold d-inline-block mb-1">LAST FREE DATE</span><br>
-                        <span class="font-bold text-lg text-danger"><i class="bi bi-clock text-danger"></i> 08/23/25</span> 
+                        <span class="font-bold text-lg text-danger"><i class="bi bi-clock text-danger mr-2"></i>08/23/25</span> 
                     </div>
                 </div>
                 <div  class="col d-flex align-items-center text-navy-500 lh-1">
                     <div>
                         <span class="text-sm font-family-sora text-grey-20 font-bold d-inline-block mb-1">GO DATE</span><br>
-                        <span class="font-bold text-lg text-danger"><i class="bi bi-clock text-danger"></i> 08/23/25</span>
+                        <span class="font-bold text-lg text-danger"><i class="bi bi-clock text-danger mr-2"></i>08/23/25</span>
                     </div>
                 </div>
             </div>
@@ -291,7 +290,7 @@
                         </div>
                         <div class="d-flex flex-column">
                             <p class="hide-label">IPI</p>
-                            <a href="#" class="link-offset-2 font-family-archivo text-uppercase text-sm link-disabled">ABCD</a> <!-- KEVIN: .link-disabled removes the styling and cursor for the link -->
+                            <a href="#" class="link-offset-2 font-family-roboto-mono text-uppercase text-sm link-disabled">ABCD</a> <!-- KEVIN: .link-disabled removes the styling and cursor for the link -->
                         </div>
                         <div class="d-inline-flex align-items-center hbl-charges">
                             <p class="hide-label">Charges</p>
@@ -333,11 +332,11 @@
                         </div>
                         <div class="d-flex flex-column">
                             <p class="hide-label">IPI</p>
-                            <a href="#" class="link-offset-2 font-family-archivo text-uppercase text-sm text-gray-65">ABCD</a>
+                            <a href="#" class="link-offset-2 font-family-roboto-mono text-uppercase text-sm text-gray-65">ABCD</a>
                         </div>
                         <div class="d-inline-flex align-items-center hbl-charges">
                             <p class="hide-label">Charges</p>
-                            <a href="#" class="link-offset-2 font-family-archivo text-uppercase text-sm mr-2">Charges</a>
+                            <a href="#" class="link-offset-2 font-family-archivo text-uppercase text-sm mr-2">Charges <i class="ml-1 bi bi-cash-stack text-lg text-success"></i></a>
                         </div>
                         <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
                             <p class="hide-label">STATUS</p>
@@ -380,7 +379,7 @@
                                 <div class="col-12 col-sm-auto table-col">
                                     <div class="col-5 col-sm-12 table-header">LAST FREE DATE</div> <!-- table-header-->
                                     <div class="col-sm-12 table-data">
-                                        <span class="info-value date-with-icon"><i class="bi bi-clock text-danger"></i> 08/19/25</span>
+                                        <span class="info-value date-with-icon"><i class="bi bi-clock text-danger mr-1"></i> 08/19/25</span>
                                     </div> <!-- table-data-->
                                 </div>
                                 <div class="col-12 col-sm-auto table-col">
@@ -423,7 +422,7 @@
                                             <div class="detail-pair col-auto row">
                                                 <div class="col-auto d-flex justify-content-start flex-column">
                                                     <span class="detail-label">RCV. / DOC. QTY</span>
-                                                    <span class="detail-value text-2xl text-center">
+                                                    <span class="detail-value text-2xl text-left">
                                                         <span class="rcv-qty text-danger">10000</span>
                                                          / 
                                                         <span class="doc-qty">12345</span> <!-- KEVIN: Here i separated the doc and rcv qty in 2 classes. 
@@ -533,6 +532,8 @@
                         <!-- Column 3: IPI Status -->
                         <section class="details-card ipi-status">
                             <h2 class="text-xl">IPI Status</h2>
+                            <p class="ipi-destination text-navy-500 text-base">Dallas, TX 123456789</p>
+                            <p class="font-family-sora font-bold text-base">Trailer No: 71848</p>
                             <ul class="status-timeline pt-3">
                                 <li class="status-item status-success"> <!-- KEVIN: Apply 
                                     .status-success for green icon, 
@@ -543,8 +544,8 @@
                                         <i class="bi bi-check-lg"></i>
                                     </div>
                                     <div class="status-info">
-                                        <p class="status-title">Departure from Imperial</p>
-                                        <p class="status-meta">ETD: 08/15/25</p>
+                                        <p class="status-title">DEPARTURE</p>
+                                        <p class="status-meta">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ligula</p>
                                     </div>
                                 </li>
                                 <li class="status-item status-success"> <!-- KEVIN: Apply 
@@ -556,9 +557,8 @@
                                         <i class="bi bi-geo-alt-fill"></i>
                                     </div>
                                     <div class="status-info">
-                                        <p class="status-label">CURRENTLY:</p>
-                                        <p class="status-title">In transit to Dallas</p>
-                                        <p class="status-meta">Trailer No: 71848</p>
+                                        <p class="status-title">TRANSIT</p>
+                                        <p class="status-meta">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
                                     </div>
                                 </li>
                                 <li class="status-item status-disabled"> <!-- KEVIN: Apply 
@@ -570,9 +570,8 @@
                                         <i class="bi bi-flag-fill"></i>
                                     </div>
                                     <div class="status-info">
-                                        <p class="status-title">Arrival at MESQUITE, TX</p>
-                                        <p class="status-meta">ETA: 08/21/25</p>
-                                        <p class="status-meta">ATA: (Pending)</p>
+                                        <p class="status-title">ARRIVAL</p>
+                                        <p class="status-meta">Lorem ipsum dolor sit amet, consectetur.</p>
                                     </div>
                                 </li>
                             </ul>
@@ -580,7 +579,7 @@
                         </section>
 
                         <!-- Column 4: Local Pickup -->
-                        <section class="details-card ipi-status local-pickup">
+                        <section class="details-card ipi-status local-pickup d-none">
                             <h2>Pick up</h2>
                             <ul class="status-timeline local-pickup pt-3 col-12">
                                 <li class="status-item status-success"> <!-- KEVIN: Apply 
@@ -594,7 +593,7 @@
                                         <i class="bi bi-x-lg"></i>
                                     </div>
                                     <div class="status-info">
-                                        <p class="status-label">PICKED UP</p>
+                                        <p class="status-label mt-1">PICKED UP</p>
                                         <p class="status-title">P/U Date:
                                             <span class="status-meta">08/15/25</span>
                                         </p>
@@ -614,13 +613,13 @@
                                         <i class="bi bi-x-lg"></i>
                                     </div>
                                     <div class="status-info">
-                                        <p class="status-label">PARTIAL PICKUP</p>
+                                        <p class="status-label mt-1">PARTIAL PICKUP</p>
                                         <p class="status-title">Date:
                                             <span class="status-meta">08/15/25</span>
                                         </p>
                                     </div>
                                 </li>
-                                <li class="status-item status-danger border-top col-12 pt-2">  <!-- KEVIN: Apply 
+                                <li class="status-item status-danger border-top col-12 pt-3">  <!-- KEVIN: Apply 
                                     .status-success for green icon and checkmark, 
                                     .status-disabled for gray and dash and 
                                     .status-danger for red and X and Rejection notice
@@ -631,7 +630,7 @@
                                         <i class="bi bi-x-lg"></i>
                                     </div>
                                     <div class="status-info rejection-notice">
-                                        <a class="status-title btn btn-link font-family-sora pl-0 pt-0 text-capitalize text-base link-offset-2">Rejection Notice <i class="bi bi-arrow-right" href="#"></i></a>
+                                        <a class="status-title btn btn-link font-family-sora pl-0 pt-0 text-capitalize text-base link-offset-2">Rejection Notice <i class="bi bi-printer"></i> </a>
                                         <p class="status-meta"><b>Date:</b> 08/21/25</p>
                                         <p class="status-meta"><b>ID:</b> (Pending)</p>
                                     </div>
@@ -687,7 +686,7 @@
                         <div class="ams-list-item ams-list-grid"><!-- AMS list item -->
                             <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
                             <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">QTY</p>72</div>
-                            <div class="d-flex justify-content-start px-2 flex-column"><p class="hide-label">Unit</p>BX</div>
+                            <div class="d-flex justify-content-start px-2 flex-column truncate-text"><p class="hide-label">Unit</p>BX</div>
                             <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM</p>2934.20</div>
                             <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS</p>2934.20</div>
                             <div class="d-flex justify-content-start px-2 flex-column commodity"><p class="hide-label">Commodity</p>2BOX OF PARTS FOR KN CAGE WELDING MACHINES</div>

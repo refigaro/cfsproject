@@ -70,6 +70,9 @@
     font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+
 /*
 ================================================================
 IMPERIAL CFS - DESIGN SYSTEM
@@ -148,6 +151,7 @@ IMPERIAL CFS - DESIGN SYSTEM
     --font-primary: 'Archivo Narrow', sans-serif;
     --font-secondary: 'Sora', sans-serif;
     --font-headings: 'DM Serif Text', serif;
+    --font-monospace: 'Roboto Mono', monospace;
     
     /* Tamaños de Fuente (Escala modular) */
         /* Tamaños fijos para textos pequeños */
@@ -359,6 +363,7 @@ h1, h2, h3 {
 .font-family-archivo { font-family: var(--font-primary)!important; }
 .font-family-sora { font-family: var(--font-secondary)!important; }
 .font-family-dm-serif { font-family: var(--font-headings)!important; }
+.font-family-roboto-mono { font-family: var(--font-monospace)!important; }
 
 .text-primary { color: var(--clr-text-primary); }
 .text-secondary { color: var(--clr-text-secondary); }

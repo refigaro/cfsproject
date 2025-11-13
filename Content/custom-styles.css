@@ -173,7 +173,7 @@
 
     .nav-search-bar select,
     .nav-search-bar input {
-        max-height:2rem;
+        height:2rem;
         font-size:1rem;
         padding:.25rem;
         font-family: var(--font-primary);
@@ -302,7 +302,11 @@
     font-family:var(--font-primary);
     line-height:1em;
     align-items:center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(11, auto);
+    grid-template-rows: auto;
+    justify-content: center;
+    justify-items: center;
 }
 
     .milestone-v2  .col-auto {
@@ -632,7 +636,7 @@
     .ams-list-grid,
     .ams-header-grid {
             display: grid;
-            grid-template-columns: 10rem 3.875rem 3.7rem 5.25rem 5.25rem minmax(21rem, auto) 7.5rem 6.7rem 6rem;
+            grid-template-columns: 10rem 3.875rem 4.35rem 5.25rem 5.25rem minmax(21rem, auto) 7.5rem 6.7rem 6rem;
             grid-template-rows: auto; 
             gap:0; 
             align-items: center; 
@@ -704,7 +708,7 @@ line-height: initial;
 
 .status-timeline {
     font-family: var(--font-secondary);
-    font-size:var(--font-size-xs);
+    font-size:var(--font-size-sm);
 }
 
 .hbl-item-details-modal .main-content .detail-pair.commodity p {
@@ -730,6 +734,10 @@ line-height: initial;
     .ipi-status .status-item.status-success .status-marker {
         background:var(--clr-success);
     }
+    .ipi-status .status-item.status-success .status-label,
+    .ipi-status .status-item.status-success .status-title {
+        color:var(--clr-success)!important;
+    }
         .ipi-status.local-pickup .status-item.status-success .bi-check-lg {
             display:block; /* Enables check for success parent class */
         }
@@ -737,12 +745,28 @@ line-height: initial;
     .ipi-status .status-item.status-disabled .status-marker {
         background:var(--clr-azure-80);
     }
+    .ipi-status .status-item.status-disabled .status-label,
+    .ipi-status .status-item.status-disabled .status-title {
+        color:var(--clr-azure-80)!important;
+    }
         .ipi-status.local-pickup .status-item.status-disabled .bi-dash-lg {
             display:block; /* Enables dash for disabled parent class */
         }
+
+        .ipi-status .status-item.status-disabled .rejection-notice .status-title {
+            color:var(--clr-azure-80)!important;
+            text-decoration: none;
+            cursor:text;
+        }
+            .ipi-status .status-item.status-disabled .rejection-notice .status-title .bi-printer { display: none;}
+
     
     .ipi-status .status-item.status-danger .status-marker {
         background:var(--clr-danger);
+    }
+    .ipi-status .status-item.status-danger .status-label,
+    .ipi-status .status-item.status-danger .status-title {
+        color:var(--clr-danger)!important;
     }
         .ipi-status.local-pickup .status-item.status-danger .bi-x-lg {
             display:block; /* Enables X for danger parent class */
@@ -757,7 +781,7 @@ line-height: initial;
 
     .ipi-status .status-marker {
         border-radius:100%;
-        align-self:center;
+        align-self:start;
         width:1.25rem;
         height:1.25rem;
         text-align:center;
@@ -780,6 +804,8 @@ line-height: initial;
     .ipi-status .status-item {
         display:flex;
         gap:.5rem;
+        flex-wrap: nowrap;
+        align-items: flex-start;
     }
 
     .ipi-status .status-title {
@@ -795,18 +821,22 @@ line-height: initial;
         }
 
         .status-title.btn {
-            font-size:0.875rem;
+            font-size:var(--font-size-sm);
         }
 
         .status-title.btn i,
-        .view-history-link.btn i  {
+        .view-history-link.btn i,
+        a i.bi  {
             transition:margin-left ease .2s;
             font-size:120%;
+            display:inline-block;
         }
 
         .status-title.btn:hover i,
-        .view-history-link.btn:hover i {
-            margin-left:.5rem;
+        .view-history-link.btn:hover i,
+        a:hover i.bi
+         {
+            margin-left:.5rem!important;
         }
 
     .ipi-status .status-label {
@@ -1057,7 +1087,7 @@ html {
         }
 
         .milestone-v2 {
-            display:flex;
+            display:flex!important;
             flex-direction:column;
             margin-bottom:.75rem;
         }
@@ -1309,4 +1339,10 @@ html {
 
 .offcanvas-backdrop {
       opacity:.7!important;
+}
+
+.truncate-text {
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis;
 }
