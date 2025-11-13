@@ -744,18 +744,18 @@ line-height: initial;
         }
 
     .ipi-status .status-item.status-disabled .status-marker {
-        background:var(--clr-azure-80);
+        background:var(--clr-navy-500);
     }
     .ipi-status .status-item.status-disabled .status-label,
     .ipi-status .status-item.status-disabled .status-title {
-        color:var(--clr-azure-80)!important;
+        color:var(--clr-navy-500)!important;
     }
         .ipi-status.local-pickup .status-item.status-disabled .bi-dash-lg {
             display:block; /* Enables dash for disabled parent class */
         }
 
         .ipi-status .status-item.status-disabled .rejection-notice .status-title {
-            color:var(--clr-azure-80)!important;
+            color:var(--clr-navy-500)!important;
             text-decoration: none;
             cursor:text;
         }
