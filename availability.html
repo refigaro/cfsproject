@@ -238,7 +238,7 @@
                 <div  class="col d-flex align-items-center text-navy-500 lh-1">
                     <div>
                         <span class="text-sm font-family-sora text-grey-20 font-bold d-inline-block mb-1">GO DATE</span><br>
-                        <span class="font-bold text-lg text-danger"><i class="bi bi-clock text-danger mr-2"></i>08/23/25</span>
+                        <span class="font-bold text-lg text-navy-450"><i class="bi bi-clock mr-2 text-navy-450"></i>TBD</span>
                     </div>
                 </div>
             </div>
@@ -300,7 +300,7 @@
                             <p class="hide-label">STATUS</p>
                             <div class="d-flex gap-2 justify-content-start">
                                 <span class="badge rounded-pill align-self-center local-pickup">
-                                    SHIPMENT PICKED UP ON 8/12/25</span>
+                                    NO FRT RLSE / NO CUST RLSE</span>
                             </div>
                         </div>
                     </div>
@@ -357,11 +357,12 @@
                 <div class="offcanvas-header border-bottom">
                     <div class="d-flex justify-content-start gap-4 align-items-center offcanvas-hbl-header">
                         <h2 class="text-2xl font-family-dm-serif text-navy-800">HBL Details</h2>
+                        <button type="button" class="btn btn-sm btn-outline-dark rounded-full close text-base" data-bs-dismiss="offcanvas" aria-label="Close"><b>Close <i class="bi bi-x-lg"></i></b></button>
                     </div>
                     <div class="d-flex justify-content-end align-items-center gap-4">
-                        <button class="btn btn-info btn-sm rounded-full font-bold text-nowrap text-white text-base">Charges</button>
+                        <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="ml-1 bi bi-cash-stack text-lg"></i> Charges</button>
                         <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer"></i> Pickup Confirmation</button>
-                        <button type="button" class="btn btn-sm btn-outline-dark rounded-full close text-base" data-bs-dismiss="offcanvas" aria-label="Close"><b>Close <i class="bi bi-x-lg"></i></b></button>
+                        
                     </div>
                 </div>
                 <div class="offcanvas-body custom-scrollbar">
@@ -533,7 +534,7 @@
                         <section class="details-card ipi-status">
                             <h2 class="text-xl">IPI Status</h2>
                             <p class="ipi-destination text-navy-500 text-base">Dallas, TX 123456789</p>
-                            <p class="font-family-sora font-bold text-base">Trailer No: 71848</p>
+                            <p class="font-family-sora font-bold text-base">Trailer # 71848</p>
                             <ul class="status-timeline pt-3">
                                 <li class="status-item status-success"> <!-- KEVIN: Apply 
                                     .status-success for green icon, 
@@ -545,7 +546,10 @@
                                     </div>
                                     <div class="status-info">
                                         <p class="status-title">DEPARTURE</p>
-                                        <p class="status-meta">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ligula</p>
+                                        <p class="pending">Pending</p>
+                                        <p class="status-meta"><b>ETD:</b> 08/08/25</p>
+                                        <p class="status-meta"><b>ATD:</b> 08/08/25</p>
+                                        <p class="status-meta"><b>ETA:</b> 08/08/25</p>
                                     </div>
                                 </li>
                                 <li class="status-item status-success"> <!-- KEVIN: Apply 
@@ -558,7 +562,9 @@
                                     </div>
                                     <div class="status-info">
                                         <p class="status-title">TRANSIT</p>
-                                        <p class="status-meta">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                                        <p class="pending">Pending</p>
+                                        <p class="status-meta"><b>Trailer #:</b> 71848</p>
+                                        <a href="#" class="view-history-link btn btn-link pl-0 py-1">VIEW DETAILED HISTORY  <i class="bi bi-arrow-right-circle"></i></a>
                                     </div>
                                 </li>
                                 <li class="status-item status-disabled"> <!-- KEVIN: Apply 
@@ -571,15 +577,15 @@
                                     </div>
                                     <div class="status-info">
                                         <p class="status-title">ARRIVAL</p>
-                                        <p class="status-meta">Lorem ipsum dolor sit amet, consectetur.</p>
+                                        <p class="pending">Pending</p>
+                                        <p class="status-meta"><b>ATA:</b> 08/08/25</p>
                                     </div>
                                 </li>
                             </ul>
-                            <a href="#" class="view-history-link btn btn-link pl-0 pb-1">VIEW DETAILED HISTORY  <i class="bi bi-arrow-right-circle"></i></a>
                         </section>
 
                         <!-- Column 4: Local Pickup -->
-                        <section class="details-card ipi-status local-pickup d-none">
+                        <section class="details-card ipi-status local-pickup">
                             <h2>Pick up</h2>
                             <ul class="status-timeline local-pickup pt-3 col-12">
                                 <li class="status-item status-success"> <!-- KEVIN: Apply 

@@ -379,7 +379,7 @@ h1, h2, h3 {
 .text-navy-700 { color: var(--clr-azure-42); }
 .text-navy-600 { color: var(--clr-azure-44); }
 .text-navy-500 { color: var(--clr-azure-46); }
-.text-navy-450 { color:#57687A}
+.text-navy-450 { color: var(--clr-navy-500); }
 .text-navy-400 { color: var(--clr-azure-70); }
 .text-navy-300 { color: var(--clr-azure-80); }
 .text-navy-200 { color: var(--clr-azure-85); }
