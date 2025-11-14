@@ -482,11 +482,9 @@
     .hbl-list-item .btn-charges-mbl {
         min-width:5.3125rem;
         border-radius:6rem;
+        padding:var(--space) var();
     }
-    
-    .hbl-list-item .btn-charges-mbl:hover {
-        background:var(--clr-success);
-    }
+
 
     .hbl-list-item .btn-charges-mbl .bi {
         opacity: 0;
@@ -497,9 +495,10 @@
         margin-left:0;
     }
 
-    .hbl-list-item .btn-charges-mbl:hover:hover span {
-        font-weight:bold;
+    .hbl-list-item .btn-charges-mbl:hover .btn-icon img  {
+        filter: brightness(0) saturate(100%) invert(55%) sepia(91%) saturate(1452%) hue-rotate(153deg) brightness(94%) contrast(94%);
     }
+
 
     .hbl-item-details-modal .info-bar {
         display:flex;
@@ -627,6 +626,18 @@
         }
 
     
+    .btn-outline-dark i.btn-icon,
+    .btn-outline-dark i.btn-icon img,
+    .link-offset-2 i.btn-icon,
+    .link-offset-2 i.btn-icon img {
+        height:1rem;
+        transition:filter ease .2s;
+    }
+    
+    .btn-outline-dark:hover i.btn-icon img {
+        filter:invert();
+    }
+    
 
     .ams-section { 
         display:flex;
@@ -636,7 +647,7 @@
     }
 
     .ams-section .ams-list-item {
-            background:white; 
+            background:var(--clr-azure-95); 
             border:0.0625rem solid var(--clr-azure-89);
             margin-left:0; margin-right:0; /* This fixes .row negative margins */
             border-radius:.5rem;
