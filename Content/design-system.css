@@ -504,6 +504,7 @@ h1, h2, h3 {
 .btn {
     border-radius: 0;
     height: auto!important;
+    font-size:initial!important;
 }
 
 body, button, input, select, textarea {

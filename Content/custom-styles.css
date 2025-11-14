@@ -190,8 +190,14 @@
     }
 
 .breadcrumb {
-    font-size:var(--font-size-xs);
-    color:var(--clr-grey-50);
+    font-size:var(--font-size-2xs);
+    color:var(--clr-navy-500);
+    font-family: var(--font-secondary);
+}
+
+.breadcrumb-item .bi {
+    margin-top:-.15rem;
+    font-size:var(--font-size-sm);
 }
 
 .btn {
@@ -485,12 +491,16 @@
         padding:var(--space) var();
     }
 
-
-    .hbl-list-item .btn-charges-mbl .bi {
-        opacity: 0;
+    .hbl-list-item .btn-charges-mbl {
+        text-align:center;
     }
 
-    .hbl-list-item .btn-charges-mbl:hover .bi {
+    .hbl-list-item .btn-charges-mbl .btn-icon {
+        opacity: 0;
+        font-size:var(--font-size-xl)!important;
+    }
+
+    .hbl-list-item .btn-charges-mbl:hover .btn-icon {
         opacity: 1;
         margin-left:0;
     }
@@ -506,6 +516,7 @@
 
     .hbl-list-item .btn-charges-mbl:hover .btn-icon img  {
         filter: brightness(0) saturate(100%) invert(55%) sepia(91%) saturate(1452%) hue-rotate(153deg) brightness(94%) contrast(94%);
+        height:1.75rem;
     }
 
 
@@ -516,7 +527,7 @@
     }
 
     .hbl-item-details-modal .frt-status {
-        max-width:21.875rem;
+        width:21rem;
     }
 
     .hbl-item-details-modal  .date-with-icon {
@@ -658,7 +669,7 @@
     .ams-section .ams-list-item {
             background:var(--clr-azure-95); 
             border:0.0625rem solid var(--clr-azure-89);
-            margin-left:0; margin-right:0; /* This fixes .row negative margins */
+            margin-left:0; margin-right:0; 
             border-radius:.5rem;
             font-family:var(--font-primary);
             align-items: center;
@@ -683,6 +694,7 @@
             justify-content:stretch;
         }
 
+        .ams-header-grid div:first-child,
         .ams-list-grid div:first-child{
             padding-left:.75rem;
         }
@@ -698,7 +710,8 @@
             background: rgb(255 126 142 / 50%);
         }
 
-        .ams-list-item > div {
+        .ams-list-item > div,
+        .break-word {
             overflow-wrap: break-word;
         }
 
@@ -880,7 +893,7 @@ line-height: initial;
 
         .status-title.btn:hover i,
         .view-history-link.btn:hover i,
-        a:hover i.bi
+        .hbl-master-list a:hover i.bi
          {
             margin-left:.5rem!important;
         }
