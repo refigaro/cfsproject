@@ -495,6 +495,15 @@
         margin-left:0;
     }
 
+    .hbl-list-item .btn-charges-mbl span {
+        transition:all ease .2s;
+    }
+    .hbl-list-item .btn-charges-mbl:hover span {
+        opacity:0;
+        width:0;
+        display:none;
+    }
+
     .hbl-list-item .btn-charges-mbl:hover .btn-icon img  {
         filter: brightness(0) saturate(100%) invert(55%) sepia(91%) saturate(1452%) hue-rotate(153deg) brightness(94%) contrast(94%);
     }
