@@ -336,7 +336,7 @@
                         </div>
                         <div class="d-inline-flex align-items-center hbl-charges">
                             <p class="hide-label">Charges</p>
-                            <a href="#" class="link-offset-2 font-family-archivo text-uppercase text-sm mr-2">Charges <i class="ml-1 bi bi-cash-stack text-lg text-success"></i></a>
+                            <a href="#" class="link-offset-2 btn-charges-mbl font-family-archivo text-uppercase text-sm mr-2"><span>Charges</span> <i class="ml-1 bi bi-cash-stack text-lg text-success"></i></a>
                         </div>
                         <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
                             <p class="hide-label">STATUS</p>
@@ -367,7 +367,7 @@
                 </div>
                 <div class="offcanvas-body custom-scrollbar">
                     <div class="row hbl-details-body-main">
-                        <div class="col mb-3">
+                        <div class="col mb-3 px-0">
                             <div class="d-flex justify-content-start gap-4 align-items-center offcanvas-hbl-header">
                                 <div class="info-item">
                                     <p class="info-label font-family-sora lh-1 text-uppercase text-xs">HBL NO / SEQ NO</p>
@@ -375,7 +375,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-auto">
+                        <div class="col-auto px-0">
                             <div class="mbl-master-table"> <!-- mbl-master-table component-->
                                 <div class="col-12 col-sm-auto table-col">
                                     <div class="col-5 col-sm-12 table-header">LAST FREE DATE</div> <!-- table-header-->
@@ -532,8 +532,7 @@
 
                         <!-- Column 3: IPI Status -->
                         <section class="details-card ipi-status">
-                            <h2 class="text-xl">IPI Status</h2>
-                            <p class="ipi-destination text-navy-500 text-base">Dallas, TX 123456789</p>
+                            <h2 class="text-xl">IPI Status - <span class="city-code">DAL</span></h2>
                             <p class="font-family-sora font-bold text-base">Trailer # 71848</p>
                             <ul class="status-timeline pt-3">
                                 <li class="status-item status-success"> <!-- KEVIN: Apply 
@@ -600,10 +599,10 @@
                                     </div>
                                     <div class="status-info">
                                         <p class="status-label mt-1">PICKED UP</p>
-                                        <p class="status-title">P/U Date:
+                                        <p class="status-meta"><b>P/U Date:</b>
                                             <span class="status-meta">08/15/25</span>
                                         </p>
-                                        <p class="status-title">P/U Trucker:
+                                        <p class="status-meta"><b>P/U Trucker:</b>
                                             <span class="status-meta">12345678</span>
                                         </p>
                                     </div>
@@ -620,7 +619,7 @@
                                     </div>
                                     <div class="status-info">
                                         <p class="status-label mt-1">PARTIAL PICKUP</p>
-                                        <p class="status-title">Date:
+                                        <p class="status-meta text-grey-20">Date:
                                             <span class="status-meta">08/15/25</span>
                                         </p>
                                     </div>

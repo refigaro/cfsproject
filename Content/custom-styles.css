@@ -452,8 +452,6 @@
 
     .hbl-details-body-main {
         background: white;
-        margin-left: calc(var(--space-5) * -1) !important;
-        margin-right: calc(var(--space-5) * -1) !important;
         padding: var(--space-6) var(--space-3) 0 var(--space-3);
         margin-bottom: var(--space-6);
     }
@@ -480,6 +478,28 @@
             color:var(--clr-success-dark);
         }
 
+
+    .hbl-list-item .btn-charges-mbl {
+        min-width:5.3125rem;
+        border-radius:6rem;
+    }
+    
+    .hbl-list-item .btn-charges-mbl:hover {
+        background:var(--clr-success);
+    }
+
+    .hbl-list-item .btn-charges-mbl .bi {
+        opacity: 0;
+    }
+
+    .hbl-list-item .btn-charges-mbl:hover .bi {
+        opacity: 1;
+        margin-left:0;
+    }
+
+    .hbl-list-item .btn-charges-mbl:hover:hover span {
+        font-weight:bold;
+    }
 
     .hbl-item-details-modal .info-bar {
         display:flex;
@@ -713,7 +733,7 @@ line-height: initial;
 }
 
 .hbl-item-details-modal .main-content .detail-pair.commodity p {
-    max-height:5.25rem; 
+    height:4.75rem; 
     line-height:130%!important; 
     overflow-y:scroll!important;
     padding:0.5rem;
@@ -744,18 +764,18 @@ line-height: initial;
         }
 
     .ipi-status .status-item.status-disabled .status-marker {
-        background:var(--clr-navy-500);
+        background:var(--clr-navy-400);
     }
     .ipi-status .status-item.status-disabled .status-label,
     .ipi-status .status-item.status-disabled .status-title {
-        color:var(--clr-navy-500)!important;
+        color:var(--clr-navy-400)!important;
     }
         .ipi-status.local-pickup .status-item.status-disabled .bi-dash-lg {
             display:block; /* Enables dash for disabled parent class */
         }
 
         .ipi-status .status-item.status-disabled .rejection-notice .status-title {
-            color:var(--clr-navy-500)!important;
+            color:var(--clr-navy-400)!important;
             text-decoration: none;
             cursor:text;
         }
@@ -772,7 +792,7 @@ line-height: initial;
         .ipi-status.local-pickup .status-item.status-danger .bi-x-lg {
             display:block; /* Enables X for danger parent class */
         }
-        .ipi-status.local-pickup .status-item.status-danger .rejection-notice,
+        
         .ipi-status.local-pickup .status-item.status-danger .rejection-notice a {
             color:var(--clr-danger);
         }
@@ -792,7 +812,7 @@ line-height: initial;
     }
 
     .ipi-status .pending .status-marker {
-        background: var(--clr-azure-80);
+        background: var(--clr-navy-500);
     }
 
 
@@ -903,7 +923,7 @@ html {
 @media screen and (min-width:1279px) {
     .hbl-master-list .hbl-list-item .badge {
         text-wrap: auto;
-        max-width: 13.75rem;
+        max-width: 16rem;
         margin: .5rem 0;
     }
 }
@@ -1039,9 +1059,6 @@ html {
         .details-card.ipi-status {
             grid-column: 2 / 3;
             grid-row: 1 / -1;
-        }
-        .offcanvas-header {
-            flex-direction:column-reverse;
         }
 
         .offcanvas-hbl-header {
@@ -1276,7 +1293,10 @@ html {
             margin-right: calc(var(--space-2) * -1);
         }
 
-
+        .offcanvas-header {
+            flex-direction:column;
+            gap:var(--space-3);
+        }
 
         /* Offcanvas open from bottom  */
         .offcanvas-end.offcanvas {
