@@ -28,15 +28,25 @@
         <div class="availability-menu-top">
             <div class="container-fluid">
                 <div class="row align-items-center position-relative">
-                    <div class="col col-md-7 col-sm-5  d-flex gap-16 justify-start items-baseline">
-                        <div class="nav-logo ">
+                    <div class="col col-md-7 col-sm-5 d-flex gap-16 justify-start items-center">
+                        <div class="nav-logo">
                             <a href="/">
                                 <img alt="IMPERIAL CFS" src="/_images/logo-w.png">
                             </a>
                         </div>
-                        <p class="ml-12 text-white font-family-dm-serif d-none d-lg-flex gap-4 text-sm  align-items-center">
-                            <b>Availability</b>
-                        </p>
+                        <ul class="nav nav-pills d-md-flex ms-4 useful-links">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white font-family-archivo text-uppercase" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                                    Useful links
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Pick-up Hours</a></li>
+                                    <li><a class="dropdown-item" href="#warehouse-in-out">Terminal Status</a></li>
+                                    <li><a class="dropdown-item" href="#">Terminal Schedule</a></li>
+                                    <li><a class="dropdown-item" href="#">CFS Charges</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                     <div class="col col-md-3 col-sm-6 d-flex items-center justify-end gap-4 search-bar">
                         <button type="button" class="btn btn-outline-light btn-sm rounded-full transition hover-scale-97 font-family-archivo text-nowrap" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Search</button>
@@ -826,11 +836,10 @@
             </div>
         </div>
     </footer>
-
 <script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
 <script src="/bundles/main_jquery?v=pcTLGo70Ebj-7wZHfj5-OozMeYDuBTaJgLdp-yYJn8s1"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     $('#Number').keypress(function (event){
         if (event.keyCode === 13) {

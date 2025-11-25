@@ -172,7 +172,11 @@
 }
 
     .nav-search-bar select,
-    .nav-search-bar input {
+    .nav-search-bar input,
+    input.form-control,
+    .modal-body select,
+    .modal-body input,
+    .modal-body input.form-control {
         height:2rem;
         font-size:1rem;
         padding:.25rem;
@@ -180,7 +184,8 @@
         border:.0625rem solid var(--clr-azure-80);
     }
 
-    .nav-search-bar input {
+    .nav-search-bar input,
+    input.form-control {
         text-transform:uppercase;
         font-size:var(--text-size-xs);
     }
@@ -227,7 +232,8 @@
 }
 
 
-.mbl-master-table {
+.mbl-master-table,
+.ipi-master-table {
     text-align:center;
     border-radius:var(--border-radius-md);
     border:0.0625rem solid var(--clr-azure-85);
@@ -238,6 +244,11 @@
     background:white;
     display:inline-flex;
     align-self:flex-end;
+    font-family:var(--font-primary);
+}
+
+.ipi-master-table {
+    align-items: center;
 }
 
     .mbl-master-table .table-col {
@@ -584,10 +595,12 @@
     }
 
     .logistic-details .main-details .detail-value,
-    .logistic-details .palet-details .detail-value {
+    .logistic-details .palet-details .detail-value,
+    #warehouse-in-out-Accordion .detail-value {
         font-weight:bolder;
         color:var(--clr-grey-20);
-        line-height:1.4em!important;
+        line-height:1.4em;
+        font-family: var(--font-primary);
     }
 
     .info-label,
@@ -602,7 +615,9 @@
 
     .hbl-item-details-modal .details-card h2,
     .hbl-item-details-modal .photo-gallery-section h2,
-    .hbl-item-details-modal h3    {
+    .hbl-item-details-modal h3,
+    .mbl-details.ipi-tracing h2,
+    .mbl-details.ipi-tracing .useful-links h2        {
         font-family: var(--font-secondary);
         font-size: var(--font-size-base);
         color:var(--clr-blue-brand);
@@ -936,6 +951,110 @@ html {
 
 .lfd-godate {
     flex-direction:column;
+}
+
+/* IPI Tracing page */
+
+.card-shadow.destination {
+    position:relative;
+    outline: 1rem solid #DCE2EF;
+    box-sizing: border-box;
+    margin-right:1.5rem;
+}
+
+.transport-badge { padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        .badge-truck { background-color: #eef4fc; color: #0d6efd; }
+        .badge-rail { background-color: #eef4fc; color: #0d6efd; }
+
+
+.ipi-milestones {
+    font-family: var(--font-secondary);
+    flex-grow:10;
+}
+
+.sticky-column-content {
+    position:sticky;
+    top:5rem;
+}
+
+#warehouse-in-out-Accordion .accordion-body .row:first-child .detail-label {
+    display: inline-block;
+    min-height:2.3rem;
+}
+
+.useful-links {
+    font-family: var(--font-secondary)!important;
+}
+    
+    .useful-links .dropdown-menu {
+        display: block;         
+        visibility: hidden;      
+        opacity: 0;             
+        max-height: 0;          
+        overflow: hidden;   
+        transition:max-height ease .8s;  
+    }
+    .useful-links .dropdown-menu.show {
+        inset:0.25rem auto auto 0!important;
+        padding-top:0; padding-bottom:0;
+        height:auto;
+        visibility: visible;    
+        opacity: 1;       
+        max-height: 300px;   
+        transition:margin-top ease .8s;     
+    }
+
+    .useful-links .dropdown-menu.show a.dropdown-item {
+        padding:var(--space-3) var(--space-4)!important;
+        transition:all .2s ease;
+    }
+    .useful-links .dropdown-menu.show a.dropdown-item:hover {
+        background-color:var(--clr-azure-70);
+        text-decoration: none;
+    }
+    .useful-links .dropdown-menu.show a.dropdown-item:active {
+        background-color:var(--clr-azure-19);
+        text-decoration: none;
+    }
+
+#warehouse-in-out .accordion-collapse div.form-check.form-switch {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    border-radius:5rem;
+    background:var(--clr-azure-95);
+    padding:var(--space-2) var(--space-3);
+}
+
+    #warehouse-in-out .accordion-collapse .form-switch.form-check-reverse .form-check-input {
+        margin-right:0; margin-top:0;
+    }
+
+/* Search Modal */
+
+header#header {
+    position: relative; 
+    z-index: 1060; /* Higher than Bootstrap's modal (1055) */
+    background-color: white; /* Ensure header isn't transparent */
+}
+
+.modal-under-header.modal {
+    top: 3.849375rem !important; 
+    height: calc(100% - 3.849375rem) !important; 
+}
+
+.modal-backdrop {
+    top: 3.849375rem !important; 
+    height: calc(100% - 3.849375rem) !important;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    --bs-backdrop-opacity: 1 !important;
+    
+    background-color: rgba(0, 0, 0, 0.7) !important;
 }
 
 @media screen and (min-width:1366px){

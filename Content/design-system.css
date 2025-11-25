@@ -301,6 +301,8 @@ h1, h2, h3 {
 .my-4 { margin-top: var(--space-4); margin-bottom: var(--space-4); } .py-4 { padding-top: var(--space-4); padding-bottom: var(--space-4); }
 .my-6 { margin-top: var(--space-6); margin-bottom: var(--space-6); } .py-6 { padding-top: var(--space-6); padding-bottom: var(--space-6); }
 .my-8 { margin-top: var(--space-8); margin-bottom: var(--space-8); } .py-8 { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+.my-12 { margin-top: var(--space-12); margin-bottom: var(--space-12); } .py-12 { padding-top: var(--space-12); padding-bottom: var(--space-12); }
+.my-16 { margin-top: var(--space-16); margin-bottom: var(--space-16); } .py-16 { padding-top: var(--space-16); padding-bottom: var(--space-16); }
 
 /* X-axis (left & right) */
 .mx-1 { margin-left: var(--space-1); margin-right: var(--space-1); } .px-1 { padding-left: var(--space-1); padding-right: var(--space-1); }
@@ -340,7 +342,9 @@ h1, h2, h3 {
 .mr-2 { margin-right: var(--space-2); } .pr-2 { padding-right: var(--space-2); }
 .mr-4 { margin-right: var(--space-4); } .pr-4 { padding-right: var(--space-4); }
 .mr-6 { margin-right: var(--space-6); } .pr-6 { padding-right: var(--space-6); }
-.mr-8 { margin-right: var(--space-8); } .pr-8 { padding-right: var(--space-8); }
+.mr-8 { margin-right: var(--space-8); } .pr-8 { padding-right: var(--space-8)!important; }
+.mr-12 { margin-right: var(--space-12); } .pr-12 { padding-right: var(--space-12)!important; }
+.mr-16 { margin-right: var(--space-16); } .pr-16 { padding-right: var(--space-16)!important; }
 
 /* == Tipografía == */
 .text-2xs { font-size: var(--font-size-2xs); }  /* 10px */
@@ -405,6 +409,9 @@ h1, h2, h3 {
 .bg-warning-light { background-color: var(--clr-warning-light); }
 .bg-warning-dark { background-color: var(--clr-warning-dark); }
 
+/* Border colors */
+
+.border-navy-300 { border-color:var(--clr-azure-80); }
 
 /* Clases de Fondos Comunes (Nuevo) */
 .bg-white { background-color: var(--clr-white); }
@@ -492,6 +499,10 @@ h1, h2, h3 {
 .gap-3 { gap: var(--space-3)!important; }
 .gap-4 { gap: var(--space-4)!important; }
 .gap-5 { gap: var(--space-5)!important; }
+.gap-8 { gap: var(--space-8)!important; }
+.gap-12 { gap: var(--space-12)!important; }
+.gap-16 { gap: var(--space-16)!important; }
+.gap-20 { gap: var(--space-20)!important; }
 
 .row {
     margin-right: calc(-.5 * var(--bs-gutter-x))
@@ -510,3 +521,9 @@ h1, h2, h3 {
 body, button, input, select, textarea {
     font: initial / initial var(--font-primary);
 }
+
+.mb-3 { margin-bottom: var(--space-3) !important; }
+
+.lh-1rem { line-height:1rem!important; }
+
+.mb-1px { margin-bottom:1px!important}
