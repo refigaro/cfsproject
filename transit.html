@@ -189,14 +189,14 @@
                                 <label for="citySearch" class="col-form-label text-dark">Search for city:</label>
                             </div>
                             <div class="col-md-5 col-lg-4">
-                                <input type="text" id="citySearch" onkeyup="searchAccordion()" class="form-control rounded" placeholder="Search for city...">
+                                <input type="text" id="destinationSearch" onkeyup="filterTable()" class="form-control rounded" placeholder="Search for destination...">
                             </div>
                         </div>
                         <div class="Availability-table">
                                     <div class="row">
-                                        <div class="col-12 col-sm-11">
+                                        <div class="col-12">
                                             <div class="table-responsive">
-                                                <table class="table table-striped">
+                                                <table class="table table-striped" id="destinationTable">
                                                     <thead>
                                                         <tr>
                                                             <th width="16.66666%">Destination</th>
@@ -697,19 +697,13 @@
                                                             <td>11-13</td>
                                                         </tr>
                                                     </tbody>
-                                                    <tfoot>
-                                                        <tr>
-                                                            <td colspan="5" class="ar" style="color:red;font-weight:bold">UPDATE SEPT 2025</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="5" class="al" style="color:red;font-weight:bold">**Estimated Loading Day and Estimated Transit Time may vary depending on the current and/or unforseen conditions.</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td colspan="5" class="al" style="color:red;font-weight:bold">***Imperial can not be held liable for any charge back claim due to any IPI schedule delay.</td>
-                                                        </tr>
-                                                    </tfoot>
                                                 </table>
                                             </div>
+                                        </div>
+                                        <div class="col-12 text-danger fw-bold">
+                                            <p class="ar">UPDATE SEPT 2025</p>
+                                            <p class="al">**Estimated Loading Day and Estimated Transit Time may vary depending on the current and/or unforseen conditions.</p>
+                                            <p class="al">***Imperial can not be held liable for any charge back claim due to any IPI schedule delay.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -853,33 +847,40 @@
     })
 </script>
 <script>
-    function searchAccordion() {
-        // 1. Get the input value
-        var input = document.getElementById("citySearch");
-        var filter = input.value.toUpperCase();
+    // FIX 2: Added the filterTable function below.
+    
+    /* NEW FUNCTION: Filter Table Rows */
+    function filterTable() {
+        // 1. Get input value and filter string
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("destinationSearch"); // Corrected ID
+        filter = input.value.toUpperCase();
+        
+        // 2. Get the table body rows, assuming the table ID is "destinationTable"
+        table = document.getElementById("destinationTable");
+        tr = table.getElementsByTagName("tr"); // Gets all <tr> tags, including header
 
-        // 2. Get the specific container (Safer than getting all items on the whole page)
-        var container = document.getElementById("warehouse-in-out-Accordion");
-        var items = container.getElementsByClassName("accordion-item");
+        // 3. Loop through all table rows (starting at index 1 to skip the <thead>)
+        for (i = 1; i < tr.length; i++) {
+            // Get the <td> element for the 'Destination' column. This is the first column (index 0).
+            td = tr[i].getElementsByTagName("td")[0]; 
 
-        // 3. Loop through all items
-        for (var i = 0; i < items.length; i++) {
-            
-            // Find the header button inside this specific item
-            var headerButton = items[i].querySelector(".accordion-button");
-
-            if (headerButton) {
-                // FIXED: We define itemText using the headerButton we just found
-                var itemText = headerButton.textContent || headerButton.innerText;
-
-                // 4. Check if the text matches the search
-                if (itemText.toUpperCase().indexOf(filter) > -1) {
-                    items[i].style.display = ""; // Show
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                
+                // 4. Check if the text matches the filter
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = ""; // Show row
                 } else {
-                    items[i].style.display = "none"; // Hide
+                    tr[i].style.display = "none"; // Hide row
                 }
-            }
+            }       
         }
+    }
+    
+    // Existing searchAccordion function (renamed and kept out of scope to avoid confusion)
+    function searchAccordion() {
+        // This function is no longer needed on this specific page with a table filter
     }
 </script>
 </body>
