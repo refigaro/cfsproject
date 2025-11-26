@@ -26,8 +26,16 @@
 <div class="modal fade modal-under-header" id="myStaticModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
-      <div class="modal-body d-flex flex-column align-items-center gap-2 p-8 py-12">
-        <p class="font-family-sora text-2xl mb-4">Please search for:</p>
+      <div class="modal-body d-flex flex-column align-items-center gap-2 p-12 py-12">
+        <div class="row w-100 justify-content-between align-items-center mb-12">
+            <div class="col">
+                <h2 class="text-4xl">IPI Tracing</h2>
+            </div>
+            <div class="col-auto">
+                <button type="button" class="btn btn-outline-dark btn-sm rounded-full  font-family-archivo text-nowrap"><i class="bi bi-arrow-90deg-left mr-1"></i>Back home</button>
+            </div>
+        </div>
+        <p class="font-family-sora text-2xl mb-2">New IPI Tracing search</p>
         <div class="d-flex w-100 justify-content-center align-items-center gap-2">
             <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo">
             <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
@@ -41,7 +49,7 @@
             <label for="">
                 <input class="rounded" type="text">
             </label>
-            <button type="button" class="btn btn-primary btn-sm bg-navy-700 text-uppercase text-xs rounded">Search <i class="bi bi-search text-xs ml-2"></i></button>
+            <button type="button" class="btn btn-primary bg-navy-700 text-uppercase text-xs rounded">Search <i class="bi bi-search text-xs ml-2"></i></button>
         </div>
       </div>
     </div>
@@ -52,16 +60,27 @@
         <div class="availability-menu-top">
             <div class="container-fluid">
                 <div class="row align-items-center position-relative">
-                    <div class="col col-md-7 col-sm-5 d-flex gap-16 justify-start items-center">
+                    <div class="col col-md-auto col-sm-8 d-flex gap-16 justify-start items-center">
+                        
                         <div class="nav-logo">
                             <a href="/">
                                 <img alt="IMPERIAL CFS" src="/_images/logo-w.png">
                             </a>
                         </div>
-                        <ul class="nav nav-pills d-md-flex ms-4 useful-links">
+
+                        <ul class="nav text-white font-family-archivo text-uppercase d-none d-xl-flex ms-4">
+                            <li class="nav-item">
+                                <a class="nav-link active link-light" aria-current="page" href="#">Inland WHSE list</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" href="#">WHSE In / Out</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" href="#">Transit Schedule</a>
+                            </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-white font-family-archivo text-uppercase" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                                    Useful links
+                                <a class="nav-link link-light dropdown-toggle text-white font-family-archivo text-uppercase" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                                    More
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Inland WHSE list</a></li>
@@ -70,8 +89,20 @@
                                 </ul>
                             </li>
                         </ul>
+
+                        <div class="dropdown d-xl-none ms-3">
+                            <button class="btn btn-outline-light btn-sm dropdown-toggle font-family-archivo text-uppercase rounded-full" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Useful links
+                            </button>
+                            <ul class="dropdown-menu shadow">
+                                <li><a class="dropdown-item" href="#">Inland WHSE list</a></li>
+                                <li><a class="dropdown-item" href="#">WHSE In / Out</a></li>
+                                <li><a class="dropdown-item" href="#">Transit Schedule</a></li>
+                            </ul>
+                        </div>
+
                     </div>
-                    <div class="col col-md-3 col-sm-6 d-flex items-center justify-end gap-4 search-bar">
+                    <div class="col col-sm-auto d-flex items-center justify-end gap-4 search-bar">
                         <button type="button" class="btn btn-outline-light btn-sm rounded-full transition hover-scale-97 font-family-archivo text-nowrap" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Search</button>
                         <div class="row collapse" id="collapseExample">
                             <div class="nav-search-bar col-12">
@@ -92,7 +123,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col col-md-2 col-sm-1 ar">
+                    <div class="col col-md-auto col-sm-auto ar ms-auto">
                         <div class="availability-menu-link clears">
                             <div class="hamburger-menu fr">
                                 <div class="bar"></div>
@@ -190,14 +221,16 @@
                             <span class="detail-value text-2xl fw-bold">103815585</span>
                         </div>
                     </div>
-                    <div class="col p-3">
-                        <div class="col-12 d-flex flex-direction-row align-items-center gap-2">
+                        <div class="col-12 col-sm-auto table-col table-col-mbl p-3">
+                        <div class="detail-pair col text-left d-flex flex-column align-items-start">
                             <span class="detail-label">ETD</span>
-                            <div class="text-dark">09/26/25</div>
+                            <span class="detail-value text-2xl fw-bold">09/26/25</span>
                         </div>
-                        <div class="col-12 d-flex flex-direction-row align-items-center gap-2">
+                    </div>
+                        <div class="col-12 col-sm-auto table-col table-col-mbl p-3">
+                        <div class="detail-pair col text-left d-flex flex-column align-items-start">
                             <span class="detail-label">ATD</span>
-                            <div class="text-dark">09/26/25</div>
+                            <span class="detail-value text-2xl fw-bold">09/26/25</span>
                         </div>
                     </div>
                 </div>
@@ -220,6 +253,7 @@
                                 <div class="detail-pair col py-3">
                                     <span class="detail-label">WAREHOUSE NAME</span>
                                     <span class="detail-value text-2xl fw-bold">Air Ground Xpress</span>
+                                    <a href="#warehouse-in-out" class="mt-1 btn btn-link link-opacity-50 muted pl-0 pt-0 link-offset-2">See fees for in / out <i class="bi bi-arrow-right-circle"></i></a>
                                 </div>
 
                                 <div class="mb-4">
@@ -264,9 +298,16 @@
                 <div class="col-lg-9 mb-4 font-family-archivo d-flex flex-column">
                         <div class="my-3 row justify-content-between align-items-center gap-3 px-2 py-2">
                             <div class="col-lg-12 col-xl-auto milestone-v2-container">
-                                <div class="milestone-v2 row mt-2">
+                                <div class="milestone-v2 row justify-content-between gap-1 mt-2">
                                     <div class="col-auto">
-                                        <div class="check text-success"><i class="bi bi-check-circle-fill text-success"></i> Arriv CFS DATE</div>
+                                        <div class="check text-success"><i class="bi bi-check-circle-fill text-success"></i> ETA Date</div>
+                                        <div class="date text-base text-success">08/23/25</div>
+                                    </div>
+                                    <div class="col-auto px-1">
+                                        <i class="bi bi-chevron-right text-navy-900"></i>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="check text-success"><i class="bi bi-check-circle-fill text-success"></i> Arriv CFS Date</div>
                                         <div class="date text-base text-success">08/23/25</div>
                                     </div>
                                     <div class="col-auto px-1">
@@ -289,20 +330,6 @@
                                 <div>
                                     <div class="col d-flex align-items-center lh-1 text-navy-500 text-left">
                                         <div>
-                                            <span class="text-sm font-family-sora text-grey-20 font-bold d-inline-block mb-1">ETA</span><br>
-                                            <span class="font-bold text-lg">08/23/25</span> 
-                                        </div>
-                                    </div>
-                                    <div  class="col d-flex align-items-center text-navy-500 lh-1">
-                                        <div>
-                                            <span class="text-sm font-family-sora text-grey-20 font-bold d-inline-block mb-1">ATA</span><br>
-                                            <span class="font-bold text-lg">TBD</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="col d-flex align-items-center lh-1 text-navy-500 text-left">
-                                        <div>
                                             <span class="text-sm font-family-sora text-grey-20 font-bold d-inline-block mb-1">LAST FREE DATE</span><br>
                                             <span class="font-bold text-lg text-danger"><i class="bi bi-clock text-danger mr-2"></i>08/23/25</span> 
                                         </div>
@@ -315,29 +342,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="row g-2 d-none">
-                                <div class="detail-pair col">
-                                    <span class="detail-label">ARRIV CFS DATE</span>
-                                    <span class="detail-value text-2xl fw-bold">TBD</span>
-                                </div>
-                                <div class="detail-pair col">
-                                    <span class="detail-label">DEVAN DATE</span>
-                                    <span class="detail-value text-2xl fw-bold">08/20/25</span>
-                                </div>
-                                <div class="detail-pair col">
-                                    <span class="detail-label">FRT AVAIL DATE</span>
-                                    <span class="detail-value text-2xl fw-bold">08/20/25</span>
-                                </div>
-                                <div class="detail-pair col">
-                                    <span class="detail-label">LAST FREE DATE</span>
-                                    <span class="detail-value text-2xl fw-bold">08/20/25</span>
-                                </div>
-                                <div class="detail-pair col">
-                                    <span class="detail-label">GO DATE</span>
-                                    <span class="detail-value text-2xl fw-bold">08/20/25</span>
-                                </div>
-                            </div>
                         </div>
                     <div class="card ipi-milestones card-shadow p-4 bg-white">
                         <div class="row mb-4">
@@ -346,8 +350,8 @@
                                 <div class="text-muted text-uppercase text-xs">THU</div>
                             </div>
                             <div class="col-md-10 col-sm-12 ps-md-4 border-start">
-                                <div class="timeline-item d-flex align-items-start mb-3">
-                                    <div class="flex-grow-1">
+                                <div class="timeline-item d-flex align-items-end mb-3">
+                                    <div>
                                         <span class="text-muted d-block">05:45 PM - PT</span>
                                         <span class="fw-bold">CONTAINER OUT-GATED MEMPHIS, TN</span>
                                     </div>
@@ -367,20 +371,20 @@
                                 <div class="text-muted text-uppercase text-xs">WED</div>
                             </div>
                             <div class="col-md-10 col-sm-12 ps-md-4 border-start">
-                                <div class="timeline-item d-flex align-items-start mb-4">
-                                    <div class="flex-grow-1">
+                                <div class="timeline-item d-flex align-items-end mb-4">
+                                    <div>
                                         <span class="text-navy-450 d-block">12:33 PM - PT</span>
                                         <span class="fw-bold">CONTAINER ARRIVED HAVE NOT NOTIFIED AVAILABLE MEMPHIS, TN</span>
                                     </div>
                                 </div>
-                                <div class="timeline-item d-flex align-items-start mb-4">
+                                <div class="timeline-item d-flex align-items-end mb-4">
                                     <div class="flex-grow-1">
                                         <span class="text-navy-450 d-block">03:22 AM - PT</span>
                                         <span class="fw-bold">CONTAINER ARRIVED MEMPHIS, TN</span>
                                     </div>
                                 </div>
-                                <div class="timeline-item d-flex align-items-start">
-                                    <div class="flex-grow-1">
+                                <div class="timeline-item d-flex align-items-end">
+                                    <div>
                                         <span class="text-navy-450 d-block">12:00 AM - PT</span>
                                         <span class="fw-bold">Appointment Scheduled - MEMPHIS, TN</span>
                                     </div>
@@ -394,8 +398,8 @@
                                 <div class="text-muted text-uppercase text-xs">TUE</div>
                             </div>
                             <div class="col-md-10 col-sm-12 ps-md-4  border-start">
-                                <div class="timeline-item d-flex align-items-start mb-3">
-                                    <div class="flex-grow-1">
+                                <div class="timeline-item d-flex align-items-end mb-3">
+                                    <div>
                                         <span class="text-navy-450 d-block">10:25 PM - PT</span>
                                         <span class="fw-bold">PASSING THROUGH TODD, OK</span>
                                     </div>
@@ -405,12 +409,12 @@
 
                     </div> 
                 </div>
-                <div class="row mt-4">
-                    <div class="col-11" id="warehouse-in-out">
+                <div class="row mt-4 warehouse-in-out">
+                    <div class="col" id="warehouse-in-out">
                         <div class="row">
                             <div class="col">
-                                <h3 class="text-navy-800 font-family-sora fw-bold mb-1">Warehouse In / Out</h3> 
-                                <p class="text-navy-450 mb-3 font-family-archivo"><i>(Info subject to change. For reference only. Pleae check directly with warehouse for exact charges.)</i></p>
+                                <h3 class="mb-1">Warehouse In / Out</h3> 
+                                <p class="text-navy-450 mb-6 font-family-archivo"><i>(Info subject to change. For reference only. Pleae check directly with warehouse for exact charges.)</i></p>
                             </div>
                             <div class="col-auto">
                                 <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Export data to Excel 
@@ -418,19 +422,6 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="row my-4 align-items-center font-family-archivo">
-                            <div class="col-auto">
-                                <label for="citySearch" class="col-form-label text-dark">Search for city:</label>
-                            </div>
-                            <div class="col-md-5 col-lg-4">
-                                <input type="text" id="citySearch" onkeyup="searchAccordion()" class="form-control rounded" placeholder="Search for city...">
-                            </div>
-                            <div class="col-auto">
-                                <button type="button" class="btn btn-primary btn-sm rounded-full">Compare selected  <i class="bi bi-arrow-left-right"></i>
-                                </button>
-                            </div>
-                        </div>
-
                         <div class="accordion shadow-sm" id="warehouse-in-out-Accordion">
                             <div class="accordion-item border-0 mb-1">
                                 <h2 class="accordion-header" id="headingOne">
@@ -452,7 +443,7 @@
                                     <div class="accordion-body bg-white pt-4 pb-5">
                                         <div class="row mb-2">
                                             <div class="col-md-2 col-sm-12 mb-3 detail-pair">
-                                                <span class="detail-label d-block">IN OUT CHARGES</span>
+                                                <span class="detail-label d-block">IN / OUT CHARGES</span>
                                                 <span class="detail-value">$0.04 P/LB OR $11.00 P/CBM, Whichever is greater</span>
                                             </div>
                                             <div class="col-md col-sm-6 mb-3 detail-pair">
@@ -472,212 +463,40 @@
                                                 <span class="detail-value">-</span>
                                             </div>
                                             <div class="col-md col-sm-6 mb-3 detail-pair">
-                                                <span class="detail-label d-block">Fuel Surcharge</span>
+                                                <span class="detail-label d-block">Fuel</span>
                                                 <span class="detail-value">-</span>
                                             </div>
                                             <div class="col-md col-sm-6 mb-3 detail-pair">
-                                                <span class="detail-label d-block">Facility Window Fee	</span>
+                                                <span class="detail-label d-block">Fac Win Fee	</span>
                                                 <span class="detail-value">$35.00</span>
                                             </div>
                                             <div class="col-md col-sm-6 mb-3 detail-pair">
-                                                <span class="detail-label d-block">AccFee</span>
+                                                <span class="detail-label d-block">Haz</span>
                                                 <span class="detail-value">-</span>
                                             </div>
                                             <div class="col-md col-sm-6 mb-3 detail-pair">
-                                                <span class="detail-label d-block">Haz</span>
+                                                <span class="detail-label d-block">Plts</span>
+                                                <span class="detail-value">$35.00</span>
+                                            </div>
+                                            <div class="col-md col-sm-6 mb-3 detail-pair">
+                                                <span class="detail-label d-block">Free time</span>
                                                 <span class="detail-value">$35.00</span>
                                             </div>
                                         </div>
                                         <div class="row border-top border-navy-300 pt-4">
-                                            <div class="col-md-6 col-sm-6 mb-3 detail-pair">
+                                            <div class="col-md-2 col-sm-6 mb-3 detail-pair">
+                                                <span class="detail-label">Acc fee</span>
+                                                <span class="detail-value fw-normal">$15.00 P/PALLET</span>
+                                            </div>
+                                            <div class="col-md-10 col-sm-6 mb-3 detail-pair">
                                                 <span class="detail-label">Oversize / Overweight Fee</span>
                                                 <span class="detail-value fw-normal">$4.75 P/CWT OR $26.00 P/CBM, MIN $200.00 OVERSIZE FEE APPLIES TO ANYTHING OVER 12FT LONG, AND ANYTHING OVER 7,000 LBS</span>
                                             </div>
-                                            <div class="col-md-2 col-sm-6 mb-3 detail-pair">
-                                                <span class="detail-label">Pallets</span>
-                                                <span class="detail-value fw-normal">$15.00 P/PALLET</span>
-                                            </div>
-                                            <div class="col-md-2 col-sm-6 mb-3 detail-pair">
-                                                <span class="detail-label">Free Time</span>
-                                                <span class="detail-value fw-normal">5 BUSINESS DAYS</span>
-                                            </div>
-                                            <div class="col-md-2 col-sm-6 mb-3 detail-pair">
-                                                <span class="detail-value d-flex flex-column align-items-stretch fw-normal p-2">
-                                                    <div class="form-check form-switch form-check-reverse mb-2">
-                                                        <input class="form-check-input d-inline-block" type="checkbox" id="switchCheckReverse">
-                                                        <label class="form-check-label d-inline-block text-sm text-uppercase" for="switchCheckReverse">Compare this? </label>
-                                                    </div>
-                                                    <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Compare selected <i class="bi bi-arrow-left-right"></i>
-                                                    </button>
-                                                </span>
-                                            </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="accordion-item border-0 mb-1">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed text-uppercase gap-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        <span class="col fw-bold">
-                                            ATLANTA
-                                        </span>
-                                        <span class="col-auto detail-pair fw-normal d-flex lh-1rem align-items-center">
-                                                <span class="detail-label mr-2 lh-1rem mt-1">CODE:</span>
-                                                <span class="detail-value lh-1rem">ATL</span>
-                                        </span>
-                                        <span class="col-auto detail-pair fw-normal d-flex lh-1rem align-items-center">
-                                                <span class="detail-label mr-2 lh-1rem mt-1">DEST:</span>
-                                                <span class="detail-value lh-1rem">HWC LOGISTICS</span>
-                                        </span>
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#warehouseAccordion">
-                                    <div class="accordion-body">
-                                        Loading...
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item border-0 mb-1">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed text-uppercase gap-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        <span class="col fw-bold">
-                                            AUSTIN
-                                        </span>
-                                        <span class="col-auto detail-pair fw-normal d-flex lh-1rem align-items-center">
-                                                <span class="detail-label mr-2 lh-1rem mt-1">CODE:</span>
-                                                <span class="detail-value lh-1rem">AUS</span>
-                                        </span>
-                                        <span class="col-auto detail-pair fw-normal d-flex lh-1rem align-items-center">
-                                                <span class="detail-label mr-2 lh-1rem mt-1">DEST:</span>
-                                                <span class="detail-value lh-1rem">AUSTIN CFS WAREHOUSE</span>
-                                        </span>
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#warehouseAccordion">
-                                    <div class="accordion-body">
-                                        Loading...
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item border-0 mb-1">
-                                <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed text-uppercase gap-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        <span class="col fw-bold">
-                                            BALTIMORE
-                                        </span>
-                                        <span class="col-auto detail-pair fw-normal d-flex lh-1rem align-items-center">
-                                                <span class="detail-label mr-2 lh-1rem mt-1">CODE:</span>
-                                                <span class="detail-value lh-1rem">BAL</span>
-                                        </span>
-                                        <span class="col-auto detail-pair fw-normal d-flex lh-1rem align-items-center">
-                                                <span class="detail-label mr-2 lh-1rem mt-1">DEST:</span>
-                                                <span class="detail-value lh-1rem">BALTIMORE INTERNATIONAL WAREHOUSING</span>
-                                        </span>
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#warehouseAccordion">
-                                    <div class="accordion-body">
-                                        Loading...
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item border-0 mb-1">
-                                <h2 class="accordion-header" id="headingFive">
-                                    <button class="accordion-button collapsed text-uppercase gap-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                        <span class="col fw-bold">
-                                            BIRMINGHAM
-                                        </span>
-                                        <span class="col-auto detail-pair fw-normal d-flex lh-1rem align-items-center">
-                                                <span class="detail-label mr-2 lh-1rem mt-1">CODE:</span>
-                                                <span class="detail-value lh-1rem">BHM</span>
-                                        </span>
-                                        <span class="col-auto detail-pair fw-normal d-flex lh-1rem align-items-center">
-                                                <span class="detail-label mr-2 lh-1rem mt-1">DEST:</span>
-                                                <span class="detail-value lh-1rem">DIVERSIFIED CONTRACTORS, INC</span>
-                                        </span>
-                                    </button>
-                                </h2>
-                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#warehouseAccordion">
-                                    <div class="accordion-body">
-                                        Loading...
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item border-0 mb-1">
-                                <h2 class="accordion-header" id="headingSix">
-                                    <button class="accordion-button collapsed text-uppercase gap-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                        <span class="col fw-bold">
-                                            BOSTON
-                                        </span>
-                                        <span class="col-auto detail-pair fw-normal d-flex lh-1rem align-items-center">
-                                                <span class="detail-label mr-2 lh-1rem mt-1">CODE:</span>
-                                                <span class="detail-value lh-1rem">BOS</span>
-                                        </span>
-                                        <span class="col-auto detail-pair fw-normal d-flex lh-1rem align-items-center">
-                                                <span class="detail-label mr-2 lh-1rem mt-1">DEST:</span>
-                                                <span class="detail-value lh-1rem">EAGLE AIR FREIGHT</span>
-                                        </span>
-                                    </button>
-                                </h2>
-                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#warehouseAccordion">
-                                    <div class="accordion-body">
-                                        Loading...
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item border-0 mb-1">
-                                <h2 class="accordion-header" id="headingSeven">
-                                    <button class="accordion-button collapsed text-uppercase gap-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                        <span class="col fw-bold">
-                                            BROWNSVILLE
-                                        </span>
-                                        <span class="col-auto detail-pair fw-normal d-flex lh-1rem align-items-center">
-                                                <span class="detail-label mr-2 lh-1rem mt-1">CODE:</span>
-                                                <span class="detail-value lh-1rem">BRO</span>
-                                        </span>
-                                        <span class="col-auto detail-pair fw-normal d-flex lh-1rem align-items-center">
-                                                <span class="detail-label mr-2 lh-1rem mt-1">DEST:</span>
-                                                <span class="detail-value lh-1rem">TRANSMARITIME INC</span>
-                                        </span>
-                                    </button>
-                                </h2>
-                                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#warehouseAccordion">
-                                    <div class="accordion-body">
-                                        Loading...
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
-                    </div>
-                    <div class="col-lg-1"> <!-- /// Useful Links Stiky column /// -->
-                            <div class="sticky-column-content useful-links font-family-sora">
-                                <h2 class="text-primary fw-bold mb-3">Useful links</h2>
-                                <ul class="list-unstyled">
-                                    <li class="mb-3">
-                                        <a href="#" class="text-decoration-none fw-bold d-flex align-items-center justify-content-between border-bottom pb-2 text-xs">
-                                            Inland WHSE List <i class="bi bi-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                    <li class="mb-3">
-                                        <a href="#warehouse-in-out" class="text-decoration-none fw-bold d-flex align-items-center justify-content-between border-bottom pb-2 text-xs">
-                                            WHSE In / Out <i class="bi bi-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                    <li class="mb-3">
-                                        <a href="#" class="text-decoration-none fw-bold d-flex align-items-center justify-content-between border-bottom pb-2 text-xs">
-                                            Transit schedule <i class="bi bi-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                     </div>
                 </div>
             </div>
@@ -781,7 +600,7 @@
 <script src="/bundles/AvailabilityViewer_Ajax?v=VgNFlR4TbTdLyioL1u0joKY-tpXbFdUn0Toxg6Z7ehQ1"></script>
 <script src="/bundles/Modal?v=6X2XgyWba97tfyPCPLvNNu3Nfognwesw8t4cSNPp6OA1"></script>
 <!-- Search modal Script --> <!--  KEVIN: This script enables the modal for search -->
- <!--
+<!--
 <script> 
     document.addEventListener("DOMContentLoaded", function(){
         var myModal = new bootstrap.Modal(document.getElementById('myStaticModal'));

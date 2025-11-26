@@ -23,32 +23,85 @@
     <link rel="stylesheet" href="Content/custom-styles.css">
 </head>
 <body class="availavility-v2">
+<div class="modal fade modal-under-header" id="myStaticModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body d-flex flex-column align-items-center gap-2 p-12 py-12">
+        <div class="row w-100 justify-content-between align-items-center mb-12">
+            <div class="col">
+                <h2 class="text-4xl">Availability</h2>
+            </div>
+            <div class="col-auto">
+                <button type="button" class="btn btn-outline-dark btn-sm rounded-full  font-family-archivo text-nowrap"><i class="bi bi-arrow-90deg-left mr-1"></i>Back home</button>
+            </div>
+        </div>
+        <p class="font-family-sora text-2xl mb-2">New Availability search</p>
+        <div class="d-flex w-100 justify-content-center align-items-center gap-2">
+            <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo">
+            <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
+                <option selected="selected" value="mbl">Master Bill</option>
+                <option value="cntr">Container Number</option>
+                <option value="ams">AMS House Bill</option>
+                <option value="it">Inbond Number</option>
+                <option value="go">GO Number</option>
+            </select>
+            </label> 
+            <label for="">
+                <input class="rounded" type="text">
+            </label>
+            <button type="button" class="btn btn-primary bg-navy-700 text-uppercase text-xs rounded">Search <i class="bi bi-search text-xs ml-2"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <header id="header">
     <div class="availability-menu">
         <div class="availability-menu-top">
             <div class="container-fluid">
                 <div class="row align-items-center position-relative">
-                    <div class="col col-md-7 col-sm-5 d-flex gap-16 justify-start items-center">
+                    <div class="col col-md-auto col-sm-8 d-flex gap-16 justify-start items-center">
+                        
                         <div class="nav-logo">
                             <a href="/">
                                 <img alt="IMPERIAL CFS" src="/_images/logo-w.png">
                             </a>
                         </div>
-                        <ul class="nav nav-pills d-md-flex ms-4 useful-links">
+
+                        <ul class="nav text-white font-family-archivo text-uppercase d-none d-xl-flex ms-4">
+                            <li class="nav-item">
+                                <a class="nav-link active link-light" aria-current="page" href="#">Pick-up hours</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" href="#">Terminal status</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" href="#">Terminal schedule</a>
+                            </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-white font-family-archivo text-uppercase" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                                    Useful links
+                                <a class="nav-link link-light dropdown-toggle text-white font-family-archivo text-uppercase" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                                    More
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Pick-up Hours</a></li>
-                                    <li><a class="dropdown-item" href="#warehouse-in-out">Terminal Status</a></li>
-                                    <li><a class="dropdown-item" href="#">Terminal Schedule</a></li>
-                                    <li><a class="dropdown-item" href="#">CFS Charges</a></li>
+                                    <li><a class="dropdown-item" href="#">CFS charges</a></li>
                                 </ul>
                             </li>
                         </ul>
+
+                        <div class="dropdown d-xl-none ms-3">
+                            <button class="btn btn-outline-light btn-sm dropdown-toggle font-family-archivo text-uppercase rounded-full" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Useful links
+                            </button>
+                            <ul class="dropdown-menu shadow">
+                                <li><a class="dropdown-item" href="#">Pick-up hours</a></li>
+                                <li><a class="dropdown-item" href="#">Terminal status</a></li>
+                                <li><a class="dropdown-item" href="#">Terminal schedule</a></li>
+                                <li><a class="dropdown-item" href="#">CFS charges</a></li>
+                            </ul>
+                        </div>
+
                     </div>
-                    <div class="col col-md-3 col-sm-6 d-flex items-center justify-end gap-4 search-bar">
+                    <div class="col col-sm-auto d-flex items-center justify-end gap-4 search-bar">
                         <button type="button" class="btn btn-outline-light btn-sm rounded-full transition hover-scale-97 font-family-archivo text-nowrap" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Search</button>
                         <div class="row collapse" id="collapseExample">
                             <div class="nav-search-bar col-12">
@@ -69,7 +122,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col col-md-2 col-sm-1 ar">
+                    <div class="col col-md-auto col-sm-auto ar ms-auto">
                         <div class="availability-menu-link clears">
                             <div class="hamburger-menu fr">
                                 <div class="bar"></div>
@@ -857,6 +910,15 @@
 </script>
 <script src="/bundles/AvailabilityViewer_Ajax?v=VgNFlR4TbTdLyioL1u0joKY-tpXbFdUn0Toxg6Z7ehQ1"></script>
 <script src="/bundles/Modal?v=6X2XgyWba97tfyPCPLvNNu3Nfognwesw8t4cSNPp6OA1"></script>
+<!-- Search modal Script --> <!--  KEVIN: This script enables the modal for search -->
+<!--
+<script> 
+    document.addEventListener("DOMContentLoaded", function(){
+        var myModal = new bootstrap.Modal(document.getElementById('myStaticModal'));
+        myModal.show();
+    });
+</script>
+-->
 <script>
     $(function() {
         $(".hamburger-menu").on("click", function() {

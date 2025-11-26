@@ -173,13 +173,20 @@
 
     .nav-search-bar select,
     .nav-search-bar input,
-    input.form-control,
-    .modal-body select,
-    .modal-body input,
-    .modal-body input.form-control {
+    input.form-control {
         height:2rem;
         font-size:1rem;
         padding:.25rem;
+        font-family: var(--font-primary);
+        border:.0625rem solid var(--clr-azure-80);
+    }
+
+    .modal-body select,
+    .modal-body input,
+    .modal-body input.form-control {
+        height:2.9375rem;
+        font-size:var(--font-size-base);
+        padding:.5rem;
         font-family: var(--font-primary);
         border:.0625rem solid var(--clr-azure-80);
     }
@@ -617,7 +624,8 @@
     .hbl-item-details-modal .photo-gallery-section h2,
     .hbl-item-details-modal h3,
     .mbl-details.ipi-tracing h2,
-    .mbl-details.ipi-tracing .useful-links h2        {
+    .mbl-details.ipi-tracing .useful-links h2,
+    .warehouse-in-out h3        {
         font-family: var(--font-secondary);
         font-size: var(--font-size-base);
         color:var(--clr-blue-brand);
@@ -734,6 +742,10 @@ a.link-offset-2 {
     text-decoration:underline;
     color:var(--clr-navy-800);
 }   
+
+a.link-offset-2.muted {
+    color:var(--clr-navy-400);
+}
 
     a.link-offset-2:hover {
         color:var(--clr-cyan-47);
