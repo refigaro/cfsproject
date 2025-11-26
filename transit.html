@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#777777">
+    <meta name="theme-color" content="#ffffff">
+    <title>Imperial CFS, Inc - Availability</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="Content/css.css">
+    <link href="Content/Modal?v=7bMKDYCypKgFwJtiq8nBtCcJODJS6lCOLoIxVHt-al01" rel="stylesheet"/>
+    <link href="Content/extra.css" rel="stylesheet"/>
+    <link href="Content/icon?v=cVwA9pPiyb_rieloDJQKuVXzDQ3x5fT9A_F7NWasIVs1" rel="stylesheet"/>
+    <link rel="stylesheet" href="Content/css.css">
+    <link rel="stylesheet" href="Content/design-system.css">
+    <link rel="stylesheet" href="Content/custom-styles.css">
+</head>
+<body class="availavility-v2">
+<header id="header">
+    <div class="availability-menu">
+        <div class="availability-menu-top">
+            <div class="container-fluid">
+                <div class="row align-items-center position-relative">
+                    <div class="col col-md-auto col-sm-8 d-flex gap-16 justify-start items-center">
+                        
+                        <div class="nav-logo">
+                            <a href="/">
+                                <img alt="IMPERIAL CFS" src="/_images/logo-w.png">
+                            </a>
+                        </div>
+
+                        <ul class="nav text-white font-family-archivo text-uppercase d-none d-xl-flex ms-4">
+                            <li class="nav-item">
+                                <a class="nav-link active link-light" aria-current="page" href="#">Inland WHSE list</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" href="#">WHSE In / Out</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" href="#">Transit Schedule</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link link-light dropdown-toggle text-white font-family-archivo text-uppercase" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                                    More
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Inland WHSE list</a></li>
+                                    <li><a class="dropdown-item" href="#warehouse-in-out">WHSE In / Out</a></li>
+                                    <li><a class="dropdown-item" href="#">Transit Schedule</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="dropdown d-xl-none ms-3">
+                            <button class="btn btn-outline-light btn-sm dropdown-toggle font-family-archivo text-uppercase rounded-full" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Useful links
+                            </button>
+                            <ul class="dropdown-menu shadow">
+                                <li><a class="dropdown-item" href="#">Inland WHSE list</a></li>
+                                <li><a class="dropdown-item" href="#">WHSE In / Out</a></li>
+                                <li><a class="dropdown-item" href="#">Transit Schedule</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col col-sm-auto d-flex items-center justify-end gap-4 search-bar">
+                        <button type="button" class="btn btn-outline-light btn-sm rounded-full transition hover-scale-97 font-family-archivo text-nowrap" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Search</button>
+                        <div class="row collapse" id="collapseExample">
+                            <div class="nav-search-bar col-12">
+                                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo"><b class="hide-mobile">New Search:</b>
+                                    <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
+                                    <option selected="selected" value="mbl">Master Bill</option>
+                                    <option value="cntr">Container Number</option>
+                                    <option value="ams">AMS House Bill</option>
+                                    <option value="it">Inbond Number</option>
+                                    <option value="go">GO Number</option>
+                                    </select>
+                                </label> 
+                                <label for="">
+                                    <input class="rounded" type="text">
+                                </label>
+                                <button type="button" class="btn btn-primary btn-sm bg-navy-700 text-uppercase text-xs rounded">Search <i class="bi bi-search text-xs ml-2"></i></button>
+                                <button type="button" class="btn-close" aria-label="Close"  data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-md-auto col-sm-auto ar ms-auto">
+                        <div class="availability-menu-link clears">
+                            <div class="hamburger-menu fr">
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="availability-menu-child">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li>
+                                <a href="/OurServices">Our Services</a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/OurServices">CFS</a></dd>
+                                    <dd><a href="/OurServices/Inland">inland consolidation</a></dd>
+                                    <dd><a href="/OurServices/Trucking">trucking</a></dd>
+                                    <dd><a href="/OurServices/Technology">technology</a></dd>
+                                    <dd><a href="/OurServices/Security">additional services</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="/Availability/Index/mbl/TCLU1228380">Availability </a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/Availability/Pickup">PICK-UP HOURS</a></dd>
+                                    <dd><a href="/Availability/TerminalStatus">TERMINAL STATUS</a></dd>
+                                    <dd><a href="/Availability/TerminalSchedule" target="_blank">TERMINAL SCHEDULE</a></dd>
+                                    <dd><a href="/Availability/CFSCharges" target="_blank">CFS Charges</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="/IPI/Index/mbl/TCLU1228380">IPI Tracing</a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/IPI/Inland">INLAND WAREHOUSE LIST</a></dd>
+                                    <dd><a href="/IPI/Warehouse">WAREHOUSE IN / OUT</a></dd>
+                                    <dd><a href="/IPI/Transit">TRANSIT SCHEDULE</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="/WarehouseFees/Index/mbl/TCLU1228380">Pay Warehouse Fees</a></li>
+                            <li><a href="/Home/About">About Us</a></li>
+                            <li><a href="/Home/News/5">News</a></li>
+                            <li><a href="/Home/Forms">Forms</a></li>
+                            <li><a href="/Home/Contact">Contact</a></li>
+                            <a href="/Home/CustomerLogin">Login</a>                                
+                            <li><a href="tel:(310) 768-8188"><i class="fa fa-phone"></i>(310) 768-8188</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="breadcrums pt-4 mt-16"> <!-- BREADCRUMS -->
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#"><i class="bi bi-house-door-fill"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">IPI Tracing</a></li>
+                    <li class="breadcrumb-item"><a href="#">Transit Time Schedule</a></li>
+                </ol>
+            </nav>
+        </div>
+    </div>  
+    </div>  
+</section>
+<section> <!-- TITLE -->
+    <div class="container-fluid">
+        <div class="row justify-content-between">
+            <div class="col-auto">
+                <h1 class="text-3xl font-family-dm-serif text-navy-800">Transit Time Schedule</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mbl-details ipi-tracing">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col-12 col-sm-11" id="warehouse-in-out">
+                        <div class="row">
+                            <div class="col-auto ml-auto">
+                                <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Export data to Excel 
+                                    <i class="bi bi-file-earmark-spreadsheet"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row my-4 align-items-center font-family-archivo">
+                            <div class="col-auto">
+                                <label for="citySearch" class="col-form-label text-dark">Search for city:</label>
+                            </div>
+                            <div class="col-md-5 col-lg-4">
+                                <input type="text" id="citySearch" onkeyup="searchAccordion()" class="form-control rounded" placeholder="Search for city...">
+                            </div>
+                        </div>
+                        <div class="Availability-table">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-11">
+                                            <div class="table-responsive">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th width="16.66666%">Destination</th>
+                                                            <th>Truck (T) / Rail (R)</th>
+                                                            <th>Frequency</th>
+                                                            <th>
+                                                                Estimated
+                                                                Loading Day
+                                                            </th>
+                                                            <th>
+                                                                Estimated transit
+                                                                Time (days)
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>ALBUQUERQUE</td>
+                                                            <td>T</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>3-4</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ATLANTA</td>
+                                                            <td>R</td>
+                                                            <td>3 to 4</td>
+                                                            <td>Tue, Wed, Fri</td>
+                                                            <td>7-8</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>AUSTIN</td>
+                                                            <td>T</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>3-4</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>BALTIMORE</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>11-14</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>BIRMINGHAM</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>10-12</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>BOSTON</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>11-14</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>BROWNSVILLE</td>
+                                                            <td>T</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>4-5</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>BUFFALO</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>11-14</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>CHARLESTON</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>11-13</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>CHARLOTTE</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>9-11</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>CHATTANOOGA</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>10-12</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>CHICAGO</td>
+                                                            <td>R</td>
+                                                            <td>2 to 3</td>
+                                                            <td>Tue, Fri</td>
+                                                            <td>7-8</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>CINCINNATI</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>6-8</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>CLEVELAND</td>
+                                                            <td>R</td>
+                                                            <td>1 to 2</td>
+                                                            <td>Tue, Fri</td>
+                                                            <td>8-10</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>COLUMBUS</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>7-8</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>DALLAS</td>
+                                                            <td>R</td>
+                                                            <td>3 to 4</td>
+                                                            <td>Mon, Wed, Fri</td>
+                                                            <td>6-7</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>DAYTON</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>9-11</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>DENVER</td>
+                                                            <td>R</td>
+                                                            <td>1 to 2</td>
+                                                            <td>Tue, Fri</td>
+                                                            <td>5-6</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>DES MOINES</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>9-10</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>DETROIT</td>
+                                                            <td>R</td>
+                                                            <td>2 to 4</td>
+                                                            <td>Mon, Wed, Fri</td>
+                                                            <td>7-8</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>EL PASO</td>
+                                                            <td>T</td>
+                                                            <td>2 to 4</td>
+                                                            <td>Tue, Wed, Fri</td>
+                                                            <td>2-3</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>GREENSBORO</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>11-13</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>GREENVILLE</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>11-13</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>GRAND RAPIDS</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>9-10</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>HIDALGO</td>
+                                                            <td>T</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>4-5</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>HOUSTON</td>
+                                                            <td>R</td>
+                                                            <td>2 to 4</td>
+                                                            <td>Mon, Wed, Fri</td>
+                                                            <td>6-7</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>HUNTSVILLE</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>10-12</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>INDIANAPOLIS</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>7-8</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>JACKSONVILLE</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>12-14</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>KANSAS CITY</td>
+                                                            <td>R</td>
+                                                            <td>1 to 2</td>
+                                                            <td>Wed, Fri</td>
+                                                            <td>6-7</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>KNOXVILLE</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>10-12</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>LAREDO</td>
+                                                            <td>T</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>3-4</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>LAS VEGAS</td>
+                                                            <td>T</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>1-2</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>LITTLE ROCK</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>10-11</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>LOUISVILLE</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>8-10</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>MEMPHIS</td>
+                                                            <td>R</td>
+                                                            <td>2 to 3</td>
+                                                            <td>Wed, Fri</td>
+                                                            <td>7-8</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>MIAMI</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>13-15</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>MILWAUKEE</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>9-11</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>MINNEAPOLIS</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>7-9</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>MOBILE</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>10-12</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>NASHVILLE</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>11-13</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>NEW ORLEANS</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>9-10</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>NEW YORK</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>9-12</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>NOGALES</td>
+                                                            <td>T</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>3-4</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>NORFOLK</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>11-14</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>OKLAHOMA</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>6-8</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>OMAHA</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>8-9</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ORLANDO</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>12-14</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>PHILADELPHIA</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>11-14</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>PHOENIX</td>
+                                                            <td>T</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>1-2</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>PITTSBURGH</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>10-12</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>PORTLAND</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>4-6</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>RALEIGH</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>11-12</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>RICHMOND</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>11-14</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SALT LAKE CITY</td>
+                                                            <td>T</td>
+                                                            <td>1 to 2</td>
+                                                            <td>Tue, Fri</td>
+                                                            <td>3-4</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SAN ANTONIO</td>
+                                                            <td>T</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>4-5</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SAN DIEGO</td>
+                                                            <td>T</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SAN FRANCISCO</td>
+                                                            <td>T</td>
+                                                            <td>1 to 2</td>
+                                                            <td>Tue, Fri</td>
+                                                            <td>2</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SAVANNAH</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>10-12</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SEATTLE</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>6-7</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SPRINGFIELD</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>8-9</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ST. LOUIS</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>6-8</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>TAMPA</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>12-14</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>TOLEDO</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>9-10</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>TUCSON</td>
+                                                            <td>T</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>2-3</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>TULSA</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>6-8</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>WASHINGTON, DC</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>11-14</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>WICHITA</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>8-9</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>WILMINGTON</td>
+                                                            <td>R</td>
+                                                            <td>1</td>
+                                                            <td>Friday</td>
+                                                            <td>11-13</td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="5" class="ar" style="color:red;font-weight:bold">UPDATE SEPT 2025</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="5" class="al" style="color:red;font-weight:bold">**Estimated Loading Day and Estimated Transit Time may vary depending on the current and/or unforseen conditions.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="5" class="al" style="color:red;font-weight:bold">***Imperial can not be held liable for any charge back claim due to any IPI schedule delay.</td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    </div>
+                    <div class="col-lg-1"> <!-- /// Useful Links Stiky column /// -->
+                            <div class="sticky-column-content useful-links font-family-sora">
+                                <h2 class="text-primary fw-bold mb-3">Useful links</h2>
+                                <ul class="list-unstyled">
+                                    <li class="mb-3">
+                                        <a href="#" class="text-decoration-none fw-bold d-flex align-items-center justify-content-between border-bottom pb-2 text-xs">
+                                            Inland WHSE List <i class="bi bi-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="mb-3">
+                                        <a href="#warehouse-in-out" class="text-decoration-none fw-bold d-flex align-items-center justify-content-between border-bottom pb-2 text-xs">
+                                            WHSE In / Out <i class="bi bi-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="mb-3">
+                                        <a href="#" class="text-decoration-none fw-bold d-flex align-items-center justify-content-between border-bottom pb-2 text-xs">
+                                            Transit schedule <i class="bi bi-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div> 
+    </div>
+</section>
+<footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-top">
+                        <img src="/_images/footer-logo.png">
+                    </div>
+                    <div class="footer-main">
+                        <div class="row">
+                            <div class="col-12 col-sm-3 col-md-3">
+                                <ul>
+                                    <li><a href="/OurServices" target="_blank">Our Services</a></li>
+                                    <li><a href="/Availability/Index/mbl/TCLU1228380" target="_blank">Availability</a></li>
+                                    <li><a href="/IPI/Index/mbl/TCLU1228380" target="_blank">IPI Tracing</a></li>
+                                    <li><a href="/Charges/Guarantee_Whs_Fee/" target="_blank">Guarantee Imperial CFS Fees</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-2">
+                                <ul>
+                                    <li><a href="/Home/CustomerLogin">Login</a></li>
+                                    <li><a href="/Home/SiteMap" target="_blank">Site Map</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-2">
+                                <ul>
+                                    <li><a href="/Home/About" target="_blank">About Us</a></li>
+                                    <li><a href="/Home/News" target="_blank">News</a></li>
+                                    <li><a href="/Home/Forms" target="_blank">Forms</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-5">
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <dl>
+                                            <dt>Location</dt>
+                                            <dd>
+                                                1000 Francisco St<br>
+                                                Torrance CA 90502 USA
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <dl>
+                                            <dt>Phone</dt>
+                                            <dd>310-768-8188</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>Fax</dt>
+                                            <dd>310-527-7288</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="row">
+                            <div class="col-12 col-sm-4 al">
+                                <p>© 2025 Cargovation LLC All Rights Reserved.</p>
+                                <!--h1>Brought to you by kchen9 </h1-->
+                            </div>
+                            <div class="col-12 col-sm-4 ar">
+                                <p><a href="/Home/PrivacyPolicy">Privacy Policy</a></p>
+                            </div>
+                            <div class="col-12 col-sm-4 ar">
+                                <p><a href="/Home/Terms">Terms and Conditions</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+<script src="/bundles/main_jquery?v=pcTLGo70Ebj-7wZHfj5-OozMeYDuBTaJgLdp-yYJn8s1"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    $('#Number').keypress(function (event){
+        if (event.keyCode === 13) {
+            var type = $('#Type').val();
+            var number = $('#Number').val();
+            var controller = "Availability";
+            window.location = "/" + controller + "/Index/" + type + "/" + number
+        }
+    })
+    var currentpath = "Availability"+"/"+"Index";
+</script>
+<script>
+    var controllername = '/Availability';
+    var ajax_url = controllername+'/SearchAjax/ ';
+</script>
+<script src="/bundles/AvailabilityViewer_Ajax?v=VgNFlR4TbTdLyioL1u0joKY-tpXbFdUn0Toxg6Z7ehQ1"></script>
+<script src="/bundles/Modal?v=6X2XgyWba97tfyPCPLvNNu3Nfognwesw8t4cSNPp6OA1"></script>
+<script>
+    $(function() {
+        $(".hamburger-menu").on("click", function() {
+            $(".bar").toggleClass("animate");
+            $(".availability-menu").toggleClass("open");
+            $(".availability-menu-child").stop(!0, !1).slideToggle(300)
+        });
+        $(".availability-menu-child ul>li i").click(function() {
+            $(this).parents("li").toggleClass("active");
+            $(this).parents("li").find(".mob-sub-menu").stop(!0, !1).slideToggle();
+            $(this).parents("li").siblings("li").find(".mob-sub-menu").slideUp()
+        });
+        $(window).width() >= 768 ? $(".home-section-04-box").css("margin-top", $(".home-section-04-box").height() * -1) : $(".home-section-04-box").css("margin-top", 0)
+    })
+</script>
+<script>
+    function searchAccordion() {
+        // 1. Get the input value
+        var input = document.getElementById("citySearch");
+        var filter = input.value.toUpperCase();
+
+        // 2. Get the specific container (Safer than getting all items on the whole page)
+        var container = document.getElementById("warehouse-in-out-Accordion");
+        var items = container.getElementsByClassName("accordion-item");
+
+        // 3. Loop through all items
+        for (var i = 0; i < items.length; i++) {
+            
+            // Find the header button inside this specific item
+            var headerButton = items[i].querySelector(".accordion-button");
+
+            if (headerButton) {
+                // FIXED: We define itemText using the headerButton we just found
+                var itemText = headerButton.textContent || headerButton.innerText;
+
+                // 4. Check if the text matches the search
+                if (itemText.toUpperCase().indexOf(filter) > -1) {
+                    items[i].style.display = ""; // Show
+                } else {
+                    items[i].style.display = "none"; // Hide
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

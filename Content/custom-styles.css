@@ -1029,14 +1029,13 @@ html {
         text-decoration: none;
     }
 
-#warehouse-in-out .accordion-collapse div.form-check.form-switch {
+#warehouse-in-out .accordion-collapse div.form-check {
     display: inline-flex;
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-    gap: .5rem;
+    gap: .25rem;
     border-radius:5rem;
-    background:var(--clr-azure-95);
     padding:var(--space-2) var(--space-3);
 }
 
@@ -1068,6 +1067,30 @@ header#header {
     
     background-color: rgba(0, 0, 0, 0.7) !important;
 }
+
+/* Transit Time Schedule */
+
+.availavility-v2 .table-striped>tbody>tr:nth-of-type(odd){
+    background-color: var(--clr-azure-89)!important;
+}
+
+.availavility-v2 .table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-color-type: var(--bs-table-striped-color);
+    --bs-table-bg-type: var(--clr-azure-89)!important;
+}
+
+.availavility-v2 .Availability-table {
+    font-family:var(--font-primary);
+}
+
+.availavility-v2 .Availability-table thead th {
+    font-family:var(--font-secondary);
+    font-size: var(--font-size-xs);
+    background-color:var(--clr-navy-700)
+}
+
+
+/* --------------- Responsive styles -------- */
 
 @media screen and (min-width:1366px){
     .container-fluid {
@@ -1536,3 +1559,7 @@ header#header {
     overflow: hidden; 
     text-overflow: ellipsis;
 }
+
+.offcanvas {
+    z-index: 1060;
+} /* Fix for header being over offcanvas */
