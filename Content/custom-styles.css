@@ -1123,6 +1123,34 @@ header#header {
     vertical-align: middle;
 }
 
+/* -------- Charges Page -------*/
+
+.availavility-v2 table.ginfo {
+    width:100%!important;
+    max-width:50rem;
+    margin:0!important;
+}
+
+.availavility-v2 .charges-table .btn-group {
+    flex-direction:column!important;
+    display: flex;
+    gap:var(--space-2);
+    max-width:12rem;
+}
+
+.availavility-v2 .charges-table .btn-group button {
+    background-color:var(--clr-cyan-47);
+    border:1px solid var(--clr-cyan-47);
+}
+
+    .availavility-v2 .charges-table .btn-group button:hover {
+        background-color:var(--clr-azure-19);
+        border:1px solid var(--clr-azure-19);
+    }
+
+
+
+
 
 /* --------------- Responsive styles -------- */
 

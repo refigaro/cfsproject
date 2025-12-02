@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#777777">
+    <meta name="theme-color" content="#ffffff">
+    <title>Imperial CFS, Inc - Availability</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="Content/css.css">
+    <link href="Content/Modal?v=7bMKDYCypKgFwJtiq8nBtCcJODJS6lCOLoIxVHt-al01" rel="stylesheet"/>
+    <link href="Content/extra.css" rel="stylesheet"/>
+    <link href="Content/icon?v=cVwA9pPiyb_rieloDJQKuVXzDQ3x5fT9A_F7NWasIVs1" rel="stylesheet"/>
+    <link rel="stylesheet" href="Content/css.css">
+    <link rel="stylesheet" href="Content/design-system.css">
+    <link rel="stylesheet" href="Content/custom-styles.css">
+</head>
+<body class="availavility-v2">
+<header id="header">
+    <div class="availability-menu">
+        <div class="availability-menu-top">
+            <div class="container-fluid">
+                <div class="row align-items-center position-relative">
+                    <div class="col col-md-auto col-sm-8 d-flex gap-16 justify-start items-center">
+                        
+                        <div class="nav-logo">
+                            <a href="/">
+                                <img alt="IMPERIAL CFS" src="/_images/logo-w.png">
+                            </a>
+                        </div>
+
+                        <ul class="nav text-white font-family-archivo text-uppercase d-none d-xl-flex ms-4">
+                            <li class="nav-item">
+                                <a class="nav-link active link-light" aria-current="page" href="#">Inland WHSE list</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" href="#">WHSE In / Out</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" href="#">Transit Schedule</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link link-light dropdown-toggle text-white font-family-archivo text-uppercase" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                                    More
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Inland WHSE list</a></li>
+                                    <li><a class="dropdown-item" href="#warehouse-in-out">WHSE In / Out</a></li>
+                                    <li><a class="dropdown-item" href="#">Transit Schedule</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="dropdown d-xl-none ms-3">
+                            <button class="btn btn-outline-light btn-sm dropdown-toggle font-family-archivo text-uppercase rounded-full" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Useful links
+                            </button>
+                            <ul class="dropdown-menu shadow">
+                                <li><a class="dropdown-item" href="#">Inland WHSE list</a></li>
+                                <li><a class="dropdown-item" href="#">WHSE In / Out</a></li>
+                                <li><a class="dropdown-item" href="#">Transit Schedule</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col col-sm-auto d-flex items-center justify-end gap-4 search-bar">
+                        <button type="button" class="btn btn-outline-light btn-sm rounded-full transition hover-scale-97 font-family-archivo text-nowrap" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Search</button>
+                        <div class="row collapse" id="collapseExample">
+                            <div class="nav-search-bar col-12">
+                                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo"><b class="hide-mobile">New Search:</b>
+                                    <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
+                                    <option selected="selected" value="mbl">Master Bill</option>
+                                    <option value="cntr">Container Number</option>
+                                    <option value="ams">AMS House Bill</option>
+                                    <option value="it">Inbond Number</option>
+                                    <option value="go">GO Number</option>
+                                    </select>
+                                </label> 
+                                <label for="">
+                                    <input class="rounded" type="text">
+                                </label>
+                                <button type="button" class="btn btn-primary btn-sm bg-navy-700 text-uppercase text-xs rounded">Search <i class="bi bi-search text-xs ml-2"></i></button>
+                                <button type="button" class="btn-close" aria-label="Close"  data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-md-auto col-sm-auto ar ms-auto">
+                        <div class="availability-menu-link clears">
+                            <div class="hamburger-menu fr">
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="availability-menu-child">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li>
+                                <a href="/OurServices">Our Services</a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/OurServices">CFS</a></dd>
+                                    <dd><a href="/OurServices/Inland">inland consolidation</a></dd>
+                                    <dd><a href="/OurServices/Trucking">trucking</a></dd>
+                                    <dd><a href="/OurServices/Technology">technology</a></dd>
+                                    <dd><a href="/OurServices/Security">additional services</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="/Availability/Index/mbl/TCLU1228380">Availability </a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/Availability/Pickup">PICK-UP HOURS</a></dd>
+                                    <dd><a href="/Availability/TerminalStatus">TERMINAL STATUS</a></dd>
+                                    <dd><a href="/Availability/TerminalSchedule" target="_blank">TERMINAL SCHEDULE</a></dd>
+                                    <dd><a href="/Availability/CFSCharges" target="_blank">CFS Charges</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="/IPI/Index/mbl/TCLU1228380">IPI Tracing</a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/IPI/Inland">INLAND WAREHOUSE LIST</a></dd>
+                                    <dd><a href="/IPI/Warehouse">WAREHOUSE IN / OUT</a></dd>
+                                    <dd><a href="/IPI/Transit">TRANSIT SCHEDULE</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="/WarehouseFees/Index/mbl/TCLU1228380">Pay Warehouse Fees</a></li>
+                            <li><a href="/Home/About">About Us</a></li>
+                            <li><a href="/Home/News/5">News</a></li>
+                            <li><a href="/Home/Forms">Forms</a></li>
+                            <li><a href="/Home/Contact">Contact</a></li>
+                            <a href="/Home/CustomerLogin">Login</a>                                
+                            <li><a href="tel:(310) 768-8188"><i class="fa fa-phone"></i>(310) 768-8188</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="breadcrums pt-4 mt-16"> <!-- BREADCRUMS -->
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#"><i class="bi bi-house-door-fill"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">IPI Tracing</a></li>
+                    <li class="breadcrumb-item"><a href="#">Transit Time Schedule</a></li>
+                </ol>
+            </nav>
+        </div>
+    </div>  
+    </div>  
+</section>
+<section> <!-- TITLE -->
+    <div class="container-fluid">
+        <div class="row justify-content-between">
+            <div class="col-auto">
+                <h1 class="text-3xl font-family-dm-serif text-navy-800">HBL Charges</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mbl-details ipi-tracing">
+    <div class="Availability-main">
+        <div class="container-fluid">
+            <link href="/Content/datepicker?v=WDaPwTb1h4Pt4dlwF7DiW0XpBWArFbYu1WJNeW_YI9Y1" rel="stylesheet">
+        <style>
+            .red-outline {
+                border: 2px solid red;
+            }
+        </style>
+        <form action="/Charges/SelectCharges/" method="post"><input name="__RequestVerificationToken" type="hidden" value="1yLoQiT7PDmzVkxGctowJH10XkkL-mW0FKHjwZwOTjp85bYTbE2Ax5-DA8KOS6tNeoXWyFp-fMVY5EoNp1xWzzKNQDYtNMzlaUx1aov-ai01"> 
+        <div class="Availability-table charges-table">
+            <div class="row">
+                <div class="col-12 col-md-7 mb-4">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table class="ginfo" width="90%" border="1">
+                                <thead>
+                                    <tr align="center">
+                                        <th colspan="3">Local Pickup Estimated Charges</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="ar"><label for="Hbl_no">House Bill Number</label></td>
+                                        <td>
+                                            <input readonly="true" class="form-control hbl" id="Hbl_no" name="Hbl_no" type="text" value="EFSVMZP798532E">
+                                        </td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ar"><label for="Pickup_date">Est. P/U Date</label></td>
+                                        <td>
+                                            <input value="" autocomplete="off" class="form-control date red-outline" data-val="true" data-val-date="The field Est. P/U Date must be a date." data-val-required="The Est. P/U Date field is required." id="Pickup_date" name="Pickup_date" placeholder="Please Enter Pick-Up Date" required="true" type="text">
+                                        </td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ar">Note</td>
+                                        <td colspan="2">EXTRA $75 PER HOUR WILL BE CHARGED AFTER 6:00 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td colspan="2">EXTRA $10 WILL BE CHARGED FOR PERSONAL EFFECTS</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                        <div id="loading" style="margin: 0px auto; display: none;">
+                            <img src="/_images/ajax-loader.gif" alt="Loading">
+                        </div>
+                        <div class="col-sm-12">
+                            <div id="charges">
+                                <table class="ginfo">
+                                    <thead>
+                                        <tr>
+                                            <th class="ac" colspan="2">HBL DETAIL</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th class="ar"><label for="Full_mbl_no">MBL</label></th>
+                                            <td>CMDUNGP2798532</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="ar"><label for="Pkgs">Packages</label></th>
+                                            <td>151</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="ar"><label for="Cbm">Cbm</label></th>
+                                            <td>6.53</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="ar"><label for="Lbs">Lbs</label></th>
+                                            <td>1809.88</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="ginfo">
+                                    <thead>
+                                        <tr>
+                                            <th>CHARGE DESCRIPTION</th>
+                                            <th>CHARGE</th>
+                                            <th>STATUS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>FORKLIFT CHARGES</td>
+                                            <td>
+                                            </td>
+                                            <td>PAID</td>
+                                        </tr>
+                                        <tr>
+                                            <td>IN-BOND DOCUMENTATION CHARGE</td>
+                                            <td>
+                                            </td>
+                                            <td>PAID</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CFS TERMINAL SURCHARGE</td>
+                                            <td>
+                                            </td>
+                                            <td>PAID</td>
+                                        </tr>
+                                        <tr>
+                                            <td>FACILITY WINDOW CHARGE</td>
+                                            <td>
+                                            </td>
+                                            <td>PAID</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PORT DRAYAGE SURCHARGE</td>
+                                            <td>
+                                            </td>
+                                            <td>PAID</td>
+                                        </tr>
+                                        <tr>
+                                            <td>DEMURAGE CHARGE</td>
+                                            <td>$4,680.00</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th class="w-75 al"><label for="Total_wo_pallet">TOTAL CHARGES W/O PALLET</label></th>
+                                            <th class="w-25 al" colspan="2">
+                                                $4,680.00
+                                            </th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                                <table class="ginfo">
+                                    <tbody>
+                                        <tr>
+                                            <td>PALLET SERVICE CHARGE</td>
+                                            <td>$100.00</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th class="w-75 al">TOTAL CHARGES W/ PALLET</th>
+                                            <td class="w-25 al" colspan="2"><input readonly="True" data-val="true" data-val-number="The field TOTAL :  must be a number." data-val-required="The TOTAL :  field is required." id="Total" name="Total" type="text" value="$4,780.00"></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-auto">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="btn-group">
+                                <button type="submit" id="btnInvoice" name="Type" value="Pickup" class="btn btn-primary btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer mr-2"></i>PRINT INVOICE</button>
+                                <button type="submit" id="btnPayCargo" name="Type" value="PayCargo" style="" class="noTopBtmPad"><img src="/_images/PayCargo_Button.png"></button>
+                                <button type="submit" id="btnGuarantee" name="Type" value="Guarantee" class="btn btn-primary btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer mr-2"></i>GUARANTEE CHARGES</button>
+                                <button type="submit" id="btnCredit" name="Type" value="Credit" class="btn btn-primary btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-credit-card mr-2"></i>PAY CREDIT CARD/ACH</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+        </form>
+        <script>
+            var chargeslink = "/Charges/GetCharges/";
+        </script>
+        <script src="/bundles/datepicker_today?v=wxgHQp4wTMbhRyGRgZTd2B-fH1y2puKQRK3sgRzFVgg1"></script>
+        <script src="/bundles/GetCharges?v=053ZAC1LLZgglg-Hzb4d-9IfS4lWQpKgiCYXMNcArto1"></script>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-top">
+                        <img src="/_images/footer-logo.png">
+                    </div>
+                    <div class="footer-main">
+                        <div class="row">
+                            <div class="col-12 col-sm-3 col-md-3">
+                                <ul>
+                                    <li><a href="/OurServices" target="_blank">Our Services</a></li>
+                                    <li><a href="/Availability/Index/mbl/TCLU1228380" target="_blank">Availability</a></li>
+                                    <li><a href="/IPI/Index/mbl/TCLU1228380" target="_blank">IPI Tracing</a></li>
+                                    <li><a href="/Charges/Guarantee_Whs_Fee/" target="_blank">Guarantee Imperial CFS Fees</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-2">
+                                <ul>
+                                    <li><a href="/Home/CustomerLogin">Login</a></li>
+                                    <li><a href="/Home/SiteMap" target="_blank">Site Map</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-2">
+                                <ul>
+                                    <li><a href="/Home/About" target="_blank">About Us</a></li>
+                                    <li><a href="/Home/News" target="_blank">News</a></li>
+                                    <li><a href="/Home/Forms" target="_blank">Forms</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-5">
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <dl>
+                                            <dt>Location</dt>
+                                            <dd>
+                                                1000 Francisco St<br>
+                                                Torrance CA 90502 USA
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <dl>
+                                            <dt>Phone</dt>
+                                            <dd>310-768-8188</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>Fax</dt>
+                                            <dd>310-527-7288</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="row">
+                            <div class="col-12 col-sm-4 al">
+                                <p>© 2025 Cargovation LLC All Rights Reserved.</p>
+                                <!--h1>Brought to you by kchen9 </h1-->
+                            </div>
+                            <div class="col-12 col-sm-4 ar">
+                                <p><a href="/Home/PrivacyPolicy">Privacy Policy</a></p>
+                            </div>
+                            <div class="col-12 col-sm-4 ar">
+                                <p><a href="/Home/Terms">Terms and Conditions</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- Back to Top Button -->
+<button type="button" 
+        id="backToTopBtn" 
+        class="btn btn-dark rounded-pill position-fixed bottom-0 start-0 m-3 shadow d-none" 
+        style="z-index: 1080; transition: opacity 0.3s;"
+        onclick="scrollToTop()">
+    <i class="bi bi-arrow-up me-2"></i>Back to top
+</button>
+<script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+<script src="/bundles/main_jquery?v=pcTLGo70Ebj-7wZHfj5-OozMeYDuBTaJgLdp-yYJn8s1"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    $('#Number').keypress(function (event){
+        if (event.keyCode === 13) {
+            var type = $('#Type').val();
+            var number = $('#Number').val();
+            var controller = "Availability";
+            window.location = "/" + controller + "/Index/" + type + "/" + number
+        }
+    })
+    var currentpath = "Availability"+"/"+"Index";
+</script>
+<script>
+    var controllername = '/Availability';
+    var ajax_url = controllername+'/SearchAjax/ ';
+</script>
+<script src="/bundles/AvailabilityViewer_Ajax?v=VgNFlR4TbTdLyioL1u0joKY-tpXbFdUn0Toxg6Z7ehQ1"></script>
+<script src="/bundles/Modal?v=6X2XgyWba97tfyPCPLvNNu3Nfognwesw8t4cSNPp6OA1"></script>
+<script>
+    $(function() {
+        $(".hamburger-menu").on("click", function() {
+            $(".bar").toggleClass("animate");
+            $(".availability-menu").toggleClass("open");
+            $(".availability-menu-child").stop(!0, !1).slideToggle(300)
+        });
+        $(".availability-menu-child ul>li i").click(function() {
+            $(this).parents("li").toggleClass("active");
+            $(this).parents("li").find(".mob-sub-menu").stop(!0, !1).slideToggle();
+            $(this).parents("li").siblings("li").find(".mob-sub-menu").slideUp()
+        });
+        $(window).width() >= 768 ? $(".home-section-04-box").css("margin-top", $(".home-section-04-box").height() * -1) : $(".home-section-04-box").css("margin-top", 0)
+    })
+</script>
+<script>
+    // Back to top button logic
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    window.onscroll = function() {
+        // Calculate 24rem in pixels dynamically
+        const remInPixels = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const threshold = 24 * remInPixels;
+
+        if (document.body.scrollTop > threshold || document.documentElement.scrollTop > threshold) {
+            backToTopBtn.classList.remove("d-none");
+        } else {
+            backToTopBtn.classList.add("d-none");
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+    <script>
+        var chargeslink = "/Charges/GetCharges/";
+    </script>
+    <script src="/bundles/datepicker_today?v=wxgHQp4wTMbhRyGRgZTd2B-fH1y2puKQRK3sgRzFVgg1"></script>
+<script src="/bundles/GetCharges?v=053ZAC1LLZgglg-Hzb4d-9IfS4lWQpKgiCYXMNcArto1"></script><div class="xdsoft_datetimepicker xdsoft_noselect xdsoft_" style="display: none; position: absolute; left: 661.141px; top: 255px;"><div class="xdsoft_datepicker active"><div class="xdsoft_mounthpicker"><button type="button" class="xdsoft_prev" style="visibility: visible;"></button><button type="button" class="xdsoft_today_button" style="visibility: visible;"></button><div class="xdsoft_label xdsoft_month"><span>December</span><div class="xdsoft_select xdsoft_monthselect xdsoft_scroller_box" style="display: none;"><div style="margin-top: 0px;"><div class="xdsoft_option " data-value="0">January</div><div class="xdsoft_option " data-value="1">February</div><div class="xdsoft_option " data-value="2">March</div><div class="xdsoft_option " data-value="3">April</div><div class="xdsoft_option " data-value="4">May</div><div class="xdsoft_option " data-value="5">June</div><div class="xdsoft_option " data-value="6">July</div><div class="xdsoft_option " data-value="7">August</div><div class="xdsoft_option " data-value="8">September</div><div class="xdsoft_option " data-value="9">October</div><div class="xdsoft_option " data-value="10">November</div><div class="xdsoft_option xdsoft_current" data-value="11">December</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="height: 10px; margin-top: 0px;"></div></div></div><i></i></div><div class="xdsoft_label xdsoft_year"><span>2025</span><div class="xdsoft_select xdsoft_yearselect xdsoft_scroller_box" style="display: none;"><div style="margin-top: 0px;"><div class="xdsoft_option " data-value="2010">2010</div><div class="xdsoft_option " data-value="2011">2011</div><div class="xdsoft_option " data-value="2012">2012</div><div class="xdsoft_option " data-value="2013">2013</div><div class="xdsoft_option " data-value="2014">2014</div><div class="xdsoft_option " data-value="2015">2015</div><div class="xdsoft_option " data-value="2016">2016</div><div class="xdsoft_option " data-value="2017">2017</div><div class="xdsoft_option " data-value="2018">2018</div><div class="xdsoft_option " data-value="2019">2019</div><div class="xdsoft_option " data-value="2020">2020</div><div class="xdsoft_option " data-value="2021">2021</div><div class="xdsoft_option " data-value="2022">2022</div><div class="xdsoft_option " data-value="2023">2023</div><div class="xdsoft_option " data-value="2024">2024</div><div class="xdsoft_option xdsoft_current" data-value="2025">2025</div><div class="xdsoft_option " data-value="2026">2026</div><div class="xdsoft_option " data-value="2027">2027</div><div class="xdsoft_option " data-value="2028">2028</div><div class="xdsoft_option " data-value="2029">2029</div><div class="xdsoft_option " data-value="2030">2030</div><div class="xdsoft_option " data-value="2031">2031</div><div class="xdsoft_option " data-value="2032">2032</div><div class="xdsoft_option " data-value="2033">2033</div><div class="xdsoft_option " data-value="2034">2034</div><div class="xdsoft_option " data-value="2035">2035</div><div class="xdsoft_option " data-value="2036">2036</div><div class="xdsoft_option " data-value="2037">2037</div><div class="xdsoft_option " data-value="2038">2038</div><div class="xdsoft_option " data-value="2039">2039</div><div class="xdsoft_option " data-value="2040">2040</div><div class="xdsoft_option " data-value="2041">2041</div><div class="xdsoft_option " data-value="2042">2042</div><div class="xdsoft_option " data-value="2043">2043</div><div class="xdsoft_option " data-value="2044">2044</div><div class="xdsoft_option " data-value="2045">2045</div><div class="xdsoft_option " data-value="2046">2046</div><div class="xdsoft_option " data-value="2047">2047</div><div class="xdsoft_option " data-value="2048">2048</div><div class="xdsoft_option " data-value="2049">2049</div><div class="xdsoft_option " data-value="2050">2050</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="height: 10px; margin-top: 0px;"></div></div></div><i></i></div><button type="button" class="xdsoft_next" style="visibility: visible;"></button></div><div class="xdsoft_calendar"><table><thead><tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead><tbody><tr><td data-date="1" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_disabled" title=""><div>1</div></td><td data-date="2" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_current xdsoft_today" title=""><div>2</div></td><td data-date="3" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date" title=""><div>3</div></td><td data-date="4" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date" title=""><div>4</div></td><td data-date="5" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date" title=""><div>5</div></td><td data-date="6" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend" title=""><div>6</div></td><td data-date="7" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend" title=""><div>7</div></td></tr><tr><td data-date="8" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date" title=""><div>8</div></td><td data-date="9" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date" title=""><div>9</div></td><td data-date="10" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date" title=""><div>10</div></td><td data-date="11" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date" title=""><div>11</div></td><td data-date="12" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date" title=""><div>12</div></td><td data-date="13" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend" title=""><div>13</div></td><td data-date="14" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend" title=""><div>14</div></td></tr><tr><td data-date="15" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date" title=""><div>15</div></td><td data-date="16" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date" title=""><div>16</div></td><td data-date="17" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date" title=""><div>17</div></td><td data-date="18" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date" title=""><div>18</div></td><td data-date="19" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date" title=""><div>19</div></td><td data-date="20" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend" title=""><div>20</div></td><td data-date="21" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend" title=""><div>21</div></td></tr><tr><td data-date="22" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date" title=""><div>22</div></td><td data-date="23" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date" title=""><div>23</div></td><td data-date="24" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date" title=""><div>24</div></td><td data-date="25" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date" title=""><div>25</div></td><td data-date="26" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date" title=""><div>26</div></td><td data-date="27" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend" title=""><div>27</div></td><td data-date="28" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend" title=""><div>28</div></td></tr><tr><td data-date="29" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date" title=""><div>29</div></td><td data-date="30" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date" title=""><div>30</div></td><td data-date="31" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date" title=""><div>31</div></td><td data-date="1" data-month="0" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_other_month" title=""><div>1</div></td><td data-date="2" data-month="0" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_other_month" title=""><div>2</div></td><td data-date="3" data-month="0" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_other_month xdsoft_weekend" title=""><div>3</div></td><td data-date="4" data-month="0" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_other_month xdsoft_weekend" title=""><div>4</div></td></tr></tbody></table></div><button type="button" class="xdsoft_save_selected blue-gradient-button" style="display: none;">Save Selected</button></div><div class="xdsoft_timepicker"><button type="button" class="xdsoft_prev"></button><div class="xdsoft_time_box xdsoft_scroller_box"><div class="xdsoft_time_variant" style="margin-top: 0px;"><div class="xdsoft_time xdsoft_current" data-hour="0" data-minute="0">00:00</div><div class="xdsoft_time " data-hour="0" data-minute="10">00:10</div><div class="xdsoft_time " data-hour="0" data-minute="20">00:20</div><div class="xdsoft_time " data-hour="0" data-minute="30">00:30</div><div class="xdsoft_time " data-hour="0" data-minute="40">00:40</div><div class="xdsoft_time " data-hour="0" data-minute="50">00:50</div><div class="xdsoft_time " data-hour="1" data-minute="0">01:00</div><div class="xdsoft_time " data-hour="1" data-minute="10">01:10</div><div class="xdsoft_time " data-hour="1" data-minute="20">01:20</div><div class="xdsoft_time " data-hour="1" data-minute="30">01:30</div><div class="xdsoft_time " data-hour="1" data-minute="40">01:40</div><div class="xdsoft_time " data-hour="1" data-minute="50">01:50</div><div class="xdsoft_time " data-hour="2" data-minute="0">02:00</div><div class="xdsoft_time " data-hour="2" data-minute="10">02:10</div><div class="xdsoft_time " data-hour="2" data-minute="20">02:20</div><div class="xdsoft_time " data-hour="2" data-minute="30">02:30</div><div class="xdsoft_time " data-hour="2" data-minute="40">02:40</div><div class="xdsoft_time " data-hour="2" data-minute="50">02:50</div><div class="xdsoft_time " data-hour="3" data-minute="0">03:00</div><div class="xdsoft_time " data-hour="3" data-minute="10">03:10</div><div class="xdsoft_time " data-hour="3" data-minute="20">03:20</div><div class="xdsoft_time " data-hour="3" data-minute="30">03:30</div><div class="xdsoft_time " data-hour="3" data-minute="40">03:40</div><div class="xdsoft_time " data-hour="3" data-minute="50">03:50</div><div class="xdsoft_time " data-hour="4" data-minute="0">04:00</div><div class="xdsoft_time " data-hour="4" data-minute="10">04:10</div><div class="xdsoft_time " data-hour="4" data-minute="20">04:20</div><div class="xdsoft_time " data-hour="4" data-minute="30">04:30</div><div class="xdsoft_time " data-hour="4" data-minute="40">04:40</div><div class="xdsoft_time " data-hour="4" data-minute="50">04:50</div><div class="xdsoft_time " data-hour="5" data-minute="0">05:00</div><div class="xdsoft_time " data-hour="5" data-minute="10">05:10</div><div class="xdsoft_time " data-hour="5" data-minute="20">05:20</div><div class="xdsoft_time " data-hour="5" data-minute="30">05:30</div><div class="xdsoft_time " data-hour="5" data-minute="40">05:40</div><div class="xdsoft_time " data-hour="5" data-minute="50">05:50</div><div class="xdsoft_time " data-hour="6" data-minute="0">06:00</div><div class="xdsoft_time " data-hour="6" data-minute="10">06:10</div><div class="xdsoft_time " data-hour="6" data-minute="20">06:20</div><div class="xdsoft_time " data-hour="6" data-minute="30">06:30</div><div class="xdsoft_time " data-hour="6" data-minute="40">06:40</div><div class="xdsoft_time " data-hour="6" data-minute="50">06:50</div><div class="xdsoft_time " data-hour="7" data-minute="0">07:00</div><div class="xdsoft_time " data-hour="7" data-minute="10">07:10</div><div class="xdsoft_time " data-hour="7" data-minute="20">07:20</div><div class="xdsoft_time " data-hour="7" data-minute="30">07:30</div><div class="xdsoft_time " data-hour="7" data-minute="40">07:40</div><div class="xdsoft_time " data-hour="7" data-minute="50">07:50</div><div class="xdsoft_time " data-hour="8" data-minute="0">08:00</div><div class="xdsoft_time " data-hour="8" data-minute="10">08:10</div><div class="xdsoft_time " data-hour="8" data-minute="20">08:20</div><div class="xdsoft_time " data-hour="8" data-minute="30">08:30</div><div class="xdsoft_time " data-hour="8" data-minute="40">08:40</div><div class="xdsoft_time " data-hour="8" data-minute="50">08:50</div><div class="xdsoft_time " data-hour="9" data-minute="0">09:00</div><div class="xdsoft_time " data-hour="9" data-minute="10">09:10</div><div class="xdsoft_time " data-hour="9" data-minute="20">09:20</div><div class="xdsoft_time " data-hour="9" data-minute="30">09:30</div><div class="xdsoft_time " data-hour="9" data-minute="40">09:40</div><div class="xdsoft_time " data-hour="9" data-minute="50">09:50</div><div class="xdsoft_time " data-hour="10" data-minute="0">10:00</div><div class="xdsoft_time " data-hour="10" data-minute="10">10:10</div><div class="xdsoft_time " data-hour="10" data-minute="20">10:20</div><div class="xdsoft_time " data-hour="10" data-minute="30">10:30</div><div class="xdsoft_time " data-hour="10" data-minute="40">10:40</div><div class="xdsoft_time " data-hour="10" data-minute="50">10:50</div><div class="xdsoft_time " data-hour="11" data-minute="0">11:00</div><div class="xdsoft_time " data-hour="11" data-minute="10">11:10</div><div class="xdsoft_time " data-hour="11" data-minute="20">11:20</div><div class="xdsoft_time " data-hour="11" data-minute="30">11:30</div><div class="xdsoft_time " data-hour="11" data-minute="40">11:40</div><div class="xdsoft_time " data-hour="11" data-minute="50">11:50</div><div class="xdsoft_time " data-hour="12" data-minute="0">12:00</div><div class="xdsoft_time " data-hour="12" data-minute="10">12:10</div><div class="xdsoft_time " data-hour="12" data-minute="20">12:20</div><div class="xdsoft_time " data-hour="12" data-minute="30">12:30</div><div class="xdsoft_time " data-hour="12" data-minute="40">12:40</div><div class="xdsoft_time " data-hour="12" data-minute="50">12:50</div><div class="xdsoft_time " data-hour="13" data-minute="0">13:00</div><div class="xdsoft_time " data-hour="13" data-minute="10">13:10</div><div class="xdsoft_time " data-hour="13" data-minute="20">13:20</div><div class="xdsoft_time " data-hour="13" data-minute="30">13:30</div><div class="xdsoft_time " data-hour="13" data-minute="40">13:40</div><div class="xdsoft_time " data-hour="13" data-minute="50">13:50</div><div class="xdsoft_time " data-hour="14" data-minute="0">14:00</div><div class="xdsoft_time " data-hour="14" data-minute="10">14:10</div><div class="xdsoft_time " data-hour="14" data-minute="20">14:20</div><div class="xdsoft_time " data-hour="14" data-minute="30">14:30</div><div class="xdsoft_time " data-hour="14" data-minute="40">14:40</div><div class="xdsoft_time " data-hour="14" data-minute="50">14:50</div><div class="xdsoft_time " data-hour="15" data-minute="0">15:00</div><div class="xdsoft_time " data-hour="15" data-minute="10">15:10</div><div class="xdsoft_time " data-hour="15" data-minute="20">15:20</div><div class="xdsoft_time " data-hour="15" data-minute="30">15:30</div><div class="xdsoft_time " data-hour="15" data-minute="40">15:40</div><div class="xdsoft_time " data-hour="15" data-minute="50">15:50</div><div class="xdsoft_time " data-hour="16" data-minute="0">16:00</div><div class="xdsoft_time " data-hour="16" data-minute="10">16:10</div><div class="xdsoft_time " data-hour="16" data-minute="20">16:20</div><div class="xdsoft_time " data-hour="16" data-minute="30">16:30</div><div class="xdsoft_time " data-hour="16" data-minute="40">16:40</div><div class="xdsoft_time " data-hour="16" data-minute="50">16:50</div><div class="xdsoft_time " data-hour="17" data-minute="0">17:00</div><div class="xdsoft_time " data-hour="17" data-minute="10">17:10</div><div class="xdsoft_time " data-hour="17" data-minute="20">17:20</div><div class="xdsoft_time " data-hour="17" data-minute="30">17:30</div><div class="xdsoft_time " data-hour="17" data-minute="40">17:40</div><div class="xdsoft_time " data-hour="17" data-minute="50">17:50</div><div class="xdsoft_time " data-hour="18" data-minute="0">18:00</div><div class="xdsoft_time " data-hour="18" data-minute="10">18:10</div><div class="xdsoft_time " data-hour="18" data-minute="20">18:20</div><div class="xdsoft_time " data-hour="18" data-minute="30">18:30</div><div class="xdsoft_time " data-hour="18" data-minute="40">18:40</div><div class="xdsoft_time " data-hour="18" data-minute="50">18:50</div><div class="xdsoft_time " data-hour="19" data-minute="0">19:00</div><div class="xdsoft_time " data-hour="19" data-minute="10">19:10</div><div class="xdsoft_time " data-hour="19" data-minute="20">19:20</div><div class="xdsoft_time " data-hour="19" data-minute="30">19:30</div><div class="xdsoft_time " data-hour="19" data-minute="40">19:40</div><div class="xdsoft_time " data-hour="19" data-minute="50">19:50</div><div class="xdsoft_time " data-hour="20" data-minute="0">20:00</div><div class="xdsoft_time " data-hour="20" data-minute="10">20:10</div><div class="xdsoft_time " data-hour="20" data-minute="20">20:20</div><div class="xdsoft_time " data-hour="20" data-minute="30">20:30</div><div class="xdsoft_time " data-hour="20" data-minute="40">20:40</div><div class="xdsoft_time " data-hour="20" data-minute="50">20:50</div><div class="xdsoft_time " data-hour="21" data-minute="0">21:00</div><div class="xdsoft_time " data-hour="21" data-minute="10">21:10</div><div class="xdsoft_time " data-hour="21" data-minute="20">21:20</div><div class="xdsoft_time " data-hour="21" data-minute="30">21:30</div><div class="xdsoft_time " data-hour="21" data-minute="40">21:40</div><div class="xdsoft_time " data-hour="21" data-minute="50">21:50</div><div class="xdsoft_time " data-hour="22" data-minute="0">22:00</div><div class="xdsoft_time " data-hour="22" data-minute="10">22:10</div><div class="xdsoft_time " data-hour="22" data-minute="20">22:20</div><div class="xdsoft_time " data-hour="22" data-minute="30">22:30</div><div class="xdsoft_time " data-hour="22" data-minute="40">22:40</div><div class="xdsoft_time " data-hour="22" data-minute="50">22:50</div><div class="xdsoft_time " data-hour="23" data-minute="0">23:00</div><div class="xdsoft_time " data-hour="23" data-minute="10">23:10</div><div class="xdsoft_time " data-hour="23" data-minute="20">23:20</div><div class="xdsoft_time " data-hour="23" data-minute="30">23:30</div><div class="xdsoft_time " data-hour="23" data-minute="40">23:40</div><div class="xdsoft_time " data-hour="23" data-minute="50">23:50</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="height: 10px; margin-top: 0px;"></div></div></div><button type="button" class="xdsoft_next"></button></div></div>
+</body>
+</html>
