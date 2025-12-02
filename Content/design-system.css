@@ -353,8 +353,8 @@ h1, h2, h3 {
 .text-xs { font-size: var(--font-size-xs)!important; }    /* 12px */
 .text-sm { font-size: var(--font-size-sm); }    /* 14px */
 .text-base { font-size: var(--font-size-base); }    /* 15px -> 16px */
-.text-lg { font-size: var(--font-size-lg); }    /* 16px -> 18px */
-.text-xl { font-size: var(--font-size-xl); }    /* 18px -> 20px */
+.text-lg { font-size: var(--font-size-lg)!important; }    /* 16px -> 18px */
+.text-xl { font-size: var(--font-size-xl)!important; }    /* 18px -> 20px */
 .text-2xl { font-size: var(--font-size-2xl); }  /* 20px -> 24px */
 .text-3xl { font-size: var(--font-size-3xl); }  /* 24px -> 30px */
 .text-4xl { font-size: var(--font-size-4xl); }  /* 28px -> 36px */
@@ -391,6 +391,7 @@ h1, h2, h3 {
 .text-navy-300 { color: var(--clr-azure-80); }
 .text-navy-200 { color: var(--clr-azure-85); }
 .text-navy-100 { color: var(--clr-azure-89); }
+.text-azure-700 {color:var(--clr-navy-700);}
 .text-blue-brand { color: var(--clr-blue-brand); }
 .text-blue-light { color: var(--clr-blue-light-bg); }
 .text-grey-95 { color: var(--clr-grey-95); }
@@ -529,3 +530,7 @@ body, button, input, select, textarea {
 .lh-1rem { line-height:1rem!important; }
 
 .mb-1px { margin-bottom:1px!important}
+
+.row-no-wrap {
+    margin-left:-24px!important; margin-right:-24px!important;
+}

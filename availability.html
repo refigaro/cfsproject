@@ -26,30 +26,27 @@
 <div class="modal fade modal-under-header" id="myStaticModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
-      <div class="modal-body d-flex flex-column align-items-center gap-2 p-12 py-12">
-        <div class="row w-100 justify-content-between align-items-center mb-12">
-            <div class="col">
-                <h2 class="text-4xl">Availability</h2>
-            </div>
-            <div class="col-auto">
-                <button type="button" class="btn btn-outline-dark btn-sm rounded-full  font-family-archivo text-nowrap"><i class="bi bi-arrow-90deg-left mr-1"></i>Back home</button>
-            </div>
+        <div class="modal-header px-4">
+            <h2 class="modal-title fs-8" id="staticBackdropLabel">New Availability Search</h2>
+            <button type="button" class="btn btn-outline-dark btn-sm rounded-full  font-family-archivo text-nowrap ms-auto" ><i class="bi bi-arrow-90deg-left mr-1"></i>Back home</button>
         </div>
-        <p class="font-family-sora text-2xl mb-2">New Availability search</p>
-        <div class="d-flex w-100 justify-content-center align-items-center gap-2">
-            <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo">
-            <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
-                <option selected="selected" value="mbl">Master Bill</option>
-                <option value="cntr">Container Number</option>
-                <option value="ams">AMS House Bill</option>
-                <option value="it">Inbond Number</option>
-                <option value="go">GO Number</option>
-            </select>
-            </label> 
-            <label for="">
-                <input class="rounded" type="text">
-            </label>
-            <button type="button" class="btn btn-primary bg-navy-700 text-uppercase text-xs rounded">Search <i class="bi bi-search text-xs ml-2"></i></button>
+        <div class="modal-body d-flex flex-column align-items-center gap-4 p-12 py-16">
+            <p class="font-family-sora">Please perform a search to continue</p>
+            <div class="d-flex w-100 justify-content-center align-items-center gap-2">
+                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo">
+                <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
+                    <option selected="selected" value="mbl">Master Bill</option>
+                    <option value="cntr">Container Number</option>
+                    <option value="ams">AMS House Bill</option>
+                    <option value="it">Inbond Number</option>
+                    <option value="go">GO Number</option>
+                </select>
+                </label> 
+                <label for="">
+                    <input class="rounded text-uppercase" placeholder="Type your search" type="text">
+                </label>
+                <button type="button" class="btn btn-primary bg-navy-700 text-uppercase text-xs rounded">Search <i class="bi bi-search text-xs ml-2"></i></button>
+            </div>
         </div>
       </div>
     </div>
@@ -422,6 +419,7 @@
                     <div class="d-flex justify-content-start gap-4 align-items-center offcanvas-hbl-header">
                         <h2 class="text-2xl font-family-dm-serif text-navy-800">HBL Details</h2>
                         <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="btn-icon"><img src="_images/bill.png" class="image-responsive" alt=""></i>   Charges</button>
+                        <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer"></i> Arrival Notice</button>
                         <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer"></i> Pickup Confirmation</button>
                     </div>
                     <div class="d-flex justify-content-end align-items-center gap-4">
@@ -889,6 +887,15 @@
             </div>
         </div>
     </footer>
+<!-- Back to Top Button -->
+<button type="button" 
+        id="backToTopBtn" 
+        class="btn btn-dark rounded-pill position-fixed bottom-0 start-0 m-3 shadow d-none" 
+        style="z-index: 1080; transition: opacity 0.3s;"
+        onclick="scrollToTop()">
+    <i class="bi bi-arrow-up me-2"></i>Back to top
+</button>
+
 <script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
 <script src="/bundles/main_jquery?v=pcTLGo70Ebj-7wZHfj5-OozMeYDuBTaJgLdp-yYJn8s1"></script>
@@ -911,14 +918,12 @@
 <script src="/bundles/AvailabilityViewer_Ajax?v=VgNFlR4TbTdLyioL1u0joKY-tpXbFdUn0Toxg6Z7ehQ1"></script>
 <script src="/bundles/Modal?v=6X2XgyWba97tfyPCPLvNNu3Nfognwesw8t4cSNPp6OA1"></script>
 <!-- Search modal Script --> <!--  KEVIN: This script enables the modal for search -->
-<!--
-<script> 
+<!-- <script> 
     document.addEventListener("DOMContentLoaded", function(){
         var myModal = new bootstrap.Modal(document.getElementById('myStaticModal'));
         myModal.show();
     });
-</script>
--->
+</script> -->
 <script>
     $(function() {
         $(".hamburger-menu").on("click", function() {
@@ -938,5 +943,25 @@
 <script>
     baguetteBox.run('.photo-gallery-thumbnails');
 </script> <!-- Initialization for the photo gallery in HBL details -->
+<script>
+    // Back to top button logic
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    window.onscroll = function() {
+        // Calculate 24rem in pixels dynamically
+        const remInPixels = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const threshold = 24 * remInPixels;
+
+        if (document.body.scrollTop > threshold || document.documentElement.scrollTop > threshold) {
+            backToTopBtn.classList.remove("d-none");
+        } else {
+            backToTopBtn.classList.add("d-none");
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
 </body>
 </html>

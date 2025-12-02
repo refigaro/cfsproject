@@ -533,7 +533,7 @@
     }
 
     .hbl-list-item .btn-charges-mbl:hover .btn-icon img  {
-        filter: brightness(0) saturate(100%) invert(55%) sepia(91%) saturate(1452%) hue-rotate(153deg) brightness(94%) contrast(94%);
+        filter: brightness(0) saturate(100%) invert(59%) sepia(45%) saturate(4297%) hue-rotate(110deg) brightness(89%) contrast(84%);
         height:1.75rem;
     }
 
@@ -603,7 +603,8 @@
 
     .logistic-details .main-details .detail-value,
     .logistic-details .palet-details .detail-value,
-    #warehouse-in-out-Accordion .detail-value {
+    #warehouse-in-out-Accordion .detail-value,
+    .warehouse-in-out-details .detail-value {
         font-weight:bolder;
         color:var(--clr-grey-20);
         line-height:1.4em;
@@ -982,6 +983,8 @@ html {
 .ipi-milestones {
     font-family: var(--font-secondary);
     flex-grow:10;
+    max-height:30rem;
+    overflow-y:scroll;
 }
 
 .sticky-column-content {
@@ -991,7 +994,6 @@ html {
 
 #warehouse-in-out-Accordion .accordion-body .row:first-child .detail-label {
     display: inline-block;
-    min-height:2.3rem;
 }
 
 .useful-links {
@@ -1029,6 +1031,25 @@ html {
         text-decoration: none;
     }
 
+.warehouse-in-out-details {
+    border-radius:var(--border-radius-md);
+    overflow: hidden;
+    border: 1px solid var(--bs-border-color-translucent);
+}
+
+.warehouse-in-out-details .warehouse-details-header div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
+    font-size: 1rem;
+    color: var(--bs-accordion-btn-color);
+    text-align: left;
+    background-color:var(--clr-white);
+}
+
+
 #warehouse-in-out .accordion-collapse div.form-check {
     display: inline-flex;
     flex-direction: row-reverse;
@@ -1065,7 +1086,7 @@ header#header {
 
     --bs-backdrop-opacity: 1 !important;
     
-    background-color: rgba(0, 0, 0, 0.7) !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
 /* Transit Time Schedule */
@@ -1079,6 +1100,10 @@ header#header {
     --bs-table-bg-type: var(--clr-azure-89)!important;
 }
 
+.availavility-v2 .table-striped>tbody>tr:hover>* {
+    --bs-table-bg-type:#b8eeff!important;
+}
+
 .availavility-v2 .Availability-table {
     font-family:var(--font-primary);
 }
@@ -1087,6 +1112,15 @@ header#header {
     font-family:var(--font-secondary);
     font-size: var(--font-size-xs);
     background-color:var(--clr-navy-700)
+}
+
+.availavility-v2 .Availability-table tbody tr>td:first-child{
+    padding-right:var(--space-8);
+    font-weight:bolder;
+}
+
+.availavility-v2 .Availability-table tbody td {
+    vertical-align: middle;
 }
 
 
@@ -1563,3 +1597,8 @@ header#header {
 .offcanvas {
     z-index: 1060;
 } /* Fix for header being over offcanvas */
+
+/* Applies top margin when navigating to an element ID */
+:target {
+    scroll-margin-top: 5.2rem; /* Adjust '5rem' to match your fixed header height */
+}

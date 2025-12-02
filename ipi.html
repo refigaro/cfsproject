@@ -26,30 +26,27 @@
 <div class="modal fade modal-under-header" id="myStaticModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
-      <div class="modal-body d-flex flex-column align-items-center gap-2 p-12 py-12">
-        <div class="row w-100 justify-content-between align-items-center mb-12">
-            <div class="col">
-                <h2 class="text-4xl">IPI Tracing</h2>
-            </div>
-            <div class="col-auto">
-                <button type="button" class="btn btn-outline-dark btn-sm rounded-full  font-family-archivo text-nowrap"><i class="bi bi-arrow-90deg-left mr-1"></i>Back home</button>
-            </div>
+        <div class="modal-header px-4">
+            <h2 class="modal-title fs-8 fw-bold" id="staticBackdropLabel">New IPI Tracing Search</h2>
+            <button type="button" class="btn btn-outline-dark btn-sm rounded-full  font-family-archivo text-nowrap ms-auto" ><i class="bi bi-arrow-90deg-left mr-1"></i>Back home</button>
         </div>
-        <p class="font-family-sora text-2xl mb-2">New IPI Tracing search</p>
-        <div class="d-flex w-100 justify-content-center align-items-center gap-2">
-            <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo">
-            <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
-                <option selected="selected" value="mbl">Master Bill</option>
-                <option value="cntr">Container Number</option>
-                <option value="ams">AMS House Bill</option>
-                <option value="it">Inbond Number</option>
-                <option value="go">GO Number</option>
-            </select>
-            </label> 
-            <label for="">
-                <input class="rounded" type="text">
-            </label>
-            <button type="button" class="btn btn-primary bg-navy-700 text-uppercase text-xs rounded">Search <i class="bi bi-search text-xs ml-2"></i></button>
+        <div class="modal-body d-flex flex-column align-items-center gap-4 p-12 py-16">
+            <p class="font-family-sora">Please perform a search to continue</p>
+            <div class="d-flex w-100 justify-content-center align-items-center gap-2">
+                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo">
+                <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
+                    <option selected="selected" value="mbl">Master Bill</option>
+                    <option value="cntr">Container Number</option>
+                    <option value="ams">AMS House Bill</option>
+                    <option value="it">Inbond Number</option>
+                    <option value="go">GO Number</option>
+                </select>
+                </label> 
+                <label for="">
+                    <input class="rounded text-uppercase" placeholder="Type your search" type="text">
+                </label>
+                <button type="button" class="btn btn-primary bg-navy-700 text-uppercase text-xs rounded">Search <i class="bi bi-search text-xs ml-2"></i></button>
+            </div>
         </div>
       </div>
     </div>
@@ -253,7 +250,7 @@
                                 <div class="detail-pair col py-3">
                                     <span class="detail-label">WAREHOUSE NAME</span>
                                     <span class="detail-value text-2xl fw-bold">Air Ground Xpress</span>
-                                    <a href="#warehouse-in-out" class="mt-1 btn btn-link link-opacity-50 muted pl-0 pt-0 link-offset-2">See fees for in / out <i class="bi bi-arrow-right-circle"></i></a>
+                                    <a href="#warehouse-in-out" class="mt-1 btn btn-link  pl-0 pt-0 link-offset-2 link-primary">In & Out Fees <i class="bi bi-arrow-right-circle"></i></a>
                                 </div>
 
                                 <div class="mb-4">
@@ -327,7 +324,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-12 col-xl-auto d-flex font-family-archivo gap-2 justify-content-evenly ml-auto flex-row gap-12 lfd-godate">
-                                <div>
+                                <div class="d-flex flex-column gap-2">
                                     <div class="col d-flex align-items-center lh-1 text-navy-500 text-left">
                                         <div>
                                             <span class="text-sm font-family-sora text-grey-20 font-bold d-inline-block mb-1">LAST FREE DATE</span><br>
@@ -343,7 +340,7 @@
                                 </div>
                             </div>
                         </div>
-                    <div class="card ipi-milestones card-shadow p-4 bg-white">
+                    <div class="card ipi-milestones card-shadow p-4 bg-white custom-scrollbar">
                         <div class="row mb-4">
                             <div class="col-md-2 col-sm-12 border-end-md">
                                 <div class="text-xl fw-bold text-primary">10/2/25</div>
@@ -354,12 +351,6 @@
                                     <div>
                                         <span class="text-muted d-block">05:45 PM - PT</span>
                                         <span class="fw-bold">CONTAINER OUT-GATED MEMPHIS, TN</span>
-                                    </div>
-                                    <div class="transport-badge badge-truck ms-3">
-                                        <i class="bi bi-truck me-1"></i> TRUCK
-                                    </div>
-                                    <div class="transport-badge badge-rail ms-3">
-                                        <i class="bi bi-train-front-fill me-1"></i> RAIL
                                     </div>
                                 </div>
                             </div>
@@ -409,6 +400,7 @@
 
                     </div> 
                 </div>
+                </div>
                 <div class="row mt-4 warehouse-in-out">
                     <div class="col" id="warehouse-in-out">
                         <div class="row">
@@ -416,18 +408,13 @@
                                 <h3 class="mb-1">Warehouse In / Out</h3> 
                                 <p class="text-navy-450 mb-6 font-family-archivo"><i>(Info subject to change. For reference only. Pleae check directly with warehouse for exact charges.)</i></p>
                             </div>
-                            <div class="col-auto">
-                                <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Export data to Excel 
-                                    <i class="bi bi-file-earmark-spreadsheet"></i>
-                                </button>
-                            </div>
                         </div>
-                        <div class="accordion shadow-sm" id="warehouse-in-out-Accordion">
-                            <div class="accordion-item border-0 mb-1">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button text-uppercase gap-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <span class="col fw-bold">
-                                            ALBUQUERQUE
+                        <div class="accordion warehouse-in-out-details" id="warehouse-in-out-Accordion">
+                            <div class="border-0">
+                                <h2 class="warehouse-details-header pt-1 bg-white">
+                                    <div class="text-uppercase gap-4">
+                                        <span class="col-auto fw-bold text-navy-600">
+                                            SALT LAKE CITY
                                         </span>
                                         <span class="col-auto detail-pair fw-normal d-flex lh-1rem align-items-center">
                                                 <span class="detail-label mr-2 lh-1rem mt-1">CODE:</span>
@@ -435,62 +422,70 @@
                                         </span>
                                         <span class="col-auto detail-pair fw-normal d-flex lh-1rem align-items-center">
                                                 <span class="detail-label mr-2 lh-1rem mt-1">DEST:</span>
-                                                <span class="detail-value lh-1rem">MPR Logistics DBA HSS Logistics</span>
+                                                <span class="detail-value lh-1rem">BALTIMORE INTERNATIONAL WAREHOUSING</span>
                                         </span>
-                                    </button>
+                                    </div>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#warehouse-in-out-Accordion">
-                                    <div class="accordion-body bg-white pt-4 pb-5">
-                                        <div class="row mb-2">
-                                            <div class="col-md-2 col-sm-12 mb-3 detail-pair">
-                                                <span class="detail-label d-block">IN / OUT CHARGES</span>
-                                                <span class="detail-value">$0.04 P/LB OR $11.00 P/CBM, Whichever is greater</span>
+                                <div>
+                                    <div class="accordion-body bg-white px-8 pb-5 pt-0">
+                                        <div class="row rounded bg-azure-95 py-2">
+                                            <div class="col-md-10 col-sm-12 detail-pair p-3">
+                                                <span class="detail-label d-block fw-bold">
+                                                    IN / OUT CHARGES</span>
+                                                <span class="detail-value">$5.02/CWT LOOSE FREIGHT 1 -24.999 LBS OR $3.29/CWT 25,000 LBS AND ABOVE MIN$ 97.10, MAX $539.00 (PALLETIZED, CRATED, DRUMS, ANYTHING PRE-PAKAGE) $22.34/PALLET DRUM $1.73/CWT MIN$ 223.20 ADD EQUIPMENT SURCHARGE $3.00/CBM/800 LBS MIN $10 FOR ALL CARGO</span>
                                             </div>
-                                            <div class="col-md col-sm-6 mb-3 detail-pair">
-                                                <span class="detail-label d-block">MIN / MAX</span>
-                                                <span class="detail-value">MIN $45.00</span>
+                                            <div class="col-md-2 col-sm-6 detail-pair p-3">
+                                                <span class="detail-label d-block fw-bold">
+                                                    MIN / MAX</span>
+                                                <span class="detail-value">IN FEE MIN $75.00, OUT FEE MIN $50.00, MAX $125.00</span>
                                             </div>
-                                            <div class="col-md col-sm-6 mb-3 detail-pair">
-                                                <span class="detail-label d-block">DOC / ADMIN FEE</span>
-                                                <span class="detail-value">-</span>
+                                        </div>
+                                        <div class="row row-no-wrap my-4">
+                                            <div class="col-md col-sm-6 detail-pair">
+                                                <span class="detail-label d-block">DOC / ADM FEE</span>
+                                                <span class="detail-value">$0.01/LB, MIN $25.00 P/SHIPMENT ADMIN FEE</span>
                                             </div>
-                                            <div class="col-md col-sm-6 mb-3 detail-pair">
+                                            <div class="col-md col-sm-6 detail-pair">
                                                 <span class="detail-label d-block">IT FEE</span>
+                                                <span class="detail-value">FACILITY FEE $55, ADM$30 , FUEL$35</span>
+                                            </div>
+                                            <div class="col-md col-sm-6 detail-pair">
+                                                <span class="detail-label d-block">
+                                                    TERM / HAND</span>
                                                 <span class="detail-value">-</span>
                                             </div>
-                                            <div class="col-md col-sm-6 mb-3 detail-pair">
-                                                <span class="detail-label d-block">TERMINAL SERVICE / HANDLING</span>
+                                            <div class="col-md col-sm-6 detail-pair">
+                                                <span class="detail-label d-block">
+                                                    Fuel</span>
                                                 <span class="detail-value">-</span>
                                             </div>
-                                            <div class="col-md col-sm-6 mb-3 detail-pair">
-                                                <span class="detail-label d-block">Fuel</span>
-                                                <span class="detail-value">-</span>
+                                            <div class="col-md col-sm-6 detail-pair">
+                                                <span class="detail-label d-block">Fac Win	</span>
+                                                <span class="detail-value">$100.00 WINDOW FEE, $70.00 FACILITY FEE</span>
                                             </div>
-                                            <div class="col-md col-sm-6 mb-3 detail-pair">
-                                                <span class="detail-label d-block">Fac Win Fee	</span>
-                                                <span class="detail-value">$35.00</span>
-                                            </div>
-                                            <div class="col-md col-sm-6 mb-3 detail-pair">
+                                            <div class="col-md col-sm-6 detail-pair">
                                                 <span class="detail-label d-block">Haz</span>
                                                 <span class="detail-value">-</span>
                                             </div>
-                                            <div class="col-md col-sm-6 mb-3 detail-pair">
+                                            <div class="col-md col-sm-6 detail-pair">
                                                 <span class="detail-label d-block">Plts</span>
                                                 <span class="detail-value">$35.00</span>
                                             </div>
-                                            <div class="col-md col-sm-6 mb-3 detail-pair">
+                                            <div class="col-md col-sm-6 detail-pair">
                                                 <span class="detail-label d-block">Free time</span>
                                                 <span class="detail-value">$35.00</span>
                                             </div>
                                         </div>
-                                        <div class="row border-top border-navy-300 pt-4">
-                                            <div class="col-md-2 col-sm-6 mb-3 detail-pair">
-                                                <span class="detail-label">Acc fee</span>
-                                                <span class="detail-value fw-normal">$15.00 P/PALLET</span>
+                                        <div class="row rounded bg-azure-95">
+                                            <div class="col-sm-6 detail-pair p-3">
+                                                <span class="detail-label">
+                                                    Acc fee</span>
+                                                <span class="detail-value fw-normal">SHRINKWRAP $10.00 P/PALLET REWEIGHT/REDIM: $5.00 P/PALLET, MIN $25.00 PICTURES $5.00 EACH OVERTIME $60.00 P/MAN P/HOUR, MIN 3 PEOPLE COLLECTION OF COD (10% OR MIN $35.00) FDA:YES, NO FDA REGISTRATION# STORAGE: $0.03 P/LB OR $12 P/CBM WHICHEVER IS GREATER, MIN $70 P/DAY</span>
                                             </div>
-                                            <div class="col-md-10 col-sm-6 mb-3 detail-pair">
-                                                <span class="detail-label">Oversize / Overweight Fee</span>
-                                                <span class="detail-value fw-normal">$4.75 P/CWT OR $26.00 P/CBM, MIN $200.00 OVERSIZE FEE APPLIES TO ANYTHING OVER 12FT LONG, AND ANYTHING OVER 7,000 LBS</span>
+                                            <div class="col-sm-6 detail-pair p-3">
+                                                <span class="detail-label">
+                                                    Oversize / Overweight Fee</span>
+                                                <span class="detail-value fw-normal">OVER 8000LBS $25.00/TON P/PIECE, OVERLENGTH 10' AND OVER $10.00 P/PIECE OR $30.00 MIN, $100.00 MAX CBM FEE ON PC OVER 6 CBM ADD $12.00 P/CBM</span>
                                             </div>
                                         </div>
                                     </div>
@@ -499,7 +494,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
         </div> 
     </div>
@@ -577,7 +571,14 @@
             </div>
         </div>
     </footer>
-
+<!-- Back to Top Button -->
+<button type="button" 
+        id="backToTopBtn" 
+        class="btn btn-dark rounded-pill position-fixed bottom-0 start-0 m-3 shadow d-none" 
+        style="z-index: 1080; transition: opacity 0.3s;"
+        onclick="scrollToTop()">
+    <i class="bi bi-arrow-up me-2"></i>Back to top
+</button>
 <script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
 <script src="/bundles/main_jquery?v=pcTLGo70Ebj-7wZHfj5-OozMeYDuBTaJgLdp-yYJn8s1"></script>
@@ -600,14 +601,13 @@
 <script src="/bundles/AvailabilityViewer_Ajax?v=VgNFlR4TbTdLyioL1u0joKY-tpXbFdUn0Toxg6Z7ehQ1"></script>
 <script src="/bundles/Modal?v=6X2XgyWba97tfyPCPLvNNu3Nfognwesw8t4cSNPp6OA1"></script>
 <!-- Search modal Script --> <!--  KEVIN: This script enables the modal for search -->
-<!--
 <script> 
     document.addEventListener("DOMContentLoaded", function(){
         var myModal = new bootstrap.Modal(document.getElementById('myStaticModal'));
-        myModal.show();
+        /*
+        myModal.show(); */
     });
 </script>
--->
 <script>
     $(function() {
         $(".hamburger-menu").on("click", function() {
@@ -651,6 +651,26 @@
                 }
             }
         }
+    }
+</script>
+<script>
+    // Back to top button logic
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    window.onscroll = function() {
+        // Calculate 24rem in pixels dynamically
+        const remInPixels = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const threshold = 24 * remInPixels;
+
+        if (document.body.scrollTop > threshold || document.documentElement.scrollTop > threshold) {
+            backToTopBtn.classList.remove("d-none");
+        } else {
+            backToTopBtn.classList.add("d-none");
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 </script>
 </body>
