@@ -517,7 +517,7 @@ h1, h2, h3 {
 
 .btn {
     border-radius: 0;
-    height: auto!important;
+    height: initial!important;
     font-size:initial!important;
 }
 
