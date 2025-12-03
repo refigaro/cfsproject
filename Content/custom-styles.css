@@ -1630,3 +1630,7 @@ header#header {
 :target {
     scroll-margin-top: 5.2rem; /* Adjust '5rem' to match your fixed header height */
 }
+
+.no-wrap {
+    text-wrap:nowrap;
+}

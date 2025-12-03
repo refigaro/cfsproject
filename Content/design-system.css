@@ -361,11 +361,11 @@ h1, h2, h3 {
 .text-5xl { font-size: var(--font-size-5xl); }  /* 36px -> 48px */
     
 
-.font-regular { font-weight: var(--font-weight-regular); }
-.font-medium { font-weight: var(--font-weight-medium); }
-.font-semibold { font-weight: var(--font-weight-semibold); }
-.font-bold { font-weight: var(--font-weight-bold); }
-.font-black { font-weight: var(--font-weight-black); }
+.font-regular { font-weight: var(--font-weight-regular)!important; }
+.font-medium { font-weight: var(--font-weight-medium)!important; }
+.font-semibold { font-weight: var(--font-weight-semibold)!important; }
+.font-bold { font-weight: var(--font-weight-bold)!important; }
+.font-black { font-weight: var(--font-weight-black)!important; }
 
 .font-family-archivo { font-family: var(--font-primary)!important; }
 .font-family-sora { font-family: var(--font-secondary)!important; }

@@ -176,30 +176,42 @@
         <div class="row">
             <div class="col">
                 <div class="row">
-                    <div class="col-12 col-sm-8" id="warehouse-in-out">
-                        <div class="row">
-                            <div class="col-auto ml-auto">
-                                <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Export data to Excel 
-                                    <i class="bi bi-file-earmark-spreadsheet"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="row my-4 align-items-center font-family-archivo">
+                    <div class="col-12" id="warehouse-in-out">
+                        <div class="row mb-4 mt-1 align-items-center font-family-archivo">
                             <div class="col-auto">
                                 <label for="citySearch" class="col-form-label text-dark">Search for city:</label>
                             </div>
                             <div class="col-md-5 col-lg-4">
                                 <input type="text" id="destinationSearch" onkeyup="filterTable()" class="form-control rounded" placeholder="Search for destination...">
                             </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Export data to Excel 
+                                    <i class="bi bi-file-earmark-spreadsheet"></i>
+                                </button>
+                            </div>
+                            <div class="col-auto ms-auto">
+                                <div class="dropdown useful-links font-family-sora">
+                                <a class="btn btn-link dropdown-toggle text-capitalize link-offset-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <h2 class="text-primary fw-bold mb-3 d-inline">Useful links</h2>
+                                </a>
+
+                                <ul class="dropdown-menu text-xs">
+                                    <li><a class="dropdown-item" href="#">Inland WHSE List <i class="bi bi-arrow-right"></i></a></li>
+                                    <li><a class="dropdown-item" href="#">WHSE In / Out <i class="bi bi-arrow-right"></i></a></li>
+                                    <li><a class="dropdown-item" href="#">Transit schedule <i class="bi bi-arrow-right"></i></a></li>
+                                </ul>
+                                </div>
+                            </div>
                         </div>
                         <div class="Availability-table">
                                     <div class="row">
-                                        <div class="col-auto">
+                                        <div class="col-12">
                                             <div class="table-responsive">
                                                 <table class="table table-striped text-uppercase" id="destinationTable">
                                                     <thead>
                                                         <tr>
                                                             <th width="16.66666%">Destination</th>
+                                                            <th>Whse name</th>
                                                             <th>Truck / Rail</th>
                                                             <th>Freq</th>
                                                             <th>
@@ -213,6 +225,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>ALBUQUERQUE</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Truck</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -220,6 +233,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>ATLANTA</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>3 to 4</td>
                                                             <td>Tuesday, Wednesday, Friday</td>
@@ -227,6 +241,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>AUSTIN</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Truck</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -234,6 +249,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>BALTIMORE</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -241,6 +257,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>BIRMINGHAM</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -248,6 +265,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>BOSTON</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -255,6 +273,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>BROWNSVILLE</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Truck</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -262,6 +281,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>BUFFALO</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -269,6 +289,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>CHARLESTON</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -276,6 +297,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>CHARLOTTE</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -283,6 +305,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>CHATTANOOGA</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -290,6 +313,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>CHICAGO</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>2 to 3</td>
                                                             <td>Tuesday, Friday</td>
@@ -297,6 +321,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>CINCINNATI</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -304,6 +329,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>CLEVELAND</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1 to 2</td>
                                                             <td>Tuesday, Friday</td>
@@ -311,6 +337,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>COLUMBUS</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -318,6 +345,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>DALLAS</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>3 to 4</td>
                                                             <td>Monday, Wednesday, Friday</td>
@@ -325,6 +353,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>DAYTON</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -332,6 +361,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>DENVER</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1 to 2</td>
                                                             <td>Tuesday, Friday</td>
@@ -339,6 +369,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>DES MOINES</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -346,6 +377,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>DETROIT</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>2 to 4</td>
                                                             <td>Monday, Wednesday, Friday</td>
@@ -353,6 +385,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>EL PASO</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Truck</td>
                                                             <td>2 to 4</td>
                                                             <td>Tuesday, Wednesday, Friday</td>
@@ -360,6 +393,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>GREENSBORO</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -367,6 +401,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>GREENVILLE</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -374,6 +409,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>GRAND RAPIDS</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -381,6 +417,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>HIDALGO</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Truck</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -388,6 +425,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>HOUSTON</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>2 to 4</td>
                                                             <td>Monday, Wednesday, Friday</td>
@@ -395,6 +433,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>HUNTSVILLE</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -402,6 +441,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>INDIANAPOLIS</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -409,6 +449,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>JACKSONVILLE</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -416,6 +457,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>KANSAS CITY</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1 to 2</td>
                                                             <td>Wednesday, Friday</td>
@@ -423,6 +465,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>KNOXVILLE</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -430,6 +473,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>LAREDO</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Truck</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -437,6 +481,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>LAS VEGAS</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Truck</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -444,6 +489,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>LITTLE ROCK</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -451,6 +497,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>LOUISVILLE</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -458,6 +505,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>MEMPHIS</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>2 to 3</td>
                                                             <td>Wednesday, Friday</td>
@@ -465,6 +513,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>MIAMI</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -472,6 +521,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>MILWAUKEE</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -479,6 +529,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>MINNEAPOLIS</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -486,6 +537,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>MOBILE</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -493,6 +545,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>NASHVILLE</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -500,6 +553,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>NEW ORLEANS</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -507,6 +561,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>NEW YORK</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -514,6 +569,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>NOGALES</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Truck</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -521,6 +577,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>NORFOLK</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -528,6 +585,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>OKLAHOMA</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -535,6 +593,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>OMAHA</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -542,6 +601,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>ORLANDO</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -549,6 +609,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>PHILADELPHIA</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -556,6 +617,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>PHOENIX</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Truck</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -563,6 +625,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>PITTSBURGH</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -570,6 +633,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>PORTLAND</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -577,6 +641,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>RALEIGH</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -584,6 +649,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>RICHMOND</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -591,6 +657,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>SALT LAKE CITY</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Truck</td>
                                                             <td>1 to 2</td>
                                                             <td>Tuesday, Friday</td>
@@ -598,6 +665,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>SAN ANTONIO</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Truck</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -605,6 +673,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>SAN DIEGO</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Truck</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -612,6 +681,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>SAN FRANCISCO</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Truck</td>
                                                             <td>1 to 2</td>
                                                             <td>Tuesday, Friday</td>
@@ -619,6 +689,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>SAVANNAH</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -626,6 +697,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>SEATTLE</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -633,6 +705,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>SPRINGFIELD</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -640,6 +713,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>ST. LOUIS</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -647,6 +721,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>TAMPA</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -654,6 +729,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>TOLEDO</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -661,6 +737,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>TUCSON</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Truck</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -668,6 +745,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>TULSA</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -675,6 +753,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>WASHINGTON, DC</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -682,6 +761,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>WICHITA</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -689,6 +769,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>WILMINGTON</td>
+                                                            <td class="no-wrap">Warehouse name</td>
                                                             <td>Rail</td>
                                                             <td>1</td>
                                                             <td>Friday</td>
@@ -705,28 +786,6 @@
                                         </div>
                                     </div>
                                 </div>
-                    </div>
-                    <div class="col-12 col-lg"> <!-- /// Useful Links Stiky column /// -->
-                            <div class="sticky-column-content useful-links font-family-sora">
-                                <h2 class="text-primary fw-bold mb-3">Useful links</h2>
-                                <ul class="list-unstyled">
-                                    <li class="mb-3">
-                                        <a href="#" class="text-decoration-none fw-bold d-flex align-items-center justify-content-between border-bottom pb-2 text-xs">
-                                            Inland WHSE List <i class="bi bi-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                    <li class="mb-3">
-                                        <a href="#warehouse-in-out" class="text-decoration-none fw-bold d-flex align-items-center justify-content-between border-bottom pb-2 text-xs">
-                                            WHSE In / Out <i class="bi bi-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                    <li class="mb-3">
-                                        <a href="#" class="text-decoration-none fw-bold d-flex align-items-center justify-content-between border-bottom pb-2 text-xs">
-                                            Transit schedule <i class="bi bi-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                     </div>
                 </div>
             </div>

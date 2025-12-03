@@ -176,15 +176,10 @@
         <div class="row">
             <div class="col">
                 <div class="row">
-                    <div class="col-11" id="warehouse-in-out">
+                    <div class="col-12" id="warehouse-in-out">
                         <div class="row">
                             <div class="col">
                                 <p class="text-navy-450 mb-3 font-family-archivo"><i>(Info subject to change. For reference only. Pleae check directly with warehouse for exact charges.)</i></p>
-                            </div>
-                            <div class="col-auto">
-                                <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Export data to Excel 
-                                    <i class="bi bi-file-earmark-spreadsheet"></i>
-                                </button>
                             </div>
                         </div>
                         <div class="row my-4 align-items-center font-family-archivo">
@@ -198,6 +193,24 @@
                                 <button type="button" id="btnExpandAll" onclick="toggleAllAccordions()" data-expanded="false" class="btn btn-primary btn-sm rounded-full">
                                     Expand all <i class="bi bi-arrows-expand ms-1"></i>
                                 </button>
+                            </div>
+                                                        <div class="col-auto">
+                                <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Export data to Excel 
+                                    <i class="bi bi-file-earmark-spreadsheet"></i>
+                                </button>
+                            </div>
+                            <div class="col-auto ms-auto">
+                                <div class="dropdown useful-links font-family-sora">
+                                <a class="btn btn-link dropdown-toggle text-capitalize link-offset-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <h2 class="text-primary fw-bold mb-3 d-inline">Useful links</h2>
+                                </a>
+
+                                <ul class="dropdown-menu text-xs">
+                                    <li><a class="dropdown-item" href="#">Inland WHSE List <i class="bi bi-arrow-right"></i></a></li>
+                                    <li><a class="dropdown-item" href="#">WHSE In / Out <i class="bi bi-arrow-right"></i></a></li>
+                                    <li><a class="dropdown-item" href="#">Transit schedule <i class="bi bi-arrow-right"></i></a></li>
+                                </ul>
+                                </div>
                             </div>
                         </div>
 
@@ -776,28 +789,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-1"> <!-- /// Useful Links Stiky column /// -->
-                            <div class="sticky-column-content useful-links font-family-sora">
-                                <h2 class="text-primary fw-bold mb-3">Useful links</h2>
-                                <ul class="list-unstyled">
-                                    <li class="mb-3">
-                                        <a href="#" class="text-decoration-none fw-bold d-flex align-items-center justify-content-between border-bottom pb-2 text-xs">
-                                            Inland WHSE List <i class="bi bi-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                    <li class="mb-3">
-                                        <a href="#warehouse-in-out" class="text-decoration-none fw-bold d-flex align-items-center justify-content-between border-bottom pb-2 text-xs">
-                                            WHSE In / Out <i class="bi bi-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                    <li class="mb-3">
-                                        <a href="#" class="text-decoration-none fw-bold d-flex align-items-center justify-content-between border-bottom pb-2 text-xs">
-                                            Transit schedule <i class="bi bi-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                     </div>
                 </div>
             </div>
