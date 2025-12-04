@@ -31,25 +31,28 @@
             <button type="button" class="btn btn-outline-dark btn-sm rounded-full  font-family-archivo text-nowrap ms-auto" ><i class="bi bi-arrow-90deg-left mr-1"></i>Back home</button>
         </div>
         <div class="modal-body d-flex flex-column align-items-center gap-4 p-12 py-16">
-            <div class="d-flex w-100 justify-content-center align-items-center gap-2">
-                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo">
-                <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
-                    <option selected="selected" value="mbl">Master Bill</option>
-                    <option value="cntr">Container Number</option>
-                    <option value="ams">AMS House Bill</option>
-                    <option value="it">Inbond Number</option>
-                    <option value="go">GO Number</option>
-                </select>
-                </label> 
-                <label for="">
-                    <input class="rounded text-uppercase" placeholder="Type your search" type="text">
-                </label>
-                <button type="button" class="btn btn-info text-uppercase text-xs rounded d-inline-block h-100 align-self-stretch">Search <i class="bi bi-search text-xs ml-2"></i></button>
+            <div class="d-inline-flex flex-column align-items-stretch gap-2">
+                <div class="d-flex justify-content-between gap-2 search-container">
+                    <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo">
+                    <select class="form-control rounded w-100" id="type" name="type"><option value="hbl">House Bill</option>
+                        <option selected="selected" value="mbl">Master Bill</option>
+                        <option value="cntr">Container Number</option>
+                        <option value="ams">AMS House Bill</option>
+                        <option value="it">Inbond Number</option>
+                        <option value="go">GO Number</option>
+                    </select>
+                    </label> 
+                    <label for="">
+                        <input class="rounded text-uppercase w-100" placeholder="Type your search" type="text">
+                    </label>
+                    <button type="button" class="btn btn-primary text-uppercase text-xs rounded d-inline-block h-100 align-self-stretch">Search <i class="bi bi-search text-xs ml-2"></i></button>
+                </div>
+                <div class="alert alert-warning d-flex align-items-center font-family-sora text-left text-sm" role="alert">
+                    <i class="bi bi-info-circle-fill me-3 text-2xl text-danger"></i>
+                    <div>We couldn't find a record matching <b class="search-select-type">MBL</b>: <b class="search-users-input">"[User's Input]"</b>. <br>Please verify and try again.</div>
+                </div>
             </div>
-            <div class="alert alert-info d-flex align-items-center font-family-sora text-left text-sm" role="alert">
-                <i class="bi bi-info-circle-fill me-3"></i>
-                <div>We couldn't find a record matching <b>"[User's Input]"</b>. <br>Please verify and try again.</div>
-            </div>
+
         </div>
       </div>
     </div>

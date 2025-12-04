@@ -27,28 +27,30 @@
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
         <div class="modal-header px-4">
-            <h2 class="modal-title fs-8 fw-bold" id="staticBackdropLabel">New IPI Tracing Search</h2>
+            <h2 class="modal-title fs-8" id="staticBackdropLabel">New IPI Tracing Search</h2>
             <button type="button" class="btn btn-outline-dark btn-sm rounded-full  font-family-archivo text-nowrap ms-auto" ><i class="bi bi-arrow-90deg-left mr-1"></i>Back home</button>
         </div>
         <div class="modal-body d-flex flex-column align-items-center gap-4 p-12 py-16">
-            <div class="d-flex w-100 justify-content-center align-items-center gap-2">
-                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo">
-                <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
-                    <option selected="selected" value="mbl">Master Bill</option>
-                    <option value="cntr">Container Number</option>
-                    <option value="ams">AMS House Bill</option>
-                    <option value="it">Inbond Number</option>
-                    <option value="go">GO Number</option>
-                </select>
-                </label> 
-                <label for="">
-                    <input class="rounded text-uppercase" placeholder="Type your search" type="text">
-                </label>
-                <button type="button" class="btn btn-info text-uppercase text-xs rounded d-inline-block h-100 align-self-stretch">Search <i class="bi bi-search text-xs ml-2"></i></button>
-            </div>
-            <div class="alert alert-info d-flex align-items-center font-family-sora text-left text-sm" role="alert">
-                <i class="bi bi-info-circle-fill me-3"></i>
-                <div>We couldn't find a record matching <b>"[User's Input]"</b>. <br>Please verify and try again.</div>
+            <div class="d-inline-flex flex-column align-items-stretch gap-2">
+                <div class="d-flex justify-content-between gap-2">
+                    <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo">
+                    <select class="form-control rounded w-100" id="type" name="type"><option value="hbl">House Bill</option>
+                        <option selected="selected" value="mbl">Master Bill</option>
+                        <option value="cntr">Container Number</option>
+                        <option value="ams">AMS House Bill</option>
+                        <option value="it">Inbond Number</option>
+                        <option value="go">GO Number</option>
+                    </select>
+                    </label> 
+                    <label for="">
+                        <input class="rounded text-uppercase w-100" placeholder="Type your search" type="text">
+                    </label>
+                    <button type="button" class="btn btn-primary text-uppercase text-xs rounded d-inline-block h-100 align-self-stretch">Search <i class="bi bi-search text-xs ml-2"></i></button>
+                </div>
+                <div class="alert alert-warning d-flex align-items-center font-family-sora text-left text-sm" role="alert">
+                    <i class="bi bi-info-circle-fill me-3 text-2xl text-danger"></i>
+                    <div>We couldn't find a record matching <b class="search-select-type">MBL</b>: <b class="search-users-input">"[User's Input]"</b>. <br>Please verify and try again.</div>
+                </div>
             </div>
         </div>
       </div>
@@ -108,11 +110,11 @@
                             <div class="nav-search-bar col-12">
                                 <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo"><b class="hide-mobile">New Search:</b>
                                     <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
-                                    <option selected="selected" value="mbl">Master Bill</option>
-                                    <option value="cntr">Container Number</option>
-                                    <option value="ams">AMS House Bill</option>
-                                    <option value="it">Inbond Number</option>
-                                    <option value="go">GO Number</option>
+                                        <option selected="selected" value="mbl">Master Bill</option>
+                                        <option value="cntr">Container Number</option>
+                                        <option value="ams">AMS House Bill</option>
+                                        <option value="it">Inbond Number</option>
+                                        <option value="go">GO Number</option>
                                     </select>
                                 </label> 
                                 <label for="">
@@ -450,51 +452,51 @@
                                         <div class="row row-no-wrap mt-4 mb-3">
                                             <div class="col-md col-sm-6 d-flex flex-column  detail-pair">
                                                 <span class="detail-label d-block fw-bold mb-2">DOC / ADM FEE</span>
-                                                <div class="rounded rounded-1 p-2 h-100">
+                                                <div class="rounded rounded-1 h-100">
                                                     <span class="detail-value font-regular">$0.01/LB, MIN $25.00 P/SHIPMENT ADMIN FEE</span>
                                                 </div>
                                             </div>
                                             <div class="col-md col-sm-6 detail-pair d-flex flex-column">
                                                 <span class="detail-label d-block fw-bold mb-2">IT FEE</span>
-                                                <div class="rounded rounded-1 p-2 h-100">
+                                                <div class="rounded rounded-1 h-100">
                                                     <span class="detail-value font-regular">FACILITY FEE $55, ADM$30 , FUEL$35</span>
                                                 </div>
                                             </div>
                                             <div class="col-md col-sm-6 detail-pair d-flex flex-column">
                                                 <span class="detail-label d-block fw-bold mb-2">
                                                     TERM / HAND</span>
-                                                <div class="rounded rounded-1 p-2 h-100">
+                                                <div class="rounded rounded-1 h-100">
                                                     <span class="detail-value font-regular">-</span>
                                                 </div>
                                             </div>
                                             <div class="col-md col-sm-6 detail-pair d-flex flex-column">
                                                 <span class="detail-label d-block fw-bold mb-2">
                                                     Fuel</span>
-                                                <div class="rounded rounded-1 p-2 h-100">
+                                                <div class="rounded rounded-1 h-100">
                                                     <span class="detail-value font-regular">-</span>
                                                 </div>
                                             </div>
                                             <div class="col-md col-sm-6 detail-pair d-flex flex-column">
                                                 <span class="detail-label d-block fw-bold mb-2">Fac Win	</span>
-                                                <div class="rounded rounded-1 p-2 h-100">
+                                                <div class="rounded rounded-1 h-100">
                                                     <span class="detail-value font-regular">$100.00 WINDOW FEE, $70.00 FACILITY FEE</span>
                                                 </div>
                                             </div>
                                             <div class="col-md col-sm-6 detail-pair d-flex flex-column">
-                                                <span class="detail-label d-block mb-2">Haz</span>
-                                                <div class="rounded rounded-1 p-2 h-100">
+                                                <span class="detail-label d-block mb-2 fw-bold">Haz</span>
+                                                <div class="rounded rounded-1 h-100">
                                                     <span class="detail-value font-regular">-</span>
                                                 </div>
                                             </div>
                                             <div class="col-md col-sm-6 detail-pair d-flex flex-column">
                                                 <span class="detail-label d-block fw-bold mb-2">Plts</span>
-                                                <div class="rounded rounded-1 p-2 h-100">
+                                                <div class="rounded rounded-1 h-100">
                                                     <span class="detail-value font-regular">$35.00</span>
                                                 </div>
                                             </div>
                                             <div class="col-md col-sm-6 detail-pair d-flex flex-column">
                                                 <span class="detail-label d-block fw-bold mb-2">Free time</span>
-                                                <div class="rounded rounded-1 p-2 h-100">
+                                                <div class="rounded rounded-1 h-100">
                                                     <span class="detail-value font-regular">$35.00</span>
                                                 </div>
                                             </div>
@@ -624,12 +626,13 @@
 <script src="/bundles/AvailabilityViewer_Ajax?v=VgNFlR4TbTdLyioL1u0joKY-tpXbFdUn0Toxg6Z7ehQ1"></script>
 <script src="/bundles/Modal?v=6X2XgyWba97tfyPCPLvNNu3Nfognwesw8t4cSNPp6OA1"></script>
 <!-- Search modal Script --> <!--  KEVIN: This script enables the modal for search -->
+<!--
 <script> 
     document.addEventListener("DOMContentLoaded", function(){
         var myModal = new bootstrap.Modal(document.getElementById('myStaticModal'));
         myModal.show();
     });
-</script>
+</script>-->
 <script>
     $(function() {
         $(".hamburger-menu").on("click", function() {

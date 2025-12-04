@@ -1089,6 +1089,28 @@ header#header {
     background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
+.modal-body {
+    @media (max-width:576px){
+        padding:var(--space-4);
+    }
+}
+
+.modal-body label {
+    flex-grow:2;
+}
+
+.modal-body .search-container {
+    flex-direction:row;
+
+    @media (max-width:992px) {
+        flex-wrap:wrap!important;
+    }
+
+    @media (max-width:576px) {
+        flex-direction:column;
+    }
+}
+
 /* Transit Time Schedule */
 
 .availavility-v2 .table-striped>tbody>tr:nth-of-type(odd){
