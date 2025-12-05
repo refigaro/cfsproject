@@ -73,6 +73,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 
+/* RESETS FROM OLD CSS */
+
+.row {
+    margin-right: calc(-.5 * var(--bs-gutter-x))
+    !important;
+    margin-left: calc(-.5 * var(--bs-gutter-x))!important;
+}
+
+.pl-0 { padding-left:0!important;}
+
+.btn {
+    border-radius: 0;
+    height: initial!important;
+    font-size:initial!important;
+}
+
+body, button, input, select, textarea {
+    font: initial / initial var(--font-primary);
+}
+
+.mb-3 { margin-bottom: var(--space-3) !important; }
+
+.lh-1rem { line-height:1rem!important; }
+
+.mb-1px { margin-bottom:1px!important}
+
+.row-no-wrap {
+    margin-left:-24px!important; margin-right:-24px!important;
+}
+
+
 /*
 ================================================================
 IMPERIAL CFS - DESIGN SYSTEM
@@ -352,7 +383,7 @@ h1, h2, h3 {
 .text-2xs { font-size: var(--font-size-2xs)!important; }  /* 10px */
 .text-xs { font-size: var(--font-size-xs)!important; }    /* 12px */
 .text-sm { font-size: var(--font-size-sm); }    /* 14px */
-.text-base { font-size: var(--font-size-base); }    /* 15px -> 16px */
+.text-base { font-size: var(--font-size-base)!important; }    /* 15px -> 16px */
 .text-lg { font-size: var(--font-size-lg)!important; }    /* 16px -> 18px */
 .text-xl { font-size: var(--font-size-xl)!important; }    /* 18px -> 20px */
 .text-2xl { font-size: var(--font-size-2xl); }  /* 20px -> 24px */
@@ -506,31 +537,3 @@ h1, h2, h3 {
 .gap-12 { gap: var(--space-12)!important; }
 .gap-16 { gap: var(--space-16)!important; }
 .gap-20 { gap: var(--space-20)!important; }
-
-.row {
-    margin-right: calc(-.5 * var(--bs-gutter-x))
-    !important;
-    margin-left: calc(-.5 * var(--bs-gutter-x))!important;
-}
-
-.pl-0 { padding-left:0!important;}
-
-.btn {
-    border-radius: 0;
-    height: initial!important;
-    font-size:initial!important;
-}
-
-body, button, input, select, textarea {
-    font: initial / initial var(--font-primary);
-}
-
-.mb-3 { margin-bottom: var(--space-3) !important; }
-
-.lh-1rem { line-height:1rem!important; }
-
-.mb-1px { margin-bottom:1px!important}
-
-.row-no-wrap {
-    margin-left:-24px!important; margin-right:-24px!important;
-}

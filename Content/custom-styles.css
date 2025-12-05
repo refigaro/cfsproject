@@ -1111,6 +1111,14 @@ header#header {
     }
 }
 
+
+.modal-lg, .modal-xl {
+    @media (min-width: 992px) {
+        --bs-modal-width: 44rem;
+    }
+}
+
+
 /* Transit Time Schedule */
 
 .availavility-v2 .table-striped>tbody>tr:nth-of-type(odd){
