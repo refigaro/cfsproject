@@ -1078,7 +1078,7 @@ html {
     }
 }
 
-.accordion-button:not(.collapsed)::after {
+.whse-in-out .accordion-button:not(.collapsed)::after {
     filter: brightness(0) invert(1);
 }
 
