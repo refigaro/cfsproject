@@ -1078,6 +1078,10 @@ html {
     }
 }
 
+.accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1);
+}
+
 
 
 /* Search Modal */
