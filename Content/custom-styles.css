@@ -183,12 +183,22 @@
 
     .modal-body select,
     .modal-body input,
-    .modal-body input.form-control {
+    .modal-body input.form-control,
+    .tracking-widget .tab-content select,
+    .tracking-widget .tab-content input,
+    .tracking-widget .tab-content input.form-control {
         height:2.9375rem;
         font-size:var(--font-size-base);
         padding:.5rem;
         font-family: var(--font-primary);
         border:.0625rem solid var(--clr-azure-80);
+    }
+
+    .tracking-widget .tab-content select,
+    .tracking-widget .tab-content input,
+    .tracking-widget .tab-content input.form-control {
+        height:2rem;
+        padding:.25rem .5rem;
     }
 
     .nav-search-bar input,
@@ -1200,7 +1210,199 @@ header#header {
 
 
 
+/* --------- Information / Marketing Pages  ------- */
 
+.availavility-v2 .hero-section {
+    min-height:calc(100vh - 12.37rem);
+    background-image:linear-gradient(to right, rgba(20,38,79,0.9) 20%,rgba(20,38,79,0) 80%), url("../_images/hero-desktop.webp");
+    background-size:cover;
+    background-position:center;
+
+    & .row .hero-text {
+        min-height:calc(100vh - 12.37rem);
+    } 
+
+    @media (max-width:992px){
+        min-height:calc(60vh - 8.75rem);
+        padding-top: 3rem;
+
+            & .row .col-lg-6 {
+                min-height:calc(60vh - 8.75rem);
+                margin-bottom:0!important;
+            } 
+    }
+    @media (max-width:576px){
+        padding-top: 5rem;
+    }
+}
+
+.tracking-widget {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+        .widget-tab {
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            color: #6c757d !important;
+            cursor: pointer;
+            border: none;
+            border-bottom: 2px solid #f0f0f0;
+            background: #f8f9fa;
+            font-family:var(--font-secondary);
+        }
+        .widget-tab.active {
+            background: white !important;
+            color: var(--brand-dark) !important;
+            border-top: 3px solid var(--brand-dark);
+            border-bottom: none;
+        }
+
+
+
+.availavility-v2 .tracking-widget .nav-item .active {
+    box-shadow: inset 0 .5rem 0 0 var(--clr-cyan-47);
+}
+
+
+.availavility-v2 .about-section {
+background: linear-gradient(to right, rgba(51,51,51,1) 59%,#05162A 59%);
+}
+
+.btn-marketing {
+    display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center;
+    color:white!important;
+    text-transform: uppercase;
+    font-size:var(--font-size-xs);
+
+    &:hover {
+        color:var(--clr-azure-46)!important;
+        text-decoration:none;
+        
+        & i.bi {
+            left:-.5rem;
+        }
+    }
+
+    & i.bi {
+        font-size:1.125rem;
+        position:relative;
+        left:0;
+        transition:left ease .2s;
+    }
+}
+
+.marketing .photo-banner {
+    width:100%; max-height:18.75rem;
+    overflow:hidden;
+    object-fit: cover;
+    object-position:left center;
+}
+
+.marketing .core-capabilities {
+    background-image:url('../_images/core-capabilities-bg.webp');
+    background-size:cover;
+    background-position:bottom;
+}
+
+    .marketing .core-capabilities a:hover{
+        text-decoration:none;
+        color:initial;
+    }
+
+        .feature-icon-box {
+            width: 60px;
+            height: 60px;
+            background-color:var(--clr-navy-200);
+            color: var(--clr-azure-19);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .feature-card {
+            border: 1px solid #eef2f6;
+            border-radius: 12px;
+            transition: transform 0.3s;
+            height: 100%;
+            background:white;
+
+            &:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); outline:1px solid var(--clr-azure-89); }
+
+            & .badge {
+                background-color: var(--clr-azure-95);
+                font-family:var(--font-secondary);
+            }
+        }
+
+.marketing .integration-security .card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+/* Navbar in marketing pages */
+
+.marketing .pc-menu {
+    border-bottom:1px solid var(--clr-navy-500);
+}
+
+.availavility-v2.marketing #header {
+    font-family: var(--font-secondary)!important;
+    & a {
+        font-family: var(--font-secondary)!important;
+    }
+}
+
+.availavility-v2.marketing .header-top {
+    background-color:var(--clr-azure-09);
+    
+    & a {   
+        color:white;
+        font-size: var(--font-size-2xs);
+    }
+}
+
+.availavility-v2.marketing .header-main {
+    background-color:white;
+
+    & a {
+        font-size: var(--font-size-xs);
+    }
+}
+
+.availavility-v2.marketing .header-main .menu-list {       
+    height:100%; 
+ 
+    li { height:100%; 
+            a {
+            display: flex; height:100%;
+            align-items: center;
+        }
+        a i.fa {
+            transition:ease transform .2s;
+        }
+    }   
+    li:hover a i.fa.rotate {
+        transform:rotate(180deg);
+    }
+}
+
+
+.menu-list li>a:after {
+    height: 3px;
+    bottom: 0;
+}
+
+.marketing .pc-logo {
+    max-width: 12.75rem;
+    margin-top: 0;
+}
 
 /* --------------- Responsive styles -------- */
 
@@ -1208,6 +1410,8 @@ header#header {
     .container-fluid {
         max-width:112.8rem;
     }
+
+
 }
 
 @media screen and (min-width:1920px){
@@ -1216,6 +1420,10 @@ header#header {
     }
     html { 
         font-size: clamp(1.25rem, -0.5rem + 1.4583vw, 3rem)!important;
+    }
+
+    .marketing .container-fluid {
+        max-width:90vw!important;
     }
 }
 
