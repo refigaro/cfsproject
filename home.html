@@ -30,11 +30,11 @@
                 <div class="row">
                     <div class="col-12">
                         <ul>
-                            <li><a href="/Home/About">About Us</a></li>
-                            <li><a href="/Home/News/5">News</a></li>
-                            <li><a href="/Home/Contact">Contact</a></li>
-                            <li><a href="tel:(310) 768-8188"><i class="fa fa-phone"></i>(310) 768-8188</a></li>
-                            <li><a href="/Home/Forms">Forms</a></li>
+                            <li><a href="/Home/About" class="link-offset-3">About Us</a></li>
+                            <li><a href="/Home/News/5" class="link-offset-3">News</a></li>
+                            <li><a href="/Home/Contact" class="link-offset-3">Contact</a></li>
+                            <li><a href="tel:(310) 768-8188" class="link-offset-3"><i class="fa fa-phone"></i>(310) 768-8188</a></li>
+                            <li><a href="/Home/Forms" class="link-offset-3">Forms</a></li>
                         </ul>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
         <div class="header-main">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12 col-sm-auto py-2">
+                    <div class="col-12 col-sm-auto">
                         <div class="pc-logo pb-1">
                             <a href="/">
                                 <img alt="IMPERIAL CFS" src="/_images/logo.png">
@@ -88,7 +88,7 @@
                         </ul>
                         <ul class="menu-list h-100 col-auto ml-auto gap-8 d-flex">
                             <li><a href="/WarehouseFees">Pay Fees</a></li>
-                            <li><a href="/Home/CustomerLogin">Login <i class="fa fa-angle-right"></i></a></li>
+                            <li class="d-flex align-items-center"><a href="/Home/CustomerLogin" class="btn btn-info btn-sm rounded-pill text-sm">Login <i class="fa fa-angle-right"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -600,6 +600,25 @@
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+</script>
+<!-- Handles the transparency of the navbar after scrolling 10REM -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const body = document.body;
+        
+        function handleScroll() {
+            const remValue = parseFloat(getComputedStyle(document.documentElement).fontSize);
+            const scrollThreshold = 10 * remValue; // 10rem -> approx 160px
+
+            if (window.scrollY < scrollThreshold) {
+                body.classList.add("on-top");
+            } else {
+                body.classList.remove("on-top");
+            }
+        }
+        handleScroll();
+        window.addEventListener("scroll", handleScroll);
+    });
 </script>
 </body>
 </html>

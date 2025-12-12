@@ -1241,6 +1241,9 @@ header#header {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition:transform .3s;
+
+    &:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); outline:1px solid var(--clr-azure-89); }
 }
 
         .widget-tab {
@@ -1359,9 +1362,7 @@ background: linear-gradient(to right, rgba(51,51,51,1) 59%,#05162A 59%);
     }
 }
 
-.availavility-v2.marketing .header-top {
-    background-color:var(--clr-azure-09);
-    
+.availavility-v2.marketing .header-top {    
     & a {   
         color:white;
         font-size: var(--font-size-2xs);
@@ -1369,10 +1370,8 @@ background: linear-gradient(to right, rgba(51,51,51,1) 59%,#05162A 59%);
 }
 
 .availavility-v2.marketing .header-main {
-    background-color:white;
-
     & a {
-        font-size: var(--font-size-xs);
+        font-size: var(--font-size-xs)!important;
     }
 }
 
@@ -1393,16 +1392,127 @@ background: linear-gradient(to right, rgba(51,51,51,1) 59%,#05162A 59%);
     }
 }
 
-
-.menu-list li>a:after {
-    height: 3px;
-    bottom: 0;
+body .pc-menu {
+    background:transparent;
 }
 
 .marketing .pc-logo {
     max-width: 12.75rem;
     margin-top: 0;
+    margin-top: .5rem !important;
+    margin-bottom: .5rem !important;
 }
+
+.menu-list li>a:not(.btn):after {
+    content: "";
+    display: block;
+    position: absolute;
+    transition: all .3s ease;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background-color: currentColor; 
+}
+
+.menu-list li>a:not(.btn):hover:after {
+    width: 100%;
+}
+
+.menu-list li>a:after {
+    display:none;
+}
+
+.header-top a.link-offset-3:hover {
+    text-decoration: underline;
+}
+
+
+        /* --- HEADER SCROLL EFFECT CSS --- */
+        
+        .pc-menu {
+            background-color:transparent;
+        }
+
+        /* 1. Base Header Styling (The "Scrolled" / Default State) */
+        .pc-menu {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
+        }
+
+        /* Top Bar: Dark Blue Background by default */
+        .header-top {
+            transition: background-color 0.3s ease;
+            background-color: var(--clr-azure-09);
+        }
+
+        .header-top a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        /* Main Bar: White Background by default */
+        .header-main {
+            background-color: #ffffff; 
+            transition: background-color 0.3s ease;
+        }
+
+        .header-main a {
+            color: var(--brand-dark); /* Dark text on white bg */
+            transition: color 0.3s ease;
+        }
+        
+        .menu-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* 2. The "On Top" State (Applied via JS when scroll < 10rem) */
+        body.on-top .pc-menu {
+            box-shadow: none; /* No shadow at top */
+            border-bottom:0;
+            background: linear-gradient(to bottom, rgba(2,10,20,1) 0%,rgba(2,11,23,0.9) 25%,rgba(5,22,42,0) 100%);
+        }
+
+        body.on-top .header-top {
+            background-color: transparent !important; /* Transparent Top Bar */
+        }
+
+        body.on-top .header-main {
+            background-color: transparent !important; /* Transparent Main Bar */
+        }
+
+        body.on-top .pc-logo {
+            margin-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        /* Force ALL links to white when on top */
+        body.on-top .header-top a,
+        body.on-top .header-main a,
+        body.on-top .header-main i {
+            color: #ffffff !important;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5); /* Shadow for readability over image */
+        }
+
+        body.on-top .header-main .sub-menu a,
+        body.on-top .header-main .sub-menu i {
+            color:black!important;
+            text-shadow:0 0 0;
+
+            &:hover {
+                color:var(--clr-info)!important;
+                font-weight:bolder!important;
+            }
+        }
+        
+        body.on-top .pc-logo img { filter: brightness(0) invert(1); } 
+
 
 /* --------------- Responsive styles -------- */
 
