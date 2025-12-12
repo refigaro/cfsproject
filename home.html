@@ -106,7 +106,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 ar">
+                    <div class="col-6 ar d-flex justify-content-end align-items-center">
                         <div class="mob-menu-link clears">
                             <div class="hamburger-menu fr">
                                 <div class="bar"></div>
@@ -540,10 +540,10 @@
     $(function() {
         $(".hamburger-menu").on("click", function() {
             $(".bar").toggleClass("animate");
-            $(".availability-menu").toggleClass("open");
-            $(".availability-menu-child").stop(!0, !1).slideToggle(300)
+            $(".mob-menu").toggleClass("open");
+            $(".mob-menu-child").stop(!0, !1).slideToggle(300)
         });
-        $(".availability-menu-child ul>li i").click(function() {
+        $(".mob-menu-child ul>li i").click(function() {
             $(this).parents("li").toggleClass("active");
             $(this).parents("li").find(".mob-sub-menu").stop(!0, !1).slideToggle();
             $(this).parents("li").siblings("li").find(".mob-sub-menu").slideUp()
