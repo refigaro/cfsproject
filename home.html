@@ -498,6 +498,11 @@
             </div>
         </div>
     </footer>
+<!-- Quotation Button (Initially Hidden) -->
+<button type="button" class="btn btn-primary quote-bubble rounded-pill position-fixed bottom-0 end-0 m-4 mb-5 px-4 py-3 shadow border-0 fs-6 fw-bold font-family-sora text-xs">
+    Request a Quote <i class="bi bi-chat-dots-fill ms-2"></i>
+</button>
+
 <!-- Back to Top Button -->
 <button type="button" 
         id="backToTopBtn" 
@@ -528,14 +533,6 @@
 </script>
 <script src="/bundles/AvailabilityViewer_Ajax?v=VgNFlR4TbTdLyioL1u0joKY-tpXbFdUn0Toxg6Z7ehQ1"></script>
 <script src="/bundles/Modal?v=6X2XgyWba97tfyPCPLvNNu3Nfognwesw8t4cSNPp6OA1"></script>
-<!-- Search modal Script --> <!--  KEVIN: This script enables the modal for search -->
-<!--
-<script> 
-    document.addEventListener("DOMContentLoaded", function(){
-        var myModal = new bootstrap.Modal(document.getElementById('myStaticModal'));
-        myModal.show();
-    });
-</script>-->
 <script>
     $(function() {
         $(".hamburger-menu").on("click", function() {
@@ -581,6 +578,37 @@
         }
     }
 </script>
+<!-- Handles the transparency of the navbar after scrolling 10REM -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const body = document.body;
+        
+        function handleScroll() {
+            const remValue = parseFloat(getComputedStyle(document.documentElement).fontSize);
+            const scrollThreshold = 10 * remValue; // 10rem -> approx 160px
+
+            if (window.scrollY < scrollThreshold) {
+                body.classList.add("on-top");
+            } else {
+                body.classList.remove("on-top");
+            }
+        }
+        handleScroll();
+        window.addEventListener("scroll", handleScroll);
+    });
+</script>
+<!-- Quote button animation Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Delay bubble appearance by 3 seconds
+        setTimeout(function() {
+            const bubble = document.querySelector('.quote-bubble');
+            if (bubble) {
+                bubble.classList.add('show');
+            }
+        }, 300);
+    });
+</script>
 <script>
     // Back to top button logic
     const backToTopBtn = document.getElementById("backToTopBtn");
@@ -600,25 +628,6 @@
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-</script>
-<!-- Handles the transparency of the navbar after scrolling 10REM -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const body = document.body;
-        
-        function handleScroll() {
-            const remValue = parseFloat(getComputedStyle(document.documentElement).fontSize);
-            const scrollThreshold = 10 * remValue; // 10rem -> approx 160px
-
-            if (window.scrollY < scrollThreshold) {
-                body.classList.add("on-top");
-            } else {
-                body.classList.remove("on-top");
-            }
-        }
-        handleScroll();
-        window.addEventListener("scroll", handleScroll);
-    });
 </script>
 </body>
 </html>

@@ -1258,6 +1258,64 @@ header#header {
     }
 }
 
+.quote-bubble {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; /* Bouncy pop effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.30), 0 8px 48px 0 rgba(51,122,183,0.15) !important;
+    z-index: 1080;
+    /* Initial Hidden State */
+    opacity: 0;
+    transform: translateY(3rem) scale(0.9);
+    pointer-events: none; /* Prevent clicks while hidden */
+
+    &:hover {
+        transform: scale(1.05) translateY(-2px) !important;
+        background-color: var(--clr-blue-brand);
+    }
+}
+
+.quote-bubble.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+
+.availavility-v2 .hero-section.template {
+    min-height:15.75rem;
+    background-image:linear-gradient(to right, rgba(20,38,79,0.9) 20%,rgba(20,38,79,0) 80%), url("../_images/hero-desktop.webp");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding-top: 3.5rem;
+
+    & .row .hero-text {
+        min-height:15.75rem;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    } 
+
+    @media (max-width:992px){
+        min-height: 15.75rem;
+
+            & .row .hero-text {
+                min-height:15.75rem;
+                margin-bottom:0!important;
+            } 
+    }
+
+    @media (max-width:768px) {
+        background-image:linear-gradient(to bottom, rgba(20,38,79,0.9) 20%,rgba(20,38,79,0) 80%), url("../_images/hero-mobile.webp");
+        background-position:center bottom;
+    }
+
+    @media (max-width:576px){
+        padding-top: 5rem;
+    }
+}
+
 .tracking-widget {
     background: white;
     border-radius: 12px;
