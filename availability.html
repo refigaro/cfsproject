@@ -117,8 +117,12 @@
                                     <option value="go">GO Number</option>
                                     </select>
                                 </label> 
-                                <label for="">
-                                    <input class="rounded" type="text">
+                                <label for="" class="position-relative">
+                                    <input class="rounded border-danger" type="text">
+                                    <div class="alert alert-warning d-flex align-items-center font-family-sora text-left text-sm" role="alert">
+                                        <i class="bi bi-info-circle-fill me-3 text-2xl text-danger"></i>
+                                        <div>We couldn't find a record matching <b class="search-select-type">MBL</b>: <b class="search-users-input">"[User's Input]"</b>. <br>Please verify and try again.</div>
+                                    </div>
                                 </label>
                                 <button type="button" class="btn btn-primary btn-sm bg-navy-700 text-uppercase text-xs rounded">Search <i class="bi bi-search text-xs ml-2"></i></button>
                                 <button type="button" class="btn-close" aria-label="Close"  data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></button>
@@ -630,7 +634,7 @@
                                         <p class="status-title">TRANSIT</p>
                                         <p class="pending">Pending</p>
                                         <p class="status-meta"><b>Trailer #:</b> 71848</p>
-                                        <a href="#" class="view-history-link btn btn-link pl-0 py-1">VIEW DETAILED HISTORY  <i class="bi bi-arrow-right-circle"></i></a>
+                                        <a href="#" class="view-history-link btn btn-link pl-0 py-1 text-nowrap">VIEW DETAILED HISTORY  <i class="bi bi-arrow-right-circle"></i></a>
                                     </div>
                                 </li>
                                 <li class="status-item status-disabled"> <!-- KEVIN: Apply 
@@ -924,14 +928,14 @@
 <script src="/bundles/AvailabilityViewer_Ajax?v=VgNFlR4TbTdLyioL1u0joKY-tpXbFdUn0Toxg6Z7ehQ1"></script>
 <script src="/bundles/Modal?v=6X2XgyWba97tfyPCPLvNNu3Nfognwesw8t4cSNPp6OA1"></script>
 <!-- Search modal Script --> <!--  KEVIN: This script enables the modal for search -->
-
+<!--
 <script> 
     document.addEventListener("DOMContentLoaded", function(){
         var myModal = new bootstrap.Modal(document.getElementById('myStaticModal'));
         myModal.show();
     });
 </script>
-
+-->
 <script>
     $(function() {
         $(".hamburger-menu").on("click", function() {

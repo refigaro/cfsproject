@@ -117,8 +117,12 @@
                                         <option value="go">GO Number</option>
                                     </select>
                                 </label> 
-                                <label for="">
+                                <label for="" class="position-relative">
                                     <input class="rounded" type="text">
+                                    <div class="alert alert-warning d-flex align-items-center font-family-sora text-left text-sm" role="alert">
+                                        <i class="bi bi-info-circle-fill me-3 text-2xl text-danger"></i>
+                                        <div>We couldn't find a record matching <b class="search-select-type">MBL</b>: <b class="search-users-input">"[User's Input]"</b>. <br>Please verify and try again.</div>
+                                    </div>
                                 </label>
                                 <button type="button" class="btn btn-primary btn-sm bg-navy-700 text-uppercase text-xs rounded">Search <i class="bi bi-search text-xs ml-2"></i></button>
                                 <button type="button" class="btn-close" aria-label="Close"  data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></button>
@@ -208,7 +212,7 @@
                     <div class="col-12 col-sm-auto table-col table-col-mbl p-3">
                         <div class="detail-pair col text-left d-flex flex-column align-items-start">
                             <span class="detail-label">HBL No.</span>
-                            <span class="detail-value text-2xl fw-bold">EFSVMZP798532C</span>
+                            <a href="#" data-bs-toggle="tooltip" data-bs-title="Go to HBL details"><span class="detail-value text-2xl fw-bold link link-offset-2">EFSVMZP798532C</span></a>
                         </div>
                     </div>
                     <div class="col-12 col-sm-auto table-col table-col-mbl p-3">
@@ -245,12 +249,12 @@
         <div class="row">
             <div class="col">
                 <div class="row">
-                    <div class="col-lg-3 mb-4">
+                    <div class="col-lg-3 mb-4 destination-container">
                         <div class="card card-shadow destination h-100 font-family-archivo">
                             <div class="card-body p-4">
                                 <div class="detail-pair col border-bottom pb-3">
                                     <span class="detail-label">Destination</span>
-                                    <span class="detail-value text-2xl fw-bold">CLEVELAND, <span class="fw-light">OH</span></span>
+                                    <span class="detail-value text-2xl fw-bold">CLEVELAND</span>
                                 </div>
                                 <div class="detail-pair col py-3">
                                     <span class="detail-label">WAREHOUSE NAME</span>
@@ -260,7 +264,7 @@
 
                                 <div class="mb-4">
                                     <span class="detail-label">CONTACT INFO</span>
-                                    <ul class="list-unstyled pt-3">
+                                    <ul class="list-unstyled pt-3 text-sm">
                                         <li class="mb-2 detail-value"><a href="#"><i class="bi bi-telephone-forward me-2"></i>(888)-365-5517</a></li>
                                         <li class="mb-2 detail-value"><a href="#"><i class="bi bi-envelope me-2"></i>cleimports@airground.com</a></li>
                                         <li class="mb-2 detail-value"><a href="#"><i class="bi bi-globe me-2"></i>www.airground.com</a></li>
@@ -297,7 +301,7 @@
                         </div>
                 </div>
 
-                <div class="col-lg-9 mb-4 font-family-archivo d-flex flex-column">
+                <div class="col-lg mb-4 font-family-archivo d-flex flex-column">
                         <div class="my-3 row justify-content-between align-items-center gap-3 px-2 py-2">
                             <div class="col-lg-12 col-xl-auto milestone-v2-container">
                                 <div class="milestone-v2 row justify-content-between gap-1 mt-2">
@@ -351,8 +355,8 @@
                                 <div class="text-xl fw-bold text-primary">10/2/25</div>
                                 <div class="text-muted text-uppercase text-xs">THU</div>
                             </div>
-                            <div class="col-md-10 col-sm-12 ps-md-4 border-start">
-                                <div class="timeline-item d-flex align-items-end mb-3">
+                            <div class="col-md-10 col-sm-12 ps-md-4 border-start d-flex flex-column gap-3">
+                                <div class="timeline-item d-flex align-items-end">
                                     <div>
                                         <span class="text-muted d-block">05:45 PM - PT</span>
                                         <span class="fw-bold">CONTAINER OUT-GATED MEMPHIS, TN</span>
@@ -366,14 +370,14 @@
                                 <div class="text-xl fw-bold text-primary">10/1/25</div>
                                 <div class="text-muted text-uppercase text-xs">WED</div>
                             </div>
-                            <div class="col-md-10 col-sm-12 ps-md-4 border-start">
-                                <div class="timeline-item d-flex align-items-end mb-4">
+                            <div class="col-md-10 col-sm-12 ps-md-4 border-start d-flex flex-column gap-3">
+                                <div class="timeline-item d-flex align-items-end">
                                     <div>
                                         <span class="text-navy-450 d-block">12:33 PM - PT</span>
                                         <span class="fw-bold">CONTAINER ARRIVED HAVE NOT NOTIFIED AVAILABLE MEMPHIS, TN</span>
                                     </div>
                                 </div>
-                                <div class="timeline-item d-flex align-items-end mb-4">
+                                <div class="timeline-item d-flex align-items-end">
                                     <div class="flex-grow-1">
                                         <span class="text-navy-450 d-block">03:22 AM - PT</span>
                                         <span class="fw-bold">CONTAINER ARRIVED MEMPHIS, TN</span>
@@ -393,8 +397,8 @@
                                 <div class="text-xl fw-bold text-primary">9/30/25</div>
                                 <div class="text-muted text-uppercase text-xs">TUE</div>
                             </div>
-                            <div class="col-md-10 col-sm-12 ps-md-4  border-start">
-                                <div class="timeline-item d-flex align-items-end mb-3">
+                            <div class="col-md-10 col-sm-12 ps-md-4 border-start d-flex flex-column gap-3">
+                                <div class="timeline-item d-flex align-items-end">
                                     <div>
                                         <span class="text-navy-450 d-block">10:25 PM - PT</span>
                                         <span class="fw-bold">PASSING THROUGH TODD, OK</span>
@@ -648,6 +652,12 @@
         $(window).width() >= 768 ? $(".home-section-04-box").css("margin-top", $(".home-section-04-box").height() * -1) : $(".home-section-04-box").css("margin-top", 0)
     })
 </script>
+<!-- /// Tooltips inicialization /// -->
+<script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+
 <script>
     function searchAccordion() {
         // 1. Get the input value
