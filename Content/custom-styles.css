@@ -1684,6 +1684,12 @@ body .pc-menu {
     }    
 }
 
+.long-text {
+    max-width:40em;
+    text-wrap: balance;
+    hyphens: auto;
+    overflow-wrap: break-word;
+}
 
 
 /* --------------- Responsive styles -------- */
