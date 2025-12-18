@@ -1344,7 +1344,7 @@ header#header {
 
 .side-nav {
     & .card:first-child {
-        box-shadow: var(--shadow-md);
+        box-shadow: var(--shadow-lg);
     }
 }
 
@@ -1355,11 +1355,15 @@ header#header {
         margin-bottom:1em; line-height:158%;
         font-family: var(--font-secondary); 
         color:var(--clr-grey-40);
+
+        i { color:var(--clr-cyan-47)!important; }
+        li i { font-size: var(--font-size-xs);}
     }
 
     bold, strong {
         color:var(--clr-grey-20);
     }
+
 }
 
 .tracking-widget {
@@ -1673,6 +1677,14 @@ body .pc-menu {
         color:#333;
     }
 }
+
+.marketing aside .sticky-top {
+    @media (min-width:992px){
+        margin-top:-7.5rem;
+    }    
+}
+
+
 
 /* --------------- Responsive styles -------- */
 
@@ -2166,3 +2178,52 @@ body .pc-menu {
 input[type=text] {
     font-weight: 400;
 }
+
+.marketing .main-content ul li ul {
+    padding-left:var(--space-6);
+    margin-top:var(--space-3);
+    margin-bottom:var(--space-3);
+
+    & i { margin-right:var(--space-2); color:var(--clr-grey-50);}
+}
+
+.filter-cyan {
+    filter: brightness(0) saturate(100%) invert(44%) sepia(9%) saturate(3785%) hue-rotate(166deg) brightness(96%) contrast(87%);
+}
+
+.square-bullet {
+    padding-left:1.5125rem;
+    position:relative;
+
+    &:before {
+        content:"";
+        display:block;
+        width:.575rem;
+        height:.575rem;
+        background:var(--clr-cyan-47);
+        position:absolute; left:0; top:25%;
+    }
+}
+
+.marketing .list-group {
+    a.active {
+        background-color:var(--clr-azure-89);
+        border:var(--clr-cyan-47);
+        color:black;
+    }
+    a.active:before {
+        content:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-chevron-right' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E");
+        margin-right:.125rem;
+        filter: brightness(0) saturate(100%) invert(44%) sepia(9%) saturate(3785%) hue-rotate(166deg) brightness(96%) contrast(87%);
+    }
+}
+
+.marketing .breadcrumb-item+.breadcrumb-item::before {
+    color:white!important;
+}
+
+
+body.availavility-v2.marketing .breadcrumb {
+  --bs-breadcrumb-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%23ffffff'/%3E%3C/svg%3E");
+}
+

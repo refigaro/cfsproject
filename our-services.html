@@ -10,7 +10,7 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#777777">
     <meta name="theme-color" content="#ffffff">
-    <title>Imperial CFS, Inc - Availability</title>
+    <title>Imperial CFS, Inc - CFS Services</title>
     <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -162,270 +162,157 @@
         </div>
     </div>
 </header>
-<header class="hero-section">
+<header class="hero-section template" style="background-image: linear-gradient(to top, rgba(20, 38, 79, 0.6) 30%, rgba(20, 38, 79, 0) 80%), url('https://www.imperialcfs.com/_images/Services-banner.jpg');">
     <div class="container-fluid">
         <div class="row align-items-center">
-            <div class="hero-text col-lg-5 mb-5 mb-lg-0 d-flex flex-column justify-center">
-                <h1 class="text-info text-sm font-family-archivo fw-bold mb-1">LOS ANGELES BONDED WAREHOUSING & IPI LOGISTICS</h1>
-                <h2 class="type-display-1 text-white mb-3" style="line-height: 1.1;">Logistics,<br><i>Uncomplicated.</i></h2>
-                <p class="type-body-lg text-white mb-0 w-75">Premier bond/general order warehousing and nationwide IPI transportation. 69+ locations connected by a single tech platform.</p>
-            </div>
-            <div class="col-lg-5 offset-lg-2">
-                <div class="tracking-widget">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-fill flex-nowrap" id="trackingTabs" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active widget-tab rounded-0 text-sm p-4 pt-6" id="availability-tab" data-bs-toggle="tab" data-bs-target="#availability" type="button" role="tab" aria-controls="availability" aria-selected="true">
-                                <i class="fas fa-search-location me-2"></i>Availability
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link widget-tab rounded-0 text-sm p-4 pt-6" id="ipi-tracing-tab" data-bs-toggle="tab" data-bs-target="#ipi-tracing" type="button" role="tab" aria-controls="ipi-tracing" aria-selected="false">
-                                <i class="fas fa-route me-2"></i>IPI Tracing
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link widget-tab rounded-0 text-sm p-4 pt-6" id="fees-tab" data-bs-toggle="tab" data-bs-target="#fees" type="button" role="tab" aria-controls="fees" aria-selected="false">
-                                <i class="fas fa-dollar-sign me-2"></i>Warehouse Fees
-                            </button>
-                        </li>
-                    </ul>
-
-                    <!-- Tab panes -->
-                    <div class="tab-content p-8 pb-12" id="trackingTabsContent">
-                        <!-- Availability Pane -->
-                        <div class="tab-pane fade show active" id="availability" role="tabpanel" aria-labelledby="availability-tab">
-                            <label class="form-label text-lowercase font-family-dm-serif text-uppercase">Availability Search:</label>
-                            <div class="d-flex justify-content-between gap-2 search-container">
-                                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo flex-grow-0">
-                                    <select class="form-control rounded w-100 h-100" id="type" name="type"><option value="hbl">House Bill</option>
-                                        <option selected="selected" value="mbl">Master Bill</option>
-                                        <option value="cntr">Container Number</option>
-                                        <option value="ams">AMS House Bill</option>
-                                        <option value="it">Inbond Number</option>
-                                        <option value="go">GO Number</option>
-                                    </select>
-                                </label> 
-                                <label for="" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo flex-grow-1">
-                                    <input class="rounded text-uppercase w-100 h-100" placeholder="Type your search" type="text">
-                                </label>
-                                <button type="button" class="btn btn-primary text-uppercase text-xs rounded d-inline-block h-100 align-self-stretch text-nowrap">Search <i class="bi bi-search text-xs ml-2"></i></button>
-                            </div>
-                        </div>
-                        
-                        <!-- IPI Tracing Pane -->
-                        <div class="tab-pane fade" id="ipi-tracing" role="tabpanel" aria-labelledby="ipi-tracing-tab">
-                            <label class="form-label text-lowercase font-family-dm-serif text-uppercase">IPI Tracing Search:</label>
-                            <div class="d-flex justify-content-between gap-2 search-container">
-                                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo flex-grow-0">
-                                    <select class="form-control rounded w-100 h-100" id="type" name="type"><option value="hbl">House Bill</option>
-                                        <option selected="selected" value="mbl">Master Bill</option>
-                                        <option value="cntr">Container Number</option>
-                                        <option value="ams">AMS House Bill</option>
-                                        <option value="it">Inbond Number</option>
-                                        <option value="go">GO Number</option>
-                                    </select>
-                                </label> 
-                                <label for="" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo flex-grow-1">
-                                    <input class="rounded text-uppercase w-100 h-100" placeholder="Type your search" type="text">
-                                </label>
-                                <button type="button" class="btn btn-primary text-uppercase text-xs rounded d-inline-block h-100 align-self-stretch text-nowrap">Search <i class="bi bi-search text-xs ml-2"></i></button>
-                            </div>
-                            <p class="text-sm text-navy-450" style="padding-top:.75rem;margin-bottom:-1.5rem;">*If searching by MBL/CTNR, please used availability search.</p>
-                        </div>
-
-                        <!-- Fees Pane -->
-                        <div class="tab-pane fade" id="fees" role="tabpanel" aria-labelledby="fees-tab">
-                            <label class="form-label text-lowercase font-family-dm-serif text-uppercase">Pay Warehouse Fees Search:</label>
-                            <div class="d-flex justify-content-between gap-2 search-container">
-                                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo flex-grow-0">
-                                    <select class="form-control rounded w-100 h-100" id="type" name="type"><option value="hbl">House Bill</option>
-                                        <option selected="selected" value="mbl">Master Bill</option>
-                                        <option value="cntr">Container Number</option>
-                                        <option value="ams">AMS House Bill</option>
-                                        <option value="it">Inbond Number</option>
-                                        <option value="go">GO Number</option>
-                                    </select>
-                                </label> 
-                                <label for="" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo flex-grow-1">
-                                    <input class="rounded text-uppercase w-100 h-100" placeholder="Type your search" type="text">
-                                </label>
-                                <button type="button" class="btn btn-primary text-uppercase text-xs rounded d-inline-block h-100 align-self-stretch text-nowrap">Search <i class="bi bi-search text-xs ml-2"></i></button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-lg hero-text">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/" class="text-white text-decoration-none">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white text-decoration-none">Our Services</a></li>
+                            <li class="breadcrumb-item active text-cyan-primary fw-bold" aria-current="page">CFS Services</li>
+                        </ol>
+                    </nav>
+                    <h1 class="display-4 text-white">CFS Services</h1>
                 </div>
-            </div>
         </div>
     </div>
 </header>
+    <!-- MAIN CONTENT AREA -->
+    <div class="container-fluid my-5 pb-5">
+        <div class="row">
 
-    <div class="news-ticker py-3 bg-navy-900">
-        <div class="container-fluid">
-            <div class="row mt-1 mb-2">
-                <div class="col-12 my-1 mb-md-0 gap-0">
-                    <h6 class="text-info type-body-sm font-family-sora fw-bold mb-0 lh-1">UPDATES TO HELP YOU PLAN</h6>
-                    <h4 class="text-white type-h5 m-0">News & Announcements</h4>
-                </div>
-            </div>
-            <div class="row align-items-stretch text-white font-family-sora">
-                <div class="col-md py-2 pe-2 align-items-center justify-content-between mb-md-0">
-                    <div class="news-item-date mb-2">11/11/20</div>
-                    <div class="news-item-text fw-bold">**UPDATE** Accepted Forms of Payment for Warehouse Fees</div>
-                </div>
-                <div class="col-md py-2 px-4 align-items-center justify-content-between mb-md-0 border-start border-secondary">
-                    <div class="news-item-date mb-2">11/25/25</div>
-                    <div class="news-item-text fw-bold">Atlanta CFS: HWC Logistic rate change effective Jan 1</div>
-                </div>
-                <div class="col-md py-2 px-4 align-items-center justify-content-between mb-md-0 border-start border-secondary">
-                    <div class="news-item-date mb-2">11/25/25</div>
-                    <div class="news-item-text fw-bold">Atlanta CFS: HWC Logistic rate change effective Jan 1</div>
-                </div>
-                <div class="col-md py-2 px-4 align-items-center justify-content-between border-start border-secondary">
-                    <div>
-                        <div class="news-item-date mb-2">11/14/25</div>
-                        <div class="news-item-text fw-bold">Upcoming Holiday Schedule</div>
-                    </div>
-                </div>
-                <div class="col-md-auto d-flex align-items-center justify-content-between border-start border-secondary ps-4">
-                    <div>
-                        <a href="" class="btn-marketing">
-                            More news <i class="bi bi-arrow-right-square-fill ml-4"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section class="bg-white core-capabilities">
-        <img src="https://www.imperialcfs.com/_images/Availability-banner.jpg" alt="" class="img-responsive photo-banner">
-        <div class="container-fluid py-12">
-            <div class="text-center mb-5">
-                <h6 class="text-secondary type-subhead fw-bold text-uppercase mb-0 lh-1">Core Capabilities</h6>
-                <h2 class="display-6 mb-3">More than just Warehousing</h2>
-                <p class="type-body-lg text-grey-50">We combine asset-based infrastructure with advanced technology <span class="text-navy-800">to solve your most complex supply chain challenges.</span></p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <a href="#">
-                        <div class="feature-card p-4 text-center">
-                            <div class="feature-icon-box mx-auto"><i class="fas fa-warehouse"></i></div>
-                            <h4 class="type-subhead text-lowercase font-bolder mb-3">CFS Warehousing</h4>
-                            <p class="type-body-lg text-grey-20 mb-4">300,000 sq ft facility. 52 docks for rapid devanning and specialized cargo handling.</p>
-                            <span class="badge text-dark rounded-pill py-3 px-4 text-xs font-regular"><i class="fas fa-fingerprint me-1"></i> Biometric Access & Guarded</span>
+            <!-- SIDEBAR (Bootstrap List Group) -->
+            <aside class="col-lg-2 offset-lg-1 mb-6 mb-lg-0 side-nav order-lg-2">
+                <div class="sticky-top" style="top: 8rem; z-index: 1;">
+                    <div class="card border-0">
+                        <div class="card-header text-lg font-family-sora bg-dark text-white pt-3 fw-bold d-none d-lg-block">
+                            Our Services
                         </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#">
-                        <div class="feature-card p-4 text-center">
-                            <div class="feature-icon-box mx-auto"><i class="fas fa-map-marked-alt"></i></div>
-                            <h4 class="type-subhead text-lowercase font-bolder mb-3">Inland Network (IPI)</h4>
-                            <p class="type-body-lg text-grey-20 mb-4">Door-to-door delivery across the US. Access our network of 69+ bonded hubs.</p>
-                            <span class="badge text-dark rounded-pill py-3 px-4 text-xs font-regular"><i class="fas fa-train me-1"></i> Rail & Truck Intermodal</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="#">
-                        <div class="feature-card p-4 text-center">
-                            <div class="feature-icon-box mx-auto"><i class="fas fa-truck-moving"></i></div>
-                            <h4 class="type-subhead text-lowercase font-bolder mb-3">Dedicated Trucking</h4>
-                            <p class="type-body-lg text-grey-20 mb-4">Expedited port pickup with private chassis availability to avoid delays.</p>
-                            <span class="badge text-dark rounded-pill py-3 px-4 text-xs font-regular"><i class="fas fa-shipping-fast me-1"></i> Hazmat & Lift-Gate Ready</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="stats-bar bg-azure-19 py-5">
-        <div class="container-fluid">
-            <div class="row text-center divide-light">
-                <div class="col-6 col-md-3 mb-4 mb-md-0 border-secondary">
-                    <h2 class="type-h4-alt mb-0 text-white lh-1">69+</h2>
-                    <small class="type-body-lg-alt mt-0 text-white">Contracted Warehouses</small>
-                </div>
-                <div class="col-6 col-md-3 mb-4 mb-md-0 border-secondary">
-                    <h2 class="type-h4-alt mb-0 text-white lh-1">15 min</h2>
-                    <small class="type-body-lg-alt mt-0 text-white">from LB & LA ports</small>
-                </div>
-                <div class="col-6 col-md-3 border-secondary">
-                    <h2 class="type-h4-alt mb-0 text-white lh-1">24/7</h2>
-                    <small class="type-body-lg-alt mt-0 text-white">Security Guard</small>
-                </div>
-                <div class="col-6 col-md-3">
-                    <h2 class="type-h4-alt mb-0 text-white lh-1">EDI</h2>
-                    <small class="type-body-lg-alt mt-0 text-white">Direct Integration</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <section class="py-5 bg-azure-09 integration-security">
-        <div class="container-fluid py-4">
-            <div class="row g-4">
-                <div class="col-lg-6 d-flex">
-                    <div class="card p-8 h-100 border-0 shadow-sm">
-                        <h6 class="text-info fw-bold small text-uppercase type-subhead mb-0 lh-1"><i class="fas fa-network-wired me-2"></i>Integration</h6>
-                        <h3 class="mb-3 type-h3 ">Built for Automation</h3>
-                        <p class="text-navy-450 font-family-sora mb-4">Stop manual entry. Our systems support full EDI capabilities for seamless data flow.</p>
-                        <ul class="list-unstyled font-family-sora mb-1">
-                            <li class="mb-2"><i class="fas fa-check text-info me-2"></i> Direct download of container status</li>
-                            <li class="mb-2"><i class="fas fa-check text-info me-2"></i> Automated Cargo Release & Reports</li>
-                        </ul>
-                        <div>
-                            <a href="#" class="btn btn-outline-dark btn-sm rounded-pill text-decoration-none">VIEW OUR TECHNOLOGY <i class="fas fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex">
-                    <div class="card p-8 h-100 border-0 shadow-sm position-relative">
-                        <span class="position-absolute type-subhead bg-danger text-white px-3 py-2 fw-bold rounded-pill text-lg" style="top:-1rem; right:1rem;">24/7</span>
-                        <h6 class="text-info fw-bold small text-uppercase type-subhead mb-0 lh-1"><i class="fas fa-shield-alt me-2"></i>Security & Compliance</h6>
-                        <h3 class="mb-3 type-h3 ">Your Cargo, Protected.</h3>
-                        <p class="text-navy-450 font-family-sora mb-4">We go beyond standard bonding. Our facility is a fortress designed for high-value cargo.</p>
-                        <div class="row mb-5">
-                            <div class="col-6 font-family-sora">
-                                <h6 class="fw-bold type-body-lg mb-0 letter-spacing-0">200+ Cameras</h6>
-                                <p class="text-muted">HD Surveillance covering every inch of the 17.5-acre lot.</p>
-                            </div>
-                            <div class="col-6 font-family-sora">
-                                <h6 class="fw-bold type-body-lg mb-0 letter-spacing-0" style="letter-spacing:0;">Video Surveillance</h6>
-                                <p class="text-muted">24/7 video surveillance throughout the property</p>
+                        <!-- Collapsible on mobile using Bootstrap Collapse -->
+                        <button class="btn btn-link d-lg-none text-decoration-none text-dark p-3 text-start w-100 d-flex justify-content-start gap-4 align-items-center bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-expanded="false">
+                            Our Services <i class="bi bi-chevron-down"></i>
+                        </button>
+                        <div class="collapse d-lg-block" id="sidebarMenu">
+                            <div class="list-group list-group-flush">
+                                <a href="/OurServices/CFS" class="list-group-item list-group-item-action">CFS Warehousing</a>
+                                <a href="/OurServices/Inland" class="list-group-item list-group-item-action active">Inland Consolidation</a>
+                                <a href="/OurServices/Trucking" class="list-group-item list-group-item-action">Trucking</a>
+                                <a href="/OurServices/Technology" class="list-group-item list-group-item-action">Technology</a>
+                                <a href="/OurServices/Security" class="list-group-item list-group-item-action">Security</a>
                             </div>
                         </div>
-                        <div>
-                            <a href="#" class="btn btn-outline-dark btn-sm rounded-pill text-decoration-none">LEARN HOW WE SECURE CARGO <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                    <!-- Call to Action Card -->
+                    <div class="card mt-6 bg-light border-0">
+                        <div class="card-body text-left font-family-sora px-0">
+                            <h5 class="card-title text-2xl font-family-sora mb-2">Need a Quote?</h5>
+                            <p class="card-text type-body-lg text-muted  mb-3">Contact our inland team for specialized rates.</p>
+                            <a href="mailto:info@imperialcfs.net" class="btn btn-outline-dark btn-sm rounded-pill w-100">rates@imperialcfs.net</a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section class="about-section py-5">
-        <div class="container-fluid py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <h2 class="type-h3 mb-4 text-white">Providing Ocean Container Freight Station Services <em class="fw-light">for Over 30 years</em></h2>
-                    <p class="text-white-50 mb-4 text-white">Since 1994, Imperial CFS, Inc. has been at the forefront of providing exceptional ocean container freight station (CFS) services and nationwide IPI transportation services. Our philosophy is built upon supporting the diverse needs of our clients.</p>
-                    <a href="" class="btn-marketing">
-                        Learn more <i class="bi bi-arrow-right-square-fill ml-4"></i>
-                    </a>
+            </aside>
+
+            <!-- MAIN CONTENT COLUMN -->
+            <div class="col-lg-9 pe-lg-5 main-content order-lg-1">
+                
+                <!-- CONTENT BLOCK TYPE A: General Text / Service Description -->
+                <div class="mb-5 type-body-lg">
+                    <h2 class="h4 font-family-sora square-bullet pb-2">U.S. Customs bonded Container Freight Station (C.F.S.)</h2>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-lg text-cyan-primary text-lg me-2"></i>Preparation and submission of Permit to Transfer (P.T)</li>
+                        <li class="mb-2"><i class="bi bi-check-lg text-cyan-primary text-lg me-2"></i>Drayage to and from the Ports of Long Beach and Los Angeles</li>
+                        <li class="mb-2"><i class="bi bi-check-lg text-cyan-primary text-lg me-2"></i>Pictures of each house bill shipment available through Account Login online access</li>
+                        <li class="mb-2"><i class="bi bi-check-lg text-cyan-primary text-lg me-2"></i>Enclosed High Security area for high value or special cargo</li>
+                        <li class="mb-2"><i class="bi bi-check-lg text-cyan-primary text-lg me-2"></i>Hazardous cargo handling</li>
+                        <li class="mb-2"><i class="bi bi-check-lg text-cyan-primary text-lg me-2"></i>Public online access for:
+                            <ul class="pl-4">
+                                <li class="mb-2"><i class="bi bi-caret-right-fill"></i>Up-to-date container and cargo availability and IPI tracing</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </div>
+                    <div class="mb-5 type-body-lg">
+                    <h2 class="h4 font-family-sora mb-4 pb-2 square-bullet">U.S. Customs bonded General Order (G.O.) warehouse</h2>
+                    <h2 class="h4 font-family-sora pb-2 square-bullet">U.S. Customs bonded Warehouse Entry warehouse</h2>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-lg text-cyan-primary text-lg me-2"></i>Early and extended pick up hours</li>
+                        <li class="mb-2"><i class="bi bi-check-lg text-cyan-primary text-lg me-2"></i>Transloading</li>
+                        <li class="mb-2"><i class="bi bi-check-lg text-cyan-primary text-lg me-2"></i>Other special services upon request</li>
+                        <li class="mb-2"><i class="bi bi-check-lg text-cyan-primary text-lg me-2"></i>Account Login online access for:
+                            <ul class="pl-4">
+                                <li class="mb-2"><i class="bi bi-caret-right-fill small text-cyan-primary"></i>Detailed devanning report</li>
+                                <li class="mb-2"><i class="bi bi-caret-right-fill"></i>Cargo release and un-release</li>
+                                <li class="mb-2"><i class="bi bi-caret-right-fill"></i>CFS charge guarantee</li>
+                                <li class="mb-2"><i class="bi bi-caret-right-fill"></i>Accounting and other customized reports</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-lg-6 offset-lg-1">
-                    <div class="about-video-wrapper">
-                        <link rel="preload" href="_images/video-thumb.webp" as="image" fetchpriority="high">
-                        <video controls preload="none"
-                        poster="_images/video-thumb.webp"
-                        onmouseenter="event.target.setAttribute('preload','metadata')" width="100%" height="100%">
-                        <source src="/_images/homevideo.mp4" type="video/mp4">
-                        </video>
+                <div class="mb-5">
+                    <h2 class="h2 border-bottom mb-4 pb-2">Property Statistics</h2>
+                    <div class="row g-4">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="card h-100 text-center p-4 bg-azure-95 border-0">
+                                <div class="card-body font-family-sora text-grey-40">
+                                    <img src="https://www.imperialcfs.com/_images/Services-icon-01.png" alt="" class="filter-cyan mb-3">
+                                    <h4 class="type-h4 card-title font-family-sora">17.5 Acre Lot</h4>
+                                    <p class="card-text">300,000 square feet of warehouse space</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="card h-100 text-center p-4 bg-azure-95 border-0">
+                                <div class="card-body font-family-sora text-grey-40">
+                                    <img src="https://www.imperialcfs.com/_images/Services-icon-02.png" alt="" class="filter-cyan mb-3">
+                                    <h4 class="type-h4 card-title font-family-sora">300+ Yard</h4>
+                                    <p class="card-text">spaces for container and trailer parking</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="card h-100 text-center p-4 bg-azure-95 border-0">
+                                <div class="card-body font-family-sora text-grey-40">
+                                    <img src="https://www.imperialcfs.com/_images/Services-icon-03.png" alt="" class="filter-cyan mb-3">
+                                    <h4 class="type-h4 card-title font-family-sora">52</h4>
+                                    <p class="card-text">docks with levelers</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="card h-100 text-center p-4 bg-azure-95 border-0">
+                                <div class="card-body font-family-sora text-grey-40">
+                                    <img src="https://www.imperialcfs.com/_images/Services-icon-04.png" alt="" class="filter-cyan mb-3">
+                                    <h4 class="type-h4 card-title font-family-sora">2</h4>
+                                    <p class="card-text">ground level loading ramps</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="card h-100 text-center p-4 bg-azure-95 border-0">
+                                <div class="card-body font-family-sora text-grey-40">
+                                    <img src="/_images/Services-icon-05.png" alt="" class="filter-cyan mb-3">
+                                    <h4 class="type-h4 card-title font-family-sora">Easy Access</h4>
+                                    <p class="card-text">and close to Freeways 91, 105, 110, 405, and 710</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="card h-100 text-center p-4 bg-azure-95 border-0">
+                                <div class="card-body font-family-sora text-grey-40">
+                                    <img src="https://www.imperialcfs.com/_images/Services-icon-06.png" alt="" class="filter-cyan mb-3">
+                                    <h4 class="type-h4 card-title font-family-sora">15 Minutes</h4>
+                                    <p class="card-text">from Port of Long Beach and Port of Los Angeles</p>
+                                </div>
+                            </div>
+                        </div>                                                
                     </div>
                 </div>
             </div>
+
         </div>
-    </section>
+    </div>
 <footer class="footer">
         <div class="container-fluid">
             <div class="row">
@@ -534,6 +421,14 @@
 </script>
 <script src="/bundles/AvailabilityViewer_Ajax?v=VgNFlR4TbTdLyioL1u0joKY-tpXbFdUn0Toxg6Z7ehQ1"></script>
 <script src="/bundles/Modal?v=6X2XgyWba97tfyPCPLvNNu3Nfognwesw8t4cSNPp6OA1"></script>
+<!-- Search modal Script --> <!--  KEVIN: This script enables the modal for search -->
+<!--
+<script> 
+    document.addEventListener("DOMContentLoaded", function(){
+        var myModal = new bootstrap.Modal(document.getElementById('myStaticModal'));
+        myModal.show();
+    });
+</script>-->
 <script>
     $(function() {
         $(".hamburger-menu").on("click", function() {
@@ -555,8 +450,8 @@
         var input = document.getElementById("citySearch");
         var filter = input.value.toUpperCase();
 
-        // 2. Get the specific container (Safer than getting all items on the whole page)
-        var container = document.getElementById("warehouse-in-out-Accordion");
+        // 2. Get the specific container-fluid (Safer than getting all items on the whole page)
+        var container-fluid = document.getElementById("warehouse-in-out-Accordion");
         var items = container.getElementsByClassName("accordion-item");
 
         // 3. Loop through all items
