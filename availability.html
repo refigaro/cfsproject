@@ -438,39 +438,127 @@
         <div class="hbl-details-container"> 
             <!-- /// HBL Details Modals !! -->
             <div class="offcanvas offcanvas-end hbl-item-details-modal" tabindex="-1" id="hbl-item-details-2" aria-labelledby="hbl-item-details-2">
-                <div class="offcanvas-header border-bottom">
-                    <div class="d-flex justify-content-start gap-4 align-items-center offcanvas-hbl-header">
-                        <h2 class="text-2xl font-family-dm-serif text-navy-800">HBL Details</h2>
-                        <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="btn-icon"><img src="_images/bill.png" class="image-responsive" alt=""></i>   Charges</button>
-                        <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer"></i> Arrival Notice</button>
-                        <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer"></i> Pickup Confirmation</button>
-                        <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer"></i> CUCC Charges</button>
-                        <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer"></i> Release Frt</button>
-                    </div>
-                    <div class="d-flex justify-content-end align-items-center gap-4">
-                        <button type="button" class="btn btn-sm btn-outline-dark rounded-full close text-base" data-bs-dismiss="offcanvas" aria-label="Close"><b>Close <i class="bi bi-x-lg"></i></b></button>
-                    </div>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pickup-hours-modal">
-                    Launch demo modal
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="pickup-hours-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
+                <div class="offcanvas-header border-bottom d-flex flex-column">
+                    <div class="w-100">
+                        <div class="d-flex justify-content-start gap-4 align-items-center offcanvas-hbl-header">
+                            <h2 class="text-2xl font-family-dm-serif text-navy-800">HBL Details</h2>
+                            <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="btn-icon"><img src="_images/bill.png" class="image-responsive" alt=""></i>   Charges</button>
+                            <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer"></i> Arrival Notice</button>
+                            <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer"></i> Pickup Confirmation</button>
+                            <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc"><i class="bi bi-printer"></i> CUCC Charges</button>
+                            <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release"><i class="bi bi-printer"></i> Release Frt</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark rounded-full close text-base ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"><b>Close <i class="bi bi-x-lg"></i></b></button>
                         </div>
                     </div>
+                    <div class="mt-2 w-100 gap-2">
+                        <div class="collapse w-100" id="collapse-cucc"> <!-- CUCC Charges collapse -->
+                            <div class="card card-body p-0 my-5 overflow-hidden shadow-sm">
+                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md">Add CUCC charges</h2>
+                                <div class="row p-3 py-4 justify-between gap-2">
+                                    <div class="col-12 col-xl-5 row me-auto">
+                                        <div class="col-auto">
+                                            <label for="amount">Amount:</label>
+                                        </div>
+                                        <div class="col-auto text-lg">
+                                            <input type="number" id="amount" name="amount" placeholder="0" class="rounded-sm border px-2 py-1">
+                                        </div>
+                                        <div class="col-auto">
+                                            <button class="btn btn-sm btn-primary rounded-full">Update CUCC Charges</button>
+                                        </div>
+                                        <div class="col-12">
+                                            <p class="text-success d-inline-block mt-2"><i class="bi bi-check"></i> Updated successfully</p>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xl-6 row bg-navy-100 px-1 py-2 rounded mx-2">
+                                        <div class="col text-end">
+                                            <p>Amount Collected at Window</p>
+                                            <p class="fw-bold text-lg">0.00</p>
+                                        </div>
+                                        <div class="col text-end">
+                                            <p>Imperial Service Fee</p>
+                                            <p class="fw-bold text-lg">0.00</p>
+                                        </div>
+                                        <div class="col text-end">
+                                            <p>Amount Due To You</p>
+                                            <p class="fw-bold text-lg">0.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collapse w-100" id="collapse-ams-release"> <!-- Frt release collapse -->
+                            <div class="card card-body p-0 my-5 overflow-hidden shadow-sm">
+                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md">AMS HBL Group Release</h2>
+                                    <section class="ams-release mx-2">
+                                        <div class="ams-list-header ams-header-grid">
+                                            <div class="d-flex font-bold"><h3>AMS Numbers</h3></div>
+                                            <div class="d-flex justify-content-end px-2 text-navy-500 hide-header  text-end">Qty.</div>
+                                            <div class="d-flex justify-content-start px-2 text-navy-500 hide-header">Unit</div>
+                                            <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">CBM</div>
+                                            <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">LBS</div>
+                                            <div class="d-flex justify-content-start px-2 text-navy-500 hide-header">IT/ENTRY No.</div>
+                                            <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">IT/ENTRY Date</div>
+                                            <div class="d-flex justify-content-center px-2 text-navy-500 hide-header">Frt Release</div>
+                                        </div>
+                                        <div class="ams-list-item ams-list-grid"><!-- AMS list item -->
+                                            <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
+                                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">QTY</p>72</div>
+                                            <div class="d-flex justify-content-start px-2 flex-column truncate-text"><p class="hide-label">Unit</p>BX</div>
+                                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM</p>2934.20</div>
+                                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS</p>2934.20</div>
+                                            <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.</p>9GK-0114066-8</div>
+                                            <div class="d-flex justify-content-center flex-column align-items-center">
+                                                <p class="hide-label">IT/ENTRY Date</p>
+                                                <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
+                                                <div class="d-flex gap-1">
+                                                    <span class="date d-none">07/18/25 </span>
+                                                    <p class="text-center  text-danger">
+                                                        <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+                                                    </p> 
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-center flex-column align-items-center">
+                                                <p class="hide-label">FRT Rlse:</p>
+                                                <div class="d-flex gap-1">
+                                                <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
+                                                    <span class="date d-none">07/18/25 </span>
+                                                    <p class="text-center text-danger">
+                                                        <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ams-list-item ams-list-grid"><!-- AMS list item -->
+                                            <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
+                                            <div class="d-flex justify-content-end px-2 flex-column  text-end"><p class="hide-label">QTY</p>72</div>
+                                            <div class="d-flex justify-content-start px-2 flex-column"><p class="hide-label">Unit</p>BX</div>
+                                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM</p>2934.20</div>
+                                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS</p>2934.20</div>
+                                            <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.</p>9GK-0114066-8</div>
+                                            <div class="d-flex justify-content-center flex-column align-items-center">
+                                                <p class="hide-label">IT/ENTRY Date</p>
+                                                <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
+                                                <div class="d-flex gap-1">
+                                                    <span class="date">07/18/25 </span>
+                                                    <p class="text-center text-danger d-none">
+                                                        <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+                                                    </p> 
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-center flex-column align-items-center">
+                                                <p class="hide-label">FRT Rlse</p>
+                                                <div class="d-flex gap-1">
+                                                <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
+                                                    <span class="date d-none">07/18/25 </span>
+                                                    <p class="text-center text-danger">
+                                                        <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="offcanvas-body custom-scrollbar">

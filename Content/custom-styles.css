@@ -709,14 +709,17 @@ body:not(.marketing) .bar.animate:before {
     }
     
 
-    .ams-section { 
+    .ams-section,
+    .ams-release { 
         display:flex;
         flex-direction:column;
         gap:.5rem;
         padding:.75rem 0;
     }
+    
 
-    .ams-section .ams-list-item {
+    .ams-section .ams-list-item,
+    .ams-release .ams-list-item {
             background:var(--clr-azure-95); 
             border:0.0625rem solid var(--clr-azure-89);
             margin-left:0; margin-right:0; 
@@ -743,6 +746,13 @@ body:not(.marketing) .bar.animate:before {
             align-items: center; 
             justify-content:stretch;
         }
+
+    .ams-release {
+        & .ams-list-grid,
+        & .ams-header-grid {
+            grid-template-columns: 10rem 3.875rem 4.35rem 5.25rem 5.25rem 7.5rem 6.7rem 6rem;
+        }
+    }
 
         .ams-header-grid div:first-child,
         .ams-list-grid div:first-child{
