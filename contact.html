@@ -22,9 +22,10 @@
     <link rel="stylesheet" href="Content/design-system.css">
     <link rel="stylesheet" href="Content/custom-styles.css">
     <script src="js/components/marketing-header.js" defer></script>
+    <script src="js/components/pickup-table.js" defer></script>
 </head>
 <body class="availavility-v2 marketing">
-<marketing-header></marketing-header>
+<marketing-header></marketing-header> <!--js/components/marketing-header.js-->
 <header class="hero-section template" style="background-image: linear-gradient(to top, rgba(20, 38, 79, 0.6) 30%, rgba(20, 38, 79, 0) 80%), url('https://www.imperialcfs.com/_images/Services-banner.jpg');">
     <div class="container-fluid">
         <div class="row align-items-center">
@@ -65,39 +66,7 @@
                         </div>
                     </div>
                     <div class="card mt-6 bg-light border-0" id="pickup-window-hours">
-                        <div class="card-body text-left font-family-sora px-0">
-                            <h5 class="type-h6 card-title text-2xl font-family-sora mb-2">Pickup Window Hours</h5>
-                            <table class="card-text type-body-sm text-muted w-100">
-                                <tbody><tr>
-                                    <td>Monday</td>
-                                    <td class="ar">7:00AM–6:00PM</td>
-                                </tr>
-                                <tr>
-                                    <td>Tuesday</td>
-                                    <td class="ar">7:00AM–6:00PM</td>
-                                </tr>
-                                <tr>
-                                    <td>Wednesday</td>
-                                    <td class="ar">7:00AM–6:00PM</td>
-                                </tr>
-                                <tr>
-                                    <td>Thursday</td>
-                                    <td class="ar">7:00AM–6:00PM</td>
-                                </tr>
-                                <tr>
-                                    <td>Friday</td>
-                                    <td class="ar">7:00AM–6:00PM</td>
-                                </tr>
-                                <tr>
-                                    <td>Saturday</td>
-                                    <td class="ar">Closed</td>
-                                </tr>
-                                <tr>
-                                    <td>Sunday</td>
-                                    <td class="ar">Closed</td>
-                                </tr>
-                            </tbody></table>
-                        </div>
+                        <pickup-window-hours-table></pickup-window-hours-table> <!--js/components/pickup-table.js-->
                     </div>
                     <div class="card mt-2 bg-light border-0">
                         <div class="card-body text-left font-family-sora px-0">

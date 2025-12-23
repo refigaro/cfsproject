@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="Content/css.css">
     <link rel="stylesheet" href="Content/design-system.css">
     <link rel="stylesheet" href="Content/custom-styles.css">
+    <script src="js/components/pickup-table.js" defer></script>
 </head>
 <body class="availavility-v2">
 <div class="modal fade modal-under-header" id="myStaticModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -73,7 +74,7 @@
 
                         <ul class="nav text-white font-family-archivo text-uppercase d-none d-xl-flex ms-4">
                             <li class="nav-item">
-                                <a class="nav-link active link-light" aria-current="page" href="#">Pick-up hours</a>
+                                <a class="nav-link active link-light" href="#" type="button" data-bs-toggle="modal" data-bs-target="#pickup-hours-modal" href="#">Pick-up hours</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link link-light" href="#">Terminal status</a>
@@ -96,7 +97,7 @@
                                 Useful links
                             </button>
                             <ul class="dropdown-menu shadow">
-                                <li><a class="dropdown-item" href="#">Pick-up hours</a></li>
+                                <li><a class="dropdown-item" href="#" type="button" data-bs-toggle="modal" data-bs-target="#pickup-hours-modal">Pick-up hours</a></li>
                                 <li><a class="dropdown-item" href="#">Terminal status</a></li>
                                 <li><a class="dropdown-item" href="#">Terminal schedule</a></li>
                                 <li><a class="dropdown-item" href="#">CFS charges</a></li>
@@ -157,7 +158,7 @@
                             <li>
                                 <a href="/Availability/Index/mbl/TCLU1228380">Availability </a><i class="fa fa-angle-down"></i>
                                 <dl class="mob-sub-menu">
-                                    <dd><a href="/Availability/Pickup">PICK-UP HOURS</a></dd>
+                                    <dd><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#pickup-hours-modal">PICK-UP HOURS</a></dd>
                                     <dd><a href="/Availability/TerminalStatus">TERMINAL STATUS</a></dd>
                                     <dd><a href="/Availability/TerminalSchedule" target="_blank">TERMINAL SCHEDULE</a></dd>
                                     <dd><a href="/Availability/CFSCharges" target="_blank">CFS Charges</a></dd>
@@ -238,8 +239,18 @@
         </div>
     </div>
 </section>
-<div class="modal fade show" id="gridSystemModal" tabindex="-1" aria-labelledby="gridModalLabel" style="display: block;" aria-modal="true" role="dialog">
-    <div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h1 class="modal-title fs-5" id="gridModalLabel">Grids in modals</h1><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><div class="container-fluid bd-example-row"><div class="row"><div class="col-md-4">.col-md-4</div><div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div></div><div class="row"><div class="col-md-3 ms-auto">.col-md-3 .ms-auto</div><div class="col-md-2 ms-auto">.col-md-2 .ms-auto</div></div><div class="row"><div class="col-md-6 ms-auto">.col-md-6 .ms-auto</div></div><div class="row"><div class="col-sm-9"><p>Level 1: .col-sm-9</p><div class="row"><div class="col-8 col-sm-6"><p>Level 2: .col-8 .col-sm-6</p></div><div class="col-4 col-sm-6"><p>Level 2: .col-4 .col-sm-6</p></div></div></div></div></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Save changes</button></div></div></div></div>
+    <div class="modal fade" id="pickup-hours-modal" tabindex="-1" aria-labelledby="pickup-hours-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header justify-content-end border-bottom-0">
+                <button type="button" class="btn btn-dark ml-auto rounded-full" data-bs-dismiss="modal">Close <i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="modal-body p-5">
+                <pickup-window-hours-table></pickup-window-hours-table> <!--js/components/pickup-table.js-->
+            </div>
+            </div>
+        </div>
+    </div>
 <section class="mbl-details">
     <div class="container-fluid">
         <div class="row">
