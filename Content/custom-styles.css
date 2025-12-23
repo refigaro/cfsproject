@@ -996,12 +996,24 @@ html {
     flex-direction:column;
 }
 
-.search-bar .alert {
+.search-bar .alert,
+.search-error.alert {
     position:absolute;
     min-width: 20rem;
     right: 0;
     top: 130%;
     line-height:140%;
+}
+
+.search-error.alert {
+    top:auto;
+    bottom:100%;
+    min-width:10rem!important;
+    left:-20%;
+    right:-20%;
+    font-size:var(--font-size-xs)!important;
+    box-shadow:var(--shadow-md);
+    text-transform:none;
 }
 
 /* IPI Tracing page */
@@ -1259,9 +1271,11 @@ header#header {
     background-image:linear-gradient(to right, rgba(20,38,79,0.9) 20%,rgba(20,38,79,0) 80%), url("../_images/hero-desktop.webp");
     background-size:cover;
     background-position:center;
+    display: flex;
+    align-items: center;
 
     & .row .hero-text {
-        min-height:calc(100vh - 12.37rem);
+        min-height:30rem;
     } 
 
     @media (max-width:992px){
@@ -1374,7 +1388,7 @@ header#header {
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     transition:transform .3s;
 
-    &:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); outline:1px solid var(--clr-azure-89); }
+    &:hover { transform: translateY(-5px); box-shadow: 0 10px 24px rgba(0,0,0,0.35); outline:0; }
 
     @media (max-width:992px){
         margin-bottom:var(--space-5);

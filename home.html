@@ -68,7 +68,8 @@
                                 <a href="availability.html">Availability <i class="fa fa-angle-down rotate ml-1"></i></a>
                                 <div class="sub-menu">
                                     <dl>
-                                        <dd><a href="/Availability/Pickup">PICK-UP HOURS</a></dd>
+                                        <dd><a href="availability.html">Availability Search</a></dd>
+                                        <dd><a href="contact.html#pickup-window-hours">PICK-UP HOURS</a></dd>
                                         <dd><a href="/Availability/TerminalStatus">TERMINAL STATUS</a></dd>
                                         <dd><a href="/Availability/TerminalSchedule" target="_blank">TERMINAL SCHEDULE</a></dd>
                                         <dd><a href="/Availability/CFSCharges" target="_blank">CFS Charges</a></dd>
@@ -79,6 +80,7 @@
                                 <a href="ipi.html">IPI Tracing <i class="fa fa-angle-down rotate ml-1"></i></a>
                                 <div class="sub-menu">
                                     <dl>
+                                        <dd><a href="ipi.html">IPI Search</a></dd>
                                         <dd><a href="inland.html">INLAND WAREHOUSE LIST</a></dd>
                                         <dd><a href="whse-in-out.html">WAREHOUSE IN / OUT</a></dd>
                                         <dd><a href="transit.html">TRANSIT SCHEDULE</a></dd>
@@ -134,7 +136,8 @@
                             <li>
                                 <a href="availability.html">Availability </a><i class="fa fa-angle-down"></i>
                                 <dl class="mob-sub-menu">
-                                    <dd><a href="/Availability/Pickup">PICK-UP HOURS</a></dd>
+                                    <dd><a href="availability.html">Availability Search</a></dd>
+                                    <dd><a href="contact.html#pickup-window-hours">PICK-UP HOURS</a></dd>
                                     <dd><a href="/Availability/TerminalStatus">TERMINAL STATUS</a></dd>
                                     <dd><a href="/Availability/TerminalSchedule" target="_blank">TERMINAL SCHEDULE</a></dd>
                                     <dd><a href="/Availability/CFSCharges" target="_blank">CFS Charges</a></dd>
@@ -143,6 +146,7 @@
                             <li>
                                 <a href="ipi.html">IPI Tracing</a><i class="fa fa-angle-down"></i>
                                 <dl class="mob-sub-menu">
+                                    <dd><a href="ipi.html">IPI Search</a></dd>
                                     <dd><a href="inland.html">INLAND WAREHOUSE LIST</a></dd>
                                     <dd><a href="whse-in-out.html">WAREHOUSE IN / OUT</a></dd>
                                     <dd><a href="transit.html">TRANSIT SCHEDULE</a></dd>
@@ -166,7 +170,7 @@
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="hero-text col-lg-5 mb-5 mb-lg-0 d-flex flex-column justify-center">
-                <h1 class="text-info text-sm font-family-archivo fw-bold mb-1">LOS ANGELES BONDED WAREHOUSING & IPI LOGISTICS</h1>
+                <h1 class="text-info text-sm font-family-archivo fw-bold mb-1">LOS ANGELES BONDED WAREHOUSING & IPI</h1>
                 <h2 class="type-display-1 text-white mb-3" style="line-height: 1.1;">Logistics,<br><i>Uncomplicated.</i></h2>
                 <p class="type-body-lg text-white mb-0 w-75">Premier bond/general order warehousing and nationwide IPI transportation. 69+ locations connected by a single tech platform.</p>
             </div>
@@ -206,11 +210,14 @@
                                         <option value="go">GO Number</option>
                                     </select>
                                 </label> 
-                                <label for="" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo flex-grow-1">
+                                <label for="" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo flex-grow-1 position-relative">
                                     <input class="rounded text-uppercase w-100 h-100" placeholder="Type your search" type="text">
                                 </label>
                                 <button type="button" class="btn btn-primary text-uppercase text-xs rounded d-inline-block h-100 align-self-stretch text-nowrap">Search <i class="bi bi-search text-xs ml-2"></i></button>
                             </div>
+                            <div style="padding-top:.75rem;margin-bottom:-1.5rem;">
+                                <p class="text-sm d-flex align-items-center bg-warning-light rounded py-1 px-2 text-warning-dark mt-2 gap-1" style="margin-top:3rem;margin-bottom:-1.5rem;"><i class="bi bi-info-circle-fill me-2 text-2xl text-danger"></i>Not a valid <b> MBL: [user's input]</b>. Please verify and try again.</p>
+                            </div>  
                         </div>
                         
                         <!-- IPI Tracing Pane -->
@@ -231,7 +238,10 @@
                                 </label>
                                 <button type="button" class="btn btn-primary text-uppercase text-xs rounded d-inline-block h-100 align-self-stretch text-nowrap">Search <i class="bi bi-search text-xs ml-2"></i></button>
                             </div>
-                            <p class="text-sm text-navy-450" style="padding-top:.75rem;margin-bottom:-1.5rem;">*If searching by MBL/CTNR, please used availability search.</p>
+                            <div style="padding-top:.75rem;margin-bottom:-1.5rem;">
+                                <p class="text-sm text-navy-450">*If searching by MBL/CTNR, please used availability search.</p>
+                                <p class="text-sm d-flex align-items-center bg-warning-light rounded py-1 px-2 text-warning-dark mt-2 gap-1" style="margin-top:3rem;margin-bottom:-1.5rem;"><i class="bi bi-info-circle-fill me-2 text-2xl text-danger"></i>Not a valid <b> HBL: [user's input]</b>. Please verify and try again.</p>
+                            </div>             
                         </div>
 
                         <!-- Fees Pane -->
@@ -264,7 +274,7 @@
         <div class="container-fluid">
             <div class="row mt-1 mb-2">
                 <div class="col-12 my-1 mb-md-0 gap-0">
-                    <h6 class="text-info type-body-sm font-family-sora fw-bold mb-0 lh-1">UPDATES TO HELP YOU PLAN</h6>
+                    <h6 class="text-info type-body-sm font-family-sora fw-bold mb-0 lh-1 text-uppercase">Important Updates</h6>
                     <h4 class="text-white type-h5 m-0">News & Announcements</h4>
                 </div>
             </div>
@@ -287,9 +297,9 @@
                         <div class="news-item-text fw-bold">Upcoming Holiday Schedule</div>
                     </div>
                 </div>
-                <div class="col-md-auto d-flex align-items-center justify-content-between border-start border-secondary ps-4">
+                <div class="col-md-auto d-flex align-items-center justify-content-between border-start border-secondary ps-4 d-none">
                     <div>
-                        <a href="" class="btn-marketing">
+                        <a href="news-archive.html" class="btn-marketing">
                             More news <i class="bi bi-arrow-right-square-fill ml-4"></i>
                         </a>
                     </div>
@@ -308,17 +318,17 @@
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <a href="#">
+                    <a href="our-services.html">
                         <div class="feature-card p-4 text-center">
                             <div class="feature-icon-box mx-auto"><i class="fas fa-warehouse"></i></div>
                             <h4 class="type-subhead text-lowercase font-bolder mb-3">CFS Warehousing</h4>
                             <p class="type-body-lg text-grey-20 mb-4">300,000 sq ft facility. 52 docks for rapid devanning and specialized cargo handling.</p>
-                            <span class="badge text-dark rounded-pill py-3 px-4 text-xs font-regular"><i class="fas fa-fingerprint me-1"></i> Biometric Access & Guarded</span>
+                            <span class="badge text-dark rounded-pill py-3 px-4 text-xs font-regular"><i class="fas fa-fingerprint me-1"></i> Guarded and Monitored</span>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="#">
+                    <a href="inland.html">
                         <div class="feature-card p-4 text-center">
                             <div class="feature-icon-box mx-auto"><i class="fas fa-map-marked-alt"></i></div>
                             <h4 class="type-subhead text-lowercase font-bolder mb-3">Inland Network (IPI)</h4>
@@ -328,7 +338,7 @@
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="#">
+                    <a href="trucking.html">
                         <div class="feature-card p-4 text-center">
                             <div class="feature-icon-box mx-auto"><i class="fas fa-truck-moving"></i></div>
                             <h4 class="type-subhead text-lowercase font-bolder mb-3">Dedicated Trucking</h4>
@@ -375,7 +385,7 @@
                             <li class="mb-2"><i class="fas fa-check text-info me-2"></i> Automated Cargo Release & Reports</li>
                         </ul>
                         <div>
-                            <a href="#" class="btn btn-outline-dark btn-sm rounded-pill text-decoration-none">VIEW OUR TECHNOLOGY <i class="fas fa-arrow-right ms-2"></i></a>
+                            <a href="technology.html" class="btn btn-outline-dark btn-sm rounded-pill text-decoration-none">VIEW OUR TECHNOLOGY <i class="fas fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -396,7 +406,7 @@
                             </div>
                         </div>
                         <div>
-                            <a href="#" class="btn btn-outline-dark btn-sm rounded-pill text-decoration-none">LEARN HOW WE SECURE CARGO <i class="fas fa-arrow-right ms-2"></i></a>
+                            <a href="security.html" class="btn btn-outline-dark btn-sm rounded-pill text-decoration-none">LEARN HOW WE SECURE CARGO <i class="fas fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -409,7 +419,7 @@
                 <div class="col-lg-5 mb-5 mb-lg-0">
                     <h2 class="type-h3 mb-4 text-white">Providing Ocean Container Freight Station Services <em class="fw-light">for Over 30 years</em></h2>
                     <p class="text-white-50 mb-4 text-white">Since 1994, Imperial CFS, Inc. has been at the forefront of providing exceptional ocean container freight station (CFS) services and nationwide IPI transportation services. Our philosophy is built upon supporting the diverse needs of our clients.</p>
-                    <a href="" class="btn-marketing">
+                    <a href="about-us.html" class="btn-marketing">
                         Learn more <i class="bi bi-arrow-right-square-fill ml-4"></i>
                     </a>
                 </div>

@@ -10,7 +10,7 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#777777">
     <meta name="theme-color" content="#ffffff">
-    <title>Imperial CFS, Inc - CFS Services</title>
+    <title>Imperial CFS, Inc - Availability</title>
     <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -21,22 +21,159 @@
     <link rel="stylesheet" href="Content/css.css">
     <link rel="stylesheet" href="Content/design-system.css">
     <link rel="stylesheet" href="Content/custom-styles.css">
-    <script src="js/components/marketing-header.js" defer></script>
 </head>
 <body class="availavility-v2 marketing">
-<marketing-header></marketing-header>
-<header class="hero-section template" style="background-image: linear-gradient(to top, rgba(20, 38, 79, 0.6) 30%, rgba(20, 38, 79, 0) 80%), url('https://www.imperialcfs.com/_images/Services-banner.jpg');">
+<header id="header">
+    <div class="pc-menu">
+        <div class="header-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li><a href="/Home/About" class="link-offset-3">About Us</a></li>
+                            <li><a href="/Home/News/5" class="link-offset-3">News</a></li>
+                            <li><a href="/Home/Contact" class="link-offset-3">Contact</a></li>
+                            <li><a href="tel:(310) 768-8188" class="link-offset-3"><i class="fa fa-phone"></i>(310) 768-8188</a></li>
+                            <li><a href="/Home/Forms" class="link-offset-3">Forms</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-auto">
+                        <div class="pc-logo pb-1">
+                            <a href="/">
+                                <img alt="IMPERIAL CFS" src="/_images/logo.png">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm row pr-0">
+                        <ul class="menu-list height-100 main-menu col">
+                            <li>
+                                <a href="/OurServices">Services <i class="fa fa-angle-down rotate ml-1"></i></a>
+                                <div class="sub-menu">
+                                    <dl>
+                                        <dd><a href="/OurServices">CFS</a></dd>
+                                        <dd><a href="/OurServices/Inland">inland consolidation</a></dd>
+                                        <dd><a href="/OurServices/Trucking">trucking</a></dd>
+                                        <dd><a href="/OurServices/Technology">technology</a></dd>
+                                        <dd><a href="/OurServices/Security">additional services</a></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="/Availability/">Availability <i class="fa fa-angle-down rotate ml-1"></i></a>
+                                <div class="sub-menu">
+                                    <dl>
+                                        <dd><a href="/Availability/Pickup">PICK-UP HOURS</a></dd>
+                                        <dd><a href="/Availability/TerminalStatus">TERMINAL STATUS</a></dd>
+                                        <dd><a href="/Availability/TerminalSchedule" target="_blank">TERMINAL SCHEDULE</a></dd>
+                                        <dd><a href="/Availability/CFSCharges" target="_blank">CFS Charges</a></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="/IPI">IPI Tracing <i class="fa fa-angle-down rotate ml-1"></i></a>
+                                <div class="sub-menu">
+                                    <dl>
+                                        <dd><a href="/IPI/Inland">INLAND WAREHOUSE LIST</a></dd>
+                                        <dd><a href="/IPI/Warehouse">WAREHOUSE IN / OUT</a></dd>
+                                        <dd><a href="/IPI/Transit">TRANSIT SCHEDULE</a></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="menu-list h-100 col-auto ml-auto gap-8 d-flex">
+                            <li><a href="/WarehouseFees">Pay Fees</a></li>
+                            <li class="d-flex align-items-center"><a href="/Home/CustomerLogin" class="btn btn-info btn-sm rounded-pill text-sm">Login <i class="fa fa-angle-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mob-menu">
+        <div class="mob-menu-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mob-logo">
+                            <a href="/">
+                                <img alt="IMPERIAL CFS" src="/_images/logo.png">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-6 ar d-flex justify-content-end align-items-center">
+                        <div class="mob-menu-link clears">
+                            <div class="hamburger-menu fr">
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mob-menu-child">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li>
+                                <a href="/OurServices">Services</a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/OurServices">CFS</a></dd>
+                                    <dd><a href="/OurServices/Inland">inland consolidation</a></dd>
+                                    <dd><a href="/OurServices/Trucking">trucking</a></dd>
+                                    <dd><a href="/OurServices/Technology">technology</a></dd>
+                                    <dd><a href="/OurServices/Security">additional services</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="/Availability">Availability </a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/Availability/Pickup">PICK-UP HOURS</a></dd>
+                                    <dd><a href="/Availability/TerminalStatus">TERMINAL STATUS</a></dd>
+                                    <dd><a href="/Availability/TerminalSchedule" target="_blank">TERMINAL SCHEDULE</a></dd>
+                                    <dd><a href="/Availability/CFSCharges" target="_blank">CFS Charges</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="/IPI">IPI Tracing</a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/IPI/Inland">INLAND WAREHOUSE LIST</a></dd>
+                                    <dd><a href="/IPI/Warehouse">WAREHOUSE IN / OUT</a></dd>
+                                    <dd><a href="/IPI/Transit">TRANSIT SCHEDULE</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="/WarehouseFees">Pay Warehouse Fees</a></li>
+                            <li><a href="/Home/About">About Us</a></li>
+                            <li><a href="/Home/News/5">News</a></li>
+                            <li><a href="/Home/Forms">Forms</a></li>
+                            <li><a href="/Home/Contact">Contact</a></li>
+                            <a href="/Home/CustomerLogin">Login</a>                                
+                            <li><a href="tel:(310) 768-8188"><i class="fa fa-phone"></i>(310) 768-8188</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<header class="hero-section template">
     <div class="container-fluid">
         <div class="row align-items-center">
                 <div class="col-lg hero-text">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/" class="text-white text-decoration-none">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#" class="text-white text-decoration-none">Our Services</a></li>
-                            <li class="breadcrumb-item active text-cyan-primary fw-bold" aria-current="page">CFS Services</li>
+                            <li class="breadcrumb-item"><a href="/" class="text-white-50 text-decoration-none">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white-50 text-decoration-none">Our Services</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">CFS Services</li>
                         </ol>
                     </nav>
-                    <h1 class="display-4 text-white">CFS Services</h1>
+                    <h1 class="display-4 text-white">Inland Consolidation Services</h1>
                 </div>
         </div>
     </div>
@@ -44,12 +181,12 @@
     <!-- MAIN CONTENT AREA -->
     <div class="container-fluid my-5 pb-5">
         <div class="row">
-
+            
             <!-- SIDEBAR (Bootstrap List Group) -->
-            <aside class="col-lg-3 col-xl-3 mb-6 mb-lg-0 side-nav order-lg-2">
+            <aside class="col-lg-3 mb-6 mb-lg-0 side-nav">
                 <div class="sticky-top" style="top: 8rem; z-index: 1;">
                     <div class="card border-0">
-                        <div class="card-header text-lg font-family-sora bg-dark text-white pt-3 fw-bold d-none d-lg-block">
+                        <div class="card-header bg-dark text-white fw-bold d-none d-lg-block">
                             Our Services
                         </div>
                         <!-- Collapsible on mobile using Bootstrap Collapse -->
@@ -62,7 +199,7 @@
                                 <a href="/OurServices/Inland" class="list-group-item list-group-item-action active">Inland Consolidation</a>
                                 <a href="/OurServices/Trucking" class="list-group-item list-group-item-action">Trucking</a>
                                 <a href="/OurServices/Technology" class="list-group-item list-group-item-action">Technology</a>
-                                <a href="/OurServices/Security" class="list-group-item list-group-item-action">Security</a>
+                                <a href="/OurServices/Security" class="list-group-item list-group-item-action">Security & Extras</a>
                             </div>
                         </div>
                     </div>
@@ -71,16 +208,30 @@
                         <div class="card-body text-left font-family-sora px-0">
                             <h5 class="card-title text-2xl font-family-sora mb-2">Need a Quote?</h5>
                             <p class="card-text type-body-lg text-muted  mb-3">Contact our inland team for specialized rates.</p>
-                            <a href="mailto:info@imperialcfs.net" class="btn btn-outline-dark btn-sm rounded-pill w-100">rates@imperialcfs.net</a>
+                            <a href="mailto:info@imperialcfs.net" class="btn btn-outline-dark btn-sm rounded-pill w-100">info@imperialcfs.net</a>
                         </div>
                     </div>
                 </div>
             </aside>
 
             <!-- MAIN CONTENT COLUMN -->
-            <div class="col-lg-9 pe-lg-5 main-content order-lg-1">
+            <div class="col-lg-9 ps-lg-5 main-content">
                 
                 <!-- CONTENT BLOCK TYPE A: General Text / Service Description -->
+                <div class="mb-5 type-body-lg">
+                    <h2 class="h2 mb-4 border-bottom pb-2">Lorem ipsum dolor sit amet.</h2>
+                    <p class="text-grey-40">Aliquam venenatis pretium sem, ac molestie lectus varius et. Nulla suscipit eleifend porta. Nulla quam nunc, lobortis varius lacus id, elementum tempor eros. Proin condimentum auctor efficitur. Vestibulum elementum ornare faucibus. Vestibulum et cursus arcu.</p>
+                    <p class="text-grey-40">Etiam iaculis, sem vitae viverra rhoncus, sapien eros tempus tortor, eu ultrices ligula turpis at leo. Quisque sit amet mi eget arcu mollis semper suscipit quis tellus. In pulvinar, elit a mollis iaculis, nulla justo commodo orci, feugiat pretium magna mauris sed nisi. Praesent nec ultricies ante, non accumsan tellus.</p>
+                    
+                    <h3 class="h4 mt-4 mb-3 text-primary">Key Features</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-lg text-primary text-lg me-2"></i> <strong>Vast Network:</strong> Connecting major hubs from Los Angeles to Chicago, Dallas, and Atlanta.</li>
+                        <li class="mb-2"><i class="bi bi-check-lg text-primary text-lg me-2"></i> <strong>Vast Network:</strong> Connecting major hubs from Los Angeles to Chicago, Dallas, and Atlanta.</li>
+                        <li class="mb-2"><i class="bi bi-check-lg text-primary text-lg me-2"></i> <strong>Vast Network:</strong> Connecting major hubs from Los Angeles to Chicago, Dallas, and Atlanta.</li>
+                        <li class="mb-2"><i class="bi bi-check-lg text-primary text-lg me-2"></i> <strong>Vast Network:</strong> Connecting major hubs from Los Angeles to Chicago, Dallas, and Atlanta.</li>
+                    </ul>
+                </div>
+
                 <div class="mb-5 type-body-lg">
                     <h2 class="h4 font-family-sora square-bullet pb-2">U.S. Customs bonded Container Freight Station (C.F.S.)</h2>
                     <ul class="list-unstyled">
@@ -95,6 +246,10 @@
                             </ul>
                         </li>
                     </ul>
+                    </div>
+                    <div class="mb-5 type-body-lg">
+                    <h2 class="h4 font-family-sora mb-4 pb-2 square-bullet">U.S. Customs bonded General Order (G.O.) warehouse</h2>
+                    <h2 class="h4 font-family-sora pb-2 square-bullet">U.S. Customs bonded Warehouse Entry warehouse</h2>
                     <ul class="list-unstyled">
                         <li class="mb-2"><i class="bi bi-check-lg text-cyan-primary text-lg me-2"></i>Early and extended pick up hours</li>
                         <li class="mb-2"><i class="bi bi-check-lg text-cyan-primary text-lg me-2"></i>Transloading</li>
@@ -108,73 +263,82 @@
                             </ul>
                         </li>
                     </ul>
-                    </div>
-                    <div class="mb-5 type-body-lg">
-                    <h2 class="h4 font-family-sora mb-4 pb-2 square-bullet">U.S. Customs bonded General Order (G.O.) warehouse</h2>
-                    <h2 class="h4 font-family-sora pb-2 square-bullet">U.S. Customs bonded Warehouse Entry warehouse</h2>
-
                 </div>
+
                 <div class="mb-5">
-                    <h2 class="h2 border-bottom mb-4 pb-2">Property Statistics</h2>
-                    <div class="row g-4">
-                        <div class="col-sm-6 col-md-4">
-                            <div class="card h-100 text-center p-4 bg-azure-95 border-0">
-                                <div class="card-body font-family-sora text-grey-40">
-                                    <img src="https://www.imperialcfs.com/_images/Services-icon-01.png" alt="" class="filter-cyan mb-3">
-                                    <h4 class="type-h4 card-title font-family-sora">17.5 Acre Lot</h4>
-                                    <p class="card-text">300,000 square feet of warehouse space</p>
-                                </div>
+                    <h2 class="h2 mb-4">Downloads</h2>
+                    <p class="mb-4">Vestibulum elementum ornare faucibus. Vestibulum et cursus arcu.</p>
+                    <div class="card mb-3 download-button">
+                        <a href="#">
+                        <div class="card-body d-flex align-items-center">
+                            <i class="bi bi-file-earmark-pdf fs-1 text-danger me-3"></i>
+                            <div>
+                                <h5 class="card-title mb-0 font-family-sora">Form</h5>
+                                <small class="text-muted">PDF Document - 1.2 MB</small>
                             </div>
+                            <i class="bi bi-download fs-4 p-3 ms-auto"></i>
                         </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="card h-100 text-center p-4 bg-azure-95 border-0">
-                                <div class="card-body font-family-sora text-grey-40">
-                                    <img src="https://www.imperialcfs.com/_images/Services-icon-02.png" alt="" class="filter-cyan mb-3">
-                                    <h4 class="type-h4 card-title font-family-sora">300+ Yard</h4>
-                                    <p class="card-text">spaces for container and trailer parking</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="card h-100 text-center p-4 bg-azure-95 border-0">
-                                <div class="card-body font-family-sora text-grey-40">
-                                    <img src="https://www.imperialcfs.com/_images/Services-icon-03.png" alt="" class="filter-cyan mb-3">
-                                    <h4 class="type-h4 card-title font-family-sora">52</h4>
-                                    <p class="card-text">docks with levelers</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="card h-100 text-center p-4 bg-azure-95 border-0">
-                                <div class="card-body font-family-sora text-grey-40">
-                                    <img src="https://www.imperialcfs.com/_images/Services-icon-04.png" alt="" class="filter-cyan mb-3">
-                                    <h4 class="type-h4 card-title font-family-sora">2</h4>
-                                    <p class="card-text">ground level loading ramps</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="card h-100 text-center p-4 bg-azure-95 border-0">
-                                <div class="card-body font-family-sora text-grey-40">
-                                    <img src="/_images/Services-icon-05.png" alt="" class="filter-cyan mb-3">
-                                    <h4 class="type-h4 card-title font-family-sora">Easy Access</h4>
-                                    <p class="card-text">and close to Freeways 91, 105, 110, 405, and 710</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="card h-100 text-center p-4 bg-azure-95 border-0">
-                                <div class="card-body font-family-sora text-grey-40">
-                                    <img src="https://www.imperialcfs.com/_images/Services-icon-06.png" alt="" class="filter-cyan mb-3">
-                                    <h4 class="type-h4 card-title font-family-sora">15 Minutes</h4>
-                                    <p class="card-text">from Port of Long Beach and Port of Los Angeles</p>
-                                </div>
-                            </div>
-                        </div>                                                
+                        </a>
                     </div>
-                </div>
-            </div>
+                    <div class="card mb-3 download-button">
+                        <a href="#">
+                        <div class="card-body d-flex align-items-center">
+                            <i class="bi bi-file-earmark-pdf fs-1 text-danger me-3"></i>
+                            <div>
+                                <h5 class="card-title mb-0 font-family-sora">Form</h5>
+                                <small class="text-muted">PDF Document - 1.2 MB</small>
+                            </div>
+                            <i class="bi bi-download fs-4 p-3 ms-auto"></i>
+                        </div>
+                        </a>
+                    </div>
+                </div> 
 
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card h-100 text-center p-4 bg-azure-95 border-0">
+                            <div class="card-body font-family-sora text-grey-40">
+                                <i class="bi bi-geo-alt-fill fs-1 text-primary mb-3 d-block"></i>
+                                <h4 class="type-h4 card-title">Headquarters</h4>
+                                <p class="card-text">1000 Francisco St<br>Torrance, CA 90502</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100 text-center p-4 bg-azure-95 border-0">
+                            <div class="card-body font-family-sora text-grey-40">
+                                <i class="bi bi-telephone-fill fs-1 text-primary mb-3 d-block"></i>
+                                <h4 class="type-h4 card-title">Phone & Fax</h4>
+                                <p class="card-text mb-1"><strong>Phone:</strong> (310) 768-8188</p>
+                                <p class="card-text"><strong>Fax:</strong> (310) 527-7288</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">Department Emails</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <span>Imports / Releases</span>
+                                    <a href="mailto:imports@imperialcfs.net">imports@imperialcfs.net</a>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <span>Rates & Quotes</span>
+                                    <a href="mailto:rates@imperialcfs.net">rates@imperialcfs.net</a>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <span>General Inquiries</span>
+                                    <a href="mailto:service@imperialcfs.net">service@imperialcfs.net</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    -->
+                </div>
+
+
+            </div>
         </div>
     </div>
 <footer class="footer">

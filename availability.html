@@ -66,7 +66,7 @@
                     <div class="col col-md-auto col-sm-8 d-flex gap-16 justify-start items-center">
                         
                         <div class="nav-logo">
-                            <a href="/">
+                            <a href="home.html">
                                 <img alt="IMPERIAL CFS" src="/_images/logo-w.png">
                             </a>
                         </div>
@@ -108,7 +108,7 @@
                         <button type="button" class="btn btn-outline-light btn-sm rounded-full transition hover-scale-97 font-family-archivo text-nowrap" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Search</button>
                         <div class="row collapse" id="collapseExample">
                             <div class="nav-search-bar col-12">
-                                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo"><b class="hide-mobile">New Search:</b>
+                                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo"><b class="hide-mobile">New Availability Search:</b>
                                     <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
                                     <option selected="selected" value="mbl">Master Bill</option>
                                     <option value="cntr">Container Number</option>
@@ -238,6 +238,8 @@
         </div>
     </div>
 </section>
+<div class="modal fade show" id="gridSystemModal" tabindex="-1" aria-labelledby="gridModalLabel" style="display: block;" aria-modal="true" role="dialog">
+    <div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h1 class="modal-title fs-5" id="gridModalLabel">Grids in modals</h1><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><div class="container-fluid bd-example-row"><div class="row"><div class="col-md-4">.col-md-4</div><div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div></div><div class="row"><div class="col-md-3 ms-auto">.col-md-3 .ms-auto</div><div class="col-md-2 ms-auto">.col-md-2 .ms-auto</div></div><div class="row"><div class="col-md-6 ms-auto">.col-md-6 .ms-auto</div></div><div class="row"><div class="col-sm-9"><p>Level 1: .col-sm-9</p><div class="row"><div class="col-8 col-sm-6"><p>Level 2: .col-8 .col-sm-6</p></div><div class="col-4 col-sm-6"><p>Level 2: .col-4 .col-sm-6</p></div></div></div></div></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Save changes</button></div></div></div></div>
 <section class="mbl-details">
     <div class="container-fluid">
         <div class="row">
@@ -431,9 +433,33 @@
                         <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="btn-icon"><img src="_images/bill.png" class="image-responsive" alt=""></i>   Charges</button>
                         <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer"></i> Arrival Notice</button>
                         <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer"></i> Pickup Confirmation</button>
+                        <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer"></i> CUCC Charges</button>
+                        <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer"></i> Release Frt</button>
                     </div>
                     <div class="d-flex justify-content-end align-items-center gap-4">
                         <button type="button" class="btn btn-sm btn-outline-dark rounded-full close text-base" data-bs-dismiss="offcanvas" aria-label="Close"><b>Close <i class="bi bi-x-lg"></i></b></button>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pickup-hours-modal">
+                    Launch demo modal
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="pickup-hours-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
                 <div class="offcanvas-body custom-scrollbar">
