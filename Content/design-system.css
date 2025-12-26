@@ -317,7 +317,7 @@ h1, h2, h3 {
 /* == Espaciado (Márgenes y Paddings) == */
 /* All sides */
 .m-1 { margin: var(--space-1); } .p-1 { padding: var(--space-1); }
-.m-2 { margin: var(--space-2); } .p-2 { padding: var(--space-2); }
+.m-2 { margin: var(--space-2); } .p-2 { padding: var(--space-2)!important; }
 .m-3 { margin: var(--space-3); } .p-3 { padding: var(--space-3); }
 .m-4 { margin: var(--space-4); } .p-4 { padding: var(--space-4); }
 .m-5 { margin: var(--space-5); } .p-5 { padding: var(--space-5); }

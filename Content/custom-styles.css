@@ -631,6 +631,12 @@ body:not(.marketing) .bar.animate:before {
     & button:last-child{
         border-radius:0 3rem 3rem 0;
     }
+
+    & button.disabled {
+        border:1px solid gray;
+        color:gray;
+        cursor:not-allowed!important;
+    }
 }
 
 .hbl-details-container .btn-group.btn-group-responsive {

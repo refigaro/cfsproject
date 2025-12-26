@@ -451,20 +451,20 @@
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">Pickup Confirmation</a></li>
                                         <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc"> CUCC Charges</a></li>
-                                        <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release">Release Frt</a></li>
+                                        <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release">Frt Release</a></li>
                                         <li><a class="dropdown-item" href="#">Confirm Markings</a></li>
                                         <li><a class="dropdown-item" href="#">Print 7512</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="btn-group btn-group-sm shadow-sm rounded-full d-none d-xl-inline-flex" role="group" aria-label="Basic outlined example">
-                                <button class="btn btn-outline-secondary btn-sm text-nowrap"><i class="fa-solid fa-money-bill-wave"></i> Charges</button>
-                                <button class="btn btn-outline-secondary btn-sm text-nowrap"><i class="bi bi-printer"></i> Arrival Notice</button>
-                                <button class="btn btn-outline-secondary btn-sm text-nowrap"><i class="bi bi-printer"></i> Pickup Confirmation</button>
-                                <button class="btn btn-outline-secondary btn-sm text-nowrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc">CUCC Charges</button>
-                                <button class="btn btn-outline-secondary btn-sm text-nowrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release">Release Frt</button>
-                                <button class="btn btn-outline-secondary btn-sm text-nowrap">Confirm Markings</button>
-                                <button class="btn btn-outline-secondary btn-sm text-nowrap"><i class="bi bi-printer"></i> 7512</button>
+                            <div class="btn-group btn-group-sm shadow-sm rounded-full d-none d-xl-inline-flex" role="group" aria-label="Basic outlined example" style="min-height:35.42px;"> <!-- KEVIN:  add .disabled to the buttons inside for disabling styling-->
+                                <button class="btn btn-outline-dark btn-sm text-nowrap"><i class="fa-solid fa-money-bill-wave"></i> Charges</button>
+                                <button class="btn btn-outline-dark btn-sm text-nowrap"><i class="bi bi-printer"></i> Arrival Notice</button>
+                                <button class="btn btn-outline-dark btn-sm text-nowrap disabled"><i class="bi bi-printer"></i> Pickup Confirmation</button>
+                                <button class="btn btn-outline-dark btn-sm text-nowrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc">CUCC Charges</button>
+                                <button class="btn btn-outline-dark btn-sm text-nowrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release">Frt Release</button>
+                                <button class="btn btn-outline-dark btn-sm text-nowrap"  type="button" data-bs-toggle="collapse" data-bs-target="#collapse-markings" aria-expanded="false" aria-controls="collapse-markings">Confirm Markings</button>
+                                <button class="btn btn-outline-dark btn-sm text-nowrap"><i class="bi bi-printer"></i> 7512</button>
                             </div>
                             <button type="button" class="btn btn-sm btn-outline-dark close text-base ms-auto rounded-full" data-bs-dismiss="offcanvas" aria-label="Close"><b>Close <i class="bi bi-x-lg"></i></b></button>
                         </div>
@@ -472,7 +472,7 @@
                     <div class="mt-2 w-100 gap-2">
                         <div class="collapse w-100" id="collapse-cucc"> <!-- CUCC Charges collapse -->
                             <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
-                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center">Add CUCC charges <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc">Close  <i class="bi bi-x-lg"></i></button></h2>     
+                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center">Add CUCC charges <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>     
                                 <div class="row p-3 py-4 justify-between gap-2">
                                     <div class="col-12 col-xl-5 row me-auto">
                                         <div class="col-auto">
@@ -503,11 +503,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="d-flex justify-content-end flex-row align-items-center gap-6 px-3 pb-3">
+                                    <p class="text-success">Successfully confirmed charges!</p>
+                                    <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Confirm Charges</b></button>
+                                </div>
                             </div>
                         </div>
                         <div class="collapse w-100" id="collapse-ams-release"> <!-- Frt release collapse -->
                             <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
-                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center">AMS HBL Group Release <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release">Close  <i class="bi bi-x-lg"></i></button></h2>                                            
+                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center">AMS HBL Group Release <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>                                            
                                     <section class="ams-release mx-2">
                                         <div class="ams-list-header ams-header-grid">
                                             <div class="d-flex"><input class="form-check-input border border-dark" type="checkbox" value="" id="checkDefault"><label class="form-check-label" for="checkDefault"></label></div>
@@ -548,8 +552,8 @@
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-end flex-row align-items-center gap-2 px-3">
-                                                <button type="button" class="btn btn-sm btn-info text-light text-base rounded-full"><b>Release Frt</b></button>
+                                            <div class="d-flex justify-content-end flex-row align-items-center gap-2 px-3 d-none">
+                                                <button type="button" class="btn btn-sm btn-info text-light text-base rounded-full"><b>Frt Release</b></button>
                                                 <button type="button" class="btn btn-sm btn-info text-light text-base rounded-full"><b>Cancel Release</b></button>
                                             </div>
                                         </div>
@@ -581,16 +585,47 @@
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-end flex-row align-items-center gap-2 px-3">
-                                                <button type="button" class="btn btn-sm btn-info text-light text-base rounded-full"><b>Release Frt</b></button>
+                                            <div class="d-flex justify-content-end flex-row align-items-center gap-2 px-3 d-none">
+                                                <button type="button" class="btn btn-sm btn-info text-light text-base rounded-full"><b>Frt Release</b></button>
                                                 <button type="button" class="btn btn-sm btn-info text-light text-base rounded-full"><b>Cancel Release</b></button>
                                             </div>
                                         </div>
-                                        <div class="d-flex justify-content-end flex-row align-items-center gap-2 px-3">
-                                            <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Release All</b></button>
-                                            <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Cancel All</b></button>
+                                        <div class="d-flex justify-content-start flex-row align-items-center gap-2 px-1">
+                                            <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Release Selected</b></button>
+                                            <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Cancel Selected</b></button>
                                         </div>
                                     </section>
+                            </div>
+                        </div>
+                        <div class="collapse w-100" id="collapse-markings"> <!-- Markings collapse -->
+                            <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
+                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center">Confirm Markings <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-markings" aria-expanded="false" aria-controls="collapse-markings" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>     
+                                <div class="row p-3 pt-4 justify-between gap-2">
+                                    <div class="col col-xl-6 row">
+                                        <div class="row detail-pair">
+                                            <div class="col-12">
+                                                <p class="detail-label">RCV. / DOC. Markings</p>
+                                            </div>
+                                            <div class="col-12 px-1 py-2 mx-2 rounded mt-2">
+                                                <p>Amount Collected at Window</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xl-6 row">
+                                        <div class="row detail-pair">
+                                            <div class="col-12">
+                                                <p class="detail-label">Devan Markings</p>
+                                            </div>
+                                            <div class="col-12 bg-azure-95 px-1 p-2 mx-2 rounded mt-2">
+                                                <p>Amount Collected at Window</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end flex-row align-items-center gap-6 px-3 pb-3">
+                                    <p class="text-success">Successfully confirmed marks!</p>
+                                    <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Confirm Marks</b></button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -707,7 +742,7 @@
                                             <p class="mt-2 custom-scrollbar">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere, arcu risus auctor mauris, nec consectetur purus. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere.</p>
                                         </div>
                                     </div>
-                                     <div class="col-5">
+                                     <div class="col">
                                         <div class="detail-pair commodity">
                                             <span class="detail-label">Markings</span>
                                             <p class="mt-2 custom-scrollbar">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere, arcu risus auctor mauris, nec consectetur purus. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere.</p>
