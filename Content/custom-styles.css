@@ -474,8 +474,12 @@ body:not(.marketing) .bar.animate:before {
 
 
    .hbl-master-list .hbl-item-details-modal {
-        min-width: 93vw;
+        min-width: 95vw;
         font-family:var(--font-primary);
+
+        @media (max-width:768px){
+            min-width: 85vw;
+        }
    }
 
    .offcanvas-header, 
@@ -619,6 +623,42 @@ body:not(.marketing) .bar.animate:before {
             grid-template-rows: repeat(2, 1fr);
             grid-row-gap: 1rem;
         }
+
+.hbl-details-container .btn-group {
+    & button:first-child {
+        border-radius:3rem 0 0 3rem;
+    }
+    & button:last-child{
+        border-radius:0 3rem 3rem 0;
+    }
+}
+
+.hbl-details-container .btn-group.btn-group-responsive {
+    @media (max-width:576px){
+        width:100%;
+    }
+}
+
+.hbl-details-container .hbl-details-title {
+    @media (max-width:768px){
+        width:100%;
+    }
+}
+
+
+.hbl-details-container {
+    @media (max-width:576px){
+        & button.btn.close {
+            position:absolute;
+            top:1rem;
+            right:2rem;
+            background:white;
+            color:rgb(33, 37, 41);
+            box-shadow:var(--shadow-md);
+        }
+    }
+}
+
 
     .details-card.logistic-details,
     .details-card.notes-details,

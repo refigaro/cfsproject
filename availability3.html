@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="Content/css.css">
     <link href="Content/Modal?v=7bMKDYCypKgFwJtiq8nBtCcJODJS6lCOLoIxVHt-al01" rel="stylesheet"/>
+    <link href="Content/extra.css" rel="stylesheet"/>
     <link href="Content/icon?v=cVwA9pPiyb_rieloDJQKuVXzDQ3x5fT9A_F7NWasIVs1" rel="stylesheet"/>
     <link rel="stylesheet" href="Content/css.css">
     <link rel="stylesheet" href="Content/design-system.css">
@@ -440,33 +441,13 @@
                 <div class="offcanvas-header border-bottom d-flex flex-column">
                     <div class="w-100">
                         <div class="d-flex justify-content-start gap-4 align-items-center offcanvas-hbl-header">
-                            <h2 class="text-2xl font-family-dm-serif text-navy-800 hbl-details-title">HBL Details</h2>
-                            <div class="btn-group btn-group-sm btn-group-responsive shadow-sm rounded-full d-inline-flex d-xl-none" role="group" aria-label="Basic outlined example">
-                                <button class="btn btn-outline-secondary btn-sm font-bold text-nowrap"><i class="fa-solid fa-money-bill-wave"></i> Charges</button>
-                                <button class="btn btn-outline-secondary btn-sm font-bold text-nowrap"><i class="bi bi-printer"></i> Arrival Notice</button>
-                                <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-outline-secondary btn-sm font-bold text-nowrap rounded-end-pill" data-bs-toggle="dropdown">
-                                    More
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Pickup Confirmation</a></li>
-                                        <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc"> CUCC Charges</a></li>
-                                        <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release">Release Frt</a></li>
-                                        <li><a class="dropdown-item" href="#">Confirm Markings</a></li>
-                                        <li><a class="dropdown-item" href="#">Print 7512</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="btn-group btn-group-sm shadow-sm rounded-full d-none d-xl-inline-flex" role="group" aria-label="Basic outlined example">
-                                <button class="btn btn-outline-secondary btn-sm text-nowrap"><i class="fa-solid fa-money-bill-wave"></i> Charges</button>
-                                <button class="btn btn-outline-secondary btn-sm text-nowrap"><i class="bi bi-printer"></i> Arrival Notice</button>
-                                <button class="btn btn-outline-secondary btn-sm text-nowrap"><i class="bi bi-printer"></i> Pickup Confirmation</button>
-                                <button class="btn btn-outline-secondary btn-sm text-nowrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc">CUCC Charges</button>
-                                <button class="btn btn-outline-secondary btn-sm text-nowrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release">Release Frt</button>
-                                <button class="btn btn-outline-secondary btn-sm text-nowrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release">Confirm Markings</button>
-                                <button class="btn btn-outline-secondary btn-sm text-nowrap"><i class="bi bi-printer"></i> 7512</button>
-                            </div>
-                            <button type="button" class="btn btn-sm btn-outline-dark close text-base ms-auto rounded-full" data-bs-dismiss="offcanvas" aria-label="Close"><b>Close <i class="bi bi-x-lg"></i></b></button>
+                            <h2 class="text-2xl font-family-dm-serif text-navy-800">HBL Details</h2>
+                            <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="btn-icon"><img src="_images/bill.png" class="image-responsive" alt=""></i>   Charges</button>
+                            <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer"></i> Arrival Notice</button>
+                            <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer"></i> Pickup Confirmation</button>
+                            <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc"><i class="bi bi-printer"></i> CUCC Charges</button>
+                            <button class="btn btn-outline-dark btn-sm rounded-full font-bold text-nowrap text-base" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release"><i class="bi bi-printer"></i> Release Frt</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark rounded-full close text-base ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"><b>Close <i class="bi bi-x-lg"></i></b></button>
                         </div>
                     </div>
                     <div class="mt-2 w-100 gap-2">
@@ -586,7 +567,7 @@
                             <div class="d-flex justify-content-start gap-4 align-items-center offcanvas-hbl-header">
                                 <div class="info-item">
                                     <p class="info-label font-family-sora lh-1 text-uppercase text-xs">HBL NO / SEQ NO</p>
-                                    <p class="info-value hbl-number font-family-sora lh-1 text-uppercase text-2xl font-bold mt-2 text-nowrap">MNSLOS2507071 / 3</p>
+                                    <p class="info-value hbl-number font-family-sora lh-1 text-uppercase text-2xl font-bold mt-2">MNSLOS2507071 / 3</p>
                                 </div>
                             </div>
                         </div>
@@ -686,15 +667,9 @@
                                     </div>
                                 </div>
                                 <div class="row mx-0 mt-2">
-                                     <div class="col">
+                                     <div class="col-12">
                                         <div class="detail-pair commodity">
                                             <span class="detail-label">COMMODITY</span>
-                                            <p class="mt-2 custom-scrollbar">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere, arcu risus auctor mauris, nec consectetur purus. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere.</p>
-                                        </div>
-                                    </div>
-                                     <div class="col-5">
-                                        <div class="detail-pair commodity">
-                                            <span class="detail-label">Markings</span>
                                             <p class="mt-2 custom-scrollbar">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere, arcu risus auctor mauris, nec consectetur purus. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere.</p>
                                         </div>
                                     </div>
@@ -1055,7 +1030,7 @@
         onclick="scrollToTop()">
     <i class="bi bi-arrow-up me-2"></i>Back to top
 </button>
-<script src="https://kit.fontawesome.com/4006f6b372.js" crossorigin="anonymous"></script>
+
 <script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
 <script src="/bundles/main_jquery?v=pcTLGo70Ebj-7wZHfj5-OozMeYDuBTaJgLdp-yYJn8s1"></script>
