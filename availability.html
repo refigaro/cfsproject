@@ -329,6 +329,40 @@
         </div>
     </div>
 </section>
+<!-- MBL Photo Gallery -->
+<section class="photo-gallery-section bg-azure-95"> <!-- KEVIN: .hide hides the photo section -->
+    <link rel="stylesheet" href="css/baguetteBox.min.css"> <!-- Styles for photo gallery -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col px-4">
+                <h2 class="d-inline-block mr-6 font-family-sora fw-bold text-base text-blue-brand">Photos</h2>
+                <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Download all pictures</i></button>
+                <div class="row mt-6 photo-gallery-thumbnails gap-3">
+                    <div class="col-auto">
+                        <a href="_images/photo-placeholder.jpeg">
+                        <img class="photo-thumbnail" src="_images/photo-placeholder.jpeg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-auto">
+                        <a href="_images/photo-placeholder.jpeg">
+                        <img class="photo-thumbnail" src="_images/photo-placeholder.jpeg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-auto">
+                        <a href="_images/photo-placeholder.jpeg">
+                        <img class="photo-thumbnail" src="_images/photo-placeholder.jpeg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-auto">
+                        <a href="_images/photo-placeholder.jpeg">
+                        <img class="photo-thumbnail" src="_images/photo-placeholder.jpeg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="hbl-master-list pt-6 pb-8">
     <div class="container-fluid">
         <div class="row">
@@ -512,9 +546,11 @@
                         <div class="collapse w-100" id="collapse-ams-release"> <!-- Frt release collapse -->
                             <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
                                 <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center">AMS HBL Group Release <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>                                            
-                                    <section class="ams-release mx-2">
+                                    <section class="ams-release mx-2" id="ams-release-container">
                                         <div class="ams-list-header ams-header-grid">
-                                            <div class="d-flex"><input class="form-check-input border border-dark" type="checkbox" value="" id="checkDefault"><label class="form-check-label" for="checkDefault"></label></div>
+                                            <div class="d-flex">
+                                                <input class="form-check-input border border-dark js-check-all" type="checkbox" value="" id="ams-check-all"><label class="form-check-label" for="checkDefault"></label>
+                                            </div>
                                             <div class="d-flex font-bold"><h3>AMS Numbers</h3></div>
                                             <div class="d-flex justify-content-end px-2 text-navy-500 hide-header  text-end">Qty.</div>
                                             <div class="d-flex justify-content-start px-2 text-navy-500 hide-header">Unit</div>
@@ -525,7 +561,9 @@
                                             <div class="d-flex justify-content-center px-2 text-navy-500 hide-header">Frt Release</div>
                                         </div>
                                         <div class="ams-list-item ams-list-grid"><!-- AMS list item -->
-                                            <div class="d-flex"><input class="form-check-input border border-dark" type="checkbox" value="" id="checkDefault"><label class="form-check-label" for="checkDefault"></label></div>
+                                            <div class="d-flex">
+                                                <input class="form-check-input border border-dark js-check-item" type="checkbox" value="" id="ams-check-1"><label class="form-check-label" for="checkDefault"></label>
+                                            </div>
                                             <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
                                             <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">QTY</p>72</div>
                                             <div class="d-flex justify-content-start px-2 flex-column truncate-text"><p class="hide-label">Unit</p>BX</div>
@@ -558,7 +596,9 @@
                                             </div>
                                         </div>
                                         <div class="ams-list-item ams-list-grid"><!-- AMS list item -->
-                                            <div class="d-flex"><input class="form-check-input border border-dark" type="checkbox" value="" id="checkDefault"><label class="form-check-label" for="checkDefault"></label></div>
+                                            <div class="d-flex">
+                                                <input class="form-check-input border border-dark js-check-item" type="checkbox" value="" id="ams-check-2"><label class="form-check-label" for="checkDefault"></label>
+                                            </div>
                                             <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
                                             <div class="d-flex justify-content-end px-2 flex-column  text-end"><p class="hide-label">QTY</p>72</div>
                                             <div class="d-flex justify-content-start px-2 flex-column"><p class="hide-label">Unit</p>BX</div>
@@ -606,8 +646,8 @@
                                             <div class="col-12">
                                                 <p class="detail-label">RCV. / DOC. Markings</p>
                                             </div>
-                                            <div class="col-12 px-1 py-2 mx-2 rounded mt-2">
-                                                <p>Amount Collected at Window</p>
+                                            <div class="col-12 px-1 py-1 mx-2 rounded mt-3">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus minima accusantium dolor atque a excepturi natus saepe consectetur aliquid aperiam.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -616,8 +656,8 @@
                                             <div class="col-12">
                                                 <p class="detail-label">Devan Markings</p>
                                             </div>
-                                            <div class="col-12 bg-azure-95 px-1 p-2 mx-2 rounded mt-2">
-                                                <p>Amount Collected at Window</p>
+                                            <div class="col-12 bg-azure-95 p-2 mx-2 rounded">
+                                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti odio ex sit.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -917,7 +957,7 @@
                     
                     </main>
 
-                    <!-- Photo Gallery -->
+                    <!-- HBL Photo Gallery -->
                     <section class="photo-gallery-section hide"> <!-- KEVIN: .hide hides the photo section -->
                         <link rel="stylesheet" href="css/baguetteBox.min.css"> <!-- Styles for photo gallery -->
                         <h2 class="d-inline-block mr-6 ">Photos</h2>
@@ -1174,6 +1214,47 @@
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+</script>
+<!-- ///-- Script for checking all checkboxes in the AMS Frt Release  --////-->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const container = document.getElementById('ams-release-container');
+        
+        const masterCheckbox = container.querySelector('.js-check-all');
+        
+        masterCheckbox.addEventListener('change', function (e) {
+            const isChecked = e.target.checked;
+            const itemCheckboxes = container.querySelectorAll('.js-check-item');
+            
+            itemCheckboxes.forEach(checkbox => {
+                checkbox.checked = isChecked;
+            });
+        });
+
+        container.addEventListener('change', function (e) {
+            if (e.target.classList.contains('js-check-item')) {
+                updateMasterState();
+            }
+        });
+
+        function updateMasterState() {
+            const itemCheckboxes = container.querySelectorAll('.js-check-item');
+            const totalItems = itemCheckboxes.length;
+            
+            const checkedCount = Array.from(itemCheckboxes).filter(c => c.checked).length;
+
+            if (checkedCount === 0) {
+                masterCheckbox.checked = false;
+                masterCheckbox.indeterminate = false;
+            } else if (checkedCount === totalItems) {
+                masterCheckbox.checked = true;
+                masterCheckbox.indeterminate = false;
+            } else {
+                masterCheckbox.checked = false;
+                masterCheckbox.indeterminate = true;
+            }
+        }
+    });
 </script>
 </body>
 </html>
