@@ -399,7 +399,8 @@ body:not(.marketing) .bar.animate:before {
     min-height:calc(100vh - 255px - 28.75rem);
 }
 
-   .hbl-master-list .hbl-list-item {
+   .hbl-master-list .hbl-list-item,
+   .search-results .hbl-list-item {
         background:var(--clr-white); 
         margin-left:0; margin-right:0;
         border-radius:.5rem;
@@ -424,9 +425,19 @@ body:not(.marketing) .bar.animate:before {
 
    /* ----    HBL Table layout.    ----- */
 
-.hbl-master-list .hbl-list-grid {
+.hbl-master-list .hbl-list-grid{
     display: grid;
     grid-template-columns: 2.1875rem 7.5rem 4.6875rem 4.6875rem 4.6875rem 4.25rem 2.8125rem 11.375rem 3.125rem minmax(5.9375rem, auto) minmax(15.625rem, auto);
+    grid-template-rows: auto; 
+    gap:.75rem;
+    align-items: center; 
+    justify-content:stretch;
+    
+}
+
+.search-results .hbl-list-grid {
+    display: grid;
+    grid-template-columns: 2.1875rem 7.5rem 4.6875rem 4.6875rem 4.6875rem minmax(15.625rem, auto);
     grid-template-rows: auto; 
     gap:.75rem;
     align-items: center; 
@@ -460,12 +471,14 @@ body:not(.marketing) .bar.animate:before {
         .hbl-list-item .bi.bi-check { color:var(--clr-success); }
         .hbl-list-item .bi.bi-dash { color:var(--clr-grey-65); }
 
-   .hbl-master-list .hbl-list-item .badge.ipi-tracing {
+   .hbl-master-list .hbl-list-item .badge.ipi-tracing,
+   .search-results .hbl-list-item .badge.ipi-tracing {
         background:var(--clr-info-light);
         color:var(--clr-info-dark);
         font-size:var(--font-size-sm);
    }
-   .hbl-master-list .hbl-list-item .badge.local-pickup {
+   .hbl-master-list .hbl-list-item .badge.local-pickup,
+   .search-results .hbl-list-item .badge.local-pickup {
         background:var(--clr-success-light);
         color:var(--clr-success-dark);
         font-size:var(--font-size-sm);
@@ -1831,11 +1844,16 @@ body .pc-menu {
         }
 
         /* ----    HBL Table layout     ----- */
-        .hbl-master-list .hbl-list-grid {
+        .hbl-master-list .hbl-list-grid,
+        .search-results .hbl-list-grid {
                 display: flex;
                 justify-content: space-between;
                 flex-wrap: wrap;
                 align-items: center;
+        }
+
+        .search-results .hbl-list-grid {
+            gap:.75rem!important;
         }
 
         .hbl-master-list .hbl-list-grid .hbl{
@@ -1848,7 +1866,8 @@ body .pc-menu {
             max-width:5em;
         }
 
-        .hbl-master-list .hbl-list-grid .status {
+        .hbl-master-list .hbl-list-grid .status,
+        .search-results .hbl-list-grid .status {
             min-width:30em;
         }
 
@@ -1856,7 +1875,8 @@ body .pc-menu {
             padding-left:.75rem;
         }
 
-        .hbl-master-list .hbl-list-grid {
+        .hbl-master-list .hbl-list-grid,
+        .search-results .hbl-list-grid {
             row-gap:.75rem;
             column-gap: 1.375rem;
             align-items:flex-start;
@@ -1864,14 +1884,16 @@ body .pc-menu {
             padding:.25rem .25rem .5rem .25rem;
         }
         
-        .hbl-master-list .hbl-list-grid .seqno{
+        .hbl-master-list .hbl-list-grid .seqno,
+        .search-results .hbl-list-grid .seqno{
             min-width:8%;
             flex-direction:row;
             align-items: center !important;
             padding:.25rem .75rem;
         }
 
-        .hbl-master-list .hbl-list-grid .status {
+        .hbl-master-list .hbl-list-grid .status,
+        .search-results .hbl-list-grid .status {
             min-width:20em;
             align-items:center;
             margin-left:1.25rem;
@@ -1930,7 +1952,8 @@ body .pc-menu {
             min-width:40%;
             margin-left:0!important;
         }
-        .hbl-master-list .hbl-list-grid {
+        .hbl-master-list .hbl-list-grid,
+        .search-results .hbl-list-grid {
             gap:.25rem;
             padding:.5rem;
         }

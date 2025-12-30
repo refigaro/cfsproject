@@ -589,6 +589,9 @@ h1, h2, h3 {
 /* H4 Alt: 24pt (1.5rem) / Sora */
 .type-h4-alt { font-family: var(--font-secondary); font-size: clamp(1.275rem, 1vw + 1rem, 1.65rem); font-weight: 700;}
 
+/* H6: 18pt (1.125rem) Base */
+.type-h6-alt { font-family: var(--font-secondary); font-size: clamp(0.95rem, 0.5vw + 1rem, 1.23rem); line-height: 1.4;}
+
 /* Body Lg Alt: 16pt (1rem) / DM Serif */
 .type-body-lg-alt { font-family: var(--font-headings); font-size: 1rem;}
 
@@ -606,3 +609,4 @@ h1, h2, h3 {
 
 h1, h2, h3, h4, h5, h6 { line-height:120%; }
 
+.min-h-100vh { min-height:calc(100dvh - 15.94rem); }
