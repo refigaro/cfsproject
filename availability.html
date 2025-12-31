@@ -506,7 +506,117 @@
                     <div class="mt-2 w-100 gap-2">
                         <div class="collapse w-100" id="collapse-cucc"> <!-- CUCC Charges collapse -->
                             <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
-                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center">Add CUCC charges <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>     
+                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center">Add CUCC charges <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>   
+                                <div class="p-3 py-4  align-items-center gap-2">
+                                    <div class="ipi-milestones-empty p-4">
+                                        <p><b>You don't have any charges yet</b></p><br>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary text-base rounded-full opacity-50"><b>Please add some <i class="bi bi-plus-circle-dotted"></i></b></button>
+                                    </div>
+                                    <div class="accordion accordion-flush d-flex flex-column gap-2" id="accordionFlushExample">
+                                        <div class="accordion-item rounded-3 cucc-item">
+                                            <h2 class="accordion-header">
+                                                <div class="accordion-button btn-sm collapsed no-arrow d-flex align-items-center bg-azure-95" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-1" aria-expanded="false" aria-controls="flush-collapse-1">
+                                                    <div class="col text-uppercase font-family-archivo text-base">
+                                                        Item description
+                                                    </div>
+                                                    <div class="col font-family-archivo text-base fw-bold">
+                                                        $10.00
+                                                    </div>
+                                                    <div class="col-auto ms-auto">
+                                                        <span class="btn btn-sm btn-outline-dark rounded-full px-4">Edit</span>
+                                                    </div>
+                                                </div>
+                                            </h2>
+                                            <div id="flush-collapse-1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                <div class="accordion-body btn-sm">
+                                                    <div class="d-flex gap-3">
+                                                        <div class="col d-flex flex-row align-items-center gap-2">
+                                                            <label for="description-input" class="form-label text-uppercase text-sm mb-0">Description:</label>
+                                                            <input type="text" class="form-control" id="description-input" placeholder="Custom description">
+                                                        </div>
+                                                        <div class="col d-flex flex-row align-items-center gap-2">
+                                                            <label for="description-input" class="form-label text-uppercase text-sm mb-0">Amount:</label>
+                                                            <input type="number" class="form-control" id="description-input" placeholder="Amount">
+                                                        </div>
+                                                        <div class="col-auto d-flex flex-row gap-2 align-items-center">
+                                                            <p class="text-uppercase text-sm">Choose one:</p>
+                                                            <div class="form-check ps-0 d-flex rounded-full">
+                                                                <input type="radio" class="btn-check" name="options-outlined" id="due" autocomplete="off" checked>
+                                                                <label class="btn btn-sm btn-outline-primary" for="due">Amount Due to you</label>
+                                                                <input type="radio" class="btn-check" name="options-outlined" id="collect" autocomplete="off">
+                                                                <label class="btn btn-sm btn-outline-primary" for="collect">Amount to collect at window</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <span class="btn btn-sm btn-outline-dark rounded-full px-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-1" aria-expanded="false" aria-controls="flush-collapse-1">Update</span>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item rounded-3 cucc-item">
+                                            <h2 class="accordion-header">
+                                                <div class="accordion-button btn-sm collapsed no-arrow d-flex align-items-center bg-azure-95" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-2" aria-expanded="false" aria-controls="flush-collapse-2">
+                                                    <div class="col text-uppercase font-family-archivo text-base">
+                                                        Custom Charge name
+                                                    </div>
+                                                    <div class="col font-family-archivo text-base fw-bold">
+                                                        $32.50
+                                                    </div>
+                                                    <div class="col-auto ms-auto">
+                                                        <span class="btn btn-sm btn-outline-dark rounded-full px-4">Edit</span>
+                                                    </div>
+                                                </div>
+                                            </h2>
+                                            <div id="flush-collapse-2" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                <div class="accordion-body btn-sm">
+                                                    <div class="d-flex gap-3">
+                                                        <div class="col d-flex flex-row align-items-center gap-2">
+                                                            <label for="description-input" class="form-label text-uppercase text-sm mb-0">Description:</label>
+                                                            <input type="text" class="form-control" id="description-input" placeholder="Custom description">
+                                                        </div>
+                                                        <div class="col d-flex flex-row align-items-center gap-2">
+                                                            <label for="description-input" class="form-label text-uppercase text-sm mb-0">Amount:</label>
+                                                            <input type="number" class="form-control" id="description-input" placeholder="Amount">
+                                                        </div>
+                                                        <div class="col-auto d-flex flex-row gap-2 align-items-center">
+                                                            <p class="text-uppercase text-sm">Choose one:</p>
+                                                            <div class="form-check ps-0 d-flex rounded-full">
+                                                                <input type="radio" class="btn-check" name="options-outlined" id="due" autocomplete="off" checked>
+                                                                <label class="btn btn-sm btn-outline-primary" for="due">Amount Due to you</label>
+                                                                <input type="radio" class="btn-check" name="options-outlined" id="collect" autocomplete="off">
+                                                                <label class="btn btn-sm btn-outline-primary" for="collect">Amount to collect at window</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <span class="btn btn-sm btn-outline-dark rounded-full px-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-2" aria-expanded="false" aria-controls="flush-collapse-2">Update</span>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded bg-navy-100 mt-3 px-3 py-2">
+                                        <div class="row">
+                                            <div class="col text-end">
+                                                <p class="text-nowrap">Amount Collected at Window</p>
+                                                <p class="fw-bold text-lg">0.00</p>
+                                            </div>
+                                            <div class="col text-end">
+                                                <p>Imperial Service Fee</p>
+                                                <p class="fw-bold text-lg">0.00</p>
+                                            </div>
+                                            <div class="col text-end">
+                                                <p>Amount Due To You</p>
+                                                <p class="fw-bold text-lg">0.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>  
+                                
+                                <!-- 
                                 <div class="row p-3 py-4 justify-between gap-2">
                                     <div class="col-12 col-xl-6 row me-auto">
                                         <div class="col-auto">
@@ -540,7 +650,7 @@
                                 <div class="d-flex justify-content-end flex-row align-items-center gap-6 px-3 pb-3">
                                     <p class="text-success">Successfully confirmed charges!</p>
                                     <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Confirm Charges</b></button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="collapse w-100" id="collapse-ams-release"> <!-- Frt release collapse -->

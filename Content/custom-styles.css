@@ -442,6 +442,10 @@ body:not(.marketing) .bar.animate:before {
     gap:.75rem;
     align-items: center; 
     justify-content:stretch;
+
+    &.availability {
+        grid-template-columns: 2.1875rem 7.5rem 4.6875rem 4.6875rem 4.6875rem minmax(15.625rem, auto) 4.6875rem 4.6875rem 4.6875rem 4.6875rem 4.6875rem;
+    }
     
 }
 
@@ -1338,6 +1342,37 @@ header#header {
         background-color:var(--clr-azure-19);
         border:1px solid var(--clr-azure-19);
     }
+
+
+.cucc-item {
+    border-radius:var(--border-radius-lg);
+    overflow: hidden;
+    border:1px solid var(--clr-azure-85)!important;
+    transition: box-shadow ease .1s;
+    box-shadow: var(--shadow-sm);
+
+    & .accordion-button {
+            cursor: pointer;
+            padding:var(--space-2) var(--space-3);
+            min-height:3.3087rem;
+        }
+    &:hover {
+                box-shadow: var(--shadow-lg);
+            }
+
+    & .accordion-button.no-arrow::after {
+            display: none !important;
+        }
+}
+
+.cucc-item .accordion-button:not(.collapsed) {
+    background: white !important;
+
+    & span.btn {
+        opacity:0; cursor:none;
+        position:relative; z-index:-10;
+    }
+}
 
 
 
