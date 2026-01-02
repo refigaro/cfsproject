@@ -24,39 +24,38 @@
 </head>
 <body class="availavility-v2">
 <div class="modal fade modal-under-header" id="myStaticModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-        <div class="modal-header px-4">
-            <h2 class="modal-title fs-8" id="staticBackdropLabel">New Availability Search</h2>
-            <button type="button" class="btn btn-outline-dark btn-sm rounded-full  font-family-archivo text-nowrap ms-auto" ><i class="bi bi-arrow-90deg-left mr-1"></i>Back home</button>
-        </div>
-        <div class="modal-body d-flex flex-column align-items-center gap-4 p-12 py-16">
-            <div class="d-inline-flex flex-column align-items-stretch gap-2">
-                <div class="d-flex justify-content-between gap-2 search-container">
-                    <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo flex-grow-0">
-                    <select class="form-control rounded w-100" id="type" name="type"><option value="hbl">House Bill</option>
-                        <option selected="selected" value="mbl">Master Bill</option>
-                        <option value="cntr">Container Number</option>
-                        <option value="ams">AMS House Bill</option>
-                        <option value="it">Inbond Number</option>
-                        <option value="go">GO Number</option>
-                    </select>
-                    </label> 
-                    <label for="">
-                        <input class="rounded text-uppercase w-100" placeholder="Type your search" type="text">
-                    </label>
-                    <button type="button" class="btn btn-primary text-uppercase text-xs rounded d-inline-block h-100 align-self-stretch">Search <i class="bi bi-search text-xs ml-2"></i></button>
-                </div>
-                <div class="alert alert-warning d-flex align-items-center font-family-sora text-left text-sm" role="alert">
-                    <i class="bi bi-info-circle-fill me-3 text-2xl text-danger"></i>
-                    <div>We couldn't find a record matching <b class="search-select-type">MBL</b>: <b class="search-users-input">"[User's Input]"</b>. <br>Please verify and try again.</div>
-                </div>
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header px-4">
+                <h2 class="modal-title fs-8" id="staticBackdropLabel">New Availability Search</h2>
+                <button type="button" class="btn btn-outline-dark btn-sm rounded-full  font-family-archivo text-nowrap ms-auto" ><i class="bi bi-arrow-90deg-left mr-1"></i>Back home</button>
             </div>
+            <div class="modal-body d-flex flex-column align-items-center gap-4 p-12 py-16">
+                <div class="d-inline-flex flex-column align-items-stretch gap-2">
+                    <div class="d-flex justify-content-between gap-2 search-container">
+                        <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo flex-grow-0">
+                        <select class="form-control rounded w-100" id="type" name="type"><option value="hbl">House Bill</option>
+                            <option selected="selected" value="mbl">Master Bill</option>
+                            <option value="cntr">Container Number</option>
+                            <option value="ams">AMS House Bill</option>
+                            <option value="it">Inbond Number</option>
+                            <option value="go">GO Number</option>
+                        </select>
+                        </label> 
+                        <label for="">
+                            <input class="rounded text-uppercase w-100" placeholder="Type your search" type="text">
+                        </label>
+                        <button type="button" class="btn btn-primary text-uppercase text-xs rounded d-inline-block h-100 align-self-stretch">Search <i class="bi bi-search text-xs ml-2"></i></button>
+                    </div>
+                    <div class="alert alert-warning d-flex align-items-center font-family-sora text-left text-sm" role="alert">
+                        <i class="bi bi-info-circle-fill me-3 text-2xl text-danger"></i>
+                        <div>We couldn't find a record matching <b class="search-select-type">MBL</b>: <b class="search-users-input">"[User's Input]"</b>. <br>Please verify and try again.</div>
+                    </div>
+                </div>
 
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
 <header id="header">
     <div class="availability-menu">
@@ -510,47 +509,75 @@
                                 <div class="p-3 py-4  align-items-center gap-2">
                                     <div class="ipi-milestones-empty p-4">
                                         <p><b>You don't have any charges yet</b></p><br>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary text-base rounded-full opacity-50"><b>Please add some <i class="bi bi-plus-circle-dotted"></i></b></button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary text-base rounded-full opacity-50"><b>Click to add <i class="bi bi-plus-circle-dotted"></i></b></button>
                                     </div>
                                     <div class="accordion accordion-flush d-flex flex-column gap-2" id="accordionFlushExample">
                                         <div class="accordion-item rounded-3 cucc-item">
                                             <h2 class="accordion-header">
                                                 <div class="accordion-button btn-sm collapsed no-arrow d-flex align-items-center bg-azure-95" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-1" aria-expanded="false" aria-controls="flush-collapse-1">
-                                                    <div class="col text-uppercase font-family-archivo text-base">
+                                                    <div class="col-4 text-uppercase font-family-archivo text-base">
                                                         Item description
                                                     </div>
-                                                    <div class="col font-family-archivo text-base fw-bold">
+                                                    <div class="col-3 font-family-archivo text-base fw-bold">
                                                         $10.00
                                                     </div>
                                                     <div class="col-auto ms-auto">
                                                         <span class="btn btn-sm btn-outline-dark rounded-full px-4">Edit</span>
+                                                        <span class="btn btn-sm btn-outline-dark rounded-full px-4 ms-2">Remove <i class="bi bi-trash"></i></span>
                                                     </div>
                                                 </div>
                                             </h2>
                                             <div id="flush-collapse-1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                                                 <div class="accordion-body btn-sm">
-                                                    <div class="d-flex gap-3">
-                                                        <div class="col d-flex flex-row align-items-center gap-2">
-                                                            <label for="description-input" class="form-label text-uppercase text-sm mb-0">Description:</label>
-                                                            <input type="text" class="form-control" id="description-input" placeholder="Custom description">
-                                                        </div>
-                                                        <div class="col d-flex flex-row align-items-center gap-2">
-                                                            <label for="description-input" class="form-label text-uppercase text-sm mb-0">Amount:</label>
-                                                            <input type="number" class="form-control" id="description-input" placeholder="Amount">
-                                                        </div>
-                                                        <div class="col-auto d-flex flex-row gap-2 align-items-center">
-                                                            <p class="text-uppercase text-sm">Choose one:</p>
-                                                            <div class="form-check ps-0 d-flex rounded-full">
-                                                                <input type="radio" class="btn-check" name="options-outlined" id="due" autocomplete="off" checked>
-                                                                <label class="btn btn-sm btn-outline-primary" for="due">Amount Due to you</label>
-                                                                <input type="radio" class="btn-check" name="options-outlined" id="collect" autocomplete="off">
-                                                                <label class="btn btn-sm btn-outline-primary" for="collect">Amount to collect at window</label>
+                                                    <div class="row align-items-center justify-start">
+                                                        <div class="col-auto d-flex gap-3 align-items-center pr-8">
+                                                            <p class="text-uppercase text-sm col-auto fw-bold">Choose one:</p>
+                                                            <div class="col-auto">
+                                                                <div class="form-check d-flex gap-2 align-items-center">
+                                                                <input class="form-check-input my-0" type="radio" name="radioDefault" id="radioDue">
+                                                                <label class="form-check-label" for="radioDue">
+                                                                    Amount Due to you
+                                                                </label>
+                                                                </div>
+                                                                <div class="form-check d-flex gap-2 align-items-center">
+                                                                <input class="form-check-input my-0" type="radio" name="radioDefault" id="radioCollect" checked>
+                                                                <label class="form-check-label" for="radioCollect">
+                                                                    Amount to collect at window
+                                                                </label>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-auto">
-                                                            <span class="btn btn-sm btn-outline-dark rounded-full px-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-1" aria-expanded="false" aria-controls="flush-collapse-1">Update</span>
+                                                        <div class="col col-lg-5 d-flex flex-column gap-2 pl-6 border-start">
+                                                            <div class="col d-flex flex-row align-items-center gap-2">
+                                                                <label for="description-input" class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Description:</label>
+                                                                <input type="text" class="form-control rounded px-2" id="description-input" placeholder="Custom description">
+                                                            </div>
+                                                            <div class="col d-flex flex-row align-items-center gap-2">
+                                                                <label for="description-input" class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Amount:</label>
+                                                                <input type="number" class="form-control rounded px-2" id="description-input" placeholder="Amount">
+                                                            </div>
+                                                            <div class="col d-flex flex-row align-items-center justify-end gap-2">
+                                                                <span class="btn btn-sm btn-outline-dark rounded-full px-4" type="button">Calculate</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col align-self-stretch align-items-bewteen">
+                                                            <div class="rounded bg-navy-100 px-3 py-2 h-100 d-flex flex-column gap-3 justify-around">          
+                                                                <div class="col-12 d-flex justify-between">
+                                                                    <p class="text-nowrap">Amount Collected at Window</p>
+                                                                    <p class="fw-bold text-lg text-end">0.00</p>
+                                                                </div>
+                                                                <div class="col-12 d-flex justify-between">
+                                                                    <p>Imperial Service Fee</p>
+                                                                    <p class="fw-bold text-lg text-end">0.00</p>
+                                                                </div>
+                                                                <div class="col-12 d-flex justify-between">
+                                                                    <p>Amount Due To You</p>
+                                                                    <p class="fw-bold text-lg text-end">0.00</p>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
+                                                    
 
                                                 </div>
                                             </div>
@@ -558,62 +585,73 @@
                                         <div class="accordion-item rounded-3 cucc-item">
                                             <h2 class="accordion-header">
                                                 <div class="accordion-button btn-sm collapsed no-arrow d-flex align-items-center bg-azure-95" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-2" aria-expanded="false" aria-controls="flush-collapse-2">
-                                                    <div class="col text-uppercase font-family-archivo text-base">
+                                                    <div class="col-4 text-uppercase font-family-archivo text-base">
                                                         Custom Charge name
                                                     </div>
-                                                    <div class="col font-family-archivo text-base fw-bold">
+                                                    <div class="col-3 font-family-archivo text-base fw-bold">
                                                         $32.50
                                                     </div>
                                                     <div class="col-auto ms-auto">
                                                         <span class="btn btn-sm btn-outline-dark rounded-full px-4">Edit</span>
+                                                        <span class="btn btn-sm btn-outline-dark rounded-full px-4 ms-2">Remove <i class="bi bi-trash"></i></span>
                                                     </div>
                                                 </div>
                                             </h2>
                                             <div id="flush-collapse-2" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                                                 <div class="accordion-body btn-sm">
-                                                    <div class="d-flex gap-3">
-                                                        <div class="col d-flex flex-row align-items-center gap-2">
-                                                            <label for="description-input" class="form-label text-uppercase text-sm mb-0">Description:</label>
-                                                            <input type="text" class="form-control" id="description-input" placeholder="Custom description">
-                                                        </div>
-                                                        <div class="col d-flex flex-row align-items-center gap-2">
-                                                            <label for="description-input" class="form-label text-uppercase text-sm mb-0">Amount:</label>
-                                                            <input type="number" class="form-control" id="description-input" placeholder="Amount">
-                                                        </div>
-                                                        <div class="col-auto d-flex flex-row gap-2 align-items-center">
-                                                            <p class="text-uppercase text-sm">Choose one:</p>
-                                                            <div class="form-check ps-0 d-flex rounded-full">
-                                                                <input type="radio" class="btn-check" name="options-outlined" id="due" autocomplete="off" checked>
-                                                                <label class="btn btn-sm btn-outline-primary" for="due">Amount Due to you</label>
-                                                                <input type="radio" class="btn-check" name="options-outlined" id="collect" autocomplete="off">
-                                                                <label class="btn btn-sm btn-outline-primary" for="collect">Amount to collect at window</label>
+                                                    <div class="row align-items-center justify-start">
+                                                        <div class="col-auto d-flex gap-3 align-items-center pr-8">
+                                                            <p class="text-uppercase text-sm col-auto fw-bold">Choose one:</p>
+                                                            <div class="col-auto">
+                                                                <div class="form-check d-flex gap-2 align-items-center">
+                                                                <input class="form-check-input my-0" type="radio" name="radioDefault" id="radioDue">
+                                                                <label class="form-check-label" for="radioDue">
+                                                                    Amount Due to you
+                                                                </label>
+                                                                </div>
+                                                                <div class="form-check d-flex gap-2 align-items-center">
+                                                                <input class="form-check-input my-0" type="radio" name="radioDefault" id="radioCollect" checked>
+                                                                <label class="form-check-label" for="radioCollect">
+                                                                    Amount to collect at window
+                                                                </label>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-auto">
-                                                            <span class="btn btn-sm btn-outline-dark rounded-full px-4" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-2" aria-expanded="false" aria-controls="flush-collapse-2">Update</span>
+                                                        <div class="col col-lg-5 d-flex flex-column gap-2 pl-6 border-start">
+                                                            <div class="col d-flex flex-row align-items-center gap-2">
+                                                                <label for="description-input" class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Description:</label>
+                                                                <input type="text" class="form-control rounded px-2" id="description-input" placeholder="Custom description">
+                                                            </div>
+                                                            <div class="col d-flex flex-row align-items-center gap-2">
+                                                                <label for="description-input" class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Amount:</label>
+                                                                <input type="number" class="form-control rounded px-2" id="description-input" placeholder="Amount">
+                                                            </div>
+                                                            <div class="col d-flex flex-row align-items-center justify-end gap-2">
+                                                                <span class="btn btn-sm btn-outline-dark rounded-full px-4" type="button">Calculate</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col align-self-stretch align-items-bewteen">
+                                                            <div class="rounded bg-navy-100 px-3 py-2 h-100 d-flex flex-column gap-3 justify-around">          
+                                                                <div class="col-12 d-flex justify-between">
+                                                                    <p class="text-nowrap">Amount Collected at Window</p>
+                                                                    <p class="fw-bold text-lg text-end">0.00</p>
+                                                                </div>
+                                                                <div class="col-12 d-flex justify-between">
+                                                                    <p>Imperial Service Fee</p>
+                                                                    <p class="fw-bold text-lg text-end">0.00</p>
+                                                                </div>
+                                                                <div class="col-12 d-flex justify-between">
+                                                                    <p>Amount Due To You</p>
+                                                                    <p class="fw-bold text-lg text-end">0.00</p>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="rounded bg-navy-100 mt-3 px-3 py-2">
-                                        <div class="row">
-                                            <div class="col text-end">
-                                                <p class="text-nowrap">Amount Collected at Window</p>
-                                                <p class="fw-bold text-lg">0.00</p>
-                                            </div>
-                                            <div class="col text-end">
-                                                <p>Imperial Service Fee</p>
-                                                <p class="fw-bold text-lg">0.00</p>
-                                            </div>
-                                            <div class="col text-end">
-                                                <p>Amount Due To You</p>
-                                                <p class="fw-bold text-lg">0.00</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full mt-4"><b>Add one more</b></button>
                                 </div>  
                                 
                                 <!-- 
@@ -754,7 +792,7 @@
                                     <div class="col col-xl-6 row">
                                         <div class="row detail-pair">
                                             <div class="col-12">
-                                                <p class="detail-label">RCV. / DOC. Markings</p>
+                                                <p class="detail-label">Markings</p>
                                             </div>
                                             <div class="col-12 px-1 py-1 mx-2 rounded mt-3">
                                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus minima accusantium dolor atque a excepturi natus saepe consectetur aliquid aperiam.</p>
@@ -764,7 +802,7 @@
                                     <div class="col col-xl-6 row">
                                         <div class="row detail-pair">
                                             <div class="col-12">
-                                                <p class="detail-label">Devan Markings</p>
+                                                <p class="detail-label">Devan Notes</p>
                                             </div>
                                             <div class="col-12 bg-azure-95 p-2 mx-2 rounded">
                                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti odio ex sit.</p>

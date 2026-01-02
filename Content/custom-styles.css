@@ -444,7 +444,15 @@ body:not(.marketing) .bar.animate:before {
     justify-content:stretch;
 
     &.availability {
-        grid-template-columns: 2.1875rem 7.5rem 4.6875rem 4.6875rem 4.6875rem minmax(15.625rem, auto) 4.6875rem 4.6875rem 4.6875rem 4.6875rem 4.6875rem;
+        grid-template-columns:7.5rem 8.5rem 4.6875rem 4.6875rem 4.6875rem 4.6875rem 4.6875rem 4.6875rem;    
+    }
+
+    @media (min-width:992px) {
+        &.availability,
+        &.ipi {
+            padding-left: var(--space-2) !important;
+            padding-right: var(--space-2) !important;
+        }
     }
     
 }
@@ -1252,6 +1260,18 @@ header#header {
     --bs-backdrop-opacity: 1 !important;
     
     background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+#login-modal.modal {
+    top: 0 !important; 
+    height: 100% !important;
+    z-index:1062;
+}
+
+body:has(#login-modal.modal) .modal-backdrop {
+    top: 0 !important; 
+    height: 100% !important;
+    z-index:1061;
 }
 
 .modal-body {

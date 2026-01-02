@@ -148,8 +148,8 @@
     </div>
 </header>
 <section class="py-4 mt-16"> <!-- TITLE -->
-    <div class="container-fluid justify-center align-items-center d-flex">
-        <div class="row justify-content-between p-4 rounded-4 bg-azure-95 col-lg-12 mx-auto">
+    <div class="container-fluid min-h-100vh justify-center align-items-center d-flex">
+        <div class="row justify-content-between p-4 rounded-4 bg-azure-95 col-md-12 col-lg-12 col-xl-9 col-xxl-8  mx-auto">
             <div class="col-12">
                 <h1 class="text-3xl font-family-dm-serif text-navy-800 mb-4">Search results</h1>
                 <p class="type-h6-alt text-muted">Your search for <b>“MBL: MNSLOS2507071”</b> returned <b class="text-navy-600">4 results</b> <small>(more than one result).</small></p><br>
@@ -157,36 +157,26 @@
             </div>
             <div class="col-12 search-results mt-8 ">
                 <div class="col-12 d-flex flex-column gap-2">
-                    <div class="hbl-list-grid availability font-family-sora lh-1 text-uppercase text-xs text-navy-450 mb-2">
-                            <div class="d-flex justify-content-start text-center hide-header">SEQ</div>
-                            <div class="d-flex justify-content-start hide-header">HBL</div>
-                            <div class="d-flex justify-content-end hide-header">QTY</div>
-                            <div class="d-flex justify-content-end hide-header">CBM</div>
-                            <div class="d-flex justify-content-end hide-header">LBS</div>
-                            <div class="hide-header">Status</div>                       
+                    <div class="hbl-list-grid justify-content-between availability font-family-sora lh-1 text-uppercase text-xs text-navy-450 mb-2">
+                            <div class="d-flex justify-content-start hide-header">MBL</div>
+                            <div class="hide-header">Container</div>                     
                             <div class="hide-header">ETA</div>  
                             <div class="hide-header">LFD</div>
                             <div class="hide-header">GO DATE</div>
-                            <div class="hide-header">DISPATCH DATE</div>
-                            <div class="hide-header">ARRIV CFS DATE</div> 
+                            <div class="hide-header">DISP DATE</div>
+                            <div class="hide-header">ARRIV DATE</div> 
+                            <div class="hide-header">DEVAN DATE</div> 
                     </div>    
                     <!-- HBL List Item 1 -->
                     <div>
-                        <div class="hbl-list-item hbl-list-grid availability">
-                            <div class="d-flex justify-content-center quantity align-items-center gap-2 seqno"><p class="hide-label">SEQ</p>1</div>
+                        <div class="hbl-list-item hbl-list-grid justify-content-between availability">
                             <div class="d-flex font-bold align-items-center hbl">
                                 <a class="link-offset-2" data-bs-toggle="offcanvas" href="#hbl-item-details-1" role="button" aria-controls="hbl-item-details-1">MNSLOS2507067</a> 
                             </div>
-                            <div class="d-flex justify-content-end quantity align-items-center gap-2"><p class="hide-label">QTY</p>7892.55</div>
-                            <div class="d-flex justify-content-end quantity align-items-center gap-2">
-                                <p class="hide-label">CBM</p>7892.55</div>
-                            <div class="d-flex justify-content-end quantity align-items-center gap-2">
-                                <p class="hide-label">LBS</p>7892.55</div>
                             <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
-                                <p class="hide-label">STATUS</p>
+                                <p class="hide-label">CONT No.</p>
                                 <div class="d-flex gap-2 justify-content-start">
-                                    <span class="badge rounded-pill align-self-center local-pickup">
-                                        NO FRT RLSE / NO CUST RLSE</span>
+                                    SMLMSEL5J5243700 
                                 </div>
                             </div>
                             <div class="d-flex quantity align-items-center gap-2">
@@ -196,61 +186,49 @@
                             <div class="d-flex quantity align-items-center gap-2">
                                 <p class="hide-label">GO DATE</p>12/12/25</div>
                             <div class="d-flex quantity align-items-center gap-2">
-                                <p class="hide-label">DISPATCH DATE</p>12/12/25</div>
+                                <p class="hide-label">DISP DATE</p>12/12/25</div>
                             <div class="d-flex quantity align-items-center gap-2">
-                                <p class="hide-label">ARRIV CFS DATE</p>12/12/25</div>
+                                <p class="hide-label">ARRIV DATE</p>12/12/25</div>
+                            <div class="d-flex quantity align-items-center gap-2">
+                                <p class="hide-label">DEVAN DATE</p>12/12/25</div>
                         </div>
                     </div> <!-- ** HBL List Item 1 -->
                     <!-- HBL List Item 2 -->
                     <div>
-                        <div class="hbl-list-item hbl-list-grid availability">
-                            <div class="d-flex justify-content-center quantity align-items-center gap-2 seqno"><p class="hide-label">SEQ</p>2</div>
+                        <div class="hbl-list-item hbl-list-grid justify-content-between availability">
                             <div class="d-flex font-bold align-items-center hbl">
                                 <a  class="link-offset-2"  data-bs-toggle="offcanvas" href="#hbl-item-details-2" role="button" aria-controls="hbl-item-details-2">MNSLOS2507067</a> 
                             </div>
-                            <div class="d-flex justify-content-end quantity align-items-center gap-2"><p class="hide-label">QTY</p>7892.55</div>
-                            <div class="d-flex justify-content-end quantity align-items-center gap-2">
-                                <p class="hide-label">CBM</p>7892.55</div>
-                            <div class="d-flex justify-content-end quantity align-items-center gap-2">
-                                <p class="hide-label">LBS</p>7892.55</div>
                             <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
-                                <p class="hide-label">STATUS</p>
+                                <p class="hide-label">CONT No.</p>
                                 <div class="d-flex gap-2 justify-content-start">
-                                    <span class="badge rounded-pill align-self-center ipi-tracing"> <!-- KEVIN: 
-                                        Toggle between green and blue badges with .local-pickup (green) .ipi-tracing (blue) -->
-                                        IN TRANSIT TO MICHIGAN</span>
+                                    SMLMSEL5J5243700 
                                 </div>
                             </div>
                             <div class="d-flex quantity align-items-center gap-2">
-                                <p class="hide-label">ETA</p>12/12/25</div>
+                                <p class="hide-label">ETA</p>12/12/25</div>                            
                             <div class="d-flex quantity align-items-center gap-2">
                                 <p class="hide-label">LFD</p>12/12/25</div>
                             <div class="d-flex quantity align-items-center gap-2">
                                 <p class="hide-label">GO DATE</p>12/12/25</div>
                             <div class="d-flex quantity align-items-center gap-2">
-                                <p class="hide-label">DISPATCH DATE</p>12/12/25</div>
+                                <p class="hide-label">DISP DATE</p>12/12/25</div>
                             <div class="d-flex quantity align-items-center gap-2">
-                                <p class="hide-label">ARRIV CFS DATE</p>12/12/25</div>
+                                <p class="hide-label">ARRIV DATE</p>12/12/25</div>
+                            <div class="d-flex quantity align-items-center gap-2">
+                                <p class="hide-label">DEVAN DATE</p>12/12/25</div>
                         </div>
                     </div> <!-- ** HBL List Item 2 -->
                     <!-- HBL List Item 3 -->
                     <div>
-                        <div class="hbl-list-item hbl-list-grid availability">
-                            <div class="d-flex justify-content-center quantity align-items-center gap-2 seqno"><p class="hide-label">SEQ</p>3</div>
+                        <div class="hbl-list-item hbl-list-grid justify-content-between availability">
                             <div class="d-flex font-bold align-items-center hbl">
                                 <a  class="link-offset-2"  data-bs-toggle="offcanvas" href="#hbl-item-details-2" role="button" aria-controls="hbl-item-details-2">MNSLOS2507067</a> 
                             </div>
-                            <div class="d-flex justify-content-end quantity align-items-center gap-2"><p class="hide-label">QTY</p>7892.55</div>
-                            <div class="d-flex justify-content-end quantity align-items-center gap-2">
-                                <p class="hide-label">CBM</p>7892.55</div>
-                            <div class="d-flex justify-content-end quantity align-items-center gap-2">
-                                <p class="hide-label">LBS</p>7892.55</div>
                             <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
-                                <p class="hide-label">STATUS</p>
+                                <p class="hide-label">CONT No.</p>
                                 <div class="d-flex gap-2 justify-content-start">
-                                    <span class="badge rounded-pill align-self-center ipi-tracing"> <!-- KEVIN: 
-                                        Toggle between green and blue badges with .local-pickup (green) .ipi-tracing (blue) -->
-                                        IN TRANSIT TO MICHIGAN</span>
+                                    SMLMSEL5J5243700 
                                 </div>
                             </div>
                             <div class="d-flex quantity align-items-center gap-2">
@@ -260,29 +238,23 @@
                             <div class="d-flex quantity align-items-center gap-2">
                                 <p class="hide-label">GO DATE</p>12/12/25</div>
                             <div class="d-flex quantity align-items-center gap-2">
-                                <p class="hide-label">DISPATCH DATE</p>12/12/25</div>
+                                <p class="hide-label">DISP DATE</p>12/12/25</div>
                             <div class="d-flex quantity align-items-center gap-2">
-                                <p class="hide-label">ARRIV CFS DATE</p>12/12/25</div>
+                                <p class="hide-label">ARRIV DATE</p>12/12/25</div>
+                            <div class="d-flex quantity align-items-center gap-2">
+                                <p class="hide-label">DEVAN DATE</p>12/12/25</div>
                         </div>
                     </div> <!-- ** HBL List Item 3 -->
                     <!-- HBL List Item 4 -->
                     <div>
-                        <div class="hbl-list-item hbl-list-grid availability">
-                            <div class="d-flex justify-content-center quantity align-items-center gap-2 seqno"><p class="hide-label">SEQ</p>4</div>
+                        <div class="hbl-list-item hbl-list-grid justify-content-between availability">
                             <div class="d-flex font-bold align-items-center hbl">
                                 <a  class="link-offset-2"  data-bs-toggle="offcanvas" href="#hbl-item-details-2" role="button" aria-controls="hbl-item-details-2">MNSLOS2507067</a> 
                             </div>
-                            <div class="d-flex justify-content-end quantity align-items-center gap-2"><p class="hide-label">QTY</p>7892.55</div>
-                            <div class="d-flex justify-content-end quantity align-items-center gap-2">
-                                <p class="hide-label">CBM</p>7892.55</div>
-                            <div class="d-flex justify-content-end quantity align-items-center gap-2">
-                                <p class="hide-label">LBS</p>7892.55</div>
                             <div class="d-flex justify-content-start align-items-center align-items-center gap-2 status">
-                                <p class="hide-label">STATUS</p>
+                                <p class="hide-label">CONT No.</p>
                                 <div class="d-flex gap-2 justify-content-start">
-                                    <span class="badge rounded-pill align-self-center ipi-tracing"> <!-- KEVIN: 
-                                        Toggle between green and blue badges with .local-pickup (green) .ipi-tracing (blue) -->
-                                        IN TRANSIT TO MICHIGAN</span>
+                                    SMLMSEL5J5243700 
                                 </div>
                             </div>
                             <div class="d-flex quantity align-items-center gap-2">
@@ -292,9 +264,11 @@
                             <div class="d-flex quantity align-items-center gap-2">
                                 <p class="hide-label">GO DATE</p>12/12/25</div>
                             <div class="d-flex quantity align-items-center gap-2">
-                                <p class="hide-label">DISPATCH DATE</p>12/12/25</div>
+                                <p class="hide-label">DISP DATE</p>12/12/25</div>
                             <div class="d-flex quantity align-items-center gap-2">
-                                <p class="hide-label">ARRIV CFS DATE</p>12/12/25</div>
+                                <p class="hide-label">ARRIV DATE</p>12/12/25</div>
+                            <div class="d-flex quantity align-items-center gap-2">
+                                <p class="hide-label">DEVAN DATE</p>12/12/25</div>
                         </div>
                     </div> <!-- ** HBL List Item 4 -->
                 </div>

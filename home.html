@@ -90,8 +90,21 @@
                         </ul>
                         <ul class="menu-list h-100 col-auto ml-auto gap-8 d-flex">
                             <li><a href="/WarehouseFees">Pay Fees</a></li>
-                            <li class="d-flex align-items-center"><a href="/Home/CustomerLogin" class="btn btn-info btn-sm rounded-pill text-sm">Login <i class="fa fa-angle-right"></i></a></li>
+                            <li class="d-flex align-items-center"><a href="#" class="btn btn-info btn-sm rounded-pill text-sm"  data-bs-toggle="modal" data-bs-target="#login-modal">Login <i class="fa fa-angle-right"></i></a></li>
                         </ul>
+                        <!-- Login Modal -->
+                        <div class="modal fade" id="login-modal" tabindex="-1" aria-labelledby="login-modalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                <div class="modal-header justify-content-end border-bottom-0 pb-1">
+                                    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body px-5 pb-5 pt-0">
+                                    <pickup-window-hours-table></pickup-window-hours-table> <!--js/components/pickup-table.js-->
+                                </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -157,7 +170,7 @@
                             <li><a href="/Home/News/5">News</a></li>
                             <li><a href="forms.html">Forms</a></li>
                             <li><a href="contact.html">Contact</a></li>
-                            <a href="/Home/CustomerLogin">Login</a>                                
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#login-modal">Login</a>                                
                             <li><a href="tel:(310) 768-8188"><i class="fa fa-phone"></i>(310) 768-8188</a></li>
                         </ul>
                     </div>
@@ -262,6 +275,10 @@
                                 </label>
                                 <button type="button" class="btn btn-primary text-uppercase text-xs rounded d-inline-block h-100 align-self-stretch text-nowrap">Search <i class="bi bi-search text-xs ml-2"></i></button>
                             </div>
+                            <div style="padding-top:.75rem;margin-bottom:-1.5rem;">
+                                <p class="text-sm text-navy-450">*If searching by MBL/CTNR, please use availability search.</p>
+                                <p class="text-sm d-flex align-items-center bg-warning-light rounded py-1 px-2 text-warning-dark mt-2 gap-1" style="margin-top:3rem;margin-bottom:-1.5rem;"><i class="bi bi-info-circle-fill me-2 text-2xl text-danger"></i>Not a valid <b> HBL: [user's input]</b>. Please verify and try again.</p>
+                            </div>    
                         </div>
                     </div>
                 </div>
@@ -509,6 +526,7 @@
             </div>
         </div>
     </footer>
+
 <!-- Quotation Button (Initially Hidden) -->
 <button type="button" class="btn btn-primary quote-bubble rounded-pill position-fixed bottom-0 end-0 m-4 mb-5 px-4 py-3 shadow border-0 fs-6 fw-bold font-family-sora text-xs">
     Request a Quote <i class="bi bi-chat-dots-fill ms-2"></i>
