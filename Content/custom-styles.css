@@ -444,7 +444,7 @@ body:not(.marketing) .bar.animate:before {
     justify-content:stretch;
 
     &.availability {
-        grid-template-columns:7.5rem 8.5rem 4.6875rem 4.6875rem 4.6875rem 4.6875rem 4.6875rem 4.6875rem;    
+        grid-template-columns:8.75rem 8.5rem 4.6875rem 4.6875rem 4.6875rem 4.6875rem 4.6875rem 4.6875rem;    
     }
 
     @media (min-width:992px) {
@@ -1373,7 +1373,6 @@ body:has(#login-modal.modal) .modal-backdrop {
 
     & .accordion-button {
             cursor: pointer;
-            padding:var(--space-2) var(--space-3);
             min-height:3.3087rem;
         }
     &:hover {
@@ -1387,11 +1386,6 @@ body:has(#login-modal.modal) .modal-backdrop {
 
 .cucc-item .accordion-button:not(.collapsed) {
     background: white !important;
-
-    & span.btn {
-        opacity:0; cursor:none;
-        position:relative; z-index:-10;
-    }
 }
 
 
