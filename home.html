@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="Content/design-system.css">
     <link rel="stylesheet" href="Content/custom-styles.css">
 </head>
-<body class="availavility-v2 marketing">
+<body class="availavility-v2 marketing" style="overflow-x:clip;">
 <header id="header">
     <div class="pc-menu">
         <div class="header-top">
@@ -90,7 +90,8 @@
                         </ul>
                         <ul class="menu-list h-100 col-auto ml-auto gap-8 d-flex">
                             <li><a href="/WarehouseFees">Pay Fees</a></li>
-                            <li class="d-flex align-items-center"><a href="#" class="btn btn-info btn-sm rounded-pill text-sm"  data-bs-toggle="modal" data-bs-target="#login-modal">Login <i class="fa fa-angle-right"></i></a></li>
+                            <li class="d-flex align-items-center"><a href="#" class="btn btn-info btn-sm rounded-pill text-sm" style="padding-bottom:0.35rem!important;"  data-bs-toggle="modal" data-bs-target="#login-modal">Login <i class="fa fa-angle-right" style="margin-top:-.125rem"></i></a></li>
+                            <li class="d-flex align-items-center"><a href="#" class="btn btn-info btn-sm rounded-pill text-sm" style="padding-bottom:0.35rem!important;">Profile <i class="fa-solid fa-user-gear ml-1"  style="margin-top:-.125rem"></i></a></li>
                         </ul>
                         <!-- Login Modal -->
                         <div class="modal fade" id="login-modal" tabindex="-1" aria-labelledby="login-modalLabel" aria-hidden="true">
@@ -136,6 +137,8 @@
                 <div class="row">
                     <div class="col-12">
                         <ul>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#login-modal" class="my-2">Login</a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#login-modal" class="my-2">Profile <i class="fa-solid fa-user-gear ml-1"  style="margin-top:-.125rem"></i></a> 
                             <li>
                                 <a href="our-services.html">Services</a><i class="fa fa-angle-down"></i>
                                 <dl class="mob-sub-menu">
@@ -169,8 +172,7 @@
                             <li><a href="about-us.html">About Us</a></li>
                             <li><a href="/Home/News/5">News</a></li>
                             <li><a href="forms.html">Forms</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#login-modal">Login</a>                                
+                            <li><a href="contact.html">Contact</a></li>                               
                             <li><a href="tel:(310) 768-8188"><i class="fa fa-phone"></i>(310) 768-8188</a></li>
                         </ul>
                     </div>
@@ -184,6 +186,7 @@
         <div class="row align-items-center justify-between">
             <div class="hero-text col-lg-5 mb-5 mb-lg-0 d-flex flex-column justify-center">
                 <h1 class="text-info text-sm font-family-archivo fw-bold mb-1">LOS ANGELES BONDED WAREHOUSING & IPI</h1>
+                <style> h2.type-display-1{ @media (max-width:576px){letter-spacing:-.5px;} } </style>
                 <h2 class="type-display-1 text-white mb-3" style="line-height: 1.1;">Logistics,<br><i>Uncomplicated.</i></h2>
                 <p class="type-body-lg text-white mb-0 w-75">Premier bond/general order warehousing and nationwide IPI transportation. 69+ locations connected by a single tech platform.</p>
             </div>
@@ -277,8 +280,9 @@
                             </div>
                             <div style="padding-top:.75rem;margin-bottom:-1.5rem;">
                                 <p class="text-sm text-navy-450">*If searching by MBL/CTNR, please use availability search.</p>
-                                <div class="d-flex gap-2 my-4 align-items-center rounded-full px-2 py-1" style="background:rgb(247, 247, 247);">We accept: 
-                                    <span class="text-muted"><b>Credit cards</b> <i class="fa-regular fa-credit-card"></i> and</span>
+                                <div class="d-flex gap-2 my-4 align-items-center opacity-50"> 
+                                    <span class="text-muted"><i class="fa-regular fa-credit-card"></i> </span>
+                                    <span class="text-muted"><i class="fa-solid fa-building-columns"></i> </span>
                                     <img src="/_images/paycargo-logo-gray.webp" style="max-width:5rem;height:auto;object-fit: contain;margin-top:2px;" alt="">
                                 </div>
                                 <p class="text-sm d-flex align-items-center bg-warning-light rounded py-1 px-2 text-warning-dark mt-2 gap-1" style="margin-top:3rem;margin-bottom:-1.5rem;"><i class="bi bi-info-circle-fill me-2 text-2xl text-danger"></i>Not a valid <b> HBL: [user's input]</b>. Please verify and try again.</p>

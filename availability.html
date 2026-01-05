@@ -336,6 +336,7 @@
             <div class="col px-4">
                 <h2 class="d-inline-block mr-6 font-family-sora fw-bold text-base text-blue-brand">Photos</h2>
                 <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Download all pictures</i></button>
+                <span class="ml-3">You don't have any pictures yet.</span>
                 <div class="row mt-6 photo-gallery-thumbnails gap-3">
                     <div class="col-auto">
                         <a href="_images/photo-placeholder.jpeg">
@@ -505,13 +506,13 @@
                     <div class="mt-2 w-100 gap-2">
                         <div class="collapse w-100" id="collapse-cucc"> <!-- CUCC Charges collapse -->
                             <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
-                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center">Add CUCC charges <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>   
+                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center text-uppercase">CUCC charges <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>   
                                 <div class="p-3 py-4  align-items-center gap-2">
                                     <div class="ipi-milestones-empty p-4">
                                         <p><b>You don't have any charges yet</b></p><br>
                                         <button type="button" class="btn btn-sm btn-outline-secondary text-base rounded-full opacity-50"><b>Click to add <i class="bi bi-plus-circle-dotted"></i></b></button>
                                     </div>
-                                    <div class="row">
+                                    <div class="d-flex" style="padding: .5rem .75rem !important;">
                                         <div class="col-4 text-start">Description</div>
                                         <div class="col-2 text-end">Amt Collected at Window</div>
                                         <div class="col-2 text-end">Service Fee</div>
@@ -524,10 +525,10 @@
                                                     <div class="col-4 text-uppercase font-family-archivo text-base">
                                                         Item description
                                                     </div>
-                                                    <div class="col-2 font-family-archivo text-base fw-bold text-end">
+                                                    <div class="col-2 font-family-archivo text-base text-end">
                                                         $10.00
                                                     </div>
-                                                    <div class="col-2 font-family-archivo text-base fw-bold text-end">
+                                                    <div class="col-2 font-family-archivo text-base fw-bold text-end service-fee text-danger">
                                                         $10.00
                                                     </div>
                                                     <div class="col-2 font-family-archivo text-base fw-bold text-end">
@@ -590,7 +591,7 @@
                                                             
                                                         </div>
                                                         <div class="col-auto align-self-stretch align-items-bewteen">
-                                                        <span class="btn btn-sm btn-outline-dark border-0 rounded-full" style="padding:.75rem .75rem 0.625rem .75rem!important;margin-left:-.75rem;margin-right:-.5rem;"><i class="bi bi-trash"></i></span>
+                                                        <span class="btn btn-sm btn-outline-danger border-0 rounded-full" style="padding:.75rem .75rem 0.625rem .75rem!important;margin-left:-.75rem;margin-right:-.5rem;"><i class="bi bi-trash"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -600,67 +601,75 @@
                                             <h2 class="accordion-header">
                                                 <div class="accordion-button btn-sm collapsed no-arrow d-flex align-items-center bg-azure-95" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-2" aria-expanded="false" aria-controls="flush-collapse-2">
                                                     <div class="col-4 text-uppercase font-family-archivo text-base">
-                                                        Custom Charge name
+                                                        Item description
                                                     </div>
-                                                    <div class="col-3 font-family-archivo text-base fw-bold">
-                                                        $32.50
+                                                    <div class="col-2 font-family-archivo text-base text-end">
+                                                        $10.00
+                                                    </div>
+                                                    <div class="col-2 font-family-archivo text-base fw-bold text-end service-fee text-danger">
+                                                        $10.00
+                                                    </div>
+                                                    <div class="col-2 font-family-archivo text-base fw-bold text-end">
+                                                        $10.00
                                                     </div>
                                                     <div class="col-auto ms-auto">
-                                                        <span class="btn btn-sm btn-outline-dark rounded-full px-4">Edit</span>
-                                                        <span class="btn btn-sm btn-outline-dark rounded-full px-4">Confirm <i class="bi bi-check-lg"></i></span>
-                                                        <span class="btn btn-sm btn-outline-dark rounded-full px-4 ms-2">Remove <i class="bi bi-trash"></i></span>
+                                                        <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-4"><u>Edit</u></span>
                                                     </div>
                                                 </div>
                                             </h2>
                                             <div id="flush-collapse-2" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body btn-sm">
-                                                    <div class="row align-items-center justify-start">
-                                                        <div class="col-auto d-flex gap-3 align-items-center pr-8">
-                                                            <p class="text-uppercase text-sm col-auto fw-bold">Choose one:</p>
-                                                            <div class="col-auto">
-                                                                <div class="form-check d-flex gap-2 align-items-center">
+                                                <div class="accordion-body py-4">
+                                                    <div class="row align-items-start justify-start">
+                                                        <div class="col-2 d-flex flex-column gap-2 justify-start pr-8">
+                                                            <p class="text-uppercase text-sm col-auto fw-bold mb-2">Choose one:</p>
+                                                            <div class="form-check d-flex gap-2 align-items-center">
                                                                 <input class="form-check-input my-0" type="radio" name="radioDefault" id="radioDue">
                                                                 <label class="form-check-label" for="radioDue">
                                                                     Amount Due to you
                                                                 </label>
-                                                                </div>
-                                                                <div class="form-check d-flex gap-2 align-items-center">
+                                                            </div>
+                                                            <div class="form-check d-flex gap-2 align-items-center">
                                                                 <input class="form-check-input my-0" type="radio" name="radioDefault" id="radioCollect" checked>
                                                                 <label class="form-check-label" for="radioCollect">
                                                                     Amount to collect at window
                                                                 </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col col-lg-5 align-self-stretch align-items-bewteen d-flex flex-column border-start pl-4">
+                                                            <div>
+                                                                <div class="col d-flex flex-row align-items-center gap-2 mb-4">
+                                                                    <label for="description-input" class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Description:</label>
+                                                                    <input type="text" class="form-control rounded px-2" id="description-input" placeholder="Custom description">
+                                                                </div>
+                                                                <div class="col d-flex flex-row align-items-center gap-2">
+                                                                    <label for="description-input" class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Amount:</label>
+                                                                    <input type="number" class="form-control rounded px-2" id="description-input" placeholder="Amount">
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="col col-lg-5 d-flex flex-column gap-2 pl-6 border-start">
-                                                            <div class="col d-flex flex-row align-items-center gap-2">
-                                                                <label for="description-input" class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Description:</label>
-                                                                <input type="text" class="form-control rounded px-2" id="description-input" placeholder="Custom description">
-                                                            </div>
-                                                            <div class="col d-flex flex-row align-items-center gap-2">
-                                                                <label for="description-input" class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Amount:</label>
-                                                                <input type="number" class="form-control rounded px-2" id="description-input" placeholder="Amount">
-                                                            </div>
-                                                            <div class="col d-flex flex-row align-items-center justify-end gap-2">
+                                                            <div class="col d-flex flex-row align-items-end justify-end gap-2">
                                                                 <span class="btn btn-sm btn-outline-dark rounded-full px-4" type="button">Calculate</span>
-                                                                <span class="btn btn-sm btn-outline-dark rounded-full px-4">Confirm <i class="bi bi-check-lg"></i></span>
                                                             </div>
                                                         </div>
-                                                        <div class="col align-self-stretch align-items-bewteen">
-                                                            <div class="rounded bg-navy-100 px-3 py-2 h-100 d-flex flex-column gap-3 justify-around">          
+                                                        <div class="col d-flex flex-column align-items-stretch">
+                                                            <div class="rounded bg-navy-100 px-3 py-2 d-flex flex-column gap-3 justify-around">          
                                                                 <div class="col-12 d-flex justify-between">
                                                                     <p class="text-nowrap">Amount Collected at Window</p>
-                                                                    <p class="fw-bold text-lg text-end">0.00</p>
+                                                                    <p class="ml-3 fw-bold text-lg text-end">0.00</p>
                                                                 </div>
                                                                 <div class="col-12 d-flex justify-between">
                                                                     <p>Imperial Service Fee</p>
-                                                                    <p class="fw-bold text-lg text-end">0.00</p>
+                                                                    <p class="ml-3 fw-bold text-lg text-end">0.00</p>
                                                                 </div>
                                                                 <div class="col-12 d-flex justify-between">
                                                                     <p>Amount Due To You</p>
-                                                                    <p class="fw-bold text-lg text-end">0.00</p>
+                                                                    <p class="ml-3 fw-bold text-lg text-end">0.00</p>
                                                                 </div>
                                                             </div>
+                                                            <span class="btn btn-sm btn-outline-dark rounded-full px-4 ml-auto mt-4 align-self-end">Confirm <i class="bi bi-check-lg"></i></span>
+                                                            
+                                                        </div>
+                                                        <div class="col-auto align-self-stretch align-items-bewteen">
+                                                        <span class="btn btn-sm btn-outline-danger border-0 rounded-full" style="padding:.75rem .75rem 0.625rem .75rem!important;margin-left:-.75rem;margin-right:-.5rem;"><i class="bi bi-trash"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -671,49 +680,12 @@
                                         <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Click to add <i class="bi bi-plus-circle-dotted"></i></b></button>
                                         * Limit to 5 charges
                                     </div>
-                                    
                                 </div>  
-                                
-                                <!-- 
-                                <div class="row p-3 py-4 justify-between gap-2">
-                                    <div class="col-12 col-xl-6 row me-auto">
-                                        <div class="col-auto">
-                                            <label for="amount">Amount:</label>
-                                        </div>
-                                        <div class="col-auto text-lg">
-                                            <input type="number" id="amount" name="amount" placeholder="0" class="rounded-sm border px-2 py-1">
-                                        </div>
-                                        <div class="col-auto">
-                                            <button class="btn btn-sm btn-primary rounded-full">Update CUCC Charges</button>
-                                        </div>
-                                        <div class="col-12">
-                                            <p class="text-success d-inline-block mt-2"><i class="bi bi-check"></i> Updated successfully</p>
-                                        </div>
-                                    </div>
-                                    <div class="col col-xl-6 row bg-navy-100 px-1 py-2 rounded mx-2">
-                                        <div class="col text-end">
-                                            <p class="text-nowrap">Amount Collected at Window</p>
-                                            <p class="fw-bold text-lg">0.00</p>
-                                        </div>
-                                        <div class="col text-end">
-                                            <p>Imperial Service Fee</p>
-                                            <p class="fw-bold text-lg">0.00</p>
-                                        </div>
-                                        <div class="col text-end">
-                                            <p>Amount Due To You</p>
-                                            <p class="fw-bold text-lg">0.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-end flex-row align-items-center gap-6 px-3 pb-3">
-                                    <p class="text-success">Successfully confirmed charges!</p>
-                                    <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Confirm Charges</b></button>
-                                </div> -->
                             </div>
                         </div>
                         <div class="collapse w-100" id="collapse-ams-release"> <!-- Frt release collapse -->
                             <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
-                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center">AMS HBL Group Release <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>                                            
+                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center text-uppercase">Freight Release <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>                                            
                                     <section class="ams-release mx-2" id="ams-release-container">
                                         <div class="ams-list-header ams-header-grid">
                                             <div class="d-flex">
@@ -807,7 +779,7 @@
                         </div>
                         <div class="collapse w-100" id="collapse-markings"> <!-- Markings collapse -->
                             <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
-                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center">Confirm Markings <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-markings" aria-expanded="false" aria-controls="collapse-markings" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>     
+                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center text-uppercase">Confirm Markings <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-markings" aria-expanded="false" aria-controls="collapse-markings" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>     
                                 <div class="row p-3 pt-4 justify-between gap-2">
                                     <div class="col col-xl-6 row">
                                         <div class="row detail-pair">

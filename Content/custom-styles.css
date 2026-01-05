@@ -1382,6 +1382,10 @@ body:has(#login-modal.modal) .modal-backdrop {
     & .accordion-button.no-arrow::after {
             display: none !important;
         }
+    
+    & .service-fee::before {
+        content:"- ";
+    }
 }
 
 .cucc-item .accordion-button:not(.collapsed) {
