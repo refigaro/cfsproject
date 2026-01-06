@@ -567,7 +567,7 @@
                                                                     </div>
                                                                     <div class="col d-flex flex-row align-items-center gap-2">
                                                                         <label class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Amount:</label>
-                                                                        <input type="number" class="form-control rounded px-2 js-input-amount" placeholrder="0.0" placeholder="Amount">
+                                                                        <input type="number" class="form-control rounded px-2 js-input-amount" placeholrder="0.0" oninput="limitValue(this)" max="2000">
                                                                     </div>
                                                             
                                                             </div>
@@ -1418,6 +1418,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
+function limitValue(input) {
+    if (input.value > 2000) {
+    input.value = 2000; // Sets the value back to 2000 if it exceeds the max
+    }
+}
 </script>
 </body>
 </html>
