@@ -101,7 +101,29 @@
                                     <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
                                 </div>
                                 <div class="modal-body px-5 pb-5 pt-0">
-                                    <pickup-window-hours-table></pickup-window-hours-table> <!--js/components/pickup-table.js-->
+                                    <div class="CustomerLogin-box">
+                                        <h2>Account Login</h2>
+                                        <div class="customerlogin-form">
+                                            <div class="form-group">
+                                                <input class="form-control rounded" data-val="true" data-val-required="**Please enter a valid Username" id="Username" name="Username" placeholder="Username" type="text" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control rounded" data-val="true" data-val-required="**Please enter a valid Password" id="Password" name="Password" placeholder="Password" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary rounded-full btn-sm">LOGIN</button>
+                                            </div>
+                                            <div class="ac">
+                                            </div>
+                                            <div class="ac">
+                                                <span class="field-validation-valid" data-valmsg-for="Username" data-valmsg-replace="true" style="font-weight:bold; color:red;"></span>
+                                                <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true" style="font-weight:bold; color:red;"></span>
+                                            </div>
+                                            <div class="ac">
+                                            </div>
+                                            <p>Forgot your password? <a href="/Home/ForgottenPassword" class="link-offset-2 ">CLICK HERE</a></p>
+                                        </div>
+                                    </div>
                                 </div>
                                 </div>
                             </div>

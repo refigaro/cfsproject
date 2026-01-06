@@ -1265,13 +1265,28 @@ header#header {
 #login-modal.modal {
     top: 0 !important; 
     height: 100% !important;
-    z-index:1062;
+
+    & .CustomerLogin-box {
+        border:0!important;
+        margin:0 auto;
+        padding:2rem 1.25rem;
+        max-width:18.75rem;
+
+        & h2 {
+            text-transform: none!important;
+            margin-bottom:2rem;
+        }
+    }
+
+    & a {
+        color:initial!important;
+        text-shadow:none;
+    }
 }
 
 body:has(#login-modal.modal) .modal-backdrop {
     top: 0 !important; 
     height: 100% !important;
-    z-index:1061;
 }
 
 .modal-body {
