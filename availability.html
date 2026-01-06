@@ -519,7 +519,7 @@
                                         <div class="col-2 text-end">Amt Due To You</div>
                                     </div>
                                     <div class="accordion accordion-flush d-flex flex-column gap-2" id="accordionFlushExample">
-                                        <div class="accordion-item rounded-3 cucc-item">
+                                        <div class="accordion-item rounded-3 cucc-item js-calculator-item">
                                             <h2 class="accordion-header">
                                                 <div class="accordion-button btn-sm collapsed no-arrow d-flex align-items-center bg-azure-95" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-1" aria-expanded="false" aria-controls="flush-collapse-1">
                                                     <div class="col-3 text-uppercase font-family-archivo text-base">
@@ -546,28 +546,28 @@
                                                         <div class="col-7 d-flex gap-3 px-4 py-3 border rounded">
                                                             <div class="col-auto d-flex flex-column gap-2 justify-start pr-8">
                                                                 <p class="text-uppercase text-sm col-auto fw-bold mb-2">Choose one:</p>
-                                                                <div class="form-check d-flex gap-2 align-items-center">
-                                                                    <input class="form-check-input my-0" type="radio" name="cucc-option-1" id="radioDue" checked>
-                                                                    <label class="form-check-label" for="radioDue-1">
+                                                                <label class="form-check d-flex gap-2 align-items-center">
+                                                                    <input class="form-check-input my-0 js-radio-mode" type="radio" name="cucc-option-1" value="due_to_you" checked>
+                                                                    <span class="form-check-label" for="radioDue-1">
                                                                         Amount Due to you
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-check d-flex gap-2 align-items-center">
-                                                                    <input class="form-check-input my-0" type="radio" name="cucc-option-1" id="radioCollect">
-                                                                    <label class="form-check-label" for="radioCollect-1">
+                                                                    </span>
+                                                                </label>
+                                                                <label class="form-check d-flex gap-2 align-items-center">
+                                                                    <input class="form-check-input my-0 js-radio-mode" type="radio" name="cucc-option-1" value="collect_window">
+                                                                    <span class="form-check-label" for="radioCollect-1">
                                                                         Amount to collect at window
-                                                                    </label>
-                                                                </div>
+                                                                    </span>
+                                                                </label>
                                                             </div>
                                                             <div class="col col-lg align-self-stretch align-items-bewteen d-flex flex-column border-start pl-4">
                                                            
                                                                     <div class="col d-flex flex-row align-items-center gap-2 mb-4">
-                                                                        <label for="description-input" class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Description:</label>
-                                                                        <input type="text" class="form-control rounded px-2" id="description-input" placeholder="Custom description">
+                                                                        <label class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Description:</label>
+                                                                        <input type="text" class="form-control rounded px-2" placeholder="Custom description">
                                                                     </div>
                                                                     <div class="col d-flex flex-row align-items-center gap-2">
-                                                                        <label for="description-input" class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Amount:</label>
-                                                                        <input type="number" class="form-control rounded px-2" id="description-input" placeholder="Amount">
+                                                                        <label class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Amount:</label>
+                                                                        <input type="number" class="form-control rounded px-2 js-input-amount" placeholrder="0.0" placeholder="Amount">
                                                                     </div>
                                                             
                                                             </div>
@@ -577,15 +577,15 @@
                                                                 <div class="rounded bg-navy-100 px-3 py-2 d-flex flex-column gap-3 justify-around h-100">          
                                                                     <div class="col-12 d-flex justify-between">
                                                                         <p class="text-nowrap">Amount Collected at Window</p>
-                                                                        <p class="ml-3 fw-bold text-lg text-end">0.00</p>
+                                                                        <p class="ml-3 fw-bold text-lg text-end js-val-window">0.00</p>
                                                                     </div>
                                                                     <div class="col-12 d-flex justify-between">
                                                                         <p>Imperial Service Fee</p>
-                                                                        <p class="ml-3 fw-bold text-lg text-end">0.00</p>
+                                                                        <p class="ml-3 fw-bold text-lg text-end js-val-fee">0.00</p>
                                                                     </div>
                                                                     <div class="col-12 d-flex justify-between">
                                                                         <p>Amount Due To You</p>
-                                                                        <p class="ml-3 fw-bold text-lg text-end">0.00</p>
+                                                                        <p class="ml-3 fw-bold text-lg text-end js-val-due">0.00</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1319,6 +1319,105 @@
             }
         }
     });
+</script>
+<!-- Calculator Logic -->
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // CONFIGURATION
+    // 0.10 represents 10%. Change this to match your actual service fee.
+    const SERVICE_FEE_PERCENTAGE = 0.10; 
+
+    // INITIALIZATION
+    // Find all accordion items that have the 'js-calculator-item' class
+    const accordionItems = document.querySelectorAll('.js-calculator-item');
+
+    // Loop through each item and set up its own independent calculator
+    accordionItems.forEach(item => {
+        setupAccordionCalculator(item);
+    });
+
+    /**
+     * Logic for a single accordion item
+     * @param {HTMLElement} scope - The specific accordion item element
+     */
+    function setupAccordionCalculator(scope) {
+        // Find inputs ONLY inside this specific accordion item
+        const inputAmount = scope.querySelector('.js-input-amount');
+        const radios = scope.querySelectorAll('.js-radio-mode');
+        
+        // Find output elements ONLY inside this specific accordion item
+        const displayWindow = scope.querySelector('.js-val-window');
+        const displayFee = scope.querySelector('.js-val-fee');
+        const displayDue = scope.querySelector('.js-val-due');
+
+        // Check if elements exist (safety check)
+        if (!inputAmount || !displayWindow || !displayFee || !displayDue) return;
+
+        function calculate() {
+            // Get user input value
+            const txtBoxAmount = parseFloat(inputAmount.value) || 0;
+            
+            // Determine which radio mode is selected
+            let mode = 'due_to_you'; // default
+            radios.forEach(r => {
+                if (r.checked) mode = r.value;
+            });
+
+            let amtDueToYou = 0;
+            let amtCollectAtWindow = 0;
+            let imperialServiceFee = 0;
+
+            if (mode === 'due_to_you') {
+                // LOGIC A: Amount Due To You
+                
+                amtDueToYou = txtBoxAmount;
+                
+                // Formula: amtDueToYou / (1 - serviceFeePercentage)
+                if (SERVICE_FEE_PERCENTAGE !== 1) {
+                    const rawCollect = amtDueToYou / (1 - SERVICE_FEE_PERCENTAGE);
+                    // IMPORTANT: Round to 2 decimals immediately as per requirement
+                    amtCollectAtWindow = Math.round((rawCollect + Number.EPSILON) * 100) / 100;
+                }
+                
+                // Fee = Collected (rounded) - Due
+                imperialServiceFee = amtCollectAtWindow - amtDueToYou;
+
+            } else {
+                // LOGIC B: Amount to collect at window
+                
+                amtCollectAtWindow = txtBoxAmount;
+                
+                // Fee = Collected * Percentage (Rounded)
+                const rawFee = amtCollectAtWindow * SERVICE_FEE_PERCENTAGE;
+                imperialServiceFee = Math.round((rawFee + Number.EPSILON) * 100) / 100;
+                
+                // Due = Collected - Fee (rounded)
+                amtDueToYou = amtCollectAtWindow - imperialServiceFee;
+            }
+
+            // Update HTML (Display formatted currency)
+            displayWindow.textContent = formatMoney(amtCollectAtWindow);
+            displayFee.textContent = formatMoney(imperialServiceFee);
+            displayDue.textContent = formatMoney(amtDueToYou);
+        }
+
+        // Helper to format as string "0.00"
+        function formatMoney(num) {
+            return num.toFixed(2);
+        }
+
+        // Attach Event Listeners
+        // 1. Run when user types
+        inputAmount.addEventListener('input', calculate);
+
+        // 2. Run when user toggles radio buttons
+        radios.forEach(radio => {
+            radio.addEventListener('change', calculate);
+        });
+    }
+
+});
 </script>
 </body>
 </html>
