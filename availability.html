@@ -513,7 +513,7 @@
                                         <button type="button" class="btn btn-sm btn-outline-secondary text-base rounded-full opacity-50"><b>Click to add <i class="bi bi-plus-circle-dotted"></i></b></button>
                                     </div>
                                     <div class="d-flex" style="padding: .5rem .75rem !important;">
-                                        <div class="col-4 text-start">Description</div>
+                                        <div class="col-3 text-start">Description</div>
                                         <div class="col-2 text-end">Amt Collected at Window</div>
                                         <div class="col-2 text-end">Service Fee</div>
                                         <div class="col-2 text-end">Amt Due To You</div>
@@ -522,7 +522,7 @@
                                         <div class="accordion-item rounded-3 cucc-item">
                                             <h2 class="accordion-header">
                                                 <div class="accordion-button btn-sm collapsed no-arrow d-flex align-items-center bg-azure-95" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-1" aria-expanded="false" aria-controls="flush-collapse-1">
-                                                    <div class="col-4 text-uppercase font-family-archivo text-base">
+                                                    <div class="col-3 text-uppercase font-family-archivo text-base">
                                                         Item description
                                                     </div>
                                                     <div class="col-2 font-family-archivo text-base text-end">
@@ -536,140 +536,64 @@
                                                     </div>
                                                     <div class="col-auto ms-auto">
                                                         <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-4"><u>Edit</u></span>
+                                                        <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-4"><u>Remove</u></span>
                                                     </div>
                                                 </div>
                                             </h2>
                                             <div id="flush-collapse-1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body py-4">
-                                                    <div class="row align-items-start justify-start">
-                                                        <div class="col-2 d-flex flex-column gap-2 justify-start pr-8">
-                                                            <p class="text-uppercase text-sm col-auto fw-bold mb-2">Choose one:</p>
-                                                            <div class="form-check d-flex gap-2 align-items-center">
-                                                                <input class="form-check-input my-0" type="radio" name="radioDefault" id="radioDue">
-                                                                <label class="form-check-label" for="radioDue">
-                                                                    Amount Due to you
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check d-flex gap-2 align-items-center">
-                                                                <input class="form-check-input my-0" type="radio" name="radioDefault" id="radioCollect" checked>
-                                                                <label class="form-check-label" for="radioCollect">
-                                                                    Amount to collect at window
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col col-lg-5 align-self-stretch align-items-bewteen d-flex flex-column border-start pl-4">
-                                                            <div>
-                                                                <div class="col d-flex flex-row align-items-center gap-2 mb-4">
-                                                                    <label for="description-input" class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Description:</label>
-                                                                    <input type="text" class="form-control rounded px-2" id="description-input" placeholder="Custom description">
+                                                <div class="accordion-body pb-4 pt-6">
+                                                    <div class="row">
+                                                        <div class="col-7 d-flex gap-3 px-4 py-3 border rounded">
+                                                            <div class="col-auto d-flex flex-column gap-2 justify-start pr-8">
+                                                                <p class="text-uppercase text-sm col-auto fw-bold mb-2">Choose one:</p>
+                                                                <div class="form-check d-flex gap-2 align-items-center">
+                                                                    <input class="form-check-input my-0" type="radio" name="cucc-option-1" id="radioDue" checked>
+                                                                    <label class="form-check-label" for="radioDue-1">
+                                                                        Amount Due to you
+                                                                    </label>
                                                                 </div>
-                                                                <div class="col d-flex flex-row align-items-center gap-2">
-                                                                    <label for="description-input" class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Amount:</label>
-                                                                    <input type="number" class="form-control rounded px-2" id="description-input" placeholder="Amount">
+                                                                <div class="form-check d-flex gap-2 align-items-center">
+                                                                    <input class="form-check-input my-0" type="radio" name="cucc-option-1" id="radioCollect">
+                                                                    <label class="form-check-label" for="radioCollect-1">
+                                                                        Amount to collect at window
+                                                                    </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col d-flex flex-row align-items-end justify-end gap-2">
-                                                                <span class="btn btn-sm btn-outline-dark rounded-full px-4" type="button">Calculate</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col d-flex flex-column align-items-stretch">
-                                                            <div class="rounded bg-navy-100 px-3 py-2 d-flex flex-column gap-3 justify-around">          
-                                                                <div class="col-12 d-flex justify-between">
-                                                                    <p class="text-nowrap">Amount Collected at Window</p>
-                                                                    <p class="ml-3 fw-bold text-lg text-end">0.00</p>
-                                                                </div>
-                                                                <div class="col-12 d-flex justify-between">
-                                                                    <p>Imperial Service Fee</p>
-                                                                    <p class="ml-3 fw-bold text-lg text-end">0.00</p>
-                                                                </div>
-                                                                <div class="col-12 d-flex justify-between">
-                                                                    <p>Amount Due To You</p>
-                                                                    <p class="ml-3 fw-bold text-lg text-end">0.00</p>
-                                                                </div>
-                                                            </div>
-                                                            <span class="btn btn-sm btn-outline-dark rounded-full px-4 ml-auto mt-4 align-self-end">Confirm <i class="bi bi-check-lg"></i></span>
+                                                            <div class="col col-lg align-self-stretch align-items-bewteen d-flex flex-column border-start pl-4">
+                                                           
+                                                                    <div class="col d-flex flex-row align-items-center gap-2 mb-4">
+                                                                        <label for="description-input" class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Description:</label>
+                                                                        <input type="text" class="form-control rounded px-2" id="description-input" placeholder="Custom description">
+                                                                    </div>
+                                                                    <div class="col d-flex flex-row align-items-center gap-2">
+                                                                        <label for="description-input" class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Amount:</label>
+                                                                        <input type="number" class="form-control rounded px-2" id="description-input" placeholder="Amount">
+                                                                    </div>
                                                             
-                                                        </div>
-                                                        <div class="col-auto align-self-stretch align-items-bewteen">
-                                                        <span class="btn btn-sm btn-outline-danger border-0 rounded-full" style="padding:.75rem .75rem 0.625rem .75rem!important;margin-left:-.75rem;margin-right:-.5rem;"><i class="bi bi-trash"></i></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item rounded-3 cucc-item">
-                                            <h2 class="accordion-header">
-                                                <div class="accordion-button btn-sm collapsed no-arrow d-flex align-items-center bg-azure-95" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-2" aria-expanded="false" aria-controls="flush-collapse-2">
-                                                    <div class="col-4 text-uppercase font-family-archivo text-base">
-                                                        Item description
-                                                    </div>
-                                                    <div class="col-2 font-family-archivo text-base text-end">
-                                                        $10.00
-                                                    </div>
-                                                    <div class="col-2 font-family-archivo text-base fw-bold text-end service-fee text-danger">
-                                                        $10.00
-                                                    </div>
-                                                    <div class="col-2 font-family-archivo text-base fw-bold text-end">
-                                                        $10.00
-                                                    </div>
-                                                    <div class="col-auto ms-auto">
-                                                        <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-4"><u>Edit</u></span>
-                                                    </div>
-                                                </div>
-                                            </h2>
-                                            <div id="flush-collapse-2" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body py-4">
-                                                    <div class="row align-items-start justify-start">
-                                                        <div class="col-2 d-flex flex-column gap-2 justify-start pr-8">
-                                                            <p class="text-uppercase text-sm col-auto fw-bold mb-2">Choose one:</p>
-                                                            <div class="form-check d-flex gap-2 align-items-center">
-                                                                <input class="form-check-input my-0" type="radio" name="radioDefault" id="radioDue">
-                                                                <label class="form-check-label" for="radioDue">
-                                                                    Amount Due to you
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check d-flex gap-2 align-items-center">
-                                                                <input class="form-check-input my-0" type="radio" name="radioDefault" id="radioCollect" checked>
-                                                                <label class="form-check-label" for="radioCollect">
-                                                                    Amount to collect at window
-                                                                </label>
                                                             </div>
                                                         </div>
-                                                        <div class="col col-lg-5 align-self-stretch align-items-bewteen d-flex flex-column border-start pl-4">
-                                                            <div>
-                                                                <div class="col d-flex flex-row align-items-center gap-2 mb-4">
-                                                                    <label for="description-input" class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Description:</label>
-                                                                    <input type="text" class="form-control rounded px-2" id="description-input" placeholder="Custom description">
+                                                        <div class="col-5">
+                                                            <div class="col d-flex flex-column align-items-stretch  h-100">
+                                                                <div class="rounded bg-navy-100 px-3 py-2 d-flex flex-column gap-3 justify-around h-100">          
+                                                                    <div class="col-12 d-flex justify-between">
+                                                                        <p class="text-nowrap">Amount Collected at Window</p>
+                                                                        <p class="ml-3 fw-bold text-lg text-end">0.00</p>
+                                                                    </div>
+                                                                    <div class="col-12 d-flex justify-between">
+                                                                        <p>Imperial Service Fee</p>
+                                                                        <p class="ml-3 fw-bold text-lg text-end">0.00</p>
+                                                                    </div>
+                                                                    <div class="col-12 d-flex justify-between">
+                                                                        <p>Amount Due To You</p>
+                                                                        <p class="ml-3 fw-bold text-lg text-end">0.00</p>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="col d-flex flex-row align-items-center gap-2">
-                                                                    <label for="description-input" class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Amount:</label>
-                                                                    <input type="number" class="form-control rounded px-2" id="description-input" placeholder="Amount">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col d-flex flex-row align-items-end justify-end gap-2">
-                                                                <span class="btn btn-sm btn-outline-dark rounded-full px-4" type="button">Calculate</span>
                                                             </div>
                                                         </div>
-                                                        <div class="col d-flex flex-column align-items-stretch">
-                                                            <div class="rounded bg-navy-100 px-3 py-2 d-flex flex-column gap-3 justify-around">          
-                                                                <div class="col-12 d-flex justify-between">
-                                                                    <p class="text-nowrap">Amount Collected at Window</p>
-                                                                    <p class="ml-3 fw-bold text-lg text-end">0.00</p>
-                                                                </div>
-                                                                <div class="col-12 d-flex justify-between">
-                                                                    <p>Imperial Service Fee</p>
-                                                                    <p class="ml-3 fw-bold text-lg text-end">0.00</p>
-                                                                </div>
-                                                                <div class="col-12 d-flex justify-between">
-                                                                    <p>Amount Due To You</p>
-                                                                    <p class="ml-3 fw-bold text-lg text-end">0.00</p>
-                                                                </div>
-                                                            </div>
-                                                            <span class="btn btn-sm btn-outline-dark rounded-full px-4 ml-auto mt-4 align-self-end">Confirm <i class="bi bi-check-lg"></i></span>
-                                                            
-                                                        </div>
-                                                        <div class="col-auto align-self-stretch align-items-bewteen">
-                                                        <span class="btn btn-sm btn-outline-danger border-0 rounded-full" style="padding:.75rem .75rem 0.625rem .75rem!important;margin-left:-.75rem;margin-right:-.5rem;"><i class="bi bi-trash"></i></span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-7 text-end" style="padding-right:0;">
+                                                            <span class="btn btn-sm btn-outline-dark rounded-full px-4 mt-4 align-self-end">Confirm <i class="bi bi-check-lg"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
