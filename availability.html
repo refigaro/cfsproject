@@ -528,8 +528,8 @@
                                         <div class="accordion-item rounded-3 cucc-item js-calculator-item">
                                             <h2 class="accordion-header">
                                                 <div class="accordion-button btn-sm collapsed no-arrow d-flex align-items-center bg-azure-95" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-1" aria-expanded="false" aria-controls="flush-collapse-1">
-                                                    <div class="col-3 text-uppercase font-family-archivo text-base">
-                                                        Item description
+                                                    <div class="col-3 text-uppercase font-family-archivo text-base js-item-title">
+                                                        CUCC Charge
                                                     </div>
                                                     <div class="col-2 font-family-archivo text-base text-end  js-val-window-header">
                                                         $10.00
@@ -542,7 +542,25 @@
                                                     </div>
                                                     <div class="col-auto ms-auto">
                                                         <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-4"><u>Edit</u></span>
-                                                        <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-4 js-remove-charge" style="cursor:pointer;"><u>Remove</u></span>
+                                                        <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-4" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#remove-confirmation-modal-1" type="button"><u>Remove</u></span>
+                                                            <!-- Remove Confirmation Modal -->
+                                                            <div class="modal fade" id="remove-confirmation-modal-1" tabindex="-1" aria-labelledby="remove-confirmation-modal-1-label" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h1 class="modal-title fs-5" id="remove-confirmation-modal-1-label">Modal title</h1>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Do you want to remove this charge?
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Go Back</button>
+                                                                    <button type="button" class="btn btn-danger js-remove-charge">Remove charge</button>
+                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                            </div>
                                                     </div>
                                                 </div>
                                             </h2>
@@ -554,13 +572,13 @@
                                                             <div class="col-auto d-flex flex-column gap-2 justify-start pr-8">
                                                                 <p class="text-uppercase text-sm col-auto fw-bold mb-2">Choose one:</p>
                                                                 <label class="form-check d-flex gap-2 align-items-center">
-                                                                    <input class="form-check-input my-0 js-radio-mode" type="radio" name="cucc-option-1" value="due_to_you" checked>
+                                                                    <input class="form-check-input my-0 js-radio-mode border-black" type="radio" name="cucc-option-1" value="due_to_you" checked>
                                                                     <span class="form-check-label">
                                                                         Amount Due to you
                                                                     </span>
                                                                 </label>
                                                                 <label class="form-check d-flex gap-2 align-items-center">
-                                                                    <input class="form-check-input my-0 js-radio-mode" type="radio" name="cucc-option-1" value="collect_window">
+                                                                    <input class="form-check-input my-0 js-radio-mode border-black" type="radio" name="cucc-option-1" value="collect_window">
                                                                     <span class="form-check-label">
                                                                         Amount to collect at window
                                                                     </span>
@@ -570,12 +588,13 @@
                                                             <div class="col col-lg align-self-stretch align-items-bewteen d-flex flex-column border-start pl-4">
                                                                 <div class="col d-flex flex-row align-items-center gap-2 mb-4">
                                                                     <label class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Description:</label>
-                                                                    <input type="text" class="form-control rounded px-2" placeholder="Custom description">
+                                                                    <input type="text" style="width:2rem;" value="CC" readonly>
+                                                                    <input type="text" class="form-control col rounded px-2 js-input-description"  value="CUCC Charge" placeholder="Custom description">
                                                                 </div>
                                                                 <div class="col d-flex flex-row align-items-center gap-3">
                                                                     <label class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Amount:</label>
-                                                                    <input type="number" class="form-control rounded px-2 js-input-amount" placeholrder="0.0" oninput="limitValue(this)" max="2000">
-                                                                    <span class="btn btn-sm btn-outline-dark rounded-full px-4 align-self-end col-auto align-self-center">Confirm <i class="bi bi-check-lg"></i></span>
+                                                                    <input type="number" class="form-control rounded px-2 js-input-amount" placeholder="0.0" oninput="limitValue(this)" max="2000">
+                                                                    <span class="btn btn-sm btn-info rounded-full px-4 align-self-end col-auto align-self-center js-confirm-charge">Confirm <i class="bi bi-check-lg text-lg"></i></span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -701,6 +720,8 @@
                                         <div class="d-flex justify-content-start flex-row align-items-center gap-2 mt-2 px-1">
                                             <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Release Selected</b></button>
                                             <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Cancel Selected</b></button>
+                                            <p class="text-success ms-auto">Successfully released!</p> <!-- KEVIN: this is to confirm Successful release-->
+                                            <p class="text-danger ms-auto">Error. Not released! Please <a href="contact.html" class="link-danger link-offset-2">contact us.</a></p> <!-- KEVIN: this is to confirm Successful release-->
                                         </div>
                                     </section>
                             </div>
@@ -1331,7 +1352,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // CONFIGURATION
     const SERVICE_FEE_PERCENTAGE = 0.10; 
-    const MAX_ITEMS = 5;
+    // const MAX_ITEMS = 5;
+    // Removed MAX_ITEMS constant
 
     // -- SELECTORS --
     const accordionContainer = document.getElementById('accordionFlushExample');
@@ -1353,16 +1375,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // -- ADD NEW ITEM LOGIC --
     addBtn.addEventListener('click', function() {
+        /*
         const currentItems = accordionContainer.querySelectorAll('.js-calculator-item');
         if (currentItems.length >= MAX_ITEMS) {
             return; // Stop if limit reached
-        }
+        } */ 
+        // Removed MAX_ITEMS check here
 
         // 1. Clone from the baseTemplate (this works even if list is empty)
         const template = baseTemplate.cloneNode(true);
         const uniqueId = Date.now(); // Generate unique ID for attributes
 
-        // 2. Update Attributes to ensure it behaves independently
+        // 2. Mark as unconfirmed to lock the add button
+        template.classList.add('unconfirmed');
+        
+        // 3. Update Attributes to ensure it behaves independently
         const btnToggle = template.querySelector('.accordion-button');
         const collapseDiv = template.querySelector('.accordion-collapse');
         
@@ -1377,7 +1404,7 @@ document.addEventListener('DOMContentLoaded', function() {
         btnToggle.setAttribute('aria-controls', newCollapseId);
         collapseDiv.id = newCollapseId;
 
-        // 3. Update Radio Group Names (Crucial!)
+        // 4. Update Radio Group Names (Crucial!)
         // If we don't do this, all rows will share the same radio group
         const radios = template.querySelectorAll('.js-radio-mode');
         radios.forEach(radio => {
@@ -1386,7 +1413,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (radio.value === 'due_to_you') radio.checked = true;
         });
 
-        // 4. Reset Inputs and Outputs
+        // 5. Reset Inputs and Outputs
         const inputAmount = template.querySelector('.js-input-amount');
         inputAmount.value = ''; // Clear value
         
@@ -1402,14 +1429,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if(headFee) headFee.textContent = '$0.00';
         if(headDue) headDue.textContent = '$0.00';
 
-        // 5. Append to container
+        // 6. Append to container
         accordionContainer.appendChild(template);
 
-        // 6. Init Logic for new item
+        // 7. Init Logic for new item
         setupAccordionCalculator(template);
         setupRemoveButton(template);
+        setupConfirmButton(template); // Initialize Confirm button logic
         
-        // 7. Update UI (Limit & Headers)
+        // 8. Update UI (Limit & Headers)
         updateUIState();
     });
 
@@ -1426,12 +1454,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function setupConfirmButton(item) {
+        const confirmBtn = item.querySelector('.js-confirm-charge');
+        if (!confirmBtn) return;
+
+        confirmBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            // Mark as confirmed by removing the class
+            item.classList.remove('unconfirmed');
+            
+            // Re-evaluate the Add button state
+            updateUIState();
+            
+            // Optional: Visual feedback that it's confirmed could be added here
+            // e.g., confirmBtn.classList.add('disabled'); 
+        });
+    }
+
     // Handles Button Enable/Disable AND Header Visibility
     function updateUIState() {
-        const count = accordionContainer.querySelectorAll('.js-calculator-item').length;
+        const items = accordionContainer.querySelectorAll('.js-calculator-item');
+        const count = items.length;
         
+        // Check if there are any unconfirmed items
+        const hasUnconfirmed = Array.from(items).some(item => item.classList.contains('unconfirmed'));
+
         // 1. Add Button State
-        if (count >= MAX_ITEMS) {
+        // Disable if there is an unconfirmed item pending
+        if (hasUnconfirmed) {
             addBtn.classList.add('disabled', 'opacity-50');
             addBtn.setAttribute('disabled', 'true');
         } else {
@@ -1469,6 +1520,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const headFee = scope.querySelector('.js-val-fee-header');
         const headDue = scope.querySelector('.js-val-due-header');
 
+        // Description Sync Logic
+        const inputDesc = scope.querySelector('.js-input-description');
+        const titleText = scope.querySelector('.js-item-title');
+        
+        if (inputDesc && titleText) {
+            inputDesc.addEventListener('input', function() {
+                titleText.textContent = this.value;
+            });
+        }
+
         if (!inputAmount || !displayWindow || !displayFee || !displayDue) return;
 
         function calculate() {
@@ -1487,11 +1548,11 @@ document.addEventListener('DOMContentLoaded', function() {
             let amtDueToYou = 0;
             let amtCollectAtWindow = 0;
             let imperialServiceFee = 0;
-
+            
             if (mode === 'due_to_you') {
                 amtDueToYou = txtBoxAmount;
                 if (SERVICE_FEE_PERCENTAGE !== 1) {
-                    const rawCollect = amtDueToYou / (1 - SERVICE_FEE_PERCENTAGE);
+                    const rawCollect = amtDueToYou * (1 + SERVICE_FEE_PERCENTAGE);
                     amtCollectAtWindow = Math.round((rawCollect + Number.EPSILON) * 100) / 100;
                 }
                 imperialServiceFee = amtCollectAtWindow - amtDueToYou;

@@ -250,6 +250,7 @@ body:not(.marketing) .bar.animate:before {
 .btn-info:hover {
     background-color:var(--clr-azure-09);
     border-color:var(--clr-azure-09);
+    color:white;
 }
 
 .availavility-v2 .form-control {
