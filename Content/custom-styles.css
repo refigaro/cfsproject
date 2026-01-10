@@ -662,6 +662,7 @@ body:not(.marketing) .bar.animate:before {
         border:1px solid gray;
         color:gray;
         cursor:not-allowed!important;
+        pointer-events:auto;
     }
 }
 
@@ -1317,6 +1318,32 @@ body:has(#login-modal.modal) .modal-backdrop {
     @media (min-width: 992px) {
         --bs-modal-width: 44rem;
     }
+}
+
+.offcanvas .modal.confirmation-modal {
+    z-index: 1073 !important;
+    
+
+    & .modal-dialog {
+        pointer-events: none;
+    }
+
+    & button {
+        pointer-events: auto!important;
+    }
+}
+
+.faux-modal::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    --bs-backdrop-opacity: 1 !important;
+    background-color: rgba(0, 0, 0, 0.5); /* The visual backdrop color */
+    z-index: -1; /* Place it behind the modal-dialog content */
+    pointer-events: none; /* Let clicks pass through if needed, though usually backdrop blocks clicks */
 }
 
 

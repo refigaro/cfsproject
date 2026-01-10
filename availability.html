@@ -500,7 +500,7 @@
                             <div class="btn-group btn-group-sm shadow-sm rounded-full d-none d-xl-inline-flex" role="group" aria-label="Basic outlined example" style="min-height:35.42px;"> <!-- KEVIN:  add .disabled to the buttons inside for disabling styling-->
                                 <button class="btn btn-outline-dark btn-sm text-nowrap"><i class="fa-solid fa-money-bill-wave"></i> Charges</button>
                                 <button class="btn btn-outline-dark btn-sm text-nowrap"><i class="bi bi-printer"></i> Arrival Notice</button>
-                                <button class="btn btn-outline-dark btn-sm text-nowrap disabled"><i class="bi bi-printer"></i> Pickup Confirmation</button>
+                                <button class="btn btn-outline-dark btn-sm text-nowrap disabled" disabled><i class="bi bi-printer"></i> Pickup Confirmation</button>
                                 <button class="btn btn-outline-dark btn-sm text-nowrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc">CUCC Charges</button>
                                 <button class="btn btn-outline-dark btn-sm text-nowrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release">Frt Release</button>
                                 <button class="btn btn-outline-dark btn-sm text-nowrap"  type="button" data-bs-toggle="collapse" data-bs-target="#collapse-markings" aria-expanded="false" aria-controls="collapse-markings">Confirm Markings</button>
@@ -543,27 +543,26 @@
                                                     <div class="col-auto ms-auto">
                                                         <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-4"><u>Edit</u></span>
                                                         <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-4" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#remove-confirmation-modal-1" type="button"><u>Remove</u></span>
-                                                            <!-- Remove Confirmation Modal -->
-                                                            <div class="modal fade" id="remove-confirmation-modal-1" tabindex="-1" aria-labelledby="remove-confirmation-modal-1-label" aria-hidden="true">
-                                                            <div class="modal-dialog">
-                                                                <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h1 class="modal-title fs-5" id="remove-confirmation-modal-1-label">Modal title</h1>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    Do you want to remove this charge?
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Go Back</button>
-                                                                    <button type="button" class="btn btn-danger js-remove-charge">Remove charge</button>
-                                                                </div>
-                                                                </div>
-                                                            </div>
-                                                            </div>
-                                                    </div>
                                                 </div>
                                             </h2>
+                                            <!-- Remove Confirmation Modal -->
+                                            <div class="modal fade confirmation-modal faux-modal" id="remove-confirmation-modal-1" tabindex="-1" aria-labelledby="remove-confirmation-modal-1-label" aria-hidden="true" data-bs-backdrop="false">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header justify-content-end border-bottom-0 pb-1">
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body px-5 pb-5 pt-0 font-family-sora text-center">
+                                                            <p class="mb-4">Do you want to remove this charge?</p>
+                                                            <div class="d-flex justify-content-center gap-3">
+                                                                <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Go Back</button>
+                                                                <!-- ADDED: ID 'confirm-delete-btn' to easily find this button in JS -->
+                                                                <button type="button" class="btn btn-danger rounded-pill px-4 js-remove-charge">Remove charge</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div id="flush-collapse-1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                                                 <div class="accordion-body pb-4 pt-6">
                                                     <div class="row">
@@ -588,7 +587,7 @@
                                                             <div class="col col-lg align-self-stretch align-items-bewteen d-flex flex-column border-start pl-4">
                                                                 <div class="col d-flex flex-row align-items-center gap-2 mb-4">
                                                                     <label class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Description:</label>
-                                                                    <input type="text" style="width:2rem;" value="CC" readonly>
+                                                                    <input type="text" class="form-control border-light-subtle rounded" style="width:2.5rem;" value="CC" readonly>
                                                                     <input type="text" class="form-control col rounded px-2 js-input-description"  value="CUCC Charge" placeholder="Custom description">
                                                                 </div>
                                                                 <div class="col d-flex flex-row align-items-center gap-3">
