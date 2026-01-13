@@ -1433,6 +1433,10 @@ body:has(#login-modal.modal) .modal-backdrop {
     & .cucc-item-total p:last-child:before {
         content:"$"
     }
+
+    & .cucc-item-total p.js-val-fee::before {
+        content:"-$"
+    }
 }
 
 .cucc-item .accordion-button:not(.collapsed) {
