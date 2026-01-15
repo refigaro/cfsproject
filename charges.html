@@ -154,8 +154,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#"><i class="bi bi-house-door-fill"></i></a></li>
-                    <li class="breadcrumb-item"><a href="#">IPI Tracing</a></li>
-                    <li class="breadcrumb-item"><a href="#">Transit Time Schedule</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pay Warehouse Fees</a></li>
                 </ol>
             </nav>
         </div>
@@ -166,182 +165,675 @@
     <div class="container-fluid">
         <div class="row justify-content-between">
             <div class="col-auto">
-                <h1 class="text-3xl font-family-dm-serif text-navy-800">HBL Charges</h1>
+                <h1 class="text-3xl font-family-dm-serif text-navy-800">Local Pickup Estimated Charges</h1>
+            </div>
+            <div class="col-auto ms-auto justify-end text-end d-flex flex-column gap-2">
+                <h2 class="text-navy-450">Please Search your Shipment</h2>
+                <div class="d-flex gap-2">
+                    <select class="form-control ml-4 rounded d-inline-block w-auto" id="type" name="type"><option value="hbl">House Bill</option>
+                        <option selected="selected" value="mbl">Master Bill</option>
+                        <option value="cntr">Container Number</option>
+                        <option value="ams">AMS House Bill</option>
+                        <option value="it">Inbond Number</option>
+                        <option value="go">GO Number</option>
+                    </select>
+                    <label for="">
+                        <input class="rounded form-control d-inline-block w-auto" type="text">
+                    </label>
+                    <button id="js-btn-1" type="button" class="btn btn-primary bg-navy-700 text-uppercase text-xs rounded text-nowrap">Search <i class="bi bi-search text-xs ml-2"></i></button>
+                </div>
             </div>
         </div>
     </div>
 </section>
 <section class="mbl-details ipi-tracing">
-    <div class="Availability-main">
-        <div class="container-fluid">
-            <link href="/Content/datepicker?v=WDaPwTb1h4Pt4dlwF7DiW0XpBWArFbYu1WJNeW_YI9Y1" rel="stylesheet">
-        <style>
-            .red-outline {
-                border: 2px solid red;
-            }
-        </style>
-        <form action="/Charges/SelectCharges/" method="post"><input name="__RequestVerificationToken" type="hidden" value="1yLoQiT7PDmzVkxGctowJH10XkkL-mW0FKHjwZwOTjp85bYTbE2Ax5-DA8KOS6tNeoXWyFp-fMVY5EoNp1xWzzKNQDYtNMzlaUx1aov-ai01"> 
-        <div class="Availability-table charges-table">
-            <div class="row">
-                <div class="col-12 col-md-7 mb-4">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <table class="ginfo" width="90%" border="1">
-                                <thead>
-                                    <tr align="center">
-                                        <th colspan="3">Local Pickup Estimated Charges</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="ar"><label for="Hbl_no">House Bill Number</label></td>
-                                        <td>
-                                            <input readonly="true" class="form-control hbl" id="Hbl_no" name="Hbl_no" type="text" value="EFSVMZP798532E">
-                                        </td>
-                                        <td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="ar"><label for="Pickup_date">Est. P/U Date</label></td>
-                                        <td>
-                                            <input value="" autocomplete="off" class="form-control date red-outline" data-val="true" data-val-date="The field Est. P/U Date must be a date." data-val-required="The Est. P/U Date field is required." id="Pickup_date" name="Pickup_date" placeholder="Please Enter Pick-Up Date" required="true" type="text">
-                                        </td>
-                                        <td>&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="ar">Note</td>
-                                        <td colspan="2">EXTRA $75 PER HOUR WILL BE CHARGED AFTER 6:00 PM</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td colspan="2">EXTRA $10 WILL BE CHARGED FOR PERSONAL EFFECTS</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    
-                        <div id="loading" style="margin: 0px auto; display: none;">
-                            <img src="/_images/ajax-loader.gif" alt="Loading">
-                        </div>
-                        <div class="col-sm-12">
-                            <div id="charges">
-                                <table class="ginfo">
-                                    <thead>
-                                        <tr>
-                                            <th class="ac" colspan="2">HBL DETAIL</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th class="ar"><label for="Full_mbl_no">MBL</label></th>
-                                            <td>CMDUNGP2798532</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="ar"><label for="Pkgs">Packages</label></th>
-                                            <td>151</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="ar"><label for="Cbm">Cbm</label></th>
-                                            <td>6.53</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="ar"><label for="Lbs">Lbs</label></th>
-                                            <td>1809.88</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <table class="ginfo">
-                                    <thead>
-                                        <tr>
-                                            <th>CHARGE DESCRIPTION</th>
-                                            <th>CHARGE</th>
-                                            <th>STATUS</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>FORKLIFT CHARGES</td>
-                                            <td>
-                                            </td>
-                                            <td>PAID</td>
-                                        </tr>
-                                        <tr>
-                                            <td>IN-BOND DOCUMENTATION CHARGE</td>
-                                            <td>
-                                            </td>
-                                            <td>PAID</td>
-                                        </tr>
-                                        <tr>
-                                            <td>CFS TERMINAL SURCHARGE</td>
-                                            <td>
-                                            </td>
-                                            <td>PAID</td>
-                                        </tr>
-                                        <tr>
-                                            <td>FACILITY WINDOW CHARGE</td>
-                                            <td>
-                                            </td>
-                                            <td>PAID</td>
-                                        </tr>
-                                        <tr>
-                                            <td>PORT DRAYAGE SURCHARGE</td>
-                                            <td>
-                                            </td>
-                                            <td>PAID</td>
-                                        </tr>
-                                        <tr>
-                                            <td>DEMURAGE CHARGE</td>
-                                            <td>$4,680.00</td>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th class="w-75 al"><label for="Total_wo_pallet">TOTAL CHARGES W/O PALLET</label></th>
-                                            <th class="w-25 al" colspan="2">
-                                                $4,680.00
-                                            </th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                                <table class="ginfo">
-                                    <tbody>
-                                        <tr>
-                                            <td>PALLET SERVICE CHARGE</td>
-                                            <td>$100.00</td>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th class="w-75 al">TOTAL CHARGES W/ PALLET</th>
-                                            <td class="w-25 al" colspan="2"><input readonly="True" data-val="true" data-val-number="The field TOTAL :  must be a number." data-val-required="The TOTAL :  field is required." id="Total" name="Total" type="text" value="$4,780.00"></td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 mb-4">
+                <div class="h-100 position-relative">
+                    <div class="card card-shadow destination font-family-archivo fade-in sticky-top d-none" id="js-charges-sidebar"> <!-- Sidebar -->
+                        <div class="card-body p-4">
+                            <div class="detail-pair pb-3">
+                                <span class="detail-label">HBL NO.</span>
+                                <span class="detail-value text-2xl fw-bold">EFSVMZP798532E</span>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-auto">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="btn-group">
-                                <button type="submit" id="btnInvoice" name="Type" value="Pickup" class="btn btn-primary btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer mr-2"></i>PRINT INVOICE</button>
-                                <button type="submit" id="btnPayCargo" name="Type" value="PayCargo" style="" class="noTopBtmPad"><img src="/_images/PayCargo_Button.png"></button>
-                                <button type="submit" id="btnGuarantee" name="Type" value="Guarantee" class="btn btn-primary btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-printer mr-2"></i>GUARANTEE CHARGES</button>
-                                <button type="submit" id="btnCredit" name="Type" value="Credit" class="btn btn-primary btn-sm rounded-full font-bold text-nowrap text-base"><i class="bi bi-credit-card mr-2"></i>PAY CREDIT CARD/ACH</button>
+                            <div class="mb-4 pb-2 border-bottom">
+                                <div class="row">
+                                    <div class="col-12 mb-3 d-flex flex-direction-row align-items-center gap-2">
+                                        <span class="detail-label lh-1rem">MBL</span>
+                                        <div class="text-dark lh-1rem mb-1px">CMDUNGP2798532</div>
+                                    </div>
+                                    <div class="col-12 d-flex flex-direction-row align-items-center gap-2">
+                                        <span class="detail-label lh-1rem">EST. P/U DATE</span>
+                                        <div class="text-dark lh-1rem mb-1px">01/08/26</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4 pb-2 border-bottom">
+                                <div class="row">
+                                    <div class="col-12 mb-3 d-flex flex-direction-row align-items-center gap-2">
+                                        <span class="detail-label lh-1rem"><i class="fa-regular fa-square-full"></i> PACKAGES</span>
+                                        <div class="text-dark lh-1rem mb-1px">CMDUNGP2798532</div>
+                                    </div>
+                                    <div class="col-12 mb-3 d-flex flex-direction-row align-items-center gap-2">
+                                        <span class="detail-label lh-1rem"><i class="bi bi-box"></i> CBM</span>
+                                        <div class="text-dark lh-1rem mb-1px">01/08/26</div>
+                                    </div>
+                                    <div class="col-12 mb-3 d-flex flex-direction-row align-items-center gap-2">
+                                        <span class="detail-label lh-1rem"><i class="bi bi-speedometer"></i> LBS</span>
+                                        <div class="text-dark lh-1rem mb-1px">CMDUNGP2798532</div>
+                                    </div>
+                                    <div class="col-12 mb-3 d-flex flex-direction-row align-items-center gap-2">
+                                        <span class="detail-label lh-1rem"><i class="fa-regular fa-calendar-days"></i> Today's Date</span>
+                                        <div class="text-dark lh-1rem mb-1px">01/08/26</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detail-pair commodity">
+                                <span class="detail-label">COMMODITY</span>
+                                <p class="mt-2 custom-scrollbar">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere, arcu risus auctor mauris, nec consectetur purus. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>   
-        </form>
-        <script>
-            var chargeslink = "/Charges/GetCharges/";
-        </script>
-        <script src="/bundles/datepicker_today?v=wxgHQp4wTMbhRyGRgZTd2B-fH1y2puKQRK3sgRzFVgg1"></script>
-        <script src="/bundles/GetCharges?v=053ZAC1LLZgglg-Hzb4d-9IfS4lWQpKgiCYXMNcArto1"></script>
+            <div class="col-lg mb-4 font-family-archivo d-flex flex-column">
+                <section class="charge-steps fade-in d-none" id="js-charges-step1"> <!-- Step 1 -->
+                    <div class="my-3 row gap-3 px-2 py-2">
+                        <div class="col-lg-12 ">
+                            <h3 class="charge-instructions">Step 1. <span>Select your estimated pickup date.</span></h3>
+                            <div class="charge-step-module d-flex align-items-center">
+                                <div class="col d-flex gap-2 align-items-center">                                
+                                    <label class="form-label detail-label text-base text-nowrap mb-0 lh-1" for="Pickup_date">EST. P/U Date</label>
+                                    <input class="form-control rounded date" type="date" id="est-pu-date" autocomplete="off" data-val="true" data-val-date="The field Est. P/U Date must be a date." data-val-required="The Est. P/U Date field is required." id="Pickup_date" name="Pickup_date" placeholder="Please Enter Pick-Up Date" required="true" type="text">
+                                </div>
+                                <div class="col-1">
+                                    <i class="bi bi-arrow-right"></i>
+                                </div>
+                                <div class="col">
+                                    <div class="col-12 d-flex flex-direction-row align-items-center gap-2">
+                                        <span class="detail-label lh-1rem text-base">HBL No.</span>
+                                    <div class="text-dark lh-1rem mb-1px text-base">01/08/26</div>
+                                </div>
+                                </div>
+                            </div>
+                            <p class="text-xs mt-3">EXTRA $75 PER HOUR WILL BE CHARGED AFTER 6:00 PM</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="charge-steps fade-in d-none" id="js-charges-step2"> <!-- Step 2 -->
+                    <div class="my-3 row gap-3 px-2 py-2">
+                        <div class="col-lg-12 ">
+                            <h3 class="charge-instructions">Step 2. <span>Please select charges you wish to pay.</span></h3>
+                            <div class="charge-step-module d-flex align-items-stretch charges-table py-8 mb-4">
+                                <!-- Charges Table Heading -->
+                                <div class="charges-table-heading"> 
+                                    <label class="form-check-label" for="checkDefault">
+                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        Description
+                                    </label>
+                                    <span class="text-end">Charge</span>
+                                    <span>Status</span>
+                                </div>
+                                <!-- Charges Table Items -->
+                                <div class="charges-table-item">
+                                    <label class="form-check-label" for="checkDefault">
+                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        Forklift
+                                    </label>
+                                    <span>55.00</span>
+                                    <span class="paid">PAID</span>
+                                </div>
+                                <div class="charges-table-item">
+                                    <label class="form-check-label" for="checkDefault">
+                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        In-bond Doc
+                                    </label>
+                                    <span>55.00</span>
+                                    <span class="paid">PAID</span>
+                                </div>
+                                <div class="charges-table-item">
+                                    <label class="form-check-label" for="checkDefault">
+                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        CFS Terminal
+                                    </label>
+                                    <span>55.00</span>
+                                    <span class="paid">PAID</span>
+                                </div>
+                                <div class="charges-table-item">
+                                    <label class="form-check-label" for="checkDefault">
+                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        Facility Window
+                                    </label>
+                                    <span>55.00</span>
+                                    <span class="paid">PAID</span>
+                                </div>
+                                <div class="charges-table-item">
+                                    <label class="form-check-label" for="checkDefault">
+                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        Port Drayage Surcharge
+                                    </label>
+                                    <span>55.00</span>
+                                    <span class="paid">PAID</span>
+                                </div>
+                                <div class="charges-table-item">
+                                    <label class="form-check-label" for="checkDefault">
+                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        Demurage Charge
+                                    </label>
+                                    <span>55.00</span>
+                                    <span class="paid">PAID</span>
+                                </div>
+                                <div class="charges-table-item">
+                                    <label class="form-check-label" for="checkDefault">
+                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        Pallet Window
+                                    </label>
+                                    <span>55.00</span>
+                                    <span class="paid">PAID</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-start">
+                                <button type="button" class="btn btn-outline-dark btn-sm rounded-full">PRINT INVOICE w/ selected</button>
+                                <div class="charges-totals">
+                                    <p>TOTAL CHARGES W/O EX PALLETS: <b>$00.00</b></p>
+                                    <p>TOTAL CHARGES W/ PALLETS: <b>$00.00</b></p>
+                                    <p>TOTAL SELECTED CHARGES: <b>$00.00</b></p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center mt-8 font-family-sora text-navy-450">
+                                <span>Confirm charges and </span>
+                                <button type="button" id="js-btn-3" class="btn btn-primary rounded-full ml-2 px-4 fw-bold text-white text-base">CONTINUE TO PAYMENT</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="charge-steps payment-methods fade-in d-none" id="js-charges-step3"> <!-- Step 3 - Payment methods -->
+                    <div class="my-3 row gap-3 px-2 py-2">
+                        <div class="col-lg-12 ">
+                            <h3 class="charge-instructions">Step 3. <span>Select you payment method.</span></h3>
+                            <!-- Tabs Nav -->
+                            <div class="bd-example m-0 border-0"> 
+                                <nav>
+                                    <div class="nav nav-pills mb-3" id="paymment-methods-nav-tabs" role="tablist">
+                                        <button class="flex-sm-fill text-sm-center nav-link" id="nav-paycargo-tab" data-bs-toggle="tab" data-bs-target="#nav-paycargo" type="button" role="tab" aria-controls="nav-paycargo" aria-selected="true">
+                                            <img src="/_images/paycargo-white.webp" alt="" style="height: 1.25rem;">
+                                        </button>
+                                        <button class="flex-sm-fill text-sm-center nav-link" id="nav-guarantee-tab" data-bs-toggle="tab" data-bs-target="#nav-guarantee" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" tabindex="-1">Guarantee Charges</button>
+                                        <button class="flex-sm-fill text-sm-center nav-link" id="nav-card-tab" data-bs-toggle="tab" data-bs-target="#nav-card" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" tabindex="-1">Credit Card</button>
+                                        <button class="flex-sm-fill text-sm-center nav-link" id="nav-check-tab" data-bs-toggle="tab" data-bs-target="#nav-check" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" tabindex="-1">E-Check</button>
+                                    </div>
+                                </nav>
+                                <div class="tab-content" id="nav-content">
+                                    <!-- Tab Content PayCargo -->
+                                    <div class="tab-pane fade" id="nav-paycargo" role="tabpanel" aria-labelledby="nav-paycargo-tab">
+                                        <div class="charge-step-module d-flex flex-column gap-8 justify-content-start">
+                                            <img src="https://www.imperialcfs.com/_images/PayCargo_Logo.png" alt="PayCargo Logo" style="width:9.875rem;">
+                                            <div class="row">
+                                                <div class="col col-md-6 text-start">
+                                                    <p class="font-family-sora text-navy-600 mb-6">Please login to your PayCargo account.</p>
+                                                    <form class="text-start">
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="username" class="col-sm-5 col-form-label">PayCargo Username*</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="username" placeholder="Username">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="password" class="col-sm-5 col-form-label">PayCargo Password*</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="password" class="form-control bg-light" id="password" placeholder="Password">
+                                                            </div>
+                                                        </div>
+                                                        <hr class="border border-dark-subtle opacity-10 my-3">
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="fullname" class="col-sm-5 col-form-label">Full Name*</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="fullname" placeholder="Full Name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="email" class="col-sm-5 col-form-label">Email*</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="email" class="form-control bg-light" id="email" placeholder="Email Address">
+                                                            </div>
+                                                        </div>
+                                                        <hr class="border border-dark-subtle opacity-10 my-3">
+                                                        <div class="row mb-4">
+                                                            <div class="col-12 font-family-sora">
+                                                                <p class="mb-0">Don't have a PayCargo Account?</p>
+                                                                <span>Sign up at <a href="#" class="text-decoration-underline text-dark">https://www.paycargo.com/</a></span>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="border border-dark-subtle opacity-10 my-3">
+                                                        <div class="row mb-4 align-items-center">
+                                                            <label for="notes" class="col-sm-5 col-form-label">Customer Notes:</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="notes" placeholder="Optional notes">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="text-danger text-start text-sm mt-5">
+                                                            <p class="mb-0 fw-bold">You may incur additional charges from PayCargo unrelated to Imperial CFS, Inc.</p>
+                                                            <p class="fw-bold">If those charges occur, you will not able to view them here.</p><br>
+                                                            <p class="mb-0">* Required.</p>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="col col-md-6">
+                                                    <div class="bg-azure-95 rounded-4 h-100 p-2 position-relative">
+                                                        <div class="sticky-top d-flex flex-column gap-5">
+                                                            <div class="card summary-card border-0 shadow-md rounded-4">
+                                                                <div class="card-body p-4">
+                                                                    <div class="d-flex justify-content-between text-paycargo mb-3">
+                                                                        <span class="fw-normal">Charge Description</span>
+                                                                        <span class="fw-normal">Charge</span>
+                                                                    </div>
+                                                                    <hr class="border border-dark-subtle opacity-10 my-3">
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>Forklift</span>
+                                                                        <span class="fw-bold">$55.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>In-bond Doc</span>
+                                                                        <span class="fw-bold">$10.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>CFS Terminal</span>
+                                                                        <span class="fw-bold">$20.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>Facility Window</span>
+                                                                        <span class="fw-bold">$90.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>Port Drayage Surcharge</span>
+                                                                        <span class="fw-bold">$30.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>Pallet window</span>
+                                                                        <span class="fw-bold">$25.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row mt-3">
+                                                                        <span>Demurrage Charge</span>
+                                                                        <span class="fw-bold">$5235.00</span>
+                                                                    </div>
+                                                                    <hr class="text-muted opacity-25 my-3">
+                                                                    <div class="d-flex justify-content-between align-items-center mb-4">
+                                                                        <span class="fw-bold fs-5 text-dark">TOTAL</span>
+                                                                        <span class="fw-bold fs-5 text-dark">$5235.00</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-check d-flex align-items-center gap-2">
+                                                                <input class="form-check-input" type="checkbox" id="termsCheck">
+                                                                <label class="form-check-label text-muted" for="termsCheck">
+                                                                    I have read and agreed to <a href="#" class="text-secondary fw-bold text-decoration-underline">TERMS & CONDITION</a>
+                                                                </label>
+                                                            </div>
+                                                            <button class="btn btn-accent rounded-full w-100 py-2 text-uppercase text-base fw-bold">
+                                                                Confirm Payment
+                                                            </button>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Tab Content Guarantee -->
+                                    <div class="tab-pane fade" id="nav-guarantee" role="tabpanel" aria-labelledby="nav-guarantee-tab">
+                                        <div class="charge-step-module d-flex flex-column gap-8 justify-content-start">
+                                            <h4 class="text-start type-h4 ">Guarantee Order</h4>
+                                            <div class="row">
+                                                <div class="col col-md-6 text-start">
+                                                    <p class="font-family-sora text-navy-600 mb-6">Please login to your PayCargo account.</p>
+                                                    <form class="text-start">
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="username" class="col-sm-5 col-form-label">PayCargo Username*</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="username" placeholder="Username">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="password" class="col-sm-5 col-form-label">PayCargo Password*</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="password" class="form-control bg-light" id="password" placeholder="Password">
+                                                            </div>
+                                                        </div>
+                                                        <hr class="border border-dark-subtle opacity-10 my-3">
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="fullname" class="col-sm-5 col-form-label">Full Name*</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="fullname" placeholder="Full Name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="email" class="col-sm-5 col-form-label">Email*</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="email" class="form-control bg-light" id="email" placeholder="Email Address">
+                                                            </div>
+                                                        </div>
+                                                        <hr class="border border-dark-subtle opacity-10 my-3">
+                                                        <div class="row mb-4">
+                                                            <div class="col-12 font-family-sora">
+                                                                <p class="mb-0">Don't have a PayCargo Account?</p>
+                                                                <span>Sign up at <a href="#" class="text-decoration-underline text-dark">https://www.paycargo.com/</a></span>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="border border-dark-subtle opacity-10 my-3">
+                                                        <div class="row mb-4 align-items-center">
+                                                            <label for="notes" class="col-sm-5 col-form-label">Customer Notes:</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="notes" placeholder="Optional notes">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="text-danger text-start text-sm mt-5">
+                                                            <p class="mb-0 fw-bold">You may incur additional charges from PayCargo unrelated to Imperial CFS, Inc.</p>
+                                                            <p class="fw-bold">If those charges occur, you will not able to view them here.</p><br>
+                                                            <p class="mb-0">* Required.</p>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="col col-md-6">
+                                                    <div class="bg-azure-95 rounded-4 h-100 p-2 position-relative">
+                                                        <div class="sticky-top d-flex flex-column gap-5">
+                                                            <div class="card summary-card border-0 shadow-md rounded-4">
+                                                                <div class="card-body p-4">
+                                                                    <div class="d-flex justify-content-between text-paycargo mb-3">
+                                                                        <span class="fw-normal">Charge Description</span>
+                                                                        <span class="fw-normal">Charge</span>
+                                                                    </div>
+                                                                    <hr class="border border-dark-subtle opacity-10 my-3">
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>Forklift</span>
+                                                                        <span class="fw-bold">$55.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>In-bond Doc</span>
+                                                                        <span class="fw-bold">$10.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>CFS Terminal</span>
+                                                                        <span class="fw-bold">$20.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>Facility Window</span>
+                                                                        <span class="fw-bold">$90.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>Port Drayage Surcharge</span>
+                                                                        <span class="fw-bold">$30.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>Pallet window</span>
+                                                                        <span class="fw-bold">$25.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row mt-3">
+                                                                        <span>Demurrage Charge</span>
+                                                                        <span class="fw-bold">$5235.00</span>
+                                                                    </div>
+                                                                    <hr class="text-muted opacity-25 my-3">
+                                                                    <div class="d-flex justify-content-between align-items-center mb-4">
+                                                                        <span class="fw-bold fs-5 text-dark">TOTAL</span>
+                                                                        <span class="fw-bold fs-5 text-dark">$5235.00</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-check d-flex align-items-center gap-2">
+                                                                <input class="form-check-input" type="checkbox" id="termsCheck">
+                                                                <label class="form-check-label text-muted" for="termsCheck">
+                                                                    I have read and agreed to <a href="#" class="text-secondary fw-bold text-decoration-underline">TERMS & CONDITION</a>
+                                                                </label>
+                                                            </div>
+                                                            <button class="btn btn-accent rounded-full w-100 py-2 text-uppercase text-base fw-bold">
+                                                                Confirm Payment
+                                                            </button>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Tab Content Credit Card -->
+                                    <div class="tab-pane fade" id="nav-card" role="tabpanel" aria-labelledby="nav-guarantee-tab">
+                                        <div class="charge-step-module d-flex flex-column gap-8 justify-content-start">
+                                            <img src="https://www.imperialcfs.com/_images/credit_card_logos.png" alt="Credit Cards Logo" style="width:9.875rem;">
+                                            <div class="row">
+                                                <div class="col col-md-6 text-start">
+                                                    <p class="font-family-sora text-navy-600 mb-6">Please login to your PayCargo account.</p>
+                                                    <form class="text-start">
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="username" class="col-sm-5 col-form-label">PayCargo Username*</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="username" placeholder="Username">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="password" class="col-sm-5 col-form-label">PayCargo Password*</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="password" class="form-control bg-light" id="password" placeholder="Password">
+                                                            </div>
+                                                        </div>
+                                                        <hr class="border border-dark-subtle opacity-10 my-3">
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="fullname" class="col-sm-5 col-form-label">Full Name*</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="fullname" placeholder="Full Name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="email" class="col-sm-5 col-form-label">Email*</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="email" class="form-control bg-light" id="email" placeholder="Email Address">
+                                                            </div>
+                                                        </div>
+                                                        <hr class="border border-dark-subtle opacity-10 my-3">
+                                                        <div class="row mb-4">
+                                                            <div class="col-12 font-family-sora">
+                                                                <p class="mb-0">Don't have a PayCargo Account?</p>
+                                                                <span>Sign up at <a href="#" class="text-decoration-underline text-dark">https://www.paycargo.com/</a></span>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="border border-dark-subtle opacity-10 my-3">
+                                                        <div class="row mb-4 align-items-center">
+                                                            <label for="notes" class="col-sm-5 col-form-label">Customer Notes:</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="notes" placeholder="Optional notes">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="text-danger text-start text-sm mt-5">
+                                                            <p class="mb-0 fw-bold">You may incur additional charges from PayCargo unrelated to Imperial CFS, Inc.</p>
+                                                            <p class="fw-bold">If those charges occur, you will not able to view them here.</p><br>
+                                                            <p class="mb-0">* Required.</p>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="col col-md-6">
+                                                    <div class="bg-azure-95 rounded-4 h-100 p-2 position-relative">
+                                                        <div class="sticky-top d-flex flex-column gap-5">
+                                                            <div class="card summary-card border-0 shadow-md rounded-4">
+                                                                <div class="card-body p-4">
+                                                                    <div class="d-flex justify-content-between text-paycargo mb-3">
+                                                                        <span class="fw-normal">Charge Description</span>
+                                                                        <span class="fw-normal">Charge</span>
+                                                                    </div>
+                                                                    <hr class="border border-dark-subtle opacity-10 my-3">
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>Forklift</span>
+                                                                        <span class="fw-bold">$55.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>In-bond Doc</span>
+                                                                        <span class="fw-bold">$10.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>CFS Terminal</span>
+                                                                        <span class="fw-bold">$20.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>Facility Window</span>
+                                                                        <span class="fw-bold">$90.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>Port Drayage Surcharge</span>
+                                                                        <span class="fw-bold">$30.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>Pallet window</span>
+                                                                        <span class="fw-bold">$25.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row mt-3">
+                                                                        <span>Demurrage Charge</span>
+                                                                        <span class="fw-bold">$5235.00</span>
+                                                                    </div>
+                                                                    <hr class="text-muted opacity-25 my-3">
+                                                                    <div class="d-flex justify-content-between align-items-center mb-4">
+                                                                        <span class="fw-bold fs-5 text-dark">TOTAL</span>
+                                                                        <span class="fw-bold fs-5 text-dark">$5235.00</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-check d-flex align-items-center gap-2">
+                                                                <input class="form-check-input" type="checkbox" id="termsCheck">
+                                                                <label class="form-check-label text-muted" for="termsCheck">
+                                                                    I have read and agreed to <a href="#" class="text-secondary fw-bold text-decoration-underline">TERMS & CONDITION</a>
+                                                                </label>
+                                                            </div>
+                                                            <button class="btn btn-accent rounded-full w-100 py-2 text-uppercase text-base fw-bold">
+                                                                Confirm Payment
+                                                            </button>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Tab Content E-Check -->
+                                    <div class="tab-pane fade" id="nav-check" role="tabpanel" aria-labelledby="nav-guarantee-tab">
+                                        <div class="charge-step-module d-flex flex-column gap-8 justify-content-start">
+                                            <h4 class="text-start type-h4 ">E-Check Order</h4>
+                                            <div class="row">
+                                                <div class="col col-md-6 text-start">
+                                                    <p class="font-family-sora text-navy-600 mb-6">Bank Information</p>
+                                                    <form class="text-start">
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="username" class="col-sm-5 col-form-label">PayCargo Username*</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="username" placeholder="Username">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="password" class="col-sm-5 col-form-label">PayCargo Password*</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="password" class="form-control bg-light" id="password" placeholder="Password">
+                                                            </div>
+                                                        </div>
+                                                        <hr class="border border-dark-subtle opacity-10 my-3">
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="fullname" class="col-sm-5 col-form-label">Full Name*</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="fullname" placeholder="Full Name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="email" class="col-sm-5 col-form-label">Email*</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="email" class="form-control bg-light" id="email" placeholder="Email Address">
+                                                            </div>
+                                                        </div>
+                                                        <hr class="border border-dark-subtle opacity-10 my-3">
+                                                        <div class="row mb-4">
+                                                            <div class="col-12 font-family-sora">
+                                                                <p class="mb-0">Don't have a PayCargo Account?</p>
+                                                                <span>Sign up at <a href="#" class="text-decoration-underline text-dark">https://www.paycargo.com/</a></span>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="border border-dark-subtle opacity-10 my-3">
+                                                        <div class="row mb-4 align-items-center">
+                                                            <label for="notes" class="col-sm-5 col-form-label">Customer Notes:</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="notes" placeholder="Optional notes">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="text-danger text-start text-sm mt-5">
+                                                            <p class="mb-0 fw-bold">You may incur additional charges from PayCargo unrelated to Imperial CFS, Inc.</p>
+                                                            <p class="fw-bold">If those charges occur, you will not able to view them here.</p><br>
+                                                            <p class="mb-0">* Required.</p>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="col col-md-6">
+                                                    <div class="bg-azure-95 rounded-4 h-100 p-2 position-relative">
+                                                        <div class="sticky-top d-flex flex-column gap-5">
+                                                            <div class="card summary-card border-0 shadow-md rounded-4">
+                                                                <div class="card-body p-4">
+                                                                    <div class="d-flex justify-content-between text-paycargo mb-3">
+                                                                        <span class="fw-normal">Charge Description</span>
+                                                                        <span class="fw-normal">Charge</span>
+                                                                    </div>
+                                                                    <hr class="border border-dark-subtle opacity-10 my-3">
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>Forklift</span>
+                                                                        <span class="fw-bold">$55.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>In-bond Doc</span>
+                                                                        <span class="fw-bold">$10.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>CFS Terminal</span>
+                                                                        <span class="fw-bold">$20.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>Facility Window</span>
+                                                                        <span class="fw-bold">$90.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>Port Drayage Surcharge</span>
+                                                                        <span class="fw-bold">$30.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row">
+                                                                        <span>Pallet window</span>
+                                                                        <span class="fw-bold">$25.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row mt-3">
+                                                                        <span>Demurrage Charge</span>
+                                                                        <span class="fw-bold">$5235.00</span>
+                                                                    </div>
+                                                                    <hr class="text-muted opacity-25 my-3">
+                                                                    <div class="d-flex justify-content-between align-items-center mb-4">
+                                                                        <span class="fw-bold fs-5 text-dark">TOTAL</span>
+                                                                        <span class="fw-bold fs-5 text-dark">$5235.00</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-check d-flex align-items-center gap-2">
+                                                                <input class="form-check-input" type="checkbox" id="termsCheck">
+                                                                <label class="form-check-label text-muted" for="termsCheck">
+                                                                    I have read and agreed to <a href="#" class="text-secondary fw-bold text-decoration-underline">TERMS & CONDITION</a>
+                                                                </label>
+                                                            </div>
+                                                            <button class="btn btn-accent rounded-full w-100 py-2 text-uppercase text-base fw-bold">
+                                                                Confirm Payment
+                                                            </button>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
@@ -488,5 +980,119 @@
     </script>
     <script src="/bundles/datepicker_today?v=wxgHQp4wTMbhRyGRgZTd2B-fH1y2puKQRK3sgRzFVgg1"></script>
 <script src="/bundles/GetCharges?v=053ZAC1LLZgglg-Hzb4d-9IfS4lWQpKgiCYXMNcArto1"></script><div class="xdsoft_datetimepicker xdsoft_noselect xdsoft_" style="display: none; position: absolute; left: 661.141px; top: 255px;"><div class="xdsoft_datepicker active"><div class="xdsoft_mounthpicker"><button type="button" class="xdsoft_prev" style="visibility: visible;"></button><button type="button" class="xdsoft_today_button" style="visibility: visible;"></button><div class="xdsoft_label xdsoft_month"><span>December</span><div class="xdsoft_select xdsoft_monthselect xdsoft_scroller_box" style="display: none;"><div style="margin-top: 0px;"><div class="xdsoft_option " data-value="0">January</div><div class="xdsoft_option " data-value="1">February</div><div class="xdsoft_option " data-value="2">March</div><div class="xdsoft_option " data-value="3">April</div><div class="xdsoft_option " data-value="4">May</div><div class="xdsoft_option " data-value="5">June</div><div class="xdsoft_option " data-value="6">July</div><div class="xdsoft_option " data-value="7">August</div><div class="xdsoft_option " data-value="8">September</div><div class="xdsoft_option " data-value="9">October</div><div class="xdsoft_option " data-value="10">November</div><div class="xdsoft_option xdsoft_current" data-value="11">December</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="height: 10px; margin-top: 0px;"></div></div></div><i></i></div><div class="xdsoft_label xdsoft_year"><span>2025</span><div class="xdsoft_select xdsoft_yearselect xdsoft_scroller_box" style="display: none;"><div style="margin-top: 0px;"><div class="xdsoft_option " data-value="2010">2010</div><div class="xdsoft_option " data-value="2011">2011</div><div class="xdsoft_option " data-value="2012">2012</div><div class="xdsoft_option " data-value="2013">2013</div><div class="xdsoft_option " data-value="2014">2014</div><div class="xdsoft_option " data-value="2015">2015</div><div class="xdsoft_option " data-value="2016">2016</div><div class="xdsoft_option " data-value="2017">2017</div><div class="xdsoft_option " data-value="2018">2018</div><div class="xdsoft_option " data-value="2019">2019</div><div class="xdsoft_option " data-value="2020">2020</div><div class="xdsoft_option " data-value="2021">2021</div><div class="xdsoft_option " data-value="2022">2022</div><div class="xdsoft_option " data-value="2023">2023</div><div class="xdsoft_option " data-value="2024">2024</div><div class="xdsoft_option xdsoft_current" data-value="2025">2025</div><div class="xdsoft_option " data-value="2026">2026</div><div class="xdsoft_option " data-value="2027">2027</div><div class="xdsoft_option " data-value="2028">2028</div><div class="xdsoft_option " data-value="2029">2029</div><div class="xdsoft_option " data-value="2030">2030</div><div class="xdsoft_option " data-value="2031">2031</div><div class="xdsoft_option " data-value="2032">2032</div><div class="xdsoft_option " data-value="2033">2033</div><div class="xdsoft_option " data-value="2034">2034</div><div class="xdsoft_option " data-value="2035">2035</div><div class="xdsoft_option " data-value="2036">2036</div><div class="xdsoft_option " data-value="2037">2037</div><div class="xdsoft_option " data-value="2038">2038</div><div class="xdsoft_option " data-value="2039">2039</div><div class="xdsoft_option " data-value="2040">2040</div><div class="xdsoft_option " data-value="2041">2041</div><div class="xdsoft_option " data-value="2042">2042</div><div class="xdsoft_option " data-value="2043">2043</div><div class="xdsoft_option " data-value="2044">2044</div><div class="xdsoft_option " data-value="2045">2045</div><div class="xdsoft_option " data-value="2046">2046</div><div class="xdsoft_option " data-value="2047">2047</div><div class="xdsoft_option " data-value="2048">2048</div><div class="xdsoft_option " data-value="2049">2049</div><div class="xdsoft_option " data-value="2050">2050</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="height: 10px; margin-top: 0px;"></div></div></div><i></i></div><button type="button" class="xdsoft_next" style="visibility: visible;"></button></div><div class="xdsoft_calendar"><table><thead><tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead><tbody><tr><td data-date="1" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_disabled" title=""><div>1</div></td><td data-date="2" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_current xdsoft_today" title=""><div>2</div></td><td data-date="3" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date" title=""><div>3</div></td><td data-date="4" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date" title=""><div>4</div></td><td data-date="5" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date" title=""><div>5</div></td><td data-date="6" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend" title=""><div>6</div></td><td data-date="7" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend" title=""><div>7</div></td></tr><tr><td data-date="8" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date" title=""><div>8</div></td><td data-date="9" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date" title=""><div>9</div></td><td data-date="10" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date" title=""><div>10</div></td><td data-date="11" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date" title=""><div>11</div></td><td data-date="12" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date" title=""><div>12</div></td><td data-date="13" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend" title=""><div>13</div></td><td data-date="14" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend" title=""><div>14</div></td></tr><tr><td data-date="15" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date" title=""><div>15</div></td><td data-date="16" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date" title=""><div>16</div></td><td data-date="17" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date" title=""><div>17</div></td><td data-date="18" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date" title=""><div>18</div></td><td data-date="19" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date" title=""><div>19</div></td><td data-date="20" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend" title=""><div>20</div></td><td data-date="21" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend" title=""><div>21</div></td></tr><tr><td data-date="22" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date" title=""><div>22</div></td><td data-date="23" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date" title=""><div>23</div></td><td data-date="24" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date" title=""><div>24</div></td><td data-date="25" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date" title=""><div>25</div></td><td data-date="26" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date" title=""><div>26</div></td><td data-date="27" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend" title=""><div>27</div></td><td data-date="28" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend" title=""><div>28</div></td></tr><tr><td data-date="29" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date" title=""><div>29</div></td><td data-date="30" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date" title=""><div>30</div></td><td data-date="31" data-month="11" data-year="2025" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date" title=""><div>31</div></td><td data-date="1" data-month="0" data-year="2026" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_other_month" title=""><div>1</div></td><td data-date="2" data-month="0" data-year="2026" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_other_month" title=""><div>2</div></td><td data-date="3" data-month="0" data-year="2026" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_other_month xdsoft_weekend" title=""><div>3</div></td><td data-date="4" data-month="0" data-year="2026" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_other_month xdsoft_weekend" title=""><div>4</div></td></tr></tbody></table></div><button type="button" class="xdsoft_save_selected blue-gradient-button" style="display: none;">Save Selected</button></div><div class="xdsoft_timepicker"><button type="button" class="xdsoft_prev"></button><div class="xdsoft_time_box xdsoft_scroller_box"><div class="xdsoft_time_variant" style="margin-top: 0px;"><div class="xdsoft_time xdsoft_current" data-hour="0" data-minute="0">00:00</div><div class="xdsoft_time " data-hour="0" data-minute="10">00:10</div><div class="xdsoft_time " data-hour="0" data-minute="20">00:20</div><div class="xdsoft_time " data-hour="0" data-minute="30">00:30</div><div class="xdsoft_time " data-hour="0" data-minute="40">00:40</div><div class="xdsoft_time " data-hour="0" data-minute="50">00:50</div><div class="xdsoft_time " data-hour="1" data-minute="0">01:00</div><div class="xdsoft_time " data-hour="1" data-minute="10">01:10</div><div class="xdsoft_time " data-hour="1" data-minute="20">01:20</div><div class="xdsoft_time " data-hour="1" data-minute="30">01:30</div><div class="xdsoft_time " data-hour="1" data-minute="40">01:40</div><div class="xdsoft_time " data-hour="1" data-minute="50">01:50</div><div class="xdsoft_time " data-hour="2" data-minute="0">02:00</div><div class="xdsoft_time " data-hour="2" data-minute="10">02:10</div><div class="xdsoft_time " data-hour="2" data-minute="20">02:20</div><div class="xdsoft_time " data-hour="2" data-minute="30">02:30</div><div class="xdsoft_time " data-hour="2" data-minute="40">02:40</div><div class="xdsoft_time " data-hour="2" data-minute="50">02:50</div><div class="xdsoft_time " data-hour="3" data-minute="0">03:00</div><div class="xdsoft_time " data-hour="3" data-minute="10">03:10</div><div class="xdsoft_time " data-hour="3" data-minute="20">03:20</div><div class="xdsoft_time " data-hour="3" data-minute="30">03:30</div><div class="xdsoft_time " data-hour="3" data-minute="40">03:40</div><div class="xdsoft_time " data-hour="3" data-minute="50">03:50</div><div class="xdsoft_time " data-hour="4" data-minute="0">04:00</div><div class="xdsoft_time " data-hour="4" data-minute="10">04:10</div><div class="xdsoft_time " data-hour="4" data-minute="20">04:20</div><div class="xdsoft_time " data-hour="4" data-minute="30">04:30</div><div class="xdsoft_time " data-hour="4" data-minute="40">04:40</div><div class="xdsoft_time " data-hour="4" data-minute="50">04:50</div><div class="xdsoft_time " data-hour="5" data-minute="0">05:00</div><div class="xdsoft_time " data-hour="5" data-minute="10">05:10</div><div class="xdsoft_time " data-hour="5" data-minute="20">05:20</div><div class="xdsoft_time " data-hour="5" data-minute="30">05:30</div><div class="xdsoft_time " data-hour="5" data-minute="40">05:40</div><div class="xdsoft_time " data-hour="5" data-minute="50">05:50</div><div class="xdsoft_time " data-hour="6" data-minute="0">06:00</div><div class="xdsoft_time " data-hour="6" data-minute="10">06:10</div><div class="xdsoft_time " data-hour="6" data-minute="20">06:20</div><div class="xdsoft_time " data-hour="6" data-minute="30">06:30</div><div class="xdsoft_time " data-hour="6" data-minute="40">06:40</div><div class="xdsoft_time " data-hour="6" data-minute="50">06:50</div><div class="xdsoft_time " data-hour="7" data-minute="0">07:00</div><div class="xdsoft_time " data-hour="7" data-minute="10">07:10</div><div class="xdsoft_time " data-hour="7" data-minute="20">07:20</div><div class="xdsoft_time " data-hour="7" data-minute="30">07:30</div><div class="xdsoft_time " data-hour="7" data-minute="40">07:40</div><div class="xdsoft_time " data-hour="7" data-minute="50">07:50</div><div class="xdsoft_time " data-hour="8" data-minute="0">08:00</div><div class="xdsoft_time " data-hour="8" data-minute="10">08:10</div><div class="xdsoft_time " data-hour="8" data-minute="20">08:20</div><div class="xdsoft_time " data-hour="8" data-minute="30">08:30</div><div class="xdsoft_time " data-hour="8" data-minute="40">08:40</div><div class="xdsoft_time " data-hour="8" data-minute="50">08:50</div><div class="xdsoft_time " data-hour="9" data-minute="0">09:00</div><div class="xdsoft_time " data-hour="9" data-minute="10">09:10</div><div class="xdsoft_time " data-hour="9" data-minute="20">09:20</div><div class="xdsoft_time " data-hour="9" data-minute="30">09:30</div><div class="xdsoft_time " data-hour="9" data-minute="40">09:40</div><div class="xdsoft_time " data-hour="9" data-minute="50">09:50</div><div class="xdsoft_time " data-hour="10" data-minute="0">10:00</div><div class="xdsoft_time " data-hour="10" data-minute="10">10:10</div><div class="xdsoft_time " data-hour="10" data-minute="20">10:20</div><div class="xdsoft_time " data-hour="10" data-minute="30">10:30</div><div class="xdsoft_time " data-hour="10" data-minute="40">10:40</div><div class="xdsoft_time " data-hour="10" data-minute="50">10:50</div><div class="xdsoft_time " data-hour="11" data-minute="0">11:00</div><div class="xdsoft_time " data-hour="11" data-minute="10">11:10</div><div class="xdsoft_time " data-hour="11" data-minute="20">11:20</div><div class="xdsoft_time " data-hour="11" data-minute="30">11:30</div><div class="xdsoft_time " data-hour="11" data-minute="40">11:40</div><div class="xdsoft_time " data-hour="11" data-minute="50">11:50</div><div class="xdsoft_time " data-hour="12" data-minute="0">12:00</div><div class="xdsoft_time " data-hour="12" data-minute="10">12:10</div><div class="xdsoft_time " data-hour="12" data-minute="20">12:20</div><div class="xdsoft_time " data-hour="12" data-minute="30">12:30</div><div class="xdsoft_time " data-hour="12" data-minute="40">12:40</div><div class="xdsoft_time " data-hour="12" data-minute="50">12:50</div><div class="xdsoft_time " data-hour="13" data-minute="0">13:00</div><div class="xdsoft_time " data-hour="13" data-minute="10">13:10</div><div class="xdsoft_time " data-hour="13" data-minute="20">13:20</div><div class="xdsoft_time " data-hour="13" data-minute="30">13:30</div><div class="xdsoft_time " data-hour="13" data-minute="40">13:40</div><div class="xdsoft_time " data-hour="13" data-minute="50">13:50</div><div class="xdsoft_time " data-hour="14" data-minute="0">14:00</div><div class="xdsoft_time " data-hour="14" data-minute="10">14:10</div><div class="xdsoft_time " data-hour="14" data-minute="20">14:20</div><div class="xdsoft_time " data-hour="14" data-minute="30">14:30</div><div class="xdsoft_time " data-hour="14" data-minute="40">14:40</div><div class="xdsoft_time " data-hour="14" data-minute="50">14:50</div><div class="xdsoft_time " data-hour="15" data-minute="0">15:00</div><div class="xdsoft_time " data-hour="15" data-minute="10">15:10</div><div class="xdsoft_time " data-hour="15" data-minute="20">15:20</div><div class="xdsoft_time " data-hour="15" data-minute="30">15:30</div><div class="xdsoft_time " data-hour="15" data-minute="40">15:40</div><div class="xdsoft_time " data-hour="15" data-minute="50">15:50</div><div class="xdsoft_time " data-hour="16" data-minute="0">16:00</div><div class="xdsoft_time " data-hour="16" data-minute="10">16:10</div><div class="xdsoft_time " data-hour="16" data-minute="20">16:20</div><div class="xdsoft_time " data-hour="16" data-minute="30">16:30</div><div class="xdsoft_time " data-hour="16" data-minute="40">16:40</div><div class="xdsoft_time " data-hour="16" data-minute="50">16:50</div><div class="xdsoft_time " data-hour="17" data-minute="0">17:00</div><div class="xdsoft_time " data-hour="17" data-minute="10">17:10</div><div class="xdsoft_time " data-hour="17" data-minute="20">17:20</div><div class="xdsoft_time " data-hour="17" data-minute="30">17:30</div><div class="xdsoft_time " data-hour="17" data-minute="40">17:40</div><div class="xdsoft_time " data-hour="17" data-minute="50">17:50</div><div class="xdsoft_time " data-hour="18" data-minute="0">18:00</div><div class="xdsoft_time " data-hour="18" data-minute="10">18:10</div><div class="xdsoft_time " data-hour="18" data-minute="20">18:20</div><div class="xdsoft_time " data-hour="18" data-minute="30">18:30</div><div class="xdsoft_time " data-hour="18" data-minute="40">18:40</div><div class="xdsoft_time " data-hour="18" data-minute="50">18:50</div><div class="xdsoft_time " data-hour="19" data-minute="0">19:00</div><div class="xdsoft_time " data-hour="19" data-minute="10">19:10</div><div class="xdsoft_time " data-hour="19" data-minute="20">19:20</div><div class="xdsoft_time " data-hour="19" data-minute="30">19:30</div><div class="xdsoft_time " data-hour="19" data-minute="40">19:40</div><div class="xdsoft_time " data-hour="19" data-minute="50">19:50</div><div class="xdsoft_time " data-hour="20" data-minute="0">20:00</div><div class="xdsoft_time " data-hour="20" data-minute="10">20:10</div><div class="xdsoft_time " data-hour="20" data-minute="20">20:20</div><div class="xdsoft_time " data-hour="20" data-minute="30">20:30</div><div class="xdsoft_time " data-hour="20" data-minute="40">20:40</div><div class="xdsoft_time " data-hour="20" data-minute="50">20:50</div><div class="xdsoft_time " data-hour="21" data-minute="0">21:00</div><div class="xdsoft_time " data-hour="21" data-minute="10">21:10</div><div class="xdsoft_time " data-hour="21" data-minute="20">21:20</div><div class="xdsoft_time " data-hour="21" data-minute="30">21:30</div><div class="xdsoft_time " data-hour="21" data-minute="40">21:40</div><div class="xdsoft_time " data-hour="21" data-minute="50">21:50</div><div class="xdsoft_time " data-hour="22" data-minute="0">22:00</div><div class="xdsoft_time " data-hour="22" data-minute="10">22:10</div><div class="xdsoft_time " data-hour="22" data-minute="20">22:20</div><div class="xdsoft_time " data-hour="22" data-minute="30">22:30</div><div class="xdsoft_time " data-hour="22" data-minute="40">22:40</div><div class="xdsoft_time " data-hour="22" data-minute="50">22:50</div><div class="xdsoft_time " data-hour="23" data-minute="0">23:00</div><div class="xdsoft_time " data-hour="23" data-minute="10">23:10</div><div class="xdsoft_time " data-hour="23" data-minute="20">23:20</div><div class="xdsoft_time " data-hour="23" data-minute="30">23:30</div><div class="xdsoft_time " data-hour="23" data-minute="40">23:40</div><div class="xdsoft_time " data-hour="23" data-minute="50">23:50</div></div><div class="xdsoft_scrollbar"><div class="xdsoft_scroller" style="height: 10px; margin-top: 0px;"></div></div></div><button type="button" class="xdsoft_next"></button></div></div>
+<script src="https://kit.fontawesome.com/4006f6b372.js" crossorigin="anonymous"></script>
+
+<!-- Events for Payment steps -->
+<script>document.addEventListener('DOMContentLoaded', () => {
+    // Custom function to scroll with a specific duration
+    function smoothScrollTo(targetId, duration = 1200) {
+        const element = document.getElementById(targetId);
+        if (!element) return;
+
+        // 1. Calculate the target position (element top - 10rem offset)
+        const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const offset = 10 * rootFontSize; 
+        const elementPosition = element.getBoundingClientRect().top; // Distance from viewport top
+        const startPosition = window.pageYOffset;
+        const targetPosition = startPosition + elementPosition - offset;
+        const distance = targetPosition - startPosition;
+        
+        let startTime = null;
+
+        // 2. Easing function (easeInOutQuad) - makes it start/end slowly
+        function easeInOutQuad(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }   
+
+        // 3. Animation Loop
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            
+            // Calculate next position
+            const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+            
+            window.scrollTo(0, run);
+
+            // Continue animation if time isn't up
+            if (timeElapsed < duration) {
+                requestAnimationFrame(animation);
+            } else {
+                // Ensure we land exactly on the target at the end
+                window.scrollTo(0, targetPosition);
+            }
+        }
+
+        requestAnimationFrame(animation);
+    }
+
+    // --- Logic for Button 1 ---
+    const btn1 = document.getElementById('js-btn-1');
+    btn1.addEventListener('click', () => {
+        const target = document.getElementById('js-charges-sidebar');
+        // Show elements
+        target.classList.remove('d-none');
+        document.getElementById('js-charges-step1').classList.remove('d-none');
+        // Scroll to the first new div
+        smoothScrollTo('js-charges-step1');
+    });
+    // --- Logic for Button 2 ---
+    // Date Input Logic
+    const dateInput = document.getElementById('est-pu-date');
+    dateInput.addEventListener('change', function() {
+        // Only trigger if the user actually selected a valid date
+        if (this.value) {
+            const target = document.getElementById('js-charges-step2');
+            
+            // Only scroll if it was previously hidden (prevents jumping if they change date again)
+            if (target.classList.contains('d-none')) {
+                target.classList.remove('d-none');
+                smoothScrollTo('js-charges-step2');
+            }
+        }
+    });
+
+    // --- Logic for Button 3 ---
+    const btn3 = document.getElementById('js-btn-3');
+    btn3.addEventListener('click', () => {
+        const target = document.getElementById('js-charges-step3');
+        target.classList.remove('d-none');
+        smoothScrollTo('js-charges-step3');
+    });
+
+    // --- Tab Switching Logic ---
+    // Select all elements that toggle tabs (buttons or links)
+    const tabTriggers = document.querySelectorAll('[data-bs-toggle="tab"], [data-bs-toggle="pill"]');
+
+    tabTriggers.forEach(trigger => {
+        trigger.addEventListener('shown.bs.tab', function (event) {
+            // event.target is the clicked tab button
+            // We get the target pane ID from its 'data-bs-target' attribute
+            const targetIdSelector = event.target.getAttribute('data-bs-target');
+            
+            if (targetIdSelector) {
+                // Remove the '#' to get the pure ID for our function
+                const targetId = targetIdSelector.substring(1);
+                
+                // Scroll to the new pane with the same 1s duration
+                smoothScrollTo(targetId, 1000);
+            }
+        });
+    });
+
+});</script>
+<style>
+@keyframes fadeInAnimation {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeInAnimation 1s ease-in forwards;
+}
+</style>
 </body>
 </html>

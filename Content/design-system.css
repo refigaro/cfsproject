@@ -230,14 +230,15 @@ IMPERIAL CFS - DESIGN SYSTEM
     --border-radius-sm: 0.25rem; /* 4px */
     --border-radius-md: 0.5rem;  /* 8px */
     --border-radius-lg: 1rem;    /* 16px */
+    --border-radius-xl: 1.5rem;    /* 24px */
     --border-radius-full: 9999px;
 
     --stroke-width-1: 1px;
     --stroke-width-3: 3px;
 
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-sm: 0 1px 2px 0 rgb(51 122 183 / 0.05); 
+    --shadow-md: 0 4px 6px -1px rgb(51 122 183 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(51 122 183 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
     /* == Interacciones y Transiciones == */
     --transition-property-common: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
@@ -476,11 +477,37 @@ h1, h2, h3 {
 .rounded-sm { border-radius: var(--border-radius-sm)!important; }
 .rounded-md { border-radius: var(--border-radius-md)!important; }
 .rounded-lg { border-radius: var(--border-radius-lg)!important; }
+.rounded-xl { border-radius: var(--border-radius-xl)!important; }
 .rounded-full { border-radius: var(--border-radius-full)!important; }
 
 .shadow-sm { box-shadow: var(--shadow-sm); }
 .shadow-md { box-shadow: var(--shadow-md); }
 .shadow-lg { box-shadow: var(--shadow-lg); }
+
+.btn-accent {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: var(--clr-cyan-47);
+  --bs-btn-border-color: var(--clr-cyan-47);
+  
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: var(--clr-azure-19);
+  --bs-btn-hover-border-color: var(--clr-azure-19);
+  
+  --bs-btn-focus-shadow-rgb: 0, 175, 233;
+  
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: var(--clr-azure-09);
+  --bs-btn-active-border-color: var(--clr-azure-09);
+  
+
+  --bs-btn-disabled-color: #ffffff;
+  --bs-btn-disabled-bg: var(--clr-grey-75);
+  --bs-btn-disabled-border-color: var(--clr-grey-75);
+}
+
+.opacity-10 {
+  opacity: 0.1 !important;
+}
 
 /* ----------------------------------------------------------------
 5. Clases de Interacción y Efectos (Corregido para Bootstrap)
@@ -610,3 +637,15 @@ h1, h2, h3 {
 h1, h2, h3, h4, h5, h6 { line-height:120%; }
 
 .min-h-100vh { min-height:calc(100dvh - 15.94rem); }
+
+.form-control {
+    border-radius: initial;
+    font-size: 1rem;
+
+    input&,
+    select& {
+        min-height:2rem;
+    }
+    
+
+}
