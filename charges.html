@@ -170,12 +170,9 @@
             <div class="col-auto ms-auto justify-end text-end d-flex flex-column gap-2">
                 <h2 class="text-navy-450">Please Search your Shipment</h2>
                 <div class="d-flex gap-2">
-                    <select class="form-control ml-4 rounded d-inline-block w-auto" id="type" name="type"><option value="hbl">House Bill</option>
-                        <option selected="selected" value="mbl">Master Bill</option>
-                        <option value="cntr">Container Number</option>
+                    <select class="form-control ml-4 rounded d-inline-block w-auto" id="type" name="type">
+                        <option value="hbl" selected="selected">House Bill</option>
                         <option value="ams">AMS House Bill</option>
-                        <option value="it">Inbond Number</option>
-                        <option value="go">GO Number</option>
                     </select>
                     <label for="">
                         <input class="rounded form-control d-inline-block w-auto" type="text">
@@ -186,7 +183,7 @@
         </div>
     </div>
 </section>
-<section class="mbl-details ipi-tracing">
+<section class="mbl-details">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 mb-4">
@@ -403,7 +400,7 @@
                                                         <div class="row mb-4">
                                                             <div class="col-12 font-family-sora">
                                                                 <p class="mb-0">Don't have a PayCargo Account?</p>
-                                                                <span>Sign up at <a href="#" class="text-decoration-underline text-dark">https://www.paycargo.com/</a></span>
+                                                                <span>Sign up at <a href="https://www.paycargo.com/" target="_blank" class="text-decoration-underline text-dark">https://www.paycargo.com/</a></span>
                                                             </div>
                                                         </div>
                                                         <hr class="border border-dark-subtle opacity-10 my-3">
@@ -469,7 +466,7 @@
                                                             <div class="form-check d-flex align-items-center gap-2">
                                                                 <input class="form-check-input" type="checkbox" id="termsCheck">
                                                                 <label class="form-check-label text-muted" for="termsCheck">
-                                                                    I have read and agreed to <a href="#" class="text-secondary fw-bold text-decoration-underline">TERMS & CONDITION</a>
+                                                                    I have read and agreed to <a href="/terms.html" target="_blank" class="text-secondary fw-bold text-decoration-underline">TERMS & CONDITION</a>
                                                                 </label>
                                                             </div>
                                                             <button class="btn btn-accent rounded-full w-100 py-2 text-uppercase text-base fw-bold">
@@ -487,112 +484,50 @@
                                             <h4 class="text-start type-h4 ">Guarantee Order</h4>
                                             <div class="row">
                                                 <div class="col col-md-6 text-start">
-                                                    <p class="font-family-sora text-navy-600 mb-6">Please login to your PayCargo account.</p>
                                                     <form class="text-start">
                                                         <div class="row mb-3 align-items-center">
-                                                            <label for="username" class="col-sm-5 col-form-label">PayCargo Username*</label>
+                                                            <label for="username" class="col-sm-5 col-form-label">House Bill No.</label>
                                                             <div class="col-sm-7">
-                                                                <input type="text" class="form-control bg-light" id="username" placeholder="Username">
+                                                                <input type="text" class="form-control border border-dark-light" id="username" placeholder="PLAX25120040" readonly>
                                                             </div>
                                                         </div>
 
                                                         <div class="row mb-3 align-items-center">
-                                                            <label for="password" class="col-sm-5 col-form-label">PayCargo Password*</label>
+                                                            <label for="password" class="col-sm-5 col-form-label">Est. P/U Date</label>
                                                             <div class="col-sm-7">
-                                                                <input type="password" class="form-control bg-light" id="password" placeholder="Password">
-                                                            </div>
-                                                        </div>
-                                                        <hr class="border border-dark-subtle opacity-10 my-3">
-                                                        <div class="row mb-3 align-items-center">
-                                                            <label for="fullname" class="col-sm-5 col-form-label">Full Name*</label>
-                                                            <div class="col-sm-7">
-                                                                <input type="text" class="form-control bg-light" id="fullname" placeholder="Full Name">
+                                                                <input type="password" class="form-control border border-dark-light" id="password" placeholder="12/30/25" readonly>
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3 align-items-center">
-                                                            <label for="email" class="col-sm-5 col-form-label">Email*</label>
+                                                            <label for="fullname" class="col-sm-5 col-form-label">Guarantee Amount</label>
                                                             <div class="col-sm-7">
-                                                                <input type="email" class="form-control bg-light" id="email" placeholder="Email Address">
+                                                                <input type="text" class="form-control" id="fullname" placeholder="0.00" readonly>
                                                             </div>
                                                         </div>
-                                                        <hr class="border border-dark-subtle opacity-10 my-3">
-                                                        <div class="row mb-4">
-                                                            <div class="col-12 font-family-sora">
-                                                                <p class="mb-0">Don't have a PayCargo Account?</p>
-                                                                <span>Sign up at <a href="#" class="text-decoration-underline text-dark">https://www.paycargo.com/</a></span>
-                                                            </div>
-                                                        </div>
-                                                        <hr class="border border-dark-subtle opacity-10 my-3">
-                                                        <div class="row mb-4 align-items-center">
-                                                            <label for="notes" class="col-sm-5 col-form-label">Customer Notes:</label>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="email" class="col-sm-5 col-form-label">Guarantee Date</label>
                                                             <div class="col-sm-7">
-                                                                <input type="text" class="form-control bg-light" id="notes" placeholder="Optional notes">
+                                                                <input type="email" class="form-control" id="email" placeholder="01/01/2026" readonly>
                                                             </div>
                                                         </div>
-
-                                                        <div class="text-danger text-start text-sm mt-5">
-                                                            <p class="mb-0 fw-bold">You may incur additional charges from PayCargo unrelated to Imperial CFS, Inc.</p>
-                                                            <p class="fw-bold">If those charges occur, you will not able to view them here.</p><br>
-                                                            <p class="mb-0">* Required.</p>
+                                                        <div class="row align-items-center">
+                                                            <label for="email" class="col-sm-5 col-form-label">Email Address</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="email" class="form-control bg-light" id="email" placeholder="Email">
+                                                            </div>
                                                         </div>
                                                     </form>
                                                 </div>
-                                                <div class="col col-md-6">
-                                                    <div class="bg-azure-95 rounded-4 h-100 p-2 position-relative">
-                                                        <div class="sticky-top d-flex flex-column gap-5">
-                                                            <div class="card summary-card border-0 shadow-md rounded-4">
-                                                                <div class="card-body p-4">
-                                                                    <div class="d-flex justify-content-between text-paycargo mb-3">
-                                                                        <span class="fw-normal">Charge Description</span>
-                                                                        <span class="fw-normal">Charge</span>
-                                                                    </div>
-                                                                    <hr class="border border-dark-subtle opacity-10 my-3">
-                                                                    <div class="d-flex justify-content-between charge-row">
-                                                                        <span>Forklift</span>
-                                                                        <span class="fw-bold">$55.00</span>
-                                                                    </div>
-                                                                    <div class="d-flex justify-content-between charge-row">
-                                                                        <span>In-bond Doc</span>
-                                                                        <span class="fw-bold">$10.00</span>
-                                                                    </div>
-                                                                    <div class="d-flex justify-content-between charge-row">
-                                                                        <span>CFS Terminal</span>
-                                                                        <span class="fw-bold">$20.00</span>
-                                                                    </div>
-                                                                    <div class="d-flex justify-content-between charge-row">
-                                                                        <span>Facility Window</span>
-                                                                        <span class="fw-bold">$90.00</span>
-                                                                    </div>
-                                                                    <div class="d-flex justify-content-between charge-row">
-                                                                        <span>Port Drayage Surcharge</span>
-                                                                        <span class="fw-bold">$30.00</span>
-                                                                    </div>
-                                                                    <div class="d-flex justify-content-between charge-row">
-                                                                        <span>Pallet window</span>
-                                                                        <span class="fw-bold">$25.00</span>
-                                                                    </div>
-                                                                    <div class="d-flex justify-content-between charge-row mt-3">
-                                                                        <span>Demurrage Charge</span>
-                                                                        <span class="fw-bold">$5235.00</span>
-                                                                    </div>
-                                                                    <hr class="text-muted opacity-25 my-3">
-                                                                    <div class="d-flex justify-content-between align-items-center mb-4">
-                                                                        <span class="fw-bold fs-5 text-dark">TOTAL</span>
-                                                                        <span class="fw-bold fs-5 text-dark">$5235.00</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-check d-flex align-items-center gap-2">
-                                                                <input class="form-check-input" type="checkbox" id="termsCheck">
-                                                                <label class="form-check-label text-muted" for="termsCheck">
-                                                                    I have read and agreed to <a href="#" class="text-secondary fw-bold text-decoration-underline">TERMS & CONDITION</a>
-                                                                </label>
-                                                            </div>
-                                                            <button class="btn btn-accent rounded-full w-100 py-2 text-uppercase text-base fw-bold">
-                                                                Confirm Payment
-                                                            </button>
-                                                        </div> 
+                                                <div class="col col-md-6 text-start d-flex flex-column justify-between">
+                                                    <div class="row mb-4 align-items-center">
+                                                        <label for="notes" class="col-12 col-form-label">Customer Notes:</label>
+                                                        <div class="col-12">
+                                                            <textarea class="form-control bg-light" id="notes" placeholder="Optional notes" style="min-height: 6rem;"></textarea>
+                                                        </div>
                                                     </div>
+                                                    <button class="btn btn-accent rounded-full w-100 py-2 text-uppercase text-base fw-bold">
+                                                        Confirm Payment
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -600,57 +535,87 @@
                                     <!-- Tab Content Credit Card -->
                                     <div class="tab-pane fade" id="nav-card" role="tabpanel" aria-labelledby="nav-guarantee-tab">
                                         <div class="charge-step-module d-flex flex-column gap-8 justify-content-start">
-                                            <img src="https://www.imperialcfs.com/_images/credit_card_logos.png" alt="Credit Cards Logo" style="width:9.875rem;">
+                                            <img src="https://www.imperialcfs.com/_images/credit_card_logos.png" alt="Credit Cards Logo" style="width:12.68rem;">
                                             <div class="row">
                                                 <div class="col col-md-6 text-start">
-                                                    <p class="font-family-sora text-navy-600 mb-6">Please login to your PayCargo account.</p>
+                                                    <p class="font-family-sora text-navy-600 mb-6">Credit Card Information.</p>
                                                     <form class="text-start">
                                                         <div class="row mb-3 align-items-center">
-                                                            <label for="username" class="col-sm-5 col-form-label">PayCargo Username*</label>
+                                                            <label for="username" class="col-sm-5 col-form-label">Credit Card Number</label>
                                                             <div class="col-sm-7">
-                                                                <input type="text" class="form-control bg-light" id="username" placeholder="Username">
+                                                                <input class="form-control bg-light" type="text" inputmode="numeric"  pattern="[0-9]*"  autocomplete="cc-number"  maxlength="19"  placeholder="xxxx xxxx xxxx xxxx" id="credit-card" placeholder="xxxx xxxx xxxx xxxx">
                                                             </div>
                                                         </div>
 
                                                         <div class="row mb-3 align-items-center">
-                                                            <label for="password" class="col-sm-5 col-form-label">PayCargo Password*</label>
+                                                            <label for="password" class="col-sm-5 col-form-label">Expiration Date</label>
                                                             <div class="col-sm-7">
-                                                                <input type="password" class="form-control bg-light" id="password" placeholder="Password">
+                                                                <input class="form-control bg-light" id="cc-exp" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM / YY" maxlength="7" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="fullname" class="col-sm-5 col-form-label">CCV</label>
+                                                            <div class="col-sm-7">
+                                                                <input class="form-control bg-light" id="cc-csc" type="password" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="4" required>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="border border-dark-subtle opacity-10 my-3">
+                                                        <p class="font-family-sora text-navy-600 mb-6">Billing Information.</p>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="firstName" class="col-sm-5 col-form-label">First Name</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="firstName" placeholder="First Name" autocomplete="given-name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="lastName" class="col-sm-5 col-form-label">Last Name</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="lastName" placeholder="Last Name" autocomplete="family-name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="street" class="col-sm-5 col-form-label">Address Street</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="street" placeholder="Street" autocomplete="street-address">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="city" class="col-sm-5 col-form-label">Address City</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="city" placeholder="City" autocomplete="address-level2">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="state" class="col-sm-5 col-form-label">Address State</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="state" placeholder="State" autocomplete="address-level1">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="zipcode" class="col-sm-5 col-form-label">Address Zipcode</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="zipcode" placeholder="Zipcode" autocomplete="postal-code" inputmode="numeric">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="email" class="col-sm-5 col-form-label">Email</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="email" class="form-control bg-light" id="email" placeholder="Email" autocomplete="email">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="phone" class="col-sm-5 col-form-label">Phone Number</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="tel" class="form-control bg-light" id="phone" placeholder="(XXX)-XXX-XXXX" autocomplete="tel">
                                                             </div>
                                                         </div>
                                                         <hr class="border border-dark-subtle opacity-10 my-3">
                                                         <div class="row mb-3 align-items-center">
-                                                            <label for="fullname" class="col-sm-5 col-form-label">Full Name*</label>
-                                                            <div class="col-sm-7">
-                                                                <input type="text" class="form-control bg-light" id="fullname" placeholder="Full Name">
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-3 align-items-center">
-                                                            <label for="email" class="col-sm-5 col-form-label">Email*</label>
-                                                            <div class="col-sm-7">
-                                                                <input type="email" class="form-control bg-light" id="email" placeholder="Email Address">
-                                                            </div>
-                                                        </div>
-                                                        <hr class="border border-dark-subtle opacity-10 my-3">
-                                                        <div class="row mb-4">
-                                                            <div class="col-12 font-family-sora">
-                                                                <p class="mb-0">Don't have a PayCargo Account?</p>
-                                                                <span>Sign up at <a href="#" class="text-decoration-underline text-dark">https://www.paycargo.com/</a></span>
-                                                            </div>
-                                                        </div>
-                                                        <hr class="border border-dark-subtle opacity-10 my-3">
-                                                        <div class="row mb-4 align-items-center">
                                                             <label for="notes" class="col-sm-5 col-form-label">Customer Notes:</label>
                                                             <div class="col-sm-7">
-                                                                <input type="text" class="form-control bg-light" id="notes" placeholder="Optional notes">
+                                                                <textarea class="form-control bg-light" id="notes" placeholder="Optional notes" rows="1"></textarea>
                                                             </div>
-                                                        </div>
-
-                                                        <div class="text-danger text-start text-sm mt-5">
-                                                            <p class="mb-0 fw-bold">You may incur additional charges from PayCargo unrelated to Imperial CFS, Inc.</p>
-                                                            <p class="fw-bold">If those charges occur, you will not able to view them here.</p><br>
-                                                            <p class="mb-0">* Required.</p>
-                                                        </div>
+                                                        </div>  
                                                     </form>
                                                 </div>
                                                 <div class="col col-md-6">
@@ -719,54 +684,108 @@
                                             <h4 class="text-start type-h4 ">E-Check Order</h4>
                                             <div class="row">
                                                 <div class="col col-md-6 text-start">
-                                                    <p class="font-family-sora text-navy-600 mb-6">Bank Information</p>
+                                                    <p class="font-family-sora text-navy-600 mb-6">Bank Information.</p>
                                                     <form class="text-start">
                                                         <div class="row mb-3 align-items-center">
-                                                            <label for="username" class="col-sm-5 col-form-label">PayCargo Username*</label>
+                                                            <label class="col-sm-5 col-form-label">Bank Account Type</label>
                                                             <div class="col-sm-7">
-                                                                <input type="text" class="form-control bg-light" id="username" placeholder="Username">
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="accountType" id="typeChecking" value="checking" checked>
+                                                                    <label class="form-check-label" for="typeChecking" style="margin-bottom:.25rem;">Checking</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="accountType" id="typeSavings" value="savings">
+                                                                    <label class="form-check-label" for="typeSavings" style="margin-bottom:.25rem;">Savings</label>
+                                                                </div>
                                                             </div>
                                                         </div>
-
                                                         <div class="row mb-3 align-items-center">
-                                                            <label for="password" class="col-sm-5 col-form-label">PayCargo Password*</label>
+                                                            <label for="bankName" class="col-sm-5 col-form-label">Bank Name</label>
                                                             <div class="col-sm-7">
-                                                                <input type="password" class="form-control bg-light" id="password" placeholder="Password">
+                                                                <input type="text" class="form-control bg-light" id="bankName" placeholder="Bank name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="routingNumber" class="col-sm-5 col-form-label">Bank Routing Number</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="routingNumber" placeholder="xxx" maxlength="9" inputmode="numeric" pattern="\d{9}" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="accountNumber" class="col-sm-5 col-form-label">Bank Account Number</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="accountNumber" placeholder="xxx" inputmode="numeric" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="confirmAccountNumber" class="col-sm-5 col-form-label">Confirm Bank Acct. No.</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="confirmAccountNumber" placeholder="xxx" inputmode="numeric">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="accountName" class="col-sm-5 col-form-label">Name on Bank Account</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="accountName" placeholder="Name" autocomplete="cc-name">
+                                                            </div>
+                                                        </div>
+                                                        <hr class="border border-dark-subtle opacity-10 my-3">
+                                                        <p class="font-family-sora text-navy-600 mb-6">Billing Information.</p>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="firstName" class="col-sm-5 col-form-label">First Name</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="firstName" placeholder="First Name" autocomplete="given-name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="lastName" class="col-sm-5 col-form-label">Last Name</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="lastName" placeholder="Last Name" autocomplete="family-name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="street" class="col-sm-5 col-form-label">Address Street</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="street" placeholder="Street" autocomplete="street-address">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="city" class="col-sm-5 col-form-label">Address City</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="city" placeholder="City" autocomplete="address-level2">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="state" class="col-sm-5 col-form-label">Address State</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="state" placeholder="State" autocomplete="address-level1">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="zipcode" class="col-sm-5 col-form-label">Address Zipcode</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control bg-light" id="zipcode" placeholder="Zipcode" autocomplete="postal-code" inputmode="numeric">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="email" class="col-sm-5 col-form-label">Email</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="email" class="form-control bg-light" id="email" placeholder="Email" autocomplete="email">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb-3 align-items-center">
+                                                            <label for="phone" class="col-sm-5 col-form-label">Phone Number</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="tel" class="form-control bg-light" id="phone" placeholder="(XXX)-XXX-XXXX" autocomplete="tel">
                                                             </div>
                                                         </div>
                                                         <hr class="border border-dark-subtle opacity-10 my-3">
                                                         <div class="row mb-3 align-items-center">
-                                                            <label for="fullname" class="col-sm-5 col-form-label">Full Name*</label>
-                                                            <div class="col-sm-7">
-                                                                <input type="text" class="form-control bg-light" id="fullname" placeholder="Full Name">
-                                                            </div>
-                                                        </div>
-                                                        <div class="row mb-3 align-items-center">
-                                                            <label for="email" class="col-sm-5 col-form-label">Email*</label>
-                                                            <div class="col-sm-7">
-                                                                <input type="email" class="form-control bg-light" id="email" placeholder="Email Address">
-                                                            </div>
-                                                        </div>
-                                                        <hr class="border border-dark-subtle opacity-10 my-3">
-                                                        <div class="row mb-4">
-                                                            <div class="col-12 font-family-sora">
-                                                                <p class="mb-0">Don't have a PayCargo Account?</p>
-                                                                <span>Sign up at <a href="#" class="text-decoration-underline text-dark">https://www.paycargo.com/</a></span>
-                                                            </div>
-                                                        </div>
-                                                        <hr class="border border-dark-subtle opacity-10 my-3">
-                                                        <div class="row mb-4 align-items-center">
                                                             <label for="notes" class="col-sm-5 col-form-label">Customer Notes:</label>
                                                             <div class="col-sm-7">
-                                                                <input type="text" class="form-control bg-light" id="notes" placeholder="Optional notes">
+                                                                <textarea class="form-control bg-light" id="notes" placeholder="Optional notes" rows="1"></textarea>
                                                             </div>
-                                                        </div>
-
-                                                        <div class="text-danger text-start text-sm mt-5">
-                                                            <p class="mb-0 fw-bold">You may incur additional charges from PayCargo unrelated to Imperial CFS, Inc.</p>
-                                                            <p class="fw-bold">If those charges occur, you will not able to view them here.</p><br>
-                                                            <p class="mb-0">* Required.</p>
-                                                        </div>
+                                                        </div>  
                                                     </form>
                                                 </div>
                                                 <div class="col col-md-6">
