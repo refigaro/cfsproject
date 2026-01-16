@@ -647,5 +647,21 @@ h1, h2, h3, h4, h5, h6 { line-height:120%; }
         min-height:2rem;
     }
     
+}
 
+/* Style for Read-Only Text Inputs */
+input[readonly],
+input[type="text"][readonly] {
+    color: #495057;            /* Keep text readable (dark grey) */
+    cursor: default;           /* Shows standard arrow instead of text beam */
+    opacity: 1;                /* Prevents iOS from overriding opacity */
+    border-color: #ced4da;     /* Standard border color */
+}
+
+/* Optional: Remove focus ring so it doesn't look clickable */
+input[readonly]:focus,
+input[type="text"][readonly]:focus {
+    box-shadow: none!important;
+    border: 1px solid #ced4da!important;
+    background-color: initial!important;
 }

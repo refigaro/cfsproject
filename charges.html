@@ -29,69 +29,28 @@
             <div class="container-fluid">
                 <div class="row align-items-center position-relative">
                     <div class="col col-md-auto col-sm-8 d-flex gap-16 justify-start items-center">
-                        
                         <div class="nav-logo">
                             <a href="/">
                                 <img alt="IMPERIAL CFS" src="/_images/logo-w.png">
                             </a>
                         </div>
-
-                        <ul class="nav text-white font-family-archivo text-uppercase d-none d-xl-flex ms-4">
-                            <li class="nav-item">
-                                <a class="nav-link active link-light" aria-current="page" href="#">Inland WHSE list</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link link-light" href="#">WHSE In / Out</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link link-light" href="#">Transit Schedule</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link link-light dropdown-toggle text-white font-family-archivo text-uppercase" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                                    More
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Inland WHSE list</a></li>
-                                    <li><a class="dropdown-item" href="#warehouse-in-out">WHSE In / Out</a></li>
-                                    <li><a class="dropdown-item" href="#">Transit Schedule</a></li>
-                                </ul>
+                    </div>
+                    <div class="col-auto col-sm-auto ar ms-auto">
+                        <ul class="menu-list h-100 col-auto ml-auto gap-0 d-flex">
+                            <li class="d-flex align-items-center"><a href="#" class="btn btn-primary text-white btn-sm rounded-pill text-sm" data-bs-toggle="modal" data-bs-target="#login-modal">Login</a></li>
+                            <li class="d-flex align-items-center"><a href="#" class="btn btn-primary text-white btn-sm rounded-pill text-sm"><i class="fa-solid fa-user-gear ml-1"></i></a>
+                                <div class="sub-menu">
+                                    <dl>
+                                        <dd><a href="profile.html">Profile</a></dd>
+                                        <dd><a href="inland.html">INLAND WAREHOUSE LIST</a></dd>
+                                        <dd><a href="whse-in-out.html">WAREHOUSE IN / OUT</a></dd>
+                                        <dd><a href="transit.html">TRANSIT SCHEDULE</a></dd>
+                                    </dl>
+                                </div>
                             </li>
                         </ul>
-
-                        <div class="dropdown d-xl-none ms-3">
-                            <button class="btn btn-outline-light btn-sm dropdown-toggle font-family-archivo text-uppercase rounded-full" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Useful links
-                            </button>
-                            <ul class="dropdown-menu shadow">
-                                <li><a class="dropdown-item" href="#">Inland WHSE list</a></li>
-                                <li><a class="dropdown-item" href="#">WHSE In / Out</a></li>
-                                <li><a class="dropdown-item" href="#">Transit Schedule</a></li>
-                            </ul>
-                        </div>
-
                     </div>
-                    <div class="col col-sm-auto d-flex items-center justify-end gap-4 search-bar">
-                        <button type="button" class="btn btn-outline-light btn-sm rounded-full transition hover-scale-97 font-family-archivo text-nowrap" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Search</button>
-                        <div class="row collapse" id="collapseExample">
-                            <div class="nav-search-bar col-12">
-                                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo"><b class="hide-mobile">New Search:</b>
-                                    <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
-                                    <option selected="selected" value="mbl">Master Bill</option>
-                                    <option value="cntr">Container Number</option>
-                                    <option value="ams">AMS House Bill</option>
-                                    <option value="it">Inbond Number</option>
-                                    <option value="go">GO Number</option>
-                                    </select>
-                                </label> 
-                                <label for="">
-                                    <input class="rounded" type="text">
-                                </label>
-                                <button type="button" class="btn btn-primary btn-sm bg-navy-700 text-uppercase text-xs rounded">Search <i class="bi bi-search text-xs ml-2"></i></button>
-                                <button type="button" class="btn-close" aria-label="Close"  data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-md-auto col-sm-auto ar ms-auto">
+                    <div class="col col-md-auto col-sm-auto ar">
                         <div class="availability-menu-link clears">
                             <div class="hamburger-menu fr">
                                 <div class="bar"></div>
@@ -183,46 +142,54 @@
         </div>
     </div>
 </section>
-<section class="mbl-details">
+<section class="mbl-details charges-page">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3 mb-4">
+            <div class="col-12 col-lg-4 col-xl-3 mb-4">
                 <div class="h-100 position-relative">
                     <div class="card card-shadow destination font-family-archivo fade-in sticky-top d-none" id="js-charges-sidebar"> <!-- Sidebar -->
                         <div class="card-body p-4">
-                            <div class="detail-pair pb-3">
+                            <div class="detail-pair">
                                 <span class="detail-label">HBL NO.</span>
                                 <span class="detail-value text-2xl fw-bold">EFSVMZP798532E</span>
                             </div>
-                            <div class="mb-4 pb-2 border-bottom">
+                            <div class="mb-2 py-1 border-bottom">
                                 <div class="row">
-                                    <div class="col-12 mb-3 d-flex flex-direction-row align-items-center gap-2">
+                                    <div class="col-12 mb-2 d-flex flex-direction-row align-items-center gap-3">
                                         <span class="detail-label lh-1rem">MBL</span>
                                         <div class="text-dark lh-1rem mb-1px">CMDUNGP2798532</div>
                                     </div>
-                                    <div class="col-12 d-flex flex-direction-row align-items-center gap-2">
-                                        <span class="detail-label lh-1rem">EST. P/U DATE</span>
-                                        <div class="text-dark lh-1rem mb-1px">01/08/26</div>
+                                </div>
+                            </div>
+                            <div class="border-bottom py-3 mb-1">
+                                <div class="row gap-3">
+                                    <div class="col-12 d-flex flex-direction-row align-items-center justify-content-between gap-2">
+                                        <span class="detail-label text-dark lh-1rem"><i class="fa-solid fa-dolly"></i> EST. P/U DATE</span>
+                                        <div class="text-dark lh-1rem mb-1px text-lg fw-bold" id="display-pu-date">01/08/26</div> <!-- P/U Date display with #display-pu-date -->
+                                    </div>
+                                    <div class="col-12 d-flex flex-direction-row align-items-center justify-content-between gap-2">
+                                        <span class="detail-label text-danger lh-1rem"><i class="fa-solid fa-circle-exclamation"></i> Last Free DATE</span>
+                                        <div class="text-dark lh-1rem mb-1px text-lg fw-bold">01/12/26</div>
+                                    </div>
+                                    <div class="col-12 d-flex flex-direction-row justify-content-between align-items-center gap-2">
+                                        <span class="detail-label lh-1rem"><i class="fa-regular fa-calendar-days"></i> Today's Date</span>
+                                        <div class="text-dark lh-1rem mb-1px">01/07/26</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="mb-4 pb-2 border-bottom">
-                                <div class="row">
-                                    <div class="col-12 mb-3 d-flex flex-direction-row align-items-center gap-2">
-                                        <span class="detail-label lh-1rem"><i class="fa-regular fa-square-full"></i> PACKAGES</span>
-                                        <div class="text-dark lh-1rem mb-1px">CMDUNGP2798532</div>
+                            <div class="mb-5 border-bottom">
+                                <div class="row gap-3 py-3">
+                                    <div class="col-12 d-flex flex-direction-row justify-content-between align-items-center gap-2">
+                                        <span class="detail-label lh-1rem"><i class="fa-solid fa-box-open"></i> PACKAGES</span>
+                                        <div class="text-dark lh-1rem mb-1px">23</div>
                                     </div>
-                                    <div class="col-12 mb-3 d-flex flex-direction-row align-items-center gap-2">
+                                    <div class="col-12 d-flex flex-direction-row justify-content-between align-items-center gap-2">
                                         <span class="detail-label lh-1rem"><i class="bi bi-box"></i> CBM</span>
-                                        <div class="text-dark lh-1rem mb-1px">01/08/26</div>
+                                        <div class="text-dark lh-1rem mb-1px">230.02</div>
                                     </div>
-                                    <div class="col-12 mb-3 d-flex flex-direction-row align-items-center gap-2">
-                                        <span class="detail-label lh-1rem"><i class="bi bi-speedometer"></i> LBS</span>
-                                        <div class="text-dark lh-1rem mb-1px">CMDUNGP2798532</div>
-                                    </div>
-                                    <div class="col-12 mb-3 d-flex flex-direction-row align-items-center gap-2">
-                                        <span class="detail-label lh-1rem"><i class="fa-regular fa-calendar-days"></i> Today's Date</span>
-                                        <div class="text-dark lh-1rem mb-1px">01/08/26</div>
+                                    <div class="col-12 d-flex flex-direction-row justify-content-between align-items-center gap-2">
+                                        <span class="detail-label lh-1rem"><i class="fa-solid fa-scale-balanced"></i> LBS</span>
+                                        <div class="text-dark lh-1rem mb-1px">430.12</div>
                                     </div>
                                 </div>
                             </div>
@@ -234,20 +201,20 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg mb-4 font-family-archivo d-flex flex-column">
+            <div class="col-12 col-lg mb-4 font-family-archivo d-flex flex-column">
                 <section class="charge-steps fade-in d-none" id="js-charges-step1"> <!-- Step 1 -->
                     <div class="my-3 row gap-3 px-2 py-2">
                         <div class="col-lg-12 ">
                             <h3 class="charge-instructions">Step 1. <span>Select your estimated pickup date.</span></h3>
-                            <div class="charge-step-module d-flex align-items-center">
-                                <div class="col d-flex gap-2 align-items-center">                                
+                            <div class="charge-step-module d-flex flex-wrap align-items-center">
+                                <div class="col-12 col-md d-flex gap-2 align-items-center">                                
                                     <label class="form-label detail-label text-base text-nowrap mb-0 lh-1" for="Pickup_date">EST. P/U Date</label>
                                     <input class="form-control rounded date" type="date" id="est-pu-date" autocomplete="off" data-val="true" data-val-date="The field Est. P/U Date must be a date." data-val-required="The Est. P/U Date field is required." id="Pickup_date" name="Pickup_date" placeholder="Please Enter Pick-Up Date" required="true" type="text">
                                 </div>
-                                <div class="col-1">
+                                <div class="col-12 col-md-1">
                                     <i class="bi bi-arrow-right"></i>
                                 </div>
-                                <div class="col">
+                                <div class="col-12 col-md">
                                     <div class="col-12 d-flex flex-direction-row align-items-center gap-2">
                                         <span class="detail-label lh-1rem text-base">HBL No.</span>
                                     <div class="text-dark lh-1rem mb-1px text-base">01/08/26</div>
@@ -262,11 +229,11 @@
                     <div class="my-3 row gap-3 px-2 py-2">
                         <div class="col-lg-12 ">
                             <h3 class="charge-instructions">Step 2. <span>Please select charges you wish to pay.</span></h3>
-                            <div class="charge-step-module d-flex align-items-stretch charges-table py-8 mb-4">
+                            <div class="charge-step-module d-flex align-items-stretch charges-table py-8 mb-4" id="charges-select-container">
                                 <!-- Charges Table Heading -->
                                 <div class="charges-table-heading"> 
                                     <label class="form-check-label" for="checkDefault">
-                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        <input class="form-check-input js-check-all" type="checkbox" value="" id="checkDefault">
                                         Description
                                     </label>
                                     <span class="text-end">Charge</span>
@@ -275,7 +242,7 @@
                                 <!-- Charges Table Items -->
                                 <div class="charges-table-item">
                                     <label class="form-check-label" for="checkDefault">
-                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        <input class="form-check-input js-check-item" type="checkbox" value="" id="checkDefault">
                                         Forklift
                                     </label>
                                     <span>55.00</span>
@@ -283,7 +250,7 @@
                                 </div>
                                 <div class="charges-table-item">
                                     <label class="form-check-label" for="checkDefault">
-                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        <input class="form-check-input js-check-item" type="checkbox" value="" id="checkDefault">
                                         In-bond Doc
                                     </label>
                                     <span>55.00</span>
@@ -291,7 +258,7 @@
                                 </div>
                                 <div class="charges-table-item">
                                     <label class="form-check-label" for="checkDefault">
-                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        <input class="form-check-input js-check-item" type="checkbox" value="" id="checkDefault">
                                         CFS Terminal
                                     </label>
                                     <span>55.00</span>
@@ -299,7 +266,7 @@
                                 </div>
                                 <div class="charges-table-item">
                                     <label class="form-check-label" for="checkDefault">
-                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        <input class="form-check-input js-check-item" type="checkbox" value="" id="checkDefault">
                                         Facility Window
                                     </label>
                                     <span>55.00</span>
@@ -307,7 +274,7 @@
                                 </div>
                                 <div class="charges-table-item">
                                     <label class="form-check-label" for="checkDefault">
-                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        <input class="form-check-input js-check-item" type="checkbox" value="" id="checkDefault">
                                         Port Drayage Surcharge
                                     </label>
                                     <span>55.00</span>
@@ -315,7 +282,7 @@
                                 </div>
                                 <div class="charges-table-item">
                                     <label class="form-check-label" for="checkDefault">
-                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        <input class="form-check-input js-check-item" type="checkbox" value="" id="checkDefault">
                                         Demurage Charge
                                     </label>
                                     <span>55.00</span>
@@ -323,7 +290,7 @@
                                 </div>
                                 <div class="charges-table-item">
                                     <label class="form-check-label" for="checkDefault">
-                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        <input class="form-check-input js-check-item" type="checkbox" value="" id="checkDefault">
                                         Pallet Window
                                     </label>
                                     <span>55.00</span>
@@ -353,12 +320,12 @@
                             <div class="bd-example m-0 border-0"> 
                                 <nav>
                                     <div class="nav nav-pills mb-3" id="paymment-methods-nav-tabs" role="tablist">
-                                        <button class="flex-sm-fill text-sm-center nav-link" id="nav-paycargo-tab" data-bs-toggle="tab" data-bs-target="#nav-paycargo" type="button" role="tab" aria-controls="nav-paycargo" aria-selected="true">
+                                        <button class="col-12 col-sm-auto flex-fill text-sm-center nav-link" id="nav-paycargo-tab" data-bs-toggle="tab" data-bs-target="#nav-paycargo" type="button" role="tab" aria-controls="nav-paycargo" aria-selected="true">
                                             <img src="/_images/paycargo-white.webp" alt="" style="height: 1.25rem;">
                                         </button>
-                                        <button class="flex-sm-fill text-sm-center nav-link" id="nav-guarantee-tab" data-bs-toggle="tab" data-bs-target="#nav-guarantee" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" tabindex="-1">Guarantee Charges</button>
-                                        <button class="flex-sm-fill text-sm-center nav-link" id="nav-card-tab" data-bs-toggle="tab" data-bs-target="#nav-card" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" tabindex="-1">Credit Card</button>
-                                        <button class="flex-sm-fill text-sm-center nav-link" id="nav-check-tab" data-bs-toggle="tab" data-bs-target="#nav-check" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" tabindex="-1">E-Check</button>
+                                        <button class="col-12 col-sm-auto flex-fill text-sm-center nav-link" id="nav-guarantee-tab" data-bs-toggle="tab" data-bs-target="#nav-guarantee" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" tabindex="-1">Guarantee Charges</button>
+                                        <button class="col-12 col-sm-auto flex-fill text-sm-center nav-link" id="nav-card-tab" data-bs-toggle="tab" data-bs-target="#nav-card" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" tabindex="-1">Credit Card</button>
+                                        <button class="col-12 col-sm-auto flex-fill text-sm-center nav-link" id="nav-check-tab" data-bs-toggle="tab" data-bs-target="#nav-check" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" tabindex="-1">E-Check</button>
                                     </div>
                                 </nav>
                                 <div class="tab-content" id="nav-content">
@@ -412,8 +379,7 @@
                                                         </div>
 
                                                         <div class="text-danger text-start text-sm mt-5">
-                                                            <p class="mb-0 fw-bold">You may incur additional charges from PayCargo unrelated to Imperial CFS, Inc.</p>
-                                                            <p class="fw-bold">If those charges occur, you will not able to view them here.</p><br>
+                                                            <p class="mb-0">You may incur additional charges from PayCargo unrelated to Imperial CFS, Inc. <b>If those charges occur, you will not able to view them here.</b></p><br>
                                                             <p class="mb-0">* Required.</p>
                                                         </div>
                                                     </form>
@@ -452,7 +418,7 @@
                                                                         <span>Pallet window</span>
                                                                         <span class="fw-bold">$25.00</span>
                                                                     </div>
-                                                                    <div class="d-flex justify-content-between charge-row mt-3">
+                                                                    <div class="d-flex justify-content-between charge-row demurrage-fee">
                                                                         <span>Demurrage Charge</span>
                                                                         <span class="fw-bold">$5235.00</span>
                                                                     </div>
@@ -513,7 +479,7 @@
                                                         <div class="row align-items-center">
                                                             <label for="email" class="col-sm-5 col-form-label">Email Address</label>
                                                             <div class="col-sm-7">
-                                                                <input type="email" class="form-control bg-light" id="email" placeholder="Email">
+                                                                <input type="email" class="form-control" id="email" placeholder="Email" readonly>
                                                             </div>
                                                         </div>
                                                     </form>
@@ -652,9 +618,13 @@
                                                                         <span>Pallet window</span>
                                                                         <span class="fw-bold">$25.00</span>
                                                                     </div>
-                                                                    <div class="d-flex justify-content-between charge-row mt-3">
+                                                                    <div class="d-flex justify-content-between charge-row demurrage-fee">
                                                                         <span>Demurrage Charge</span>
                                                                         <span class="fw-bold">$5235.00</span>
+                                                                    </div>
+                                                                    <div class="d-flex justify-content-between charge-row ccard-fee">
+                                                                        <span>Credit Card Service Charge</span>
+                                                                        <span class="fw-bold">$590.00</span>
                                                                     </div>
                                                                     <hr class="text-muted opacity-25 my-3">
                                                                     <div class="d-flex justify-content-between align-items-center mb-4">
@@ -822,7 +792,7 @@
                                                                         <span>Pallet window</span>
                                                                         <span class="fw-bold">$25.00</span>
                                                                     </div>
-                                                                    <div class="d-flex justify-content-between charge-row mt-3">
+                                                                    <div class="d-flex justify-content-between charge-row  demurrage-fee">
                                                                         <span>Demurrage Charge</span>
                                                                         <span class="fw-bold">$5235.00</span>
                                                                     </div>
@@ -1061,15 +1031,43 @@
     // --- Logic for Button 2 ---
     // Date Input Logic
     const dateInput = document.getElementById('est-pu-date');
+    
     dateInput.addEventListener('change', function() {
         // Only trigger if the user actually selected a valid date
         if (this.value) {
+            
+            // --- NEW CODE: Update the text display ---
+            const dateDisplay = document.getElementById('display-pu-date');
+            
+            // Create date object (append time to fix timezone offset issues)
+            const dateObj = new Date(this.value + 'T00:00');
+            
+            // Format parts for MM/DD/YY
+            const mm = String(dateObj.getMonth() + 1).padStart(2, '0');
+            const dd = String(dateObj.getDate()).padStart(2, '0');
+            const yy = String(dateObj.getFullYear()).slice(-2);
+            
+            // Update the HTML
+            if (dateDisplay) {
+                dateDisplay.textContent = `${mm}/${dd}/${yy}`;
+            }
+            // ----------------------------------------
+
+
+            // --- EXISTING CODE: Show next step ---
             const target = document.getElementById('js-charges-step2');
             
-            // Only scroll if it was previously hidden (prevents jumping if they change date again)
-            if (target.classList.contains('d-none')) {
+            // Only scroll if it was previously hidden
+            if (target && target.classList.contains('d-none')) {
                 target.classList.remove('d-none');
                 smoothScrollTo('js-charges-step2');
+            }
+
+            //  Hide Step 3 (Summary) to force re-calculation
+            // This ensures the user doesn't see an old price for a new date.
+            const step3 = document.getElementById('js-charges-step3');
+            if (step3) {
+                step3.classList.add('d-none');
             }
         }
     });
@@ -1113,5 +1111,89 @@
     animation: fadeInAnimation 1s ease-in forwards;
 }
 </style>
+
+<!-- ///-- Script for checking all checkboxes in the Charges  --////-->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const container = document.getElementById('charges-select-container');
+        
+        const masterCheckbox = container.querySelector('.js-check-all');
+        
+        masterCheckbox.addEventListener('change', function (e) {
+            const isChecked = e.target.checked;
+            const itemCheckboxes = container.querySelectorAll('.js-check-item');
+            
+            itemCheckboxes.forEach(checkbox => {
+                checkbox.checked = isChecked;
+            });
+        });
+
+        container.addEventListener('change', function (e) {
+            if (e.target.classList.contains('js-check-item')) {
+                updateMasterState();
+            }
+        });
+
+        function updateMasterState() {
+            const itemCheckboxes = container.querySelectorAll('.js-check-item');
+            const totalItems = itemCheckboxes.length;
+            
+            const checkedCount = Array.from(itemCheckboxes).filter(c => c.checked).length;
+
+            if (checkedCount === 0) {
+                masterCheckbox.checked = false;
+                masterCheckbox.indeterminate = false;
+            } else if (checkedCount === totalItems) {
+                masterCheckbox.checked = true;
+                masterCheckbox.indeterminate = false;
+            } else {
+                masterCheckbox.checked = false;
+                masterCheckbox.indeterminate = true;
+            }
+        }
+    });
+</script>
+<script src="/js/card.js"></script>
+<script>
+    var card = new Card({
+    // a selector or DOM element for the form where users will
+    // be entering their information
+    form: 'form', // *required*
+    // a selector or DOM element for the container
+    // where you want the card to appear
+    container: '.card-wrapper', // *required*
+
+    formSelectors: {
+        numberInput: 'input#number', // optional — default input[name="number"]
+        expiryInput: 'input#expiry', // optional — default input[name="expiry"]
+        cvcInput: 'input#cvc', // optional — default input[name="cvc"]
+        nameInput: 'input#name' // optional - defaults input[name="name"]
+    },
+
+    width: 200, // optional — default 350px
+    formatting: true, // optional - default true
+
+    // Strings for translation - optional
+    messages: {
+        validDate: 'valid\ndate', // optional - default 'valid\nthru'
+        monthYear: 'mm/yyyy', // optional - default 'month/year'
+    },
+
+    // Default placeholders for rendered fields - optional
+    placeholders: {
+        number: '•••• •••• •••• ••••',
+        name: 'Full Name',
+        expiry: '••/••',
+        cvc: '•••'
+    },
+
+    masks: {
+        cardNumber: '•' // optional - mask card number
+    },
+
+    // if true, will log helpful messages for setting up Card
+    debug: false // optional - default false
+});
+</script>
 </body>
 </html>
