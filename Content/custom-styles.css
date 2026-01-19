@@ -543,6 +543,28 @@ body:not(.marketing) .bar.animate:before {
     }
 
 
+.hbl-item-details-modal.offcanvas {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+  overflow: hidden; /* Prevents double scrollbars */
+}
+
+/* Allow the header to shrink and scroll if it gets too tall */
+.hbl-item-details-modal .offcanvas-header {
+  flex: 0 1 auto; /* Grow to fit, but shrink if necessary */
+  overflow-y: auto; 
+  max-height: 50vh; /* Optional: cap the header at 50% of the screen */
+  border-bottom: 1px solid #dee2e6; /* Visual separation */
+}
+
+/* The body takes up the remaining space */
+.hbl-item-details-modal .offcanvas-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+
+}
+
  
     .hbl-item-details-modal .badge.pill-hold {
             background:var(--clr-danger-light);

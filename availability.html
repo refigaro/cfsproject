@@ -509,654 +509,653 @@
                             <button type="button" class="btn btn-sm btn-outline-dark close text-base ms-auto rounded-full" data-bs-dismiss="offcanvas" aria-label="Close"><b>Close <i class="bi bi-x-lg"></i></b></button>
                         </div>
                     </div>
-                    <div class="mt-2 w-100 gap-2" id="hbl-collapsibles-group">
-                        <div class="collapse w-100" id="collapse-cucc" data-bs-parent="#hbl-collapsibles-group"> <!-- CUCC Charges collapse -->
-                            <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
-                                <!-- Collapse button -->
-                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center text-uppercase">CUCC charges <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>   
-                                <div class="p-3 py-4  align-items-center gap-2">
-                                    <!-- Headers -->
-                                    <div id="charges-header" class="d-none" style="padding: .5rem .75rem !important;">
-                                        <div class="col-5 text-start">Description</div>
-                                        <div class="col-auto text-start cucc-amounts-grid">
-                                            <div class="text-end">Amt Collected at Window</div>
-                                            <div class="text-end">Service Fee</div>
-                                            <div class="text-end">Amt Due To You</div>
-                                        </div>
-                                        <!--
-                                        <div class="col-2 text-end">Amt Collected at Window</div>
-                                        <div class="col-2 text-end">Service Fee</div>
-                                        <div class="col-2 text-end">Amt Due To You</div> -->
-                                    </div>
-                                    <!-- Accordion Group -->
-                                    <div class="accordion accordion-flush d-flex flex-column gap-2" id="accordionFlushExample">
-                                        <!-- Accordion CUCC Item -->
-                                        <div class="accordion-item rounded-3 cucc-item js-calculator-item">
-                                            <h2 class="accordion-header">
-                                                <div class="accordion-button btn-sm collapsed no-arrow d-flex align-items-center bg-azure-95" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-1" aria-expanded="false" aria-controls="flush-collapse-1">
-                                                    <div class="col-5 text-uppercase font-family-archivo text-base js-item-title unsaved">
-                                                        CUCC Charge
-                                                    </div>
-                                                    <div class="cucc-amounts-grid text-end">
-                                                        <div class="font-family-archivo text-base text-end  js-val-window-header">
-                                                            $10.00
-                                                        </div>
-                                                        <div class="font-family-archivo text-base fw-bold text-end service-fee text-danger js-val-fee-header">
-                                                            $10.00
-                                                        </div>
-                                                        <div class="font-family-archivo text-base fw-bold text-end js-val-due-header">
-                                                            $10.00
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto ms-auto">
-                                                        <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-4"><u>Edit</u></span>
-                                                        <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-4" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#remove-confirmation-modal-1" type="button"><u>Remove</u></span>
-                                                    </div>
-                                                    <div class="col-auto font-family-archivo text-success fw-bold rounded-full bg-success-light px-3 py-2">
-                                                        PAID
-                                                    </div>
-                                            </h2>
-                                            <!-- Remove Confirmation Modal -->
-                                            <div class="modal fade confirmation-modal faux-modal" id="remove-confirmation-modal-1" tabindex="-1" aria-labelledby="remove-confirmation-modal-1-label" aria-hidden="true" data-bs-backdrop="false">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header justify-content-end border-bottom-0 pb-1">
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body px-5 pb-5 pt-0 font-family-sora text-center">
-                                                            <p class="mb-4">Do you want to remove this charge?</p>
-                                                            <div class="d-flex justify-content-center gap-3">
-                                                                <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Go Back</button>
-                                                                <!-- ADDED: ID 'confirm-delete-btn' to easily find this button in JS -->
-                                                                <button type="button" class="btn btn-danger rounded-pill px-4 js-remove-charge">Remove charge</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                </div>
+                <div class="offcanvas-body custom-scrollbar" style="gap:0!important;">
+                    <div class="d-flex flex-column"> <!-- HBL Collapsibles -->
+                        <!--  ///// HBL Collapsibles Group ///// -->
+                        <div class="w-100 gap-2" id="hbl-collapsibles-group"> 
+                            <div class="collapse w-100" id="collapse-cucc" data-bs-parent="#hbl-collapsibles-group"> <!-- CUCC Charges collapse -->
+                                <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
+                                    <!-- Collapse button -->
+                                    <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center text-uppercase">CUCC charges <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>   
+                                    <div class="p-3 py-4  align-items-center gap-2">
+                                        <!-- Headers -->
+                                        <div id="charges-header" class="d-none" style="padding: .5rem .75rem !important;">
+                                            <div class="col-5 text-start">Description</div>
+                                            <div class="col-auto text-start cucc-amounts-grid">
+                                                <div class="text-end">Amt Collected at Window</div>
+                                                <div class="text-end">Service Fee</div>
+                                                <div class="text-end">Amt Due To You</div>
                                             </div>
-                                            <div id="flush-collapse-1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body pb-4 pt-6">
-                                                    <div class="row">
-                                                        <div class="col-7 d-flex gap-3 px-4 py-3 border rounded">
-                                                            <!-- Amount Radios -->
-                                                            <div class="col-auto d-flex flex-column gap-2 justify-start pr-8">
-                                                                <p class="text-uppercase text-sm col-auto fw-bold mb-2">Choose one:</p>
-                                                                <label class="form-check d-flex gap-2 align-items-center">
-                                                                    <input class="form-check-input my-0 js-radio-mode border-black" type="radio" name="cucc-option-1" value="due_to_you" checked>
-                                                                    <span class="form-check-label">
-                                                                        Amount Due to you
-                                                                    </span>
-                                                                </label>
-                                                                <label class="form-check d-flex gap-2 align-items-center">
-                                                                    <input class="form-check-input my-0 js-radio-mode border-black" type="radio" name="cucc-option-1" value="collect_window">
-                                                                    <span class="form-check-label">
-                                                                        Amount Collected at Window
-                                                                    </span>
-                                                                </label>
+                                        </div>
+                                        <!-- Accordion Group -->
+                                        <div class="accordion accordion-flush d-flex flex-column gap-2" id="accordionFlushExample">
+                                            <!-- Accordion CUCC Item -->
+                                            <div class="accordion-item rounded-3 cucc-item js-calculator-item">
+                                                <h2 class="accordion-header">
+                                                    <div class="accordion-button btn-sm collapsed no-arrow d-flex align-items-center bg-azure-95" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-1" aria-expanded="false" aria-controls="flush-collapse-1">
+                                                        <div class="col-5 text-uppercase font-family-archivo text-base js-item-title unsaved">
+                                                            CUCC Charge
+                                                        </div>
+                                                        <div class="cucc-amounts-grid text-end">
+                                                            <div class="font-family-archivo text-base text-end  js-val-window-header">
+                                                                $10.00
                                                             </div>
-                                                            <!-- Desc & Amount Inputs -->
-                                                            <div class="col col-lg align-self-stretch align-items-bewteen d-flex flex-column border-start pl-4">
-                                                                <div class="col d-flex flex-row align-items-center gap-2 mb-4">
-                                                                    <label class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Description:</label>
-                                                                    <input type="text" class="form-control col rounded px-2 js-input-description"  value="CUCC Charge" placeholder="Custom description">
-                                                                </div>
-                                                                <div class="col d-flex flex-row align-items-center gap-3">
-                                                                    <label class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Amount:</label>
-                                                                    <input type="number" class="form-control rounded px-2 js-input-amount" placeholder="0.0" oninput="limitValue(this)" min="0.00" max="2000">
-                                                                    <span class="btn btn-sm btn-info rounded-full px-4 align-self-end col-auto align-self-center js-confirm-charge">Confirm <i class="bi bi-check-lg"></i></span>
-                                                                </div>
+                                                            <div class="font-family-archivo text-base fw-bold text-end service-fee text-danger js-val-fee-header">
+                                                                $10.00
+                                                            </div>
+                                                            <div class="font-family-archivo text-base fw-bold text-end js-val-due-header">
+                                                                $10.00
                                                             </div>
                                                         </div>
-                                                        <!-- Totals Table -->
-                                                        <div class="col-5">
-                                                            <div class="col d-flex flex-column align-items-stretch  h-100">
-                                                                <div class="rounded bg-navy-100 px-3 py-2 d-flex flex-column gap-3 justify-around h-100 cucc-item-total">          
-                                                                    <div class="col-12 d-flex justify-between">
-                                                                        <p class="text-nowrap">Amount Collected at Window</p>
-                                                                        <p class="ml-3 fw-bold text-lg text-end js-val-window">0.00</p>
-                                                                    </div>
-                                                                    <div class="col-12 d-flex justify-between">
-                                                                        <p>Imperial Service Fee</p>
-                                                                        <p class="ml-3 fw-bold text-lg text-end js-val-fee text-danger">0.00</p>
-                                                                    </div>
-                                                                    <div class="col-12 d-flex justify-between">
-                                                                        <p>Amount Due To You</p>
-                                                                        <p class="ml-3 fw-bold text-lg text-end js-val-due">0.00</p>
-                                                                    </div>
+                                                        <div class="col-auto ms-auto">
+                                                            <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-4"><u>Edit</u></span>
+                                                            <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-4" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#remove-confirmation-modal-1" type="button"><u>Remove</u></span>
+                                                        </div>
+                                                        <div class="col-auto font-family-archivo text-success fw-bold rounded-full bg-success-light px-3 py-2">
+                                                            PAID
+                                                        </div>
+                                                </h2>
+                                                <!-- Remove Confirmation Modal -->
+                                                <div class="modal fade confirmation-modal faux-modal" id="remove-confirmation-modal-1" tabindex="-1" aria-labelledby="remove-confirmation-modal-1-label" aria-hidden="true" data-bs-backdrop="false">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header justify-content-end border-bottom-0 pb-1">
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body px-5 pb-5 pt-0 font-family-sora text-center">
+                                                                <p class="mb-4">Do you want to remove this charge?</p>
+                                                                <div class="d-flex justify-content-center gap-3">
+                                                                    <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Go Back</button>
+                                                                    <!-- ADDED: ID 'confirm-delete-btn' to easily find this button in JS -->
+                                                                    <button type="button" class="btn btn-danger rounded-pill px-4 js-remove-charge">Remove charge</button>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Add Button -->
-                                    <div class="d-flex align-items-center mt-4 gap-4 text-secondary">
-                                        <button type="button" id="add-charge-btn" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Click to add <i class="bi bi-plus-circle-dotted"></i></b></button>
-                                        * Limit to 5 charges
-                                    </div>
-                                </div>  
-                            </div>
-                        </div>
-                        <div class="collapse w-100" id="collapse-ams-release" data-bs-parent="#hbl-collapsibles-group"> <!-- Frt release collapse -->
-                            <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
-                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center text-uppercase">Freight Release <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>                                            
-                                    <section class="ams-release mx-2" id="ams-release-container">
-                                        <div class="ams-list-header ams-header-grid">
-                                            <div class="d-flex">
-                                                <input class="form-check-input border border-dark js-check-all" type="checkbox" value="" id="ams-check-all"><label class="form-check-label" for="checkDefault"></label>
-                                            </div>
-                                            <div class="d-flex font-bold"><h3>AMS Numbers</h3></div>
-                                            <div class="d-flex justify-content-end px-2 text-navy-500 hide-header  text-end">Qty.</div>
-                                            <div class="d-flex justify-content-start px-2 text-navy-500 hide-header">Unit</div>
-                                            <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">CBM</div>
-                                            <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">LBS</div>
-                                            <div class="d-flex justify-content-start px-2 text-navy-500 hide-header">IT/ENTRY No.</div>
-                                            <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">IT/ENTRY Date</div>
-                                            <div class="d-flex justify-content-center px-2 text-navy-500 hide-header">Frt Release</div>
-                                        </div>
-                                        <div class="ams-list-item ams-list-grid"><!-- AMS list item -->
-                                            <div class="d-flex">
-                                                <input class="form-check-input border border-dark js-check-item" type="checkbox" value="" id="ams-check-1"><label class="form-check-label" for="checkDefault"></label>
-                                            </div>
-                                            <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
-                                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">QTY</p>72</div>
-                                            <div class="d-flex justify-content-start px-2 flex-column truncate-text"><p class="hide-label">Unit</p>BX</div>
-                                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM</p>2934.20</div>
-                                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS</p>2934.20</div>
-                                            <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.</p>9GK-0114066-8</div>
-                                            <div class="d-flex justify-content-center flex-column align-items-center">
-                                                <p class="hide-label">IT/ENTRY Date</p>
-                                                <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
-                                                <div class="d-flex gap-1">
-                                                    <span class="date d-none">07/18/25 </span>
-                                                    <p class="text-center  text-danger">
-                                                        <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
-                                                    </p> 
+                                                <div id="flush-collapse-1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                    <div class="accordion-body pb-4 pt-6">
+                                                        <div class="row">
+                                                            <div class="col-7 d-flex gap-3 px-4 py-3 border rounded">
+                                                                <!-- Amount Radios -->
+                                                                <div class="col-auto d-flex flex-column gap-2 justify-start pr-8">
+                                                                    <p class="text-uppercase text-sm col-auto fw-bold mb-2">Choose one:</p>
+                                                                    <label class="form-check d-flex gap-2 align-items-center">
+                                                                        <input class="form-check-input my-0 js-radio-mode border-black" type="radio" name="cucc-option-1" value="due_to_you" checked>
+                                                                        <span class="form-check-label">
+                                                                            Amount Due to you
+                                                                        </span>
+                                                                    </label>
+                                                                    <label class="form-check d-flex gap-2 align-items-center">
+                                                                        <input class="form-check-input my-0 js-radio-mode border-black" type="radio" name="cucc-option-1" value="collect_window">
+                                                                        <span class="form-check-label">
+                                                                            Amount Collected at Window
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                                <!-- Desc & Amount Inputs -->
+                                                                <div class="col col-lg align-self-stretch align-items-bewteen d-flex flex-column border-start pl-4">
+                                                                    <div class="col d-flex flex-row align-items-center gap-2 mb-4">
+                                                                        <label class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Description:</label>
+                                                                        <input type="text" class="form-control col rounded px-2 js-input-description"  value="CUCC Charge" placeholder="Custom description">
+                                                                    </div>
+                                                                    <div class="col d-flex flex-row align-items-center gap-3">
+                                                                        <label class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Amount:</label>
+                                                                        <input type="number" class="form-control rounded px-2 js-input-amount" placeholder="0.0" oninput="limitValue(this)" min="0.00" max="2000">
+                                                                        <span class="btn btn-sm btn-info rounded-full px-4 align-self-end col-auto align-self-center js-confirm-charge">Confirm <i class="bi bi-check-lg"></i></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Totals Table -->
+                                                            <div class="col-5">
+                                                                <div class="col d-flex flex-column align-items-stretch  h-100">
+                                                                    <div class="rounded bg-navy-100 px-3 py-2 d-flex flex-column gap-3 justify-around h-100 cucc-item-total">          
+                                                                        <div class="col-12 d-flex justify-between">
+                                                                            <p class="text-nowrap">Amount Collected at Window</p>
+                                                                            <p class="ml-3 fw-bold text-lg text-end js-val-window">0.00</p>
+                                                                        </div>
+                                                                        <div class="col-12 d-flex justify-between">
+                                                                            <p>Imperial Service Fee</p>
+                                                                            <p class="ml-3 fw-bold text-lg text-end js-val-fee text-danger">0.00</p>
+                                                                        </div>
+                                                                        <div class="col-12 d-flex justify-between">
+                                                                            <p>Amount Due To You</p>
+                                                                            <p class="ml-3 fw-bold text-lg text-end js-val-due">0.00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-center flex-column align-items-center">
-                                                <p class="hide-label">FRT Rlse:</p>
-                                                <div class="d-flex gap-1">
-                                                <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
-                                                    <span class="date d-none">07/18/25 </span>
-                                                    <p class="text-center text-danger">
-                                                        <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-end flex-row align-items-center gap-2 px-3 d-none">
-                                                <button type="button" class="btn btn-sm btn-info text-light text-base rounded-full"><b>Frt Release</b></button>
-                                                <button type="button" class="btn btn-sm btn-info text-light text-base rounded-full"><b>Cancel Release</b></button>
-                                            </div>
                                         </div>
-                                        <div class="ams-list-item ams-list-grid"><!-- AMS list item -->
-                                            <div class="d-flex">
-                                                <input class="form-check-input border border-dark js-check-item" type="checkbox" value="" id="ams-check-2"><label class="form-check-label" for="checkDefault"></label>
-                                            </div>
-                                            <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
-                                            <div class="d-flex justify-content-end px-2 flex-column  text-end"><p class="hide-label">QTY</p>72</div>
-                                            <div class="d-flex justify-content-start px-2 flex-column"><p class="hide-label">Unit</p>BX</div>
-                                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM</p>2934.20</div>
-                                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS</p>2934.20</div>
-                                            <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.</p>9GK-0114066-8</div>
-                                            <div class="d-flex justify-content-center flex-column align-items-center">
-                                                <p class="hide-label">IT/ENTRY Date</p>
-                                                <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
-                                                <div class="d-flex gap-1">
-                                                    <span class="date">07/18/25 </span>
-                                                    <p class="text-center text-danger d-none">
-                                                        <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
-                                                    </p> 
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-center flex-column align-items-center">
-                                                <p class="hide-label">FRT Rlse</p>
-                                                <div class="d-flex gap-1">
-                                                <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
-                                                    <span class="date d-none">07/18/25 </span>
-                                                    <p class="text-center text-danger">
-                                                        <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-end flex-row align-items-center gap-2 px-3 d-none">
-                                                <button type="button" class="btn btn-sm btn-info text-light text-base rounded-full"><b>Frt Release</b></button>
-                                                <button type="button" class="btn btn-sm btn-info text-light text-base rounded-full"><b>Cancel Release</b></button>
-                                            </div>
+                                        <!-- Add Button -->
+                                        <div class="d-flex align-items-center mt-4 gap-4 text-secondary">
+                                            <button type="button" id="add-charge-btn" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Click to add <i class="bi bi-plus-circle-dotted"></i></b></button>
+                                            * Limit to 5 charges
                                         </div>
-                                        <div class="d-flex justify-content-start flex-row align-items-center gap-2 mt-2 px-1">
-                                            <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Release Selected</b></button>
-                                            <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Cancel Selected</b></button>
-                                            <p class="text-success ms-auto">Successfully released!</p> <!-- KEVIN: this is to confirm Successful release-->
-                                            <p class="text-danger ms-auto">Error. Not released! Please <a href="contact.html" class="link-danger link-offset-2" target="_blank">contact us.</a></p> <!-- KEVIN: this is to confirm Successful release-->
-                                        </div>
-                                    </section>
-                            </div>
-                        </div>
-                        <div class="collapse w-100" id="collapse-markings" data-bs-parent="#hbl-collapsibles-group"> <!-- Markings collapse -->
-                            <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
-                                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center text-uppercase">Confirm Markings <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-markings" aria-expanded="false" aria-controls="collapse-markings" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>     
-                                <div class="row p-3 pt-4 justify-between gap-2">
-                                    <div class="col col-xl-6 row">
-                                        <div class="row detail-pair">
-                                            <div class="col-12">
-                                                <p class="detail-label">Markings</p>
-                                            </div>
-                                            <div class="col-12 px-1 py-1 mx-2 rounded mt-3">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus minima accusantium dolor atque a excepturi natus saepe consectetur aliquid aperiam.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col col-xl-6 row">
-                                        <div class="row detail-pair">
-                                            <div class="col-12">
-                                                <p class="detail-label">Devan Notes</p>
-                                            </div>
-                                            <div class="col-12 bg-azure-95 p-2 mx-2 rounded">
-                                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti odio ex sit.</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </div>  
                                 </div>
-                                <div class="d-flex justify-content-end flex-row align-items-center gap-6 px-3 pb-3">
-                                    <p class="text-success">Successfully confirmed marks!</p>
-                                    <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Confirm Marks</b></button>
+                            </div>
+                            <div class="collapse w-100" id="collapse-ams-release" data-bs-parent="#hbl-collapsibles-group"> <!-- Frt release collapse -->
+                                <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
+                                    <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center text-uppercase">Freight Release <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>                                            
+                                        <section class="ams-release mx-2" id="ams-release-container">
+                                            <div class="ams-list-header ams-header-grid">
+                                                <div class="d-flex">
+                                                    <input class="form-check-input border border-dark js-check-all" type="checkbox" value="" id="ams-check-all"><label class="form-check-label" for="checkDefault"></label>
+                                                </div>
+                                                <div class="d-flex font-bold"><h3>AMS Numbers</h3></div>
+                                                <div class="d-flex justify-content-end px-2 text-navy-500 hide-header  text-end">Qty.</div>
+                                                <div class="d-flex justify-content-start px-2 text-navy-500 hide-header">Unit</div>
+                                                <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">CBM</div>
+                                                <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">LBS</div>
+                                                <div class="d-flex justify-content-start px-2 text-navy-500 hide-header">IT/ENTRY No.</div>
+                                                <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">IT/ENTRY Date</div>
+                                                <div class="d-flex justify-content-center px-2 text-navy-500 hide-header">Frt Release</div>
+                                            </div>
+                                            <div class="ams-list-item ams-list-grid"><!-- AMS list item -->
+                                                <div class="d-flex">
+                                                    <input class="form-check-input border border-dark js-check-item" type="checkbox" value="" id="ams-check-1"><label class="form-check-label" for="checkDefault"></label>
+                                                </div>
+                                                <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
+                                                <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">QTY</p>72</div>
+                                                <div class="d-flex justify-content-start px-2 flex-column truncate-text"><p class="hide-label">Unit</p>BX</div>
+                                                <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM</p>2934.20</div>
+                                                <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS</p>2934.20</div>
+                                                <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.</p>9GK-0114066-8</div>
+                                                <div class="d-flex justify-content-center flex-column align-items-center">
+                                                    <p class="hide-label">IT/ENTRY Date</p>
+                                                    <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
+                                                    <div class="d-flex gap-1">
+                                                        <span class="date d-none">07/18/25 </span>
+                                                        <p class="text-center  text-danger">
+                                                            <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+                                                        </p> 
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-center flex-column align-items-center">
+                                                    <p class="hide-label">FRT Rlse:</p>
+                                                    <div class="d-flex gap-1">
+                                                    <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
+                                                        <span class="date d-none">07/18/25 </span>
+                                                        <p class="text-center text-danger">
+                                                            <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-end flex-row align-items-center gap-2 px-3 d-none">
+                                                    <button type="button" class="btn btn-sm btn-info text-light text-base rounded-full"><b>Frt Release</b></button>
+                                                    <button type="button" class="btn btn-sm btn-info text-light text-base rounded-full"><b>Cancel Release</b></button>
+                                                </div>
+                                            </div>
+                                            <div class="ams-list-item ams-list-grid"><!-- AMS list item -->
+                                                <div class="d-flex">
+                                                    <input class="form-check-input border border-dark js-check-item" type="checkbox" value="" id="ams-check-2"><label class="form-check-label" for="checkDefault"></label>
+                                                </div>
+                                                <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
+                                                <div class="d-flex justify-content-end px-2 flex-column  text-end"><p class="hide-label">QTY</p>72</div>
+                                                <div class="d-flex justify-content-start px-2 flex-column"><p class="hide-label">Unit</p>BX</div>
+                                                <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM</p>2934.20</div>
+                                                <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS</p>2934.20</div>
+                                                <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.</p>9GK-0114066-8</div>
+                                                <div class="d-flex justify-content-center flex-column align-items-center">
+                                                    <p class="hide-label">IT/ENTRY Date</p>
+                                                    <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
+                                                    <div class="d-flex gap-1">
+                                                        <span class="date">07/18/25 </span>
+                                                        <p class="text-center text-danger d-none">
+                                                            <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+                                                        </p> 
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-center flex-column align-items-center">
+                                                    <p class="hide-label">FRT Rlse</p>
+                                                    <div class="d-flex gap-1">
+                                                    <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
+                                                        <span class="date d-none">07/18/25 </span>
+                                                        <p class="text-center text-danger">
+                                                            <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-end flex-row align-items-center gap-2 px-3 d-none">
+                                                    <button type="button" class="btn btn-sm btn-info text-light text-base rounded-full"><b>Frt Release</b></button>
+                                                    <button type="button" class="btn btn-sm btn-info text-light text-base rounded-full"><b>Cancel Release</b></button>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-start flex-row align-items-center gap-2 mt-2 px-1">
+                                                <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Release Selected</b></button>
+                                                <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Cancel Selected</b></button>
+                                                <p class="text-success ms-auto">Successfully released!</p> <!-- KEVIN: this is to confirm Successful release-->
+                                                <p class="text-danger ms-auto">Error. Not released! Please <a href="contact.html" class="link-danger link-offset-2" target="_blank">contact us.</a></p> <!-- KEVIN: this is to confirm Successful release-->
+                                            </div>
+                                        </section>
+                                </div>
+                            </div>
+                            <div class="collapse w-100" id="collapse-markings" data-bs-parent="#hbl-collapsibles-group"> <!-- Markings collapse -->
+                                <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
+                                    <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center text-uppercase">Confirm Markings <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-markings" aria-expanded="false" aria-controls="collapse-markings" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>     
+                                    <div class="row p-3 pt-4 justify-between gap-2">
+                                        <div class="col col-xl-6 row">
+                                            <div class="row detail-pair">
+                                                <div class="col-12">
+                                                    <p class="detail-label">Markings</p>
+                                                </div>
+                                                <div class="col-12 px-1 py-1 mx-2 rounded mt-3">
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus minima accusantium dolor atque a excepturi natus saepe consectetur aliquid aperiam.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col col-xl-6 row">
+                                            <div class="row detail-pair">
+                                                <div class="col-12">
+                                                    <p class="detail-label">Devan Notes</p>
+                                                </div>
+                                                <div class="col-12 bg-azure-95 p-2 mx-2 rounded">
+                                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti odio ex sit.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-end flex-row align-items-center gap-6 px-3 pb-3">
+                                        <p class="text-success">Successfully confirmed marks!</p>
+                                        <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Confirm Marks</b></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="offcanvas-body custom-scrollbar">
-                    <div class="row hbl-details-body-main">
-                        <div class="col mb-3 px-0">
-                            <div class="d-flex justify-content-start gap-4 align-items-center offcanvas-hbl-header">
-                                <div class="info-item">
-                                    <p class="info-label font-family-sora lh-1 text-uppercase text-xs">HBL NO / SEQ NO</p>
-                                    <p class="info-value hbl-number font-family-sora lh-1 text-uppercase text-2xl font-bold mt-2 text-nowrap">MNSLOS2507071 / 3</p>
+                    <div class="d-flex flex-column gap-8"> <!-- HBL Info -->
+                        <!-- HBL Main Details & Table -->
+                        <div class="row hbl-details-body-main">
+                            <div class="col mb-3 px-0">
+                                <div class="d-flex justify-content-start gap-4 align-items-center offcanvas-hbl-header">
+                                    <div class="info-item">
+                                        <p class="info-label font-family-sora lh-1 text-uppercase text-xs">HBL NO / SEQ NO</p>
+                                        <p class="info-value hbl-number font-family-sora lh-1 text-uppercase text-2xl font-bold mt-2 text-nowrap">MNSLOS2507071 / 3</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto px-0">
+                                <div class="mbl-master-table"> <!-- mbl-master-table component-->
+                                    <div class="col-12 col-sm-auto table-col">
+                                        <div class="col-5 col-sm-12 table-header">LAST FREE DATE</div> <!-- table-header-->
+                                        <div class="col-sm-12 table-data">
+                                            <span class="info-value date-with-icon"><i class="bi bi-clock text-danger mr-1"></i> 08/19/25</span>
+                                        </div> <!-- table-data-->
+                                    </div>
+                                    <div class="col-12 col-sm-auto table-col">
+                                        <div class="col-5 col-sm-12 table-header">RELEASE</div> <!-- table-header-->
+                                        <div class="col-sm-12 table-data">
+                                            <div class="holds-tags">
+                                                <span class="badge rounded-pill pill-hold disabled">CUST</span>
+                                                <span class="badge rounded-pill pill-hold success">OBL</span>
+                                            </div>    
+                                        </div> <!-- table-data-->
+                                    </div>
+                                    <div class="col-12 col-sm-auto table-col">
+                                        <div class="col-5 col-sm-12 table-header">HOLDS</div> <!-- table-header-->
+                                        <div class="col-sm-12 table-data">
+                                            <div class="holds-tags">
+                                                <span class="badge rounded-pill pill-hold disabled">MARK</span>
+                                                <span class="badge rounded-pill pill-hold disabled">PCS</span>
+                                                <span class="badge rounded-pill pill-hold">NVO</span>
+                                                <span class="badge rounded-pill pill-hold">CUST</span>
+                                            </div>
+                                        </div> <!-- table-data-->
+                                    </div>
+                                    <div class="col-12 col-sm-auto table-col table-col frt-status">
+                                        <div class="col-5 col-sm-12 table-header">FREIGHT STATUS</div> <!-- table-header-->
+                                        <div class="col-sm-12 table-data break-word">SHIPMENT PICKED UP ON 8/18/25 </div> <!-- table-data-->
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-auto px-0">
-                            <div class="mbl-master-table"> <!-- mbl-master-table component-->
-                                <div class="col-12 col-sm-auto table-col">
-                                    <div class="col-5 col-sm-12 table-header">LAST FREE DATE</div> <!-- table-header-->
-                                    <div class="col-sm-12 table-data">
-                                        <span class="info-value date-with-icon"><i class="bi bi-clock text-danger mr-1"></i> 08/19/25</span>
-                                    </div> <!-- table-data-->
-                                </div>
-                                <div class="col-12 col-sm-auto table-col">
-                                    <div class="col-5 col-sm-12 table-header">RELEASE</div> <!-- table-header-->
-                                    <div class="col-sm-12 table-data">
-                                        <div class="holds-tags">
-                                            <span class="badge rounded-pill pill-hold disabled">CUST</span>
-                                            <span class="badge rounded-pill pill-hold success">OBL</span>
-                                        </div>    
-                                    </div> <!-- table-data-->
-                                </div>
-                                <div class="col-12 col-sm-auto table-col">
-                                    <div class="col-5 col-sm-12 table-header">HOLDS</div> <!-- table-header-->
-                                    <div class="col-sm-12 table-data">
-                                        <div class="holds-tags">
-                                            <span class="badge rounded-pill pill-hold disabled">MARK</span>
-                                            <span class="badge rounded-pill pill-hold disabled">PCS</span>
-                                            <span class="badge rounded-pill pill-hold">NVO</span>
-                                            <span class="badge rounded-pill pill-hold">CUST</span>
-                                        </div>
-                                    </div> <!-- table-data-->
-                                </div>
-                                <div class="col-12 col-sm-auto table-col table-col frt-status">
-                                    <div class="col-5 col-sm-12 table-header">FREIGHT STATUS</div> <!-- table-header-->
-                                    <div class="col-sm-12 table-data break-word">SHIPMENT PICKED UP ON 8/18/25 </div> <!-- table-data-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <!-- Main Content (3-column grid) -->
+                        <main class="main-content gap-5">
 
-                    <!-- Main Content (3-column grid) -->
-                    <main class="main-content gap-5">
-
-                        <!-- Column 1: Logistic Details -->
-                        <section class="details-card logistic-details p-3">
-                            <div class="details-grid">
-                                <div class="row mx-0">
-                                    <div class="col-12 col-sm-9">
-                                        <div class="row main-details pb-2 mb-2">
-                                            <div class="detail-pair col-auto row">
-                                                <div class="col-auto d-flex justify-content-start flex-column">
-                                                    <span class="detail-label">RCV. / DOC. QTY</span>
-                                                    <span class="detail-value text-2xl text-left">
-                                                        <span class="rcv-qty text-danger">10000</span>
-                                                         / 
-                                                        <span class="doc-qty">12345</span> <!-- KEVIN: Here i separated the doc and rcv qty in 2 classes. 
-                                                        Use .text-danger to change to red color -->
-                                                    </span>
+                            <!-- Column 1: Logistic Details -->
+                            <section class="details-card logistic-details p-3">
+                                <div class="details-grid">
+                                    <div class="row mx-0">
+                                        <div class="col-12 col-sm-9">
+                                            <div class="row main-details pb-2 mb-2">
+                                                <div class="detail-pair col-auto row">
+                                                    <div class="col-auto d-flex justify-content-start flex-column">
+                                                        <span class="detail-label">RCV. / DOC. QTY</span>
+                                                        <span class="detail-value text-2xl text-left">
+                                                            <span class="rcv-qty text-danger">10000</span>
+                                                            / 
+                                                            <span class="doc-qty">12345</span> <!-- KEVIN: Here i separated the doc and rcv qty in 2 classes. 
+                                                            Use .text-danger to change to red color -->
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="detail-pair col">
+                                                    <span class="detail-label">CBM</span>
+                                                    <span class="detail-value text-2xl">2.04</span>
+                                                </div>
+                                                <div class="detail-pair col">
+                                                    <span class="detail-label">LBS</span>
+                                                    <span class="detail-value text-2xl">828.28</span>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="detail-pair">
+                                                        <span class="detail-label">IT/ENTRY No</span>
+                                                        <span class="detail-value text-2xl">9GK-0114066-8</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="detail-pair">
+                                                        <span class="detail-label">IT/ENTRY DATE</span>
+                                                        <span class="detail-value text-2xl">08/08/25</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="detail-pair col">
-                                                <span class="detail-label">CBM</span>
-                                                <span class="detail-value text-2xl">2.04</span>
-                                            </div>
-                                            <div class="detail-pair col">
-                                                <span class="detail-label">LBS</span>
-                                                <span class="detail-value text-2xl">828.28</span>
-                                            </div>
-                                            <div class="col">
-                                                <div class="detail-pair">
-                                                    <span class="detail-label">IT/ENTRY No</span>
-                                                    <span class="detail-value text-2xl">9GK-0114066-8</span>
+                                        </div>
+                                        <div class="col-12 col-sm-3 palet-details">
+                                            <div class="row">
+                                                <div class="col-6 col-sm-12">
+                                                    <div class="detail-pair mb-3">
+                                                        <span class="detail-label">EST EX. PLT(S)</span>
+                                                        <span class="detail-value text-2xl">2</span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="detail-pair">
-                                                    <span class="detail-label">IT/ENTRY DATE</span>
-                                                    <span class="detail-value text-2xl">08/08/25</span>
+                                                <div class="col-6 col-sm-12">
+                                                    <div class="detail-pair mb-3">
+                                                        <span class="detail-label">SHIP. PLT(S)</span>
+                                                        <span class="detail-value text-2xl">1</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm-3 palet-details">
-                                        <div class="row">
-                                            <div class="col-6 col-sm-12">
-                                                <div class="detail-pair mb-3">
-                                                    <span class="detail-label">EST EX. PLT(S)</span>
-                                                    <span class="detail-value text-2xl">2</span>
-                                                </div>
+                                    <div class="row mx-0 mt-2">
+                                        <div class="col">
+                                            <div class="detail-pair commodity">
+                                                <span class="detail-label">COMMODITY</span>
+                                                <p class="mt-2 custom-scrollbar">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere, arcu risus auctor mauris, nec consectetur purus. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere.</p>
                                             </div>
-                                            <div class="col-6 col-sm-12">
-                                                <div class="detail-pair mb-3">
-                                                    <span class="detail-label">SHIP. PLT(S)</span>
-                                                    <span class="detail-value text-2xl">1</span>
-                                                </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="detail-pair commodity">
+                                                <span class="detail-label">Markings</span>
+                                                <p class="mt-2 custom-scrollbar">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere, arcu risus auctor mauris, nec consectetur purus. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row mx-0 mt-2">
-                                     <div class="col">
-                                        <div class="detail-pair commodity">
-                                            <span class="detail-label">COMMODITY</span>
-                                            <p class="mt-2 custom-scrollbar">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere, arcu risus auctor mauris, nec consectetur purus. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere.</p>
+                            </section>
+
+                            <!-- Column 2: Notes -->
+                            <section class="details-card notes-details">
+                                <h2 class="text-xl">Notes</h2>
+                                <div class="details-list pt-3">
+                                    <div class="detail-pair mb-2">
+                                        <p class="detail-label">DEVAN NOTES</p>
+                                        <span class="detail-value">2 W/C</span>
+                                    </div>
+                                    <div class="detail-pair mb-2">
+                                        <p class="detail-label">AVAILABILITY NOTES</p>
+                                        <span class="detail-value">DLS LOG</span>
+                                    </div>
+                                    <div class="detail-pair mb-2">
+                                        <p class="detail-label">ACCOUNTING NOTES</p>
+                                        <span class="detail-value">DLS LOG</span>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- Column 1.5: EXAM & Go details -->
+                            <section class="details-card exam-details">
+                                <div class="details-grid">
+                                    <div class="row mx-0">
+                                        <div class="col aside-details gap-4 justify-content-between">
+                                            <div class="detail-pair col-auto">
+                                                <span class="detail-label">EXAM TYPE</span>
+                                                <span class="detail-value">277-0196680-9</span>
+                                            </div>
+                                            <div class="detail-pair col-auto">
+                                                <span class="detail-label">EXAM SITE</span>
+                                                <span class="detail-value">277-0196680-9</span>
+                                            </div>
+                                            <div class="detail-pair col-auto">
+                                                <span class="detail-label">EXAM DATE</span>
+                                                <span class="detail-value">277-0196680-9</span>
+                                            </div>
+                                            <div class="detail-pair col-auto">
+                                                <span class="detail-label">GO NO</span>
+                                                <span class="detail-value">277-0196680-9</span>
+                                            </div>
+                                            <div class="detail-pair col-auto">
+                                                <span class="detail-label">GO CARRIER DATE</span>
+                                                <span class="detail-value">828.28</span>
+                                            </div>
                                         </div>
                                     </div>
-                                     <div class="col">
-                                        <div class="detail-pair commodity">
-                                            <span class="detail-label">Markings</span>
-                                            <p class="mt-2 custom-scrollbar">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere, arcu risus auctor mauris, nec consectetur purus. Suspendisse at ligula mattis, pretium libero sed, vulputate libero. Fusce consequat, enim et dapibus posuere.</p>
+                                </div>
+                            </section>
+
+                            <!-- Column 3: IPI Status -->
+                            <section class="details-card ipi-status">
+                                <h2 class="text-xl">IPI Status - <span class="city-code">DAL</span></h2>
+                                <p class="font-family-sora font-bold text-base">Trailer # 71848</p>
+                                <ul class="status-timeline pt-3">
+                                    <li class="status-item status-success"> <!-- KEVIN: Apply 
+                                        .status-success for green icon, 
+                                        .status-disabled for gray and 
+                                        .status-danger for red 
+                                            (the common class is .status-item) -->
+                                        <div class="status-marker">
+                                            <i class="bi bi-check-lg"></i>
                                         </div>
-                                    </div>
+                                        <div class="status-info">
+                                            <p class="status-title">DEPARTURE</p>
+                                            <p class="pending">Pending</p>
+                                            <p class="status-meta"><b>ETD:</b> 08/08/25</p>
+                                            <p class="status-meta"><b>ATD:</b> 08/08/25</p>
+                                            <p class="status-meta"><b>ETA:</b> 08/08/25</p>
+                                        </div>
+                                    </li>
+                                    <li class="status-item status-success"> <!-- KEVIN: Apply 
+                                        .status-success for green icon, 
+                                        .status-disabled for gray and 
+                                        .status-danger for red 
+                                            (the common class is .status-item) -->
+                                        <div class="status-marker">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                        </div>
+                                        <div class="status-info">
+                                            <p class="status-title">TRANSIT</p>
+                                            <p class="pending">Pending</p>
+                                            <p class="status-meta"><b>Trailer #:</b> 71848</p>
+                                            <a href="#" class="view-history-link btn btn-link pl-0 py-1 text-nowrap">VIEW DETAILED HISTORY  <i class="bi bi-arrow-right-circle"></i></a>
+                                        </div>
+                                    </li>
+                                    <li class="status-item status-disabled"> <!-- KEVIN: Apply 
+                                        .status-success for green icon, 
+                                        .status-disabled for gray and 
+                                        .status-danger for red 
+                                            (the common class is .status-item) -->
+                                        <div class="status-marker">
+                                            <i class="bi bi-flag-fill"></i>
+                                        </div>
+                                        <div class="status-info">
+                                            <p class="status-title">ARRIVAL</p>
+                                            <p class="pending">Pending</p>
+                                            <p class="status-meta"><b>ATA:</b> 08/08/25</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </section>
+
+                            <!-- Column 4: Local Pickup -->
+                            <section class="details-card ipi-status local-pickup">
+                                <h2>Pick up</h2>
+                                <ul class="status-timeline local-pickup pt-3 col-12">
+                                    <li class="status-item status-success"> <!-- KEVIN: Apply 
+                                        .status-success for green icon and checkmark, 
+                                        .status-disabled for gray and dash and 
+                                        .status-danger for red and X
+                                            (the common class is .status-item) -->
+                                        <div class="status-marker align-self-start">
+                                            <i class="bi bi-check-lg"></i>
+                                            <i class="bi bi-dash-lg"></i>
+                                            <i class="bi bi-x-lg"></i>
+                                        </div>
+                                        <div class="status-info">
+                                            <p class="status-label mt-1">PICKED UP</p>
+                                            <p class="status-meta"><b>P/U Date:</b>
+                                                <span class="status-meta">08/15/25</span>
+                                            </p>
+                                            <p class="status-meta"><b>P/U Trucker:</b>
+                                                <span class="status-meta">12345678</span>
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="status-item status-disabled"><!-- KEVIN: Apply 
+                                        .status-success for green icon and checkmark, 
+                                        .status-disabled for gray and dash and 
+                                        .status-danger for red and X
+                                            (the common class is .status-item) -->
+                                        <div class="status-marker align-self-start">
+                                            <i class="bi bi-check-lg"></i>
+                                            <i class="bi bi-dash-lg"></i>
+                                            <i class="bi bi-x-lg"></i>
+                                        </div>
+                                        <div class="status-info">
+                                            <p class="status-label mt-1">PARTIAL PICKUP</p>
+                                            <p class="status-meta text-grey-20">Date:
+                                                <span class="status-meta">08/15/25</span>
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="status-item status-danger border-top col-12 pt-3">  <!-- KEVIN: Apply 
+                                        .status-success for green icon and checkmark, 
+                                        .status-disabled for gray and dash and 
+                                        .status-danger for red and X and Rejection notice
+                                            (the common class is .status-item) -->
+                                        <div class="status-marker align-self-start">
+                                            <i class="bi bi-check-lg"></i>
+                                            <i class="bi bi-dash-lg"></i>
+                                            <i class="bi bi-x-lg"></i>
+                                        </div>
+                                        <div class="status-info rejection-notice">
+                                            <a class="status-title btn btn-link font-family-sora pl-0 pt-0 text-capitalize text-base link-offset-2">Rejection Notice <i class="bi bi-printer"></i> </a>
+                                            <p class="status-meta"><b>Date:</b> 08/21/25</p>
+                                            <p class="status-meta"><b>RN:</b> (Pending)</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </section>    
+
+                        
+                        </main>
+                        <!-- HBL Photo Gallery -->
+                        <section class="photo-gallery-section hide"> <!-- KEVIN: .hide hides the photo section -->
+                            <link rel="stylesheet" href="css/baguetteBox.min.css"> <!-- Styles for photo gallery -->
+                            <h2 class="d-inline-block mr-6 ">Photos</h2>
+                            <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Download all pictures</i></button>
+                            <div class="row mt-6 photo-gallery-thumbnails gap-3">
+                                <div class="col-auto">
+                                    <a href="_images/photo-placeholder.jpeg">
+                                    <img class="photo-thumbnail" src="_images/photo-placeholder.jpeg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="_images/photo-placeholder.jpeg">
+                                    <img class="photo-thumbnail" src="_images/photo-placeholder.jpeg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="_images/photo-placeholder.jpeg">
+                                    <img class="photo-thumbnail" src="_images/photo-placeholder.jpeg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="_images/photo-placeholder.jpeg">
+                                    <img class="photo-thumbnail" src="_images/photo-placeholder.jpeg" alt="">
+                                    </a>
                                 </div>
                             </div>
                         </section>
-
-                        <!-- Column 2: Notes -->
-                        <section class="details-card notes-details">
-                            <h2 class="text-xl">Notes</h2>
-                            <div class="details-list pt-3">
-                                <div class="detail-pair mb-2">
-                                    <p class="detail-label">DEVAN NOTES</p>
-                                    <span class="detail-value">2 W/C</span>
-                                </div>
-                                <div class="detail-pair mb-2">
-                                    <p class="detail-label">AVAILABILITY NOTES</p>
-                                    <span class="detail-value">DLS LOG</span>
-                                </div>
-                                <div class="detail-pair mb-2">
-                                    <p class="detail-label">ACCOUNTING NOTES</p>
-                                    <span class="detail-value">DLS LOG</span>
-                                </div>
+                        <!-- AMS Numbers Table -->
+                        <section class="ams-section">
+                            <div class="ams-list-header ams-header-grid">
+                                <div class="d-flex font-bold"><h3>AMS Numbers</h3></div>
+                                <div class="d-flex justify-content-end px-2 text-navy-500 hide-header  text-end">Qty.</div>
+                                <div class="d-flex justify-content-start px-2 text-navy-500 hide-header">Unit</div>
+                                <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">CBM</div>
+                                <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">LBS</div>
+                                <div class="d-flex justify-content-start px-2 text-navy-500 hide-header">Commodity</div>
+                                <div class="d-flex justify-content-start px-2 text-navy-500 hide-header">IT/ENTRY No.</div>
+                                <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">IT/ENTRY Date</div>
+                                <div class="d-flex justify-content-center px-2 text-navy-500 hide-header">Frt Release</div>
                             </div>
-                        </section>
-
-                        <!-- Column 1.5: EXAM & Go details -->
-                        <section class="details-card exam-details">
-                            <div class="details-grid">
-                                <div class="row mx-0">
-                                    <div class="col aside-details gap-4 justify-content-between">
-                                        <div class="detail-pair col-auto">
-                                            <span class="detail-label">EXAM TYPE</span>
-                                            <span class="detail-value">277-0196680-9</span>
-                                        </div>
-                                        <div class="detail-pair col-auto">
-                                            <span class="detail-label">EXAM SITE</span>
-                                            <span class="detail-value">277-0196680-9</span>
-                                        </div>
-                                        <div class="detail-pair col-auto">
-                                            <span class="detail-label">EXAM DATE</span>
-                                            <span class="detail-value">277-0196680-9</span>
-                                        </div>
-                                        <div class="detail-pair col-auto">
-                                            <span class="detail-label">GO NO</span>
-                                            <span class="detail-value">277-0196680-9</span>
-                                        </div>
-                                        <div class="detail-pair col-auto">
-                                            <span class="detail-label">GO CARRIER DATE</span>
-                                            <span class="detail-value">828.28</span>
-                                        </div>
+                            <div class="ams-list-item ams-list-grid"><!-- AMS list item -->
+                                <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
+                                <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">QTY</p>72</div>
+                                <div class="d-flex justify-content-start px-2 flex-column truncate-text"><p class="hide-label">Unit</p>BX</div>
+                                <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM</p>2934.20</div>
+                                <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS</p>2934.20</div>
+                                <div class="d-flex justify-content-start px-2 flex-column commodity"><p class="hide-label">Commodity</p>2BOX OF PARTS FOR KN CAGE WELDING MACHINES</div>
+                                <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.</p>9GK-0114066-8</div>
+                                <div class="d-flex justify-content-center flex-column align-items-center">
+                                    <p class="hide-label">IT/ENTRY Date</p>
+                                    <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
+                                    <div class="d-flex gap-1">
+                                        <span class="date d-none">07/18/25 </span>
+                                        <p class="text-center  text-danger">
+                                            <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+                                        </p> 
                                     </div>
                                 </div>
-                            </div>
-                        </section>
-
-                        <!-- Column 3: IPI Status -->
-                        <section class="details-card ipi-status">
-                            <h2 class="text-xl">IPI Status - <span class="city-code">DAL</span></h2>
-                            <p class="font-family-sora font-bold text-base">Trailer # 71848</p>
-                            <ul class="status-timeline pt-3">
-                                <li class="status-item status-success"> <!-- KEVIN: Apply 
-                                    .status-success for green icon, 
-                                    .status-disabled for gray and 
-                                    .status-danger for red 
-                                        (the common class is .status-item) -->
-                                    <div class="status-marker">
-                                        <i class="bi bi-check-lg"></i>
-                                    </div>
-                                    <div class="status-info">
-                                        <p class="status-title">DEPARTURE</p>
-                                        <p class="pending">Pending</p>
-                                        <p class="status-meta"><b>ETD:</b> 08/08/25</p>
-                                        <p class="status-meta"><b>ATD:</b> 08/08/25</p>
-                                        <p class="status-meta"><b>ETA:</b> 08/08/25</p>
-                                    </div>
-                                </li>
-                                <li class="status-item status-success"> <!-- KEVIN: Apply 
-                                    .status-success for green icon, 
-                                    .status-disabled for gray and 
-                                    .status-danger for red 
-                                        (the common class is .status-item) -->
-                                    <div class="status-marker">
-                                        <i class="bi bi-geo-alt-fill"></i>
-                                    </div>
-                                    <div class="status-info">
-                                        <p class="status-title">TRANSIT</p>
-                                        <p class="pending">Pending</p>
-                                        <p class="status-meta"><b>Trailer #:</b> 71848</p>
-                                        <a href="#" class="view-history-link btn btn-link pl-0 py-1 text-nowrap">VIEW DETAILED HISTORY  <i class="bi bi-arrow-right-circle"></i></a>
-                                    </div>
-                                </li>
-                                <li class="status-item status-disabled"> <!-- KEVIN: Apply 
-                                    .status-success for green icon, 
-                                    .status-disabled for gray and 
-                                    .status-danger for red 
-                                        (the common class is .status-item) -->
-                                    <div class="status-marker">
-                                        <i class="bi bi-flag-fill"></i>
-                                    </div>
-                                    <div class="status-info">
-                                        <p class="status-title">ARRIVAL</p>
-                                        <p class="pending">Pending</p>
-                                        <p class="status-meta"><b>ATA:</b> 08/08/25</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </section>
-
-                        <!-- Column 4: Local Pickup -->
-                        <section class="details-card ipi-status local-pickup">
-                            <h2>Pick up</h2>
-                            <ul class="status-timeline local-pickup pt-3 col-12">
-                                <li class="status-item status-success"> <!-- KEVIN: Apply 
-                                    .status-success for green icon and checkmark, 
-                                    .status-disabled for gray and dash and 
-                                    .status-danger for red and X
-                                        (the common class is .status-item) -->
-                                    <div class="status-marker align-self-start">
-                                        <i class="bi bi-check-lg"></i>
-                                        <i class="bi bi-dash-lg"></i>
-                                        <i class="bi bi-x-lg"></i>
-                                    </div>
-                                    <div class="status-info">
-                                        <p class="status-label mt-1">PICKED UP</p>
-                                        <p class="status-meta"><b>P/U Date:</b>
-                                            <span class="status-meta">08/15/25</span>
+                                <div class="d-flex justify-content-center flex-column align-items-center">
+                                    <p class="hide-label">FRT Rlse:</p>
+                                    <div class="d-flex gap-1">
+                                    <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
+                                        <span class="date d-none">07/18/25 </span>
+                                        <p class="text-center text-danger">
+                                            <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
                                         </p>
-                                        <p class="status-meta"><b>P/U Trucker:</b>
-                                            <span class="status-meta">12345678</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ams-list-item ams-list-grid"><!-- AMS list item -->
+                                <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
+                                <div class="d-flex justify-content-end px-2 flex-column  text-end"><p class="hide-label">QTY</p>72</div>
+                                <div class="d-flex justify-content-start px-2 flex-column"><p class="hide-label">Unit</p>BX</div>
+                                <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM</p>2934.20</div>
+                                <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS</p>2934.20</div>
+                                <div class="d-flex justify-content-start px-2 flex-column commodity"><p class="hide-label">Commodity</p>2BOX OF PARTS FOR KN CAGE WELDING MACHINES</div>
+                                <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.</p>9GK-0114066-8</div>
+                                <div class="d-flex justify-content-center flex-column align-items-center">
+                                    <p class="hide-label">IT/ENTRY Date</p>
+                                    <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
+                                    <div class="d-flex gap-1">
+                                        <span class="date">07/18/25 </span>
+                                        <p class="text-center text-danger d-none">
+                                            <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+                                        </p> 
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center flex-column align-items-center">
+                                    <p class="hide-label">FRT Rlse</p>
+                                    <div class="d-flex gap-1">
+                                    <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
+                                        <span class="date d-none">07/18/25 </span>
+                                        <p class="text-center text-danger">
+                                            <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
                                         </p>
                                     </div>
-                                </li>
-                                <li class="status-item status-disabled"><!-- KEVIN: Apply 
-                                    .status-success for green icon and checkmark, 
-                                    .status-disabled for gray and dash and 
-                                    .status-danger for red and X
-                                        (the common class is .status-item) -->
-                                    <div class="status-marker align-self-start">
-                                        <i class="bi bi-check-lg"></i>
-                                        <i class="bi bi-dash-lg"></i>
-                                        <i class="bi bi-x-lg"></i>
-                                    </div>
-                                    <div class="status-info">
-                                        <p class="status-label mt-1">PARTIAL PICKUP</p>
-                                        <p class="status-meta text-grey-20">Date:
-                                            <span class="status-meta">08/15/25</span>
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="status-item status-danger border-top col-12 pt-3">  <!-- KEVIN: Apply 
-                                    .status-success for green icon and checkmark, 
-                                    .status-disabled for gray and dash and 
-                                    .status-danger for red and X and Rejection notice
-                                        (the common class is .status-item) -->
-                                    <div class="status-marker align-self-start">
-                                        <i class="bi bi-check-lg"></i>
-                                        <i class="bi bi-dash-lg"></i>
-                                        <i class="bi bi-x-lg"></i>
-                                    </div>
-                                    <div class="status-info rejection-notice">
-                                        <a class="status-title btn btn-link font-family-sora pl-0 pt-0 text-capitalize text-base link-offset-2">Rejection Notice <i class="bi bi-printer"></i> </a>
-                                        <p class="status-meta"><b>Date:</b> 08/21/25</p>
-                                        <p class="status-meta"><b>RN:</b> (Pending)</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </section>    
-
-                    
-                    </main>
-
-                    <!-- HBL Photo Gallery -->
-                    <section class="photo-gallery-section hide"> <!-- KEVIN: .hide hides the photo section -->
-                        <link rel="stylesheet" href="css/baguetteBox.min.css"> <!-- Styles for photo gallery -->
-                        <h2 class="d-inline-block mr-6 ">Photos</h2>
-                        <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Download all pictures</i></button>
-                        <div class="row mt-6 photo-gallery-thumbnails gap-3">
-                            <div class="col-auto">
-                                <a href="_images/photo-placeholder.jpeg">
-                                <img class="photo-thumbnail" src="_images/photo-placeholder.jpeg" alt="">
-                                </a>
-                            </div>
-                            <div class="col-auto">
-                                <a href="_images/photo-placeholder.jpeg">
-                                <img class="photo-thumbnail" src="_images/photo-placeholder.jpeg" alt="">
-                                </a>
-                            </div>
-                            <div class="col-auto">
-                                <a href="_images/photo-placeholder.jpeg">
-                                <img class="photo-thumbnail" src="_images/photo-placeholder.jpeg" alt="">
-                                </a>
-                            </div>
-                            <div class="col-auto">
-                                <a href="_images/photo-placeholder.jpeg">
-                                <img class="photo-thumbnail" src="_images/photo-placeholder.jpeg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- AMS Numbers Table -->
-                    <section class="ams-section">
-                        <div class="ams-list-header ams-header-grid">
-                            <div class="d-flex font-bold"><h3>AMS Numbers</h3></div>
-                            <div class="d-flex justify-content-end px-2 text-navy-500 hide-header  text-end">Qty.</div>
-                            <div class="d-flex justify-content-start px-2 text-navy-500 hide-header">Unit</div>
-                            <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">CBM</div>
-                            <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">LBS</div>
-                            <div class="d-flex justify-content-start px-2 text-navy-500 hide-header">Commodity</div>
-                            <div class="d-flex justify-content-start px-2 text-navy-500 hide-header">IT/ENTRY No.</div>
-                            <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">IT/ENTRY Date</div>
-                            <div class="d-flex justify-content-center px-2 text-navy-500 hide-header">Frt Release</div>
-                        </div>
-                        <div class="ams-list-item ams-list-grid"><!-- AMS list item -->
-                            <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
-                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">QTY</p>72</div>
-                            <div class="d-flex justify-content-start px-2 flex-column truncate-text"><p class="hide-label">Unit</p>BX</div>
-                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM</p>2934.20</div>
-                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS</p>2934.20</div>
-                            <div class="d-flex justify-content-start px-2 flex-column commodity"><p class="hide-label">Commodity</p>2BOX OF PARTS FOR KN CAGE WELDING MACHINES</div>
-                            <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.</p>9GK-0114066-8</div>
-                            <div class="d-flex justify-content-center flex-column align-items-center">
-                                <p class="hide-label">IT/ENTRY Date</p>
-                                <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
-                                <div class="d-flex gap-1">
-                                    <span class="date d-none">07/18/25 </span>
-                                    <p class="text-center  text-danger">
-                                        <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
-                                    </p> 
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-center flex-column align-items-center">
-                                <p class="hide-label">FRT Rlse:</p>
-                                <div class="d-flex gap-1">
-                                <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
-                                    <span class="date d-none">07/18/25 </span>
-                                    <p class="text-center text-danger">
-                                         <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ams-list-item ams-list-grid"><!-- AMS list item -->
-                            <div class="d-flex font-bold hbl">MNRQLOS2507070</div>
-                            <div class="d-flex justify-content-end px-2 flex-column  text-end"><p class="hide-label">QTY</p>72</div>
-                            <div class="d-flex justify-content-start px-2 flex-column"><p class="hide-label">Unit</p>BX</div>
-                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM</p>2934.20</div>
-                            <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS</p>2934.20</div>
-                            <div class="d-flex justify-content-start px-2 flex-column commodity"><p class="hide-label">Commodity</p>2BOX OF PARTS FOR KN CAGE WELDING MACHINES</div>
-                            <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.</p>9GK-0114066-8</div>
-                            <div class="d-flex justify-content-center flex-column align-items-center">
-                                <p class="hide-label">IT/ENTRY Date</p>
-                                <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
-                                <div class="d-flex gap-1">
-                                    <span class="date">07/18/25 </span>
-                                    <p class="text-center text-danger d-none">
-                                        <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
-                                    </p> 
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-center flex-column align-items-center">
-                                <p class="hide-label">FRT Rlse</p>
-                                <div class="d-flex gap-1">
-                                <!-- KEVIN: .d-none toggles visibility. If you want to hide the date or the X -->
-                                    <span class="date d-none">07/18/25 </span>
-                                    <p class="text-center text-danger">
-                                         <svg style="width:1.5rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="currentcolor"  d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
+                        </section>
+                    </div> <!-- HBL Info  END -->
+                </div> <!-- .offcanvas-body END-->
             </div>
         </div>
     </div>
