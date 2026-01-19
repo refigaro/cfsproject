@@ -418,6 +418,7 @@ h1, h2, h3 {
 .text-danger-dark { color: var(--clr-danger-dark); }
 .text-info-dark { color: var(--clr-info-dark); }
 .text-warning-dark { color: var(--clr-warning-dark); }
+.text-color-headings { color: var(--clr-navy-900)!important; }
 .text-navy-900 { color: var(--clr-azure-09)!important; }
 .text-navy-800 { color: var(--clr-azure-19)!important; }
 .text-navy-700 { color: var(--clr-azure-42)!important; }

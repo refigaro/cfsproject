@@ -517,10 +517,16 @@
                                 <div class="p-3 py-4  align-items-center gap-2">
                                     <!-- Headers -->
                                     <div id="charges-header" class="d-none" style="padding: .5rem .75rem !important;">
-                                        <div class="col-3 text-start">Description</div>
+                                        <div class="col-5 text-start">Description</div>
+                                        <div class="col-auto text-start cucc-amounts-grid">
+                                            <div class="text-end">Amt Collected at Window</div>
+                                            <div class="text-end">Service Fee</div>
+                                            <div class="text-end">Amt Due To You</div>
+                                        </div>
+                                        <!--
                                         <div class="col-2 text-end">Amt Collected at Window</div>
                                         <div class="col-2 text-end">Service Fee</div>
-                                        <div class="col-2 text-end">Amt Due To You</div>
+                                        <div class="col-2 text-end">Amt Due To You</div> -->
                                     </div>
                                     <!-- Accordion Group -->
                                     <div class="accordion accordion-flush d-flex flex-column gap-2" id="accordionFlushExample">
@@ -528,17 +534,19 @@
                                         <div class="accordion-item rounded-3 cucc-item js-calculator-item">
                                             <h2 class="accordion-header">
                                                 <div class="accordion-button btn-sm collapsed no-arrow d-flex align-items-center bg-azure-95" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-1" aria-expanded="false" aria-controls="flush-collapse-1">
-                                                    <div class="col-3 text-uppercase font-family-archivo text-base js-item-title">
+                                                    <div class="col-5 text-uppercase font-family-archivo text-base js-item-title unsaved">
                                                         CUCC Charge
                                                     </div>
-                                                    <div class="col-2 font-family-archivo text-base text-end  js-val-window-header">
-                                                        $10.00
-                                                    </div>
-                                                    <div class="col-2 font-family-archivo text-base fw-bold text-end service-fee text-danger js-val-fee-header">
-                                                        $10.00
-                                                    </div>
-                                                    <div class="col-2 font-family-archivo text-base fw-bold text-end js-val-due-header">
-                                                        $10.00
+                                                    <div class="cucc-amounts-grid text-end">
+                                                        <div class="font-family-archivo text-base text-end  js-val-window-header">
+                                                            $10.00
+                                                        </div>
+                                                        <div class="font-family-archivo text-base fw-bold text-end service-fee text-danger js-val-fee-header">
+                                                            $10.00
+                                                        </div>
+                                                        <div class="font-family-archivo text-base fw-bold text-end js-val-due-header">
+                                                            $10.00
+                                                        </div>
                                                     </div>
                                                     <div class="col-auto ms-auto">
                                                         <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-4"><u>Edit</u></span>
@@ -582,7 +590,7 @@
                                                                 <label class="form-check d-flex gap-2 align-items-center">
                                                                     <input class="form-check-input my-0 js-radio-mode border-black" type="radio" name="cucc-option-1" value="collect_window">
                                                                     <span class="form-check-label">
-                                                                        Amount to collect at window
+                                                                        Amount Collected at Window
                                                                     </span>
                                                                 </label>
                                                             </div>
@@ -590,13 +598,12 @@
                                                             <div class="col col-lg align-self-stretch align-items-bewteen d-flex flex-column border-start pl-4">
                                                                 <div class="col d-flex flex-row align-items-center gap-2 mb-4">
                                                                     <label class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Description:</label>
-                                                                    <input type="text" class="form-control border-light-subtle rounded" style="width:2.5rem;" value="CC" readonly>
                                                                     <input type="text" class="form-control col rounded px-2 js-input-description"  value="CUCC Charge" placeholder="Custom description">
                                                                 </div>
                                                                 <div class="col d-flex flex-row align-items-center gap-3">
                                                                     <label class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Amount:</label>
-                                                                    <input type="number" class="form-control rounded px-2 js-input-amount" placeholder="0.0" oninput="limitValue(this)" max="2000">
-                                                                    <span class="btn btn-sm btn-info rounded-full px-4 align-self-end col-auto align-self-center js-confirm-charge">Confirm <i class="bi bi-check-lg text-lg"></i></span>
+                                                                    <input type="number" class="form-control rounded px-2 js-input-amount" placeholder="0.0" oninput="limitValue(this)" min="0.00" max="2000">
+                                                                    <span class="btn btn-sm btn-info rounded-full px-4 align-self-end col-auto align-self-center js-confirm-charge">Confirm <i class="bi bi-check-lg"></i></span>
                                                                 </div>
                                                             </div>
                                                         </div>

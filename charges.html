@@ -169,7 +169,7 @@
                                     </div>
                                     <div class="col-12 d-flex flex-direction-row align-items-center justify-content-between gap-2">
                                         <span class="detail-label text-danger lh-1rem"><i class="fa-solid fa-circle-exclamation"></i> Last Free DATE</span>
-                                        <div class="text-dark lh-1rem mb-1px text-lg fw-bold">01/12/26</div>
+                                        <div class="text-dark lh-1rem mb-1px">01/12/26</div>
                                     </div>
                                     <div class="col-12 d-flex flex-direction-row justify-content-between align-items-center gap-2">
                                         <span class="detail-label lh-1rem"><i class="fa-regular fa-calendar-days"></i> Today's Date</span>
@@ -300,14 +300,15 @@
                             <div class="d-flex justify-content-between align-items-start">
                                 <button type="button" class="btn btn-outline-dark btn-sm rounded-full">PRINT INVOICE w/ selected</button>
                                 <div class="charges-totals">
-                                    <p>TOTAL CHARGES W/O EX PALLETS: <b>$00.00</b></p>
-                                    <p>TOTAL CHARGES W/ PALLETS: <b>$00.00</b></p>
-                                    <p>TOTAL SELECTED CHARGES: <b>$00.00</b></p>
+                                    <p>TOTAL CHARGES W/O EX PALLETS: <b>00.00</b></p>
+                                    <p>TOTAL CHARGES W/ PALLETS: <b>00.00</b></p>
+                                    <p>TOTAL SELECTED CHARGES: <b id="total-display">00.00</b></p>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-center align-items-center mt-8 font-family-sora text-navy-450">
+                            <div class="d-flex justify-content-center align-items-center mt-8 font-family-sora text-navy-450 flex-wrap">
+                                <p id="msg-req-total" class="text-danger font-family-archivo text-center w-100 mb-2">Please select at least one charge to proceed.</p>
                                 <span>Confirm charges and </span>
-                                <button type="button" id="js-btn-3" class="btn btn-primary rounded-full ml-2 px-4 fw-bold text-white text-base">CONTINUE TO PAYMENT</button>
+                                <button type="button" id="js-btn-3" class="btn btn-primary rounded-full ml-2 px-4 fw-bold text-white text-base opacity-50 cursor-not-allowed'" disabled>CONTINUE TO PAYMENT</button>
                             </div>
                         </div>
                     </div>
@@ -329,7 +330,9 @@
                                     </div>
                                 </nav>
                                 <div class="tab-content" id="nav-content">
-                                    <!-- Tab Content PayCargo -->
+                                    <!-- 
+                                        Tab Content PayCargo 
+                                     -->
                                     <div class="tab-pane fade" id="nav-paycargo" role="tabpanel" aria-labelledby="nav-paycargo-tab">
                                         <div class="charge-step-module d-flex flex-column gap-8 justify-content-start">
                                             <img src="https://www.imperialcfs.com/_images/PayCargo_Logo.png" alt="PayCargo Logo" style="width:9.875rem;">
@@ -343,7 +346,6 @@
                                                                 <input type="text" class="form-control bg-light" id="username" placeholder="Username">
                                                             </div>
                                                         </div>
-
                                                         <div class="row mb-3 align-items-center">
                                                             <label for="password" class="col-sm-5 col-form-label">PayCargo Password*</label>
                                                             <div class="col-sm-7">
@@ -386,7 +388,7 @@
                                                 </div>
                                                 <div class="col col-md-6">
                                                     <div class="bg-azure-95 rounded-4 h-100 p-2 position-relative">
-                                                        <div class="sticky-top d-flex flex-column gap-5">
+                                                        <div class="sticky-top d-flex flex-column gap-5 charges-summary-sticky">
                                                             <div class="card summary-card border-0 shadow-md rounded-4">
                                                                 <div class="card-body p-4">
                                                                     <div class="d-flex justify-content-between text-paycargo mb-3">
@@ -432,7 +434,7 @@
                                                             <div class="form-check d-flex align-items-center gap-2">
                                                                 <input class="form-check-input" type="checkbox" id="termsCheck">
                                                                 <label class="form-check-label text-muted" for="termsCheck">
-                                                                    I have read and agreed to <a href="/terms.html" target="_blank" class="text-secondary fw-bold text-decoration-underline">TERMS & CONDITION</a>
+                                                                    I have read and agreed to <a href="#" data-bs-toggle="modal" data-bs-target="#paycargo-terms-modal" class="text-secondary fw-bold text-decoration-underline">TERMS & CONDITION</a>
                                                                 </label>
                                                             </div>
                                                             <button class="btn btn-accent rounded-full w-100 py-2 text-uppercase text-base fw-bold">
@@ -447,7 +449,32 @@
                                     <!-- Tab Content Guarantee -->
                                     <div class="tab-pane fade" id="nav-guarantee" role="tabpanel" aria-labelledby="nav-guarantee-tab">
                                         <div class="charge-step-module d-flex flex-column gap-8 justify-content-start">
-                                            <h4 class="text-start type-h4 ">Guarantee Order</h4>
+                                            
+                                            <div class="CustomerLogin-box" style="margin: 2.5% auto; border:0;"> <!-- KEVIN: This is the login portion for Guarantee charges-->
+                                                <h2 class="mb-2">Please Login to your Account</h2>
+                                                <div class="customerlogin-form">
+                                                    <div class="form-group">
+                                                        <input class="form-control rounded" data-val="true" data-val-required="**Please enter a valid Username" id="Username" name="Username" placeholder="Username" type="text" value="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="password" class="form-control rounded" data-val="true" data-val-required="**Please enter a valid Password" id="Password" name="Password" placeholder="Password" value="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-primary rounded-full btn-sm">LOGIN</button>
+                                                    </div>
+                                                    <div class="ac">
+                                                    </div>
+                                                    <div class="ac">
+                                                        <span class="field-validation-valid" data-valmsg-for="Username" data-valmsg-replace="true" style="font-weight:bold; color:red;"></span>
+                                                        <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true" style="font-weight:bold; color:red;"></span>
+                                                    </div>
+                                                    <div class="ac">
+                                                    </div>
+                                                    <p>Forgot your password? <a href="/Home/ForgottenPassword" class="link-offset-2 ">CLICK HERE</a></p>
+                                                </div>
+                                            </div>
+
+                                            <h4 class="text-start type-h4 text-color-headings">Guarantee Order</h4>
                                             <div class="row">
                                                 <div class="col col-md-6 text-start">
                                                     <form class="text-start">
@@ -586,7 +613,7 @@
                                                 </div>
                                                 <div class="col col-md-6">
                                                     <div class="bg-azure-95 rounded-4 h-100 p-2 position-relative">
-                                                        <div class="sticky-top d-flex flex-column gap-5">
+                                                        <div class="sticky-top d-flex flex-column gap-5 charges-summary-sticky">
                                                             <div class="card summary-card border-0 shadow-md rounded-4">
                                                                 <div class="card-body p-4">
                                                                     <div class="d-flex justify-content-between text-paycargo mb-3">
@@ -760,7 +787,7 @@
                                                 </div>
                                                 <div class="col col-md-6">
                                                     <div class="bg-azure-95 rounded-4 h-100 p-2 position-relative">
-                                                        <div class="sticky-top d-flex flex-column gap-5">
+                                                        <div class="sticky-top d-flex flex-column gap-5 charges-summary-sticky">
                                                             <div class="card summary-card border-0 shadow-md rounded-4">
                                                                 <div class="card-body p-4">
                                                                     <div class="d-flex justify-content-between text-paycargo mb-3">
@@ -827,6 +854,57 @@
         </div>
     </div>
 </section>
+
+<!-- Payment Terms Modals -->
+    <!-- Paycargo Modal-->
+    <div class="modal fade" id="paycargo-terms-modal" tabindex="-1" aria-labelledby="paycargo-terms-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width:90vw;">
+            <div class="modal-content" style="overflow-y:scroll">
+            <div class="modal-header justify-content-end border-bottom-0 pb-1">
+                <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body px-5 pb-5 pt-0">
+                <div class="container-fluid">
+                    <div class="col-12 text-start">
+                        <h2>Key Terms</h2>
+                        <p>You or Your means the <b>Customer</b></p>
+                        <p>We, Us, or Our means <b>Imperial CFS, Inc</b></p>
+                        <p>PayCargo is a reference to a third party payment gateway trademarked by <b>PayCargo, LLC. <a href="https://PayCargo.com" target="_blank">https://PayCargo.com</a></b></p>
+                    </div>
+                    <div class="col-12">                    
+                        <h2>Terms &amp; Conditions</h2>
+                        <p>You, the CUSTOMER, expressly agree to be bound by these terms and conditions necessary for purchase of our Services.</p>
+                        <p>
+                            You acknowledge you are the lawful holder or authorized user of the PayCargo<br>
+                            account being used in this transaction, and you agree to pay the amount you authorize <br>
+                            according to the agreement between PayCargo and you.
+                        </p>
+                        <p>
+                            By use of this payment portal, you agree to be responsible for any fees, including attorney and collection<br>
+                            fees that may occur in efforts to collect any remaining outstanding balance of yours, or any balances<br>
+                            that were charge-back transactions by PayCargo. You also agree to be billed and will<br>
+                            pay for any outstanding balances if you or PayCargo cancels an approved transaction without confirmation from us.
+                        </p>
+                        <p>
+                            <span style="color:red;font-weight:bold;">You may incur additional charges from PayCargo unrelated to us. If those charges occur, you will not be able to view them on our website. </span><br>
+                            On submit, this PayCargo Transaction will Create and Approve Transaction for OverNight Payment with the login credentials from PayCargo you provided.<br>
+                            If any errors involving this PayCargo Transaction such as but not limited to insufficient funds, the entire transaction will be voided on PayCargo, and we will not process payment any further.
+                        </p>
+                        <p>
+                            You understand it is your responsibility to check for any additional charges that may be due pior to sending a trucker for shipment pick up.<br>
+                            Overpayments or Cancellations for services will be reviewed by request through <a href="mailto:accounting@imperialcfs.net">accounting@imperialcfs.net</a>
+                        </p>
+                        <p>
+                            All charges are calculated based on your selection of Estimated Pick-Up Date. <br>
+                            Any shipment not picked up by the Estimated Pick-Up Date may incur additional storage fees.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
 <footer class="footer">
         <div class="container-fluid">
             <div class="row">
@@ -1099,6 +1177,43 @@
             }
         });
     });
+
+    // Validating Total Selected charges to enable Continue button
+    const totalElement = document.getElementById('total-display');
+    const submitButton = document.getElementById('js-btn-3');
+    const feedbackMsg  = document.getElementById('msg-req-total'); // Get the message element
+
+    function validateTotal() {
+        const text = totalElement.textContent;
+        const cleanNumber = text.replace(/[^0-9.]/g, '');
+        const amount = parseFloat(cleanNumber) || 0;
+
+        if (amount > 0.00) {
+            // CASE: VALID
+            // 1. Enable Button
+            submitButton.removeAttribute('disabled');
+            submitButton.classList.remove('opacity-50', 'cursor-not-allowed');
+            
+            // 2. Hide Feedback Message
+            if (feedbackMsg) feedbackMsg.classList.add('d-none');
+
+        } else {
+            // CASE: INVALID ($0.00)
+            // 1. Disable Button
+            submitButton.setAttribute('disabled', 'true');
+            submitButton.classList.add('opacity-50', 'cursor-not-allowed');
+            
+            // 2. Show Feedback Message
+            if (feedbackMsg) feedbackMsg.classList.remove('d-none');
+        }
+    }
+
+    // Observer setup (same as before)
+    const observer = new MutationObserver(validateTotal);
+    if (totalElement) {
+        observer.observe(totalElement, { characterData: true, subtree: true, childList: true });
+        validateTotal(); 
+    }
 
 });</script>
 <style>

@@ -1445,11 +1445,23 @@ body:has(#login-modal.modal) .modal-backdrop {
     & .cucc-item-total p.js-val-fee::before {
         content:"-$"
     }
+
+    & .accordion-button .unsaved::after {
+        content:" (UNSAVED)";
+        font-size:.75rem;
+        color:var(--clr-danger-dark);
+    }
+}
+
+#collapse-cucc .cucc-amounts-grid {
+        display: grid;
+        grid-template-columns: 210px 180px 180px;
 }
 
 .cucc-item .accordion-button:not(.collapsed) {
     background: white !important;
 }
+
 
 
 
@@ -1974,6 +1986,10 @@ body .pc-menu {
             gap: var(--space-4);
             text-align:right;
             margin-right:10rem;
+
+            & p b::before {
+                content:"$";
+            }
         }
 }
 
@@ -2046,6 +2062,15 @@ body .pc-menu {
     top:6.25rem;
 }
 
+.charges-summary-sticky {
+    top:5rem;
+}
+
+.CustomerLogin-box{
+    & p, & p a, & a { 
+        font-family: var(--font-primary);
+    }
+}
 
 /* --------------- Responsive styles -------- */
 
