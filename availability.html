@@ -128,7 +128,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col col-md-auto col-sm-auto ar ms-auto">
+                    <div class="col-auto col-sm-auto ar ms-auto">
+                        <ul class="menu-list h-100 col-auto ml-auto gap-0 d-flex">
+                            <li class="d-flex align-items-center"><a href="#" class="btn btn-primary text-white btn-sm rounded-pill text-sm" data-bs-toggle="modal" data-bs-target="#login-modal">Login</a></li>
+                            <li class="d-flex align-items-center"><a href="#" class="btn btn-primary text-white btn-sm rounded-pill text-sm"><i class="fa-solid fa-user-gear ml-1"></i></a>
+                                <div class="sub-menu">
+                                    <dl>
+                                        <dd><a href="profile.html">Profile</a></dd>
+                                        <dd><a href="inland.html">INLAND WAREHOUSE LIST</a></dd>
+                                        <dd><a href="whse-in-out.html">WAREHOUSE IN / OUT</a></dd>
+                                        <dd><a href="transit.html">TRANSIT SCHEDULE</a></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col col-md-auto col-sm-auto ar">
                         <div class="availability-menu-link clears">
                             <div class="hamburger-menu fr">
                                 <div class="bar"></div>
@@ -514,131 +529,127 @@
                     <div class="d-flex flex-column"> <!-- HBL Collapsibles -->
                         <!--  ///// HBL Collapsibles Group ///// -->
                         <div class="w-100 gap-2" id="hbl-collapsibles-group"> 
-                            <div class="collapse w-100" id="collapse-cucc" data-bs-parent="#hbl-collapsibles-group"> <!-- CUCC Charges collapse -->
-                                <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
-                                    <!-- Collapse button -->
-                                    <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center text-uppercase">CUCC charges <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>   
-                                    <div class="p-3 py-4  align-items-center gap-2">
-                                        <!-- Headers -->
-                                        <div id="charges-header" class="d-none" style="padding: .5rem .75rem !important;">
-                                            <div class="col-5 text-start">Description</div>
-                                            <div class="col-auto text-start cucc-amounts-grid">
-                                                <div class="text-end">Amt Collected at Window</div>
-                                                <div class="text-end">Service Fee</div>
-                                                <div class="text-end">Amt Due To You</div>
-                                            </div>
-                                        </div>
-                                        <!-- Accordion Group -->
-                                        <div class="accordion accordion-flush d-flex flex-column gap-2" id="accordionFlushExample">
-                                            <!-- Accordion CUCC Item -->
-                                            <div class="accordion-item rounded-3 cucc-item js-calculator-item">
-                                                <h2 class="accordion-header">
-                                                    <div class="accordion-button btn-sm collapsed no-arrow d-flex align-items-center bg-azure-95" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-1" aria-expanded="false" aria-controls="flush-collapse-1">
-                                                        <div class="col-5 text-uppercase font-family-archivo text-base js-item-title unsaved">
-                                                            CUCC Charge
-                                                        </div>
-                                                        <div class="cucc-amounts-grid text-end">
-                                                            <div class="font-family-archivo text-base text-end  js-val-window-header">
-                                                                $10.00
-                                                            </div>
-                                                            <div class="font-family-archivo text-base fw-bold text-end service-fee text-danger js-val-fee-header">
-                                                                $10.00
-                                                            </div>
-                                                            <div class="font-family-archivo text-base fw-bold text-end js-val-due-header">
-                                                                $10.00
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-auto ms-auto">
-                                                            <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-4"><u>Edit</u></span>
-                                                            <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-4" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#remove-confirmation-modal-1" type="button"><u>Remove</u></span>
-                                                        </div>
-                                                        <div class="col-auto font-family-archivo text-success fw-bold rounded-full bg-success-light px-3 py-2">
-                                                            PAID
-                                                        </div>
-                                                </h2>
-                                                <!-- Remove Confirmation Modal -->
-                                                <div class="modal fade confirmation-modal faux-modal" id="remove-confirmation-modal-1" tabindex="-1" aria-labelledby="remove-confirmation-modal-1-label" aria-hidden="true" data-bs-backdrop="false">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header justify-content-end border-bottom-0 pb-1">
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body px-5 pb-5 pt-0 font-family-sora text-center">
-                                                                <p class="mb-4">Do you want to remove this charge?</p>
-                                                                <div class="d-flex justify-content-center gap-3">
-                                                                    <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Go Back</button>
-                                                                    <!-- ADDED: ID 'confirm-delete-btn' to easily find this button in JS -->
-                                                                    <button type="button" class="btn btn-danger rounded-pill px-4 js-remove-charge">Remove charge</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+        <!-- CUCC Charges collapse -->
+        <div class="collapse w-100" id="collapse-cucc" data-bs-parent="#hbl-collapsibles-group"> 
+            <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
+                <!-- Collapse button -->
+                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-content-between align-items-center text-uppercase">
+                    CUCC charges 
+                    <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc" style="padding:.5rem!important;border:none;">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </h2>   
+                <div class="p-3 py-4  align-items-center gap-2">
+                    <!-- Headers -->
+                    <div id="charges-header" class="d-none" style="padding: .5rem .75rem !important;">
+                        <div class="col-3 text-start">Description</div>
+                        <div class="col-2 text-end">Amt Collected at Window</div>
+                        <div class="col-2 text-end">Service Fee</div>
+                        <div class="col-2 text-end">Amt Due To You</div>
+                    </div>
+                    <!-- List Container (Where items will be added) -->
+                    <div id="charges-list-container" class="d-flex flex-column gap-2">
+                        <!-- Items will be injected here via JS -->
+                    </div>
+                    
+                    <!-- Add Button -->
+                    <div class="d-flex align-items-center mt-4 gap-4 text-secondary">
+                        <button type="button" id="btn-open-add-modal" class="btn btn-sm btn-outline-dark text-base rounded-full">
+                            <b>Click to add <i class="bi bi-plus-circle-dotted"></i></b>
+                        </button>
+                    </div>
+                </div>  
+            </div>
+        </div>
+                        <!-- ================= ADD/EDIT CHARGE MODAL ================= -->
+                        <div class="modal fade confirmation-modal faux-modal" id="charge-modal" tabindex="-1" aria-hidden="true" data-bs-backdrop="false">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header justify-content-between border-bottom-0 px-5 pt-5 pb-4">
+                                        <h4 class="text-start type-h5" id="modal-title">Add Charge</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body px-5 pb-5 pt-0 font-family-sora">
+                                        
+                                        <!-- INPUTS SECTION -->
+                                        <div class="d-flex flex-column gap-3 px-4 py-3 mb-3 border rounded">
+                                            <!-- Radios -->
+                                            <div class="d-flex gap-3 justify-content-between align-items-center">
+                                                <p class="text-uppercase text-sm col-auto detail-label mb-0 fw-bold">Choose one:</p>
+                                                <div class="d-flex gap-3 ms-auto">
+                                                    <label class="form-check d-flex gap-2 align-items-center" style="cursor:pointer">
+                                                        <input class="form-check-input my-0 js-modal-radio" type="radio" name="modal_radio_group" style="height:initial;" value="due_to_you" checked>
+                                                        <span class="form-check-label">Amount Due to you</span>
+                                                    </label>
+                                                    <label class="form-check d-flex gap-2 align-items-center" style="cursor:pointer">
+                                                        <input class="form-check-input my-0 js-modal-radio" type="radio" name="modal_radio_group" style="height:initial;" value="collect_window">
+                                                        <span class="form-check-label">Amount Collected at Window</span>
+                                                    </label>
                                                 </div>
-                                                <div id="flush-collapse-1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body pb-4 pt-6">
-                                                        <div class="row">
-                                                            <div class="col-7 d-flex gap-3 px-4 py-3 border rounded">
-                                                                <!-- Amount Radios -->
-                                                                <div class="col-auto d-flex flex-column gap-2 justify-start pr-8">
-                                                                    <p class="text-uppercase text-sm col-auto fw-bold mb-2">Choose one:</p>
-                                                                    <label class="form-check d-flex gap-2 align-items-center">
-                                                                        <input class="form-check-input my-0 js-radio-mode border-black" type="radio" name="cucc-option-1" value="due_to_you" checked>
-                                                                        <span class="form-check-label">
-                                                                            Amount Due to you
-                                                                        </span>
-                                                                    </label>
-                                                                    <label class="form-check d-flex gap-2 align-items-center">
-                                                                        <input class="form-check-input my-0 js-radio-mode border-black" type="radio" name="cucc-option-1" value="collect_window">
-                                                                        <span class="form-check-label">
-                                                                            Amount Collected at Window
-                                                                        </span>
-                                                                    </label>
-                                                                </div>
-                                                                <!-- Desc & Amount Inputs -->
-                                                                <div class="col col-lg align-self-stretch align-items-bewteen d-flex flex-column border-start pl-4">
-                                                                    <div class="col d-flex flex-row align-items-center gap-2 mb-4">
-                                                                        <label class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Description:</label>
-                                                                        <input type="text" class="form-control col rounded px-2 js-input-description"  value="CUCC Charge" placeholder="Custom description">
-                                                                    </div>
-                                                                    <div class="col d-flex flex-row align-items-center gap-3">
-                                                                        <label class="form-label text-uppercase text-sm mb-0 col-3 fw-bold">Amount:</label>
-                                                                        <input type="number" class="form-control rounded px-2 js-input-amount" placeholder="0.0" oninput="limitValue(this)" min="0.00" max="2000">
-                                                                        <span class="btn btn-sm btn-info rounded-full px-4 align-self-end col-auto align-self-center js-confirm-charge">Confirm <i class="bi bi-check-lg"></i></span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- Totals Table -->
-                                                            <div class="col-5">
-                                                                <div class="col d-flex flex-column align-items-stretch  h-100">
-                                                                    <div class="rounded bg-navy-100 px-3 py-2 d-flex flex-column gap-3 justify-around h-100 cucc-item-total">          
-                                                                        <div class="col-12 d-flex justify-between">
-                                                                            <p class="text-nowrap">Amount Collected at Window</p>
-                                                                            <p class="ml-3 fw-bold text-lg text-end js-val-window">0.00</p>
-                                                                        </div>
-                                                                        <div class="col-12 d-flex justify-between">
-                                                                            <p>Imperial Service Fee</p>
-                                                                            <p class="ml-3 fw-bold text-lg text-end js-val-fee text-danger">0.00</p>
-                                                                        </div>
-                                                                        <div class="col-12 d-flex justify-between">
-                                                                            <p>Amount Due To You</p>
-                                                                            <p class="ml-3 fw-bold text-lg text-end js-val-due">0.00</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                            </div>
+
+                                            <!-- Inputs -->
+                                            <div class="align-items-start d-flex justify-content-between flex-column border-top pt-4 mt-2">
+                                                <p class="text-uppercase text-sm col-auto detail-label mb-3">Enter an amount <span>and description</span></p>
+                                                <div class="w-100 d-flex gap-3">
+                                                    <div class="col-6 d-flex flex-row align-items-center gap-2">
+                                                        <label class="form-label text-uppercase text-sm mb-0 fw-bold">Description:</label>
+                                                        <input type="text" class="form-control rounded px-2 js-modal-desc" placeholder="Enter a description">
+                                                    </div>
+                                                    <div class="col-6 d-flex flex-row align-items-center gap-2">
+                                                        <label class="form-label text-uppercase text-sm mb-0 fw-bold">Amount:</label>
+                                                        <input type="number" class="form-control rounded px-2 js-modal-amount" placeholder="0.00" step="0.01">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Add Button -->
-                                        <div class="d-flex align-items-center mt-4 gap-4 text-secondary">
-                                            <button type="button" id="add-charge-btn" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Click to add <i class="bi bi-plus-circle-dotted"></i></b></button>
-                                            * Limit to 5 charges
+
+                                        <!-- PREVIEW SECTION (Calculated Results) -->
+                                        <div class="d-flex align-items-stretch gap-3">
+                                            <div class="rounded bg-navy-100 px-3 py-3 d-flex flex-column gap-2 justify-content-center col-9">          
+                                                <div class="d-flex justify-content-between">
+                                                    <p class="text-nowrap mb-0">Amount Collected at Window</p>
+                                                    <p class="ml-3 fw-bold text-lg text-end js-modal-val-window">0.00</p>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <p class="mb-0">Imperial Service Fee</p>
+                                                    <p class="ml-3 fw-bold text-lg text-end js-modal-val-fee text-danger">0.00</p>
+                                                </div>
+                                                <div class="d-flex justify-content-between border-top pt-2">
+                                                    <p class="mb-0 fw-bold">Amount Due To You</p>
+                                                    <p class="ml-3 fw-bold text-lg text-end js-modal-val-due">0.00</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- ACTIONS -->
+                                            <div class="col d-flex flex-column gap-2 justify-content-center">
+                                                <button type="button" id="btn-modal-confirm" class="btn btn-sm btn-dark rounded-full w-100 py-2">Confirm <i class="bi bi-check-lg"></i></button>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary rounded-full w-100 py-2" data-bs-dismiss="modal">Cancel</button>
+                                            </div>
                                         </div>
-                                    </div>  
+
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- ================= REMOVE CONFIRMATION MODAL ================= -->
+                        <div class="modal fade confirmation-modal faux-modal" id="remove-confirmation-modal" tabindex="-1" aria-hidden="true" data-bs-backdrop="false">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header justify-content-end border-bottom-0 pb-1">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body px-5 pb-5 pt-0 font-family-sora text-center">
+                                        <p class="mb-4">Do you want to remove this charge?</p>
+                                        <div class="d-flex justify-content-center gap-3">
+                                            <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Go Back</button>
+                                            <button type="button" id="btn-confirm-remove" class="btn btn-danger rounded-pill px-4 js-remove-charge">Remove charge</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                             <div class="collapse w-100" id="collapse-ams-release" data-bs-parent="#hbl-collapsibles-group"> <!-- Frt release collapse -->
                                 <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
                                     <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center text-uppercase">Freight Release <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>                                            
@@ -1358,242 +1369,223 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     
-    // CONFIGURATION
+    // --- CONFIGURATION ---
     const SERVICE_FEE_PERCENTAGE = 0.10; 
-    // const MAX_ITEMS = 5;
-    // Removed MAX_ITEMS constant
 
-    // -- SELECTORS --
-    const accordionContainer = document.getElementById('accordionFlushExample');
-    const addBtn = document.getElementById('add-charge-btn');
-    const chargesHeader = document.getElementById('charges-header');
+    // --- STATE MANAGEMENT ---
+    let editingItemId = null; 
+    let chargeModalInstance = null; 
+    let removeModalInstance = null; 
+    let itemToRemove = null; 
 
-    // -- TEMPLATE SETUP --
-    // Store the original item as a template for creating new ones.
-    const initialItemElement = accordionContainer.querySelector('.js-calculator-item');
-    // Clone true (deep clone) to get all children and attributes
-    const baseTemplate = initialItemElement.cloneNode(true);
+    // --- DOM ELEMENTS ---
+    const listContainer = document.getElementById('charges-list-container');
+    const headers = document.getElementById('charges-header');
+    const btnOpenAdd = document.getElementById('btn-open-add-modal');
     
-    // START EMPTY: Remove the template item from the DOM immediately
-    initialItemElement.remove();
+    // Add/Edit Modal
+    const modalEl = document.getElementById('charge-modal');
+    const mInputDesc = modalEl.querySelector('.js-modal-desc');
+    const mInputAmount = modalEl.querySelector('.js-modal-amount');
+    const mRadios = modalEl.querySelectorAll('.js-modal-radio');
+    const btnConfirm = document.getElementById('btn-modal-confirm');
+    const mOutWindow = modalEl.querySelector('.js-modal-val-window');
+    const mOutFee = modalEl.querySelector('.js-modal-val-fee');
+    const mOutDue = modalEl.querySelector('.js-modal-val-due');
 
-    // -- INITIALIZATION --
-    // Update state to handle headers and buttons correctly on load
-    updateUIState();
+    // Remove Modal
+    const removeModalEl = document.getElementById('remove-confirmation-modal');
+    const btnConfirmRemove = document.getElementById('btn-confirm-remove');
 
-    // -- ADD NEW ITEM LOGIC --
-    addBtn.addEventListener('click', function() {
-        /*
-        const currentItems = accordionContainer.querySelectorAll('.js-calculator-item');
-        if (currentItems.length >= MAX_ITEMS) {
-            return; // Stop if limit reached
-        } */ 
-        // Removed MAX_ITEMS check here
+    // --- INITIALIZATION ---
+    chargeModalInstance = new bootstrap.Modal(modalEl);
+    removeModalInstance = new bootstrap.Modal(removeModalEl);
+    updateListHeaderVisibility();
 
-        // 1. Clone from the baseTemplate (this works even if list is empty)
-        const template = baseTemplate.cloneNode(true);
-        const uniqueId = Date.now(); // Generate unique ID for attributes
+    // --- EVENT LISTENERS ---
 
-        // 2. Mark as unconfirmed to lock the add button
-        template.classList.add('unconfirmed');
+    // 1. Open Modal for NEW Item
+    btnOpenAdd.addEventListener('click', () => {
+        editingItemId = null; // Reset edit state
+        document.getElementById('modal-title').textContent = "Add New Charge";
         
-        // 3. Update Attributes to ensure it behaves independently
-        const btnToggle = template.querySelector('.accordion-button');
-        const collapseDiv = template.querySelector('.accordion-collapse');
-        
-        // AUTO-EXPAND: Make sure the new item is open so the user sees it
-        btnToggle.classList.remove('collapsed');
-        btnToggle.setAttribute('aria-expanded', 'true');
-        collapseDiv.classList.add('show');
-
-        // Set new IDs for creating the accordion linkage
-        const newCollapseId = 'flush-collapse-' + uniqueId;
-        btnToggle.setAttribute('data-bs-target', '#' + newCollapseId);
-        btnToggle.setAttribute('aria-controls', newCollapseId);
-        collapseDiv.id = newCollapseId;
-
-        // 4. Update Radio Group Names (Crucial!)
-        // If we don't do this, all rows will share the same radio group
-        const radios = template.querySelectorAll('.js-radio-mode');
-        radios.forEach(radio => {
-            radio.name = 'cucc-option-' + uniqueId;
-            // Reset to default
-            if (radio.value === 'due_to_you') radio.checked = true;
+        // Default Values
+        mInputDesc.value = "CUCC Charge";
+        mInputAmount.value = "";
+        mRadios.forEach(r => {
+            if(r.value === 'due_to_you') r.checked = true;
         });
-
-        // 5. Reset Inputs and Outputs
-        const inputAmount = template.querySelector('.js-input-amount');
-        inputAmount.value = ''; // Clear value
         
-        template.querySelector('.js-val-window').textContent = '0.00';
-        template.querySelector('.js-val-fee').textContent = '0.00';
-        template.querySelector('.js-val-due').textContent = '0.00';
-        
-        // Clear header numbers if you have them
-        const headWindow = template.querySelector('.js-val-window-header');
-        const headFee = template.querySelector('.js-val-fee-header');
-        const headDue = template.querySelector('.js-val-due-header');
-        if(headWindow) headWindow.textContent = '$0.00';
-        if(headFee) headFee.textContent = '$0.00';
-        if(headDue) headDue.textContent = '$0.00';
-
-        // 6. Append to container
-        accordionContainer.appendChild(template);
-
-        // 7. Init Logic for new item
-        setupAccordionCalculator(template);
-        setupRemoveButton(template);
-        setupConfirmButton(template); // Initialize Confirm button logic
-        
-        // 8. Update UI (Limit & Headers)
-        updateUIState();
+        calculateModal(); // Reset numbers to 0
+        chargeModalInstance.show();
     });
 
-    function setupRemoveButton(item) {
-        const removeBtn = item.querySelector('.js-remove-charge');
-        if (!removeBtn) return;
+    // 2. Real-time Calculation inside Modal
+    mInputAmount.addEventListener('input', calculateModal);
+    mRadios.forEach(r => r.addEventListener('change', () => {
+        mInputAmount.value = ''; // Clear amount on mode switch per requirement
+        calculateModal();
+    }));
 
-        // Remove listener to just in case, though cloning creates fresh DOM
-        removeBtn.addEventListener('click', function(e) {
-            e.stopPropagation(); // Prevent accordion from toggling when clicking remove
-            
-            item.remove();
-            updateUIState();
-        });
-    }
+    // 3. Confirm Button (Save)
+    btnConfirm.addEventListener('click', () => {
+        saveCharge();
+    });
 
-    function setupConfirmButton(item) {
-        const confirmBtn = item.querySelector('.js-confirm-charge');
-        if (!confirmBtn) return;
+    // 4. Confirm Remove (In Remove Modal)
+    btnConfirmRemove.addEventListener('click', () => {
+        if (itemToRemove) {
+            itemToRemove.remove();
+            updateListHeaderVisibility();
+            removeModalInstance.hide();
+            itemToRemove = null; // Reset
+        }
+    });
 
-        confirmBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            
-            // Mark as confirmed by removing the class
-            item.classList.remove('unconfirmed');
-            
-            // Re-evaluate the Add button state
-            updateUIState();
-            
-            // Optional: Visual feedback that it's confirmed could be added here
-            // e.g., confirmBtn.classList.add('disabled'); 
-        });
-    }
 
-    // Handles Button Enable/Disable AND Header Visibility
-    function updateUIState() {
-        const items = accordionContainer.querySelectorAll('.js-calculator-item');
-        const count = items.length;
-        
-        // Check if there are any unconfirmed items
-        const hasUnconfirmed = Array.from(items).some(item => item.classList.contains('unconfirmed'));
+    // --- FUNCTIONS ---
 
-        // 1. Add Button State
-        // Disable if there is an unconfirmed item pending
-        if (hasUnconfirmed) {
-            addBtn.classList.add('disabled', 'opacity-50');
-            addBtn.setAttribute('disabled', 'true');
+    // Calculate values based on modal inputs and update modal preview
+    function calculateModal() {
+        // Enforce 2000 Limit
+        if (parseFloat(mInputAmount.value) > 2000) {
+            mInputAmount.value = 2000;
+        }
+
+        const amount = parseFloat(mInputAmount.value) || 0;
+        let mode = 'due_to_you';
+        mRadios.forEach(r => { if(r.checked) mode = r.value });
+
+        let amtDueToYou = 0;
+        let amtCollectAtWindow = 0;
+        let imperialServiceFee = 0;
+
+        if (mode === 'due_to_you') {
+            amtDueToYou = amount;
+            if (SERVICE_FEE_PERCENTAGE !== 1) {
+                const rawCollect = amtDueToYou / (1 - SERVICE_FEE_PERCENTAGE);
+                amtCollectAtWindow = Math.round((rawCollect + Number.EPSILON) * 100) / 100;
+            }
+            imperialServiceFee = amtCollectAtWindow - amtDueToYou;
         } else {
-            addBtn.classList.remove('disabled', 'opacity-50');
-            addBtn.removeAttribute('disabled');
+            amtCollectAtWindow = amount;
+            const rawFee = amtCollectAtWindow * SERVICE_FEE_PERCENTAGE;
+            imperialServiceFee = Math.round((rawFee + Number.EPSILON) * 100) / 100;
+            amtDueToYou = amtCollectAtWindow - imperialServiceFee;
         }
 
-        // 2. Header Visibility (Using Bootstrap classes to override overrides)
-        if (chargesHeader) {
-            if (count === 0) {
-                // If we rely only on style.display='none', bootstrap's .d-flex (which has !important) will override it.
-                // So we swap the classes.
-                chargesHeader.classList.remove('d-flex');
-                chargesHeader.classList.add('d-none');
-            } else {
-                chargesHeader.classList.remove('d-none');
-                chargesHeader.classList.add('d-flex');
-            }
+        // Update Modal Preview Text
+        mOutWindow.textContent = formatMoney(amtCollectAtWindow);
+        mOutFee.textContent = formatMoney(imperialServiceFee);
+        mOutDue.textContent = formatMoney(amtDueToYou);
+    }
+
+    // Save Data (Create or Update)
+    function saveCharge() {
+        const data = {
+            desc: mInputDesc.value || "CUCC Charge",
+            window: mOutWindow.textContent,
+            fee: mOutFee.textContent,
+            due: mOutDue.textContent,
+            rawAmount: mInputAmount.value,
+            mode: Array.from(mRadios).find(r => r.checked).value
+        };
+
+        if (editingItemId) {
+            updateExistingItem(editingItemId, data);
+        } else {
+            createNewItem(data);
+        }
+
+        chargeModalInstance.hide();
+        updateListHeaderVisibility();
+    }
+
+    // Create DOM element for a new list item
+    function createNewItem(data) {
+        const uniqueId = 'item-' + Date.now();
+        const itemDiv = document.createElement('div');
+        
+        itemDiv.id = uniqueId;
+        itemDiv.className = 'rounded-3 bg-azure-95 border charge-item-row p-2 d-flex align-items-center';
+        
+        // Allow storing raw data for editing later
+        storeDataOnElement(itemDiv, data);
+
+        itemDiv.innerHTML = `
+            <div class="col-3 text-uppercase font-family-archivo text-base ps-2 js-display-desc">${data.desc}</div>
+            <div class="col-2 font-family-archivo text-base text-end js-display-window">$${data.window}</div>
+            <div class="col-2 font-family-archivo text-base fw-bold text-end text-danger js-display-fee">$${data.fee}</div>
+            <div class="col-2 font-family-archivo text-base fw-bold text-end js-display-due">$${data.due}</div>
+            <div class="col-auto ms-auto pe-2">
+                <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-3 js-btn-edit"><u>Edit</u></span>
+                <span class="btn btn-sm btn-outline-dark border-0 rounded-full px-3 js-btn-remove"><u>Remove</u></span>
+            </div>
+        `;
+
+        listContainer.appendChild(itemDiv);
+        attachRowListeners(itemDiv);
+    }
+
+    // Update existing DOM element
+    function updateExistingItem(id, data) {
+        const itemDiv = document.getElementById(id);
+        if (!itemDiv) return;
+
+        storeDataOnElement(itemDiv, data);
+
+        // Update Visuals
+        itemDiv.querySelector('.js-display-desc').textContent = data.desc;
+        itemDiv.querySelector('.js-display-window').textContent = '$' + data.window;
+        itemDiv.querySelector('.js-display-fee').textContent = '$' + data.fee;
+        itemDiv.querySelector('.js-display-due').textContent = '$' + data.due;
+    }
+
+    // Helper to attach Edit/Remove events to a row
+    function attachRowListeners(rowElement) {
+        // Edit Click
+        rowElement.querySelector('.js-btn-edit').addEventListener('click', () => {
+            const data = JSON.parse(rowElement.dataset.chargeData);
+            
+            // Set State
+            editingItemId = rowElement.id;
+            document.getElementById('modal-title').textContent = "Edit Charge";
+
+            // Fill Modal
+            mInputDesc.value = data.desc;
+            mInputAmount.value = data.rawAmount;
+            mRadios.forEach(r => {
+                r.checked = (r.value === data.mode);
+            });
+
+            calculateModal(); // Refresh calculations
+            chargeModalInstance.show();
+        });
+
+        // Remove Click (Open Confirmation Modal)
+        rowElement.querySelector('.js-btn-remove').addEventListener('click', () => {
+            itemToRemove = rowElement; // Store which item to remove
+            removeModalInstance.show(); // Show confirm modal
+        });
+    }
+
+    function storeDataOnElement(el, data) {
+        el.dataset.chargeData = JSON.stringify(data);
+    }
+
+    function updateListHeaderVisibility() {
+        const hasItems = listContainer.children.length > 0;
+        if (hasItems) {
+            headers.classList.remove('d-none');
+            headers.classList.add('d-flex');
+        } else {
+            headers.classList.remove('d-flex');
+            headers.classList.add('d-none');
         }
     }
 
-    /**
-     * Logic for a single accordion item
-     */
-    function setupAccordionCalculator(scope) {
-        const inputAmount = scope.querySelector('.js-input-amount');
-        const radios = scope.querySelectorAll('.js-radio-mode');
-        
-        const displayWindow = scope.querySelector('.js-val-window');
-        const displayFee = scope.querySelector('.js-val-fee');
-        const displayDue = scope.querySelector('.js-val-due');
-
-        // Optional: Header displays
-        const headWindow = scope.querySelector('.js-val-window-header');
-        const headFee = scope.querySelector('.js-val-fee-header');
-        const headDue = scope.querySelector('.js-val-due-header');
-
-        // Description Sync Logic
-        const inputDesc = scope.querySelector('.js-input-description');
-        const titleText = scope.querySelector('.js-item-title');
-        
-        if (inputDesc && titleText) {
-            inputDesc.addEventListener('input', function() {
-                titleText.textContent = this.value;
-            });
-        }
-
-        if (!inputAmount || !displayWindow || !displayFee || !displayDue) return;
-
-        function calculate() {
-            // 1. ENFORCE LIMIT (2000)
-            if (parseFloat(inputAmount.value) > 2000) {
-                inputAmount.value = 2000;
-            }
-
-            const txtBoxAmount = parseFloat(inputAmount.value) || 0;
-            
-            let mode = 'due_to_you';
-            radios.forEach(r => {
-                if (r.checked) mode = r.value;
-            });
-
-            let amtDueToYou = 0;
-            let amtCollectAtWindow = 0;
-            let imperialServiceFee = 0;
-            
-            if (mode === 'due_to_you') {
-                amtDueToYou = txtBoxAmount;
-                if (SERVICE_FEE_PERCENTAGE !== 1) {
-                    const rawCollect = amtDueToYou * (1 + SERVICE_FEE_PERCENTAGE);
-                    amtCollectAtWindow = Math.round((rawCollect + Number.EPSILON) * 100) / 100;
-                }
-                imperialServiceFee = amtCollectAtWindow - amtDueToYou;
-            } else {
-                amtCollectAtWindow = txtBoxAmount;
-                const rawFee = amtCollectAtWindow * SERVICE_FEE_PERCENTAGE;
-                imperialServiceFee = Math.round((rawFee + Number.EPSILON) * 100) / 100;
-                amtDueToYou = amtCollectAtWindow - imperialServiceFee;
-            }
-
-            // Update Body
-            displayWindow.textContent = formatMoney(amtCollectAtWindow);
-            displayFee.textContent = formatMoney(imperialServiceFee);
-            displayDue.textContent = formatMoney(amtDueToYou);
-
-            // Update Header if elements exist
-            if(headWindow) headWindow.textContent = '$' + formatMoney(amtCollectAtWindow);
-            if(headFee) headFee.textContent = '$' + formatMoney(imperialServiceFee);
-            if(headDue) headDue.textContent = '$' + formatMoney(amtDueToYou);
-        }
-
-        function formatMoney(num) {
-            return num.toFixed(2);
-        }
-
-        inputAmount.addEventListener('input', calculate);
-
-        radios.forEach(radio => {
-            radio.addEventListener('change', function() {
-                inputAmount.value = ''; 
-                calculate();            
-            });
-        });
+    function formatMoney(num) {
+        return num.toFixed(2);
     }
 
 });

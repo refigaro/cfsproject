@@ -1445,12 +1445,8 @@ body:has(#login-modal.modal) .modal-backdrop {
     box-shadow: var(--shadow-sm);
 
     & .accordion-button {
-            cursor: pointer;
             min-height:3.3087rem;
         }
-    &:hover {
-                box-shadow: var(--shadow-lg);
-            }
 
     & .accordion-button.no-arrow::after {
             display: none !important;
@@ -1467,23 +1463,21 @@ body:has(#login-modal.modal) .modal-backdrop {
     & .cucc-item-total p.js-val-fee::before {
         content:"-$"
     }
-
-    & .accordion-button .unsaved::after {
-        content:" (UNSAVED)";
-        font-size:.75rem;
-        color:var(--clr-danger-dark);
-    }
 }
 
 #collapse-cucc .cucc-amounts-grid {
         display: grid;
-        grid-template-columns: 210px 180px 180px;
+        grid-template-columns: 200px 180px 180px;
 }
 
 .cucc-item .accordion-button:not(.collapsed) {
     background: white !important;
 }
 
+#edit-charge-modal-1 .modal-dialog {
+    max-width: 80vw !important;
+
+}
 
 
 
