@@ -134,10 +134,11 @@ IMPERIAL CFS - DESIGN SYSTEM
     --clr-azure-46: #337AB7;
     --clr-azure-70: #A6B1BD;
     --clr-azure-80: #B1BDC9;
-    --clr-azure-85: #C9D2D9;
+    --clr-azure-85: #C9CED9;
     --clr-azure-89: #DCE2EF;
     --clr-azure-95: #EDF0F6;
     --clr-azure-99: #F3F9FC;
+
 
     /* Paleta de Cyan (Azul) */
     --clr-cyan-47: #09B4E6;
@@ -361,7 +362,7 @@ h1, h2, h3 {
 /* Bottom */
 .mb-1 { margin-bottom: var(--space-1)!important; } .pb-1 { padding-bottom: var(--space-1)!important; }
 .mb-2 { margin-bottom: var(--space-2)!important; } .pb-2 { padding-bottom: var(--space-2)!important; }
-.mb-3 { margin-bottom: var(--space-3)!important; } .pb-3 { padding-bottom: var(--space-3)!important; }
+.mb-3 { margin-bottom: var(--space-3)!important; } .pb-3 { padding-bottom: var(--space-2)!important; }
 .mb-4 { margin-bottom: var(--space-4)!important; } .pb-4 { padding-bottom: var(--space-4)!important; }
 .mb-5 { margin-bottom: var(--space-5)!important; } .pb-5 { padding-bottom: var(--space-5)!important; }
 .mb-6 { margin-bottom: var(--space-6)!important; } .pb-6 { padding-bottom: var(--space-6)!important; }
@@ -468,6 +469,7 @@ h1, h2, h3 {
 .bg-navy-600 { background-color: var(--clr-navy-600); }
 .bg-navy-500 { background-color: var(--clr-navy-500); }
 .bg-navy-400 { background-color: var(--clr-navy-400); }
+.bg-navy-200 { background-color: var(--clr-azure-85); }
 .bg-navy-100 { background-color: var(--clr-azure-89); }
 .bg-azure-95 { background-color: var(--clr-azure-95); }
 .bg-azure-19 { background-color: var(--clr-azure-19); }
@@ -620,7 +622,10 @@ h1, h2, h3 {
 /* H4 Alt: 24pt (1.5rem) / Sora */
 .type-h4-alt { font-family: var(--font-secondary); font-size: clamp(1.275rem, 1vw + 1rem, 1.65rem); font-weight: 700;}
 
-/* H6: 18pt (1.125rem) Base */
+/* H5: 20pt (1.25rem) / Sora */
+.type-h5-alt { font-family: var(--font-secondary); font-size: clamp(1.06rem, 0.5vw + 1rem, 1.375rem); line-height: 1.4;}
+
+/* H6: 18pt (1.125rem) / Sora */
 .type-h6-alt { font-family: var(--font-secondary); font-size: clamp(0.95rem, 0.5vw + 1rem, 1.23rem); line-height: 1.4;}
 
 /* Body Lg Alt: 16pt (1rem) / DM Serif */

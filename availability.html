@@ -529,127 +529,126 @@
                     <div class="d-flex flex-column"> <!-- HBL Collapsibles -->
                         <!--  ///// HBL Collapsibles Group ///// -->
                         <div class="w-100 gap-2" id="hbl-collapsibles-group"> 
-        <!-- CUCC Charges collapse -->
-        <div class="collapse w-100" id="collapse-cucc" data-bs-parent="#hbl-collapsibles-group"> 
-            <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
-                <!-- Collapse button -->
-                <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-content-between align-items-center text-uppercase">
-                    CUCC charges 
-                    <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc" style="padding:.5rem!important;border:none;">
-                        <i class="bi bi-x-lg"></i>
-                    </button>
-                </h2>   
-                <div class="p-3 py-4  align-items-center gap-2">
-                    <!-- Headers -->
-                    <div id="charges-header" class="d-none" style="padding: .5rem .75rem !important;">
-                        <div class="col-3 text-start">Description</div>
-                        <div class="col-2 text-end">Amt Collected at Window</div>
-                        <div class="col-2 text-end">Service Fee</div>
-                        <div class="col-2 text-end">Amt Due To You</div>
-                    </div>
-                    <!-- List Container (Where items will be added) -->
-                    <div id="charges-list-container" class="d-flex flex-column gap-2">
-                        <!-- Items will be injected here via JS -->
-                    </div>
-                    
-                    <!-- Add Button -->
-                    <div class="d-flex align-items-center mt-4 gap-4 text-secondary">
-                        <button type="button" id="btn-open-add-modal" class="btn btn-sm btn-outline-dark text-base rounded-full">
-                            <b>Click to add <i class="bi bi-plus-circle-dotted"></i></b>
-                        </button>
-                    </div>
-                </div>  
-            </div>
-        </div>
-                        <!-- ================= ADD/EDIT CHARGE MODAL ================= -->
-                        <div class="modal fade confirmation-modal faux-modal" id="charge-modal" tabindex="-1" aria-hidden="true" data-bs-backdrop="false">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header justify-content-between border-bottom-0 px-5 pt-5 pb-4">
-                                        <h4 class="text-start type-h5" id="modal-title">Add Charge</h4>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body px-5 pb-5 pt-0 font-family-sora">
+                            <!-- CUCC Charges collapse -->
+                            <div class="collapse w-100" id="collapse-cucc" data-bs-parent="#hbl-collapsibles-group"> 
+                                <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
+                                    <!-- Collapse button -->
+                                    <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-content-between align-items-center text-uppercase">
+                                        CUCC charges 
+                                        <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc" style="padding:.5rem!important;border:none;">
+                                            <i class="bi bi-x-lg"></i>
+                                        </button>
+                                    </h2>   
+                                    <div class="p-3 py-4  align-items-center gap-2">
+                                        <!-- Headers -->
+                                        <div id="charges-header" class="d-none" style="padding: .5rem .75rem !important;">
+                                            <div class="col-3 text-start">Description</div>
+                                            <div class="col-2 text-end">Collected at Window</div>
+                                            <div class="col-2 text-end">Service Fee</div>
+                                            <div class="col-2 text-end fw-bold">You Receive</div>
+                                        </div>
+                                        <!-- List Container (Where items will be added) -->
+                                        <div id="charges-list-container" class="d-flex flex-column gap-2">
+                                            <!-- Items will be injected here via JS -->
+                                        </div>
                                         
-                                        <!-- INPUTS SECTION -->
-                                        <div class="d-flex flex-column gap-3 px-4 py-3 mb-3 border rounded">
-                                            <!-- Radios -->
-                                            <div class="d-flex gap-3 justify-content-between align-items-center">
-                                                <p class="text-uppercase text-sm col-auto detail-label mb-0 fw-bold">Choose one:</p>
-                                                <div class="d-flex gap-3 ms-auto">
-                                                    <label class="form-check d-flex gap-2 align-items-center" style="cursor:pointer">
-                                                        <input class="form-check-input my-0 js-modal-radio" type="radio" name="modal_radio_group" style="height:initial;" value="due_to_you" checked>
-                                                        <span class="form-check-label">Amount Due to you</span>
-                                                    </label>
-                                                    <label class="form-check d-flex gap-2 align-items-center" style="cursor:pointer">
-                                                        <input class="form-check-input my-0 js-modal-radio" type="radio" name="modal_radio_group" style="height:initial;" value="collect_window">
-                                                        <span class="form-check-label">Amount Collected at Window</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-
-                                            <!-- Inputs -->
-                                            <div class="align-items-start d-flex justify-content-between flex-column border-top pt-4 mt-2">
-                                                <p class="text-uppercase text-sm col-auto detail-label mb-3">Enter an amount <span>and description</span></p>
-                                                <div class="w-100 d-flex gap-3">
-                                                    <div class="col-6 d-flex flex-row align-items-center gap-2">
-                                                        <label class="form-label text-uppercase text-sm mb-0 fw-bold">Description:</label>
-                                                        <input type="text" class="form-control rounded px-2 js-modal-desc" placeholder="Enter a description">
-                                                    </div>
-                                                    <div class="col-6 d-flex flex-row align-items-center gap-2">
-                                                        <label class="form-label text-uppercase text-sm mb-0 fw-bold">Amount:</label>
-                                                        <input type="number" class="form-control rounded px-2 js-modal-amount" placeholder="0.00" step="0.01">
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <!-- Add Button -->
+                                        <div class="d-flex align-items-center mt-4 gap-4 text-secondary">
+                                            <button type="button" id="btn-open-add-modal" class="btn btn-sm btn-outline-dark text-base rounded-full">
+                                                <b>Click to add <i class="bi bi-plus-circle-dotted"></i></b>
+                                            </button>
                                         </div>
-
-                                        <!-- PREVIEW SECTION (Calculated Results) -->
-                                        <div class="d-flex align-items-stretch gap-3">
-                                            <div class="rounded bg-navy-100 px-3 py-3 d-flex flex-column gap-2 justify-content-center col-9">          
-                                                <div class="d-flex justify-content-between">
-                                                    <p class="text-nowrap mb-0">Amount Collected at Window</p>
-                                                    <p class="ml-3 fw-bold text-lg text-end js-modal-val-window">0.00</p>
-                                                </div>
-                                                <div class="d-flex justify-content-between">
-                                                    <p class="mb-0">Imperial Service Fee</p>
-                                                    <p class="ml-3 fw-bold text-lg text-end js-modal-val-fee text-danger">0.00</p>
-                                                </div>
-                                                <div class="d-flex justify-content-between border-top pt-2">
-                                                    <p class="mb-0 fw-bold">Amount Due To You</p>
-                                                    <p class="ml-3 fw-bold text-lg text-end js-modal-val-due">0.00</p>
-                                                </div>
-                                            </div>
+                                    </div>  
+                                </div>
+                            </div>
+                            <!-- ================= ADD/EDIT CHARGE MODAL ================= -->
+                            <div class="modal fade confirmation-modal faux-modal" id="charge-modal" tabindex="-1" aria-hidden="true" data-bs-backdrop="false">
+                                <div class="modal-dialog modal-lg" style="max-width:40rem;">
+                                    <div class="modal-content">
+                                        <div class="modal-header justify-content-between bg-navy-200 border-bottom-0 px-8 pt-5 pb-4">
+                                            <h4 class="text-start type-h6-alt fw-bold text-navy-800" id="modal-title">Add New Charge</h4>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body px-8 py-8 font-family-sora">
                                             
-                                            <!-- ACTIONS -->
-                                            <div class="col d-flex flex-column gap-2 justify-content-center">
-                                                <button type="button" id="btn-modal-confirm" class="btn btn-sm btn-dark rounded-full w-100 py-2">Confirm <i class="bi bi-check-lg"></i></button>
-                                                <button type="button" class="btn btn-sm btn-outline-secondary rounded-full w-100 py-2" data-bs-dismiss="modal">Cancel</button>
+                                            <!-- INPUTS SECTION -->
+                                            <div class="d-flex flex-column gap-3 py-3 mb-3 font-family-archivo text-lg rounded">
+                                                <!-- Radios -->
+                                                <div class="d-flex gap-3 justify-content-between align-items-center">
+                                                    <div class="d-flex flex-column gap-2">
+                                                        <label class="form-check d-flex gap-2 align-items-center" style="cursor:pointer">
+                                                            <input class="form-check-input my-0 js-modal-radio" type="radio" name="modal_radio_group" style="height:initial;" value="due_to_you" checked="">
+                                                            <span class="form-check-label">Amount Due to you</span>
+                                                        </label>
+                                                        <label class="form-check d-flex gap-2 align-items-center" style="cursor:pointer">
+                                                            <input class="form-check-input my-0 js-modal-radio" type="radio" name="modal_radio_group" style="height:initial;" value="collect_window">
+                                                            <span class="form-check-label">Amount Collected at Window</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Inputs -->
+                                                <div class="align-items-start d-flex justify-content-between flex-column border-top py-8 mt-2">
+                                                    <div class="d-flex flex-column gap-4 w-100">
+                                                        <div class="col-12 d-flex flex-column gap-3">
+                                                            <label class="form-label mb-0">Description:</label>
+                                                            <input type="text" class="form-control rounded px-2 fw-bold js-modal-desc" placeholder="Enter a description">
+                                                        </div>
+                                                        <div class="col-12 d-flex flex-column gap-3">
+                                                            <label class="form-label mb-0">Amount:</label>
+                                                            <input type="number" class="form-control rounded px-2 fw-bold text-xl js-modal-amount" placeholder="0.00" step="0.01">
+                                                        </div>
+                                                        <span class="text-end text-lg text-navy-450">Max limit: $2,000.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- PREVIEW SECTION (Calculated Results) -->
+                                            <div class="d-flex flex-column align-items-stretch gap-8">
+                                                <div class="rounded bg-navy-100 px-3 py-3 d-flex flex-column gap-3 justify-content-center">          
+                                                    <div class="d-flex justify-content-between">
+                                                        <p class="text-nowrap mb-0">Collected at Window:</p>
+                                                        <p class="ml-3 fw-bold text-lg text-end js-modal-val-window">0.00</p>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between">
+                                                        <p class="mb-0">Imperial Service Fee:</p>
+                                                        <p class="ml-3 fw-bold text-lg text-end js-modal-val-fee text-danger">0.00</p>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between border-top border-dark-subtle mt-1 pt-4 pb-1">
+                                                        <p class="mb-0 text-lg fw-bold">You Receive:</p>
+                                                        <p class="ml-3 fw-bold text-lg text-end js-modal-val-due">0.00</p>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- ACTIONS -->
+                                                <div class="col d-flex gap-3 justify-content-end">
+                                                    <button type="button" class="btn btn-outline-dark col-6 col-md-4 rounded-full py-2" data-bs-dismiss="modal">Cancel</button>
+                                                    <button type="button" id="btn-modal-confirm" class="btn btn-accent col-6 col-md-4 rounded-full py-2">Save Charge <i class="bi bi-check-lg"></i></button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ================= REMOVE CONFIRMATION MODAL ================= -->
+                            <div class="modal fade confirmation-modal faux-modal" id="remove-confirmation-modal" tabindex="-1" aria-hidden="true" data-bs-backdrop="false">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header justify-content-end border-bottom-0 pb-1">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body px-5 pb-5 pt-0 font-family-sora text-center">
+                                            <p class="mb-4">Do you want to remove this charge?</p>
+                                            <div class="d-flex justify-content-center gap-3">
+                                                <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Go Back</button>
+                                                <button type="button" id="btn-confirm-remove" class="btn btn-danger rounded-pill px-4 js-remove-charge">Remove charge</button>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- ================= REMOVE CONFIRMATION MODAL ================= -->
-                        <div class="modal fade confirmation-modal faux-modal" id="remove-confirmation-modal" tabindex="-1" aria-hidden="true" data-bs-backdrop="false">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header justify-content-end border-bottom-0 pb-1">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body px-5 pb-5 pt-0 font-family-sora text-center">
-                                        <p class="mb-4">Do you want to remove this charge?</p>
-                                        <div class="d-flex justify-content-center gap-3">
-                                            <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Go Back</button>
-                                            <button type="button" id="btn-confirm-remove" class="btn btn-danger rounded-pill px-4 js-remove-charge">Remove charge</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                             <div class="collapse w-100" id="collapse-ams-release" data-bs-parent="#hbl-collapsibles-group"> <!-- Frt release collapse -->
                                 <div class="card card-body p-0 my-5 overflow-hidden shadow-lg">
                                     <h2 class="font-family-sora text-base fw-bold px-3 py-2 bg-navy-600 text-white shadow-md d-flex justify-between align-items-center text-uppercase">Freight Release <button type="button" class="btn btn-sm btn-outline-light close text-base ms-auto rounded-full" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release" style="padding:.5rem!important;border:none;"><i class="bi bi-x-lg"></i></button></h2>                                            
@@ -1407,7 +1406,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 1. Open Modal for NEW Item
     btnOpenAdd.addEventListener('click', () => {
         editingItemId = null; // Reset edit state
-        document.getElementById('modal-title').textContent = "Add New Charge";
+        document.getElementById('modal-title').textContent = "Add New CUCC Charge";
         
         // Default Values
         mInputDesc.value = "CUCC Charge";
@@ -1480,6 +1479,15 @@ document.addEventListener('DOMContentLoaded', function() {
         mOutDue.textContent = formatMoney(amtDueToYou);
     }
 
+    // Helper to generate badge HTML based on mode
+    function getBadgeHtml(mode) {
+        if (mode === 'due_to_you') {
+            return '<span class="badge ipi-tracing rounded-pill pill-hold success ms-2">DUE TO YOU</span>';
+        } else {
+            return '<span class="badge ipi-tracing rounded-pill pill-hold success ms-2">AT WINDOW</span>';
+        }
+    }
+
     // Save Data (Create or Update)
     function saveCharge() {
         const data = {
@@ -1509,11 +1517,14 @@ document.addEventListener('DOMContentLoaded', function() {
         itemDiv.id = uniqueId;
         itemDiv.className = 'rounded-3 bg-azure-95 border charge-item-row p-2 d-flex align-items-center';
         
-        // Allow storing raw data for editing later
         storeDataOnElement(itemDiv, data);
 
+        const badge = getBadgeHtml(data.mode);
+
         itemDiv.innerHTML = `
-            <div class="col-3 text-uppercase font-family-archivo text-base ps-2 js-display-desc">${data.desc}</div>
+            <div class="col-3 text-uppercase font-family-archivo text-base ps-2 js-display-desc">
+                ${data.desc} ${badge}
+            </div>
             <div class="col-2 font-family-archivo text-base text-end js-display-window">$${data.window}</div>
             <div class="col-2 font-family-archivo text-base fw-bold text-end text-danger js-display-fee">$${data.fee}</div>
             <div class="col-2 font-family-archivo text-base fw-bold text-end js-display-due">$${data.due}</div>
@@ -1534,8 +1545,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         storeDataOnElement(itemDiv, data);
 
+        const badge = getBadgeHtml(data.mode);
+
         // Update Visuals
-        itemDiv.querySelector('.js-display-desc').textContent = data.desc;
+        itemDiv.querySelector('.js-display-desc').innerHTML = `${data.desc} ${badge}`;
         itemDiv.querySelector('.js-display-window').textContent = '$' + data.window;
         itemDiv.querySelector('.js-display-fee').textContent = '$' + data.fee;
         itemDiv.querySelector('.js-display-due').textContent = '$' + data.due;

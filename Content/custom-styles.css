@@ -491,7 +491,8 @@ body:not(.marketing) .bar.animate:before {
         .hbl-list-item .bi.bi-dash { color:var(--clr-grey-65); }
 
    .hbl-master-list .hbl-list-item .badge.ipi-tracing,
-   .search-results .hbl-list-item .badge.ipi-tracing {
+   .search-results .hbl-list-item .badge.ipi-tracing,
+   #charges-list-container .badge.ipi-tracing {
         background:var(--clr-info-light);
         color:var(--clr-info-dark);
         font-size:var(--font-size-sm);
@@ -553,8 +554,6 @@ body:not(.marketing) .bar.animate:before {
 /* Allow the header to shrink and scroll if it gets too tall */
 .hbl-item-details-modal .offcanvas-header {
   flex: 0 1 auto; /* Grow to fit, but shrink if necessary */
-  overflow-y: auto; 
-  max-height: 50vh; /* Optional: cap the header at 50% of the screen */
   border-bottom: 1px solid #dee2e6; /* Visual separation */
 }
 
@@ -1968,7 +1967,7 @@ body .pc-menu {
         & .charges-table-heading,
         & .charges-table-item {
             display:grid;
-            grid-template-columns: 1fr 6.5rem 8rem;
+            grid-template-columns: 1fr 6.5rem 6rem;
             align-items:center;
 
             & label {
@@ -2001,7 +2000,7 @@ body .pc-menu {
             display: flex; flex-direction: column;
             gap: var(--space-4);
             text-align:right;
-            margin-right:10rem;
+            margin-right:8rem;
 
             & p b::before {
                 content:"$";
