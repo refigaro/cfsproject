@@ -1478,6 +1478,16 @@ body:has(#login-modal.modal) .modal-backdrop {
 
 }
 
+.money-sign {
+    
+    &::before {
+        content:"$";
+    }
+
+    &.negative::before {
+        content:"-$";
+    }
+}
 
 
 /* --------- Information / Marketing Pages  ------- */
@@ -2048,6 +2058,20 @@ body .pc-menu {
 
     & .charge-row.demurrage-fee {
         margin-top:var(--space-2);
+    }
+}
+
+.charge-step-module.date-picker {
+    @media (max-width:768px) {
+        gap:1rem;
+
+        & .arrow {
+            transform: rotate(90deg);
+        }
+
+        & div:last-child>div {
+            justify-content: center;
+        }
     }
 }
 

@@ -206,19 +206,19 @@
                     <div class="my-3 row gap-3 px-2 py-2">
                         <div class="col-lg-12 col-xl-9">
                             <h3 class="charge-instructions">Step 1. <span>Select your estimated pickup date.</span></h3>
-                            <div class="charge-step-module d-flex flex-wrap align-items-center">
+                            <div class="charge-step-module date-picker d-flex flex-wrap align-items-center">
                                 <div class="col-12 col-md d-flex gap-2 align-items-center">                                
                                     <label class="form-label detail-label text-base text-nowrap mb-0 lh-1" for="Pickup_date">EST. P/U Date</label>
                                     <input class="form-control rounded date" type="date" id="est-pu-date" autocomplete="off" data-val="true" data-val-date="The field Est. P/U Date must be a date." data-val-required="The Est. P/U Date field is required." id="Pickup_date" name="Pickup_date" placeholder="Please Enter Pick-Up Date" required="true" type="text">
                                 </div>
-                                <div class="col-12 col-md-1">
+                                <div class="col-12 col-md-1 arrow">
                                     <i class="bi bi-arrow-right"></i>
                                 </div>
                                 <div class="col-12 col-md">
                                     <div class="col-12 d-flex flex-direction-row align-items-center gap-2">
                                         <span class="detail-label lh-1rem text-base">HBL No.</span>
-                                    <div class="text-dark lh-1rem mb-1px text-base">01/08/26</div>
-                                </div>
+                                        <div class="text-dark lh-1rem mb-1px text-base">01/08/26</div>
+                                    </div>
                                 </div>
                             </div>
                             <p class="text-xs mt-3">EXTRA $75 PER HOUR WILL BE CHARGED AFTER 6:00 PM</p>
@@ -337,7 +337,7 @@
                                         <div class="charge-step-module d-flex flex-column gap-8 justify-content-start">
                                             <img src="https://www.imperialcfs.com/_images/PayCargo_Logo.png" alt="PayCargo Logo" style="width:9.875rem;">
                                             <div class="row">
-                                                <div class="col col-md-6 text-start">
+                                                <div class="col-12 col-lg-6 text-start">
                                                     <p class="font-family-sora text-navy-600 mb-6">Please login to your PayCargo account.</p>
                                                     <form class="text-start">
                                                         <div class="row mb-3 align-items-center">
@@ -386,7 +386,7 @@
                                                         </div>
                                                     </form>
                                                 </div>
-                                                <div class="col col-md-6">
+                                                <div class="col-12 col-lg-6">
                                                     <div class="bg-azure-95 rounded-4 h-100 p-2 position-relative">
                                                         <div class="sticky-top d-flex flex-column gap-5 charges-summary-sticky">
                                                             <div class="card summary-card border-0 shadow-md rounded-4">
@@ -433,7 +433,7 @@
                                                             </div>
                                                             <div class="form-check d-flex align-items-center gap-2">
                                                                 <input class="form-check-input" type="checkbox" id="termsCheck">
-                                                                <label class="form-check-label text-muted" for="termsCheck">
+                                                                <label class="form-check-label text-muted text-start" for="termsCheck">
                                                                     I have read and agreed to <a href="#" data-bs-toggle="modal" data-bs-target="#paycargo-terms-modal" class="text-secondary fw-bold text-decoration-underline">TERMS & CONDITION</a>
                                                                 </label>
                                                             </div>
@@ -476,7 +476,7 @@
 
                                             <h4 class="text-start type-h4 text-color-headings">Guarantee Order</h4>
                                             <div class="row">
-                                                <div class="col col-md-6 text-start">
+                                                <div class="col-12 col-md-6 text-start">
                                                     <form class="text-start">
                                                         <div class="row mb-3 align-items-center">
                                                             <label for="username" class="col-sm-5 col-form-label">House Bill No.</label>
@@ -530,26 +530,31 @@
                                         <div class="charge-step-module d-flex flex-column gap-8 justify-content-start">
                                             <img src="https://www.imperialcfs.com/_images/credit_card_logos.png" alt="Credit Cards Logo" style="width:12.68rem;">
                                             <div class="row">
-                                                <div class="col col-md-6 text-start">
+                                                <div class="col-12 col-lg-6 text-start">
                                                     <p class="font-family-sora text-navy-600 mb-6">Credit Card Information.</p>
                                                     <form class="text-start">
                                                         <div class="row mb-3 align-items-center">
                                                             <label for="username" class="col-sm-5 col-form-label">Credit Card Number</label>
                                                             <div class="col-sm-7">
-                                                                <input class="form-control bg-light" type="text" inputmode="numeric"  pattern="[0-9]*"  autocomplete="cc-number"  maxlength="19"  placeholder="xxxx xxxx xxxx xxxx" id="credit-card" placeholder="xxxx xxxx xxxx xxxx">
+                                                                <input class="form-control bg-light" type="text" inputmode="numeric"  pattern="[0-9]*"  autocomplete="cc-number"  maxlength="19" id="cc-number" placeholder="0000 0000 0000 0000">
                                                             </div>
                                                         </div>
 
                                                         <div class="row mb-3 align-items-center">
                                                             <label for="password" class="col-sm-5 col-form-label">Expiration Date</label>
-                                                            <div class="col-sm-7">
-                                                                <input class="form-control bg-light" id="cc-exp" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM / YY" maxlength="7" required>
+                                                            <div class="col-sm-7 d-flex gap-2">
+                                                                <div class="col">
+                                                                    <input type="text" class="form-control bg-light" id="cc-exp-mm" placeholder="MM">
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="text" class="form-control bg-light" id="cc-exp-yy" placeholder="YY">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3 align-items-center">
                                                             <label for="fullname" class="col-sm-5 col-form-label">CCV</label>
                                                             <div class="col-sm-7">
-                                                                <input class="form-control bg-light" id="cc-csc" type="password" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="4" required>
+                                                                <input class="form-control bg-light" type="password" inputmode="numeric" autocomplete="cc-csc" id="cc-cvv" placeholder="CVV" maxlength="4" required>
                                                             </div>
                                                         </div>
                                                         <hr class="border border-dark-subtle opacity-10 my-3">
@@ -611,7 +616,7 @@
                                                         </div>  
                                                     </form>
                                                 </div>
-                                                <div class="col col-md-6">
+                                                <div class="col-12 col-lg-6">
                                                     <div class="bg-azure-95 rounded-4 h-100 p-2 position-relative">
                                                         <div class="sticky-top d-flex flex-column gap-5 charges-summary-sticky">
                                                             <div class="card summary-card border-0 shadow-md rounded-4">
@@ -666,7 +671,7 @@
                                                                     I have read and agreed to <a href="#" class="text-secondary fw-bold text-decoration-underline">TERMS & CONDITION</a>
                                                                 </label>
                                                             </div>
-                                                            <button class="btn btn-accent rounded-full w-100 py-2 text-uppercase text-base fw-bold">
+                                                            <button class="btn btn-accent rounded-full w-100 py-2 text-uppercase text-base fw-bold" onclick="handlePayment()">
                                                                 Confirm Payment
                                                             </button>
                                                         </div> 
@@ -680,7 +685,7 @@
                                         <div class="charge-step-module d-flex flex-column gap-8 justify-content-start">
                                             <h4 class="text-start type-h4 ">E-Check Order</h4>
                                             <div class="row">
-                                                <div class="col col-md-6 text-start">
+                                                <div class="col-12 col-lg-6 text-start">
                                                     <p class="font-family-sora text-navy-600 mb-6">Bank Information.</p>
                                                     <form class="text-start">
                                                         <div class="row mb-3 align-items-center">
@@ -785,7 +790,7 @@
                                                         </div>  
                                                     </form>
                                                 </div>
-                                                <div class="col col-md-6">
+                                                <div class="col-12 col-lg-6">
                                                     <div class="bg-azure-95 rounded-4 h-100 p-2 position-relative">
                                                         <div class="sticky-top d-flex flex-column gap-5 charges-summary-sticky">
                                                             <div class="card summary-card border-0 shadow-md rounded-4">
@@ -850,6 +855,20 @@
                         </div>
                     </div>
                 </section>
+
+                <!-- /// Credit Card Validation Notification (Toast) ///-->
+                <div class="toast-container position-fixed bottom-0 end-0 m-3 shadow-md">
+                    <div id="cardValidationToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="d-flex">
+                        <div class="toast-body p-4">
+                            <strong id="cardToastTitle" class="d-block mb-1 type-h6-alt"> Notification </strong>
+                            <span id="cardToastMessage" class="text-base font-family-sora">Default Message</span>
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto p-2" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -1309,6 +1328,197 @@
     // if true, will log helpful messages for setting up Card
     debug: false // optional - default false
 });
+</script>
+<!-- /////////// ---- Credit Card Verifier Script----/////////////-->
+<script>
+    const CreditCardVerifier = {
+    /**
+     * Remove all non-numeric characters from the input
+     */
+    cleanInput: function (value) {
+        return value.replace(/\D/g, '');
+    },
+
+    /**
+     * 1. The Luhn Algorithm (Mod 10)
+     * Checks if the number is mathematically valid.
+     */
+    luhnCheck: function (cardNumber) {
+        let sum = 0;
+        let shouldDouble = false;
+        // Loop through values starting at the rightmost digit
+        for (let i = cardNumber.length - 1; i >= 0; i--) {
+            let digit = parseInt(cardNumber.charAt(i));
+
+            if (shouldDouble) {
+                if ((digit *= 2) > 9) digit -= 9;
+            }
+
+            sum += digit;
+            shouldDouble = !shouldDouble;
+        }
+        return (sum % 10) === 0;
+    },
+
+    /**
+     * 2. Card Type & Regex Validation
+     * Returns the card type if valid, or null if invalid pattern.
+     */
+    getCardType: function (cardNumber) {
+        const patterns = {
+            visa: /^4[0-9]{12}(?:[0-9]{3})?$/,
+            mastercard: /^5[1-5][0-9]{14}$|^2(?:2(?:2[1-9]|[3-9][0-9])|[3-6][0-9][0-9]|7(?:[01][0-9]|20))[0-9]{12}$/, // Updated for 2-series bins
+            amex: /^3[47][0-9]{13}$/,
+            discover: /^6(?:011|5[0-9]{2})[0-9]{12}$/,
+            diners: /^3(?:0[0-5]|[68][0-9])[0-9]{11}$/,
+            jcb: /^(?:2131|1800|35\d{3})\d{11}$/
+        };
+
+        for (const [card, pattern] of Object.entries(patterns)) {
+            if (pattern.test(cardNumber)) return card;
+        }
+        return null; // Unknown or invalid format
+    },
+
+    /**
+     * 3. Expiration Date Verification
+     * Expects month (1-12) and 2-digit or 4-digit year.
+     */
+    isNotExpired: function (month, year) {
+        if (!month || !year) return false;
+        
+        // Normalize year to 4 digits
+        const fullYear = year.length === 2 ? 2000 + parseInt(year) : parseInt(year);
+        const currentYear = new Date().getFullYear();
+        const currentMonth = new Date().getMonth() + 1;
+
+        if (fullYear < currentYear) return false;
+        if (fullYear === currentYear && parseInt(month) < currentMonth) return false;
+        
+        return true;
+    },
+
+    /**
+     * 4. CVV Verification
+     * Amex uses 4 digits; others use 3.
+     */
+    isValidCVV: function (cvv, cardType) {
+        const cleanCVV = this.cleanInput(cvv);
+        const length = cleanCVV.length;
+        
+        if (cardType === 'amex') {
+            return length === 4;
+        }
+        return length === 3;
+    }
+};
+
+// --- MAIN WRAPPER FUNCTION ---
+function validateCardDetails(number, month, year, cvv) {
+    const cleanNumber = CreditCardVerifier.cleanInput(number);
+    
+    // 1. Check if the field is empty first (Basic UX)
+    if (!cleanNumber) {
+        return { 
+            valid: false, 
+            title: "Missing Card Number",
+            message: "Please enter your credit card number to proceed." 
+        };
+    }
+
+    // 2. Check Regex/Type (Is it a known brand?)
+    const cardType = CreditCardVerifier.getCardType(cleanNumber);
+    if (!cardType) {
+        // UX Improvement: Check length to give a smarter hint
+        if (cleanNumber.length < 13) {
+            return { 
+                valid: false, 
+                title: "Number Too Short",
+                message: "The card number looks too short. Please check that you have entered all digits." 
+            };
+        }
+        return { 
+            valid: false, 
+            title: "Unknown Card Brand",
+            message: "We don't recognize this card provider. Please check the number or try a different card." 
+        };
+    }
+
+    // 3. Check Luhn (Is it a valid sequence?)
+    // We check this AFTER type, so we don't annoy users with "checksum" errors if they just typed it wrong.
+    if (!CreditCardVerifier.luhnCheck(cleanNumber)) {
+        return { 
+            valid: false, 
+            title: "Check for Typos",
+            message: "The card number doesn't match the verification check. Please double-check the digits." 
+        };
+    }
+
+    // 4. Check Expiration
+    if (!CreditCardVerifier.isNotExpired(month, year)) {
+        return { 
+            valid: false, 
+            title: "Card Expired",
+            message: "The expiration date is in the past. Please check the Month and Year fields." 
+        };
+    }
+
+    // 5. Check CVV
+    // UX Improvement: Tell them exactly how many digits we expect based on the card type.
+    if (!CreditCardVerifier.isValidCVV(cvv, cardType)) {
+        const requiredLength = (cardType === 'amex') ? "4 digits" : "3 digits";
+        return { 
+            valid: false, 
+            title: "Incorrect Security Code",
+            message: `For ${cardType.toUpperCase()}, the security code (CVV) must be ${requiredLength}.` 
+        };
+    }
+
+    return { valid: true, cardType: cardType };
+}
+
+// Helper: Triggers a Bootstrap Toast
+function showToast(title, message, type) {
+    const toastEl = document.getElementById('cardValidationToast');
+    const titleEl = document.getElementById('cardToastTitle');
+    const msgEl = document.getElementById('cardToastMessage');
+
+    toastEl.className = 'toast align-items-center border-0';
+
+    if (type === 'success') {
+        toastEl.classList.add('text-bg-success');
+        titleEl.textContent = title || "Success"; // Fallback
+        msgEl.innerHTML = `<i class="bi bi-check-circle-fill me-2"></i>${message || "Operation successful"}`;
+    } else {
+        toastEl.classList.add('text-bg-danger');
+        
+        // Fallback Message
+        titleEl.textContent = title || "Error"; 
+        msgEl.textContent = message || "Please check your information and try again.";
+    }
+
+    const toast = new bootstrap.Toast(toastEl);
+    toast.show();
+}
+
+/**
+ * Main Handler: Validation Logic
+ */
+function handlePayment() {
+    const number = document.getElementById('cc-number').value;
+    const mm = document.getElementById('cc-exp-mm').value;
+    const yy = document.getElementById('cc-exp-yy').value;
+    const cvv = document.getElementById('cc-cvv').value;
+
+    const result = validateCardDetails(number, mm, yy, cvv);
+
+    if (result.valid) {
+        showToast("Success", `Card Validated: ${result.cardType.toUpperCase()}`, 'success');
+    } else {
+        showToast(result.title, result.message, 'error');
+    }
+}
+
 </script>
 </body>
 </html>
