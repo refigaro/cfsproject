@@ -1980,6 +1980,10 @@ body .pc-menu {
             grid-template-columns: 1fr 6.5rem 6rem;
             align-items:center;
 
+            @media (max-width:576px){
+                grid-template-columns: 1fr 6.5rem;
+            }
+
             & label {
                 display:flex; gap:var(--space-2);
                 align-items:center;
@@ -2015,7 +2019,19 @@ body .pc-menu {
             & p b::before {
                 content:"$";
             }
+
+            @media (max-width:576px){
+                margin:1rem 1.25rem 1.5rem 0;
+            }
         }
+
+    .invoice-totals {
+
+        @media (max-width:576px){
+            flex-direction:column-reverse;
+            align-items:stretch!important;
+        }
+    }
 }
 
 .payment-methods {
@@ -2108,6 +2124,47 @@ body .pc-menu {
 .CustomerLogin-box{
     & p, & p a, & a { 
         font-family: var(--font-primary);
+    }
+}
+
+.shipment-search {
+    @media (max-width:576px){
+        width:100%;
+        margin-left:initial;
+
+        & div.d-flex.gap-2 {
+            width:100%!important;
+            flex-direction:column;
+
+            & > * {
+                margin-left:initial;
+                width:100%;
+                display:block;
+
+                & > input {
+                    width:100%!important;
+                    display:block!important;
+                }
+            }
+        }
+    }
+}
+
+#charges-select-container {
+    @media (max-width:576px){
+        padding:1.25rem;
+
+        & .charges-table-item > label {
+            text-align:start;
+            grid-column: span 2;
+        }
+
+        & .charges-table-item > span:last-child{
+            display:block;
+            grid-column: span 3;
+            text-align:start;
+            padding-left:1.5rem;
+        }
     }
 }
 

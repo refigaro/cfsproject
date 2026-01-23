@@ -126,7 +126,7 @@
             <div class="col-auto">
                 <h1 class="text-3xl font-family-dm-serif text-navy-800">Local Pickup Estimated Charges</h1>
             </div>
-            <div class="col-auto ms-auto justify-end text-end d-flex flex-column gap-2">
+            <div class="col-auto ms-auto justify-end text-end d-flex flex-column gap-2 shipment-search">
                 <h2 class="text-navy-450">Please Search your Shipment</h2>
                 <div class="d-flex gap-2">
                     <select class="form-control ml-4 rounded d-inline-block w-auto" id="type" name="type">
@@ -144,10 +144,10 @@
 </section>
 <section class="mbl-details charges-page">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row gap-4">
             <div class="col-12 col-lg-4 col-xl-3 mb-4">
                 <div class="h-100 position-relative">
-                    <div class="card card-shadow destination font-family-archivo fade-in sticky-top" id="js-charges-sidebar"> <!-- Sidebar -->
+                    <div class="card card-shadow destination font-family-archivo fade-in sticky-top col-xs-12 mx-auto" id="js-charges-sidebar"> <!-- Sidebar -->
                         <div class="card-body p-4">
                             <div class="detail-pair">
                                 <span class="detail-label">HBL NO.</span>
@@ -237,7 +237,7 @@
                                         Description
                                     </label>
                                     <span class="text-end">Charge</span>
-                                    <span>Status</span>
+                                    <span class="d-none d-sm-inline">Status</span>
                                 </div>
                                 <!-- Charges Table Items -->
                                 <div class="charges-table-item">
@@ -297,7 +297,7 @@
                                     <span class="paid">PAID</span>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-between align-items-start">
+                            <div class="d-flex justify-content-between align-items-start invoice-totals">
                                 <button type="button" class="btn btn-outline-dark btn-sm rounded-full">PRINT INVOICE w/ selected</button>
                                 <div class="charges-totals">
                                     <p>TOTAL CHARGES W/O EX PALLETS: <b>00.00</b></p>
