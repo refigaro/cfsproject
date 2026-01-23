@@ -2168,6 +2168,24 @@ body .pc-menu {
     }
 }
 
+#paycargo-terms-modal,
+#cc-terms-modal {
+    & .modal-dialog {
+        max-width:60vw;
+        max-height:60vh;
+        
+        & .modal-content {
+            max-height:60vh;
+        }
+    }
+    & h2 {
+        margin-bottom:1.75rem;
+    }
+    & p {
+        margin-bottom:1rem;
+    }
+}
+
 /* --------------- Responsive styles -------- */
 
 @media screen and (min-width:1366px){

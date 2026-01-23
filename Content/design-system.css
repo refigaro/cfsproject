@@ -356,8 +356,8 @@ h1, h2, h3 {
 .mt-5 { margin-top: var(--space-5)!important; } .pt-5 { padding-top: var(--space-5)!important; }
 .mt-6 { margin-top: var(--space-6)!important; } .pt-6 { padding-top: var(--space-6)!important; }
 .mt-8 { margin-top: var(--space-8)!important; } .pt-8 { padding-top: var(--space-8)!important; }
-.mt-12 { margin-top: var(--space-12)!important; } .pt-8 { padding-top: var(--space-12)!important; }
-.mt-16 { margin-top: var(--space-16)!important; } .pt-8 { padding-top: var(--space-16)!important; }
+.mt-12 { margin-top: var(--space-12)!important; } .pt-12 { padding-top: var(--space-12)!important; }
+.mt-16 { margin-top: var(--space-16)!important; } .pt-16 { padding-top: var(--space-16)!important; }
 
 /* Bottom */
 .mb-1 { margin-bottom: var(--space-1)!important; } .pb-1 { padding-bottom: var(--space-1)!important; }
