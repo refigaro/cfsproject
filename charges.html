@@ -129,7 +129,7 @@
             <div class="col-auto ms-auto justify-end text-end d-flex flex-column gap-2 shipment-search">
                 <h2 class="text-navy-450">Please Search your Shipment</h2>
                 <div class="d-flex gap-2">
-                    <select class="form-control ml-4 rounded d-inline-block w-auto" id="type" name="type">
+                    <select class="form-control rounded d-inline-block w-auto" id="type" name="type">
                         <option value="hbl" selected="selected">House Bill</option>
                         <option value="ams">AMS House Bill</option>
                     </select>
@@ -137,6 +137,9 @@
                         <input class="rounded form-control d-inline-block w-auto" type="text">
                     </label>
                     <button id="js-btn-1" type="button" class="btn btn-primary bg-navy-700 text-uppercase text-xs rounded text-nowrap">Search <i class="bi bi-search text-xs ml-2"></i></button>
+                </div>
+                <div class="w-100 mb-3">
+                    <p class="text-sm d-flex align-items-center bg-warning-light rounded py-1 px-2 text-warning-dark mt-2 gap-1" style="margin-top:3rem;margin-bottom:-1.5rem;"><i class="bi bi-info-circle-fill me-2 text-2xl text-danger"></i>Not a valid <b> MBL: [user's input]</b>. Please verify and try again.</p>
                 </div>
             </div>
         </div>
