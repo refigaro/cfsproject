@@ -2186,6 +2186,11 @@ body .pc-menu {
     }
 }
 
+input::placeholder {
+    color: var(--clr-grey-50);
+    font-weight:400!important;
+}
+
 /* --------------- Responsive styles -------- */
 
 @media screen and (min-width:1366px){
