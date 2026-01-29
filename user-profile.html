@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#777777">
+    <meta name="theme-color" content="#ffffff">
+    <title>Imperial CFS, Inc - Availability</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="Content/css.css">
+    <link href="Content/Modal?v=7bMKDYCypKgFwJtiq8nBtCcJODJS6lCOLoIxVHt-al01" rel="stylesheet"/>
+    <link href="Content/extra.css" rel="stylesheet"/>
+    <link href="Content/icon?v=cVwA9pPiyb_rieloDJQKuVXzDQ3x5fT9A_F7NWasIVs1" rel="stylesheet"/>
+    <link rel="stylesheet" href="Content/css.css">
+    <link rel="stylesheet" href="Content/design-system.css">
+    <link rel="stylesheet" href="Content/custom-styles.css">
+</head>
+<body class="availavility-v2">
+<header id="header">
+    <div class="availability-menu">
+        <div class="availability-menu-top">
+            <div class="container-fluid">
+                <div class="row align-items-center position-relative">
+                    <div class="col col-md-auto col-sm-8 d-flex gap-16 justify-start items-center">
+                        <div class="nav-logo">
+                            <a href="/">
+                                <img alt="IMPERIAL CFS" src="/_images/logo-w.png">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-auto col-sm-auto ar ms-auto">
+                        <ul class="menu-list h-100 col-auto ml-auto gap-0 d-flex">
+                            <li class="d-flex align-items-center"><a href="#" class="btn btn-primary text-white btn-sm rounded-pill text-sm" data-bs-toggle="modal" data-bs-target="#login-modal">Login</a></li>
+                            <li class="d-flex align-items-center"><a href="#" class="btn btn-primary text-white btn-sm rounded-pill text-sm"><i class="fa-solid fa-user-gear ml-1"></i></a>
+                                <div class="sub-menu">
+                                    <dl>
+                                        <dd><a href="profile.html">Profile</a></dd>
+                                        <dd><a href="inland.html">INLAND WAREHOUSE LIST</a></dd>
+                                        <dd><a href="whse-in-out.html">WAREHOUSE IN / OUT</a></dd>
+                                        <dd><a href="transit.html">TRANSIT SCHEDULE</a></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col col-md-auto col-sm-auto ar">
+                        <div class="availability-menu-link clears">
+                            <div class="hamburger-menu fr">
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="availability-menu-child">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li>
+                                <a href="/OurServices">Our Services</a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/OurServices">CFS</a></dd>
+                                    <dd><a href="/OurServices/Inland">inland consolidation</a></dd>
+                                    <dd><a href="/OurServices/Trucking">trucking</a></dd>
+                                    <dd><a href="/OurServices/Technology">technology</a></dd>
+                                    <dd><a href="/OurServices/Security">additional services</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="/Availability/Index/mbl/TCLU1228380">Availability </a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/Availability/Pickup">PICK-UP HOURS</a></dd>
+                                    <dd><a href="/Availability/TerminalStatus">TERMINAL STATUS</a></dd>
+                                    <dd><a href="/Availability/TerminalSchedule" target="_blank">TERMINAL SCHEDULE</a></dd>
+                                    <dd><a href="/Availability/CFSCharges" target="_blank">CFS Charges</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="/IPI/Index/mbl/TCLU1228380">IPI Tracing</a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/IPI/Inland">INLAND WAREHOUSE LIST</a></dd>
+                                    <dd><a href="/IPI/Warehouse">WAREHOUSE IN / OUT</a></dd>
+                                    <dd><a href="/IPI/Transit">TRANSIT SCHEDULE</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="/WarehouseFees/Index/mbl/TCLU1228380">Pay Warehouse Fees</a></li>
+                            <li><a href="/Home/About">About Us</a></li>
+                            <li><a href="/Home/News/5">News</a></li>
+                            <li><a href="/Home/Forms">Forms</a></li>
+                            <li><a href="/Home/Contact">Contact</a></li>
+                            <a href="/Home/CustomerLogin">Login</a>                                
+                            <li><a href="tel:(310) 768-8188"><i class="fa fa-phone"></i>(310) 768-8188</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="breadcrums pt-4 mt-16"> <!-- BREADCRUMS -->
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="home.html"><i class="bi bi-house-door-fill"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">User Profile</a></li>
+                </ol>
+            </nav>
+        </div>
+    </div>  
+    </div>  
+</section>
+<section> <!-- TITLE -->
+    <div class="container-fluid">
+        <div class="row justify-content-between">
+            <div class="col-auto">
+                <h1 class="text-3xl font-family-dm-serif text-navy-800">User profile</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mbl-details profile-page">
+    <div class="container-fluid">
+        <div class="row gap-4">
+            <div class="col-12 col-lg-8 mb-4 font-family-archivo d-flex flex-column"> <!-- Main Column -->
+                <main data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true">
+                    <!-- Release Section -->
+                    <section id="release" class="mb-12">
+                        <h2 class="section-title mb-4">Search by:</h2>
+                        <div class="content-card p-5 bg-navy-100 rounded-4">
+                            <p class="text-base font-family-sora text-navy-450 pb-3 d-none">Search your shipment to learn if you have some release pending</p>
+                            <button type="button" class="btn btn-sm btn-secondary text-base ms-auto rounded-full d-none" data-bs-dismiss="offcanvas" aria-label="Close">GO TO AVAILABILITY SEARCH  <i class="bi bi-arrow-right-short"></i></button>
+                            <div class="form-check bg-navy-200 gap-2 rounded-3 py-2 px-2 mb-3 w-auto d-inline-flex"> 
+                                <!-- Radio Buttons search-actions -->
+                                <input type="radio" class="btn-check" name="search-actions" id="radio-release" autocomplete="off" checked>
+                                <label class="btn" for="radio-release">Release</label>
+                                <input type="radio" class="btn-check" name="search-actions" id="radio-guarantee" autocomplete="off">
+                                <label class="btn" for="radio-guarantee">Guarantee Fees</label>
+                                <input type="radio" class="btn-check" name="search-actions" id="radio-cucc" autocomplete="off">
+                                <label class="btn" for="radio-cucc">CUCC Charges</label>
+                                <input type="radio" class="btn-check" name="search-actions" id="radio-markings" autocomplete="off">
+                                <label class="btn" for="radio-markings">Markings</label>
+                            </div>
+                            <div class="d-flex flex-column align-items-stretch gap-2">
+                                <div class="d-flex justify-content-stretch gap-2 search-container">
+                                    <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo flex-grow-0">
+                                    <select class="form-control rounded w-100" id="type" name="type"><option value="hbl">House Bill</option>
+                                        <option selected="selected" value="mbl">Master Bill</option>
+                                        <option value="cntr">Container Number</option>
+                                        <option value="ams">AMS House Bill</option>
+                                        <option value="it">Inbond Number</option>
+                                        <option value="go">GO Number</option>
+                                    </select>
+                                    </label> 
+                                    <label for="" class="flex-grow-1">
+                                        <input class="form-control rounded text-uppercase w-100" placeholder="Type your search" type="text">
+                                    </label>
+                                    <button type="button" class="btn btn-primary text-uppercase text-xs rounded d-inline-block h-100 align-self-stretch">Search <i class="bi bi-search text-xs ml-2"></i></button>
+                                </div>
+                                <div class="alert alert-warning d-flex align-items-center font-family-sora text-left text-sm d-none" role="alert">
+                                    <i class="bi bi-info-circle-fill me-3 text-2xl text-danger"></i>
+                                    <div>We couldn't find a record matching <b class="search-select-type">MBL</b>: <b class="search-users-input">"[User's Input]"</b>. <br>Please verify and try again.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Reports Section -->
+                    <section id="reports" class="mb-12">
+                        <h2 class="section-title mb-4">Reports</h2>
+                        <div class="row">
+                            <!-- Left Column: Container/Master -->
+                            <div class="col-md-5 mb-4">
+                            <h5 class="text-muted mb-3 font-regular font-family-sora">Container / Master</h5>
+                                <div class="p-5 bg-navy-100 rounded-4">
+                                    <h6 class="text-navy-600 font-family-sora mb-3 d-none"><i class="fa-solid fa-boxes-stacked me-2"></i>MBL / CONT REPORTS</h6>
+                                    <a href="#" class="report-btn">
+                                        <i class="fa-solid fa-list-ul"></i>
+                                        <span>CONTAINER STATUS REPORT</span>
+                                    </a>
+                                    <a href="#" class="report-btn">
+                                        <i class="fa-solid fa-truck-ramp-box"></i>
+                                        <span>CONTAINER DEVANNING REPORT</span>
+                                    </a>
+                                    <a href="#" class="report-btn">
+                                        <i class="fa-solid fa-warehouse"></i>
+                                        <span>WAREHOUSE PERFORMANCE REPORT</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Right Column: HBL/Inland -->
+                            <div class="col-md-7 mb-4">
+                            <h5 class="text-muted mb-3 font-regular font-family-sora">HBL / Inland</h5>
+                                <div class="p-5 bg-navy-100 rounded-4">
+                                    <h6 class="text-navy-600 font-family-sora mb-3"><i class="fa-solid fa-boxes-stacked me-2"></i>INVENTORY REPORT</h6>
+                                    <div class="row g-2 mb-4">
+                                        <div class="col-sm-6">
+                                            <a href="#" class="report-btn">
+                                                <i class="fa-solid fa-anchor"></i>
+                                                <span>LAX SHIPMENT</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <a href="#" class="report-btn">
+                                                <i class="fa-solid fa-truck"></i>
+                                                <span>IPI SHIPMENT</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <h6 class="text-navy-600 font-family-sora mb-3"><i class="fa-solid fa-clock-rotate-left me-2"></i>HBL HISTORICAL REPORT</h6>
+                                    <div class="row g-2 mb-4">
+                                        <div class="col-sm-6">
+                                            <a href="#" class="report-btn">
+                                                <i class="fa-solid fa-file-lines"></i>
+                                                <span>LAX SHIPMENT</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <a href="#" class="report-btn">
+                                                <i class="fa-solid fa-file-lines"></i>
+                                                <span>IPI SHIPMENT</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <h6 class="text-navy-600 font-family-sora mb-3"><i class="fa-solid fa-location-crosshairs me-2"></i>IPI DESTINATION REPORT</h6>
+                                    <div class="row g-2">
+                                        <div class="col-sm-6">
+                                            <a href="#" class="report-btn">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <span>IPI DESTINATION</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                            <h5 class="text-muted mb-3 font-regular font-family-sora">Custom Reports</h5>
+                                <div class="p-5 bg-navy-100 rounded-4">
+                                    <h6 class="text-navy-600 font-family-sora mb-3 d-none"><i class="fa-solid fa-boxes-stacked me-2"></i>MBL / CONT REPORTS</h6>
+                                    <a href="#" class="report-btn">
+                                        <i class="fa-solid fa-list-ul"></i>
+                                        <span>CONTAINER STATUS REPORT</span>
+                                    </a>
+                                    <a href="#" class="report-btn">
+                                        <i class="fa-solid fa-truck-ramp-box"></i>
+                                        <span>CONTAINER DEVANNING REPORT</span>
+                                    </a>
+                                    <a href="#" class="report-btn">
+                                        <i class="fa-solid fa-warehouse"></i>
+                                        <span>WAREHOUSE PERFORMANCE REPORT</span>
+                                    </a>
+                                    <a href="#" class="report-btn">
+                                        <i class="fa-solid fa-warehouse"></i>
+                                        <span>WAREHOUSE PERFORMANCE REPORT</span>
+                                    </a>
+                                    <a href="#" class="report-btn">
+                                        <i class="fa-solid fa-warehouse"></i>
+                                        <span>WAREHOUSE PERFORMANCE REPORT</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Guarantee Fees -->
+                    <section id="guarantee" class="mb-12 d-none">
+                        <h2 class="section-title mb-4">Guarantee Fees</h2>
+                        <div class="content-card p-5 bg-navy-100 rounded-4">
+                            <p class="text-base font-family-sora text-navy-450 pb-3">Search your shipment to learn if you have guarantee fees to pay</p>
+                            <button type="button" class="btn btn-sm btn-secondary text-base ms-auto rounded-full" data-bs-dismiss="offcanvas" aria-label="Close">GO TO WAREHOUSE FEES  <i class="bi bi-arrow-right-short"></i></button>
+                            <div class="row g-2 d-none">
+                                <div class="col-md-3">
+                                    <select class="form-select border-0 shadow-sm">
+                                        <option>House Bill</option>
+                                        <option>Master Bill</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control border-0 shadow-sm" value="EFSVMZP798532E">
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-navy w-100 shadow-sm">SEARCH <i class="fa-solid fa-magnifying-glass ms-1"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- CUCC CHARGES -->
+                    <section id="cucc" class="mb-12 d-none">
+                        <h2 class="section-title mb-4">CUCC Charges</h2>
+                        <div class="content-card p-5 bg-navy-100 rounded-4">
+                            <p class="text-base font-family-sora text-navy-450 pb-3">Search your shipment to manage your CUCC Charges</p>
+                            <button type="button" class="btn btn-sm btn-secondary text-base ms-auto rounded-full" data-bs-dismiss="offcanvas" aria-label="Close">GO TO AVAILABILITY SEARCH  <i class="bi bi-arrow-right-short"></i></button>
+                            <div class="row g-2 d-none">
+                                <div class="col-md-3">
+                                    <select class="form-select border-0 shadow-sm">
+                                        <option>House Bill</option>
+                                        <option>Master Bill</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control border-0 shadow-sm" value="EFSVMZP798532E">
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-navy w-100 shadow-sm">SEARCH <i class="fa-solid fa-magnifying-glass ms-1"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Invoices -->
+                    <section id="invoices" class="mb-12">
+                        <h2 class="section-title mb-4">Invoices</h2>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <h5 class="text-muted mb-3 font-regular font-family-sora"><i class="fa-solid fa-circle-exclamation me-2 text-muted"></i> Open Invoices</h5>
+                                <div class="p-5 bg-navy-100 rounded-4">
+                                    <a href="#" class="report-btn">
+                                        <span class="fw-bold">VIEW, SEARCH OR EXPORT INVOICES</span>
+                                        <i class="fa-solid fa-arrow-right text-muted ms-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <h5 class="text-muted mb-3 font-regular font-family-sora"><i class="fa-solid fa-circle-check me-2 text-success"></i> Closed Invoices</h5>
+                                <div class="p-5 bg-navy-100 rounded-4">
+                                    <a href="#" class="report-btn">
+                                        <span class="fw-bold">VIEW, SEARCH OR EXPORT INVOICES</span>
+                                        <i class="fa-solid fa-arrow-right text-muted ms-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>                  
+                </main>
+            </div>
+            <div class="col-12 col-lg-auto mb-4 ms-auto">
+                <div class="h-100 position-relative">
+                    <div class="card card-shadow shadow-md font-family-archivo fade-in sticky-top col-xs-12 mx-auto"> <!-- Sidebar -->
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-2  font-family-sora">
+                                <div class="profile-icon-circle me-3">
+                                    <i class="fa-regular fa-user"></i>
+                                </div>
+                                <div>
+                                    <div class="text-navy-500 text-sm">Welcome back,</div>
+                                    <div class="fw-bold h5 mb-0 text-2xl" style="letter-spacing:-1px;">KEVIN CHEN</div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2 justify-content-between mb-4 border-bottom pb-3">
+                                <a href="#" class="col-6 btn btn-light btn-sm text-decoration-none font-family-sora text-2xs rounded-full text-nowrap text-muted"><i class="fa-solid fa-user-gear me-1"></i></i> USER INFO</a>
+                                <a href="#" class="col-6 btn btn-light btn-sm text-decoration-none font-family-sora text-2xs rounded-full text-nowrap text-muted"><i class="fa-solid fa-right-from-bracket me-1"></i> LOG OUT</a>
+                            </div>
+                            <div class="mb-5">
+                                <nav id="navbar-example2" class="d-flex flex-column gap-2">
+                                    <a href="#radio-release" class="nav-link-custom active">
+                                        <i class="fa-regular fa-calendar-check"></i> RELEASE
+                                    </a>
+                                    <a href="#radio-guarantee" class="nav-link-custom">
+                                        <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-dollar-sign-icon lucide-circle-dollar-sign"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg></i> GUARANTEE FEES
+                                    </a>
+                                    <a href="#radio-cucc" class="nav-link-custom">
+                                        <i class="fa-solid fa-hand-holding-dollar"></i> CUCC CHARGES
+                                    </a>
+                                    <a href="#radio-markings" class="nav-link-custom">
+                                        <i class="bi bi-bookmark-check"></i> MARKINGS RLSE
+                                    </a>
+                                    <a href="#reports" class="nav-link-custom">
+                                        <i class="bi bi-card-checklist"></i> REPORTS
+                                    </a>
+                                    <a href="#invoices" class="nav-link-custom">
+                                        <i class="bi bi-file-earmark-ruled"></i> INVOICES
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="text-white pt-12 bg-navy-700"> 
+    <div class="container-fluid font-family-sora">
+        <div class="row gy-5">
+        <div class="col-lg-4 col-md-12">
+            <div class="mb-8 col-5 opacity-75" style="margin-top:-4px;">
+            <img src="/_images/imperialcfs-logo-white-opt.webp" alt="Imperial CFS Logo">
+            </div>
+            <h2 class="type-h6 mb-1 text-white">Experience You Can Trust</h2>
+            <p class="text-white-50 pe-lg-5 text-sm">
+            With over 30 years in the industry, we are here to provide the most exceptional container freight station (CFS) services and nationwide IPI transportation services. Contact us today for more information.
+            </p>
+        </div>
+
+        <div class="col-lg-4 col-xl-3 offset-xl-1 col-md-6">
+            <h3 class="fw-bold mb-8 text-lg font-family-sora text-white">Contact Us</h3>
+            
+            <div class="d-flex text-sm mb-6">
+            <i class="bi bi-geo-alt-fill me-3 text-navy-500"></i> <div>
+                1000 Francisco St<br>
+                Torrance, CA 90502
+            </div>
+            </div>
+
+            <div class="d-flex text-sm mb-6">
+            <i class="bi bi-telephone-fill me-3 text-navy-500"></i> <div>
+                <a href="tel:(310) 768-8188" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">(310) 768-8188</a>
+            </div>
+            </div>
+
+            <div class="d-flex text-sm mb-6">
+            <i class="bi bi-envelope-fill me-3 text-navy-500"></i> <div>
+                <a href="mailto:service@imperialcfs.net" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">service@imperialcfs.net</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h3 class="fw-bold mb-4 text-lg font-family-sora text-white opacity-75">Office hours</h3>
+            <div class="row mb-4">
+                <div class="col-6">
+                    <span class="d-block text-white-50">Mon - Fri:</span>
+                    <span class="fw-bold text-sm">8:00 AM - 5:00 PM</span>
+                </div>
+                <div class="col-6">
+                    <span class="d-block text-white-50">Sat - Sun:</span>
+                    <span class="fw-bold text-sm">Closed</span>
+                </div>
+            </div>
+            <h3 class="fw-bold mt-12 mb-4 text-lg font-family-sora text-white opacity-75">Pickup Window Hours</h3>
+            <div class="row">
+                <div class="col-6">
+                    <span class="d-block text-white-50">Mon - Fri:</span>
+                    <span class="fw-bold text-sm">7:00 AM - 6:00 PM</span>
+                </div>
+                <div class="col-6">
+                    <span class="d-block text-white-50">Sat - Sun:</span>
+                    <span class="fw-bold text-sm">Closed</span>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-12 mb-6">
+            <div class="col-12 mb-6">
+                <h2 class="fw-bold text-base font-family-sora text-white">Site Map</h2>
+            </div>
+            
+            <div class="col-md-3 col-6 mb-3 text-xs">
+                <ul class="list-unstyled">
+                <li class="mb-2"><a href="availability.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Availability</a></li>
+                <li class="mb-2"><a href="ipi.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">IPI Tracing</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-6 mb-3 text-xs">
+                <ul class="list-unstyled">
+                <li class="mb-2"><a href="charges.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Pay Warehouse Fees</a></li>
+                <li class="mb-2"><a href="forms.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Forms</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-6 mb-3 text-xs">
+                <ul class="list-unstyled">
+                <li class="mb-2"><a href="our-services.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Our Services</a></li>
+                <li class="mb-2"><a href="news.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">News & announcements</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-6 mb-3 text-xs">
+                <ul class="list-unstyled">
+                <li class="mb-2"><a href="about-us.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">About us</a></li>
+                <li class="mb-2"><a href="#" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Client Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center pb-5">
+        <div class="col-12">
+            <hr class="border-top border-light pt-5">
+        </div>
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+            <small class="text-white-50">&copy; 2025 Cargovation LLC All Rights Reserved.</small>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+            <a href="privacy-policy.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover me-3"><small>Privacy Policy</small></a>
+            <a href="terms.html" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"><small>Terms and Conditions</small></a>
+        </div>
+    </div>
+</footer>
+<!-- Back to Top Button -->
+<button type="button" 
+        id="backToTopBtn" 
+        class="btn btn-dark rounded-pill position-fixed bottom-0 start-0 m-3 shadow d-none" 
+        style="z-index: 1080; transition: opacity 0.3s;"
+        onclick="scrollToTop()">
+    <i class="bi bi-arrow-up me-2"></i>Back to top
+</button>
+<script src="https://kit.fontawesome.com/4006f6b372.js" crossorigin="anonymous"></script>
+<script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+<script src="/bundles/main_jquery?v=pcTLGo70Ebj-7wZHfj5-OozMeYDuBTaJgLdp-yYJn8s1"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    $('#Number').keypress(function (event){
+        if (event.keyCode === 13) {
+            var type = $('#Type').val();
+            var number = $('#Number').val();
+            var controller = "Availability";
+            window.location = "/" + controller + "/Index/" + type + "/" + number
+        }
+    })
+    var currentpath = "Availability"+"/"+"Index";
+</script>
+<script>
+    var controllername = '/Availability';
+    var ajax_url = controllername+'/SearchAjax/ ';
+</script>
+<script src="/bundles/AvailabilityViewer_Ajax?v=VgNFlR4TbTdLyioL1u0joKY-tpXbFdUn0Toxg6Z7ehQ1"></script>
+<script src="/bundles/Modal?v=6X2XgyWba97tfyPCPLvNNu3Nfognwesw8t4cSNPp6OA1"></script>
+<script>
+    $(function() {
+        $(".hamburger-menu").on("click", function() {
+            $(".bar").toggleClass("animate");
+            $(".availability-menu").toggleClass("open");
+            $(".availability-menu-child").stop(!0, !1).slideToggle(300)
+        });
+        $(".availability-menu-child ul>li i").click(function() {
+            $(this).parents("li").toggleClass("active");
+            $(this).parents("li").find(".mob-sub-menu").stop(!0, !1).slideToggle();
+            $(this).parents("li").siblings("li").find(".mob-sub-menu").slideUp()
+        });
+        $(window).width() >= 768 ? $(".home-section-04-box").css("margin-top", $(".home-section-04-box").height() * -1) : $(".home-section-04-box").css("margin-top", 0)
+    })
+</script>
+<script>
+    // Back to top button logic
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    window.onscroll = function() {
+        // Calculate 24rem in pixels dynamically
+        const remInPixels = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const threshold = 24 * remInPixels;
+
+        if (document.body.scrollTop > threshold || document.documentElement.scrollTop > threshold) {
+            backToTopBtn.classList.remove("d-none");
+        } else {
+            backToTopBtn.classList.add("d-none");
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>

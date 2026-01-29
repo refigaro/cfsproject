@@ -2191,6 +2191,97 @@ input::placeholder {
     font-weight:400!important;
 }
 
+.profile-page {
+
+    & > .container-fluid:first-child > .row {
+        @media (max-width:992px){
+            flex-direction:column-reverse;
+        }
+    }
+
+    .profile-icon-circle {
+        border: 3px solid var(--clr-cyan-80);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--clr-cyan-80);
+        font-size: 1.1rem;
+        padding:.25rem;
+        aspect-ratio: 1;
+        background-color: var(--clr-cyan-99);
+    }
+    .report-btn {
+        background: white;
+        border: none;
+        border-radius: 100px;
+        padding: 12px 20px;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        transition: transform 0.2s;
+        text-decoration: none;
+        color: inherit;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .report-btn:hover {
+        transform: translateY(-2px);
+        background-color: #f8fafc;
+        text-decoration: none;
+        color: inherit;
+    }
+    .report-btn i {
+        color: var(--brand-navy);
+        font-size: 1.2rem;
+        margin-right: 15px;
+        width: 24px;
+        text-align: center;
+    }
+
+    #release {
+        label {
+            border-radius:8px;
+            background-color: var(--clr-azure-89);
+            min-width:16%; 
+            color:var(--clr-navy-400);
+            border:0;
+
+            &:hover {
+                background-color: var(--clr-azure-95);
+            }
+        }
+
+        .btn-check:checked+.btn {
+            border:0;
+            background-color: var(--clr-navy-700);
+            color:white;
+            font-weight:bolder;
+        }
+    }
+
+    .card.sticky-top {
+        @media (min-width:992px){
+            top:5rem;
+            margin-top:-100px;
+        }
+    }
+
+    .nav-link-custom {
+        background-color: var(--clr-azure-99);
+        border-radius:8px;
+        padding: var(--space-2) var(--space-4);
+
+        &:hover, &:active {
+            background-color: var(--clr-azure-85);
+            color: var(--clr-azure-09);
+            text-decoration: none;
+        }
+    }
+
+}
+
 /* --------------- Responsive styles -------- */
 
 @media screen and (min-width:1366px){

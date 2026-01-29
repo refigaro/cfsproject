@@ -133,17 +133,18 @@ IMPERIAL CFS - DESIGN SYSTEM
     --clr-azure-44: #0B5ED7;
     --clr-azure-46: #337AB7;
     --clr-azure-70: #A6B1BD;
-    --clr-azure-80: #B1BDC9;
-    --clr-azure-85: #C9CED9;
+    --clr-azure-80: #b1bbc9;
+    --clr-azure-85: #b4bed4;
     --clr-azure-89: #DCE2EF;
     --clr-azure-95: #EDF0F6;
-    --clr-azure-99: #F3F9FC;
+    --clr-azure-99: #f3f7fc;
 
 
     /* Paleta de Cyan (Azul) */
     --clr-cyan-47: #09B4E6;
     --clr-cyan-80: #4CD4FC;
     --clr-cyan-95: #8CE5FF;
+    --clr-cyan-99: #c3f1ff;
     --clr-cyan-primary: var(--clr-cyan-47); /* Alias para el color principal */
     
     /* Paleta de Azul de Marca (Nuevo) */

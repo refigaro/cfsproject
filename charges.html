@@ -1176,7 +1176,6 @@
         // Only trigger if the user actually selected a valid date
         if (this.value) {
             
-            // --- NEW CODE: Update the text display ---
             const dateDisplay = document.getElementById('display-pu-date');
             
             // Create date object (append time to fix timezone offset issues)
@@ -1194,7 +1193,6 @@
             // ----------------------------------------
 
 
-            // --- EXISTING CODE: Show next step ---
             const target = document.getElementById('js-charges-step2');
             
             // Only scroll if it was previously hidden
