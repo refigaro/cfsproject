@@ -2296,6 +2296,93 @@ input::placeholder {
         background: var(--clr-azure-89);
 }
 
+
+/* Tables */ /* KEVIN: This are the styles for the Report Tables */
+
+table.table.table-striped.no-footer.dataTable {
+    font-family:var(--font-primary);
+
+    thead th {
+        font-family:var(--font-secondary);
+        font-size: var(--font-size-xs);
+        background-color:var(--clr-navy-700);
+        text-align:left;
+    }
+
+    tbody tr>td:first-child{
+        padding-right:var(--space-8);
+        font-weight:bolder;
+        font-family: var(--font-secondary);
+    }
+
+    tbody td {
+        vertical-align: middle;
+
+        & a {
+            color:var(--clr-azure-42)!important;
+            text-decoration: underline;
+            text-underline-offset: .125rem;
+            padding:1rem 1rem 1rem 0;
+            font-weight: bolder;
+            transition: color ease .2s, text-underline-offset ease .2s;
+
+            &:hover {
+                color:var(--clr-azure-09)!important;
+                text-underline-offset: .25rem;
+            }
+        }
+    }
+
+    &>tbody>tr:nth-of-type(odd){
+        background-color: var(--clr-azure-89)!important;   
+    }
+
+    &>tbody>tr:nth-of-type(odd) > * {
+        --bs-table-color-type: var(--bs-table-striped-color);
+        --bs-table-bg-type: var(--clr-azure-89)!important;
+    }
+    >tbody>tr:hover>* {
+        background-color:#b8eeff!important;
+    }
+
+    thead th:first-child,
+    tbody td:first-child {
+        width:10.875rem;
+    }
+
+    thead th:nth-child(-n+2),
+    tbody td:nth-child(-n+2) {
+        position: sticky;
+        left: 0;
+        background-color: #d0daee;
+        z-index: 1; /* Ensures it stays on top of other cells */
+        border-right: 1px solid #ccc; /* Optional: adds a visual border */
+    }
+
+    thead th:nth-child(-n+2) { background-color:var(--clr-navy-700); }
+
+    tr th:nth-child(2), 
+    tr td:nth-child(2) {
+        left: 10.87rem; /* Width of the first column */
+    } /* Ensures second column sticks with the first column width */
+
+    tr th:last-child, 
+    tr td:last-child {
+        width:12rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* Button hover effect Microinteraction except for disabled buttons */
 
 .btn:not([disabled]):hover {
