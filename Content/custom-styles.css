@@ -2553,6 +2553,12 @@ input::placeholder {
 table.table.table-striped.no-footer.dataTable {
     font-family: var(--font-primary);
 
+    th,
+    td {
+        white-space: nowrap;
+        padding: 1rem 2.5rem !important;
+    }
+
     thead th {
         font-family: var(--font-secondary);
         font-size: var(--font-size-xs);
@@ -2597,13 +2603,10 @@ table.table.table-striped.no-footer.dataTable {
         background-color: #b8eeff !important;
     }
 
-    thead th:first-child,
-    tbody td:first-child {
-        width: 10.875rem;
-    }
 
-    thead th:nth-child(-n+2),
-    tbody td:nth-child(-n+2) {
+    /* KEVIN: This is the first sticky column o */
+    thead th:nth-child(1),
+    tbody td:nth-child(1) {
         position: sticky;
         left: 0;
         background-color: #d0daee;
@@ -2613,22 +2616,52 @@ table.table.table-striped.no-footer.dataTable {
         /* Optional: adds a visual border */
     }
 
+    /* KEVIN: This is the second sticky column */
+    thead th:nth-child(2),
+    tbody td:nth-child(2) {
+        position: sticky;
+        background-color: #d0daee;
+        z-index: 1;
+        /* Ensures it stays on top of other cells */
+        border-right: 1px solid #ccc;
+        /* Optional: adds a visual border */
+    }
+
+    /* KEVIN: This is the width of the first sticky column */
+    thead th:first-child,
+    tbody td:first-child {
+        width: 10.875rem;
+    }
+
+    /* KEVIN: This is the width of the second sticky column */
+    tr th:nth-child(2),
+    tr td:nth-child(2) {
+        left: 10.4rem;
+        /* Width of the first column */
+    }
+
+    tbody>tr:nth-of-type(even)>td:nth-child(-n+2) {
+        background-color: var(--clr-azure-95) !important;
+    }
+
     thead th:nth-child(-n+2) {
         background-color: var(--clr-navy-700);
     }
 
-    tr th:nth-child(2),
-    tr td:nth-child(2) {
-        left: 10.87rem;
-        /* Width of the first column */
+
+
+    /* Make the 7th column wider (20rem) */
+    tr th:nth-child(7),
+    tr td:nth-child(7) {
+        min-width: 20rem !important;
     }
 
-    /* Ensures second column sticks with the first column width */
-
+    /* Make the last column wider (18rem) */
     tr th:last-child,
     tr td:last-child {
-        width: 12rem;
+        min-width: 18rem !important;
     }
+
 }
 
 
