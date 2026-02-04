@@ -1452,7 +1452,8 @@ body:has(#login-modal.modal) .modal-backdrop {
     }
 }
 
-.offcanvas .modal.confirmation-modal {
+.offcanvas .modal.confirmation-modal,
+.profile-page .modal.confirmation-modal {
     z-index: 1073 !important;
 
 
@@ -2546,6 +2547,9 @@ input::placeholder {
         }
     }
 }
+
+/* User Management Page */
+.profile-page {}
 
 /* Tables */
 /* KEVIN: This are the styles for the Report Tables */
