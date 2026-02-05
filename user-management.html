@@ -39,21 +39,29 @@
                             </div>
                         </div>
                         <div class="col-auto col-sm-auto ar ms-auto">
-                            <ul class="menu-list h-100 col-auto ml-auto gap-0 d-flex">
+                            <ul class="menu-list h-100 col-auto ml-auto gap-0 d-flex login-menu">
                                 <li class="d-flex align-items-center"><a href="#"
                                         class="btn btn-primary text-white btn-sm rounded-pill text-sm"
                                         data-bs-toggle="modal" data-bs-target="#login-modal">Login</a></li>
-                                <li class="d-flex align-items-center"><a href="#"
-                                        class="btn btn-primary text-white btn-sm rounded-pill text-sm"><i
+                                <li class="d-flex align-items-center profile-dropdown">
+                                    <a data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"
+                                        class="btn btn-primary text-white btn-sm rounded-pill text-sm nav-link dropdown-toggle"><i
                                             class="fa-solid fa-user-gear ml-1"></i></a>
-                                    <div class="sub-menu">
-                                        <dl>
-                                            <dd><a href="profile.html">Profile</a></dd>
-                                            <dd><a href="inland.html">INLAND WAREHOUSE LIST</a></dd>
-                                            <dd><a href="whse-in-out.html">WAREHOUSE IN / OUT</a></dd>
-                                            <dd><a href="transit.html">TRANSIT SCHEDULE</a></dd>
-                                        </dl>
-                                    </div>
+                                    <ul class="dropdown-menu">
+                                        <li class="d-block">
+                                            <a class="dropdown-item d-block" href="user-profile.html">
+                                                <i class="fa-solid fa-user-gear me-2"></i> My Account</a>
+                                        </li>
+                                        <li class="d-block">
+                                            <a class="dropdown-item d-block" href="user-management.html">
+                                                <i class="fa-solid fa-list-ul  me-2"></i> User Management</a>
+                                        </li>
+                                        <li class="d-block"><hr class="dropdown-divider"></li>
+                                        <li class="d-block">
+                                            <a class="dropdown-item d-block" data-bs-toggle="modal" data-bs-target="#confirm-logout-modal" href="#">
+                                                <i class="fa-solid fa-right-from-bracket me-2"></i> Log out</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </div>
@@ -114,7 +122,28 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header> 
+    <!-- ================= LOG OUT CONFIRMATION MODAL ================= -->
+    <div class="modal fade confirmation-modal faux-modal" id="confirm-logout-modal" tabindex="-1"
+        aria-hidden="true" data-bs-backdrop="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header justify-content-end border-bottom-0 pb-1">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-5 pb-5 pt-0 font-family-sora text-center">
+                    <p class="mb-4">Do you want to log out?</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <button type="button" class="btn btn-sm btn-secondary rounded-pill px-4"
+                            data-bs-dismiss="modal">Go Back</button>
+                        <button type="button" id="btn-final-logout"
+                            class="btn btn-sm btn-danger rounded-pill px-4 js-logout-user">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="breadcrums pt-4 mt-16"> <!-- BREADCRUMS -->
         <div class="container-fluid">
             <div class="row">
@@ -141,8 +170,8 @@
     </section>
     <section class="mbl-details profile-page">
         <div class="container-fluid">
-            <div class="row gap-4">
-                <div class="col-12 col-md-8 col-lg-9 mb-4 font-family-archivo d-flex flex-column"> <!-- Main Column -->
+            <div class="row gap-4 flex-column-reverse">
+                <div class="col-12 mb-4 font-family-archivo d-flex flex-column"> <!-- Main Column -->
                     <main data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
                         data-bs-smooth-scroll="true">
                         <section id="user-management">
@@ -196,7 +225,7 @@
                                                             placeholder="Enter a username" readonly disabled>
                                                         <span id="username-hint"
                                                             class="text-end text-sm my-0 text-navy-450">This can't be
-                                                            modified</span>
+                                                            modified later.</span>
                                                     </div>
 
                                                     <div class="col-12 d-flex flex-column gap-3">
@@ -331,47 +360,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d-flex gap-2 justify-content-between mb-4 border-bottom pb-3">
-                                    <a href="#"
+                                <div class="d-flex gap-2 justify-content-between">
+                                    <a href="user-profile.html#user-info"
                                         class="col-6 btn btn-light btn-sm text-decoration-none font-family-sora text-2xs rounded-full text-nowrap text-muted"><i
                                             class="fa-solid fa-user-gear me-1"></i></i> USER INFO</a>
-                                    <a href="#"
+                                    <a href="#"  data-bs-toggle="modal" data-bs-target="#confirm-logout-modal"
                                         class="col-6 btn btn-light btn-sm text-decoration-none font-family-sora text-2xs rounded-full text-nowrap text-muted"><i
                                             class="fa-solid fa-right-from-bracket me-1"></i> LOG OUT</a>
-                                </div>
-                                <div class="mb-5">
-                                    <nav id="navbar-example2" class="d-flex flex-column gap-2">
-                                        <a href="#radio-release" class="nav-link-custom active">
-                                            <i class="fa-regular fa-calendar-check"></i> RELEASE
-                                        </a>
-                                        <a href="#radio-guarantee" class="nav-link-custom">
-                                            <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                    class="lucide lucide-circle-dollar-sign-icon lucide-circle-dollar-sign">
-                                                    <circle cx="12" cy="12" r="10" />
-                                                    <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
-                                                    <path d="M12 18V6" />
-                                                </svg></i> GUARANTEE FEES
-                                        </a>
-                                        <a href="#radio-cucc" class="nav-link-custom">
-                                            <i class="fa-solid fa-hand-holding-dollar"></i> CUCC CHARGES
-                                        </a>
-                                        <a href="#radio-markings" class="nav-link-custom">
-                                            <i class="bi bi-bookmark-check"></i> MARKINGS RLSE
-                                        </a>
-                                        <a href="#reports" class="nav-link-custom">
-                                            <i class="bi bi-card-checklist"></i> REPORTS
-                                        </a>
-                                        <a href="#invoices" class="nav-link-custom">
-                                            <i class="bi bi-file-earmark-ruled"></i> INVOICES
-                                        </a>
-                                    </nav>
-                                </div>
-                                <div class="d-flex gap-2 justify-content-between pb-3">
-                                    <a href="#"
-                                        class="col btn btn-light btn-sm text-decoration-none font-family-sora text-2xs rounded-full text-nowrap text-muted"><i
-                                            class="fa-solid fa-gear me-1"></i> USER management</a>
                                 </div>
                             </div>
                         </div>
@@ -623,22 +618,24 @@
                 editingId = null;
                 resetForm();
                 document.getElementById('modal-title').textContent = "Add New User";
-                inputUsername.value = '';
-                inputUsername.placeholder = "Assigned by system";
-                inputUsername.disabled = true;
+
+                inputUsername.disabled = false;
+                inputUsername.readOnly = false;
+                inputUsername.classList.remove('bg-light');
+                
                 btnRemoveInModal.classList.add('d-none');
                 userModal.show();
             });
 
             btnSave.addEventListener('click', () => {
-                if (!inputEmail.value || !inputFirst.value) {
-                    alert("First Name and Email are required.");
+                if (!inputUsername.value || !inputEmail.value || !inputFirst.value) {
+                    alert("Username, First Name and Email are required.");
                     return;
                 }
 
                 const userData = {
                     id: editingId || Date.now().toString(),
-                    username: editingId ? inputUsername.value : 'PENDING',
+                    username: inputUsername.value,
                     firstName: inputFirst.value,
                     lastName: inputLast.value,
                     displayName: inputDisplay.value,
@@ -676,13 +673,9 @@
                     const row = document.createElement('div');
                     row.className = 'user-item-row bg-white shadow-sm rounded-3 border p-2 d-flex flex-column flex-md-row align-items-center px-3';
 
-                    const userDisplay = user.username === 'PENDING'
-                        ? `<span class="text-muted italic">Pending...</span>`
-                        : user.username;
-
                     row.innerHTML = `
                         <div class="col-12 col-md-2 ps-2 text-uppercase fw-bold text-navy-700 text-truncate">
-                            <span class="d-md-none text-muted x-small me-2">User:</span>${userDisplay}
+                            <span class="d-md-none text-muted small me-2">User:</span>${user.username}
                         </div>
                         <div class="col-6 col-md-2 text-start"><span class="d-md-none text-muted x-small d-block">First:</span>${user.firstName}</div>
                         <div class="col-6 col-md-2 text-start"><span class="d-md-none text-muted x-small d-block">Last:</span>${user.lastName}</div>
@@ -704,16 +697,15 @@
 
                 inputUsername.value = user.username;
                 inputUsername.disabled = true;
+                inputUsername.readOnly = true;
+                inputUsername.classList.add('bg-light');
 
                 inputFirst.value = user.firstName;
                 inputLast.value = user.lastName;
                 inputDisplay.value = user.displayName;
                 inputEmail.value = user.email;
 
-                roleChecks.forEach(c => {
-                    c.checked = user.roles.includes(c.value);
-                });
-
+                roleChecks.forEach(c => { c.checked = user.roles.includes(c.value); });
                 btnRemoveInModal.classList.remove('d-none');
                 userModal.show();
             }

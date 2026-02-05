@@ -1453,7 +1453,8 @@ body:has(#login-modal.modal) .modal-backdrop {
 }
 
 .offcanvas .modal.confirmation-modal,
-.profile-page .modal.confirmation-modal {
+.profile-page .modal.confirmation-modal,
+#confirm-logout-modal.modal.confirmation-modal {
     z-index: 1073 !important;
 
 
@@ -1480,6 +1481,24 @@ body:has(#login-modal.modal) .modal-backdrop {
     /* Place it behind the modal-dialog content */
     pointer-events: none;
     /* Let clicks pass through if needed, though usually backdrop blocks clicks */
+}
+
+.marketing .profile-dropdown .dropdown-menu {
+    li a, li a i {
+        color:var(--clr-azure-09)!important;
+        text-shadow: none;
+    }
+
+    li a:hover {
+        background-color: var(--clr-azure-89)
+    }
+}
+
+.availability-menu .profile-dropdown .dropdown-menu {
+    .dropdown-item:hover {
+        background-color:var(--clr-azure-89)!important;
+        text-decoration:none;
+    }
 }
 
 
@@ -1929,7 +1948,7 @@ body .pc-menu {
     margin-bottom: .5rem !important;
 }
 
-.menu-list li>a:not(.btn):after {
+.header-main .menu-list li > a:not(.btn):after {
     content: "";
     display: block;
     position: absolute;
@@ -1941,10 +1960,14 @@ body .pc-menu {
     background-color: currentColor;
 }
 
-.menu-list li>a:not(.btn):hover:after {
+    .menu-list li.profile-dropdown li > a:not(.btn):after {
+        display:none;
+    }
+
+.header-main .menu-list li>a:not(.btn):hover:after {
     width: 100%;
 }
-
+ 
 .menu-list li>a:after {
     display: none;
 }
@@ -2647,7 +2670,7 @@ table.table.table-striped.no-footer.dataTable {
     /* KEVIN: This is the width of the second sticky column */
     tr th:nth-child(2),
     tr td:nth-child(2) {
-        left: 10.4rem;
+        left: 9.25rem;
         /* Width of the first column */
     }
 
