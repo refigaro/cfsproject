@@ -190,14 +190,11 @@ IMPERIAL CFS - DESIGN SYSTEM
     --font-headings: 'DM Serif Text', serif;
     --font-monospace: 'Roboto Mono', monospace;
     
-    /* Tamaños de Fuente (Escala modular) */
-        /* Tamaños fijos para textos pequeños */
-            --font-size-2xs: clamp(0.625rem 0.12vw + 0.89rem, 0.75rem); /* 10px */
-            --font-size-xs: clamp(0.75rem, 0.12vw + 0.89rem, 0.875rem);  /* 12px */
-            --font-size-sm: clamp(0.875rem, 0.12vw + 0.89rem, 0.9375rem); /* 14px */
-    
-        /* Tipografía Fluida con clamp() para tamaños mayores a 14px */
-            /* clamp(MIN, PREFERRED, MAX) | Escala entre 575px y 1400px de viewport */
+    /* Tamaños de Fuente (Escala modular) */ 
+        /* Tamaños fluidos para textos */
+            --font-size-2xs: clamp(0.625rem, 0.5714rem + 0.1488vw, 0.75rem); /* 10px -> 12px */
+            --font-size-xs: clamp(0.75rem, 0.6964rem + 0.1488vw, 0.875rem);  /* 12px -> 14px */
+            --font-size-sm: clamp(0.875rem, 0.8482rem + 0.0744vw, 0.9375rem); /* 14px -> 15px */
             --font-size-base: clamp(0.9375rem, 0.12vw + 0.89rem, 1rem);      /* 15px -> 16px */
             --font-size-lg: clamp(1rem, 0.24vw + 0.91rem, 1.125rem);         /* 16px -> 18px */
             --font-size-xl: clamp(1.125rem, 0.24vw + 1.04rem, 1.25rem);      /* 18px -> 20px */
