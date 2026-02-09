@@ -470,6 +470,7 @@ h1, h2, h3 {
 .bg-navy-200 { background-color: var(--clr-azure-85); }
 .bg-navy-100 { background-color: var(--clr-azure-89); }
 .bg-azure-95 { background-color: var(--clr-azure-95); }
+.bg-azure-99 { background-color: var(--clr-azure-99); }
 .bg-azure-19 { background-color: var(--clr-azure-19); }
 .bg-azure-09 { background-color: var(--clr-azure-09); }
 .bg-blue-brand { background-color: var(--clr-blue-brand); }
