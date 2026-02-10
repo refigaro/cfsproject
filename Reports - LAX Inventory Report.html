@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VWPKPPPSB3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VWPKPPPSB3');
+</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#777777">
+    <meta name="theme-color" content="#ffffff">
+    <title>Imperial CFS, Inc - LAX Inventory Report</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://www.imperialcfs.com/Content/css?v=GWqpl2J6tn_p2jtJS6ssd8RmfcM0za4RRO0rFjRujz81" rel="stylesheet"/>
+
+    
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet"/>
+<link href="https://www.imperialcfs.com/Content/reports?v=2rjp4AsIArEJs4W0frrzE5c-e7QuMfN2pcBK-RfDL6E1" rel="stylesheet"/>
+
+    
+
+
+</head>
+<body>
+    
+
+<header id="header">
+    <div class="pc-menu">
+<div class="header-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <ul>
+                    <li><a href="/Home/About">About Us</a></li>
+                    <li><a href="/Home/News/5">News</a></li>
+                    <li><a href="/Home/Contact">Contact</a></li>
+                    <li><a href="tel:(310) 768-8188"><i class="fa fa-phone"></i>(310) 768-8188</a></li>
+                    <li><a href="/Home/Forms">Forms</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="header-main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-4">
+                        <div class="pc-logo">
+                            <a href="/MyAccount">
+                                <img alt="IMPERIAL CFS" src="/_images/logo.png">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-8">
+                        <ul class="fr menu-list">
+                            <li>
+                                Welcome, <span style="color: red;">
+                                    KChen
+                                </span> |
+                            </li>
+                            <li><a href="/Home/CustomerLogin/1">Logout <i class="fa fa-angle-right"></i></a></li>
+                        </ul>
+                        <ul class="fr menu-list main-menu">
+                                <li>
+                                    <a href="/MyAccount">Release</a>
+                                </li>
+                                                            <li>
+                                    <a href="/Reports">Reports</a>
+                                    <div class="sub-menu">
+                                        <dl>
+                                            <dd><a href="/Reports/Daily_Container_Status">Container Status Report</a></dd>
+                                            <dd><a href="/Reports/Devanning_Report">Container Devanning Report</a></dd>
+                                            <dd><a href="/Reports/Warehouse_Performance">Warehouse Performance Report</a></dd>
+                                            <dd><a href="/Reports/LAX_Inventory">Lax Shipment Inventory Report</a></dd>
+                                            <dd><a href="/Reports/IPI_Inventory">IPI Shipment Inventory Report</a></dd>
+                                            <dd><a href="/Reports/LAX_Historical">Lax Shipment Historical Report</a></dd>
+                                            <dd><a href="/Reports/IPI_Historical">IPI Shipment Historical Report</a></dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                            <li>
+                                <a href="/WarehouseFees" target="_blank">Pay Warehouse Fees</a>
+                            </li>
+                                <li>
+                                    <a href="/Invoices">Invoice</a>
+                                    <div class="sub-menu">
+                                        <dl>
+                                            <dd><a href="/Invoices/OpenDateSearch">View Statement By Date</a></dd>
+                                            <dd><a href="/Invoices/OpenNumberSearch">Search Invoice Number</a></dd>
+                                            <dd><a href="/Invoices/ClosedDateSearch">View Past Statement By Date</a></dd>
+                                            <dd><a href="/Invoices/ClosedNumberSearch">Search Past Invoice Number</a></dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                            <li><a href="/UserManagement/UserProfile">User Profile</a></li>
+                                <li>
+                                    <dl><dd><a href="/UserManagement">User Management</a></dd></dl>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mob-menu">
+        <div class="mob-menu-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mob-logo">
+                            <a href="/MyAccount">
+                                <img alt="IMPERIAL CFS" src="/_images/logo.png">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-6 ar">
+                        <div class="mob-menu-link clears">
+                            <div class="hamburger-menu fr">
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mob-menu-child">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                                <li>
+                                    <a href="/MyAccount/Release">Release</a><i class="fa fa-angle-down"></i>
+                                </li>
+                                                            <li>
+                                    <a href="/Reports">Reports</a><i class="fa fa-angle-down"></i>
+                                    <dl class="mob-sub-menu">
+                                        <dd><a href="/Reports/Daily_Container_Status">Container Status Report</a></dd>
+                                        <dd><a href="/Reports/Devanning_Report">Container Devanning Report</a></dd>
+                                        <dd><a href="/Reports/Warehouse_Performance">Warehouse Performance Report</a></dd>
+                                        <dd><a href="/Reports/LAX_Inventory">Lax Shipment Inventory Report</a></dd>
+                                        <dd><a href="/Reports/IPI_Inventory">IPI Shipment Inventory Report</a></dd>
+                                        <dd><a href="/Reports/LAX_Historical">Lax Shipment Historical Report</a></dd>
+                                        <dd><a href="/Reports/IPI_Historical">IPI Shipment Historical Report</a></dd>
+                                    </dl>
+                                </li>
+                            <li>
+                                <a href="/WarehouseFees" target="_blank">Pay Warehouse Fees</a>
+                            </li>
+                                <li>
+                                    <a href="/Invoices/">Invoice</a>
+                                    <div class="mob-sub-menu">
+                                        <dl>
+                                            <dd><a href="/Invoices/irpt_StatementDate/">View Statement By Date</a></dd>
+                                            <dd><a href="/Invoices/irpt_StatementSearch/">Search Invoice Number</a></dd>
+                                            <dd><a href="/Invoices/irpt_StatementDate.aspx?past=1">View Past Statement By Date</a></dd>
+                                            <dd><a href="/Invoices/irpt_StatementSearch.aspx?past=1">Search Past Invoice Number</a></dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                            <li><a href="/UserManagement/UserProfile">User Profile</a></li>
+                                <li>
+                                    <a href="/UserManagement">User Management</a>
+                                </li>
+                            <li><a href="/Home/About" target="_blank">About Us</a></li>
+                            <li><a href="/Home/News" target="_blank">News</a></li>
+                            <li><a href="/Home/Forms" target="_blank">Forms</a></li>
+                            <li><a href="/Home/Contact" target="_blank">Contact</a></li>
+                            <li>
+                                <a href="/Home/CustomerLogin/1">
+                                    Welcome, <span style="color: red;">
+                                        KChen
+                                    </span>| Logout
+                                </a>
+                            </li>
+                            <li><a href="tel:(310) 768-8188"><i class="fa fa-phone"></i>(310) 768-8188</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="content">
+    <div class="page-wrap">
+        <div class="page-main Services-page-main">
+            <div class="reports-banner" id="banner" runat="server">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="reports-banner ac">
+                                <h1>LAX Inventory Report</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Availability-main">
+                <div class="container-fluid">
+                    
+
+<div class="row">
+    <div class="col-12">
+        <a href="/Reports">Back to previous page</a>
+    </div>
+</div>
+<div class="Availability-search">
+    <div class="row">
+
+</div>
+    </div>
+    <div class="row">
+        <div class="col-12 al">
+            <button id="excel" type="button" style="background-color:white;"><img src="https://www.imperialcfs.com/_images/excel-icon.png" Height="55" Width="50" /></button>
+        </div>
+    </div>
+    <div class="Availability-info">
+        <div class="row">
+            <div class="col-12 NoLtRtPad">
+<div class="table-responsive">
+    <table class="data table table-striped">
+        <thead>
+            <tr>
+                    <th class="ac">HBL#</th>
+                    <th class="ac">AMS#</th>
+                    <th class="ac">ENTRY#</th>
+                    <th class="ac">CONTAINER#</th>
+                    <th class="ac">ORIGIN</th>
+                    <th class="ac">REF#</th>
+                    <th class="ac">QTY</th>
+                    <th class="ac">LBS</th>
+                    <th class="ac">CBM</th>
+                    <th class="ac">VESSEL ETD</th>
+                    <th class="ac">VESSEL ETA</th>
+                    <th class="ac">TERMINAL AVAILABLE</th>
+                    <th class="ac">CFS AVAILABLE</th>
+                    <th class="ac">L/F DATE</th>
+                    <th class="ac">GO DATE</th>
+                    <th class="ac">FRT RELEASED</th>
+                    <th class="ac">MARKING HOLD</th>
+                    <th class="ac">PIECECOUNT HOLD</th>
+                    <th class="ac">CUSTOMS HOLD</th>
+                    <th class="ac">EX PLT</th>
+                    <th class="ac">REMARK</th>
+                    <th class="ac">NOTES</th>
+                    <th class="ac">EXTRA NOTES</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+<td class="direct ac">
+                                        <a href="/MyAccount/Index/hbl/OERT202701N06888" target="_blank">OERT202701N06888</a>
+                            </td>
+                            <td class="ac">OERT202704N00510</td>
+                            <td class="ac">DSV-8231557-0</td>
+                            <td class="ac">CAAU6157085</td>
+                            <td class="ac">YANTIAN,CHINA</td>
+                            <td class="ac">CS24142827</td>
+                            <td class="ac">156</td>
+                            <td class="ac">4744.57</td>
+                            <td class="ac">9.75</td>
+                            <td class="ac">11/24/24</td>
+                            <td class="ac">12/07/24</td>
+                            <td class="ac">12/10/24</td>
+                            <td class="ac">12/12/24</td>
+                            <td class="ac">02/21/25</td>
+                            <td class="ac">12/25/24</td>
+                            <td class="ac">12/19/25</td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac">5</td>
+                            <td class="ac"></td>
+                            <td class="ac">EDI SUPPORT TEAM</td>
+                            <td class="ac"></td>
+                </tr>
+                <tr>
+<td class="direct ac">
+                                        <a href="/MyAccount/Index/hbl/OERT201701Y17890" target="_blank">OERT201701Y17890</a>
+                            </td>
+                            <td class="ac">OERT201718Y03270</td>
+                            <td class="ac">ACN-7180951-9</td>
+                            <td class="ac">CGMU5325594</td>
+                            <td class="ac">SHANGHAI,CHINA</td>
+                            <td class="ac">CS26002528</td>
+                            <td class="ac">13</td>
+                            <td class="ac">19288.24</td>
+                            <td class="ac">8.45</td>
+                            <td class="ac">01/06/26</td>
+                            <td class="ac">01/20/26</td>
+                            <td class="ac">01/22/26</td>
+                            <td class="ac">01/26/26</td>
+                            <td class="ac">02/02/26</td>
+                            <td class="ac">02/07/26</td>
+                            <td class="ac">01/20/26</td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac">0</td>
+                            <td class="ac">13 S/P</td>
+                            <td class="ac">EDI SUPPORT TEAM</td>
+                            <td class="ac"></td>
+                </tr>
+                <tr>
+<td class="direct ac">
+                                        <a href="/MyAccount/Index/hbl/OERT101725Y00030" target="_blank">OERT101725Y00030</a>
+                            </td>
+                            <td class="ac">OERT101725Y00030</td>
+                            <td class="ac">ACN-1439992-5</td>
+                            <td class="ac">EGSU5089785</td>
+                            <td class="ac">TAICHUNG, TAIWAN</td>
+                            <td class="ac">CS26007013</td>
+                            <td class="ac">5</td>
+                            <td class="ac">15838.01</td>
+                            <td class="ac">11.75</td>
+                            <td class="ac">01/16/26</td>
+                            <td class="ac">02/01/26</td>
+                            <td class="ac">02/05/26</td>
+                            <td class="ac">02/05/26</td>
+                            <td class="ac">02/12/26</td>
+                            <td class="ac">02/20/26</td>
+                            <td class="ac">01/27/26</td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac">0</td>
+                            <td class="ac">RCVD: 5 SKIDS</td>
+                            <td class="ac">EDI SUPPORT TEAM</td>
+                            <td class="ac"></td>
+                </tr>
+                <tr>
+<td class="direct ac">
+                                        <a href="/MyAccount/Index/hbl/OERT101701Y02710" target="_blank">OERT101701Y02710</a>
+                            </td>
+                            <td class="ac">OERT101701Y02710</td>
+                            <td class="ac">9H6-2307558-1</td>
+                            <td class="ac">EGSU5089785</td>
+                            <td class="ac">TAICHUNG, TAIWAN</td>
+                            <td class="ac">CS26007013</td>
+                            <td class="ac">57</td>
+                            <td class="ac">1858.5</td>
+                            <td class="ac">2.72</td>
+                            <td class="ac">01/16/26</td>
+                            <td class="ac">02/01/26</td>
+                            <td class="ac">02/05/26</td>
+                            <td class="ac">02/05/26</td>
+                            <td class="ac">02/12/26</td>
+                            <td class="ac">02/20/26</td>
+                            <td class="ac">02/05/26</td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac">0</td>
+                            <td class="ac">RCVD: 57 CTNS ON 1 S/PLT</td>
+                            <td class="ac">EDI SUPPORT TEAM</td>
+                            <td class="ac"></td>
+                </tr>
+                <tr>
+<td class="direct ac">
+                                        <a href="/MyAccount/Index/hbl/OERT202701P00147" target="_blank">OERT202701P00147</a>
+                            </td>
+                            <td class="ac">OERT210718Y00548</td>
+                            <td class="ac">E5R-2502918-7</td>
+                            <td class="ac">FFAU3202414</td>
+                            <td class="ac">YANTIAN,CHINA</td>
+                            <td class="ac">CS26007053</td>
+                            <td class="ac">195</td>
+                            <td class="ac">4033.8</td>
+                            <td class="ac">17.52</td>
+                            <td class="ac">01/17/26</td>
+                            <td class="ac">02/01/26</td>
+                            <td class="ac">02/06/26</td>
+                            <td class="ac">02/06/26</td>
+                            <td class="ac">02/13/26</td>
+                            <td class="ac">02/21/26</td>
+                            <td class="ac">01/28/26</td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac">0</td>
+                            <td class="ac">195 CTNS ON 9 S/PLTS</td>
+                            <td class="ac">EDI SUPPORT TEAM</td>
+                            <td class="ac"></td>
+                </tr>
+                <tr>
+<td class="direct ac">
+                                        <a href="/MyAccount/Index/hbl/OERT101701Y02715" target="_blank">OERT101701Y02715</a>
+                            </td>
+                            <td class="ac">CHQFTPEUB5121453</td>
+                            <td class="ac"></td>
+                            <td class="ac">EMCU5650897</td>
+                            <td class="ac">KAOHSIUNG</td>
+                            <td class="ac">CS26009151</td>
+                            <td class="ac">55</td>
+                            <td class="ac">1087.98</td>
+                            <td class="ac">3.36</td>
+                            <td class="ac">01/16/26</td>
+                            <td class="ac">02/01/26</td>
+                            <td class="ac">02/05/26</td>
+                            <td class="ac">02/06/26</td>
+                            <td class="ac">02/13/26</td>
+                            <td class="ac">02/20/26</td>
+                            <td class="ac">02/03/26</td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac">2</td>
+                            <td class="ac"></td>
+                            <td class="ac">EDI SUPPORT TEAM</td>
+                            <td class="ac"></td>
+                </tr>
+                <tr>
+<td class="direct ac">
+                                        <a href="/MyAccount/Index/hbl/OERT101701Y02703" target="_blank">OERT101701Y02703</a>
+                            </td>
+                            <td class="ac">OERT101704Y00510</td>
+                            <td class="ac">ACN-4058471-4</td>
+                            <td class="ac">EMCU5650897</td>
+                            <td class="ac">KAOHSIUNG</td>
+                            <td class="ac">CS26009151</td>
+                            <td class="ac">30</td>
+                            <td class="ac">1203.72</td>
+                            <td class="ac">4.48</td>
+                            <td class="ac">01/16/26</td>
+                            <td class="ac">02/01/26</td>
+                            <td class="ac">02/05/26</td>
+                            <td class="ac">02/06/26</td>
+                            <td class="ac">02/13/26</td>
+                            <td class="ac">02/20/26</td>
+                            <td class="ac">01/29/26</td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac">0</td>
+                            <td class="ac">2 W/C STC</td>
+                            <td class="ac">EDI SUPPORT TEAM</td>
+                            <td class="ac"></td>
+                </tr>
+                <tr>
+<td class="direct ac">
+                                        <a href="/MyAccount/Index/hbl/OERT101701Y02511" target="_blank">OERT101701Y02511</a>
+                            </td>
+                            <td class="ac">OERT101701Y02511</td>
+                            <td class="ac"></td>
+                            <td class="ac">EMCU5650897</td>
+                            <td class="ac">KAOHSIUNG</td>
+                            <td class="ac">CS26009151</td>
+                            <td class="ac">50</td>
+                            <td class="ac">691.37</td>
+                            <td class="ac">1.48</td>
+                            <td class="ac">01/16/26</td>
+                            <td class="ac">02/01/26</td>
+                            <td class="ac">02/05/26</td>
+                            <td class="ac">02/06/26</td>
+                            <td class="ac">02/13/26</td>
+                            <td class="ac">02/20/26</td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac">0</td>
+                            <td class="ac">50 CTNS ON 1 S/P</td>
+                            <td class="ac">EDI SUPPORT TEAM</td>
+                            <td class="ac"></td>
+                </tr>
+                <tr>
+<td class="direct ac">
+                                        <a href="/MyAccount/Index/hbl/OERT215738Y00455" target="_blank">OERT215738Y00455</a>
+                            </td>
+                            <td class="ac">OERT215738Y00455</td>
+                            <td class="ac">ACN-1440080-6</td>
+                            <td class="ac">WHSU6191997</td>
+                            <td class="ac">NINGBO,CHINA</td>
+                            <td class="ac">CS26004820</td>
+                            <td class="ac">95</td>
+                            <td class="ac">2943.17</td>
+                            <td class="ac">5.42</td>
+                            <td class="ac">01/13/26</td>
+                            <td class="ac">02/04/26</td>
+                            <td class="ac">02/06/26</td>
+                            <td class="ac">02/06/26</td>
+                            <td class="ac">02/13/26</td>
+                            <td class="ac">02/21/26</td>
+                            <td class="ac">01/30/26</td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac"></td>
+                            <td class="ac">3</td>
+                            <td class="ac"></td>
+                            <td class="ac">EDI SUPPORT TEAM</td>
+                            <td class="ac"></td>
+                </tr>
+        </tbody>
+    </table>
+</div>
+            </div>
+        </div>
+    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-top">
+                        <img src="/_images/footer-logo.png">
+                    </div>
+                    <div class="footer-main">
+                        <div class="row">
+                            <div class="col-12 col-sm-3 col-md-3">
+                                <ul>
+                                    <li><a href="/OurServices" target="_blank">Our Services</a></li>
+                                    <li><a href="/Availability" target="_blank">Availability</a></li>
+                                    <li><a href="/IPI" target="_blank">IPI Tracing</a></li>
+                                    <li><a href="/Charges/Guarantee_Whs_Fee/" target="_blank">Guarantee Imperial CFS Fees</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-2">
+                                <ul>
+                                    <li><a href="/Home/CustomerLogin">Login</a></li>
+                                    <li><a href="/Home/SiteMap" target="_blank">Site Map</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-2">
+                                <ul>
+                                    <li><a href="/Home/About" target="_blank">About Us</a></li>
+                                    <li><a href="/Home/News" target="_blank">News</a></li>
+                                    <li><a href="/Home/Forms" target="_blank">Forms</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-5">
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <dl>
+                                            <dt>Location</dt>
+                                            <dd>
+                                                1000 Francisco St<br>
+                                                Torrance CA 90502 USA
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <dl>
+                                            <dt>Phone</dt>
+                                            <dd>310-768-8188</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>Fax</dt>
+                                            <dd>310-527-7288</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="row">
+                            <div class="col-12 col-sm-4 al">
+                                <p>© 2025 Cargovation LLC All Rights Reserved.</p>
+                                <!--h1>Brought to you by kchen9 </h1-->
+                            </div>
+                            <div class="col-12 col-sm-4 ar">
+                                <p><a href="/Home/PrivacyPolicy">Privacy Policy</a></p>
+                            </div>
+                            <div class="col-12 col-sm-4 ar">
+                                <p><a href="/Home/Terms">Terms and Conditions</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://www.imperialcfs.com/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+<script src="https://www.imperialcfs.com/bundles/main_jquery?v=pcTLGo70Ebj-7wZHfj5-OozMeYDuBTaJgLdp-yYJn8s1"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    
+    <script>
+        var currentpath = "Reports/LAX_Inventory";
+        var isProduction = 'true';
+    </script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://www.imperialcfs.com/bundles/excel_click?v=XHW6sKRk5fTTp_tssUI_NC7EV-D-0ZjWhZRQqF-SX4c1"></script>
+
+    
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://www.imperialcfs.com/bundles/excel_click?v=XHW6sKRk5fTTp_tssUI_NC7EV-D-0ZjWhZRQqF-SX4c1"></script>
+<!-- <script src="https://www.imperialcfs.com/bundles/datatables_initialize?v=IMKzXbM89FeD0Txr0gyBLy13ATDp6Mfx2WC9Q3cJSQc1"></script> -->
+<script src="https://www.imperialcfs.com/bundles/search_click?v=EktDjI4w5HLDTqz33cQYs1np8hEBO9z5escPKoPIhus1"></script>
+
+    
+
+</body>
+</html>
