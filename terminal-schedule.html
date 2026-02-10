@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#777777">
+    <meta name="theme-color" content="#ffffff">
+    <title>Imperial CFS, Inc - Availability</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="Content/css.css">
+    <link href="Content/Modal?v=7bMKDYCypKgFwJtiq8nBtCcJODJS6lCOLoIxVHt-al01" rel="stylesheet"/>
+    <link href="Content/icon?v=cVwA9pPiyb_rieloDJQKuVXzDQ3x5fT9A_F7NWasIVs1" rel="stylesheet"/>
+    <link rel="stylesheet" href="Content/css.css">
+    <link rel="stylesheet" href="Content/design-system.css">
+    <link rel="stylesheet" href="Content/custom-styles.css">
+    <script src="js/components/pickup-table.js" defer></script>
+</head>
+<body class="availavility-v2">
+<div class="modal fade modal-under-header" id="myStaticModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header px-4">
+                <h2 class="modal-title fs-8" id="staticBackdropLabel">New Availability Search</h2>
+                <button type="button" class="btn btn-outline-dark btn-sm rounded-full  font-family-archivo text-nowrap ms-auto" ><i class="bi bi-arrow-90deg-left mr-1"></i>Back home</button>
+            </div>
+            <div class="modal-body d-flex flex-column align-items-center gap-4 p-12 py-16">
+                <div class="d-inline-flex flex-column align-items-stretch gap-2">
+                    <div class="d-flex justify-content-between gap-2 search-container">
+                        <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo flex-grow-0">
+                        <select class="form-control rounded w-100" id="type" name="type"><option value="hbl">House Bill</option>
+                            <option selected="selected" value="mbl">Master Bill</option>
+                            <option value="cntr">Container Number</option>
+                            <option value="ams">AMS House Bill</option>
+                            <option value="it">Inbond Number</option>
+                            <option value="go">GO Number</option>
+                        </select>
+                        </label> 
+                        <label for="">
+                            <input class="rounded text-uppercase w-100" placeholder="Type your search" type="text">
+                        </label>
+                        <button type="button" class="btn btn-primary text-uppercase text-xs rounded d-inline-block h-100 align-self-stretch">Search <i class="bi bi-search text-xs ml-2"></i></button>
+                    </div>
+                    <div class="alert alert-warning d-flex align-items-center font-family-sora text-left text-sm" role="alert">
+                        <i class="bi bi-info-circle-fill me-3 text-2xl text-danger"></i>
+                        <div>We couldn't find a record matching <b class="search-select-type">MBL</b>: <b class="search-users-input">"[User's Input]"</b>. <br>Please verify and try again.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<header id="header">
+    <div class="availability-menu">
+        <div class="availability-menu-top">
+            <div class="container-fluid">
+                <div class="row align-items-center position-relative">
+                    <div class="col col-md-auto col-sm-8 d-flex gap-16 justify-start items-center">
+                        
+                        <div class="nav-logo">
+                            <a href="home.html">
+                                <img alt="IMPERIAL CFS" src="/_images/logo-w.png">
+                            </a>
+                        </div>
+
+                        <ul class="nav text-white font-family-archivo text-uppercase d-none d-xl-flex ms-4">
+                            <li class="nav-item">
+                                <a class="nav-link active link-light" href="#" type="button" data-bs-toggle="modal" data-bs-target="#pickup-hours-modal" href="#">Pick-up hours</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" href="#">Terminal status</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" href="#">Terminal schedule</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link link-light dropdown-toggle text-white font-family-archivo text-uppercase" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                                    More
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">CFS charges</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="dropdown d-xl-none ms-3">
+                            <button class="btn btn-outline-light btn-sm dropdown-toggle font-family-archivo text-uppercase rounded-full" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Useful links
+                            </button>
+                            <ul class="dropdown-menu shadow">
+                                <li><a class="dropdown-item" href="#" type="button" data-bs-toggle="modal" data-bs-target="#pickup-hours-modal">Pick-up hours</a></li>
+                                <li><a class="dropdown-item" href="#">Terminal status</a></li>
+                                <li><a class="dropdown-item" href="#">Terminal schedule</a></li>
+                                <li><a class="dropdown-item" href="#">CFS charges</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col col-sm-auto d-flex items-center justify-end gap-4 search-bar">
+                        <button type="button" class="btn btn-outline-light btn-sm rounded-full transition hover-scale-97 font-family-archivo text-nowrap" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Search</button>
+                        <div class="row collapse" id="collapseExample">
+                            <div class="nav-search-bar col-12">
+                                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo"><b class="hide-mobile">New Availability Search:</b>
+                                    <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
+                                    <option selected="selected" value="mbl">Master Bill</option>
+                                    <option value="cntr">Container Number</option>
+                                    <option value="ams">AMS House Bill</option>
+                                    <option value="it">Inbond Number</option>
+                                    <option value="go">GO Number</option>
+                                    </select>
+                                </label> 
+                                <label for="" class="position-relative">
+                                    <input class="rounded border-danger" type="text">
+                                    <div class="alert alert-warning d-flex align-items-center font-family-sora text-left text-sm" role="alert">
+                                        <i class="bi bi-info-circle-fill me-3 text-2xl text-danger"></i>
+                                        <div>We couldn't find a record matching <b class="search-select-type">MBL</b>: <b class="search-users-input">"[User's Input]"</b>. <br>Please verify and try again.</div>
+                                    </div>
+                                </label>
+                                <button type="button" class="btn btn-primary btn-sm bg-navy-700 text-uppercase text-xs rounded">Search <i class="bi bi-search text-xs ml-2"></i></button>
+                                <button type="button" class="btn-close" aria-label="Close"  data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto col-sm-auto ar ms-auto">
+                        <ul class="menu-list h-100 col-auto ml-auto gap-0 d-flex">
+                            <li class="d-flex align-items-center"><a href="#" class="btn btn-primary text-white btn-sm rounded-pill text-sm" data-bs-toggle="modal" data-bs-target="#login-modal">Login</a></li>
+                            <li class="d-flex align-items-center"><a href="#" class="btn btn-primary text-white btn-sm rounded-pill text-sm"><i class="fa-solid fa-user-gear ml-1"></i></a>
+                                <div class="sub-menu">
+                                    <dl>
+                                        <dd><a href="profile.html">Profile</a></dd>
+                                        <dd><a href="inland.html">INLAND WAREHOUSE LIST</a></dd>
+                                        <dd><a href="whse-in-out.html">WAREHOUSE IN / OUT</a></dd>
+                                        <dd><a href="transit.html">TRANSIT SCHEDULE</a></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col col-md-auto col-sm-auto ar">
+                        <div class="availability-menu-link clears">
+                            <div class="hamburger-menu fr">
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="col-auto">
+                        <div class="availability-menu-link clears">
+                            <a href="#" class="link-offset-2 text-xs link-light text-uppercase">Login</a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="availability-menu-child">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li>
+                                <a href="our-services.html">Our Services</a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="our-services.html">CFS</a></dd>
+                                    <dd><a href="inland.html">inland consolidation</a></dd>
+                                    <dd><a href="trucking.html">trucking</a></dd>
+                                    <dd><a href="technology.html">technology</a></dd>
+                                    <dd><a href="security.html">additional services</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="/Availability/Index/mbl/TCLU1228380">Availability </a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="#" type="button" data-bs-toggle="modal" data-bs-target="#pickup-hours-modal">PICK-UP HOURS</a></dd>
+                                    <dd><a href="/Availability/TerminalStatus">TERMINAL STATUS</a></dd>
+                                    <dd><a href="/Availability/TerminalSchedule" target="_blank">TERMINAL SCHEDULE</a></dd>
+                                    <dd><a href="/Availability/CFSCharges" target="_blank">CFS Charges</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="/IPI/Index/mbl/TCLU1228380">IPI Tracing</a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/IPI/Inland">INLAND WAREHOUSE LIST</a></dd>
+                                    <dd><a href="/IPI/Warehouse">WAREHOUSE IN / OUT</a></dd>
+                                    <dd><a href="/IPI/Transit">TRANSIT SCHEDULE</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="/WarehouseFees/Index/mbl/TCLU1228380">Pay Warehouse Fees</a></li>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="/Home/News/5">News</a></li>
+                            <li><a href="forms.html">Forms</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <a href="/Home/CustomerLogin">Login</a>                                
+                            <li><a href="tel:(310) 768-8188"><i class="fa fa-phone"></i>(310) 768-8188</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="breadcrums pt-4 mt-16"> <!-- BREADCRUMS -->
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#"><i class="bi bi-house-door-fill"></i></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Availability</a></li>
+                    <li class="breadcrumb-item"><a href="#">Terminal Status Schedule</a></li>
+                </ol>
+            </nav>
+        </div>
+    </div>  
+    </div>  
+</section>
+<section> <!-- TITLE -->
+    <div class="container-fluid">
+        <div class="row justify-content-between">
+            <div class="col-auto">
+                <h1 class="text-3xl font-family-dm-serif text-navy-800">Terminal Gate Schedule</h1>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="mbl-master-table p-6 py-5 d-block">
+                    <div class="row">
+                        <div class="text-start col">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <span>From:</span><br>
+                                    <span class="font-family-sora fw-bold">Monday</span>
+                                    <span class="text-muted">02/02/26</span>
+                                </div>
+                                <div class="col-auto"> — </div>
+                                <div class="col-auto">
+                                    <span>To:</span><br>
+                                    <span class="font-family-sora fw-bold">Sunday</span>
+                                    <span class="text-muted">02/08/26</div>                          
+                            </div>
+                        </div>
+                        <div class="text-base fw-bold text-end col-auto">
+                            <span class="font-family-sora fw-bold"><i class="bi bi-clock me-1"></i>Last update:</span><br>
+                            <span class="text-muted">02/08/26</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <div class="modal fade" id="pickup-hours-modal" tabindex="-1" aria-labelledby="pickup-hours-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header justify-content-end border-bottom-0 pb-1">
+                <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body px-5 pb-5 pt-0">
+                <pickup-window-hours-table></pickup-window-hours-table> <!--js/components/pickup-table.js-->
+            </div>
+            </div>
+        </div>
+    </div>
+<section class="terminal-schedule-main">
+    <div class="container-fluid main-header">
+        <p class="text-navy-450 mb-8 font-family-archivo"><i>(Info subject to change. For reference only. Pleae check directly with warehouse for exact charges.)</i></p>
+        <div class="d-flex gap-2 align-items-center my-4 w-100 w-md-auto">
+            <div class="col-auto">
+                <label for="citySearch" class="col-form-label text-dark">Filter terminals:</label>
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <input type="text" id="citySearch" onkeyup="searchAccordion()" class="form-control rounded" placeholder="Type to filter...">
+            </div>
+            <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Export PDF 
+                <i class="bi bi-download me-2"></i>
+            </button>
+        </div>
+        <section id="pola-section" class="terminal-schedule-section mt-6">
+           <div class="port-header d-flex align-items-center justify-content-between py-2 border-bottom mb-2" data-bs-toggle="collapse" data-bs-target="#collapsePOLA" aria-expanded="true">
+                <div class="d-flex align-items-center font-family-sora fw-bold">
+                    <span class="bar-indicator bar-blue"></span>
+                    PORT OF LOS ANGELES (POLA)
+                </div>
+                <i class="bi bi-chevron-down text-muted"></i>
+            </div>
+
+            <div class="collapse show" id="collapsePOLA">
+                <div class="custom-card">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Terminal</th>
+                                    <th>Shift</th>
+                                    <th><span class="day-of-week">Mon</span>
+                                        <span class="date-sub">02/02</span></th>
+                                    <th><span class="day-of-week">Tue</span>
+                                        <span class="date-sub">02/03</span></th>
+                                    <th><span class="day-of-week">Wed</span>
+                                        <span class="date-sub">02/04</span></th>
+                                    <th><span class="day-of-week">Thu</span>
+                                        <span class="date-sub">02/05</span></th>
+                                    <th><span class="day-of-week">Fri</span>
+                                        <span class="date-sub">02/06</span></th>
+                                    <th><span class="day-of-week">Sat</span>
+                                        <span class="date-sub">02/07</span></th>
+                                    <th class="col-sun"><span class="day-of-week">Sun</span>
+                                        <span class="date-sub">02/08</span></th>
+                                    <th><span class="day-of-week">Mon</span>
+                                        <span class="date-sub">02/09</span></th>
+                                    <th><span class="day-of-week">Tue</span>
+                                        <span class="date-sub">02/10</span></th>
+                                    <th><span class="day-of-week">Wed</span>
+                                        <span class="date-sub">02/11</span></th>
+                                    <th><span class="day-of-week">Thu</span>
+                                        <span class="date-sub">02/12</span></th>
+                                    <th><span class="day-of-week">Fri</span>
+                                        <span class="date-sub">02/13</span></th>
+                                    <th><span class="day-of-week">Sat</span>
+                                        <span class="date-sub">02/14</span></th>
+                                    <th class="col-sun"><span class="day-of-week">Sun</span>
+                                        <span class="date-sub">02/15</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- APMT ROW -->
+                                <tr>
+                                    <td rowspan="2" class="terminal-cell bg-white">
+                                        <div class="terminal-info">
+                                            <h6>APMT</h6>
+                                            <span class="terminal-code">(400)</span>
+                                        </div>
+                                    </td>
+                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td class="closed">CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td class="closed">CLOSED</td>
+                                </tr>
+                                <tr>
+                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                                                        <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                </tr>
+                                
+                                <!-- EMS ROW -->
+                                <tr>
+                                    <td rowspan="2" class="terminal-cell bg-white">
+                                        <div class="terminal-info">
+                                            <h6>EMS</h6>
+                                            <span class="terminal-code">(302)</span>
+                                        </div>
+                                    </td>
+                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                </tr>
+                                <tr>
+                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                </tr>
+
+                                <!-- ETS ROW -->
+                                <tr>
+                                    <td rowspan="2" class="terminal-cell bg-white">
+                                        <div class="terminal-info">
+                                            <h6>EMS</h6>
+                                            <span class="terminal-code">(302)</span>
+                                        </div>
+                                    </td>
+                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                </tr>
+                                <tr>
+                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                </tr>
+
+                                <!-- ETS ROW -->
+                                <tr>
+                                    <td rowspan="2" class="terminal-cell bg-white">
+                                        <div class="terminal-info">
+                                            <h6>ETS</h6>
+                                            <span class="terminal-code">(233)</span>
+                                        </div>
+                                    </td>
+                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                </tr>
+                                <tr>
+                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                </tr>
+
+                                <!-- TRAPAC ROW -->
+                                <tr>
+                                    <td rowspan="2" class="terminal-cell bg-white">
+                                        <div class="terminal-info">
+                                            <h6>TRAPAC</h6>
+                                            <span class="terminal-code">(136)</span>
+                                        </div>
+                                    </td>
+                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                </tr>
+                                <tr>
+                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                </tr>
+
+                                <!-- WBCT ROW -->
+                                <tr>
+                                    <td rowspan="2" class="terminal-cell bg-white">
+                                        <div class="terminal-info">
+                                            <h6>WBCT</h6>
+                                            <span class="terminal-code">(126)</span>
+                                        </div>
+                                    </td>
+                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                </tr>
+                                <tr>
+                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                </tr>
+
+                                <!-- YTI ROW -->
+                                <tr>
+                                    <td rowspan="2" class="terminal-cell bg-white">
+                                        <div class="terminal-info">
+                                            <h6>YTI</h6>
+                                            <span class="terminal-code">(214)</span>
+                                        </div>
+                                    </td>
+                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                </tr>
+                                <tr>
+                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="polb-section" class="terminal-schedule-section mt-6">
+           <div class="port-header d-flex align-items-center justify-content-between py-2 border-bottom mb-2" data-bs-toggle="collapse" data-bs-target="#collapsePOLB" aria-expanded="true">
+                <div class="d-flex align-items-center font-family-sora fw-bold">
+                    <span class="bar-indicator bar-blue"></span>
+                    PORT OF LONG BEACH (POLB)
+                </div>
+                <i class="bi bi-chevron-down text-muted"></i>
+            </div>
+
+            <div class="collapse show" id="collapsePOLB">
+                <div class="custom-card">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Terminal</th>
+                                    <th>Shift</th>
+                                    <th><span class="day-of-week">Mon</span>
+                                        <span class="date-sub">02/02</span></th>
+                                    <th><span class="day-of-week">Tue</span>
+                                        <span class="date-sub">02/03</span></th>
+                                    <th><span class="day-of-week">Wed</span>
+                                        <span class="date-sub">02/04</span></th>
+                                    <th><span class="day-of-week">Thu</span>
+                                        <span class="date-sub">02/05</span></th>
+                                    <th><span class="day-of-week">Fri</span>
+                                        <span class="date-sub">02/06</span></th>
+                                    <th><span class="day-of-week">Sat</span>
+                                        <span class="date-sub">02/07</span></th>
+                                    <th class="col-sun"><span class="day-of-week">Sun</span>
+                                        <span class="date-sub">02/08</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- ITS ROW -->
+                                <tr>
+                                    <td rowspan="2" class="terminal-cell bg-white">
+                                        <div class="terminal-info">
+                                            <h6>ITS</h6>
+                                            <span class="terminal-code">(234)</span>
+                                        </div>
+                                    </td>
+                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td class="closed">CLOSED</td>
+                                </tr>
+                                <tr>
+                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                </tr>
+                                
+                                <!-- LBCT ROW -->
+                                <tr>
+                                    <td rowspan="2" class="terminal-cell bg-white">
+                                        <div class="terminal-info">
+                                            <h6>LBCT</h6>
+                                            <span class="terminal-code">(E10)</span>
+                                        </div>
+                                    </td>
+                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                </tr>
+                                <tr>
+                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                </tr>
+
+                                <!-- MATSON ROW -->
+                                <tr>
+                                    <td rowspan="2" class="terminal-cell bg-white">
+                                        <div class="terminal-info">
+                                            <h6>MATSON</h6>
+                                            <span class="terminal-code">(C60)</span>
+                                        </div>
+                                    </td>
+                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                </tr>
+                                <tr>
+                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                </tr>
+
+                                <!-- PCT ROW -->
+                                <tr>
+                                    <td rowspan="2" class="terminal-cell bg-white">
+                                        <div class="terminal-info">
+                                            <h6>PCT</h6>
+                                            <span class="terminal-code">(246)</span>
+                                        </div>
+                                    </td>
+                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                </tr>
+                                <tr>
+                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                </tr>
+
+                                <!-- PIER A ROW -->
+                                <tr>
+                                    <td rowspan="2" class="terminal-cell bg-white">
+                                        <div class="terminal-info">
+                                            <h6>PIER A</h6>
+                                            <span class="terminal-code">(A90)</span>
+                                        </div>
+                                    </td>
+                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                </tr>
+                                <tr>
+                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                </tr>
+
+                                <!-- TTI ROW -->
+                                <tr>
+                                    <td rowspan="2" class="terminal-cell bg-white">
+                                        <div class="terminal-info">
+                                            <h6>TTI</h6>
+                                            <span class="terminal-code">(T136)</span>
+                                        </div>
+                                    </td>
+                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                </tr>
+                                <tr>
+                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                </tr>
+
+                                <!-- YTI ROW -->
+                                <tr>
+                                    <td rowspan="2" class="terminal-cell bg-white">
+                                        <div class="terminal-info">
+                                            <h6>YTI</h6>
+                                            <span class="terminal-code">(214)</span>
+                                        </div>
+                                    </td>
+                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                </tr>
+                                <tr>
+                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                    <td>CLOSED</td>
+                                    <td>OPEN</td>
+                                    <td>OPEN</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                    <td>CLOSED</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+
+<footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-top">
+                        <img src="/_images/footer-logo.png">
+                    </div>
+                    <div class="footer-main">
+                        <div class="row">
+                            <div class="col-12 col-sm-3 col-md-3">
+                                <ul>
+                                    <li><a href="our-services.html" target="_blank">Our Services</a></li>
+                                    <li><a href="#" target="_blank">Availability</a></li>
+                                    <li><a href="ipi.html" target="_blank">IPI Tracing</a></li>
+                                    <li><a href="/Charges/Guarantee_Whs_Fee/" target="_blank">Guarantee Imperial CFS Fees</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-2">
+                                <ul>
+                                    <li><a href="/Home/CustomerLogin">Login</a></li>
+                                    <li><a href="/Home/SiteMap" target="_blank">Site Map</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-2">
+                                <ul>
+                                    <li><a href="about-us.html" target="_blank">About Us</a></li>
+                                    <li><a href="/Home/News" target="_blank">News</a></li>
+                                    <li><a href="forms.html" target="_blank">Forms</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-5">
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <dl>
+                                            <dt>Location</dt>
+                                            <dd>
+                                                1000 Francisco St<br>
+                                                Torrance CA 90502 USA
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <dl>
+                                            <dt>Phone</dt>
+                                            <dd>310-768-8188</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>Fax</dt>
+                                            <dd>310-527-7288</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="row">
+                            <div class="col-12 col-sm-4 al">
+                                <p>© 2025 Cargovation LLC All Rights Reserved.</p>
+                                <!--h1>Brought to you by kchen9 </h1-->
+                            </div>
+                            <div class="col-12 col-sm-4 ar">
+                                <p><a href="privacy-policy.html">Privacy Policy</a></p>
+                            </div>
+                            <div class="col-12 col-sm-4 ar">
+                                <p><a href="terms.html">Terms and Conditions</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- Back to Top Button -->
+<button type="button" 
+        id="backToTopBtn" 
+        class="btn btn-dark rounded-pill position-fixed bottom-0 start-0 m-3 shadow d-none" 
+        style="z-index: 1080; transition: opacity 0.3s;"
+        onclick="scrollToTop()">
+    <i class="bi bi-arrow-up me-2"></i>Back to top
+</button>
+<script src="https://kit.fontawesome.com/4006f6b372.js" crossorigin="anonymous"></script>
+<script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+<script src="/bundles/main_jquery?v=pcTLGo70Ebj-7wZHfj5-OozMeYDuBTaJgLdp-yYJn8s1"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    $('#Number').keypress(function (event){
+        if (event.keyCode === 13) {
+            var type = $('#Type').val();
+            var number = $('#Number').val();
+            var controller = "Availability";
+            window.location = "/" + controller + "/Index/" + type + "/" + number
+        }
+    })
+    var currentpath = "Availability"+"/"+"Index";
+</script>
+<script>
+    var controllername = '/Availability';
+    var ajax_url = controllername+'/SearchAjax/ ';
+</script>
+<script src="/bundles/AvailabilityViewer_Ajax?v=VgNFlR4TbTdLyioL1u0joKY-tpXbFdUn0Toxg6Z7ehQ1"></script>
+<script src="/bundles/Modal?v=6X2XgyWba97tfyPCPLvNNu3Nfognwesw8t4cSNPp6OA1"></script>
+<!-- Search modal Script --> <!--  KEVIN: This script enables the modal for search -->
+<!--
+<script> 
+    document.addEventListener("DOMContentLoaded", function(){
+        var myModal = new bootstrap.Modal(document.getElementById('myStaticModal'));
+        myModal.show();
+    });
+</script>
+-->
+<script>
+    $(function() {
+        $(".hamburger-menu").on("click", function() {
+            $(".bar").toggleClass("animate");
+            $(".availability-menu").toggleClass("open");
+            $(".availability-menu-child").stop(!0, !1).slideToggle(300)
+        });
+        $(".availability-menu-child ul>li i").click(function() {
+            $(this).parents("li").toggleClass("active");
+            $(this).parents("li").find(".mob-sub-menu").stop(!0, !1).slideToggle();
+            $(this).parents("li").siblings("li").find(".mob-sub-menu").slideUp()
+        });
+        $(window).width() >= 768 ? $(".home-section-04-box").css("margin-top", $(".home-section-04-box").height() * -1) : $(".home-section-04-box").css("margin-top", 0)
+    })
+</script>
+<script>
+    // Back to top button logic
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    window.onscroll = function() {
+        // Calculate 24rem in pixels dynamically
+        const remInPixels = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const threshold = 24 * remInPixels;
+
+        if (document.body.scrollTop > threshold || document.documentElement.scrollTop > threshold) {
+            backToTopBtn.classList.remove("d-none");
+        } else {
+            backToTopBtn.classList.add("d-none");
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>
