@@ -232,14 +232,12 @@
                         <div class="text-start col">
                             <div class="row">
                                 <div class="col-auto">
-                                    <span>From:</span><br>
-                                    <span class="font-family-sora fw-bold">Monday</span>
+                                    <span>From: </span><span class="font-family-sora fw-bold">Monday</span><br>
                                     <span class="text-muted">02/02/26</span>
                                 </div>
                                 <div class="col-auto"> — </div>
                                 <div class="col-auto">
-                                    <span>To:</span><br>
-                                    <span class="font-family-sora fw-bold">Sunday</span>
+                                    <span>To: </span><span class="font-family-sora fw-bold">Sunday</span><br>
                                     <span class="text-muted">02/08/26</div>                          
                             </div>
                         </div>
@@ -265,19 +263,21 @@
         </div>
     </div>
 <section class="terminal-schedule-main">
-    <div class="container-fluid main-header">
+    <div class="container-fluid main-header" id="schedule-tables-container">
         <p class="text-navy-450 mb-8 font-family-archivo"><i>(Info subject to change. For reference only. Pleae check directly with warehouse for exact charges.)</i></p>
+        <!-- Filter terminals -->
+         <!--
         <div class="d-flex gap-2 align-items-center my-4 w-100 w-md-auto">
             <div class="col-auto">
-                <label for="citySearch" class="col-form-label text-dark">Filter terminals:</label>
+                <label for="terminalSearch" class="col-form-label text-dark">Filter terminals:</label>
             </div>
             <div class="col-md-5 col-lg-4">
-                <input type="text" id="citySearch" onkeyup="searchAccordion()" class="form-control rounded" placeholder="Type to filter...">
+                <input type="text" id="terminalSearch" class="form-control rounded" placeholder="Type to filter...">
             </div>
             <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Export PDF 
                 <i class="bi bi-download me-2"></i>
             </button>
-        </div>
+        </div> -->
         <section id="pola-section" class="terminal-schedule-section mt-6">
            <div class="port-header d-flex align-items-center justify-content-between py-2 border-bottom mb-2" data-bs-toggle="collapse" data-bs-target="#collapsePOLA" aria-expanded="true">
                 <div class="d-flex align-items-center font-family-sora fw-bold">
@@ -289,338 +289,492 @@
 
             <div class="collapse show" id="collapsePOLA">
                 <div class="custom-card">
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Terminal</th>
-                                    <th>Shift</th>
-                                    <th><span class="day-of-week">Mon</span>
-                                        <span class="date-sub">02/02</span></th>
-                                    <th><span class="day-of-week">Tue</span>
-                                        <span class="date-sub">02/03</span></th>
-                                    <th><span class="day-of-week">Wed</span>
-                                        <span class="date-sub">02/04</span></th>
-                                    <th><span class="day-of-week">Thu</span>
-                                        <span class="date-sub">02/05</span></th>
-                                    <th><span class="day-of-week">Fri</span>
-                                        <span class="date-sub">02/06</span></th>
-                                    <th><span class="day-of-week">Sat</span>
-                                        <span class="date-sub">02/07</span></th>
-                                    <th class="col-sun"><span class="day-of-week">Sun</span>
-                                        <span class="date-sub">02/08</span></th>
-                                    <th><span class="day-of-week">Mon</span>
-                                        <span class="date-sub">02/09</span></th>
-                                    <th><span class="day-of-week">Tue</span>
-                                        <span class="date-sub">02/10</span></th>
-                                    <th><span class="day-of-week">Wed</span>
-                                        <span class="date-sub">02/11</span></th>
-                                    <th><span class="day-of-week">Thu</span>
-                                        <span class="date-sub">02/12</span></th>
-                                    <th><span class="day-of-week">Fri</span>
-                                        <span class="date-sub">02/13</span></th>
-                                    <th><span class="day-of-week">Sat</span>
-                                        <span class="date-sub">02/14</span></th>
-                                    <th class="col-sun"><span class="day-of-week">Sun</span>
-                                        <span class="date-sub">02/15</span></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- APMT ROW -->
-                                <tr>
-                                    <td rowspan="2" class="terminal-cell bg-white">
-                                        <div class="terminal-info">
-                                            <h6>APMT</h6>
-                                            <span class="terminal-code">(400)</span>
-                                        </div>
-                                    </td>
-                                    <td class="shift-badge">1<sup>ST</sup></td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td class="closed">CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td class="closed">CLOSED</td>
-                                </tr>
-                                <tr>
-                                    <td class="shift-badge">2<sup>ND</sup></td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                                                        <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                </tr>
+
+                    <!-- Carousel Controls -->
+                    <div class="row mb-4 align-items-center mt-5">
+                        <div class="col-12 text-md-end">
+                            <div class="nav-btn-group">
+                                <button class="btn btn-sm rounded-full btn-outline-dark btn-custom active" 
+                                        id="btn-current"
+                                        type="button" 
+                                        data-bs-target="#polaCarousel" 
+                                        data-bs-slide-to="0">
+                                    <i class="fa-solid fa-arrow-left me-2"></i> Current Week
+                                </button>
                                 
-                                <!-- EMS ROW -->
-                                <tr>
-                                    <td rowspan="2" class="terminal-cell bg-white">
-                                        <div class="terminal-info">
-                                            <h6>EMS</h6>
-                                            <span class="terminal-code">(302)</span>
-                                        </div>
-                                    </td>
-                                    <td class="shift-badge">1<sup>ST</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                </tr>
-                                <tr>
-                                    <td class="shift-badge">2<sup>ND</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                </tr>
+                                <button class="btn btn-sm rounded-full btn-outline-dark btn-custom" 
+                                        id="btn-next"
+                                        type="button" 
+                                        data-bs-target="#polaCarousel" 
+                                        data-bs-slide-to="1">
+                                    Next Week <i class="fa-solid fa-arrow-right ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel Component -->
+                    <div id="polaCarousel" class="carousel slide" data-bs-interval="false" data-bs-ride="false">
+                        <div class="carousel-inner">
+                            <!-- SLIDE 1: Current Week -->
+                            <div class="carousel-item active">
+                                <!-- Custom HTML Container for Current Week -->
+                                <div id="current-week-container" class="custom-content-container">
+                                    <!-- Contents -->
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Terminal</th>
+                                                    <th>Shift</th>
+                                                    <th><span class="day-of-week">Mon</span>
+                                                        <span class="date-sub">02/02</span></th>
+                                                    <th><span class="day-of-week">Tue</span>
+                                                        <span class="date-sub">02/03</span></th>
+                                                    <th><span class="day-of-week">Wed</span>
+                                                        <span class="date-sub">02/04</span></th>
+                                                    <th><span class="day-of-week">Thu</span>
+                                                        <span class="date-sub">02/05</span></th>
+                                                    <th><span class="day-of-week">Fri</span>
+                                                        <span class="date-sub">02/06</span></th>
+                                                    <th><span class="day-of-week">Sat</span>
+                                                        <span class="date-sub">02/07</span></th>
+                                                    <th class="col-sun"><span class="day-of-week">Sun</span>
+                                                        <span class="date-sub">02/08</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- ITS ROW -->
+                                                <tr class="terminal-row" data-name="ITS (234)">
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>ITS</h6>
+                                                            <span class="terminal-code">(234)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td class="closed">CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                
+                                                <!-- LBCT ROW -->
+                                                <tr class="terminal-row" data-name="ITS (234)">
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>LBCT</h6>
+                                                            <span class="terminal-code">(E10)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
 
-                                <!-- ETS ROW -->
-                                <tr>
-                                    <td rowspan="2" class="terminal-cell bg-white">
-                                        <div class="terminal-info">
-                                            <h6>EMS</h6>
-                                            <span class="terminal-code">(302)</span>
-                                        </div>
-                                    </td>
-                                    <td class="shift-badge">1<sup>ST</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                </tr>
-                                <tr>
-                                    <td class="shift-badge">2<sup>ND</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                </tr>
+                                                <!-- MATSON ROW -->
+                                                <tr class="terminal-row" data-name="MATSON (234)">
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>MATSON</h6>
+                                                            <span class="terminal-code">(C60)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
 
-                                <!-- ETS ROW -->
-                                <tr>
-                                    <td rowspan="2" class="terminal-cell bg-white">
-                                        <div class="terminal-info">
-                                            <h6>ETS</h6>
-                                            <span class="terminal-code">(233)</span>
-                                        </div>
-                                    </td>
-                                    <td class="shift-badge">1<sup>ST</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                </tr>
-                                <tr>
-                                    <td class="shift-badge">2<sup>ND</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                </tr>
+                                                <!-- PCT ROW -->
+                                                <tr>
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>PCT</h6>
+                                                            <span class="terminal-code">(246)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
 
-                                <!-- TRAPAC ROW -->
-                                <tr>
-                                    <td rowspan="2" class="terminal-cell bg-white">
-                                        <div class="terminal-info">
-                                            <h6>TRAPAC</h6>
-                                            <span class="terminal-code">(136)</span>
-                                        </div>
-                                    </td>
-                                    <td class="shift-badge">1<sup>ST</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                </tr>
-                                <tr>
-                                    <td class="shift-badge">2<sup>ND</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                </tr>
+                                                <!-- PIER A ROW -->
+                                                <tr>
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>PIER A</h6>
+                                                            <span class="terminal-code">(A90)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
 
-                                <!-- WBCT ROW -->
-                                <tr>
-                                    <td rowspan="2" class="terminal-cell bg-white">
-                                        <div class="terminal-info">
-                                            <h6>WBCT</h6>
-                                            <span class="terminal-code">(126)</span>
-                                        </div>
-                                    </td>
-                                    <td class="shift-badge">1<sup>ST</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                </tr>
-                                <tr>
-                                    <td class="shift-badge">2<sup>ND</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                </tr>
+                                                <!-- TTI ROW -->
+                                                <tr>
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>TTI</h6>
+                                                            <span class="terminal-code">(T136)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
 
-                                <!-- YTI ROW -->
-                                <tr>
-                                    <td rowspan="2" class="terminal-cell bg-white">
-                                        <div class="terminal-info">
-                                            <h6>YTI</h6>
-                                            <span class="terminal-code">(214)</span>
-                                        </div>
-                                    </td>
-                                    <td class="shift-badge">1<sup>ST</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                </tr>
-                                <tr>
-                                    <td class="shift-badge">2<sup>ND</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                                <!-- YTI ROW -->
+                                                <tr>
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>YTI</h6>
+                                                            <span class="terminal-code">(214)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- SLIDE 2: Next Week -->
+                            <div class="carousel-item">
+                                <!-- Custom HTML Container for Next Week -->
+                                <div id="next-week-container" class="custom-content-container">
+
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Terminal</th>
+                                                    <th>Shift</th>
+                                                    <th><span class="day-of-week">Mon</span>
+                                                        <span class="date-sub">02/02</span></th>
+                                                    <th><span class="day-of-week">Tue</span>
+                                                        <span class="date-sub">02/03</span></th>
+                                                    <th><span class="day-of-week">Wed</span>
+                                                        <span class="date-sub">02/04</span></th>
+                                                    <th><span class="day-of-week">Thu</span>
+                                                        <span class="date-sub">02/05</span></th>
+                                                    <th><span class="day-of-week">Fri</span>
+                                                        <span class="date-sub">02/06</span></th>
+                                                    <th><span class="day-of-week">Sat</span>
+                                                        <span class="date-sub">02/07</span></th>
+                                                    <th class="col-sun"><span class="day-of-week">Sun</span>
+                                                        <span class="date-sub">02/08</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- ITS ROW -->
+                                                <tr class="terminal-row" data-name="ITS (234)">
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>ITS</h6>
+                                                            <span class="terminal-code">(234)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td class="closed">CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                
+                                                <!-- LBCT ROW -->
+                                                <tr class="terminal-row" data-name="ITS (234)">
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>LBCT</h6>
+                                                            <span class="terminal-code">(E10)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+
+                                                <!-- MATSON ROW -->
+                                                <tr class="terminal-row" data-name="MATSON (234)">
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>MATSON</h6>
+                                                            <span class="terminal-code">(C60)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+
+                                                <!-- PCT ROW -->
+                                                <tr>
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>PCT</h6>
+                                                            <span class="terminal-code">(246)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+
+                                                <!-- PIER A ROW -->
+                                                <tr>
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>PIER A</h6>
+                                                            <span class="terminal-code">(A90)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+
+                                                <!-- TTI ROW -->
+                                                <tr>
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>TTI</h6>
+                                                            <span class="terminal-code">(T136)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+
+                                                <!-- YTI ROW -->
+                                                <tr>
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>YTI</h6>
+                                                            <span class="terminal-code">(214)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -637,226 +791,491 @@
 
             <div class="collapse show" id="collapsePOLB">
                 <div class="custom-card">
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Terminal</th>
-                                    <th>Shift</th>
-                                    <th><span class="day-of-week">Mon</span>
-                                        <span class="date-sub">02/02</span></th>
-                                    <th><span class="day-of-week">Tue</span>
-                                        <span class="date-sub">02/03</span></th>
-                                    <th><span class="day-of-week">Wed</span>
-                                        <span class="date-sub">02/04</span></th>
-                                    <th><span class="day-of-week">Thu</span>
-                                        <span class="date-sub">02/05</span></th>
-                                    <th><span class="day-of-week">Fri</span>
-                                        <span class="date-sub">02/06</span></th>
-                                    <th><span class="day-of-week">Sat</span>
-                                        <span class="date-sub">02/07</span></th>
-                                    <th class="col-sun"><span class="day-of-week">Sun</span>
-                                        <span class="date-sub">02/08</span></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- ITS ROW -->
-                                <tr>
-                                    <td rowspan="2" class="terminal-cell bg-white">
-                                        <div class="terminal-info">
-                                            <h6>ITS</h6>
-                                            <span class="terminal-code">(234)</span>
-                                        </div>
-                                    </td>
-                                    <td class="shift-badge">1<sup>ST</sup></td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td class="closed">CLOSED</td>
-                                </tr>
-                                <tr>
-                                    <td class="shift-badge">2<sup>ND</sup></td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                </tr>
+                    <!-- Header & Controls -->
+                    <div class="row mb-4 align-items-center mt-5">
+                        <div class="col-12 text-md-end">
+                            <div class="nav-btn-group">
+                                <button class="btn btn-sm rounded-full btn-outline-dark btn-custom active" 
+                                        id="btn-current"
+                                        type="button" 
+                                        data-bs-target="#polbCarousel" 
+                                        data-bs-slide-to="0">
+                                    <i class="fa-solid fa-arrow-left me-2"></i> Current Week
+                                </button>
                                 
-                                <!-- LBCT ROW -->
-                                <tr>
-                                    <td rowspan="2" class="terminal-cell bg-white">
-                                        <div class="terminal-info">
-                                            <h6>LBCT</h6>
-                                            <span class="terminal-code">(E10)</span>
-                                        </div>
-                                    </td>
-                                    <td class="shift-badge">1<sup>ST</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                </tr>
-                                <tr>
-                                    <td class="shift-badge">2<sup>ND</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                </tr>
+                                <button class="btn btn-sm rounded-full btn-outline-dark btn-custom" 
+                                        id="btn-next"
+                                        type="button" 
+                                        data-bs-target="#polbCarousel" 
+                                        data-bs-slide-to="1">
+                                    Next Week <i class="fa-solid fa-arrow-right ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel Component -->
+                    <div id="polbCarousel" class="carousel slide" data-bs-interval="false" data-bs-ride="false">
+                        <div class="carousel-inner">
+                            <!-- SLIDE 1: Current Week -->
+                            <div class="carousel-item active">
+                                <!-- Custom HTML Container for Current Week -->
+                                <div id="current-week-container" class="custom-content-container">
+                                    <!-- Contents -->
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Terminal</th>
+                                                    <th>Shift</th>
+                                                    <th><span class="day-of-week">Mon</span>
+                                                        <span class="date-sub">02/02</span></th>
+                                                    <th><span class="day-of-week">Tue</span>
+                                                        <span class="date-sub">02/03</span></th>
+                                                    <th><span class="day-of-week">Wed</span>
+                                                        <span class="date-sub">02/04</span></th>
+                                                    <th><span class="day-of-week">Thu</span>
+                                                        <span class="date-sub">02/05</span></th>
+                                                    <th><span class="day-of-week">Fri</span>
+                                                        <span class="date-sub">02/06</span></th>
+                                                    <th><span class="day-of-week">Sat</span>
+                                                        <span class="date-sub">02/07</span></th>
+                                                    <th class="col-sun"><span class="day-of-week">Sun</span>
+                                                        <span class="date-sub">02/08</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- ITS ROW -->
+                                                <tr class="terminal-row" data-name="ITS (234)">
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>ITS</h6>
+                                                            <span class="terminal-code">(234)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td class="closed">CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                
+                                                <!-- LBCT ROW -->
+                                                <tr class="terminal-row" data-name="ITS (234)">
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>LBCT</h6>
+                                                            <span class="terminal-code">(E10)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
 
-                                <!-- MATSON ROW -->
-                                <tr>
-                                    <td rowspan="2" class="terminal-cell bg-white">
-                                        <div class="terminal-info">
-                                            <h6>MATSON</h6>
-                                            <span class="terminal-code">(C60)</span>
-                                        </div>
-                                    </td>
-                                    <td class="shift-badge">1<sup>ST</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                </tr>
-                                <tr>
-                                    <td class="shift-badge">2<sup>ND</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                </tr>
+                                                <!-- MATSON ROW -->
+                                                <tr class="terminal-row" data-name="MATSON (234)">
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>MATSON</h6>
+                                                            <span class="terminal-code">(C60)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
 
-                                <!-- PCT ROW -->
-                                <tr>
-                                    <td rowspan="2" class="terminal-cell bg-white">
-                                        <div class="terminal-info">
-                                            <h6>PCT</h6>
-                                            <span class="terminal-code">(246)</span>
-                                        </div>
-                                    </td>
-                                    <td class="shift-badge">1<sup>ST</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                </tr>
-                                <tr>
-                                    <td class="shift-badge">2<sup>ND</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                </tr>
+                                                <!-- PCT ROW -->
+                                                <tr>
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>PCT</h6>
+                                                            <span class="terminal-code">(246)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
 
-                                <!-- PIER A ROW -->
-                                <tr>
-                                    <td rowspan="2" class="terminal-cell bg-white">
-                                        <div class="terminal-info">
-                                            <h6>PIER A</h6>
-                                            <span class="terminal-code">(A90)</span>
-                                        </div>
-                                    </td>
-                                    <td class="shift-badge">1<sup>ST</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                </tr>
-                                <tr>
-                                    <td class="shift-badge">2<sup>ND</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                </tr>
+                                                <!-- PIER A ROW -->
+                                                <tr>
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>PIER A</h6>
+                                                            <span class="terminal-code">(A90)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
 
-                                <!-- TTI ROW -->
-                                <tr>
-                                    <td rowspan="2" class="terminal-cell bg-white">
-                                        <div class="terminal-info">
-                                            <h6>TTI</h6>
-                                            <span class="terminal-code">(T136)</span>
-                                        </div>
-                                    </td>
-                                    <td class="shift-badge">1<sup>ST</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                </tr>
-                                <tr>
-                                    <td class="shift-badge">2<sup>ND</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                </tr>
+                                                <!-- TTI ROW -->
+                                                <tr>
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>TTI</h6>
+                                                            <span class="terminal-code">(T136)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
 
-                                <!-- YTI ROW -->
-                                <tr>
-                                    <td rowspan="2" class="terminal-cell bg-white">
-                                        <div class="terminal-info">
-                                            <h6>YTI</h6>
-                                            <span class="terminal-code">(214)</span>
-                                        </div>
-                                    </td>
-                                    <td class="shift-badge">1<sup>ST</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                </tr>
-                                <tr>
-                                    <td class="shift-badge">2<sup>ND</sup></td>
-                                    <td>CLOSED</td>
-                                    <td>OPEN</td>
-                                    <td>OPEN</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                    <td>CLOSED</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                                <!-- YTI ROW -->
+                                                <tr>
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>YTI</h6>
+                                                            <span class="terminal-code">(214)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- SLIDE 2: Next Week -->
+                            <div class="carousel-item">
+                                <!-- Custom HTML Container for Next Week -->
+                                <div id="next-week-container" class="custom-content-container">
+
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Terminal</th>
+                                                    <th>Shift</th>
+                                                    <th><span class="day-of-week">Mon</span>
+                                                        <span class="date-sub">02/02</span></th>
+                                                    <th><span class="day-of-week">Tue</span>
+                                                        <span class="date-sub">02/03</span></th>
+                                                    <th><span class="day-of-week">Wed</span>
+                                                        <span class="date-sub">02/04</span></th>
+                                                    <th><span class="day-of-week">Thu</span>
+                                                        <span class="date-sub">02/05</span></th>
+                                                    <th><span class="day-of-week">Fri</span>
+                                                        <span class="date-sub">02/06</span></th>
+                                                    <th><span class="day-of-week">Sat</span>
+                                                        <span class="date-sub">02/07</span></th>
+                                                    <th class="col-sun"><span class="day-of-week">Sun</span>
+                                                        <span class="date-sub">02/08</span></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- ITS ROW -->
+                                                <tr class="terminal-row" data-name="ITS (234)">
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>ITS</h6>
+                                                            <span class="terminal-code">(234)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td class="closed">CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                
+                                                <!-- LBCT ROW -->
+                                                <tr class="terminal-row" data-name="ITS (234)">
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>LBCT</h6>
+                                                            <span class="terminal-code">(E10)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+
+                                                <!-- MATSON ROW -->
+                                                <tr class="terminal-row" data-name="MATSON (234)">
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>MATSON</h6>
+                                                            <span class="terminal-code">(C60)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+
+                                                <!-- PCT ROW -->
+                                                <tr>
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>PCT</h6>
+                                                            <span class="terminal-code">(246)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+
+                                                <!-- PIER A ROW -->
+                                                <tr>
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>PIER A</h6>
+                                                            <span class="terminal-code">(A90)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+
+                                                <!-- TTI ROW -->
+                                                <tr>
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>TTI</h6>
+                                                            <span class="terminal-code">(T136)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+
+                                                <!-- YTI ROW -->
+                                                <tr>
+                                                    <td rowspan="2" class="terminal-cell bg-white">
+                                                        <div class="terminal-info">
+                                                            <h6>YTI</h6>
+                                                            <span class="terminal-code">(214)</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="shift-badge">1<sup>ST</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="shift-badge">2<sup>ND</sup></td>
+                                                    <td>CLOSED</td>
+                                                    <td>OPEN</td>
+                                                    <td>OPEN</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                    <td>CLOSED</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1010,6 +1429,34 @@
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+</script>
+<script>
+    // Search Filter
+    function filterTerminals() {
+        var input, filter, rows, i, txtValue;
+        input = document.getElementById("terminalSearch");
+        filter = input.value.toUpperCase();
+        rows = document.querySelectorAll(".terminal-row");
+
+        // Expand sections if searching
+        if (filter.length > 0) {
+            document.querySelectorAll('.content-transition').forEach(c => c.classList.remove('content-collapsed'));
+            document.querySelectorAll('[id^="icon-"]').forEach(i => i.classList.remove('rotate-180'));
+        }
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < rows.length; i++) {
+            // We use the data-name attribute for robust matching across rowspans
+            txtValue = rows[i].getAttribute('data-name');
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                rows[i].style.display = "";
+            } else {
+                rows[i].style.display = "none";
+            }
+        }
+    }
+    
+    document.getElementById('terminalSearch').addEventListener('keyup', filterTerminals);
 </script>
 </body>
 </html>
