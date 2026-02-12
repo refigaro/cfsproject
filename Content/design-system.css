@@ -587,7 +587,7 @@ h1, h2, h3 {
 /* Typography classes for marketing pages */
 
 /* Display 1: 64pt (4rem) Base */
-.type-display-1 { font-family: var(--font-headings); font-size: clamp(3.4rem, 5vw + 1rem, 4.4rem); line-height: 1.1;}
+.type-display-1 { font-family: var(--font-headings); font-size: clamp(3.4rem, 5vw + 1rem, 4.25rem); letter-spacing: -.0425rem; line-height: 1.1;}
 
 /* H1: 46pt (2.875rem) Base */
 .type-h1 { font-family: var(--font-headings); font-size: clamp(2.44rem, 3vw + 1rem, 3.16rem); line-height: 1.2;}

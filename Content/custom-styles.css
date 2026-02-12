@@ -1833,7 +1833,11 @@ body:has(#login-modal.modal) .modal-backdrop {
         gap: 0;
         align-items: center;
         justify-content: stretch;
-        width:auto;
+        width:100%;
+
+        @media (min-width:1279px) {
+            width: auto;
+        }
 
         max-width:calc(100% - (2 * var(--space-12)));
         margin-left:calc(2 * var(--space-12));
@@ -2017,7 +2021,7 @@ body:has(#login-modal.modal) .modal-backdrop {
 
 
 .availavility-v2 .about-section {
-    background: linear-gradient(to right, rgba(51, 51, 51, 1) 59%, #05162A 59%);
+    background: linear-gradient(to right, rgb(41 41 41) 59%, #05162A 59%);
 
     @media (max-width:992px) {
         background: linear-gradient(to bottom, rgba(51, 51, 51, 1) 59%, #05162A 59%);
