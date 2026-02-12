@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#777777">
+    <meta name="theme-color" content="#ffffff">
+    <title>Imperial CFS, Inc - Availability</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="Content/css.css">
+    <link href="Content/Modal?v=7bMKDYCypKgFwJtiq8nBtCcJODJS6lCOLoIxVHt-al01" rel="stylesheet"/>
+    <link href="Content/extra.css" rel="stylesheet"/>
+    <link href="Content/icon?v=cVwA9pPiyb_rieloDJQKuVXzDQ3x5fT9A_F7NWasIVs1" rel="stylesheet"/>
+    <link rel="stylesheet" href="Content/css.css">
+    <link rel="stylesheet" href="Content/design-system.css">
+    <link rel="stylesheet" href="Content/custom-styles.css">
+</head>
+<body class="availavility-v2 container-level-release">
+<header id="header">
+    <div class="availability-menu">
+        <div class="availability-menu-top">
+            <div class="container-fluid">
+                <div class="row align-items-center position-relative">
+                    <div class="col col-md-auto col-sm-8 d-flex gap-16 justify-start items-center">
+                        
+                        <div class="nav-logo">
+                            <a href="home.html">
+                                <img alt="IMPERIAL CFS" src="/_images/logo-w.png">
+                            </a>
+                        </div>
+
+                        <ul class="nav text-white font-family-archivo text-uppercase d-none d-xl-flex ms-4">
+                            <li class="nav-item">
+                                <a class="nav-link active link-light" aria-current="page" href="#">Inland WHSE list</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" href="#">WHSE In / Out</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" href="#">Transit Schedule</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link link-light dropdown-toggle text-white font-family-archivo text-uppercase" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                                    More
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Inland WHSE list</a></li>
+                                    <li><a class="dropdown-item" href="#warehouse-in-out">WHSE In / Out</a></li>
+                                    <li><a class="dropdown-item" href="#">Transit Schedule</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="dropdown d-xl-none ms-3">
+                            <button class="btn btn-outline-light btn-sm dropdown-toggle font-family-archivo text-uppercase rounded-full" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Useful links
+                            </button>
+                            <ul class="dropdown-menu shadow">
+                                <li><a class="dropdown-item" href="#">Inland WHSE list</a></li>
+                                <li><a class="dropdown-item" href="#">WHSE In / Out</a></li>
+                                <li><a class="dropdown-item" href="#">Transit Schedule</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col col-sm-auto d-flex items-center justify-end gap-4 search-bar">
+                        <button type="button" class="btn btn-outline-light btn-sm rounded-full transition hover-scale-97 font-family-archivo text-nowrap" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Search</button>
+                        <div class="row collapse" id="collapseExample">
+                            <div class="nav-search-bar col-12">
+                                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo"><b class="hide-mobile">New Search:</b>
+                                    <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
+                                    <option selected="selected" value="mbl">Master Bill</option>
+                                    <option value="cntr">Container Number</option>
+                                    <option value="ams">AMS House Bill</option>
+                                    <option value="it">Inbond Number</option>
+                                    <option value="go">GO Number</option>
+                                    </select>
+                                </label> 
+                                <label for="">
+                                    <input class="rounded" type="text">
+                                </label>
+                                <button type="button" class="btn btn-primary btn-sm bg-navy-700 text-uppercase text-xs rounded">Search <i class="bi bi-search text-xs ml-2"></i></button>
+                                <button type="button" class="btn-close" aria-label="Close"  data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-md-auto col-sm-auto ar ms-auto">
+                        <div class="availability-menu-link clears">
+                            <div class="hamburger-menu fr">
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="availability-menu-child">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li>
+                                <a href="our-services.html">Our Services</a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="our-services.html">CFS</a></dd>
+                                    <dd><a href="inland.html">inland consolidation</a></dd>
+                                    <dd><a href="trucking.html">trucking</a></dd>
+                                    <dd><a href="technology.html">technology</a></dd>
+                                    <dd><a href="security.html">additional services</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="/Availability/Index/mbl/TCLU1228380">Availability </a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/Availability/Pickup">PICK-UP HOURS</a></dd>
+                                    <dd><a href="/Availability/TerminalStatus">TERMINAL STATUS</a></dd>
+                                    <dd><a href="/Availability/TerminalSchedule" target="_blank">TERMINAL SCHEDULE</a></dd>
+                                    <dd><a href="/Availability/CFSCharges" target="_blank">CFS Charges</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="/IPI/Index/mbl/TCLU1228380">IPI Tracing</a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/IPI/Inland">INLAND WAREHOUSE LIST</a></dd>
+                                    <dd><a href="/IPI/Warehouse">WAREHOUSE IN / OUT</a></dd>
+                                    <dd><a href="/IPI/Transit">TRANSIT SCHEDULE</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="/WarehouseFees/Index/mbl/TCLU1228380">Pay Warehouse Fees</a></li>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="/Home/News/5">News</a></li>
+                            <li><a href="forms.html">Forms</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <a href="/Home/CustomerLogin">Login</a>                                
+                            <li><a href="tel:(310) 768-8188"><i class="fa fa-phone"></i>(310) 768-8188</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="breadcrums pt-4 mt-16"> <!-- BREADCRUMS -->
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#"><i class="bi bi-house-door-fill"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Availability</a></li>
+                    <li class="breadcrumb-item"><a href="#">Container level release</a></li>
+                </ol>
+            </nav>
+        </div>
+    </div>  
+    </div>  
+</section>
+<section> <!-- TITLE -->
+    <div class="container-fluid">
+        <div class="row justify-content-between">
+            <div class="col-auto">
+                <h1 class="text-3xl font-family-dm-serif text-navy-800">Container Level Release</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mbl-details">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mb-8">
+                <h1 class="text-3xl font-family-dm-serif text-navy-800 mb-4">Search results</h1>
+                <p class="type-h6-alt text-muted">Your search for <b>CONT: MNSLOS2507071”</b> returned the following. <small class="text-navy-450">(You can release more than one item at a time.)</small></p>
+            </div>
+
+            <!-- Container / MBL Item -->
+            <div>
+                <div class="list-item container-list-item hbl-list-grid d-flex justify-content-start px-3 gap-3 align-items-center mb-3">
+                    <label class="form-check-label" for="checkDefault">
+                        <input class="form-check-input js-check-item mt-0" type="checkbox" value="" id="checkDefault"></label>
+                    <div class="d-flex justify-content-center align-items-center gap-2 detail-pair mr-4">
+                        <p class="detail-label">Cont. </p>
+                        <span class="detail-value fw-bold">TCLU1228380</span>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center gap-2 detail-pair">
+                        <p class="detail-label">MBL </p>
+                        <span class="detail-value fw-bold">TCLU1228380</span>
+                    </div>
+                </div>
+            </div> <!-- Container / MBL Item -->
+
+            <!-- HBL Item -->
+            <div>
+                <div class="list-item hbl-list-item hbl-list-grid d-inline-flex justify-content-start px-3 gap-3 align-items-center">
+                    <label class="form-check-label" for="checkDefault">
+                        <input class="form-check-input js-check-item mt-0" type="checkbox" value="" id="checkDefault"></label>
+                    <div class="d-flex justify-content-center align-items-center gap-2 detail-pair mr-4">
+                        <p class="detail-label">HBL. </p>
+                        <span class="detail-value fw-bold">TCLU1228380</span>
+                    </div>
+                </div>
+            </div> <!-- HBL Item -->
+
+            <div>
+                <div class="ams-list-header ams-header-grid">
+                    <div></div>
+                    <div></div>
+                    <div class="d-flex justify-content-end px-2 text-navy-500 hide-header  text-end">Qty.</div>
+                    <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">CBM</div>
+                    <div class="d-flex justify-content-end px-2 text-navy-500 hide-header">LBS</div>
+                    <div class="d-flex justify-content-start px-2 text-navy-500 hide-header">IT/ENTRY No.</div>
+                    <div class="d-flex justify-content-center px-2 text-navy-500 hide-header">OBL</div>
+                </div>
+            </div>
+
+            <!-- Wrapper for all AMS items within the HBL -->
+            <div class="ams-list-wrapper">
+                <!-- AMS list item -->
+                <div class="ams-list-item list-item ams-list-grid">
+                    <div><label class="form-check-label" for="checkDefault">
+                        <input class="form-check-input js-check-item mb-1" type="checkbox" value="" id="checkDefault"></label>
+                    </div>
+                    <div class="d-flex fw-bold hbl"><p class="detail-label mr-2 fw-regular">AMS.</p>MNRQLOS2507070</div>
+                    <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">QTY</p>72</div>
+                    <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM</p>2934.20</div>
+                    <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS</p>2934.20</div>
+                    <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.</p>9GK-0114066-8</div>
+                    <div class="d-flex justify-content-center flex-column align-items-center">
+                        <p class="hide-label">OBL:</p>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <p class="hide-label">OBL</p>
+                            <i class="text-danger">
+                                <svg style="width:1.5rem" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"></path></svg>
+                            </i>
+                        </div>
+                    </div>
+                </div>
+                <!-- AMS list item -->
+            </div>
+        </div>
+    </div> 
+</section>
+<footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-top">
+                        <img src="/_images/footer-logo.png">
+                    </div>
+                    <div class="footer-main">
+                        <div class="row">
+                            <div class="col-12 col-sm-3 col-md-3">
+                                <ul>
+                                    <li><a href="/OurServices" target="_blank">Our Services</a></li>
+                                    <li><a href="/Availability/Index/mbl/TCLU1228380" target="_blank">Availability</a></li>
+                                    <li><a href="/IPI/Index/mbl/TCLU1228380" target="_blank">IPI Tracing</a></li>
+                                    <li><a href="/Charges/Guarantee_Whs_Fee/" target="_blank">Guarantee Imperial CFS Fees</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-2">
+                                <ul>
+                                    <li><a href="/Home/CustomerLogin">Login</a></li>
+                                    <li><a href="/Home/SiteMap" target="_blank">Site Map</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-2">
+                                <ul>
+                                    <li><a href="/Home/About" target="_blank">About Us</a></li>
+                                    <li><a href="/Home/News" target="_blank">News</a></li>
+                                    <li><a href="/Home/Forms" target="_blank">Forms</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-5">
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <dl>
+                                            <dt>Location</dt>
+                                            <dd>
+                                                1000 Francisco St<br>
+                                                Torrance CA 90502 USA
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <dl>
+                                            <dt>Phone</dt>
+                                            <dd>310-768-8188</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>Fax</dt>
+                                            <dd>310-527-7288</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="row">
+                            <div class="col-12 col-sm-4 al">
+                                <p>© 2025 Cargovation LLC All Rights Reserved.</p>
+                                <!--h1>Brought to you by kchen9 </h1-->
+                            </div>
+                            <div class="col-12 col-sm-4 ar">
+                                <p><a href="/Home/PrivacyPolicy">Privacy Policy</a></p>
+                            </div>
+                            <div class="col-12 col-sm-4 ar">
+                                <p><a href="/Home/Terms">Terms and Conditions</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- Back to Top Button -->
+<button type="button" 
+        id="backToTopBtn" 
+        class="btn btn-dark rounded-pill position-fixed bottom-0 start-0 m-3 shadow d-none" 
+        style="z-index: 1080; transition: opacity 0.3s;"
+        onclick="scrollToTop()">
+    <i class="bi bi-arrow-up me-2"></i>Back to top
+</button>
+<script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+<script src="/bundles/main_jquery?v=pcTLGo70Ebj-7wZHfj5-OozMeYDuBTaJgLdp-yYJn8s1"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    $('#Number').keypress(function (event){
+        if (event.keyCode === 13) {
+            var type = $('#Type').val();
+            var number = $('#Number').val();
+            var controller = "Availability";
+            window.location = "/" + controller + "/Index/" + type + "/" + number
+        }
+    })
+    var currentpath = "Availability"+"/"+"Index";
+</script>
+<script>
+    var controllername = '/Availability';
+    var ajax_url = controllername+'/SearchAjax/ ';
+</script>
+<script src="/bundles/AvailabilityViewer_Ajax?v=VgNFlR4TbTdLyioL1u0joKY-tpXbFdUn0Toxg6Z7ehQ1"></script>
+<script src="/bundles/Modal?v=6X2XgyWba97tfyPCPLvNNu3Nfognwesw8t4cSNPp6OA1"></script>
+<script>
+    $(function() {
+        $(".hamburger-menu").on("click", function() {
+            $(".bar").toggleClass("animate");
+            $(".availability-menu").toggleClass("open");
+            $(".availability-menu-child").stop(!0, !1).slideToggle(300)
+        });
+        $(".availability-menu-child ul>li i").click(function() {
+            $(this).parents("li").toggleClass("active");
+            $(this).parents("li").find(".mob-sub-menu").stop(!0, !1).slideToggle();
+            $(this).parents("li").siblings("li").find(".mob-sub-menu").slideUp()
+        });
+        $(window).width() >= 768 ? $(".home-section-04-box").css("margin-top", $(".home-section-04-box").height() * -1) : $(".home-section-04-box").css("margin-top", 0)
+    })
+</script>
+<script>
+    // FIX 2: Added the filterTable function below.
+    
+    /* NEW FUNCTION: Filter Table Rows */
+    function filterTable() {
+        // 1. Get input value and filter string
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("destinationSearch"); // Corrected ID
+        filter = input.value.toUpperCase();
+        
+        // 2. Get the table body rows, assuming the table ID is "destinationTable"
+        table = document.getElementById("destinationTable");
+        tr = table.getElementsByTagName("tr"); // Gets all <tr> tags, including header
+
+        // 3. Loop through all table rows (starting at index 1 to skip the <thead>)
+        for (i = 1; i < tr.length; i++) {
+            // Get the <td> element for the 'Destination' column. This is the first column (index 0).
+            td = tr[i].getElementsByTagName("td")[0]; 
+
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                
+                // 4. Check if the text matches the filter
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = ""; // Show row
+                } else {
+                    tr[i].style.display = "none"; // Hide row
+                }
+            }       
+        }
+    }
+    
+    // Existing searchAccordion function (renamed and kept out of scope to avoid confusion)
+    function searchAccordion() {
+        // This function is no longer needed on this specific page with a table filter
+    }
+</script>
+<script>
+    // Back to top button logic
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    window.onscroll = function() {
+        // Calculate 24rem in pixels dynamically
+        const remInPixels = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const threshold = 24 * remInPixels;
+
+        if (document.body.scrollTop > threshold || document.documentElement.scrollTop > threshold) {
+            backToTopBtn.classList.remove("d-none");
+        } else {
+            backToTopBtn.classList.add("d-none");
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>

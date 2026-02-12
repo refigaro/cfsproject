@@ -1737,8 +1737,11 @@ body:has(#login-modal.modal) .modal-backdrop {
                 td {padding-bottom:var(--space-2);}padding-bottom:var(--space-2);
             }
 
-            .table-striped>tbody>tr:nth-of-type(odd)>* {
+            .table-striped>tbody>tr:nth-of-type(even)>* {
                 --bs-table-bg-type: var(--clr-azure-99)!important;
+            }
+            .table-striped>tbody>tr:nth-of-type(odd)>* {
+                --bs-table-bg-type: white!important;
             }
 
         }
@@ -1749,6 +1752,94 @@ body:has(#login-modal.modal) .modal-backdrop {
     background-color: white !important;
     --bs-table-bg-type:white!important;
 }
+
+.container-level-release {
+
+    .list-item {
+        background: var(--clr-white);
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: .5rem;
+        font-family: var(--font-primary);
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color .3s ease;
+        min-height: 3rem;
+
+        & p,span { line-height:10%; }
+    }
+
+    .container-list-item {
+        background-color: #C8D1DE;
+    }
+    
+    .hbl-list-item {
+        background-color:var(--clr-azure-89);
+        margin-left:var(--space-12);
+        position:relative;
+
+        &::before {
+            content: "\F132"; 
+            font-family: "bootstrap-icons";
+            left: calc(var(--space-8) * -1);
+            vertical-align: middle;
+            position:absolute;
+            color:#c0c0c0;
+        }
+    }
+
+    .ams-list-wrapper {
+        margin-top:-.5rem;
+    }
+
+    .ams-list-header {
+        font-family: var(--font-secondary);
+        font-size: var(--font-size-xs);
+        line-height: 1em;
+        position: relative;
+        bottom: var(--space-4);
+    }
+
+    .ams-list-item {
+        background: white;
+        border: 0.0625rem solid var(--clr-azure-89);
+        border-radius: .5rem;
+        font-family: var(--font-primary);
+        align-items: center;
+        transition: background-color .3s ease;
+        box-shadow: var(--shadow-md);
+        position: relative;
+
+        &::before {
+            content: "\F132"; 
+            font-family: "bootstrap-icons";
+            left: calc(var(--space-8) * -1);
+            vertical-align: middle;
+            position:absolute;
+            color:#c0c0c0;
+
+        }
+
+        div:nth-child(2) {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .ams-header-grid, .ams-list-grid {
+        display: inline-grid;
+        grid-template-columns: 2.9rem 10rem 5rem 5rem 5rem 1fr 6rem;
+        grid-template-rows: auto;
+        gap: 0;
+        align-items: center;
+        justify-content: stretch;
+        width:auto;
+
+        max-width:calc(100% - (2 * var(--space-12)));
+        margin-left:calc(2 * var(--space-12));
+    }
+}
+
 
 
 /* --------- Information / Marketing Pages  ------- */
