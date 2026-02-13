@@ -154,7 +154,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#"><i class="bi bi-house-door-fill"></i></a></li>
-                    <li class="breadcrumb-item"><a href="#">Availability</a></li>
+                    <li class="breadcrumb-item"><a href="#">My Account</a></li>
                     <li class="breadcrumb-item"><a href="#">Container level release</a></li>
                 </ol>
             </nav>
@@ -168,19 +168,36 @@
             <div class="col-auto">
                 <h1 class="text-3xl font-family-dm-serif text-navy-800">Container Level Release</h1>
             </div>
+            <div class="col-auto ms-auto justify-end text-end d-flex flex-column gap-2 shipment-search">
+                <h2 class="text-navy-450">Search your Shipment</h2>
+                <div class="d-flex gap-2">
+                    <select class="form-control rounded d-inline-block w-auto" id="type" name="type">
+                        <option selected="selected" value="mbl">Master Bill</option>
+                        <option value="cntr">Container Number</option>
+                    </select>
+                    <label for="">
+                        <input class="rounded form-control d-inline-block w-auto" type="text">
+                    </label>
+                    <button id="js-btn-1" type="button" class="btn btn-primary bg-navy-700 text-uppercase text-xs rounded text-nowrap">Search <i class="bi bi-search text-xs ml-2"></i></button>
+                </div>
+                <div class="w-100 mb-3">
+                    <p class="text-sm d-flex align-items-center bg-warning-light rounded py-1 px-2 text-warning-dark mt-2 gap-1" style="margin-top:3rem;margin-bottom:-1.5rem;"><i class="bi bi-info-circle-fill me-2 text-2xl text-danger"></i>Not a valid <b> MBL:
+                            [user's input]</b>. Please verify and try again.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 <section class="mbl-details">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 mb-8">
-                <h1 class="text-3xl font-family-dm-serif text-navy-800 mb-4">Search results</h1>
+            <div class="col-12 col-lg-9 col-xl-8 mx-auto mb-8">
+                <h1 class="text-2xl font-family-dm-serif text-navy-800 mb-4">Search results</h1>
                 <p class="type-h6-alt text-muted">Your search for <b>CONT: MNSLOS2507071”</b> returned the following. <small class="text-navy-450">(You can release more than one item at a time.)</small></p>
             </div>
 
             <!-- Container / MBL Item -->
-            <div>
+            <div  class="col-12 col-lg-9 col-xl-8 mx-auto mb-8">
                 <div class="list-item container-list-item hbl-list-grid d-flex justify-content-start px-3 gap-3 align-items-center mb-3">
                     <label class="form-check-label" for="checkDefault">
                         <input class="form-check-input js-check-item mt-0" type="checkbox" value="" id="checkDefault"></label>
@@ -193,10 +210,9 @@
                         <span class="detail-value fw-bold">TCLU1228380</span>
                     </div>
                 </div>
-            </div> <!-- Container / MBL Item -->
+                <!-- Container / MBL Item -->
 
-            <!-- HBL Item -->
-            <div>
+                <!-- HBL Item -->
                 <div class="list-item hbl-list-item hbl-list-grid d-inline-flex justify-content-start px-3 gap-3 align-items-center">
                     <label class="form-check-label" for="checkDefault">
                         <input class="form-check-input js-check-item mt-0" type="checkbox" value="" id="checkDefault"></label>
@@ -204,10 +220,9 @@
                         <p class="detail-label">HBL. </p>
                         <span class="detail-value fw-bold">TCLU1228380</span>
                     </div>
-                </div>
-            </div> <!-- HBL Item -->
+                </div><!-- HBL Item -->
 
-            <div>
+                <!-- AMS List Header -->
                 <div class="ams-list-header ams-header-grid">
                     <div></div>
                     <div></div>
@@ -217,31 +232,37 @@
                     <div class="d-flex justify-content-start px-2 text-navy-500 hide-header">IT/ENTRY No.</div>
                     <div class="d-flex justify-content-center px-2 text-navy-500 hide-header">OBL</div>
                 </div>
-            </div>
 
-            <!-- Wrapper for all AMS items within the HBL -->
-            <div class="ams-list-wrapper">
-                <!-- AMS list item -->
-                <div class="ams-list-item list-item ams-list-grid">
-                    <div><label class="form-check-label" for="checkDefault">
-                        <input class="form-check-input js-check-item mb-1" type="checkbox" value="" id="checkDefault"></label>
-                    </div>
-                    <div class="d-flex fw-bold hbl"><p class="detail-label mr-2 fw-regular">AMS.</p>MNRQLOS2507070</div>
-                    <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">QTY</p>72</div>
-                    <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM</p>2934.20</div>
-                    <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS</p>2934.20</div>
-                    <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.</p>9GK-0114066-8</div>
-                    <div class="d-flex justify-content-center flex-column align-items-center">
-                        <p class="hide-label">OBL:</p>
-                        <div class="d-flex justify-content-center align-items-center">
-                            <p class="hide-label">OBL</p>
-                            <i class="text-danger">
-                                <svg style="width:1.5rem" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"></path></svg>
-                            </i>
+                <!-- Wrapper for all AMS items within the HBL -->
+                <div class="ams-list-wrapper">
+                    <!-- AMS list item -->
+                    <div class="ams-list-item list-item ams-list-grid">
+                        <div><label class="form-check-label" for="checkDefault">
+                            <input class="form-check-input js-check-item mb-1" type="checkbox" value="" id="checkDefault"></label>
+                        </div>
+                        <div class="d-flex fw-bold hbl"><p class="detail-label mr-2 fw-regular">AMS.</p>MNRQLOS2507070</div>
+                        <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">QTY</p>72</div>
+                        <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">CBM</p>2934.20</div>
+                        <div class="d-flex justify-content-end px-2 flex-column text-end"><p class="hide-label">LBS</p>2934.20</div>
+                        <div class="d-flex justify-content-end px-2 flex-column"><p class="hide-label">IT/ENTRY No.</p>9GK-0114066-8</div>
+                        <div class="d-flex justify-content-center flex-column align-items-center">
+                            <p class="hide-label">OBL:</p>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <p class="hide-label">OBL</p>
+                                <i class="text-danger">
+                                    <svg style="width:1.5rem" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"></path></svg>
+                                </i>
+                            </div>
                         </div>
                     </div>
+                    <!-- AMS list item -->
+                 </div>
+                <div class="d-flex justify-content-start flex-row align-items-center gap-2 mt-12 px-1">
+                    <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Release Selected</b></button>
+                    <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Cancel Selected</b></button>
+                    <p class="text-success ms-auto">Successfully released!</p> <!-- KEVIN: this is to confirm Successful release-->
+                    <p class="text-danger ms-auto">Error. Not released! Please <a href="contact.html" class="link-danger link-offset-2" target="_blank">contact us.</a></p> <!-- KEVIN: this is to confirm Successful release-->
                 </div>
-                <!-- AMS list item -->
             </div>
         </div>
     </div> 

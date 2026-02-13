@@ -1782,6 +1782,7 @@ body:has(#login-modal.modal) .modal-backdrop {
             content: "\F132"; 
             font-family: "bootstrap-icons";
             left: calc(var(--space-8) * -1);
+            top:var(--space-2);
             vertical-align: middle;
             position:absolute;
             color:#c0c0c0;
@@ -1814,6 +1815,7 @@ body:has(#login-modal.modal) .modal-backdrop {
             content: "\F132"; 
             font-family: "bootstrap-icons";
             left: calc(var(--space-8) * -1);
+            top:var(--space-2);
             vertical-align: middle;
             position:absolute;
             color:#c0c0c0;
@@ -1858,6 +1860,12 @@ body:has(#login-modal.modal) .modal-backdrop {
 
     & .row .hero-text {
         min-height: 30rem;
+    }
+
+    @media (min-width:1180px) {
+        h2 .no__wrap {
+            white-space: nowrap;
+        }
     }
 
     @media (max-width:992px) {
