@@ -1866,11 +1866,18 @@ body:has(#login-modal.modal) .modal-backdrop {
         h2 .no__wrap {
             white-space: nowrap;
         }
+
+        .container-fluid {
+            padding-top: var(--space-12);
+        }
     }
 
     @media (max-width:992px) {
         min-height: calc(60vh - 8.75rem);
-        padding-top: 3rem;
+        padding-top: 4.3125rem;
+        padding-bottom: 1rem;
+
+        .tracking-widget { margin-top: var(--space-6)!important; }
 
         & .row .hero-text {
             min-height: calc(50vh - 8.75rem);
@@ -1881,6 +1888,24 @@ body:has(#login-modal.modal) .modal-backdrop {
     @media (max-width:768px) {
         background-image: linear-gradient(to bottom, rgba(20, 38, 79, 0.9) 20%, rgba(20, 38, 79, 0) 80%), url("../_images/hero-mobile.webp");
         background-position: center bottom;
+
+        #trackingTabs button {
+            padding: var(--space-3) var(--space-1)!important;
+            text-align: center;
+            i {
+                display:inline-block; 
+                width:100%;
+                margin-bottom: var(--space-1);
+            }
+        }
+
+        #trackingTabsContent {
+            padding: var(--space-4);
+        }
+
+        .search-container, .bg-warning-light {
+            flex-direction: column;
+        }
     }
 
     @media (max-width:576px) {
@@ -2122,7 +2147,7 @@ body:has(#login-modal.modal) .modal-backdrop {
 /* Navbar in marketing pages */
 
 .marketing .pc-menu {
-    border-bottom: 1px solid var(--clr-navy-500);
+    border-bottom: 1px solid var(--clr-navy-200);
 }
 
 .availavility-v2.marketing #header {
@@ -2217,14 +2242,14 @@ body .pc-menu {
 /* 1. Base Header Styling (The "Scrolled" / Default State) */
 .pc-menu {
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* Top Bar: Dark Blue Background by default */
 .header-top {
     transition: background-color 0.3s ease;
     background-color: var(--clr-azure-09);
-}
+} 
 
 .header-top a {
     color: rgba(255, 255, 255, 0.8);
@@ -2300,6 +2325,11 @@ body.on-top .pc-logo img {
     filter: brightness(0) invert(1);
 }
 
+.marketing .pc-menu .sub-menu {
+    dd {
+        padding: var(--space-1) var(--space-1);
+    }
+}
 
 
 .news-ticker .border-start.border-secondary {

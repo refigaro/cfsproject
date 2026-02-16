@@ -673,3 +673,7 @@ input[type="text"][readonly]:focus {
     border: 1px solid #ced4da!important;
     background-color: initial!important;
 }
+
+.btn-sm {
+    font-size: var(--font-size-sm)!important;
+}

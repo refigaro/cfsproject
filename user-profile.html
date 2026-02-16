@@ -420,69 +420,77 @@
                         <!-- User Info -->
                         <section id="user-info" class="mb-12">
                             <h2 class="section-title type-h4 mb-1">User Information</h2>
-                            <p class="text-navy-450 mb-3 font-regular font-family-sora text-sm">You can edit your profile information in this section.
                             </p>
                             <div class="row mt-4">
                                 <div class="col-md-6 mb-4">
-                                    <div class="p-5 bg-navy-100 rounded-4 h-100">
-                                        <div class="d-flex flex-column gap-4 w-100 h-100 justify-content-between">
-                                            <div class="col-12 d-flex flex-column gap-1">
-                                                <label class="form-label mb-2">Username:</label>
-                                                <input type="text" id="user-username"
-                                                    class="form-control rounded px-2 fw-bold bg-light"
-                                                    placeholder="Enter a username" readonly disabled>
-                                                <span id="username-hint"
-                                                    class="text-end text-sm my-0 text-navy-450">This can't be
-                                                    modified</span>
-                                            </div>
-
-                                            <div class="col-12 d-flex flex-column gap-3 mt-auto pt-2  pt-6 border-top border-dark-subtle">
-                                                <label class="form-label mb-0">Password:</label>
-                                                <input type="password" id="user-password"
-                                                    class="form-control rounded px-2 fw-bold">
-                                            </div>
-                                            <div class="col-12 d-flex flex-column gap-3">
-                                                <label class="form-label mb-0">Confirm Password:</label>
-                                                <input type="password" id="user-confirm-password"
-                                                    class="form-control rounded px-2 fw-bold">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4">
+                                    <h5 class="text-muted mb-3 font-regular font-family-sora text-sm">Manage Your Password</h5>
                                     <div class="p-5 bg-navy-100 rounded-4">
-                                        <div class="d-flex flex-column gap-4 w-100">
-                                            <div class="col-12 d-flex flex-column gap-3">
-                                                <label class="form-label mb-0">First Name:</label>
-                                                <input type="text" id="user-first-name"
-                                                    class="form-control rounded px-2 fw-bold"
-                                                    placeholder="Enter a first name">
+                                        <form class="h-100 d-flex flex-column justify-content-between align-items-end">
+                                            <div class="d-flex flex-column gap-4 w-100 justify-content-between mb-4">
+                                                <div class="col-12 d-flex flex-column gap-1">
+                                                    <label class="form-label mb-2">Username:</label>
+                                                    <input type="text" id="user-username"
+                                                        class="form-control rounded px-2 fw-bold bg-light"
+                                                        placeholder="Enter a username" readonly disabled>
+                                                    <span id="username-hint"
+                                                        class="text-end text-sm my-0 text-navy-450">This can't be
+                                                        modified</span>
+                                                </div>
+                                                <div class="col-12 d-flex flex-column gap-3  border-dark-subtle">
+                                                    <label class="form-label mb-0">Current Password:</label>
+                                                    <input type="password" id="user-current-password"
+                                                        class="form-control rounded px-2 fw-bold">
+                                                </div>
+                                                <div class="col-12 d-flex flex-column gap-3 pt-2  pt-5 border-top border-dark-subtle">
+                                                    <label class="form-label mb-0">New Password:</label>
+                                                    <input type="password" id="user-new-password"
+                                                        class="form-control rounded px-2 fw-bold">
+                                                </div>
+                                                <div class="col-12 d-flex flex-column gap-3">
+                                                    <label class="form-label mb-0">Confirm Password:</label>
+                                                    <input type="password" id="user-confirm-password"
+                                                        class="form-control rounded px-2 fw-bold">
+                                                </div>
                                             </div>
-                                            <div class="col-12 d-flex flex-column gap-3">
-                                                <label class="form-label mb-0">Last Name:</label>
-                                                <input type="text" id="user-last-name"
-                                                    class="form-control rounded px-2 fw-bold"
-                                                    placeholder="Enter a last name">
-                                            </div>
-                                            <div class="col-12 d-flex flex-column gap-3">
-                                                <label class="form-label mb-0">Display Name:</label>
-                                                <input type="text" id="user-display-name"
-                                                    class="form-control rounded px-2 fw-bold"
-                                                    placeholder="Enter a display name">
-                                            </div>
-                                            <div class="col-12 d-flex flex-column gap-3">
-                                                <label class="form-label mb-0">Email:</label>
-                                                <input type="email" id="m-email"
-                                                    class="form-control rounded px-2 fw-bold"
-                                                    placeholder="Enter an email">
-                                            </div>
-                                        </div>
-                                        
+                                            <button type="button" id="btn-save" class="btn btn-accent col rounded-full py-2 px-3 text-base">Save User Info
+                                                <i class="bi bi-check-lg"></i></button>
+                                        </form>
                                     </div>
                                 </div>
-                                <div class="col-12 mt-0 text-end">
-                                    <button type="button" id="btn-save" class="btn btn-accent col rounded-full py-2 px-3 text-base">Save User Info
-                                                    <i class="bi bi-check-lg"></i></button>
+                                <div class="col-md-6 mb-4 d-flex flex-column justify-content-between">
+                                    <h5 class="text-muted mb-3 font-regular font-family-sora text-sm">Manage Your Information</h5>
+                                    <div class="p-5 bg-navy-100 rounded-4 h-100">
+                                        <form class="h-100 d-flex flex-column justify-content-between align-items-end">
+                                            <div class="d-flex flex-column gap-4 w-100 mb-4">
+                                                <div class="col-12 d-flex flex-column gap-3">
+                                                    <label class="form-label mb-0">First Name:</label>
+                                                    <input type="text" id="user-first-name"
+                                                        class="form-control rounded px-2 fw-bold"
+                                                        placeholder="Enter a first name">
+                                                </div>
+                                                <div class="col-12 d-flex flex-column gap-3">
+                                                    <label class="form-label mb-0">Last Name:</label>
+                                                    <input type="text" id="user-last-name"
+                                                        class="form-control rounded px-2 fw-bold"
+                                                        placeholder="Enter a last name">
+                                                </div>
+                                                <div class="col-12 d-flex flex-column gap-3">
+                                                    <label class="form-label mb-0">Display Name:</label>
+                                                    <input type="text" id="user-display-name"
+                                                        class="form-control rounded px-2 fw-bold"
+                                                        placeholder="Enter a display name">
+                                                </div>
+                                                <div class="col-12 d-flex flex-column gap-3">
+                                                    <label class="form-label mb-0">Email:</label>
+                                                    <input type="email" id="m-email"
+                                                        class="form-control rounded px-2 fw-bold"
+                                                        placeholder="Enter an email">
+                                                </div>
+                                            </div>
+                                            <button type="button" id="btn-save" class="btn btn-accent d-inline-block rounded-full py-2 px-3 text-base mt-auto">Save User Info
+                                                <i class="bi bi-check-lg"></i></button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </section>
