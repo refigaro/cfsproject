@@ -2866,7 +2866,8 @@ input::placeholder {
     }
 }
 
-table.table.table-striped.no-footer.dataTable {
+table.table.table-striped.no-footer.dataTable,
+table.data.table.table-striped {
     font-family: var(--font-primary);
 
     th,
@@ -2890,7 +2891,8 @@ table.table.table-striped.no-footer.dataTable {
 
     tbody tr td {
         vertical-align: middle;
-        font-family: var(--font-primary);
+        font-family: var(--font-primary)!important;
+        font-weight: normal!important;
 
         & a {
             color: var(--clr-azure-42) !important;
@@ -2990,6 +2992,45 @@ table.table-striped.no-footer.dataTable tbody tr td {
     float: none;
     text-align: left;
     padding-top: 0.25em;
+}
+
+.Availability-search {
+    input[type="submit"], 
+    input[type="text"], 
+    input[type="search"],
+    .btn,  
+    select {
+        border-radius: var(--border-radius-sm)!important;
+        min-height: 2rem;
+        font-size: 1rem!important;
+        font-family: var(--font-primary)!important;
+    }
+
+    input[type="text"], 
+    input[type="search"],  
+    select {
+        padding: 0.25rem;
+        border: .0625rem solid var(--clr-azure-80)!important;
+    }
+
+}
+
+.Availability-info,
+.Availability-main {
+
+    .dataTables_filter input[type="search"],
+    select {
+        border-radius: var(--border-radius-sm)!important;
+        min-height: 2rem;
+        font-size: 1rem!important;
+        font-family: var(--font-primary)!important;
+        padding: 0.25rem!important;
+        border: .0625rem solid var(--clr-azure-80)!important;
+    }
+}
+
+.reports-banner.ac {
+    text-align:left;
 }
 
 /* Button hover effect Microinteraction except for disabled buttons */
