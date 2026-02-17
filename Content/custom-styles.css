@@ -2397,6 +2397,10 @@ body.on-top .pc-logo img {
     p {
         max-width: 50%;
     }
+
+    &.reports {
+        min-height: calc(50vh - 150px);
+    }
 }
 
 .mbl-details.charges-page {
@@ -2840,10 +2844,27 @@ input::placeholder {
 }
 
 /* User Management Page */
-.profile-page {}
 
 /* Tables */
 /* KEVIN: This are the styles for the Report Tables */
+
+.table-responsive:has(>div>table.dataTable) {
+    padding: var(--space-8) 0;
+}
+
+.dataTables_wrapper {
+    
+    .dataTables_length,
+    .dataTables_filter {
+        margin-bottom:var(--space-6);
+
+        label {
+            display:flex;
+            align-items:center;
+            gap:var(--space-3);
+        }
+    }
+}
 
 table.table.table-striped.no-footer.dataTable {
     font-family: var(--font-primary);
@@ -2864,11 +2885,12 @@ table.table.table-striped.no-footer.dataTable {
     tbody tr>td:first-child {
         padding-right: var(--space-8);
         font-weight: bolder;
-        font-family: var(--font-secondary);
+        font-family: var(--font-secondary)!important;
     }
 
-    tbody td {
+    tbody tr td {
         vertical-align: middle;
+        font-family: var(--font-primary);
 
         & a {
             color: var(--clr-azure-42) !important;
@@ -2886,12 +2908,12 @@ table.table.table-striped.no-footer.dataTable {
     }
 
     &>tbody>tr:nth-of-type(odd) {
-        background-color: var(--clr-azure-89) !important;
+        background-color: var(--clr-azure-95) !important;
     }
 
     &>tbody>tr:nth-of-type(odd)>* {
         --bs-table-color-type: var(--bs-table-striped-color);
-        --bs-table-bg-type: var(--clr-azure-89) !important;
+        --bs-table-bg-type: var(--clr-azure-95) !important;
     }
 
     >tbody>tr:hover>* {
@@ -2931,12 +2953,12 @@ table.table.table-striped.no-footer.dataTable {
     /* KEVIN: This is the width of the second sticky column */
     tr th:nth-child(2),
     tr td:nth-child(2) {
-        left: 9.25rem;
+        left: 9.95rem;
         /* Width of the first column */
     }
 
     tbody>tr:nth-of-type(even)>td:nth-child(-n+2) {
-        background-color: var(--clr-azure-95) !important;
+        background-color: white !important;
     }
 
     thead th:nth-child(-n+2) {
@@ -2959,6 +2981,16 @@ table.table.table-striped.no-footer.dataTable {
 
 }
 
+table.table-striped.no-footer.dataTable tbody tr td {
+    font-family: var(--font-primary)!important;
+    font-weight:400!important;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    float: none;
+    text-align: left;
+    padding-top: 0.25em;
+}
 
 /* Button hover effect Microinteraction except for disabled buttons */
 
