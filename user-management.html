@@ -252,18 +252,20 @@
                                                             class="form-control rounded px-2 fw-bold"
                                                             placeholder="Enter an email">
                                                     </div>
-                                                    <div class="col-12 d-flex flex-column gap-3">
-                                                        <label class="form-label mb-0" id="m-newpassword-label">Password:</label>
-                                                        <input type="password" id="m-newpassword"
-                                                            class="form-control rounded px-2 fw-bold"
-                                                            placeholder="Enter a Password">
-                                                    </div>
-                                                    <div class="col-12 d-flex flex-column gap-3">
-                                                        <label class="form-label mb-0">Confirm Password:</label>
-                                                        <input type="password" id="m-confirmpassword"
-                                                            class="form-control rounded px-2 fw-bold"
-                                                            placeholder="Confirm the password">
-                                                        <p class="text-danger text-sm">Passwords must match.</p>
+                                                    <div id="user-modal-password-fields" class="col-12 d-flex flex-column gap-3">
+                                                        <div class="d-flex flex-column gap-3">
+                                                            <label class="form-label mb-0">Password:</label>
+                                                            <input type="password" id="m-newpassword"
+                                                                class="form-control rounded px-2 fw-bold"
+                                                                placeholder="Enter a Password">
+                                                        </div>
+                                                        <div class="d-flex flex-column gap-3">
+                                                            <label class="form-label mb-0">Confirm Password:</label>
+                                                            <input type="password" id="m-confirmpassword"
+                                                                class="form-control rounded px-2 fw-bold"
+                                                                placeholder="Confirm the password">
+                                                            <p class="text-danger text-sm mb-0 d-none" id="password-match-hint">Passwords must match.</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -315,7 +317,8 @@
                                             </div>
                                         </div>
 
-                                        <div class="d-flex flex-column align-items-stretch gap-8">
+                                        <div class="d-flex flex-column align-items-stretch gap-3">
+                                            <p class="text-danger text-sm mb-0 d-none font-family-archivo" id="user-modal-error-hint"></p>
                                             <div class="col d-flex gap-3 justify-content-end">
                                                 <button type="button" class="btn btn-outline-dark col rounded-full py-2"
                                                     data-bs-dismiss="modal">Cancel</button>
@@ -350,6 +353,42 @@
                                             <button type="button" id="btn-final-remove"
                                                 class="btn btn-sm btn-danger rounded-pill px-4 js-remove-user">Remove
                                                 user</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ================= CHANGE PASSWORD MODAL ================= -->
+                        <div class="modal fade confirmation-modal faux-modal" id="change-password-modal" tabindex="-1"
+                            aria-hidden="true" data-bs-backdrop="false">
+                            <div class="modal-dialog modal-dialog-centered" style="max-width:28rem;">
+                                <div class="modal-content">
+                                    <div class="modal-header justify-content-between bg-navy-200 border-bottom-0 px-8 pt-5 pb-4">
+                                        <h4 class="text-start type-h6-alt fw-bold text-navy-800">Change password</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body px-8 py-8 font-family-sora font-family-archivo">
+                                        <div class="d-flex flex-column gap-3">
+                                            <div>
+                                                <label class="form-label mb-2">New password:</label>
+                                                <input type="password" id="change-pwd-new"
+                                                    class="form-control rounded px-2 fw-bold"
+                                                    placeholder="Enter new password">
+                                            </div>
+                                            <div>
+                                                <label class="form-label mb-2">Confirm new password:</label>
+                                                <input type="password" id="change-pwd-confirm"
+                                                    class="form-control rounded px-2 fw-bold"
+                                                    placeholder="Confirm new password">
+                                                <p class="text-danger text-sm mb-0 d-none" id="change-pwd-match-hint">Passwords must match.</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-end gap-3 mt-4">
+                                            <button type="button" class="btn btn-outline-dark rounded-full py-2 px-4"
+                                                data-bs-dismiss="modal">Cancel</button>
+                                            <button type="button" id="btn-save-password"
+                                                class="btn btn-accent rounded-full py-2 px-4">Save password <i class="bi bi-check-lg"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -620,7 +659,17 @@
             const inputLast = document.getElementById('m-last-name');
             const inputDisplay = document.getElementById('m-display-name');
             const inputEmail = document.getElementById('m-email');
+            const inputNewPassword = document.getElementById('m-newpassword');
+            const inputConfirmPassword = document.getElementById('m-confirmpassword');
+            const passwordFieldsContainer = document.getElementById('user-modal-password-fields');
             const roleChecks = document.querySelectorAll('.js-role');
+            const userModalErrorHint = document.getElementById('user-modal-error-hint');
+
+            const changePasswordModal = new bootstrap.Modal(document.getElementById('change-password-modal'));
+            const changePwdNew = document.getElementById('change-pwd-new');
+            const changePwdConfirm = document.getElementById('change-pwd-confirm');
+            const changePwdMatchHint = document.getElementById('change-pwd-match-hint');
+            let changePwdUserId = null;
 
             // --- INITIAL RENDER ---
             renderUsers();
@@ -631,20 +680,37 @@
                 editingId = null;
                 resetForm();
                 document.getElementById('modal-title').textContent = "Add New User";
-                document.getElementById('m-newpassword-label').textContent = "Password:";
 
+                passwordFieldsContainer.classList.remove('d-none');
                 inputUsername.disabled = false;
                 inputUsername.readOnly = false;
                 inputUsername.classList.remove('bg-light');
-                
+
                 btnRemoveInModal.classList.add('d-none');
+                userModalErrorHint.classList.add('d-none');
                 userModal.show();
             });
 
             btnSave.addEventListener('click', () => {
+                userModalErrorHint.classList.add('d-none');
+                document.getElementById('password-match-hint').classList.add('d-none');
+
                 if (!inputUsername.value || !inputEmail.value || !inputFirst.value) {
-                    alert("Username, First Name and Email are required.");
+                    userModalErrorHint.textContent = "Username, First Name and Email are required.";
+                    userModalErrorHint.classList.remove('d-none');
                     return;
+                }
+
+                if (!editingId) {
+                    if (!inputNewPassword.value || !inputConfirmPassword.value) {
+                        userModalErrorHint.textContent = "Password and Confirm Password are required when creating a user.";
+                        userModalErrorHint.classList.remove('d-none');
+                        return;
+                    }
+                    if (inputNewPassword.value !== inputConfirmPassword.value) {
+                        document.getElementById('password-match-hint').classList.remove('d-none');
+                        return;
+                    }
                 }
 
                 const userData = {
@@ -664,6 +730,7 @@
                     users.push(userData);
                 }
 
+                document.getElementById('password-match-hint').classList.add('d-none');
                 renderUsers();
                 userModal.hide();
             });
@@ -694,13 +761,15 @@
                         <div class="col-6 col-md-2 text-start"><span class="d-md-none text-muted x-small d-block">First:</span>${user.firstName}</div>
                         <div class="col-6 col-md-2 text-start"><span class="d-md-none text-muted x-small d-block">Last:</span>${user.lastName}</div>
                         <div class="col-6 col-md-2 fw-bold"><span class="d-md-none text-muted x-small d-block">Display:</span>${user.displayName}</div>
-                        <div class="col-12 col-md-3 text-truncate"><span class="d-md-none text-muted x-small d-block">Email:</span>${user.email}</div>
+                        <div class="col-12 col-md-2 text-truncate"><span class="d-md-none text-muted x-small d-block">Email:</span>${user.email}</div>
                         <div class="col-12 col-md-auto ms-auto mt-md-0 d-flex align-items-center gap-2">
+                            <button class="btn btn-sm btn-outline-dark border-0 rounded-pill px-3 password-trigger">Password</button>
                             <button class="btn btn-sm btn-outline-dark border-0 rounded-pill px-3 edit-trigger">Edit</button>
                         </div>
                     `;
 
                     row.querySelector('.edit-trigger').addEventListener('click', () => openEdit(user));
+                    row.querySelector('.password-trigger').addEventListener('click', () => openChangePassword(user));
                     listContainer.appendChild(row);
                 });
             }
@@ -708,7 +777,11 @@
             function openEdit(user) {
                 editingId = user.id;
                 document.getElementById('modal-title').textContent = "Edit User";
-                document.getElementById('m-newpassword-label').textContent = "Change Password:";
+
+                passwordFieldsContainer.classList.add('d-none');
+                inputNewPassword.value = '';
+                inputConfirmPassword.value = '';
+                document.getElementById('password-match-hint').classList.add('d-none');
 
                 inputUsername.value = user.username;
                 inputUsername.disabled = true;
@@ -722,8 +795,33 @@
 
                 roleChecks.forEach(c => { c.checked = user.roles.includes(c.value); });
                 btnRemoveInModal.classList.remove('d-none');
+                userModalErrorHint.classList.add('d-none');
                 userModal.show();
             }
+
+            function openChangePassword(user) {
+                changePwdUserId = user.id;
+                changePwdNew.value = '';
+                changePwdConfirm.value = '';
+                changePwdMatchHint.classList.add('d-none');
+                changePasswordModal.show();
+            }
+
+            document.getElementById('btn-save-password').addEventListener('click', () => {
+                changePwdMatchHint.classList.add('d-none');
+                if (!changePwdNew.value || !changePwdConfirm.value) {
+                    changePwdMatchHint.textContent = "New password and Confirm new password are required.";
+                    changePwdMatchHint.classList.remove('d-none');
+                    return;
+                }
+                if (changePwdNew.value !== changePwdConfirm.value) {
+                    changePwdMatchHint.textContent = "Passwords must match.";
+                    changePwdMatchHint.classList.remove('d-none');
+                    return;
+                }
+                // Front-end only: close modal and clear. Backend will be connected later.
+                changePasswordModal.hide();
+            });
 
             function resetForm() {
                 inputUsername.value = '';
@@ -731,6 +829,9 @@
                 inputLast.value = '';
                 inputDisplay.value = '';
                 inputEmail.value = '';
+                inputNewPassword.value = '';
+                inputConfirmPassword.value = '';
+                document.getElementById('password-match-hint').classList.add('d-none');
                 roleChecks.forEach(c => c.checked = false);
             }
         });
