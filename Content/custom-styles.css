@@ -1791,6 +1791,7 @@ body:has(#login-modal.modal) .modal-backdrop {
 
     .ams-list-wrapper {
         margin-top:-.5rem;
+        margin-bottom:1.5rem;
     }
 
     .ams-list-header {
