@@ -1830,7 +1830,7 @@ body:has(#login-modal.modal) .modal-backdrop {
 
     .ams-header-grid, .ams-list-grid {
         display: inline-grid;
-        grid-template-columns: 2.9rem 10rem 5rem 5rem 5rem 1fr 6rem;
+        grid-template-columns: 2.9rem 10rem 5rem 5rem 5rem minmax(9.375rem, 1fr) 6rem;
         grid-template-rows: auto;
         gap: 0;
         align-items: center;
@@ -2342,7 +2342,7 @@ body.on-top .pc-logo img {
 
 
 .news-ticker .border-start.border-secondary {
-    content:;
+    
 
     @media (max-width:768px) {
         border-left: 0 !important;
@@ -2351,6 +2351,21 @@ body.on-top .pc-logo img {
         border-color: rgba(var(--bs-secondary-rgb), var(--bs-border-opacity)) !important;
 
         padding: var(--space-4) .75rem !important;
+    }   
+}
+
+.news-ticker {
+    a.news-item {
+        color:white!important;
+        transition:transform .2s ease;
+        display:inline-block;
+        border-top:0;
+
+        &:hover {
+            transform:translateY(-2px);
+            text-decoration: none;
+            color:var(--clr-azure-42);
+        }
     }
 }
 
