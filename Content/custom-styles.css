@@ -3022,6 +3022,7 @@ table.data.table.table-striped {
     td {
         white-space: nowrap;
         padding: 1rem 2.5rem !important;
+        border:none;
     }
 
     thead th {
@@ -3041,6 +3042,7 @@ table.data.table.table-striped {
         vertical-align: middle;
         font-family: var(--font-primary)!important;
         font-weight: normal!important;
+        font-size: var(--font-size-base);
 
         & a {
             color: var(--clr-azure-42) !important;
@@ -3161,6 +3163,8 @@ table.table-striped.no-footer.dataTable tbody tr td {
         border: .0625rem solid var(--clr-azure-80)!important;
     }
 
+    padding-top:1rem;
+
 }
 
 .Availability-info,
@@ -3180,6 +3184,69 @@ table.table-striped.no-footer.dataTable tbody tr td {
 .reports-banner.ac {
     text-align:left;
 }
+
+.reports {
+
+    .content {
+        padding-top:1rem;
+        margin-top:1rem;
+        background:var(--clr-azure-95);
+    }
+
+    input, select {
+        appearance:auto;
+        max-height:2rem;
+    }
+
+    button {
+        padding: .45rem .75rem !important;
+        max-height:2rem;
+    }
+
+    .filter-group {
+        display:flex;
+        flex-direction: column;
+        gap:.5rem;
+
+        &>label {
+            font-family:var(--font-secondary);
+            font-size:var(--font-size-sm);
+            color:var(--clr-azure-46);
+            font-weight:bolder;        
+        }
+
+        &.date-range,
+        &.invoice-number {
+            display:flex;
+            flex-direction:column;
+
+            .date-range-container {
+                width:100%;
+                .form-group {
+                    width:50%;
+                }
+            }
+
+            div { 
+                display:inline-flex; 
+                gap:.5rem;
+                align-items:center;
+            }
+
+
+            @media (min-width:992px){
+                .date-range-container {
+                    width:auto;
+                }
+                div, input {
+                    width:auto;
+                }
+            }
+        }
+    }
+
+}
+
 
 /* Button hover effect Microinteraction except for disabled buttons */
 
