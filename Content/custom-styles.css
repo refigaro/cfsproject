@@ -2377,6 +2377,7 @@ body.on-top .pc-logo img {
         color:white;
         font-family: var(--font-secondary);
         font-size: var(--font-size-sm);
+        min-width:6.125rem;
     }
 }
 
@@ -2402,6 +2403,7 @@ body.on-top .pc-logo img {
         margin-bottom:0!important;
         line-height:100%!important;
         margin-top:2px;
+        min-width:4.125rem;
     }
 
     &.latest {
@@ -2428,6 +2430,7 @@ body.on-top .pc-logo img {
 
                 .date {
                     color:var(--clr-danger)!important;
+                    min-width:4.125rem;
                 }
             }
         }
