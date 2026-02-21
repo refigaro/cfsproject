@@ -3004,7 +3004,7 @@ input::placeholder {
     
     .dataTables_length,
     .dataTables_filter {
-        margin-bottom:var(--space-6);
+        margin-bottom:var(--space-3);
 
         label {
             display:flex;
@@ -3021,7 +3021,7 @@ table.data.table.table-striped {
     th,
     td {
         white-space: nowrap;
-        padding: 1rem 2.5rem !important;
+        padding: 1rem 1.5rem !important;
         border:none;
     }
 
@@ -3042,7 +3042,7 @@ table.data.table.table-striped {
         vertical-align: middle;
         font-family: var(--font-primary)!important;
         font-weight: normal!important;
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-sm);
 
         & a {
             color: var(--clr-azure-42) !important;

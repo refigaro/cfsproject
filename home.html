@@ -322,7 +322,14 @@
 
                         <!-- Fees Pane -->
                         <div class="tab-pane fade" id="fees" role="tabpanel" aria-labelledby="fees-tab">
-                            <label class="form-label text-lowercase font-family-dm-serif text-uppercase">Pay Warehouse Fees Search:</label>
+                            <div class="d-flex justify-content-between align-items-center gap-2">
+                                <label class="form-label text-lowercase font-family-dm-serif text-uppercase">Pay Warehouse Fees Search:</label>
+                                <div class="d-flex gap-2 align-items-center opacity-50" style="position:relative;bottom:0.75rem;"> 
+                                    <span class="text-muted"><i class="fa-regular fa-credit-card"></i> </span>
+                                    <span class="text-muted"><i class="fa-solid fa-building-columns"></i> </span>
+                                    <img src="/_images/paycargo-logo-gray.webp" style="max-width:5rem;height:auto;object-fit: contain;margin-top:2px;" alt="">
+                                </div>
+                            </div>
                             <div class="d-flex justify-content-between gap-2 search-container">
                                 <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo flex-grow-0">
                                     <select class="form-control rounded w-100 h-100" id="type" name="type"><option value="hbl">House Bill</option>
@@ -338,13 +345,8 @@
                                 </label>
                                 <button type="button" class="btn btn-primary text-uppercase text-xs rounded d-inline-block h-100 align-self-stretch text-nowrap">Search <i class="bi bi-search text-xs ml-2"></i></button>
                             </div>
+                            <p class="text-sm text-navy-450 d-none">*If searching by MBL/CTNR, please use availability search.</p>
                             <div style="padding-top:.75rem;margin-bottom:-1.5rem;">
-                                <p class="text-sm text-navy-450">*If searching by MBL/CTNR, please use availability search.</p>
-                                <div class="d-flex gap-2 my-4 align-items-center opacity-50"> 
-                                    <span class="text-muted"><i class="fa-regular fa-credit-card"></i> </span>
-                                    <span class="text-muted"><i class="fa-solid fa-building-columns"></i> </span>
-                                    <img src="/_images/paycargo-logo-gray.webp" style="max-width:5rem;height:auto;object-fit: contain;margin-top:2px;" alt="">
-                                </div>
                                 <p class="text-sm d-flex align-items-center bg-warning-light rounded py-1 px-2 text-warning-dark mt-2 gap-1" style="margin-top:3rem;margin-bottom:-1.5rem;"><i class="bi bi-info-circle-fill me-2 text-2xl text-danger"></i>Not a valid <b> HBL: [user's input]</b>. Please verify and try again.</p>
                             </div>    
                         </div>
