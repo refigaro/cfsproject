@@ -1,0 +1,128 @@
+@media print {
+
+  body.availavility-v2 {
+    background: #fff !important;
+    padding-top: 0 !important;
+  }
+
+  .terminal-schedule-main {
+    background: #fff !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+    min-height: auto !important;
+  }
+
+  #header,
+  .availability-menu,
+  .availability-menu-child,
+  .breadcrums,
+  #backToTopBtn,
+  .modal,
+  .footer,
+  .search-bar,
+  #collapseExample {
+    display: none !important;
+  }
+
+  section:first-of-type .container-fluid .row {
+    margin-bottom: 0.5rem;
+  }
+
+  .mbl-master-table {
+    padding: 0.25rem 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    position:static;
+    margin-bottom:10px!important;
+  }
+
+  .terminal-schedule-section .collapse {
+    display: block !important;
+    height: auto !important;
+    visibility: visible !important;
+  }
+
+  .port-header {
+    pointer-events: none;
+    page-break-after: avoid;
+  }
+
+  .port-header .bi-chevron-down {
+    display: none !important;
+  }
+
+  #schedule-tables-container .carousel {
+    overflow: visible !important;
+  }
+
+  #schedule-tables-container .carousel-inner {
+    display: block !important;
+  }
+
+  #schedule-tables-container .carousel-item {
+    display: block !important;
+    page-break-inside: avoid;
+  }
+
+  #schedule-tables-container .carousel-item:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  .nav-btn-group,
+  .btn-custom[data-bs-target],
+  [data-bs-slide-to] {
+    display: none !important;
+  }
+
+  .table-responsive {
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    break-inside: avoid;
+  }
+
+  .terminal-schedule-section .table th,
+  .terminal-schedule-section .table td {
+    border-color: #ccc !important;
+    color: #111 !important;
+  }
+
+  .terminal-schedule-section .table th {
+    background: #e8e8e8 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .terminal-schedule-section .table td.closed {
+    color: #b00 !important;
+    font-weight: bold;
+  }
+
+  .terminal-schedule-section tr {
+    page-break-inside: avoid;
+  }
+
+  .terminal-schedule-section {
+    page-break-inside: auto;
+  }
+
+  #polb-section {
+    page-break-before: always;
+  }
+
+
+  .main-header > p.text-navy-450 {
+    color: #333 !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 0.85rem;
+  }
+
+  
+  @page {
+    margin: 1.2cm;
+  }
+
+  a[href]::after {
+    content: none !important;
+  }
+}
