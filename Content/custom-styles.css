@@ -3392,6 +3392,55 @@ table.table-striped.no-footer.dataTable tbody tr td {
 }
 
 
+.inland-warehouse.offcanvas {
+    width:60vw;
+
+    .offcanvas-header {
+        margin-bottom:var(--space-4);
+        h5 { font-weight:400; }
+    }
+
+    .table-responsive {
+        border:1px solid var(--clr-navy-200);
+        border-radius:.5rem;
+    }
+
+    table, table th, table td. {
+        border: none!important;
+    }
+    table {
+        width: 100%;
+        table-layout: fixed;
+        box-sizing: border-box;
+        text-wrap: wrap;
+        border-collapse: collapse;
+
+        td, th {
+            word-wrap: break-word; 
+            white-space: normal;
+            text-wrap: balance;
+            padding:var(--space-2) var(--space-1);
+        }
+
+        tr:nth-of-type(odd) > td {
+            background:var(--clr-azure-89);
+        }
+        tr:nth-of-type(even) > td {
+            background:var(--clr-azure-99);
+        }
+
+        tbody > tr > td:first-child {
+            width:7.25rem!important;
+            background:white;
+            color:var(--clr-navy-700);
+            padding-right:var(--space-2);
+            font-family:var(--font-secondary);
+            font-size:var(--font-size-xs);
+            text-transform:uppercase;
+        }
+    }
+}
+
 
 /* --------------- Responsive styles -------- */
 

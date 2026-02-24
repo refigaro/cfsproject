@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#777777">
+    <meta name="theme-color" content="#ffffff">
+    <title>Imperial CFS, Inc - Availability</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="Content/css.css">
+    <link href="Content/Modal?v=7bMKDYCypKgFwJtiq8nBtCcJODJS6lCOLoIxVHt-al01" rel="stylesheet"/>
+    <link href="Content/extra.css" rel="stylesheet"/>
+    <link href="Content/icon?v=cVwA9pPiyb_rieloDJQKuVXzDQ3x5fT9A_F7NWasIVs1" rel="stylesheet"/>
+    <link rel="stylesheet" href="Content/css.css">
+    <link rel="stylesheet" href="Content/design-system.css">
+    <link rel="stylesheet" href="Content/custom-styles.css">
+</head>
+<body class="availavility-v2">
+<header id="header">
+    <div class="availability-menu">
+        <div class="availability-menu-top">
+            <div class="container-fluid">
+                <div class="row align-items-center position-relative">
+                    <div class="col col-md-auto col-sm-8 d-flex gap-16 justify-start items-center">
+                        
+                        <div class="nav-logo">
+                            <a href="home.html">
+                                <img alt="IMPERIAL CFS" src="/_images/logo-w.png">
+                            </a>
+                        </div>
+
+                        <ul class="nav text-white font-family-archivo text-uppercase d-none d-xl-flex ms-4">
+                            <li class="nav-item">
+                                <a class="nav-link active link-light" aria-current="page" href="#">Inland WHSE list</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" href="#">WHSE In / Out</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light" href="#">Transit Schedule</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link link-light dropdown-toggle text-white font-family-archivo text-uppercase" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                                    More
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Inland WHSE list</a></li>
+                                    <li><a class="dropdown-item" href="#warehouse-in-out">WHSE In / Out</a></li>
+                                    <li><a class="dropdown-item" href="#">Transit Schedule</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="dropdown d-xl-none ms-3">
+                            <button class="btn btn-outline-light btn-sm dropdown-toggle font-family-archivo text-uppercase rounded-full" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Useful links
+                            </button>
+                            <ul class="dropdown-menu shadow">
+                                <li><a class="dropdown-item" href="#">Inland WHSE list</a></li>
+                                <li><a class="dropdown-item" href="#">WHSE In / Out</a></li>
+                                <li><a class="dropdown-item" href="#">Transit Schedule</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col col-sm-auto d-flex items-center justify-end gap-4 search-bar">
+                        <button type="button" class="btn btn-outline-light btn-sm rounded-full transition hover-scale-97 font-family-archivo text-nowrap" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">New Search</button>
+                        <div class="row collapse" id="collapseExample">
+                            <div class="nav-search-bar col-12">
+                                <label for="type" style="display:flex;align-items:center;color:var(--clr-navy-900);" class="text-nowrap text-uppercase font-family-archivo"><b class="hide-mobile">New Search:</b>
+                                    <select class="form-control ml-4 rounded" id="type" name="type"><option value="hbl">House Bill</option>
+                                    <option selected="selected" value="mbl">Master Bill</option>
+                                    <option value="cntr">Container Number</option>
+                                    <option value="ams">AMS House Bill</option>
+                                    <option value="it">Inbond Number</option>
+                                    <option value="go">GO Number</option>
+                                    </select>
+                                </label> 
+                                <label for="">
+                                    <input class="rounded" type="text">
+                                </label>
+                                <button type="button" class="btn btn-primary btn-sm bg-navy-700 text-uppercase text-xs rounded">Search <i class="bi bi-search text-xs ml-2"></i></button>
+                                <button type="button" class="btn-close" aria-label="Close"  data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-md-auto col-sm-auto ar ms-auto">
+                        <div class="availability-menu-link clears">
+                            <div class="hamburger-menu fr">
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="availability-menu-child">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li>
+                                <a href="our-services.html">Our Services</a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="our-services.html">CFS</a></dd>
+                                    <dd><a href="inland.html">inland consolidation</a></dd>
+                                    <dd><a href="trucking.html">trucking</a></dd>
+                                    <dd><a href="technology.html">technology</a></dd>
+                                    <dd><a href="security.html">additional services</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="/Availability/Index/mbl/TCLU1228380">Availability </a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/Availability/Pickup">PICK-UP HOURS</a></dd>
+                                    <dd><a href="/Availability/TerminalStatus">TERMINAL STATUS</a></dd>
+                                    <dd><a href="/Availability/TerminalSchedule" target="_blank">TERMINAL SCHEDULE</a></dd>
+                                    <dd><a href="/Availability/CFSCharges" target="_blank">CFS Charges</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="/IPI/Index/mbl/TCLU1228380">IPI Tracing</a><i class="fa fa-angle-down"></i>
+                                <dl class="mob-sub-menu">
+                                    <dd><a href="/IPI/Inland">INLAND WAREHOUSE LIST</a></dd>
+                                    <dd><a href="/IPI/Warehouse">WAREHOUSE IN / OUT</a></dd>
+                                    <dd><a href="/IPI/Transit">TRANSIT SCHEDULE</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="/WarehouseFees/Index/mbl/TCLU1228380">Pay Warehouse Fees</a></li>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="/Home/News/5">News</a></li>
+                            <li><a href="forms.html">Forms</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <a href="/Home/CustomerLogin">Login</a>                                
+                            <li><a href="tel:(310) 768-8188"><i class="fa fa-phone"></i>(310) 768-8188</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="breadcrums pt-4 mt-16"> <!-- BREADCRUMS -->
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#"><i class="bi bi-house-door-fill"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">IPI Tracing</a></li>
+                    <li class="breadcrumb-item"><a href="#">Inland Warehouse List</a></li>
+                </ol>
+            </nav>
+        </div>
+    </div>  
+    </div>  
+</section>
+<section> <!-- TITLE -->
+    <div class="container-fluid">
+        <div class="row justify-content-between">
+            <div class="col-auto">
+                <h1 class="text-3xl font-family-dm-serif text-navy-800">Inland Warehouse List</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mbl-details ipi-tracing">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col-12 col-md-10 offset-md-1">
+                        <div class="row mb-4 mt-1 align-items-center font-family-archivo">
+                            <div class="col-auto">
+                                <label for="citySearch" class="col-form-label text-dark">Search for city:</label>
+                            </div>
+                            <div class="col-md-5 col-lg-4">
+                                <input type="text" id="destinationSearch" onkeyup="filterTable()" class="form-control rounded" placeholder="Search for destination...">
+                            </div>
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-outline-dark btn-sm rounded-full">Export data to Excel 
+                                    <i class="bi bi-file-earmark-spreadsheet"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="Availability-table">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped" id="destinationTable">
+                                            <thead>
+                                                <tr>
+                                                    <th width="16.66666%">Port</th>
+                                                    <th>State</th>
+                                                    <th>Warehouse</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><a href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#albuquerque-offcanvas" aria-controls="albuquerque-offcanvas">ALBUQUERQUE</a></td>
+                                                    <td>NM</td>
+                                                    <td>MPR LOGISTICS DBA HSS LOGISTICS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/ATLANTA/0">ATLANTA</a></td>
+                                                    <td>GA</td>
+                                                    <td>HWC LOGISTICS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/AUSTIN/0">AUSTIN</a></td>
+                                                    <td>TX</td>
+                                                    <td>AUSTIN CFS WAREHOUSE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/BALTIMORE/0">BALTIMORE</a></td>
+                                                    <td>MD</td>
+                                                    <td>BALTIMORE INTERNATIONAL WAREHOUSING</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/BIRMINGHAM/0">BIRMINGHAM</a></td>
+                                                    <td>AL</td>
+                                                    <td>DIVERSIFIED CONTRACTORS, INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/BOSTON/0">BOSTON</a></td>
+                                                    <td>MA</td>
+                                                    <td>EAGLE AIR FREIGHT</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/BROWNSVILLE/0">BROWNSVILLE</a></td>
+                                                    <td>TX</td>
+                                                    <td>TRANSMARITIME INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/BUFFALO/0">BUFFALO</a></td>
+                                                    <td>NY</td>
+                                                    <td>MOBILE AIR TRANSPORT</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/CHARLESTON/0">CHARLESTON</a></td>
+                                                    <td>SC</td>
+                                                    <td>C &amp; C WAREHOUSE AND DISTRIBUTION</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/CHARLOTTE/0">CHARLOTTE</a></td>
+                                                    <td>NC</td>
+                                                    <td>CLT AIR FREIGHT CARRIER</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/CHATTANOOGA/0">CHATTANOOGA</a></td>
+                                                    <td>GA</td>
+                                                    <td>MONTGOMERY AIR FREIGHT</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/CHICAGO/0">CHICAGO</a></td>
+                                                    <td>IL</td>
+                                                    <td>ARROWPAC INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/CINCINNATI/0">CINCINNATI</a></td>
+                                                    <td>OH</td>
+                                                    <td>VOGT WAREHOUSE/SPECIALTY LOGISTIC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/CLEVELAND/0">CLEVELAND</a></td>
+                                                    <td>OH</td>
+                                                    <td>ON TIME DELIVERY &amp; WAREHOUSE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/COLUMBUS/0">COLUMBUS</a></td>
+                                                    <td>OH</td>
+                                                    <td>WORLD DISTRIBUTION SERVICES</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/DALLAS/0">DALLAS</a></td>
+                                                    <td>TX</td>
+                                                    <td>AIR GENERAL INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/DAYTON/0">DAYTON</a></td>
+                                                    <td>OH</td>
+                                                    <td>RUSH EXPEDITING INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/DENVER/0">DENVER</a></td>
+                                                    <td>CO</td>
+                                                    <td>AIR GENERAL INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/DES%20MOINES/0">DES MOINES</a></td>
+                                                    <td>IA</td>
+                                                    <td>FORWARD AIR INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/DETROIT/0">DETROIT</a></td>
+                                                    <td>MI</td>
+                                                    <td>TRANS OVERSEAS CORP</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/EL%20PASO/0">EL PASO</a></td>
+                                                    <td>TX</td>
+                                                    <td>TRANSMARITIME INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/GRAND%20RAPIDS/0">GRAND RAPIDS</a></td>
+                                                    <td>MI</td>
+                                                    <td>FORWARD AIR INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/GREENSBORO/0">GREENSBORO</a></td>
+                                                    <td>NC</td>
+                                                    <td>SPECIAL SERVICE FREIGHT</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/GREENVILLE/0">GREENVILLE</a></td>
+                                                    <td>SC</td>
+                                                    <td>FORWARD AIR INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/HIDALGO/0">HIDALGO</a></td>
+                                                    <td>TX</td>
+                                                    <td>TRANSMARITIME INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/HOUSTON/0">HOUSTON</a></td>
+                                                    <td>TX</td>
+                                                    <td>SOUTHWEST FREIGHT INC.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/HUNTSVILLE/0">HUNTSVILLE</a></td>
+                                                    <td>AL</td>
+                                                    <td>DIVERSIFIED CONTRACTORS, INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/INDIANAPOLIS/0">INDIANAPOLIS</a></td>
+                                                    <td>IN</td>
+                                                    <td>FORWARD AIR INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/JACKSONVILLE/0">JACKSONVILLE</a></td>
+                                                    <td>FL</td>
+                                                    <td>ARROWPAC INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/KANSAS%20CITY/0">KANSAS CITY</a></td>
+                                                    <td>MO</td>
+                                                    <td>LK TRANSPORT LLC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/KNOXVILLE/0">KNOXVILLE</a></td>
+                                                    <td>TN</td>
+                                                    <td>S &amp; C CARTAGE, INC.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/LAREDO/0">LAREDO</a></td>
+                                                    <td>TX</td>
+                                                    <td>TRANSMARITIME INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/LAS%20VEGAS/0">LAS VEGAS</a></td>
+                                                    <td>NV</td>
+                                                    <td>ENERGY TRANSPORT LOGISTICS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/LITTLE%20ROCK/0">LITTLE ROCK</a></td>
+                                                    <td>AR</td>
+                                                    <td>HILL COURIER INC.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/LOUISVILLE/0">LOUISVILLE</a></td>
+                                                    <td>KY</td>
+                                                    <td>MIDWEST EXPRESS COMPANY</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/MEMPHIS/0">MEMPHIS</a></td>
+                                                    <td>MS</td>
+                                                    <td>COVENANT LOGISTICS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/MIAMI/0">MIAMI</a></td>
+                                                    <td>FL</td>
+                                                    <td>ARROWPAC INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/MILWAUKEE/0">MILWAUKEE</a></td>
+                                                    <td>WI</td>
+                                                    <td>TAX AIR</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/MINNEAPOLIS/0">MINNEAPOLIS</a></td>
+                                                    <td>MN</td>
+                                                    <td>MIDWEST EXPRESS CO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/MOBILE/0">MOBILE</a></td>
+                                                    <td>AL</td>
+                                                    <td>MOBILE MOVING &amp; STORAGE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/NASHVILLE/0">NASHVILLE</a></td>
+                                                    <td>TN</td>
+                                                    <td>RED ARROW DELIVERY</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/NEW%20ORLEANS/0">NEW ORLEANS</a></td>
+                                                    <td>LA</td>
+                                                    <td>SOUTHWEST FREIGHT INC.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/NEW%20YORK/0">NEW YORK</a></td>
+                                                    <td>NJ</td>
+                                                    <td>ACCEM WAREHOUSE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/NOGALES/0">NOGALES</a></td>
+                                                    <td>AZ</td>
+                                                    <td>ENERGY TRANSPORT LOGISTICS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/NORFOLK/0">NORFOLK</a></td>
+                                                    <td>VA</td>
+                                                    <td>NORFOLK BONDED WAREHOUSE LLC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/OAKLAND/0">OAKLAND</a></td>
+                                                    <td>CA</td>
+                                                    <td>PACIFIC COAST CONTAINER</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/OKLAHOMA%20CITY/0">OKLAHOMA CITY</a></td>
+                                                    <td>OK</td>
+                                                    <td>KOGA TRANSPORTATION</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/OMAHA/0">OMAHA</a></td>
+                                                    <td>NE</td>
+                                                    <td>FORD STORAGE &amp; MOVING</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/ORLANDO/0">ORLANDO</a></td>
+                                                    <td>FL</td>
+                                                    <td>TRANSCONTINENTAL CFS LLC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/PHILADELPHIA/0">PHILADELPHIA</a></td>
+                                                    <td>PA</td>
+                                                    <td>CMS TRANSPORTATION</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/PHOENIX/0">PHOENIX</a></td>
+                                                    <td>AZ</td>
+                                                    <td>ENERGY TRANSPORT LOGISTICS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/PITTSBURGH/0">PITTSBURGH</a></td>
+                                                    <td>PA</td>
+                                                    <td>DIAMOND CARGO EXPRESS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/PORTLAND/0">PORTLAND</a></td>
+                                                    <td>OR</td>
+                                                    <td>TERMINAL TRANSFER INC.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/RALEIGH/0">RALEIGH</a></td>
+                                                    <td>NC</td>
+                                                    <td>CLT AIR FREIGHT CARRIER</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/RICHMOND/0">RICHMOND</a></td>
+                                                    <td>VA</td>
+                                                    <td>MULTI INTEREST SERVICE CORP.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/SALT%20LAKE%20CITY/0">SALT LAKE CITY</a></td>
+                                                    <td>UT</td>
+                                                    <td>SLAC LOGISTICS, LLC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/SAN%20ANTONIO/0">SAN ANTONIO</a></td>
+                                                    <td>TX</td>
+                                                    <td>TRANSMARITIME INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/SAN%20DIEGO/0">SAN DIEGO</a></td>
+                                                    <td>CA</td>
+                                                    <td>ENERGY TRANSPORT LOGISTICS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/SAN%20FRANCISCO/0">SAN FRANCISCO</a></td>
+                                                    <td>CA</td>
+                                                    <td>PACIFIC COAST CONTAINER</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/SAVANNAH/0">SAVANNAH</a></td>
+                                                    <td>GA</td>
+                                                    <td>CARGO GROUP LLC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/SEATTLE/0">SEATTLE</a></td>
+                                                    <td>WA</td>
+                                                    <td>TERMINAL TRANSFER INC.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/SHREVEPORT/0">SHREVEPORT</a></td>
+                                                    <td>LA</td>
+                                                    <td>MURPHY WAREHOUSE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/SPRINGFIELD/0">SPRINGFIELD</a></td>
+                                                    <td>MO</td>
+                                                    <td>LK TRANSPORT LLC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/ST.LOUIS/0">ST.LOUIS</a></td>
+                                                    <td>MO</td>
+                                                    <td>COPP OF ST LOUIS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/TAMPA/0">TAMPA</a></td>
+                                                    <td>FL</td>
+                                                    <td>TRANSCONTINENTAL CFS LLC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/TOLEDO/0">TOLEDO</a></td>
+                                                    <td>OH</td>
+                                                    <td>TRANS WORLD SHIPPING</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/TUCSON/0">TUCSON</a></td>
+                                                    <td>AZ</td>
+                                                    <td>ENERGY TRANSPORT LOGISTICS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/TULSA/0">TULSA</a></td>
+                                                    <td>OK</td>
+                                                    <td>MILES SHIPPING</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/WASHINGTON/0">WASHINGTON</a></td>
+                                                    <td>VA</td>
+                                                    <td>FORWARD AIR</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/WICHITA/0">WICHITA</a></td>
+                                                    <td>KS</td>
+                                                    <td>FORWARD AIR INC</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href="/IPI/Inland/WILMINGTON/0">WILMINGTON</a></td>
+                                                    <td>NC</td>
+                                                    <td>CAPEFEAR BONDED WAREHOUSE</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-danger fw-bold">
+                                    <p class="ar">UPDATE SEPT 2025</p>
+                                    <p class="al">**Estimated Loading Day and Estimated Transit Time may vary depending on the current and/or unforseen conditions.</p>
+                                    <p class="al">***Imperial can not be held liable for any charge back claim due to any IPI schedule delay.</p>
+                                </div>
+                            </div>
+
+                            <!--///// ----- Offcanvas group ------- ///// -->
+                            
+                                <!-- Offcanvas for ALBUQUERQUE -->
+                            <div class="offcanvas offcanvas-end inland-warehouse" data-bs-scroll="true" tabindex="-1" id="albuquerque-offcanvas" aria-labelledby="warehouse-detail">
+                                <div class="offcanvas-header py-5">
+                                    <h5 class="offcanvas-title type-h4" id="warehouse-detail">Warehouse Detail</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <div class="table-responsive">
+                                        <table class="table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="ar leftcol">PORT</td>
+                                                    <td>ALBUQUERQUE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ar leftcol">WAREHOUSE</td>
+                                                    <td>MPR LOGISTICS DBA HSS LOGISTICS</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ar leftcol">Firm Code</td>
+                                                    <td>S0Q5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ar leftcol">ADDRESS</td>
+                                                    <td>4111 ELLISON ST NE,</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ar leftcol">CITY</td>
+                                                    <td>ALBUQUERQUE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ar leftcol">STATE</td>
+                                                    <td>NM</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ar leftcol">ZIPCODE</td>
+                                                    <td>87109</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ar leftcol">UN. CODE</td>
+                                                    <td>USABQ</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ar leftcol">WEBSITE</td>
+                                                    <td>HSSLOGISTICS.COM</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ar leftcol">EMAIL</td>
+                                                    <td>IMPORTS@HOTSHOTSERVICES.COM/AGRIEGO@HOTSHOTSERVICES.COM</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ar leftcol">TEL:</td>
+                                                    <td>(505)923-3954</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ar leftcol">FAX:</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ar leftcol">CTC</td>
+                                                    <td>ARIEL GRIEGO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ar leftcol">Remark</td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>       
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div> 
+    </div>
+</section>
+<footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-top">
+                        <img src="/_images/footer-logo.png">
+                    </div>
+                    <div class="footer-main">
+                        <div class="row">
+                            <div class="col-12 col-sm-3 col-md-3">
+                                <ul>
+                                    <li><a href="/OurServices" target="_blank">Our Services</a></li>
+                                    <li><a href="/Availability/Index/mbl/TCLU1228380" target="_blank">Availability</a></li>
+                                    <li><a href="/IPI/Index/mbl/TCLU1228380" target="_blank">IPI Tracing</a></li>
+                                    <li><a href="/Charges/Guarantee_Whs_Fee/" target="_blank">Guarantee Imperial CFS Fees</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-2">
+                                <ul>
+                                    <li><a href="/Home/CustomerLogin">Login</a></li>
+                                    <li><a href="/Home/SiteMap" target="_blank">Site Map</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-2">
+                                <ul>
+                                    <li><a href="/Home/About" target="_blank">About Us</a></li>
+                                    <li><a href="/Home/News" target="_blank">News</a></li>
+                                    <li><a href="/Home/Forms" target="_blank">Forms</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-12 col-sm-3 col-md-5">
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <dl>
+                                            <dt>Location</dt>
+                                            <dd>
+                                                1000 Francisco St<br>
+                                                Torrance CA 90502 USA
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <dl>
+                                            <dt>Phone</dt>
+                                            <dd>310-768-8188</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>Fax</dt>
+                                            <dd>310-527-7288</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="row">
+                            <div class="col-12 col-sm-4 al">
+                                <p>© 2025 Cargovation LLC All Rights Reserved.</p>
+                                <!--h1>Brought to you by kchen9 </h1-->
+                            </div>
+                            <div class="col-12 col-sm-4 ar">
+                                <p><a href="/Home/PrivacyPolicy">Privacy Policy</a></p>
+                            </div>
+                            <div class="col-12 col-sm-4 ar">
+                                <p><a href="/Home/Terms">Terms and Conditions</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- Back to Top Button -->
+<button type="button" 
+        id="backToTopBtn" 
+        class="btn btn-dark rounded-pill position-fixed bottom-0 start-0 m-3 shadow d-none" 
+        style="z-index: 1080; transition: opacity 0.3s;"
+        onclick="scrollToTop()">
+    <i class="bi bi-arrow-up me-2"></i>Back to top
+</button>
+<script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+<script src="/bundles/main_jquery?v=pcTLGo70Ebj-7wZHfj5-OozMeYDuBTaJgLdp-yYJn8s1"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    $('#Number').keypress(function (event){
+        if (event.keyCode === 13) {
+            var type = $('#Type').val();
+            var number = $('#Number').val();
+            var controller = "Availability";
+            window.location = "/" + controller + "/Index/" + type + "/" + number
+        }
+    })
+    var currentpath = "Availability"+"/"+"Index";
+</script>
+<script>
+    var controllername = '/Availability';
+    var ajax_url = controllername+'/SearchAjax/ ';
+</script>
+<script src="/bundles/AvailabilityViewer_Ajax?v=VgNFlR4TbTdLyioL1u0joKY-tpXbFdUn0Toxg6Z7ehQ1"></script>
+<script src="/bundles/Modal?v=6X2XgyWba97tfyPCPLvNNu3Nfognwesw8t4cSNPp6OA1"></script>
+<script>
+    $(function() {
+        $(".hamburger-menu").on("click", function() {
+            $(".bar").toggleClass("animate");
+            $(".availability-menu").toggleClass("open");
+            $(".availability-menu-child").stop(!0, !1).slideToggle(300)
+        });
+        $(".availability-menu-child ul>li i").click(function() {
+            $(this).parents("li").toggleClass("active");
+            $(this).parents("li").find(".mob-sub-menu").stop(!0, !1).slideToggle();
+            $(this).parents("li").siblings("li").find(".mob-sub-menu").slideUp()
+        });
+        $(window).width() >= 768 ? $(".home-section-04-box").css("margin-top", $(".home-section-04-box").height() * -1) : $(".home-section-04-box").css("margin-top", 0)
+    })
+</script>
+<script>
+    // FIX 2: Added the filterTable function below.
+    
+    /* NEW FUNCTION: Filter Table Rows */
+    function filterTable() {
+        // 1. Get input value and filter string
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("destinationSearch"); // Corrected ID
+        filter = input.value.toUpperCase();
+        
+        // 2. Get the table body rows, assuming the table ID is "destinationTable"
+        table = document.getElementById("destinationTable");
+        tr = table.getElementsByTagName("tr"); // Gets all <tr> tags, including header
+
+        // 3. Loop through all table rows (starting at index 1 to skip the <thead>)
+        for (i = 1; i < tr.length; i++) {
+            // Get the <td> element for the 'Destination' column. This is the first column (index 0).
+            td = tr[i].getElementsByTagName("td")[0]; 
+
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                
+                // 4. Check if the text matches the filter
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = ""; // Show row
+                } else {
+                    tr[i].style.display = "none"; // Hide row
+                }
+            }       
+        }
+    }
+    
+    // Existing searchAccordion function (renamed and kept out of scope to avoid confusion)
+    function searchAccordion() {
+        // This function is no longer needed on this specific page with a table filter
+    }
+</script>
+<script>
+    // Back to top button logic
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    window.onscroll = function() {
+        // Calculate 24rem in pixels dynamically
+        const remInPixels = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const threshold = 24 * remInPixels;
+
+        if (document.body.scrollTop > threshold || document.documentElement.scrollTop > threshold) {
+            backToTopBtn.classList.remove("d-none");
+        } else {
+            backToTopBtn.classList.add("d-none");
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>
