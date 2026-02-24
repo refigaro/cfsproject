@@ -325,7 +325,23 @@ input.form-control {
 
 .ipi-master-table {
     align-items: center;
+
+    @media (max-width:768px){
+        flex-wrap:wrap; margin-top:var(--space-2);
+
+        &>div {
+            padding:var(--space-3)!important;
+
+            &>.detail-pair {
+                flex-direction:row!important;
+                justify-content: space-between!important;
+                align-items:center!important;
+            }
+        }
+    }
 }
+
+
 
 .mbl-master-table .table-col {
     border-right: 0.0625rem solid var(--clr-azure-85);
@@ -794,6 +810,14 @@ input.form-control {
     font-family: var(--font-primary);
 }
 
+#warehouse-in-out-Accordion {
+    .accordion-button {
+        @media (max-width:768px){
+            flex-wrap:wrap!important;
+        }
+    }
+}
+
 .info-label,
 .detail-label {
     color: var(--clr-azure-46);
@@ -1230,6 +1254,13 @@ html {
     @media (min-width:992px) {
         min-width: 25rem;
     }
+
+    @media (max-width:768px){
+        margin-top:1rem;
+        .card {
+            margin-right:0!important;
+        }
+    }
 }
 
 .transport-badge {
@@ -1501,6 +1532,50 @@ body:has(#login-modal.modal) .modal-backdrop {
     }
 }
 
+.availability-menu>.availability-menu-top>.container-fluid>.row {
+    &>div:nth-child(1){
+        @media (max-width:768px) {
+            padding-right:2px!important;
+            gap:4px!important;
+
+            .nav-logo {
+                min-width:72px!important;
+            }
+        }
+    }    
+
+    &>div:nth-child(2){
+        @media (max-width:421px) {
+            display:none!important;
+        }
+    }
+
+    &>div:nth-child(3){
+        @media (max-width:768px) {
+            display:none;
+        }
+    }
+
+    &>div:nth-child(4){
+        @media (max-width:768px) {
+            max-width:12%;
+        }
+    }
+
+    /* This forces the burger menu to always show  */
+    &>div:has(.hamburger-menu) {
+        display:block!important;
+        max-width:12%!important;
+    }
+}
+
+.search-results-wrapper {
+    @media (max-width:576px){
+        padding:1.5rem .5rem!important;
+        max-width: 99vw;
+    }
+}
+
 
 /* Transit Time Schedule */
 
@@ -1766,7 +1841,9 @@ body:has(#login-modal.modal) .modal-backdrop {
         transition: background-color .3s ease;
         min-height: 3rem;
 
-        & p,span { line-height:10%; }
+        @media (min-width:1279px) { 
+            & p,span { line-height:10%; }
+        }
     }
 
     .container-list-item {
@@ -1790,7 +1867,10 @@ body:has(#login-modal.modal) .modal-backdrop {
     }
 
     .ams-list-wrapper {
-        margin-top:-.5rem;
+        margin-top:var(--space-2);
+        @media (min-width:1279px){
+            margin-top:-.5rem;
+        }
         margin-bottom:1.5rem;
     }
 
@@ -1820,7 +1900,6 @@ body:has(#login-modal.modal) .modal-backdrop {
             vertical-align: middle;
             position:absolute;
             color:#c0c0c0;
-
         }
 
         div:nth-child(2) {
@@ -1829,21 +1908,43 @@ body:has(#login-modal.modal) .modal-backdrop {
         }
     }
 
-    .ams-header-grid, .ams-list-grid {
-        display: inline-grid;
-        grid-template-columns: 2.9rem 10rem 5rem 5rem 5rem minmax(9.375rem, 1fr) 6rem;
-        grid-template-rows: auto;
-        gap: 0;
-        align-items: center;
-        justify-content: stretch;
+    .ams-header-grid, .ams-list-grid {   
+        display: flex; 
+        flex-wrap:wrap;            
         width:100%;
+        padding:8px;
+        margin-left:calc(2 * var(--space-12));
+        max-width:calc(100% - (2 * var(--space-12)));
 
-        @media (min-width:1279px) {
-            width: auto;
+        &>div {
+            display:flex;
+            flex-direction:column; 
+            justify-content:center!important;
+
+            @media (max-width:768px){
+                &:nth-child(2) {
+                    width:calc(100% - 2.5rem);
+                    text-align:left;
+                    justify-content: start!important;
+                }
+            }
         }
 
-        max-width:calc(100% - (2 * var(--space-12)));
-        margin-left:calc(2 * var(--space-12));
+
+
+        @media (min-width:1279px) {
+            &>div {flex-direction:row; gap: 0;}
+            padding:0;
+            display: inline-grid;
+            grid-template-columns: 2.9rem 10rem 5rem 5rem 5rem minmax(9.375rem, 1fr) 6rem;
+            grid-template-rows: auto;
+            gap: 0;
+            align-items: center;
+            justify-content: stretch;
+            width: auto;
+
+            
+        }
     }
 }
 
@@ -3191,6 +3292,10 @@ table.table-striped.no-footer.dataTable tbody tr td {
         padding-top:1rem;
         margin-top:1rem;
         background:var(--clr-azure-95);
+
+        @media screen and (max-width:768px){
+            div::has(h1) { margin-bottom:var(--space-2)!important; }
+        }
     }
 
     input, select {
