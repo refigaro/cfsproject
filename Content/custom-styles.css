@@ -3122,7 +3122,7 @@ table.data.table.table-striped {
     th,
     td {
         white-space: nowrap;
-        padding: 1rem 1.5rem !important;
+        padding: .75rem 1rem !important;
         border:none;
     }
 
@@ -3181,33 +3181,21 @@ table.data.table.table-striped {
         left: 0;
         background-color: #d0daee;
         z-index: 1;
-        /* Ensures it stays on top of other cells */
         border-right: 1px solid #ccc;
-        /* Optional: adds a visual border */
+        min-width: 12.95rem!important;
+        width: 12.95rem!important;
+        max-width: 12.95rem!important;
     }
 
     /* KEVIN: This is the second sticky column */
     thead th:nth-child(2),
     tbody td:nth-child(2) {
         position: sticky;
+        left: 14.96rem; /* This is the width of the first column + padding */
         background-color: #d0daee;
         z-index: 1;
-        /* Ensures it stays on top of other cells */
         border-right: 1px solid #ccc;
-        /* Optional: adds a visual border */
-    }
-
-    /* KEVIN: This is the width of the first sticky column */
-    thead th:first-child,
-    tbody td:first-child {
-        width: 10.875rem;
-    }
-
-    /* KEVIN: This is the width of the second sticky column */
-    tr th:nth-child(2),
-    tr td:nth-child(2) {
-        left: 9.95rem;
-        /* Width of the first column */
+        min-width: 8rem;
     }
 
     tbody>tr:nth-of-type(even)>td:nth-child(-n+2) {
@@ -3391,6 +3379,28 @@ table.table-striped.no-footer.dataTable tbody tr td {
     animation: icon-pop-in 1s ease-out;
 }
 
+#warehouseListTable {
+    tbody tr>td:first-child {
+        text-underline-offset: 4px;
+
+        &>* {
+            transition: transform .2s ease;
+            text-decoration: underline!important;
+        }
+        &>*:hover {
+            transform: translateY(-2px);
+        }
+        &>*:after {
+            content: "\F135";
+            font-family: "Bootstrap-icons";
+            position:relative;
+            top:0.125rem;
+            left:.25rem;
+            display:inline-block;
+            color:#6c757d;
+        }
+    }
+}
 
 .inland-warehouse.offcanvas {
     width:60vw;
@@ -3401,7 +3411,7 @@ table.table-striped.no-footer.dataTable tbody tr td {
     }
 
     .table-responsive {
-        border:1px solid var(--clr-navy-200);
+        border:1px solid var(--clr-navy-400);
         border-radius:.5rem;
     }
 
@@ -3422,21 +3432,34 @@ table.table-striped.no-footer.dataTable tbody tr td {
             padding:var(--space-2) var(--space-1);
         }
 
-        tr:nth-of-type(odd) > td {
-            background:var(--clr-azure-89);
-        }
+
+        tr:nth-of-type(odd) > td,
         tr:nth-of-type(even) > td {
-            background:var(--clr-azure-99);
+            background:white;
+            border-bottom:1px solid var(--clr-navy-400);
         }
 
         tbody > tr > td:first-child {
             width:7.25rem!important;
             background:white;
-            color:var(--clr-navy-700);
+            color:var(--clr-azure-42);
             padding-right:var(--space-2);
             font-family:var(--font-secondary);
-            font-size:var(--font-size-xs);
+            font-size:var(--font-size-2xs);
             text-transform:uppercase;
+        }
+
+        tbody > tr:first-child {
+
+            td { background:var(--clr-navy-600); color:white;}
+        
+            & > td:nth-child(2) {
+            font-size:var(--font-size-xl)!important;
+            font-weight:bold;
+            }
+        }
+        tbody > tr:last-child >td {
+            border-bottom:0;
         }
     }
 }
