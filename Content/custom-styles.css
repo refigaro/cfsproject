@@ -1349,6 +1349,7 @@ html {
 .warehouse-in-out-details .warehouse-details-header div {
     position: relative;
     display: flex;
+    flex-wrap:wrap;
     align-items: center;
     width: 100%;
     padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
@@ -1356,6 +1357,13 @@ html {
     color: var(--bs-accordion-btn-color);
     text-align: left;
     background-color: var(--clr-white);
+
+    @media (max-width:768px) {
+        gap: .5rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
 }
 
 
@@ -1936,7 +1944,7 @@ body:has(#login-modal.modal) .modal-backdrop {
             &>div {flex-direction:row; gap: 0;}
             padding:0;
             display: inline-grid;
-            grid-template-columns: 2.9rem 10rem 5rem 5rem 5rem minmax(9.375rem, 1fr) 6rem;
+            grid-template-columns: 2.5rem 12rem 5rem 5rem 5rem minmax(9.375rem, 1fr) 6rem;
             grid-template-rows: auto;
             gap: 0;
             align-items: center;
