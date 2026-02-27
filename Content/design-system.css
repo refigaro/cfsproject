@@ -117,9 +117,9 @@ IMPERIAL CFS - DESIGN SYSTEM
 :root {
     /* == Colores == */
     /* Paleta de Azul Marino (Nuevo) */
-    --clr-navy-900: #0A192F; /* Para cabeceras y pies de página */
-    --clr-navy-800: #1C2A4E; /* Tono ligeramente más claro */
-    --clr-navy-700: #14264f; /* Tono ligeramente más claro */
+    --clr-navy-900: #0A192F; 
+    --clr-navy-800: #1C2A4E; 
+    --clr-navy-700: #14264f; 
     --clr-navy-600: #2e3f6b;
     --clr-navy-500: #57687A;
     --clr-navy-400: #778a9e;
