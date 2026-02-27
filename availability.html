@@ -512,7 +512,7 @@
                                         <li><a class="dropdown-item" href="#">Pickup Confirmation</a></li>
                                         <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target="#collapse-cucc" aria-expanded="false" aria-controls="collapse-cucc"> CUCC Charges</a></li>
                                         <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target="#collapse-ams-release" aria-expanded="false" aria-controls="collapse-ams-release">Frt Release</a></li>
-                                        <li><a class="dropdown-item" href="#">Confirm Markings</a></li>
+                                        <li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target="#collapse-markings" aria-expanded="true" aria-controls="collapse-markings">Confirm Markings</a></li>
                                         <li><a class="dropdown-item px-4" href="#">Print 7512</a></li>
                                     </ul>
                                 </div>
@@ -741,7 +741,7 @@
                                                     <button type="button" class="btn btn-sm btn-info text-light text-base rounded-full"><b>Cancel Release</b></button>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-start flex-row align-items-center gap-2 mt-2 px-1">
+                                            <div class="d-flex justify-content-start flex-row align-items-center gap-2 mt-2 px-1 flex-column-sm">
                                                 <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Release Selected</b></button>
                                                 <button type="button" class="btn btn-sm btn-outline-dark text-base rounded-full"><b>Cancel Selected</b></button>
                                                 <p class="text-success ms-auto">Successfully released!</p> <!-- KEVIN: this is to confirm Successful release-->
@@ -1520,7 +1520,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const itemDiv = document.createElement('div');
         
         itemDiv.id = uniqueId;
-        itemDiv.className = 'rounded-3 bg-azure-95 border charge-item-row p-2 d-flex align-items-center';
+        itemDiv.className = 'rounded-3 bg-azure-95 border charge-item-row p-2 d-flex align-items-center flex-column-sm';
         
         storeDataOnElement(itemDiv, data);
 

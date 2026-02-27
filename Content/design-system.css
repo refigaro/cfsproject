@@ -679,3 +679,7 @@ input[type="text"][readonly]:focus {
 .btn-sm {
     font-size: var(--font-size-sm)!important;
 }
+
+html {
+    scroll-margin-top: 5.2rem!important;
+}

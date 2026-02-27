@@ -815,6 +815,9 @@ input.form-control {
         @media (max-width:768px){
             flex-wrap:wrap!important;
         }
+
+        a.btn { color:black }
+        a.btn:hover { color:white!important; text-decoration: none; }
     }
 }
 
@@ -1384,7 +1387,7 @@ html {
 
 
 
-.whse-in-out .accordion-button:not(.collapsed) {
+.whse-in-out #warehouse-in-out-Accordion .accordion-button:not(.collapsed) {
     background-color: var(--clr-navy-600);
     color: white;
 
@@ -1395,6 +1398,10 @@ html {
     span span {
         color: white !important;
     }
+
+    
+    a.btn { color:white!important; border:1px solid white!important; }
+    a.btn:hover { color:black!important; background:white!important; border:1px solid black!important; text-decoration: none; }
 }
 
 .whse-in-out .accordion-button:not(.collapsed)::after {
@@ -1404,6 +1411,35 @@ html {
 
 .milestone-v2 .same-width {
     min-width: 8rem;
+}
+
+.hbl-wrapper {
+    @media (max-width:768px) {
+        flex-direction:column;
+    }
+}
+
+.ams-list-item2 {
+    border-radius:var(--space-2);
+    background:white;
+    width:100%;
+    display:flex;
+    padding:var(--space-2) var(--space-4);
+    min-height: 3rem;
+    align-items:center;
+    gap:var(--space-4);
+    box-shadow: var(--shadow-md);
+
+    @media (max-width:1279px){
+        flex-wrap:wrap;
+    }
+
+}
+
+.flex-column-sm {
+    @media (max-width:768px) {
+        flex-direction: column !important;
+    }
 }
 
 
@@ -1862,6 +1898,8 @@ body:has(#login-modal.modal) .modal-backdrop {
         background-color:var(--clr-azure-89);
         margin-left:var(--space-12);
         position:relative;
+        align-self:end;
+        align-self:flex-start;
 
         &::before {
             content: "\F132"; 
@@ -1879,7 +1917,7 @@ body:has(#login-modal.modal) .modal-backdrop {
         @media (min-width:1279px){
             margin-top:-.5rem;
         }
-        margin-bottom:1.5rem;
+        
     }
 
     .ams-list-header {
@@ -1938,6 +1976,14 @@ body:has(#login-modal.modal) .modal-backdrop {
             }
         }
 
+        &.grid-2 {
+            margin-left:0;
+
+            &::before {
+                content:"";
+                display:none;
+            }
+        }
 
 
         @media (min-width:1279px) {
@@ -1950,7 +1996,6 @@ body:has(#login-modal.modal) .modal-backdrop {
             align-items: center;
             justify-content: stretch;
             width: auto;
-
             
         }
     }
