@@ -1,18 +1,30 @@
-# Imperial CFS — Static HTML Prototype
+# Imperial CFS — Frontend handoff
 
-Static HTML/CSS prototype for the **Imperial CFS, Inc.** marketing site and customer portal.
+This repository holds the **frontend handoff** for the **Imperial CFS, Inc.** marketing site and customer portal: static HTML, CSS, and client-side scripts that backend developers integrated into the production ASP.NET MVC application. Pages and assets were **updated incrementally on GitHub throughout the project**—this was the living markup and styling reference for the team, not a separate throwaway prototype.
+
+**Sergio Arcíbar** served as **UI designer** and **front-end developer** on this project—owning the interface design and the static build—and shipped this handoff **continuously via GitHub** (commits and pull requests) for backend integration.
+
+## Role in the project
+
+| In this repo | In production |
+|--------------|---------------|
+| Authoritative markup, layout, and styles for each screen | Razor views, partials, and bundles generated or adapted from this handoff |
+| Commits and PRs as features evolved | Server-side data binding, auth, validation, and APIs |
+| Full pages you can open locally for review | Same URLs served by MVC with live data |
 
 ## About Imperial CFS
 
 [Imperial CFS, Inc.](https://www.imperialcfs.com) has delivered warehouse and transportation solutions since 1994. The company operates as a premier ocean **Container Freight Station (CFS)** and nationwide **IPI** (Inland Point Intermodal) transportation provider at the Ports of Los Angeles and Long Beach. The site and portal are operated under **Cargovation LLC**.
 
-## What This Repo Is (and Isn't)
+## What this repo is (and isn’t)
 
 | This repo | Production app |
 |-----------|----------------|
-| Static `.html` pages for design, markup, and UI reference | ASP.NET MVC application with live data and authentication |
-| Assets served from this folder or a local static server | Routes like `/Availability/TerminalStatus`, `/bundles/...`, `/Charges/...` |
-| No build step, no `package.json` | Bundled scripts, server-side rendering, APIs |
+| **Handoff deliverables:** static `.html` plus shared CSS/JS/images | ASP.NET MVC app with live data, sessions, and security |
+| Preview by opening files or serving this folder locally | Real routes such as `/Availability/TerminalStatus`, `/bundles/...`, `/Charges/...` |
+| No build step, no `package.json` | Bundled scripts, server rendering, APIs |
+
+Placeholders like `/Availability/Index`, `/bundles/main_jquery`, and `/Home/CustomerLogin` point at the **production** app. They **will not resolve** when you only open this repo in a browser unless that backend is running—that is expected for a static handoff.
 
 ## Tech Stack
 
@@ -55,7 +67,7 @@ Serve from the **repo root** so paths like `/_images/...` and `/Content/...` res
 
 ```
 ./
-├── *.html                 # Page prototypes (marketing, portal, reports, utility)
+├── *.html                 # Handoff pages (marketing, portal, reports, utility)
 ├── Content/               # Primary stylesheets and style backups
 │   ├── css.css
 │   ├── custom-styles.css
@@ -168,6 +180,8 @@ Prefer the **underscore** variants. These are backups or older copies:
    - `Content/carousel-current-next-week.html`, `Content/terminal-schedule-mockup.html`, `Content/user-management-logic.html`
 
 ## Contributing
+
+This repo was used for **ongoing frontend handoff** via GitHub (branches and PRs). To extend it the same way:
 
 1. Branch from `main`.
 2. Edit HTML/CSS/JS as needed.
