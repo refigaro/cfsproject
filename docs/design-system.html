@@ -45,6 +45,27 @@
   .box-sample { background: var(--clr-white); border: var(--stroke-width-1) solid var(--clr-azure-95); height: 80px; display: flex; align-items: center; justify-content: center; }
   .box-sample-label { text-align: center; }
   .box-sample-label code { display: block; font-family: var(--font-monospace); font-size: var(--font-size-2xs); color: var(--clr-text-secondary); margin-top: var(--space-2); }
+
+  .docs-table { width: 100%; border-collapse: collapse; margin-bottom: var(--space-8); font-size: var(--font-size-sm); }
+  .docs-table caption { text-align: left; font-weight: var(--font-weight-semibold); color: var(--clr-text-headings); margin-bottom: var(--space-2); }
+  .docs-table th, .docs-table td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom: var(--stroke-width-1) solid var(--clr-azure-95); }
+  .docs-table th { color: var(--clr-text-secondary); font-weight: var(--font-weight-semibold); font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: .03em; }
+  .docs-table td code, .docs-table th code { font-family: var(--font-monospace); font-size: var(--font-size-xs); }
+  .docs-table tr.docs-bug-row td { background: var(--clr-danger-light); }
+  .docs-note {
+    background: var(--clr-info-light); color: var(--clr-info-dark);
+    border-radius: var(--border-radius-md); padding: var(--space-3) var(--space-4);
+    font-size: var(--font-size-sm); margin-bottom: var(--space-6);
+  }
+  .docs-bug-note {
+    background: var(--clr-danger-light); color: var(--clr-danger-dark);
+    border-radius: var(--border-radius-md); padding: var(--space-3) var(--space-4);
+    font-size: var(--font-size-sm); margin-bottom: var(--space-6);
+  }
+  .demo-row { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: flex-end; margin-bottom: var(--space-6); }
+  .demo-box { background: var(--clr-azure-95); outline: 1px dashed var(--clr-azure-70); }
+  .demo-box-inner { background: var(--clr-cyan-47); color: #fff; font-family: var(--font-monospace); font-size: var(--font-size-2xs); padding: 2px 6px; }
+  .demo-label { font-family: var(--font-monospace); font-size: var(--font-size-2xs); color: var(--clr-text-secondary); display: block; margin-top: var(--space-1); text-align: center; }
 </style>
 </head>
 <body>
@@ -52,7 +73,7 @@
 
   <header>
     <h1>Imperial CFS — Design System</h1>
-    <span class="docs-phase-note">Fase 1 — Tokens únicamente (faltan utilidades y componentes)</span>
+    <span class="docs-phase-note">Fase 2 — Tokens + Utilidades (falta documentar componentes)</span>
     <p class="text-secondary">Fuente: <code class="font-family-roboto-mono">Content/design-system.css</code> — todos los valores en esta página se extrajeron directamente de ese archivo.</p>
   </header>
 
@@ -216,6 +237,239 @@
       <div class="box-sample-label"><div class="box-sample" style="box-shadow:var(--shadow-md); margin-bottom:8px;"></div><code>--shadow-md</code></div>
       <div class="box-sample-label"><div class="box-sample" style="box-shadow:var(--shadow-lg); margin-bottom:8px;"></div><code>--shadow-lg</code></div>
     </div>
+  </section>
+
+  <!-- ============ UTILIDADES (FASE 2) ============ -->
+  <section class="docs-section" id="utilidades">
+    <h2>Utilidades</h2>
+    <p class="text-secondary">Todas las clases listadas existen literalmente en <code class="font-family-roboto-mono">Content/design-system.css</code>. Se citan línea por línea, sin agregar ninguna clase hipotética.</p>
+
+    <h3>Resets heredados ("RESETS FROM OLD CSS")</h3>
+    <div class="docs-note">El archivo fuente agrupa estas reglas bajo el comentario literal <code class="font-family-roboto-mono">/* RESETS FROM OLD CSS */</code> — son ajustes puntuales sobre Bootstrap, no utilidades de la escala de diseño.</div>
+    <table class="docs-table">
+      <thead><tr><th>Selector</th><th>Efecto</th></tr></thead>
+      <tbody>
+        <tr><td><code>.row</code></td><td>Fuerza márgenes negativos de <code>--bs-gutter-x</code> con <code>!important</code></td></tr>
+        <tr><td><code>.pl-0</code></td><td><code>padding-left:0 !important</code></td></tr>
+        <tr><td><code>.btn</code></td><td><code>border-radius:0</code>, <code>height:initial!important</code>, <code>font-size:initial!important</code></td></tr>
+        <tr><td><code>body, button, input, select, textarea</code></td><td>Fuerza <code>font: initial / initial var(--font-primary)</code></td></tr>
+        <tr><td><code>.mb-3</code></td><td><code>margin-bottom: var(--space-3) !important</code> (declarada otra vez más abajo, mismo valor)</td></tr>
+        <tr><td><code>.lh-1rem</code></td><td><code>line-height:1rem!important</code></td></tr>
+        <tr><td><code>.mb-1px</code></td><td><code>margin-bottom:1px!important</code></td></tr>
+        <tr><td><code>.row-no-wrap</code></td><td><code>margin-left/right:-24px!important</code></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Display</h3>
+    <table class="docs-table">
+      <tbody>
+        <tr><td><code>.d-none</code></td><td><code>display:none</code></td></tr>
+        <tr><td><code>.d-block</code></td><td><code>display:block</code></td></tr>
+        <tr><td><code>.d-inline-block</code></td><td><code>display:inline-block</code></td></tr>
+        <tr><td><code>.d-flex</code></td><td><code>display:flex</code></td></tr>
+        <tr><td><code>.d-inline-flex</code></td><td><code>display:inline-flex</code></td></tr>
+        <tr><td><code>.d-grid</code></td><td><code>display:grid</code></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Flexbox</h3>
+    <table class="docs-table">
+      <tbody>
+        <tr><td><code>.flex-row</code> / <code>.flex-col</code></td><td><code>flex-direction: row / column</code></td></tr>
+        <tr><td><code>.flex-wrap</code> / <code>.flex-nowrap</code></td><td><code>flex-wrap: wrap / nowrap</code></td></tr>
+        <tr><td><code>.items-start/-center/-end/-stretch</code></td><td><code>align-items</code> correspondiente</td></tr>
+        <tr><td><code>.justify-start/-center/-end/-between/-around</code></td><td><code>justify-content</code> correspondiente</td></tr>
+        <tr><td><code>.gap-1, .gap-2, .gap-3, .gap-4, .gap-5, .gap-6, .gap-8, .gap-12, .gap-16, .gap-20</code></td><td><code>gap: var(--space-N)</code> — <code>gap-3/4/5/8/12/16/20</code> llevan <code>!important</code> (se agregaron después, en bloque separado del original <code>gap-1/2/4/6/8</code>)</td></tr>
+      </tbody>
+    </table>
+    <div class="demo-row">
+      <div class="d-flex items-center justify-between gap-4 demo-box" style="width:280px; padding:var(--space-3);">
+        <div class="demo-box-inner">A</div><div class="demo-box-inner">B</div><div class="demo-box-inner">C</div>
+      </div>
+    </div>
+    <p class="text-secondary text-xs">Demo en vivo: <code class="font-family-roboto-mono">.d-flex.items-center.justify-between.gap-4</code></p>
+
+    <h3>Espaciado — todos los lados</h3>
+    <table class="docs-table">
+      <thead><tr><th>Margin</th><th>Padding</th><th>Valor</th></tr></thead>
+      <tbody>
+        <tr><td><code>.m-1</code></td><td><code>.p-1</code></td><td>--space-1 (4px)</td></tr>
+        <tr><td><code>.m-2</code></td><td><code>.p-2</code> <em>!important</em></td><td>--space-2 (8px)</td></tr>
+        <tr><td><code>.m-3</code></td><td><code>.p-3</code></td><td>--space-3 (12px)</td></tr>
+        <tr><td><code>.m-4</code></td><td><code>.p-4</code></td><td>--space-4 (16px)</td></tr>
+        <tr><td><code>.m-5</code></td><td><code>.p-5</code> <em>!important</em></td><td>--space-5 (20px) — <code>.p-5</code> redeclarada de nuevo más abajo, mismo valor</td></tr>
+        <tr><td><code>.m-6</code></td><td><code>.p-6</code></td><td>--space-6 (24px)</td></tr>
+        <tr><td><code>.m-8</code></td><td><code>.p-8</code></td><td>--space-8 (32px)</td></tr>
+        <tr><td><code>.m-10</code></td><td><code>.p-10</code></td><td>--space-10 (40px)</td></tr>
+        <tr><td><code>.m-12</code></td><td><code>.p-12</code></td><td>--space-12 (48px)</td></tr>
+        <tr><td><code>.m-16</code></td><td><code>.p-16</code></td><td>--space-16 (64px)</td></tr>
+        <tr><td><code>.m-20</code></td><td><code>.p-20</code></td><td>--space-20 (80px)</td></tr>
+        <tr><td><code>.m-24</code></td><td><code>.p-24</code></td><td>--space-24 (96px)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Espaciado — eje Y (<code class="font-family-roboto-mono">.my-*</code> / <code class="font-family-roboto-mono">.py-*</code>)</h3>
+    <p class="text-secondary text-xs">Todas con <code class="font-family-roboto-mono">!important</code>: 1, 2, 4, 5, 6, 8, 12, 16.</p>
+
+    <h3>Espaciado — eje X (<code class="font-family-roboto-mono">.mx-*</code> / <code class="font-family-roboto-mono">.px-*</code>)</h3>
+    <table class="docs-table">
+      <tbody>
+        <tr><td><code>.mx-1 / .px-1</code></td><td>--space-1 (sin !important)</td></tr>
+        <tr><td><code>.mx-2 / .px-2</code></td><td>--space-2 (con !important)</td></tr>
+        <tr><td><code>.mx-4</code> (sin !important) / <code>.px-4</code> (con !important)</td><td>--space-4 — asimetría real en el archivo</td></tr>
+        <tr><td><code>.mx-5</code> no existe / <code>.px-5</code> sí (declarada aparte, !important)</td><td>--space-5</td></tr>
+        <tr><td><code>.mx-6 / .px-6</code></td><td>--space-6 (sin !important)</td></tr>
+        <tr><td><code>.mx-8 / .px-8</code></td><td>--space-8 (sin !important)</td></tr>
+        <tr><td><code>.mx-12 / .px-12</code></td><td>--space-12 (sin !important)</td></tr>
+        <tr><td><code>.mx-16 / .px-16</code></td><td>--space-16 (sin !important)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Espaciado — direccional (top / bottom / left / right)</h3>
+    <table class="docs-table">
+      <thead><tr><th>Top</th><th>Bottom</th><th>Left</th><th>Right</th><th>Valor</th></tr></thead>
+      <tbody>
+        <tr><td><code>.mt-0/.pt-0</code></td><td>—</td><td>—</td><td>—</td><td>0</td></tr>
+        <tr><td><code>.mt-1/.pt-1</code></td><td><code>.mb-1/.pb-1</code></td><td><code>.ml-1/.pl-1</code></td><td><code>.mr-1/.pr-1</code></td><td>--space-1</td></tr>
+        <tr><td><code>.mt-2/.pt-2</code></td><td><code>.mb-2/.pb-2</code></td><td><code>.ml-2/.pl-2</code></td><td><code>.mr-2/.pr-2</code></td><td>--space-2</td></tr>
+        <tr><td>—</td><td><code>.mb-3/.pb-3</code></td><td>—</td><td>—</td><td>--space-3</td></tr>
+        <tr><td><code>.mt-4/.pt-4</code></td><td><code>.mb-4/.pb-4</code></td><td><code>.ml-4/.pl-4</code></td><td><code>.mr-4/.pr-4</code></td><td>--space-4</td></tr>
+        <tr><td><code>.mt-5/.pt-5</code></td><td><code>.mb-5/.pb-5</code></td><td>—</td><td>—</td><td>--space-5</td></tr>
+        <tr><td><code>.mt-6/.pt-6</code></td><td><code>.mb-6/.pb-6</code></td><td><code>.ml-6/.pl-6</code></td><td><code>.mr-6/.pr-6</code></td><td>--space-6</td></tr>
+        <tr><td><code>.mt-8/.pt-8</code></td><td><code>.mb-8/.pb-8</code></td><td><code>.ml-8/.pl-8</code></td><td><code>.mr-8/.pr-8</code></td><td>--space-8</td></tr>
+        <tr class="docs-bug-row"><td><code>.mt-12/.pt-12</code></td><td><code>.mb-12/.pb-12</code></td><td><code>.ml-12</code> / <strong>.pl-8</strong> (bug)</td><td><code>.mr-12/.pr-12</code></td><td>--space-12</td></tr>
+        <tr class="docs-bug-row"><td><code>.mt-16/.pt-16</code></td><td><code>.mb-16/.pb-16</code></td><td><code>.ml-16</code> / <strong>.pl-8</strong> (bug, redeclarada)</td><td><code>.mr-16/.pr-16</code></td><td>--space-16</td></tr>
+      </tbody>
+    </table>
+    <div class="docs-bug-note">
+      <strong>Bug confirmado en el archivo fuente (líneas 379–380 de <code class="font-family-roboto-mono">Content/design-system.css</code>):</strong>
+      las filas de <code class="font-family-roboto-mono">.ml-12</code> y <code class="font-family-roboto-mono">.ml-16</code> emparejan su padding con <code class="font-family-roboto-mono">.pl-8</code> en vez de <code class="font-family-roboto-mono">.pl-12</code> / <code class="font-family-roboto-mono">.pl-16</code>.
+      Resultado real: <code class="font-family-roboto-mono">.pl-12</code> y <code class="font-family-roboto-mono">.pl-16</code> no existen como clases, y <code class="font-family-roboto-mono">.pl-8</code> queda sobre-escrita en cascada a <code class="font-family-roboto-mono">padding-left: var(--space-16)</code> (64px) en vez de <code class="font-family-roboto-mono">--space-8</code> (32px), porque la última declaración gana. No ocurre en <code class="font-family-roboto-mono">.mr-*/.pr-*</code> ni en <code class="font-family-roboto-mono">.mt-*/.pt-*</code>, que sí tienen sus 12/16 correctos.
+    </div>
+
+    <h3>Tipografía — tamaño y peso</h3>
+    <table class="docs-table">
+      <tbody>
+        <tr><td><code>.text-2xs</code> … <code>.text-5xl</code></td><td>Mapean a <code>--font-size-2xs</code> … <code>--font-size-5xl</code>. Nota: <code>.text-sm</code>, <code>.text-2xl</code>, <code>.text-3xl</code> y <code>.text-4xl</code> <em>no</em> llevan <code>!important</code>; el resto de la serie sí.</td></tr>
+        <tr><td><code>.font-regular/-medium/-semibold/-bold/-bolder/-black</code></td><td>Mapean a <code>--font-weight-*</code> (todas con <code>!important</code>)</td></tr>
+        <tr><td><code>.font-family-archivo/-sora/-dm-serif/-roboto-mono</code></td><td>Mapean a <code>--font-primary/-secondary/-headings/-monospace</code></td></tr>
+      </tbody>
+    </table>
+    <div class="demo-row">
+      <span class="text-2xs">2xs</span><span class="text-xs">xs</span><span class="text-sm">sm</span><span class="text-base">base</span><span class="text-lg">lg</span><span class="text-xl">xl</span><span class="text-2xl">2xl</span>
+    </div>
+
+    <h3>Color de texto</h3>
+    <table class="docs-table">
+      <tbody>
+        <tr><td><code>.text-primary</code></td><td>= --clr-text-primary (--clr-grey-20)</td></tr>
+        <tr><td><code>.text-secondary</code></td><td>= --clr-text-secondary (--clr-grey-50)</td></tr>
+        <tr><td><code>.text-danger / .text-success / .text-info</code></td><td>= --clr-danger / --clr-success / --clr-info</td></tr>
+        <tr><td><code>.text-success-dark / .text-danger-dark / .text-info-dark / .text-warning-dark</code></td><td>variantes "dark" para pills</td></tr>
+        <tr><td><code>.text-color-headings</code></td><td>= --clr-navy-900 (<em>distinto</em> de <code>--clr-text-headings</code>, que apunta también a --clr-navy-900 — coinciden en valor pero son tokens separados)</td></tr>
+        <tr><td><code>.text-navy-900 … .text-navy-100</code></td><td>⚠️ Pese al nombre "navy", mapean a la escala <strong>azure</strong> (<code>--clr-azure-09/19/42/44/46/70/80/85/89</code>), no a <code>--clr-navy-*</code></td></tr>
+        <tr><td><code>.text-navy-450</code></td><td>Única excepción real: sí mapea a <code>--clr-navy-500</code></td></tr>
+        <tr><td><code>.text-azure-700</code></td><td>Mapea a <code>--clr-navy-700</code> (nombre invertido respecto a <code>.text-navy-700</code>)</td></tr>
+        <tr><td><code>.text-blue-brand / .text-blue-light</code></td><td>= --clr-blue-brand / --clr-blue-light-bg</td></tr>
+        <tr><td><code>.text-grey-95/-65/-50/-40/-20</code></td><td>= --clr-grey-* correspondiente</td></tr>
+        <tr><td><code>.text-white</code></td><td><code>color:white!important</code> (valor literal, no token)</td></tr>
+        <tr><td><code>.text-cyan-primary</code></td><td>= --clr-cyan-47</td></tr>
+      </tbody>
+    </table>
+    <div class="docs-note">El par <code class="font-family-roboto-mono">.text-navy-*</code> / <code class="font-family-roboto-mono">.text-azure-700</code> tiene los nombres cruzados respecto a los tokens que realmente usan — vale la pena tenerlo presente al elegir clases por nombre.</div>
+
+    <h3>Color de fondo y borde</h3>
+    <table class="docs-table">
+      <tbody>
+        <tr><td><code>.bg-success / -light / -dark</code></td><td>= --clr-success / -light / -dark</td></tr>
+        <tr><td><code>.bg-danger / -light / -dark</code></td><td>= --clr-danger / -light / -dark</td></tr>
+        <tr><td><code>.bg-info-light</code></td><td>= --clr-info-light (no existe <code>.bg-info</code> ni <code>.bg-info-dark</code>)</td></tr>
+        <tr><td><code>.bg-warning / -light / -dark</code></td><td>= --clr-warning / -light / -dark</td></tr>
+        <tr><td><code>.bg-white</code></td><td>= --clr-white</td></tr>
+        <tr><td><code>.bg-navy-900/-800/-700/-600/-500/-400</code></td><td>= --clr-navy-* directo (esta serie sí usa la escala navy real)</td></tr>
+        <tr><td><code>.bg-navy-200 / .bg-navy-100</code></td><td>= --clr-azure-85 / --clr-azure-89 (mezclado con azure, igual que en <code>.text-navy-*</code>)</td></tr>
+        <tr><td><code>.bg-azure-95/-99/-19/-09</code></td><td>= --clr-azure-* correspondiente</td></tr>
+        <tr><td><code>.bg-blue-brand / .bg-blue-light</code></td><td>= --clr-blue-brand / --clr-blue-light-bg</td></tr>
+        <tr><td><code>.bg-grey-95</code></td><td>= --clr-grey-95</td></tr>
+        <tr><td><code>.bg-transparent</code></td><td><code>background-color:transparent</code></td></tr>
+        <tr><td><code>.border-navy-300</code></td><td>= --clr-azure-80 (única clase de color de borde en el archivo)</td></tr>
+      </tbody>
+    </table>
+    <div class="demo-row">
+      <div class="bg-navy-900 rounded-md" style="width:60px;height:40px;"></div>
+      <div class="bg-success-light rounded-md" style="width:60px;height:40px;"></div>
+      <div class="bg-danger-light rounded-md" style="width:60px;height:40px;"></div>
+      <div class="bg-azure-99 rounded-md" style="width:60px;height:40px; border:1px solid var(--clr-azure-85);"></div>
+    </div>
+
+    <h3>Radio de borde y sombra (clases)</h3>
+    <table class="docs-table">
+      <tbody>
+        <tr><td><code>.rounded-sm/-md/-lg/-xl/-full</code></td><td>= --border-radius-sm/md/lg/xl/full (todas <code>!important</code>)</td></tr>
+        <tr><td><code>.shadow-sm/-md/-lg</code></td><td>= --shadow-sm/md/lg (todas <code>!important</code>)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Botón de acento</h3>
+    <p class="text-secondary text-xs"><code class="font-family-roboto-mono">.btn-accent</code> está hecha con variables CSS de Bootstrap (<code class="font-family-roboto-mono">--bs-btn-*</code>): fondo <code class="font-family-roboto-mono">--clr-cyan-47</code>, hover <code class="font-family-roboto-mono">--clr-azure-19</code>, active <code class="font-family-roboto-mono">--clr-azure-09</code>, disabled <code class="font-family-roboto-mono">--clr-grey-75</code>. Requiere Bootstrap 5.3 cargado para que las variables <code class="font-family-roboto-mono">--bs-btn-*</code> tengan efecto (este documento no carga Bootstrap, por eso el botón de abajo se ve sin estilo de Bootstrap aplicado, solo el color de fondo).</p>
+    <div class="demo-row"><button class="btn btn-accent" style="padding:8px 16px; border:none; background:var(--clr-cyan-47); color:#fff; border-radius:4px;">btn-accent (aprox.)</button></div>
+
+    <h3>Opacidad, transiciones, transform, filtros, cursor, foco</h3>
+    <table class="docs-table">
+      <tbody>
+        <tr><td><code>.opacity-10 / -50 / -75</code></td><td><code>opacity: 0.1 / 0.5 / 0.75</code> (<code>.opacity-10</code> con !important, las otras dos no)</td></tr>
+        <tr><td><code>.hover-opacity-75:hover</code></td><td><code>opacity: 0.75</code></td></tr>
+        <tr><td><code>.transition / .transition-normal</code></td><td><code>transition-duration</code>: 150ms / 300ms (<code>--transition-duration-fast/-normal</code>)</td></tr>
+        <tr><td><code>.hover-scale-102:hover</code></td><td><code>scale(var(--transform-scale-lg))</code> = 1.0025 (a pesar del nombre "102")</td></tr>
+        <tr><td><code>.hover-scale-97:hover</code></td><td><code>scale(99%)</code> — valor literal, no usa <code>--transform-scale-sm</code> (a pesar del nombre "97")</td></tr>
+        <tr><td><code>.hover-translate-y-sm:hover</code></td><td><code>translateY(-4px)</code></td></tr>
+        <tr><td><code>.hover-shadow-lg:hover</code></td><td><code>box-shadow: var(--shadow-lg)</code></td></tr>
+        <tr><td><code>.active-scale-98:active</code></td><td><code>scale(var(--transform-scale-sm))</code> = 0.99</td></tr>
+        <tr><td><code>.filter-grayscale</code></td><td><code>filter: grayscale(100%)</code></td></tr>
+        <tr><td><code>.hover-filter-grayscale-0:hover</code></td><td><code>filter: grayscale(0%)</code></td></tr>
+        <tr><td><code>.hover-brightness-105:hover</code></td><td><code>filter: brightness(1.05)</code></td></tr>
+        <tr><td><code>.cursor-pointer / -not-allowed / -help</code></td><td><code>cursor</code> correspondiente</td></tr>
+        <tr><td><code>.focus-ring:focus-visible</code></td><td><code>box-shadow: 0 0 0 3px var(--clr-info-light)</code></td></tr>
+      </tbody>
+    </table>
+    <div class="docs-note">Los nombres <code class="font-family-roboto-mono">.hover-scale-102</code> y <code class="font-family-roboto-mono">.hover-scale-97</code> sugieren 102%/97%, pero los valores reales en el archivo son 100.25% y 99% respectivamente — el nombre no coincide con el efecto real.</div>
+
+    <h3>Tipografía de marketing (<code class="font-family-roboto-mono">.type-*</code>)</h3>
+    <table class="docs-table">
+      <tbody>
+        <tr><td><code>.type-display-1</code></td><td>DM Serif Text, clamp(3.4rem, …, 4.25rem), letter-spacing -.0425rem</td></tr>
+        <tr><td><code>.type-h1</code> … <code>.type-h6</code></td><td>DM Serif Text, escala clamp() de 46pt a 18pt base</td></tr>
+        <tr><td><code>.type-body-lg</code></td><td>Sora, 1rem, line-height 1.2</td></tr>
+        <tr><td><code>.type-subhead</code></td><td>Sora, 1rem, uppercase, peso 600, line-height 105%</td></tr>
+        <tr><td><code>.type-subhead-sm</code></td><td>Sora, .75rem, uppercase, peso 600, line-height 100%</td></tr>
+        <tr><td><code>.type-body-sm</code></td><td>Sora, .75rem, line-height 1.5</td></tr>
+        <tr><td><code>.type-h4-alt / -h5-alt / -h6-alt</code></td><td>Mismas escalas de h4/h5/h6 pero en Sora en vez de DM Serif</td></tr>
+        <tr><td><code>.type-body-lg-alt</code></td><td>DM Serif Text, 1rem (variante "alt" pero usa headings, al revés del patrón de las otras "-alt")</td></tr>
+        <tr><td><code>.type-btn-sm</code></td><td>Archivo Narrow, .9rem, peso 600, uppercase, letter-spacing .03em</td></tr>
+        <tr><td><code>.type-btn-sm-alt</code></td><td>Sora, .9rem, peso 600, uppercase</td></tr>
+      </tbody>
+    </table>
+    <div class="demo-row" style="flex-direction:column; align-items:flex-start;">
+      <span class="type-h2">type-h2 — Imperial CFS</span>
+      <span class="type-subhead">type-subhead — operaciones portuarias</span>
+      <span class="type-body-sm">type-body-sm — texto de cuerpo pequeño de ejemplo</span>
+    </div>
+
+    <h3>Otras utilidades sueltas</h3>
+    <table class="docs-table">
+      <tbody>
+        <tr><td><code>.text-not-uppercase</code></td><td><code>text-transform:none!important</code></td></tr>
+        <tr><td><code>.text-lowercase</code></td><td><code>text-transform:initial!important</code> (el nombre sugiere minúsculas, pero el valor real es "initial", no "lowercase")</td></tr>
+        <tr><td><code>.letter-spacing-0/-sm/-md/-lg</code></td><td>0 / .5% / 1% / 2%</td></tr>
+        <tr><td><code>h1, h2, h3, h4, h5, h6</code></td><td><code>line-height:120%</code> global</td></tr>
+        <tr><td><code>.min-h-100vh</code></td><td><code>min-height: calc(100dvh - 15.94rem)</code></td></tr>
+        <tr><td><code>.form-control</code></td><td><code>border-radius:initial</code>, <code>font-size:1rem</code>, <code>min-height:2rem</code> en sus <code>input</code>/<code>select</code> anidados (sintaxis CSS nesting)</td></tr>
+        <tr><td><code>input[readonly]</code></td><td>Color de texto <code>#495057</code>, cursor default, sin opacidad reducida, borde <code>#ced4da</code> — valores literales hex, no tokens</td></tr>
+        <tr><td><code>input[readonly]:focus</code></td><td>Sin anillo de foco (<code>box-shadow:none!important</code>)</td></tr>
+        <tr><td><code>.btn-sm</code></td><td><code>font-size: var(--font-size-sm)!important</code></td></tr>
+        <tr><td><code>html</code></td><td><code>scroll-margin-top: 5.2rem!important</code></td></tr>
+      </tbody>
+    </table>
   </section>
 
 </div>
