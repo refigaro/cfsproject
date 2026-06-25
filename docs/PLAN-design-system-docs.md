@@ -12,6 +12,22 @@ Crear una página HTML que documente el design system real del proyecto, basada 
 
 Antes de documentar cualquier "componente", se verificó con `grep` en cuántas páginas HTML aparece la clase candidata. Solo se documenta como reutilizable lo que se confirmó en múltiples páginas; lo específico de una sola página se etiqueta como tal o se deja pendiente.
 
+## Estado actual (última actualización: 2026-06-24, tras Fase 11) — leer esto primero
+
+**Si retomas esto en una sesión nueva, no necesitas leer las 11 fases de abajo para empezar — léelas solo si necesitas el detalle de un hallazgo específico.** Esta sección es la fuente de verdad sobre dónde está el trabajo *ahora*; el resto del documento es el historial de cómo se llegó aquí (cronológico, fase por fase, y partes de ese historial — sobre todo la estructura descrita en la Fase 8 — ya quedaron obsoletas por fases posteriores).
+
+- **Commit actual:** `c572750` en `origin/main` (repo `refigaro/cfsproject`). Todo lo descrito abajo ya está subido — no hay trabajo sin commitear pendiente.
+- **Estructura real y vigente de `docs/design-system.html` hoy** (Fase 11, Atomic Design — Fase 8 quedó superada, no es la estructura actual): Stack base → Tokens (Color/Tipografía/Espaciado/Bordes y sombras) → **Átomos** → **Moléculas** → **Organismos** → **Templates** → Overrides responsive → Pendiente — baja muestra real. Ver Fase 11 para el mapeo ítem por ítem y el criterio de clasificación usado.
+- **Cobertura de fuente:** `Content/design-system.css` (684 líneas), `Content/custom-styles.css` (3,987 líneas), `Content/extra.css` (181 líneas) y `Content/css.css` (139 KB, 656 selectores) están documentados — el primero al 100%, los otros tres con tratamiento proporcional explícito donde el detalle no aporta (ver Fase 6).
+- **Metodología vigente, no negociable:** nunca afirmar "reutilizable" sin contar páginas reales con matching exacto de token de clase (no `grep -l` simple, no `\b` — ver la "lección de metodología" de la Fase 6, produjo varios falsos positivos antes de corregirse). Antes de cualquier reorden grande de secciones, correr el script de verificación de ids duplicados + balance de tags (ver Fase 8 y el bug real de Fase 11) — no es opcional.
+
+### Pendientes reales abiertos (decisión de Sergio, no de Claude)
+
+1. **3 de los 11 hallazgos documentados siguen sin corregir, a propósito:** #1 (bug de cascada `.pl-8`, `design-system.css:378-380`), #2 (nombres cruzados `.text-navy-*`/`.text-azure-700`, es una migración de naming, no un fix puntual), #6/#10 (3 reglas `html{font-size}` redundantes en 2 archivos — hay que confirmar en navegador real cuál gana en cada breakpoint antes de tocar cualquiera). Ver "Priorización de los 11 hallazgos" más abajo para el detalle de riesgo de cada uno. **No hay fecha ni dueño asignado — preguntar a Sergio por cuál empezar, o si se deja así.**
+2. **~67 selectores "indeterminados" de `css.css`** (de nombre genérico, ej. `row`, `btn`, `text`) nunca se clasificaron vivo/muerto uno por uno — decisión explícita de alcance proporcional, no falta de tiempo (Fase 6). Si se quiere cerrar, repetir la metodología de matching exacto + intersección con páginas que cargan la hoja.
+3. **Eje "webapp/dashboard vs. marketing pages"** (Fase 9, mecanismo real `.marketing` en `custom-styles.css`) está documentado como hallazgo dentro de "Stack base", pero Sergio decidió explícitamente que por ahora es **solo contexto, no se refleja como eje estructural** en el documento. Si se retoma, preguntar primero si eso cambió.
+4. **Hallazgo nuevo sin investigar** (surgido al verificar el fix de `--brand-dark` en Fase 6): el link "Services" del navbar en marketing queda en gris genérico en vez de navy — probablemente un selector de submenu/dropdown no tocado por ese fix. Nunca se investigó a fondo.
+
 ## Decisiones ya tomadas (no replantear sin razón nueva)
 
 - **Ubicación**: todo vive en un único archivo, `docs/design-system.html` (carpeta `docs/` nueva, separada de las páginas de producto).
@@ -19,7 +35,7 @@ Antes de documentar cualquier "componente", se verificó con `grep` en cuántas 
 - **Avance incremental por fases**, cada una verificada antes de avanzar a la siguiente.
 - **`Content/custom-styles.css` se documenta en el mismo archivo** (`docs/design-system.html`), como secciones nuevas, no en un archivo separado.
 - **Dentro de `custom-styles.css`**, que está organizado por página (no por componente), se separa explícitamente:
-  - Lo **reutilizable** (clase usada en ≥7 páginas, confirmado por conteo real con `grep -l`)
+  - Lo **reutilizable** (clase usada en ≥3 páginas, confirmado por conteo real con matching exacto de clase — el umbral bajó de ≥7 a ≥3 en sesiones posteriores, ver Fase 8 y la "lección de metodología" de Fase 6 sobre por qué `grep -l` simple no basta)
   - Lo **específico de página**, que se deja pendiente y listado por nombre de bloque + línea, para abordarlo bloque por bloque en sesiones futuras.
 
 ## Estado actual — completado
