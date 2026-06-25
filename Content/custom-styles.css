@@ -287,13 +287,13 @@ input.form-control {
     color: white;
 }
 
-.availavility-v2 .form-control {
+.availability-v2 .form-control {
     appearance: auto;
     padding-right: 1rem;
 }
 
-.availavility-v2 .form-check-input[type=checkbox],
-.availavility-v2 .form-check-input[type=radio] {
+.availability-v2 .form-check-input[type=checkbox],
+.availability-v2 .form-check-input[type=radio] {
     border-color: var(--clr-navy-400);
 }
 
@@ -1266,24 +1266,6 @@ html {
     }
 }
 
-.transport-badge {
-    padding: 0.3125rem 0.75rem;
-    border-radius: 1.25rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-.badge-truck {
-    background-color: #eef4fc;
-    color: #0d6efd;
-}
-
-.badge-rail {
-    background-color: #eef4fc;
-    color: #0d6efd;
-}
-
-
 .ipi-milestones {
     font-family: var(--font-secondary);
     flex-grow: 10;
@@ -1295,52 +1277,8 @@ html {
     }
 }
 
-.sticky-column-content {
-    position: sticky;
-    top: 5rem;
-}
-
 #warehouse-in-out-Accordion .accordion-body .row:first-child .detail-label {
     display: inline-block;
-}
-
-.useful-links {
-    font-family: var(--font-secondary) !important;
-}
-
-.useful-links .dropdown-menu {
-    display: block;
-    visibility: hidden;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height ease .8s;
-}
-
-.useful-links .dropdown-menu.show {
-    inset: 0.25rem auto auto 0 !important;
-    padding-top: 0;
-    padding-bottom: 0;
-    height: auto;
-    visibility: visible;
-    opacity: 1;
-    max-height: 18.75rem;
-    transition: margin-top ease .8s;
-}
-
-.useful-links .dropdown-menu.show a.dropdown-item {
-    padding: var(--space-3) var(--space-4) !important;
-    transition: all .2s ease;
-}
-
-.useful-links .dropdown-menu.show a.dropdown-item:hover {
-    background-color: var(--clr-azure-70);
-    text-decoration: none;
-}
-
-.useful-links .dropdown-menu.show a.dropdown-item:active {
-    background-color: var(--clr-azure-19);
-    text-decoration: none;
 }
 
 .warehouse-in-out-details {
@@ -1623,59 +1561,53 @@ body:has(#login-modal.modal) .modal-backdrop {
 
 /* Transit Time Schedule */
 
-.availavility-v2 .table-striped>tbody>tr:nth-of-type(odd) {
+.availability-v2 .table-striped>tbody>tr:nth-of-type(odd) {
     background-color: var(--clr-azure-89) !important;
 }
 
-.availavility-v2 .table-striped>tbody>tr:nth-of-type(odd)>* {
+.availability-v2 .table-striped>tbody>tr:nth-of-type(odd)>* {
     --bs-table-color-type: var(--bs-table-striped-color);
     --bs-table-bg-type: var(--clr-azure-89) !important;
 }
 
-.availavility-v2 .table-striped>tbody>tr:hover>* {
+.availability-v2 .table-striped>tbody>tr:hover>* {
     --bs-table-bg-type: #b8eeff !important;
 }
 
-.availavility-v2 .Availability-table {
+.availability-v2 .Availability-table {
     font-family: var(--font-primary);
 }
 
-.availavility-v2 .Availability-table thead th {
+.availability-v2 .Availability-table thead th {
     font-family: var(--font-secondary);
     font-size: var(--font-size-xs);
     background-color: var(--clr-navy-700)
 }
 
-.availavility-v2 .Availability-table tbody tr>td:first-child {
+.availability-v2 .Availability-table tbody tr>td:first-child {
     padding-right: var(--space-8);
     font-weight: bolder;
 }
 
-.availavility-v2 .Availability-table tbody td {
+.availability-v2 .Availability-table tbody td {
     vertical-align: middle;
 }
 
 /* -------- Charges Page -------*/
 
-.availavility-v2 table.ginfo {
-    width: 100% !important;
-    max-width: 50rem;
-    margin: 0 !important;
-}
-
-.availavility-v2 .charges-table .btn-group {
+.availability-v2 .charges-table .btn-group {
     flex-direction: column !important;
     display: flex;
     gap: var(--space-2);
     max-width: 12rem;
 }
 
-.availavility-v2 .charges-table .btn-group button {
+.availability-v2 .charges-table .btn-group button {
     background-color: var(--clr-cyan-47);
     border: 1px solid var(--clr-cyan-47);
 }
 
-.availavility-v2 .charges-table .btn-group button:hover {
+.availability-v2 .charges-table .btn-group button:hover {
     background-color: var(--clr-azure-19);
     border: 1px solid var(--clr-azure-19);
 }
@@ -1687,60 +1619,6 @@ body:has(#login-modal.modal) .modal-backdrop {
         min-width:30vw;
     }
 }
-
-.cucc-item {
-    border-radius: var(--border-radius-lg);
-    overflow: hidden;
-    border: 1px solid var(--clr-azure-85) !important;
-    transition: box-shadow ease .1s;
-    box-shadow: var(--shadow-sm);
-
-    & .accordion-button {
-        min-height: 3.3087rem;
-    }
-
-    & .accordion-button.no-arrow::after {
-        display: none !important;
-    }
-
-    & .service-fee::before {
-        content: "- ";
-    }
-
-    & .cucc-item-total p:last-child:before {
-        content: "$"
-    }
-
-    & .cucc-item-total p.js-val-fee::before {
-        content: "-$"
-    }
-}
-
-#collapse-cucc .cucc-amounts-grid {
-    display: grid;
-    grid-template-columns: 200px 180px 180px;
-}
-
-.cucc-item .accordion-button:not(.collapsed) {
-    background: white !important;
-}
-
-#edit-charge-modal-1 .modal-dialog {
-    max-width: 80vw !important;
-
-}
-
-.money-sign {
-
-    &::before {
-        content: "$";
-    }
-
-    &.negative::before {
-        content: "-$";
-    }
-}
-
 
 .terminal-schedule-main {
     background: var(--clr-azure-95);
@@ -1867,7 +1745,7 @@ body:has(#login-modal.modal) .modal-backdrop {
     }
 }
 
-.availavility-v2 .table-responsive .table-striped>tbody>tr:nth-of-type(odd)>.terminal-cell {
+.availability-v2 .table-responsive .table-striped>tbody>tr:nth-of-type(odd)>.terminal-cell {
     background-color: white !important;
     --bs-table-bg-type:white!important;
 }
@@ -2005,7 +1883,7 @@ body:has(#login-modal.modal) .modal-backdrop {
 
 /* --------- Information / Marketing Pages  ------- */
 
-.availavility-v2 .hero-section {
+.availability-v2 .hero-section {
     min-height: calc(100vh - 12.37rem);
     background-image: linear-gradient(to right, rgba(20, 38, 79, 0.9) 20%, rgba(20, 38, 79, 0) 80%), url("../_images/hero-desktop.webp");
     background-size: cover;
@@ -2092,7 +1970,7 @@ body:has(#login-modal.modal) .modal-backdrop {
 }
 
 
-.availavility-v2 .hero-section.template {
+.availability-v2 .hero-section.template {
     min-height: 12.75rem;
     background-image: linear-gradient(to top, rgba(20, 38, 79, 0.9) 30%, rgba(20, 38, 79, 0) 80%), url("../_images/hero-desktop.webp");
     background-size: cover;
@@ -2196,19 +2074,19 @@ body:has(#login-modal.modal) .modal-backdrop {
 
 .widget-tab.active {
     background: white !important;
-    color: var(--brand-dark) !important;
-    border-top: 3px solid var(--brand-dark);
+    color: var(--clr-navy-900) !important;
+    border-top: 3px solid var(--clr-navy-900);
     border-bottom: none;
 }
 
 
 
-.availavility-v2 .tracking-widget .nav-item .active {
+.availability-v2 .tracking-widget .nav-item .active {
     box-shadow: inset 0 .5rem 0 0 var(--clr-cyan-47);
 }
 
 
-.availavility-v2 .about-section {
+.availability-v2 .about-section {
     background: linear-gradient(to right, rgb(41 41 41) 59%, #05162A 59%);
 
     @media (max-width:992px) {
@@ -2314,7 +2192,7 @@ body:has(#login-modal.modal) .modal-backdrop {
     border-bottom: 1px solid var(--clr-navy-200);
 }
 
-.availavility-v2.marketing #header {
+.availability-v2.marketing #header {
     font-family: var(--font-secondary) !important;
 
     & a {
@@ -2322,20 +2200,20 @@ body:has(#login-modal.modal) .modal-backdrop {
     }
 }
 
-.availavility-v2.marketing .header-top {
+.availability-v2.marketing .header-top {
     & a {
         color: white;
         font-size: var(--font-size-2xs);
     }
 }
 
-.availavility-v2.marketing .header-main {
+.availability-v2.marketing .header-main {
     & a {
         font-size: var(--font-size-xs) !important;
     }
 }
 
-.availavility-v2.marketing .header-main .menu-list {
+.availability-v2.marketing .header-main .menu-list {
     height: 100%;
 
     li {
@@ -2428,7 +2306,7 @@ body .pc-menu {
 }
 
 .header-main a {
-    color: var(--brand-dark);
+    color: var(--clr-navy-900);
     /* Dark text on white bg */
     transition: color 0.3s ease;
 }
@@ -4099,7 +3977,7 @@ input[type=text] {
 }
 
 
-body.availavility-v2.marketing .breadcrumb {
+body.availability-v2.marketing .breadcrumb {
     --bs-breadcrumb-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%23ffffff'/%3E%3C/svg%3E");
 }
 

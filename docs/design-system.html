@@ -3,10 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <title>Imperial CFS — Design System (Tokens)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="../Content/css.css">
 <link rel="stylesheet" href="../Content/design-system.css">
+<link rel="stylesheet" href="../Content/custom-styles.css">
 <style>
   /* Estilos solo para esta página de documentación — no forman parte del design system */
-  .docs-wrap { max-width: 1100px; margin: 0 auto; padding: var(--space-8) var(--space-4) var(--space-24); }
+  .docs-wrap { max-width: 1400px; margin: 0 auto; padding: var(--space-8) var(--space-4) var(--space-24); }
+  .docs-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: var(--space-8); align-items: start; }
+  .docs-nav {
+    position: sticky; top: var(--space-4);
+    max-height: calc(100vh - var(--space-8));
+    overflow-y: auto;
+    padding-right: var(--space-2);
+    font-size: var(--font-size-xs);
+  }
+  .docs-nav ul { list-style: none; margin: 0; padding: 0; }
+  .docs-nav > ul { margin-bottom: var(--space-4); }
+  .docs-nav a {
+    display: block; text-decoration: none; color: var(--clr-text-secondary);
+    padding: var(--space-1) 0; border-left: 2px solid transparent;
+    padding-left: var(--space-3); transition: color .15s, border-color .15s;
+  }
+  .docs-nav > ul > li > a { font-weight: var(--font-weight-semibold); color: var(--clr-text-headings); padding-left: var(--space-2); }
+  .docs-nav ul ul { margin-left: var(--space-2); }
+  .docs-nav ul ul a { font-size: var(--font-size-2xs); }
+  .docs-nav a:hover { color: var(--clr-azure-46); }
+  .docs-nav a.is-active { color: var(--clr-cyan-47); border-left-color: var(--clr-cyan-47); font-weight: var(--font-weight-semibold); }
+  .docs-main { min-width: 0; }
+  @media (max-width: 900px) {
+    .docs-layout { grid-template-columns: 1fr; }
+    .docs-nav { position: static; max-height: none; border-bottom: var(--stroke-width-1) solid var(--clr-border); padding-bottom: var(--space-4); margin-bottom: var(--space-4); }
+  }
   .docs-phase-note {
     display: inline-block;
     background: var(--clr-warning-light);
@@ -73,15 +102,201 @@
 
   <header>
     <h1>Imperial CFS — Design System</h1>
-    <span class="docs-phase-note">Fase 4 — + Content/custom-styles.css (en progreso, por bloques)</span>
+    <span class="docs-phase-note">Fase 6 — + Stack base (Bootstrap/extra.css/css.css) + @font-face + auditoría de cifras (35 páginas reales) — completo</span>
     <p class="text-secondary">Fuente: <code class="font-family-roboto-mono">Content/design-system.css</code> — todos los valores en esta página se extrajeron directamente de ese archivo.</p>
   </header>
+
+  <div class="docs-layout">
+    <aside class="docs-nav">
+      <ul>
+        <li><a href="#stack-base">Stack base: Bootstrap + legacy</a>
+          <ul>
+            <li><a href="#stack-bootstrap">Bootstrap</a></li>
+            <li><a href="#stack-extra-css">extra.css</a></li>
+            <li><a href="#stack-css-css">css.css</a></li>
+          </ul>
+        </li>
+        <li><a href="#color">Color</a>
+          <ul>
+            <li><a href="#azure">Azure</a></li>
+            <li><a href="#navy">Navy</a></li>
+            <li><a href="#cyan">Cyan</a></li>
+            <li><a href="#azul-marca">Azul de marca</a></li>
+            <li><a href="#grises">Grises</a></li>
+            <li><a href="#semantico-texto-fondo-bordes">Semántico</a></li>
+            <li><a href="#estados">Estados</a></li>
+            <li><a href="#pills-etiquetas">Pills / etiquetas</a></li>
+          </ul>
+        </li>
+        <li><a href="#tipografia">Tipografía</a>
+          <ul>
+            <li><a href="#familias-fuente">Familias de fuente</a></li>
+            <li><a href="#font-face">Carga real (@font-face)</a></li>
+            <li><a href="#escala-tamanos">Escala de tamaños</a></li>
+            <li><a href="#pesos-fuente">Pesos de fuente</a></li>
+          </ul>
+        </li>
+        <li><a href="#espaciado">Espaciado</a></li>
+        <li><a href="#bordes-sombras">Bordes y sombras</a>
+          <ul>
+            <li><a href="#radio-borde">Radio de borde</a></li>
+            <li><a href="#ancho-trazo">Ancho de trazo</a></li>
+            <li><a href="#sombras">Sombras</a></li>
+          </ul>
+        </li>
+        <li><a href="#utilidades">Utilidades</a>
+          <ul>
+            <li><a href="#resets-heredados">Resets heredados</a></li>
+            <li><a href="#display">Display</a></li>
+            <li><a href="#flexbox">Flexbox</a></li>
+            <li><a href="#espaciado-todos-lados">Espaciado — todos los lados</a></li>
+            <li><a href="#espaciado-eje-y">Espaciado — eje Y</a></li>
+            <li><a href="#espaciado-eje-x">Espaciado — eje X</a></li>
+            <li><a href="#espaciado-direccional">Espaciado — direccional</a></li>
+            <li><a href="#tipografia-tamano-peso">Tipografía — tamaño/peso</a></li>
+            <li><a href="#color-texto">Color de texto</a></li>
+            <li><a href="#color-fondo-borde">Color de fondo y borde</a></li>
+            <li><a href="#radio-sombra-clases">Radio y sombra (clases)</a></li>
+            <li><a href="#boton-acento-util">Botón de acento</a></li>
+            <li><a href="#opacidad-transiciones">Opacidad / transiciones</a></li>
+            <li><a href="#tipografia-marketing">Tipografía de marketing</a></li>
+            <li><a href="#otras-utilidades">Otras utilidades sueltas</a></li>
+          </ul>
+        </li>
+        <li><a href="#componentes">Componentes</a>
+          <ul>
+            <li><a href="#comp-boton-acento">Botón de acento</a></li>
+            <li><a href="#comp-aviso-warning">Aviso de advertencia</a></li>
+            <li><a href="#comp-input-readonly">Input de solo lectura</a></li>
+            <li><a href="#comp-titulo-seccion">Título de sección</a></li>
+          </ul>
+        </li>
+        <li><a href="#custom-styles">custom-styles.css</a>
+          <ul>
+            <li><a href="#navbar-header">Navbar / Header</a></li>
+            <li><a href="#tablas-reportes">Tablas de reportes</a></li>
+            <li><a href="#hbl-table-layout">HBL Table layout</a></li>
+            <li><a href="#ipi-tracing-wrapper">IPI Tracing wrapper</a></li>
+            <li><a href="#modales-availability">Modales / header Availability</a></li>
+            <li><a href="#transit-time-schedule">Transit Time Schedule</a></li>
+            <li><a href="#charges-page">Charges Page</a></li>
+            <li><a href="#terminal-schedule">Terminal Schedule</a></li>
+            <li><a href="#container-level-release">Container Level Release</a></li>
+            <li><a href="#information-marketing">Information / Marketing</a></li>
+            <li><a href="#profile-page">Profile Page</a></li>
+            <li><a href="#user-management-resto">User Management — resto</a></li>
+            <li><a href="#responsive-styles">Responsive styles</a></li>
+            <li><a href="#utilidades-finales">Utilidades finales</a></li>
+            <li><a href="#hbl-details-modal">HBL Details Modal</a></li>
+            <li><a href="#link-offset-2">.link-offset-2</a></li>
+            <li><a href="#pendiente-baja-muestra">Pendiente — baja muestra</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <main class="docs-main">
+
+  <!-- ============ STACK BASE: BOOTSTRAP + LEGACY (FASE 6) ============ -->
+  <section class="docs-section" id="stack-base">
+    <h2>Stack base: Bootstrap + legacy</h2>
+    <p class="text-secondary">Antes de los tokens de <code class="font-family-roboto-mono">design-system.css</code> hay tres capas previas que cargan en cascada en <strong>todas</strong> las páginas reales del sitio (verificado: ninguna de las 35 carece de <code class="font-family-roboto-mono">css.css</code>, <code class="font-family-roboto-mono">design-system.css</code> ni <code class="font-family-roboto-mono">custom-styles.css</code>). Orden de carga real, confirmado en <code class="font-family-roboto-mono">home.html</code> y consistente en el resto: Bootstrap (CDN) → Bootstrap Icons (CDN) → <code class="font-family-roboto-mono">Content/css.css</code> → <code class="font-family-roboto-mono">Content/extra.css</code> (solo en algunas páginas, ver abajo) → <code class="font-family-roboto-mono">Content/css.css</code> otra vez (duplicado real en el <code class="font-family-roboto-mono">&lt;head&gt;</code>) → <code class="font-family-roboto-mono">design-system.css</code> → <code class="font-family-roboto-mono">custom-styles.css</code>.</p>
+    <div class="docs-note">
+      <strong>Nota de metodología — por qué los números de esta sección (y las correcciones aplicadas arriba en Fases 1–5) usan "35 páginas reales" y no "38":</strong> de los 44 archivos <code class="font-family-roboto-mono">.html</code> en la raíz del repo, 9 no son páginas navegables reales del sitio: <code class="font-family-roboto-mono">Copia de search-ipi.html</code> (duplicado por nombre), <code class="font-family-roboto-mono">availability3.html</code> (borrador/duplicado de <code class="font-family-roboto-mono">availability.html</code>, confirmado por el usuario), <code class="font-family-roboto-mono">email.html</code> (plantilla de email, no usa el design system), <code class="font-family-roboto-mono">mbl.html</code> (artefacto legacy de ASP.NET MVC con rutas <code class="font-family-roboto-mono">/Content/css?v=...</code>, stack distinto, no carga ninguna de las 3 hojas de estilo del proyecto), <code class="font-family-roboto-mono">Daily Container Status Table.html</code> y <code class="font-family-roboto-mono">Daily_Container_Status_Table.html</code> (fragmentos de tabla sin <code class="font-family-roboto-mono">&lt;html&gt;</code>/<code class="font-family-roboto-mono">&lt;body&gt;</code>, no son páginas), y <code class="font-family-roboto-mono">Reports - Daily_Container_Status.html</code> / <code class="font-family-roboto-mono">Reports - IPI Destination.html</code> / <code class="font-family-roboto-mono">Reports - InvoiceSearch.html</code> (huérfanos con espacio en el nombre, 0 hojas de estilo del proyecto enlazadas — duplicados rotos de las versiones con guión que sí son reales). El número "38" usado en sesiones anteriores no excluía estos casos correctamente; toda cifra de "N páginas" en este documento fue recalculada contra esta lista de 35.
+    </div>
+
+    <h3 id="stack-bootstrap">Bootstrap (CDN)</h3>
+    <table class="docs-table">
+      <tbody>
+        <tr><td>Bootstrap CSS</td><td><strong>31</strong> páginas cargan 5.3.8, <strong>4</strong> páginas (las de Reports: <code>Reports-Daily_Container_Status.html</code>, <code>Reports-IPI_Destination.html</code>, <code>Reports-InvoiceSearch.html</code>, <code>Reports-LAX_Inventory_Report.html</code>) cargan 5.3.3 — split limpio por tipo de página, no aleatorio</td></tr>
+        <tr><td>Bootstrap JS</td><td><strong>34 de 35</strong> páginas cargan el bundle 5.3.3 — incluidas 30 de las 31 que cargan el CSS 5.3.8. Es decir: la mayoría del sitio sirve <strong>CSS 5.3.8 + JS 5.3.3</strong>, una combinación cruzada de versiones (ambas dentro de la misma serie 5.3.x, riesgo bajo, pero no es una práctica intencional documentada)</td></tr>
+        <tr><td>Bootstrap Icons</td><td>1.11.3 (CDN), sin inconsistencia de versión detectada</td></tr>
+      </tbody>
+    </table>
+    <p class="text-secondary text-xs">El design system no reemplaza los componentes de Bootstrap, los reviste: <code class="font-family-roboto-mono">.btn-accent</code> (<code class="font-family-roboto-mono">design-system.css:495</code>) redefine las variables nativas <code class="font-family-roboto-mono">--bs-btn-color</code>, <code class="font-family-roboto-mono">--bs-btn-bg</code>, <code class="font-family-roboto-mono">--bs-btn-border-color</code>, <code class="font-family-roboto-mono">--bs-btn-hover-*</code> en vez de pelear contra la cascada de <code class="font-family-roboto-mono">.btn</code> con especificidad o <code class="font-family-roboto-mono">!important</code>.</p>
+    <div class="demo-row">
+      <button type="button" class="btn btn-primary">.btn.btn-primary (Bootstrap puro)</button>
+      <button type="button" class="btn btn-accent">.btn.btn-accent (mismo .btn, variables --bs-btn-* redefinidas)</button>
+    </div>
+    <div class="docs-note">
+      <strong>Verificado en navegador (no solo por grep) — quién gana realmente en 3 casos representativos donde <code class="font-family-roboto-mono">css.css</code> y <code class="font-family-roboto-mono">custom-styles.css</code> definen el mismo selector:</strong>
+      <ul style="margin:var(--space-2) 0 0 var(--space-4);">
+        <li><code class="font-family-roboto-mono">.menu-list</code>: <strong>no hay conflicto real</strong> — <code class="font-family-roboto-mono">css.css</code> solo aporta <code class="font-family-roboto-mono">transition:.3s</code>, <code class="font-family-roboto-mono">custom-styles.css</code> aporta el layout (<code class="font-family-roboto-mono">display:flex; gap:1.875rem</code>, etc.). Ninguna propiedad se repite, así que ambas reglas se <strong>combinan</strong>, no compiten.</li>
+        <li><code class="font-family-roboto-mono">.pc-menu</code>: <strong>override parcial real</strong> — <code class="font-family-roboto-mono">custom-styles.css</code> sobreescribe <code class="font-family-roboto-mono">background-color</code> (a <code class="font-family-roboto-mono">transparent</code>) y <code class="font-family-roboto-mono">box-shadow</code> (valor distinto), pero <code class="font-family-roboto-mono">position:fixed</code>, <code class="font-family-roboto-mono">width:100%</code> y <code class="font-family-roboto-mono">font-family:Nunito-SemiBold</code> de <code class="font-family-roboto-mono">css.css</code> <strong>siguen aplicando</strong> porque <code class="font-family-roboto-mono">custom-styles.css</code> nunca las redeclara. El componente final es un híbrido de ambos archivos, no una sustitución limpia.</li>
+        <li><code class="font-family-roboto-mono">.hamburger-menu</code>: <strong>hipótesis descartada</strong> — <code class="font-family-roboto-mono">custom-styles.css</code> no tiene ninguna regla <code class="font-family-roboto-mono">.hamburger-menu</code>. Todo su estilo viene únicamente de <code class="font-family-roboto-mono">css.css</code>; no hay legacy "sobreescrito", es legacy vigente sin competencia.</li>
+      </ul>
+    </div>
+
+    <h3 id="stack-extra-css">Content/extra.css (181 líneas)</h3>
+    <p class="text-secondary text-xs">A diferencia de <code class="font-family-roboto-mono">css.css</code>/<code class="font-family-roboto-mono">design-system.css</code>/<code class="font-family-roboto-mono">custom-styles.css</code> (cargadas en las 35 páginas sin excepción), <code class="font-family-roboto-mono">extra.css</code> <strong>solo se enlaza en 28 de las 35 páginas reales</strong> — verificado en navegador, no solo por grep del archivo fuente (<code class="font-family-roboto-mono">home.html</code> lo carga, <code class="font-family-roboto-mono">availability.html</code> no). Las 7 páginas sin <code class="font-family-roboto-mono">extra.css</code>: <code class="font-family-roboto-mono">availability.html</code>, <code class="font-family-roboto-mono">terminal-schedule.html</code>, <code class="font-family-roboto-mono">reports.html</code> y las 4 páginas <code class="font-family-roboto-mono">Reports-*.html</code>.</p>
+    <div class="docs-note">
+      <strong>Hallazgo real — los 21 selectores de <code class="font-family-roboto-mono">extra.css</code> no tienen ningún efecto visible en el sitio actual:</strong> cruzando "qué páginas tienen la clase en el markup" contra "qué páginas cargan <code class="font-family-roboto-mono">extra.css</code>", la intersección es <strong>vacía para los 21 selectores</strong> sin excepción. Los 3 selectores con markup real (<code class="font-family-roboto-mono">.direct</code>, <code class="font-family-roboto-mono">.NoLtRtPad</code>, <code class="font-family-roboto-mono">table.data</code> → 2 páginas: <code class="font-family-roboto-mono">Reports-InvoiceSearch.html</code>, <code class="font-family-roboto-mono">Reports-LAX_Inventory_Report.html</code>; y <code class="font-family-roboto-mono">.btn-group</code> → 1 página: <code class="font-family-roboto-mono">availability.html</code>) aparecen <strong>solo</strong> en páginas que no cargan <code class="font-family-roboto-mono">extra.css</code>. Verificado además en navegador: el botón dentro de <code class="font-family-roboto-mono">.btn-group</code> en <code class="font-family-roboto-mono">availability.html:507</code> renderiza con el fondo transparente de Bootstrap (<code class="font-family-roboto-mono">.btn-outline-secondary</code>), no con el verde <code class="font-family-roboto-mono">#04aa6d</code> que define <code class="font-family-roboto-mono">extra.css</code> — porque el archivo simplemente no está cargado ahí. <strong>Conclusión: <code class="font-family-roboto-mono">extra.css</code> es código muerto en la práctica, en su totalidad</strong>, no por falta de markup compatible sino por desalineación entre qué páginas tienen las clases y cuáles cargan la hoja.
+    </div>
+    <table class="docs-table">
+      <tbody>
+        <tr><td><code>.inland</code>, <code>.full</code>, <code>.hidden</code>, <code>.master</code> (+ <code>table.master</code>), <code>.bolder</code>, <code>.super</code>, <code>.min-height</code></td><td>0 páginas con la clase en el markup — muertas también a nivel de markup, no solo de carga</td></tr>
+        <tr><td><code>.direct</code>, <code>.NoLtRtPad</code>, <code>table.data</code></td><td>Markup presente en 2 páginas (<code>Reports-InvoiceSearch.html</code>, <code>Reports-LAX_Inventory_Report.html</code>) — ninguna carga <code>extra.css</code>, 0 efectivas</td></tr>
+        <tr><td><code>.btn-group</code> / <code>div.btn-group</code></td><td>Markup presente en 1 página (<code>availability.html</code>) — no carga <code>extra.css</code>, 0 efectivas. (El caso de "override" documentado en sesiones previas, sobre <code>charges.html</code>, no existe: no hay ningún elemento con clase <code>btn-group</code> en esa página)</td></tr>
+        <tr><td><code>.fixed-height</code>, <code>.height</code>, <code>.topPad</code>, <code>.btn-red</code>, <code>.btn-small</code>, <code>.modalBackground</code>, <code>.modalPopup</code>, <code>.tablefix</code>, <code>.noTopBtmPad</code></td><td>0 páginas con la clase — muertas a nivel de markup</td></tr>
+        <tr><td><code>.ginfo</code>, <code>.cucc-item</code></td><td>0 páginas — consistente con el hallazgo #9 ya documentado (solo existían en <code class="font-family-roboto-mono">availability-backup.html</code>, ya eliminadas de <code class="font-family-roboto-mono">custom-styles.css</code>)</td></tr>
+      </tbody>
+    </table>
+    <div class="demo-row">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
+        <button type="button" class="btn btn-outline-secondary btn-sm">Remove</button>
+      </div>
+      <span class="demo-label">.btn-group real de availability.html:507 — este mismo documento no carga extra.css (igual que availability.html), así que el fondo es el de Bootstrap, nunca el verde de extra.css</span>
+    </div>
+
+    <h3 id="stack-css-css">Content/css.css (139 KB minificado en 1 línea, 656 selectores)</h3>
+    <p class="text-secondary text-xs">Archivo legacy, cargado en las 35 páginas reales sin excepción (a diferencia de <code class="font-family-roboto-mono">extra.css</code>). Tratamiento proporcional, no exhaustivo selector-por-selector (656 es demasiado para auditar uno a uno): de 656 selectores, ~92 coinciden por nombre con alguna clase presente en el HTML — pero muchos de esos 92 son palabras genéricas de una sola sílaba (<code class="font-family-roboto-mono">row</code>, <code class="font-family-roboto-mono">btn</code>, <code class="font-family-roboto-mono">text</code>, <code class="font-family-roboto-mono">item</code>, <code class="font-family-roboto-mono">link</code>, <code class="font-family-roboto-mono">active</code>, etc.) que casi seguro colisionan con Bootstrap mismo o con clases ya definidas en <code class="font-family-roboto-mono">custom-styles.css</code>/<code class="font-family-roboto-mono">design-system.css</code> — sin verificar cuál capa gana por especificidad para cada uno, no se puede afirmar "vivo" solo por coincidencia de nombre. Esos quedan como <strong>indeterminados</strong>, sin afirmar vivo ni muerto. Los siguientes selectores, con nombres compuestos o capitalizados (baja probabilidad de colisión accidental), sí se verificaron con matching exacto de token de clase contra las 35 páginas reales:</p>
+    <table class="docs-table">
+      <tbody>
+        <tr><td><code>container-fluid</code></td><td>38 páginas (probable colisión con la clase homónima de Bootstrap — no se verificó cuál capa gana)</td></tr>
+        <tr><td><code>footer-top</code> / <code>footer-main</code> / <code>footer-bottom</code></td><td>33 páginas cada una</td></tr>
+        <tr><td><code>col-sm-4</code> / <code>col-sm-8</code> / <code>col-xs-12</code></td><td>33 / 22 / 3 — clases de grid de Bootstrap 3, mientras el sitio corre sobre Bootstrap 5 (que no reconoce <code>col-xs-*</code>); probable vestigio de una migración BS3→BS5 incompleta</td></tr>
+        <tr><td><code>hamburger-menu</code></td><td>23 páginas — definida también en <code class="font-family-roboto-mono">custom-styles.css</code>… <strong>corrección</strong>: verificado en navegador, <code class="font-family-roboto-mono">custom-styles.css</code> no tiene ninguna regla para esta clase (ver hallazgo de cascada arriba); <code class="font-family-roboto-mono">css.css</code> es la única fuente real</td></tr>
+        <tr><td><code>mob-sub-menu</code></td><td>26 páginas (distinta de <code>sub-menu</code> a secas, que son 14 — el audit original las confundía por un falso positivo de frontera de guión)</td></tr>
+        <tr><td><code>sub-menu</code></td><td>14 páginas (corregido — no 29 como en una versión anterior de este documento, que contaba por error las apariciones de <code>mob-sub-menu</code> también)</td></tr>
+        <tr><td><code>fa-phone</code> / <code>fa-angle-down</code> / <code>fa</code></td><td>26 páginas cada una (Font Awesome — el CDN de Font Awesome Kit sí se carga, confirmado: <code class="font-family-roboto-mono">https://kit.fontawesome.com/4006f6b372.js</code>, aunque devuelve 403 en pruebas locales por restricción de dominio del kit)</td></tr>
+        <tr><td><code>btn-primary</code></td><td>26 páginas (clase de Bootstrap, probable colisión, no verificada)</td></tr>
+        <tr><td><code>form-control</code></td><td>23 páginas (clase de Bootstrap, ya redefinida también en <code class="font-family-roboto-mono">design-system.css</code> — triple capa)</td></tr>
+        <tr><td><code>menu-list</code></td><td>17 páginas (ver hallazgo de cascada arriba: combina con <code>custom-styles.css</code>, no compite)</td></tr>
+        <tr><td><code>pc-menu</code> / <code>pc-logo</code></td><td>9 páginas cada una (ver hallazgo de cascada arriba: override parcial real con <code>custom-styles.css</code>)</td></tr>
+        <tr><td><code>mob-menu-child</code> / <code>mob-menu</code> / <code>mob-logo</code> / <code>main-menu</code> / <code>header-top</code></td><td>9 páginas cada una</td></tr>
+        <tr><td><code>Availability-search</code></td><td>7 páginas</td></tr>
+        <tr><td><code>page-wrap</code></td><td>6 páginas</td></tr>
+        <tr><td><code>page-main</code> / <code>Services-page-main</code></td><td>5 páginas cada una</td></tr>
+        <tr><td><code>hbl</code></td><td>6 páginas</td></tr>
+        <tr><td><code>CustomerLogin-box</code></td><td>4 páginas — corrección: <code>CustomerLogin</code> (sin "-box") nunca aparece sola como clase, 0 páginas; el conteo anterior de "4" para <code>CustomerLogin</code> en realidad medía <code>CustomerLogin-box</code> por el mismo falso positivo de frontera de guión</td></tr>
+        <tr><td><code>reports</code></td><td>0 páginas como clase exacta — corrección: el nombre real y único en el HTML es <code>reports-banner</code> (4 páginas), nunca <code>reports</code> sola; el conteo anterior de "8" era el mismo falso positivo de frontera de guión que afectó a <code>sub-menu</code> y <code>CustomerLogin</code></td></tr>
+        <tr><td><code>Availability-info</code></td><td>3 páginas</td></tr>
+      </tbody>
+    </table>
+    <div class="demo-row" style="display:block; width:100%; max-width:420px;">
+      <footer class="footer">
+        <div class="footer-top">
+          <img src="../_images/footer-logo.png" alt="" style="max-height:40px;">
+        </div>
+        <div class="footer-main">
+          <ul>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Availability</a></li>
+          </ul>
+        </div>
+      </footer>
+      <span class="demo-label">.footer-top + .footer-main — markup real recortado de home.html:538-549, definidos en css.css (33 páginas)</span>
+    </div>
+    <div class="docs-note">
+      <strong>Lección de metodología que afectó a varias cifras de este documento (ya corregidas):</strong> contar con <code class="font-family-roboto-mono">grep -l "CLASE" *.html</code> sin restringir al atributo <code class="font-family-roboto-mono">class="..."</code>, o restringiendo con frontera de palabra <code class="font-family-roboto-mono">\b</code> (que en regex trata el guión como límite de palabra), produce falsos positivos sistemáticos: <code class="font-family-roboto-mono">sub-menu</code> contando también <code class="font-family-roboto-mono">mob-sub-menu</code>, <code class="font-family-roboto-mono">reports</code> contando <code class="font-family-roboto-mono">reports-banner</code>, <code class="font-family-roboto-mono">master</code> contando <code class="font-family-roboto-mono">hbl-master-list</code>, <code class="font-family-roboto-mono">full</code> contando <code class="font-family-roboto-mono">rounded-full</code>, <code class="font-family-roboto-mono">inland</code> contando el nombre de archivo <code class="font-family-roboto-mono">inland-warehouse.html</code> citado en menús de navegación. Todas las cifras de este documento fueron recalculadas con comparación exacta por token de clase (separar <code class="font-family-roboto-mono">class="a b c"</code> en <code class="font-family-roboto-mono">["a","b","c"]</code> y comparar igualdad, no <code class="font-family-roboto-mono">\b</code>).
+    </div>
+  </section>
 
   <!-- ============ COLOR ============ -->
   <section class="docs-section" id="color">
     <h2>Color</h2>
 
-    <h3>Azure</h3>
+    <h3 id="azure">Azure</h3>
     <div class="swatch-grid">
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-azure-09)"></div><div class="swatch-meta"><span class="swatch-name">--clr-azure-09</span><span class="swatch-value">#05162A</span></div></div>
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-azure-19)"></div><div class="swatch-meta"><span class="swatch-name">--clr-azure-19</span><span class="swatch-value">#14264F</span></div></div>
@@ -96,7 +311,7 @@
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-azure-99)"></div><div class="swatch-meta"><span class="swatch-name">--clr-azure-99</span><span class="swatch-value">#f3f7fc</span></div></div>
     </div>
 
-    <h3>Navy</h3>
+    <h3 id="navy">Navy</h3>
     <div class="swatch-grid">
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-navy-900)"></div><div class="swatch-meta"><span class="swatch-name">--clr-navy-900</span><span class="swatch-value">#0A192F</span></div></div>
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-navy-800)"></div><div class="swatch-meta"><span class="swatch-name">--clr-navy-800</span><span class="swatch-value">#1C2A4E</span></div></div>
@@ -107,7 +322,7 @@
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-navy-200)"></div><div class="swatch-meta"><span class="swatch-name">--clr-navy-200</span><span class="swatch-value">#DBEAFE</span></div></div>
     </div>
 
-    <h3>Cyan</h3>
+    <h3 id="cyan">Cyan</h3>
     <div class="swatch-grid">
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-cyan-47)"></div><div class="swatch-meta"><span class="swatch-name">--clr-cyan-47</span><span class="swatch-value">#09B4E6 (= --clr-cyan-primary)</span></div></div>
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-cyan-80)"></div><div class="swatch-meta"><span class="swatch-name">--clr-cyan-80</span><span class="swatch-value">#4CD4FC</span></div></div>
@@ -115,13 +330,13 @@
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-cyan-99)"></div><div class="swatch-meta"><span class="swatch-name">--clr-cyan-99</span><span class="swatch-value">#c3f1ff</span></div></div>
     </div>
 
-    <h3>Azul de marca</h3>
+    <h3 id="azul-marca">Azul de marca</h3>
     <div class="swatch-grid">
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-blue-brand)"></div><div class="swatch-meta"><span class="swatch-name">--clr-blue-brand</span><span class="swatch-value">#0062A9</span></div></div>
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-blue-light-bg)"></div><div class="swatch-meta"><span class="swatch-name">--clr-blue-light-bg</span><span class="swatch-value">#F0F5FA</span></div></div>
     </div>
 
-    <h3>Grises</h3>
+    <h3 id="grises">Grises</h3>
     <div class="swatch-grid">
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-grey-20)"></div><div class="swatch-meta"><span class="swatch-name">--clr-grey-20</span><span class="swatch-value">#333333</span></div></div>
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-grey-40)"></div><div class="swatch-meta"><span class="swatch-name">--clr-grey-40</span><span class="swatch-value">#555555</span></div></div>
@@ -132,7 +347,7 @@
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-white); border-bottom:1px solid var(--clr-grey-75)"></div><div class="swatch-meta"><span class="swatch-name">--clr-white</span><span class="swatch-value">#FFFFFF</span></div></div>
     </div>
 
-    <h3>Semántico (texto, fondo, bordes)</h3>
+    <h3 id="semantico-texto-fondo-bordes">Semántico (texto, fondo, bordes)</h3>
     <div class="swatch-grid">
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-background-main)"></div><div class="swatch-meta"><span class="swatch-name">--clr-background-main</span><span class="swatch-value">#F8F9FA</span></div></div>
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-background-card); border-bottom:1px solid var(--clr-grey-75)"></div><div class="swatch-meta"><span class="swatch-name">--clr-background-card</span><span class="swatch-value">= --clr-white</span></div></div>
@@ -142,7 +357,7 @@
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-border)"></div><div class="swatch-meta"><span class="swatch-name">--clr-border</span><span class="swatch-value">= --clr-grey-65</span></div></div>
     </div>
 
-    <h3>Estados</h3>
+    <h3 id="estados">Estados</h3>
     <div class="swatch-grid">
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-success)"></div><div class="swatch-meta"><span class="swatch-name">--clr-success</span><span class="swatch-value">#14AE5C</span></div></div>
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-warning)"></div><div class="swatch-meta"><span class="swatch-name">--clr-warning</span><span class="swatch-value">#f97316</span></div></div>
@@ -150,7 +365,7 @@
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-info)"></div><div class="swatch-meta"><span class="swatch-name">--clr-info</span><span class="swatch-value">#2563eb</span></div></div>
     </div>
 
-    <h3>Pills / etiquetas (claro + oscuro)</h3>
+    <h3 id="pills-etiquetas">Pills / etiquetas (claro + oscuro)</h3>
     <div class="swatch-grid">
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-success-light)"></div><div class="swatch-meta"><span class="swatch-name">--clr-success-light</span><span class="swatch-value">#dcfce7</span></div></div>
       <div class="swatch"><div class="swatch-color" style="background:var(--clr-success-dark)"></div><div class="swatch-meta"><span class="swatch-name">--clr-success-dark</span><span class="swatch-value">#166534</span></div></div>
@@ -167,13 +382,27 @@
   <section class="docs-section" id="tipografia">
     <h2>Tipografía</h2>
 
-    <h3>Familias de fuente</h3>
+    <h3 id="familias-fuente">Familias de fuente</h3>
     <div class="font-sample-row"><code>--font-primary</code><span style="font-family:var(--font-primary); font-size:1.5rem;">Archivo Narrow — The quick brown fox</span></div>
     <div class="font-sample-row"><code>--font-secondary</code><span style="font-family:var(--font-secondary); font-size:1.5rem;">Sora — The quick brown fox</span></div>
     <div class="font-sample-row"><code>--font-headings</code><span style="font-family:var(--font-headings); font-size:1.5rem;">DM Serif Text — The quick brown fox</span></div>
     <div class="font-sample-row"><code>--font-monospace</code><span style="font-family:var(--font-monospace); font-size:1.5rem;">Roboto Mono — The quick brown fox</span></div>
 
-    <h3>Escala de tamaños (fluida, clamp entre viewport ~575px–1400px)</h3>
+    <h3 id="font-face">Mecanismo de carga real (<code class="font-family-roboto-mono">@font-face</code>)</h3>
+    <p class="text-secondary text-xs">Los tokens de arriba (<code class="font-family-roboto-mono">var(--font-*)</code>) son solo el nombre lógico. La carga real ocurre con <strong>10 declaraciones <code class="font-family-roboto-mono">@font-face</code></strong> (<code class="font-family-roboto-mono">design-system.css</code> líneas 6–71), apuntando a archivos locales en <code class="font-family-roboto-mono">../fonts/*.woff</code> (sin <code class="font-family-roboto-mono">.woff2</code> para estas tres familias).</p>
+    <table class="docs-table">
+      <tbody>
+        <tr><td><code>Archivo Narrow</code></td><td>4 variantes: regular, italic, bold, bold-italic — todas <code>.woff</code> únicamente</td></tr>
+        <tr><td><code>DM Serif Text</code></td><td>2 variantes: regular, italic — <code>.woff2</code> + <code>.woff</code> (única familia con fallback doble)</td></tr>
+        <tr><td><code>Sora</code></td><td>4 variantes: light (300), regular (400), bold (700), extrabold (800) — todas <code>.woff</code> únicamente</td></tr>
+      </tbody>
+    </table>
+    <div class="docs-note">
+      <strong>Hallazgo real — nombre de archivo no coincide con <code class="font-family-roboto-mono">font-family</code>:</strong> las dos declaraciones de <code class="font-family-roboto-mono">DM Serif Text</code> (líneas 32–45) cargan archivos llamados <code class="font-family-roboto-mono">DMSerifDisplay-Regular.woff2/woff</code> y <code class="font-family-roboto-mono">DMSerifDisplay-Italic.woff2/woff</code> — el comentario de origen en el código incluso dice <code class="font-family-roboto-mono">/* --- DM Serif Display --- */</code> (línea 31). "DM Serif Display" y "DM Serif Text" son dos fuentes distintas en Google Fonts (mismo diseño base, distinto trazo); el archivo cargado es el de <strong>Display</strong> pero se le asignó el nombre lógico de <strong>Text</strong>. No afecta el render (el navegador no valida el nombre interno del archivo), pero el nombre induce a error si alguien busca actualizar o reemplazar el archivo de fuente.
+    </div>
+    <p class="text-secondary text-xs"><code class="font-family-roboto-mono">Roboto Mono</code> (el token <code class="font-family-roboto-mono">--font-monospace</code>) no sigue este mecanismo: se carga vía <code class="font-family-roboto-mono">@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono...')</code> (<code class="font-family-roboto-mono">design-system.css:73</code>), CDN de Google Fonts, no archivo local — inconsistencia con las otras 3 familias, sin corregir.</p>
+
+    <h3 id="escala-tamanos">Escala de tamaños (fluida, clamp entre viewport ~575px–1400px)</h3>
     <div class="type-row"><code>--font-size-2xs (10px → 12px)</code><span style="font-size:var(--font-size-2xs)">Texto de muestra</span></div>
     <div class="type-row"><code>--font-size-xs (12px → 14px)</code><span style="font-size:var(--font-size-xs)">Texto de muestra</span></div>
     <div class="type-row"><code>--font-size-sm (14px → 15px)</code><span style="font-size:var(--font-size-sm)">Texto de muestra</span></div>
@@ -185,7 +414,7 @@
     <div class="type-row"><code>--font-size-4xl (28px → 36px)</code><span style="font-size:var(--font-size-4xl)">Texto de muestra</span></div>
     <div class="type-row"><code>--font-size-5xl (36px → 48px)</code><span style="font-size:var(--font-size-5xl)">Texto de muestra</span></div>
 
-    <h3>Pesos de fuente</h3>
+    <h3 id="pesos-fuente">Pesos de fuente</h3>
     <div class="type-row"><code>--font-weight-regular (400)</code><span style="font-weight:var(--font-weight-regular)">Texto de muestra</span></div>
     <div class="type-row"><code>--font-weight-medium (500)</code><span style="font-weight:var(--font-weight-medium)">Texto de muestra</span></div>
     <div class="type-row"><code>--font-weight-semibold (600)</code><span style="font-weight:var(--font-weight-semibold)">Texto de muestra</span></div>
@@ -215,7 +444,7 @@
   <section class="docs-section" id="bordes-sombras">
     <h2>Bordes y sombras</h2>
 
-    <h3>Radio de borde</h3>
+    <h3 id="radio-borde">Radio de borde</h3>
     <div class="box-grid">
       <div class="box-sample-label"><div class="box-sample" style="border-radius:var(--border-radius-sm)"></div><code>--border-radius-sm (4px)</code></div>
       <div class="box-sample-label"><div class="box-sample" style="border-radius:var(--border-radius-md)"></div><code>--border-radius-md (8px)</code></div>
@@ -224,13 +453,13 @@
       <div class="box-sample-label"><div class="box-sample" style="border-radius:var(--border-radius-full)"></div><code>--border-radius-full</code></div>
     </div>
 
-    <h3>Ancho de trazo</h3>
+    <h3 id="ancho-trazo">Ancho de trazo</h3>
     <div class="box-grid">
       <div class="box-sample-label"><div class="box-sample" style="border:var(--stroke-width-1) solid var(--clr-azure-46)"></div><code>--stroke-width-1 (1px)</code></div>
       <div class="box-sample-label"><div class="box-sample" style="border:var(--stroke-width-3) solid var(--clr-azure-46)"></div><code>--stroke-width-3 (3px)</code></div>
     </div>
 
-    <h3>Sombras</h3>
+    <h3 id="sombras">Sombras</h3>
     <p class="text-secondary">Tintadas en azure (<code class="font-family-roboto-mono">rgb(51 122 183 / …)</code>), no negro puro.</p>
     <div class="box-grid">
       <div class="box-sample-label"><div class="box-sample" style="box-shadow:var(--shadow-sm); margin-bottom:8px;"></div><code>--shadow-sm</code></div>
@@ -244,7 +473,7 @@
     <h2>Utilidades</h2>
     <p class="text-secondary">Todas las clases listadas existen literalmente en <code class="font-family-roboto-mono">Content/design-system.css</code>. Se citan línea por línea, sin agregar ninguna clase hipotética.</p>
 
-    <h3>Resets heredados ("RESETS FROM OLD CSS")</h3>
+    <h3 id="resets-heredados">Resets heredados ("RESETS FROM OLD CSS")</h3>
     <div class="docs-note">El archivo fuente agrupa estas reglas bajo el comentario literal <code class="font-family-roboto-mono">/* RESETS FROM OLD CSS */</code> — son ajustes puntuales sobre Bootstrap, no utilidades de la escala de diseño.</div>
     <table class="docs-table">
       <thead><tr><th>Selector</th><th>Efecto</th></tr></thead>
@@ -259,8 +488,12 @@
         <tr><td><code>.row-no-wrap</code></td><td><code>margin-left/right:-24px!important</code></td></tr>
       </tbody>
     </table>
+    <div class="demo-row">
+      <button type="button" class="btn btn-primary">.btn real</button>
+      <span class="demo-label">.btn — esquinas cuadradas (border-radius:0) por el reset, antes de cualquier .rounded-* que se le agregue encima</span>
+    </div>
 
-    <h3>Display</h3>
+    <h3 id="display">Display</h3>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.d-none</code></td><td><code>display:none</code></td></tr>
@@ -271,8 +504,12 @@
         <tr><td><code>.d-grid</code></td><td><code>display:grid</code></td></tr>
       </tbody>
     </table>
+    <div class="demo-row">
+      <div class="d-inline-block" style="background:var(--clr-azure-95); padding:var(--space-2);">.d-inline-block</div>
+      <div class="d-block" style="background:var(--clr-azure-89); padding:var(--space-2);">.d-block</div>
+    </div>
 
-    <h3>Flexbox</h3>
+    <h3 id="flexbox">Flexbox</h3>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.flex-row</code> / <code>.flex-col</code></td><td><code>flex-direction: row / column</code></td></tr>
@@ -289,7 +526,7 @@
     </div>
     <p class="text-secondary text-xs">Demo en vivo: <code class="font-family-roboto-mono">.d-flex.items-center.justify-between.gap-4</code></p>
 
-    <h3>Espaciado — todos los lados</h3>
+    <h3 id="espaciado-todos-lados">Espaciado — todos los lados</h3>
     <table class="docs-table">
       <thead><tr><th>Margin</th><th>Padding</th><th>Valor</th></tr></thead>
       <tbody>
@@ -307,11 +544,18 @@
         <tr><td><code>.m-24</code></td><td><code>.p-24</code></td><td>--space-24 (96px)</td></tr>
       </tbody>
     </table>
+    <div class="demo-row">
+      <div class="p-4" style="background:var(--clr-azure-95); display:inline-block;"><div style="background:#fff;">.p-4</div></div>
+      <div class="m-4" style="background:var(--clr-azure-89); display:inline-block;">.m-4 (con outline para ver el margen)</div>
+    </div>
 
-    <h3>Espaciado — eje Y (<code class="font-family-roboto-mono">.my-*</code> / <code class="font-family-roboto-mono">.py-*</code>)</h3>
+    <h3 id="espaciado-eje-y">Espaciado — eje Y (<code class="font-family-roboto-mono">.my-*</code> / <code class="font-family-roboto-mono">.py-*</code>)</h3>
     <p class="text-secondary text-xs">Todas con <code class="font-family-roboto-mono">!important</code>: 1, 2, 4, 5, 6, 8, 12, 16.</p>
+    <div class="demo-row">
+      <div class="py-4" style="background:var(--clr-azure-95); display:inline-block;"><div style="background:#fff;">.py-4</div></div>
+    </div>
 
-    <h3>Espaciado — eje X (<code class="font-family-roboto-mono">.mx-*</code> / <code class="font-family-roboto-mono">.px-*</code>)</h3>
+    <h3 id="espaciado-eje-x">Espaciado — eje X (<code class="font-family-roboto-mono">.mx-*</code> / <code class="font-family-roboto-mono">.px-*</code>)</h3>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.mx-1 / .px-1</code></td><td>--space-1 (sin !important)</td></tr>
@@ -324,8 +568,11 @@
         <tr><td><code>.mx-16 / .px-16</code></td><td>--space-16 (sin !important)</td></tr>
       </tbody>
     </table>
+    <div class="demo-row">
+      <div class="px-4" style="background:var(--clr-azure-95); display:inline-block;"><div style="background:#fff;">.px-4</div></div>
+    </div>
 
-    <h3>Espaciado — direccional (top / bottom / left / right)</h3>
+    <h3 id="espaciado-direccional">Espaciado — direccional (top / bottom / left / right)</h3>
     <table class="docs-table">
       <thead><tr><th>Top</th><th>Bottom</th><th>Left</th><th>Right</th><th>Valor</th></tr></thead>
       <tbody>
@@ -346,8 +593,13 @@
       las filas de <code class="font-family-roboto-mono">.ml-12</code> y <code class="font-family-roboto-mono">.ml-16</code> emparejan su padding con <code class="font-family-roboto-mono">.pl-8</code> en vez de <code class="font-family-roboto-mono">.pl-12</code> / <code class="font-family-roboto-mono">.pl-16</code>.
       Resultado real: <code class="font-family-roboto-mono">.pl-12</code> y <code class="font-family-roboto-mono">.pl-16</code> no existen como clases, y <code class="font-family-roboto-mono">.pl-8</code> queda sobre-escrita en cascada a <code class="font-family-roboto-mono">padding-left: var(--space-16)</code> (64px) en vez de <code class="font-family-roboto-mono">--space-8</code> (32px), porque la última declaración gana. No ocurre en <code class="font-family-roboto-mono">.mr-*/.pr-*</code> ni en <code class="font-family-roboto-mono">.mt-*/.pt-*</code>, que sí tienen sus 12/16 correctos.
     </div>
+    <div class="demo-row">
+      <div class="p-8" style="background:var(--clr-success-light); display:inline-block;"><div style="background:#fff; white-space:nowrap;">.p-8 (control sano: 32px reales)</div></div>
+      <div class="pl-8" style="background:var(--clr-danger-light); display:inline-block;"><div style="background:#fff; white-space:nowrap;">.pl-8 (bug: 64px, no 32px)</div></div>
+    </div>
+    <p class="text-secondary text-xs">Demo en vivo confirmado en navegador: <code class="font-family-roboto-mono">.pl-8</code> <strong>siempre</strong> resuelve a 64px (<code class="font-family-roboto-mono">--space-16</code>) sin importar con qué otra clase se combine — el bug está en la declaración repetida de <code class="font-family-roboto-mono">.pl-8</code> misma (3 veces en líneas 378-380, cada vez con un valor distinto; gana la última). <code class="font-family-roboto-mono">.p-8</code> (que también define <code class="font-family-roboto-mono">padding-left</code> pero solo se declara una vez) sirve de control para comparar el tamaño correcto.</p>
 
-    <h3>Tipografía — tamaño y peso</h3>
+    <h3 id="tipografia-tamano-peso">Tipografía — tamaño y peso</h3>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.text-2xs</code> … <code>.text-5xl</code></td><td>Mapean a <code>--font-size-2xs</code> … <code>--font-size-5xl</code>. Nota: <code>.text-sm</code>, <code>.text-2xl</code>, <code>.text-3xl</code> y <code>.text-4xl</code> <em>no</em> llevan <code>!important</code>; el resto de la serie sí.</td></tr>
@@ -359,7 +611,7 @@
       <span class="text-2xs">2xs</span><span class="text-xs">xs</span><span class="text-sm">sm</span><span class="text-base">base</span><span class="text-lg">lg</span><span class="text-xl">xl</span><span class="text-2xl">2xl</span>
     </div>
 
-    <h3>Color de texto</h3>
+    <h3 id="color-texto">Color de texto</h3>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.text-primary</code></td><td>= --clr-text-primary (--clr-grey-20)</td></tr>
@@ -377,8 +629,13 @@
       </tbody>
     </table>
     <div class="docs-note">El par <code class="font-family-roboto-mono">.text-navy-*</code> / <code class="font-family-roboto-mono">.text-azure-700</code> tiene los nombres cruzados respecto a los tokens que realmente usan — vale la pena tenerlo presente al elegir clases por nombre.</div>
+    <div class="demo-row">
+      <span class="text-danger">.text-danger</span>
+      <span class="text-success">.text-success</span>
+      <span class="text-navy-700" style="font-weight:bold;">.text-navy-700 (en realidad --clr-azure-46, no navy)</span>
+    </div>
 
-    <h3>Color de fondo y borde</h3>
+    <h3 id="color-fondo-borde">Color de fondo y borde</h3>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.bg-success / -light / -dark</code></td><td>= --clr-success / -light / -dark</td></tr>
@@ -402,19 +659,23 @@
       <div class="bg-azure-99 rounded-md" style="width:60px;height:40px; border:1px solid var(--clr-azure-85);"></div>
     </div>
 
-    <h3>Radio de borde y sombra (clases)</h3>
+    <h3 id="radio-sombra-clases">Radio de borde y sombra (clases)</h3>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.rounded-sm/-md/-lg/-xl/-full</code></td><td>= --border-radius-sm/md/lg/xl/full (todas <code>!important</code>)</td></tr>
         <tr><td><code>.shadow-sm/-md/-lg</code></td><td>= --shadow-sm/md/lg (todas <code>!important</code>)</td></tr>
       </tbody>
     </table>
+    <div class="demo-row">
+      <div class="rounded-lg shadow-md" style="width:80px; height:50px; background:var(--clr-azure-95);"></div>
+      <span class="demo-label" style="margin:0;">.rounded-lg.shadow-md</span>
+    </div>
 
-    <h3>Botón de acento</h3>
-    <p class="text-secondary text-xs"><code class="font-family-roboto-mono">.btn-accent</code> está hecha con variables CSS de Bootstrap (<code class="font-family-roboto-mono">--bs-btn-*</code>): fondo <code class="font-family-roboto-mono">--clr-cyan-47</code>, hover <code class="font-family-roboto-mono">--clr-azure-19</code>, active <code class="font-family-roboto-mono">--clr-azure-09</code>, disabled <code class="font-family-roboto-mono">--clr-grey-75</code>. Requiere Bootstrap 5.3 cargado para que las variables <code class="font-family-roboto-mono">--bs-btn-*</code> tengan efecto (este documento no carga Bootstrap, por eso el botón de abajo se ve sin estilo de Bootstrap aplicado, solo el color de fondo).</p>
-    <div class="demo-row"><button class="btn btn-accent" style="padding:8px 16px; border:none; background:var(--clr-cyan-47); color:#fff; border-radius:4px;">btn-accent (aprox.)</button></div>
+    <h3 id="boton-acento-util">Botón de acento</h3>
+    <p class="text-secondary text-xs"><code class="font-family-roboto-mono">.btn-accent</code> está hecha con variables CSS de Bootstrap (<code class="font-family-roboto-mono">--bs-btn-*</code>): fondo <code class="font-family-roboto-mono">--clr-cyan-47</code>, hover <code class="font-family-roboto-mono">--clr-azure-19</code>, active <code class="font-family-roboto-mono">--clr-azure-09</code>, disabled <code class="font-family-roboto-mono">--clr-grey-75</code>. Requiere Bootstrap 5.3 cargado para que las variables <code class="font-family-roboto-mono">--bs-btn-*</code> tengan efecto — ahora cargado de verdad en este documento (Fase 6).</p>
+    <div class="demo-row"><button class="btn btn-accent">btn-accent real</button></div>
 
-    <h3>Opacidad, transiciones, transform, filtros, cursor, foco</h3>
+    <h3 id="opacidad-transiciones">Opacidad, transiciones, transform, filtros, cursor, foco</h3>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.opacity-10 / -50 / -75</code></td><td><code>opacity: 0.1 / 0.5 / 0.75</code> (<code>.opacity-10</code> con !important, las otras dos no)</td></tr>
@@ -433,8 +694,13 @@
       </tbody>
     </table>
     <div class="docs-note">Los nombres <code class="font-family-roboto-mono">.hover-scale-102</code> y <code class="font-family-roboto-mono">.hover-scale-97</code> sugieren 102%/97%, pero los valores reales en el archivo son 100.25% y 99% respectivamente — el nombre no coincide con el efecto real.</div>
+    <div class="demo-row">
+      <button type="button" class="btn btn-accent hover-scale-102 hover-shadow-lg">Pasa el cursor</button>
+      <div class="opacity-50" style="width:50px; height:50px; background:var(--clr-cyan-47);"></div>
+      <span class="demo-label" style="margin:0;">.hover-scale-102.hover-shadow-lg + .opacity-50</span>
+    </div>
 
-    <h3>Tipografía de marketing (<code class="font-family-roboto-mono">.type-*</code>)</h3>
+    <h3 id="tipografia-marketing">Tipografía de marketing (<code class="font-family-roboto-mono">.type-*</code>)</h3>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.type-display-1</code></td><td>DM Serif Text, clamp(3.4rem, …, 4.25rem), letter-spacing -.0425rem</td></tr>
@@ -455,7 +721,7 @@
       <span class="type-body-sm">type-body-sm — texto de cuerpo pequeño de ejemplo</span>
     </div>
 
-    <h3>Otras utilidades sueltas</h3>
+    <h3 id="otras-utilidades">Otras utilidades sueltas</h3>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.text-not-uppercase</code></td><td><code>text-transform:none!important</code></td></tr>
@@ -470,6 +736,10 @@
         <tr><td><code>html</code></td><td><code>scroll-margin-top: 5.2rem!important</code></td></tr>
       </tbody>
     </table>
+    <div class="demo-row">
+      <span class="text-lowercase">.text-lowercase (TEXTO EN MAYÚSCULAS)</span>
+    </div>
+    <p class="text-secondary text-xs">Nótese que el texto de arriba <strong>no</strong> cambia a minúsculas — confirma en vivo el hallazgo de la tabla: el valor real es <code class="font-family-roboto-mono">text-transform:initial</code>, no <code class="font-family-roboto-mono">lowercase</code>.</p>
   </section>
 
   <!-- ============ COMPONENTES (FASE 3) ============ -->
@@ -478,10 +748,10 @@
     <p class="text-secondary">A diferencia de las fases anteriores, <code class="font-family-roboto-mono">design-system.css</code> no define clases de "componente" completas — solo tokens y utilidades. Lo que sigue son <strong>patrones de composición reales</strong>, copiados directo de páginas de producción del handoff, que combinan únicamente clases de <code class="font-family-roboto-mono">design-system.css</code>.</p>
 
     <div class="docs-note">
-      <strong>Fuera de alcance, a propósito:</strong> clases como <code class="font-family-roboto-mono">.card-shadow</code> (<code class="font-family-roboto-mono">Content/custom-styles.css:1249</code>), <code class="font-family-roboto-mono">.summary-card</code> (<code class="font-family-roboto-mono">Content/custom-styles.css:2832</code>) y <code class="font-family-roboto-mono">.shift-badge</code> (<code class="font-family-roboto-mono">Content/custom-styles.css:1816</code>) se ven en las mismas páginas, pero están definidas en <code class="font-family-roboto-mono">custom-styles.css</code>, no en <code class="font-family-roboto-mono">design-system.css</code>. No se documentan aquí porque pertenecen a otra hoja de estilos — verificado con <code class="font-family-roboto-mono">grep</code>, no es una omisión.
+      <strong>Fuera de alcance, a propósito:</strong> clases como <code class="font-family-roboto-mono">.card-shadow</code> (<code class="font-family-roboto-mono">Content/custom-styles.css:1249</code>), <code class="font-family-roboto-mono">.summary-card</code> (<code class="font-family-roboto-mono">Content/custom-styles.css:2710</code>) y <code class="font-family-roboto-mono">.shift-badge</code> (<code class="font-family-roboto-mono">Content/custom-styles.css:1694</code>) se ven en las mismas páginas, pero están definidas en <code class="font-family-roboto-mono">custom-styles.css</code>, no en <code class="font-family-roboto-mono">design-system.css</code>. No se documentan aquí porque pertenecen a otra hoja de estilos — verificado con <code class="font-family-roboto-mono">grep</code>, no es una omisión.
     </div>
 
-    <h3>Botón de acento (<code class="font-family-roboto-mono">.btn.btn-accent</code>)</h3>
+    <h3 id="comp-boton-acento">Botón de acento (<code class="font-family-roboto-mono">.btn.btn-accent</code>)</h3>
     <p class="text-secondary text-xs">Uso real confirmado en <code class="font-family-roboto-mono">charges.html</code> (×4), <code class="font-family-roboto-mono">availability.html</code>, <code class="font-family-roboto-mono">user-management.html</code> y <code class="font-family-roboto-mono">user-profile.html</code> (×2) — siempre como botón de confirmación/guardado, casi siempre combinado con <code class="font-family-roboto-mono">.rounded-full</code> y <code class="font-family-roboto-mono">.py-2</code>.</p>
     <div class="demo-row">
       <button type="button" class="btn btn-accent rounded-full py-2 px-4">Save Charge</button>
@@ -491,7 +761,7 @@
   Save Charge &lt;i class="bi bi-check-lg"&gt;&lt;/i&gt;
 &lt;/button&gt;</pre>
 
-    <h3>Aviso inline de advertencia (pill compuesta)</h3>
+    <h3 id="comp-aviso-warning">Aviso inline de advertencia (pill compuesta)</h3>
     <p class="text-secondary text-xs">Patrón idéntico repetido carácter por carácter en <code class="font-family-roboto-mono">charges.html</code> (×3), <code class="font-family-roboto-mono">container-level-release.html</code> y <code class="font-family-roboto-mono">home.html</code> (×3) — siempre la misma combinación de clases: <code class="font-family-roboto-mono">text-sm d-flex align-items-center bg-warning-light rounded py-1 px-2 text-warning-dark gap-1</code>. Es el componente compuesto más consistente que encontré en todo el repo.</p>
     <div class="demo-row">
       <p class="text-sm d-flex align-items-center bg-warning-light rounded py-1 px-2 text-warning-dark gap-1" style="margin:0;">
@@ -504,7 +774,7 @@
 &lt;/p&gt;</pre>
     <p class="text-secondary text-xs">Nota real: el ícono usa <code class="font-family-roboto-mono">text-danger</code> dentro de un contenedor <code class="font-family-roboto-mono">bg-warning-light</code>/<code class="font-family-roboto-mono">text-warning-dark</code> — mezcla de semánticas warning/danger en la misma pieza, tal como aparece en el código fuente.</p>
 
-    <h3>Input de solo lectura (<code class="font-family-roboto-mono">.form-control[readonly]</code>)</h3>
+    <h3 id="comp-input-readonly">Input de solo lectura (<code class="font-family-roboto-mono">.form-control[readonly]</code>)</h3>
     <p class="text-secondary text-xs">Usado en formularios de resumen/confirmación: <code class="font-family-roboto-mono">charges.html</code> (5 campos), <code class="font-family-roboto-mono">user-profile.html</code>, <code class="font-family-roboto-mono">user-management.html</code> y los reportes IPI (con <code class="font-family-roboto-mono">type="hidden"</code>). El estilo visual viene de la regla <code class="font-family-roboto-mono">input[readonly]</code> de <code class="font-family-roboto-mono">design-system.css</code> (línea 663): texto <code class="font-family-roboto-mono">#495057</code>, cursor default, sin anillo de foco.</p>
     <div class="demo-row" style="flex-direction:column; align-items:stretch; max-width:280px;">
       <label class="text-xs text-secondary mb-1">Est. P/U Date</label>
@@ -514,31 +784,80 @@
 &lt;input type="password" class="form-control border border-dark-light"
   id="password" placeholder="12/30/25" readonly&gt;</pre>
 
-    <h3>Título de sección (<code class="font-family-roboto-mono">.section-title.type-h4</code>)</h3>
+    <h3 id="comp-titulo-seccion">Título de sección (<code class="font-family-roboto-mono">.section-title.type-h4</code>)</h3>
     <p class="text-secondary text-xs">Patrón repetido 5 veces en <code class="font-family-roboto-mono">user-profile.html</code> y una vez en <code class="font-family-roboto-mono">user-management.html</code>: encabezado <code class="font-family-roboto-mono">&lt;h2&gt;</code> con <code class="font-family-roboto-mono">section-title</code> (no definida en <code class="font-family-roboto-mono">design-system.css</code>, vive en <code class="font-family-roboto-mono">custom-styles.css</code>) combinada con <code class="font-family-roboto-mono">type-h4</code> (esta sí es del design system) y <code class="font-family-roboto-mono">mb-4</code>.</p>
-    <h2 class="type-h4" style="margin:0;">Reports</h2>
-    <pre style="background:var(--clr-azure-99); padding:var(--space-3); border-radius:var(--border-radius-md); font-family:var(--font-monospace); font-size:var(--font-size-xs); overflow-x:auto;">&lt;!-- user-profile.html:236 --&gt;
-&lt;h2 class="section-title mb-4 type-h4"&gt;Reports&lt;/h2&gt;</pre>
+    <div class="demo-row">
+      <h2 class="section-title mb-4 type-h4">Reports</h2>
+      <span class="demo-label">.section-title.type-h4 — markup real de user-profile.html:236</span>
+    </div>
   </section>
 
   <!-- ============ CONTENT/CUSTOM-STYLES.CSS (FASE 4) ============ -->
   <section class="docs-section" id="custom-styles">
     <h2>Content/custom-styles.css</h2>
-    <p class="text-secondary">Este archivo (4,109 líneas) es distinto en naturaleza a <code class="font-family-roboto-mono">design-system.css</code>: está organizado <strong>por página/sección</strong> (HBL Table, IPI Tracing, Search Modal, Charges Page, Navbar, Profile Page, User Management, Tables, Responsive…), no por tipo de componente reutilizable. Antes de documentar nada conté, con <code class="font-family-roboto-mono">grep</code>, en cuántas páginas HTML aparece cada clase candidata — solo documento aquí lo que se confirmó reutilizable en múltiples páginas.</p>
+    <p class="text-secondary">Este archivo (3,987 líneas) es distinto en naturaleza a <code class="font-family-roboto-mono">design-system.css</code>: está organizado <strong>por página/sección</strong> (HBL Table, IPI Tracing, Search Modal, Charges Page, Navbar, Profile Page, User Management, Tables, Responsive…), no por tipo de componente reutilizable. Antes de documentar nada conté, con <code class="font-family-roboto-mono">grep</code>, en cuántas páginas HTML aparece cada clase candidata — solo documento aquí lo que se confirmó reutilizable en múltiples páginas.</p>
 
-    <h3>Navbar / Header (confirmado en 11–19 páginas)</h3>
-    <p class="text-secondary text-xs">Conteo real: <code class="font-family-roboto-mono">.menu-list</code> → 19 páginas, <code class="font-family-roboto-mono">.header-main</code> / <code class="font-family-roboto-mono">.header-top</code> / <code class="font-family-roboto-mono">.pc-menu</code> → 11 páginas cada una. El markup del header no se repite copiado en cada página: lo genera el web component <code class="font-family-roboto-mono">&lt;marketing-header&gt;</code> definido en <code class="font-family-roboto-mono">js/components/marketing-header.js</code> (clase <code class="font-family-roboto-mono">MarketingHeader extends HTMLElement</code>), y estas reglas en <code class="font-family-roboto-mono">custom-styles.css</code> le dan estilo.</p>
+    <h3 id="navbar-header">Navbar / Header (confirmado en 7–15 páginas)</h3>
+    <p class="text-secondary text-xs">Conteo real (recalculado sobre las 35 páginas reales del sitio, ver nota de metodología en la sección "Stack base"): <code class="font-family-roboto-mono">.menu-list</code> → 15 páginas, <code class="font-family-roboto-mono">.header-main</code> / <code class="font-family-roboto-mono">.header-top</code> / <code class="font-family-roboto-mono">.pc-menu</code> → 7 páginas cada una. El markup del header no se repite copiado en cada página: lo genera el web component <code class="font-family-roboto-mono">&lt;marketing-header&gt;</code> definido en <code class="font-family-roboto-mono">js/components/marketing-header.js</code> (clase <code class="font-family-roboto-mono">MarketingHeader extends HTMLElement</code>), y estas reglas en <code class="font-family-roboto-mono">custom-styles.css</code> le dan estilo.</p>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.pc-menu</code></td><td>Contenedor del header completo. <code>transition: all .3s ease</code>, sombra <code>0 4px 24px rgba(0,0,0,.15)</code> por defecto.</td></tr>
         <tr><td><code>.header-top</code></td><td>Barra superior — fondo <code>var(--clr-azure-09)</code>, enlaces <code>rgba(255,255,255,.8)</code></td></tr>
-        <tr><td><code>.header-main</code></td><td>Barra principal — fondo blanco, enlaces con <code>var(--brand-dark)</code> (nota: este token <strong>no existe</strong> en <code>:root</code> de <code>design-system.css</code> — variable indefinida, el navegador usa el valor heredado)</td></tr>
+        <tr><td><code>.header-main</code></td><td>Barra principal — fondo blanco, enlaces con <code>var(--clr-navy-900)</code> (corregido el 2026-06-24: antes era <code>var(--brand-dark)</code>, token indefinido en <code>:root</code> que caía a un gris genérico por herencia accidental; ver hallazgo abajo)</td></tr>
         <tr><td><code>.menu-list</code></td><td><code>display:flex</code>, <code>gap:1.875rem</code> (valor literal, no usa <code>--space-*</code>)</td></tr>
         <tr><td><code>body.on-top .pc-menu</code></td><td>Estado "en el tope de la página": sin sombra, fondo con gradiente transparente sobre azure-09</td></tr>
         <tr><td><code>body.on-top .header-top/.header-main</code></td><td><code>background-color:transparent!important</code></td></tr>
         <tr><td><code>body.on-top .header-top a, .header-main a/i</code></td><td>Fuerza texto blanco con <code>text-shadow</code> para legibilidad sobre imagen</td></tr>
       </tbody>
     </table>
+    <div class="demo-row" style="display:block; width:100%; position:relative; transform:translateZ(0); overflow:hidden; height:9rem;">
+      <!-- Markup real generado por js/components/marketing-header.js (líneas 4-77), recortado a la nav de escritorio.
+           El wrapper con transform:translateZ(0) crea un containing block propio para que .pc-menu (position:fixed
+           en css.css) quede contenido en este demo en vez de pegarse al viewport real — no se tocó la clase. -->
+      <div class="pc-menu">
+        <div class="header-top">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <ul>
+                  <li><a href="about-us.html" class="link-offset-3">About Us</a></li>
+                  <li><a href="#" class="link-offset-3">News</a></li>
+                  <li><a href="contact.html" class="link-offset-3">Contact</a></li>
+                  <li><a href="tel:(310) 768-8188" class="link-offset-3"><i class="fa fa-phone"></i>(310) 768-8188</a></li>
+                  <li><a href="forms.html" class="link-offset-3">Forms</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header-main">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12 col-sm-auto">
+                <div class="pc-logo pb-1">
+                  <a href="home.html"><img alt="IMPERIAL CFS" src="../_images/logo.png"></a>
+                </div>
+              </div>
+              <div class="col-12 col-sm row pr-0">
+                <ul class="menu-list height-100 main-menu col">
+                  <li><a href="our-services.html">Services <i class="fa fa-angle-down rotate ml-1"></i></a></li>
+                  <li><a href="availability.html">Availability <i class="fa fa-angle-down rotate ml-1"></i></a></li>
+                  <li><a href="ipi.html">IPI Tracing <i class="fa fa-angle-down rotate ml-1"></i></a></li>
+                </ul>
+                <ul class="menu-list h-100 col-auto ml-auto gap-8 d-flex">
+                  <li><a href="/WarehouseFees">Pay Fees</a></li>
+                  <li class="d-flex align-items-center"><a href="/Home/CustomerLogin" class="btn btn-info btn-sm rounded-pill text-sm">Login <i class="fa fa-angle-right"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="demo-label">.pc-menu real (recortado de marketing-header.js) — estado normal (sin .on-top)</span>
+    </div>
+    <div class="docs-note">
+      <strong>✅ Corregido y verificado (2026-06-24) — token indefinido <code class="font-family-roboto-mono">var(--brand-dark)</code>:</strong> se usaba en 3 lugares de <code class="font-family-roboto-mono">custom-styles.css</code> (<code class="font-family-roboto-mono">.header-main a</code>, <code class="font-family-roboto-mono">.widget-tab.active</code> color y <code class="font-family-roboto-mono">border-top</code>) sin existir nunca en <code class="font-family-roboto-mono">:root</code>. Como <code class="font-family-roboto-mono">color</code> es heredable, caía por accidente a <code class="font-family-roboto-mono">--clr-text-primary</code> (gris genérico), no a un valor decidido por diseño. Se reemplazó por <code class="font-family-roboto-mono">var(--clr-navy-900)</code> (<code class="font-family-roboto-mono">#0A192F</code>, el mismo token usado en <code class="font-family-roboto-mono">--clr-text-headings</code>). Verificado visualmente en <code class="font-family-roboto-mono">home.html</code> tras hacer scroll (header en estado no-<code class="font-family-roboto-mono">on-top</code>): navbar y tab activo ahora en <code class="font-family-roboto-mono">rgb(10,25,47)</code>, sin errores de consola nuevos. <strong>Hallazgo nuevo detectado durante la verificación, sin corregir:</strong> el link "Services" del navbar queda en gris genérico (<code class="font-family-roboto-mono">rgb(51,51,51)</code>), no navy — usa un selector distinto, probablemente trigger de submenu/dropdown, fuera del alcance de este fix.
+    </div>
     <div class="docs-note">
       <strong>Hallazgo real sobre el mecanismo <code class="font-family-roboto-mono">.on-top</code>:</strong> la clase se activa/desactiva con <code class="font-family-roboto-mono">body.classList.add("on-top")</code> en un listener de scroll — pero ese listener está <strong>copiado y pegado en cada página individualmente</strong> (confirmado en <code class="font-family-roboto-mono">about-us.html:271</code>, <code class="font-family-roboto-mono">contact.html:401</code>, <code class="font-family-roboto-mono">error-404.html:416</code>, <code class="font-family-roboto-mono">home.html:702</code>, <code class="font-family-roboto-mono">forms.html:334</code>, y más), en vez de vivir centralizado dentro del propio web component <code class="font-family-roboto-mono">marketing-header.js</code>. Es real duplicación de lógica, no un componente verdaderamente encapsulado.
     </div>
@@ -546,8 +865,8 @@
       <strong>Hallazgo real — segunda regla <code class="font-family-roboto-mono">html {}</code> fuera de <code class="font-family-roboto-mono">design-system.css</code>:</strong> en <code class="font-family-roboto-mono">custom-styles.css:1219</code>, dentro del bloque etiquetado como "Photo gallery in HBL details" (línea 994), aparece <code class="font-family-roboto-mono">html { font-size: clamp(1rem, 0.5rem + 0.625vw, 1.25rem) !important; }</code> — una redefinición global del tamaño base de fuente con <code class="font-family-roboto-mono">!important</code>, que afecta a todos los tokens <code class="font-family-roboto-mono">--font-size-*</code> basados en <code class="font-family-roboto-mono">rem</code> en todo el sitio. <code class="font-family-roboto-mono">design-system.css:683</code> ya define su propia regla <code class="font-family-roboto-mono">html { scroll-margin-top: 5.2rem!important; }</code> — son dos reglas <code class="font-family-roboto-mono">html {}</code> distintas en dos archivos distintos, sin conflicto de propiedad pero sí señal de que no hay un único lugar para reglas a nivel raíz. Comentario de origen mal etiquetado: esta regla no tiene relación con "Photo gallery", quedó mezclada en ese bloque.
     </div>
 
-    <h3>Tablas de reportes / DataTables (confirmado en 7–11 páginas)</h3>
-    <p class="text-secondary text-xs">Conteo real: <code class="font-family-roboto-mono">.table-responsive</code> → 11 páginas, <code class="font-family-roboto-mono">.dataTables_wrapper</code> / <code class="font-family-roboto-mono">.reports-banner</code> → 7 páginas. El bloque trae un comentario literal del autor original: <code class="font-family-roboto-mono">/* KEVIN: This are the styles for the Report Tables */</code> (línea 3151 de <code class="font-family-roboto-mono">custom-styles.css</code>).</p>
+    <h3 id="tablas-reportes">Tablas de reportes / DataTables (confirmado en 4–8 páginas)</h3>
+    <p class="text-secondary text-xs">Conteo real: <code class="font-family-roboto-mono">.table-responsive</code> → 8 páginas, <code class="font-family-roboto-mono">.dataTables_wrapper</code> → 4 páginas, <code class="font-family-roboto-mono">.reports-banner</code> → 4 páginas. El bloque trae un comentario literal del autor original: <code class="font-family-roboto-mono">/* KEVIN: This are the styles for the Report Tables */</code> (línea 3029 de <code class="font-family-roboto-mono">custom-styles.css</code>).</p>
     <table class="docs-table">
       <tbody>
         <tr><td><code>table.table.table-striped...dataTable</code></td><td>Encabezado <code>thead th</code> con fondo <code>var(--clr-navy-700)</code>, fuente Sora; filas con <code>font-family: var(--font-primary)</code></td></tr>
@@ -560,21 +879,25 @@
         <tr><td><code>.reports .filter-group</code></td><td>Layout de filtros en columna; labels en Sora, color <code>var(--clr-azure-46)</code></td></tr>
       </tbody>
     </table>
-    <div class="demo-row" style="display:block; width:100%; overflow-x:auto;">
-      <table style="width:100%; border-collapse:collapse; font-family:var(--font-primary); font-size:var(--font-size-sm);">
-        <thead><tr style="background:var(--clr-navy-700); color:#fff; font-family:var(--font-secondary); font-size:var(--font-size-xs);">
-          <th style="padding:.75rem 1rem; text-align:left;">Container No.</th><th style="padding:.75rem 1rem; text-align:left;">Status</th><th style="padding:.75rem 1rem; text-align:left;">ETA</th>
-        </tr></thead>
-        <tbody>
-          <tr style="background:var(--clr-azure-95);"><td style="padding:.75rem 1rem; font-weight:bolder; font-family:var(--font-secondary);">MSCU1234567</td><td style="padding:.75rem 1rem;">Available</td><td style="padding:.75rem 1rem;">06/24/2026</td></tr>
-          <tr style="background:#fff;"><td style="padding:.75rem 1rem; font-weight:bolder; font-family:var(--font-secondary);">TCLU7654321</td><td style="padding:.75rem 1rem;">In Transit</td><td style="padding:.75rem 1rem;">06/26/2026</td></tr>
-        </tbody>
-      </table>
+    <div class="demo-row" style="display:block; width:100%;">
+      <div class="table-responsive">
+        <div class="dataTables_wrapper no-footer">
+          <table class="table table-striped no-footer dataTable">
+            <thead>
+              <tr><th>REF#</th><th>CONTAINER#</th><th>ORIGIN</th><th>ETA</th><th>STATUS</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>CS26002528</td><td><a href="#">MSCU1234567</a></td><td>SHANGHAI, CHINA</td><td>01/20/26</td><td>READY</td></tr>
+              <tr><td>CS26000090</td><td><a href="#">TCLU7654321</a></td><td>KAOHSIUNG, TAIWAN</td><td>01/20/26</td><td>ON VESSEL</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <span class="demo-label">table.table-striped.dataTable — markup real recortado de reports.html (clases exactas, sin DataTables.js ni columnas sticky activas)</span>
     </div>
-    <p class="text-secondary text-xs">Demo aproximada (sin DataTables.js real ni columnas sticky) — solo ilustra los colores/fuentes reales de la tabla.</p>
 
-    <h3>HBL Table layout — grid de lista (confirmado en 6–7 páginas)</h3>
-    <p class="text-secondary text-xs">Conteo real: <code class="font-family-roboto-mono">.hbl-list-grid</code> → 6 páginas (<code class="font-family-roboto-mono">availability.html</code>, <code class="font-family-roboto-mono">availability3.html</code>, <code class="font-family-roboto-mono">container-level-release.html</code>, <code class="font-family-roboto-mono">search-availability.html</code>, <code class="font-family-roboto-mono">search-ipi.html</code>, <code class="font-family-roboto-mono">search.html</code>); <code class="font-family-roboto-mono">.hbl-list-item</code> → 7 páginas. Resto del bloque (<code class="font-family-roboto-mono">.hbl-master-list</code>, <code class="font-family-roboto-mono">.ams-*</code>, <code class="font-family-roboto-mono">.hbl-item-details-modal</code>, <code class="font-family-roboto-mono">.offcanvas-*</code>, <code class="font-family-roboto-mono">.details-card</code>) se confirmó en solo 1 página real distinta (<code class="font-family-roboto-mono">availability3.html</code> es un duplicado/borrador de <code class="font-family-roboto-mono">availability.html</code>, no cuenta como segunda muestra) — queda pendiente, no se documenta como reutilizable todavía.</p>
+    <h3 id="hbl-table-layout">HBL Table layout — grid de lista (confirmado en 5 páginas)</h3>
+    <p class="text-secondary text-xs">Conteo real: <code class="font-family-roboto-mono">.hbl-list-grid</code> y <code class="font-family-roboto-mono">.hbl-list-item</code> → 5 páginas cada una (<code class="font-family-roboto-mono">availability.html</code>, <code class="font-family-roboto-mono">container-level-release.html</code>, <code class="font-family-roboto-mono">search-availability.html</code>, <code class="font-family-roboto-mono">search-ipi.html</code>, <code class="font-family-roboto-mono">search.html</code>; <code class="font-family-roboto-mono">availability3.html</code> no cuenta — es duplicado/borrador de <code class="font-family-roboto-mono">availability.html</code>, excluido del conteo). Resto del bloque (<code class="font-family-roboto-mono">.hbl-master-list</code>, <code class="font-family-roboto-mono">.ams-*</code>, <code class="font-family-roboto-mono">.hbl-item-details-modal</code>, <code class="font-family-roboto-mono">.offcanvas-*</code>, <code class="font-family-roboto-mono">.details-card</code>) se confirmó en solo 1 página real distinta (<code class="font-family-roboto-mono">availability3.html</code> es un duplicado/borrador de <code class="font-family-roboto-mono">availability.html</code>, no cuenta como segunda muestra) — queda pendiente, no se documenta como reutilizable todavía.</p>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.hbl-list-grid</code></td><td><code>display:grid</code> con columnas fijas en <code>rem</code> (varía según contexto: 11 columnas en <code>.hbl-master-list</code>, 6 en <code>.search-results</code>, 8 en variante <code>.availability</code>); <code>gap: .75rem</code></td></tr>
@@ -583,31 +906,52 @@
       </tbody>
     </table>
     <div class="demo-row" style="display:block; width:100%; overflow-x:auto;">
-      <pre style="background:var(--clr-azure-99); padding:var(--space-3); border-radius:var(--border-radius-md); font-family:var(--font-monospace); font-size:var(--font-size-xs); overflow-x:auto;">&lt;!-- availability.html:411 --&gt;
-&lt;div class="hbl-list-item hbl-list-grid"&gt;
-    &lt;div class="d-flex justify-content-center quantity align-items-center gap-2 seqno"&gt;
-        &lt;p class="hide-label"&gt;SEQ&lt;/p&gt;1
-    &lt;/div&gt;
-    &lt;div class="d-flex font-bold align-items-center hbl"&gt;
-        &lt;a class="link-offset-2" data-bs-toggle="offcanvas" href="#hbl-item-details-1"&gt;MNSLOS2507067&lt;/a&gt;
-    &lt;/div&gt;
-    ...
-&lt;/div&gt;</pre>
+      <section class="hbl-master-list">
+        <div class="hbl-list-item hbl-list-grid">
+          <div class="d-flex justify-content-center quantity align-items-center gap-2 seqno"><p class="hide-label">SEQ</p>1</div>
+          <div class="d-flex font-bold align-items-center hbl">
+            <a class="link-offset-2" href="#" role="button">MNSLOS2507067</a>
+          </div>
+          <div class="d-flex justify-content-end quantity align-items-center gap-2"><p class="hide-label">QTY</p>7892.55</div>
+          <div class="d-flex justify-content-center align-items-center">
+            <p class="hide-label">CUST</p>
+            <i class="bi bi-check"></i>
+          </div>
+          <div class="d-flex text-danger flex-column hbl-holds">
+            <p class="hide-label">HOLDS</p>
+            <p>MARK, <span class="text-grey-65">PCS, NVO, CUST</span></p>
+          </div>
+          <div class="d-flex flex-column">
+            <p class="hide-label">IPI</p>
+            <a href="#" class="link-offset-2 font-family-roboto-mono text-uppercase text-sm link-disabled">ABCD</a>
+          </div>
+        </div>
+      </section>
+      <span class="demo-label">.hbl-master-list .hbl-list-item.hbl-list-grid — markup real recortado de availability.html:392,411-437 (el ancestro <code class="font-family-roboto-mono">.hbl-master-list</code> es necesario: la regla real es <code class="font-family-roboto-mono">.hbl-master-list .hbl-list-grid</code>, no <code class="font-family-roboto-mono">.hbl-list-grid</code> sola)</span>
     </div>
 
-    <h3>IPI Tracing page — wrapper de destino (confirmado en 3 páginas)</h3>
-    <p class="text-secondary text-xs">Conteo real: <code class="font-family-roboto-mono">.ipi-tracing .destination-container</code> → 3 páginas (<code class="font-family-roboto-mono">inland-warehouse.html</code>, <code class="font-family-roboto-mono">transit.html</code>, <code class="font-family-roboto-mono">whse-in-out.html</code>; todas usan <code class="font-family-roboto-mono">&lt;section class="mbl-details ipi-tracing"&gt;</code>). Nota: <code class="font-family-roboto-mono">.ipi-tracing</code> también aparece como clase de <em>badge</em> (<code class="font-family-roboto-mono">.badge.ipi-tracing</code>) en otras páginas — es un nombre de clase reutilizado para dos cosas distintas (badge vs. wrapper de sección), no el mismo componente.</p>
+    <h3 id="ipi-tracing-wrapper">IPI Tracing page — wrapper de destino (corregido — la regla real solo aplica en 1 página)</h3>
+    <p class="text-secondary text-xs"><strong>Corrección (2026-06-24):</strong> el conteo anterior ("3 páginas") confundía dos cosas distintas. El wrapper <code class="font-family-roboto-mono">&lt;section class="mbl-details ipi-tracing"&gt;</code> sí aparece en <strong>4 páginas</strong> (<code class="font-family-roboto-mono">inland-warehouse.html</code>, <code class="font-family-roboto-mono">transit.html</code>, <code class="font-family-roboto-mono">whse-in-out.html</code>, <code class="font-family-roboto-mono">ipi.html</code>) — pero la regla CSS documentada aquí, <code class="font-family-roboto-mono">.ipi-tracing .destination-container</code>, depende de que exista un hijo con clase <code class="font-family-roboto-mono">.destination-container</code>, y ese hijo <strong>solo existe en <code class="font-family-roboto-mono">ipi.html</code></strong> (verificado con <code class="font-family-roboto-mono">grep</code> en las 4 páginas). En las otras 3, el wrapper está presente pero la regla nunca se activa — es CSS que en la práctica solo tiene 1 página real de efecto, no 3. Nota aparte: <code class="font-family-roboto-mono">.ipi-tracing</code> también aparece como clase de <em>badge</em> (<code class="font-family-roboto-mono">.badge.ipi-tracing</code>) en otras páginas — nombre de clase reutilizado para dos cosas distintas (badge vs. wrapper de sección), no el mismo componente.</p>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.ipi-tracing .destination-container</code></td><td><code>min-width:25rem</code> en ≥992px; en ≤768px agrega <code>margin-top:1rem</code> y quita el margen derecho de <code>.card</code></td></tr>
       </tbody>
     </table>
+    <div class="demo-row" style="display:block; width:100%;">
+      <div class="destination-container" style="min-width:25rem; max-width:340px;">
+        <div class="card" style="border:var(--stroke-width-1) solid var(--clr-border); border-radius:var(--border-radius-md); padding:var(--space-4);">
+          <h6 style="margin:0 0 var(--space-2); font-family:var(--font-secondary);">Destination</h6>
+          <p style="margin:0; font-size:var(--font-size-sm);">Albuquerque, NM Inland Warehouse</p>
+        </div>
+      </div>
+      <span class="demo-label">.ipi-tracing .destination-container (min-width:25rem en ≥992px)</span>
+    </div>
     <div class="docs-note">
-      <strong>Hallazgo real — CSS sin uso (dead code) en este bloque:</strong> las siguientes clases definidas en <code class="font-family-roboto-mono">custom-styles.css</code> (líneas 1249–1330) no aparecen en ninguna de las 38 páginas HTML del repo (confirmado con <code class="font-family-roboto-mono">grep -rn</code> sobre todos los <code class="font-family-roboto-mono">.html</code>): <code class="font-family-roboto-mono">.card-shadow.destination</code>, <code class="font-family-roboto-mono">.transport-badge</code>, <code class="font-family-roboto-mono">.badge-truck</code>, <code class="font-family-roboto-mono">.badge-rail</code>, <code class="font-family-roboto-mono">.sticky-column-content</code>, y todo el sistema <code class="font-family-roboto-mono">.useful-links</code> (incluido su dropdown con transición de <code class="font-family-roboto-mono">max-height</code>). Son ~80 líneas de CSS que no tienen ningún elemento real al que aplicar.
+      <strong>✅ Corregido y verificado (2026-06-24) — CSS sin uso (dead code) en este bloque:</strong> se eliminaron de <code class="font-family-roboto-mono">custom-styles.css</code> <code class="font-family-roboto-mono">.transport-badge</code>, <code class="font-family-roboto-mono">.badge-truck</code>, <code class="font-family-roboto-mono">.badge-rail</code>, <code class="font-family-roboto-mono">.sticky-column-content</code>, y todo el sistema <code class="font-family-roboto-mono">.useful-links</code> (incluida una variante <code class="font-family-roboto-mono">:active</code> que el primer relevamiento no había detectado, ubicada en otra parte del archivo). Confirmado sin uso en ninguna de las 35 páginas HTML reales. <strong>Corrección al hallazgo original:</strong> <code class="font-family-roboto-mono">.card-shadow.destination</code>, que estaba en esta misma lista de "dead code", en realidad <strong>sí se usa</strong> — selector compuesto (ambas clases en el mismo elemento) presente en <code class="font-family-roboto-mono">charges.html:167</code> e <code class="font-family-roboto-mono">ipi.html:268</code>. No se tocó. Verificado visualmente: sin roturas en <code class="font-family-roboto-mono">home.html</code>, <code class="font-family-roboto-mono">charges.html</code>, <code class="font-family-roboto-mono">ipi.html</code>, <code class="font-family-roboto-mono">availability.html</code>.
     </div>
 
-    <h3>Modales y header de Availability (confirmado en 4–40 páginas)</h3>
-    <p class="text-secondary text-xs">Conteo real: <code class="font-family-roboto-mono">.hamburger-menu</code> → 40 páginas, <code class="font-family-roboto-mono">.nav-logo</code> / <code class="font-family-roboto-mono">.availability-menu</code> → 17, <code class="font-family-roboto-mono">.login-modal</code> → 11, <code class="font-family-roboto-mono">.faux-modal</code> / <code class="font-family-roboto-mono">.confirmation-modal</code> → 6, <code class="font-family-roboto-mono">.profile-dropdown</code> → 5, <code class="font-family-roboto-mono">.modal-under-header</code> → 4. Este bloque (etiquetado "Search Modal" pero en realidad cubre el sistema completo de modales y el header alterno de la sección Availability) es de los más reutilizados de todo <code class="font-family-roboto-mono">custom-styles.css</code>.</p>
+    <h3 id="modales-availability">Modales y header de Availability (confirmado en 3–23 páginas)</h3>
+    <p class="text-secondary text-xs">Conteo real: <code class="font-family-roboto-mono">.hamburger-menu</code> → 23 páginas, <code class="font-family-roboto-mono">.nav-logo</code> / <code class="font-family-roboto-mono">.availability-menu</code> → 16, <code class="font-family-roboto-mono">.faux-modal</code> / <code class="font-family-roboto-mono">.confirmation-modal</code> → 6, <code class="font-family-roboto-mono">.profile-dropdown</code> → 5, <code class="font-family-roboto-mono">.modal-under-header</code> → 3, <code class="font-family-roboto-mono">#login-modal</code> → 3 (corrección: <strong>no es una clase</strong>, es un <code class="font-family-roboto-mono">id</code>; el selector real en <code class="font-family-roboto-mono">custom-styles.css:1411</code> es <code class="font-family-roboto-mono">#login-modal.modal</code>). Este bloque (etiquetado "Search Modal" pero en realidad cubre el sistema completo de modales y el header alterno de la sección Availability) es de los más reutilizados de todo <code class="font-family-roboto-mono">custom-styles.css</code>.</p>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.modal-backdrop</code></td><td>Backdrop global con <code>backdrop-filter: blur(8px)</code> y <code>top/height</code> ajustados a <code>3.849375rem</code> (alto exacto del header) para no tapar el header al abrir un modal</td></tr>
@@ -616,16 +960,32 @@
         <tr><td><code>.availability-menu</code></td><td>Header alterno (no es <code>marketing-header.js</code>) usado en las páginas de la sección Availability; su fila se reordena por breakpoint ocultando columnas específicas (<code>nth-child(2)</code> a 421px, <code>nth-child(3)</code> a 768px) y forzando siempre visible el botón con <code>.hamburger-menu</code></td></tr>
       </tbody>
     </table>
-    <pre style="background:var(--clr-azure-99); padding:var(--space-3); border-radius:var(--border-radius-md); font-family:var(--font-monospace); font-size:var(--font-size-xs); overflow-x:auto;">&lt;!-- home.html:224 --&gt;
-&lt;div class="modal fade confirmation-modal faux-modal" id="confirm-logout-modal" tabindex="-1"
-    aria-hidden="true" data-bs-backdrop="false"&gt;
-  &lt;div class="modal-dialog"&gt;
-    &lt;div class="modal-content"&gt;...&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
+    <div class="demo-row" style="display:block; width:100%; position:relative; transform:translateZ(0); overflow:hidden; min-height:18rem; background:var(--clr-azure-99);">
+      <!-- Markup real de home.html:224-242, clases exactas. .modal{display:none} por defecto en Bootstrap (lo
+           activa JS con data-bs-toggle), así que solo se fuerza display:block (igual que haría el JS al abrirla)
+           y se agrega .show (la clase real que Bootstrap añade). El wrapper con transform crea un containing
+           block para .modal (position:fixed) y lo confina a este demo en vez del viewport real. -->
+      <div class="modal fade show confirmation-modal faux-modal" id="confirm-logout-modal-demo" tabindex="-1" aria-hidden="true" data-bs-backdrop="false" style="display:block;">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header justify-content-end border-bottom-0 pb-1">
+              <button type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <div class="modal-body px-5 pb-5 pt-0 font-family-sora text-center">
+              <p class="mb-4">Do you want to log out?</p>
+              <div class="d-flex justify-content-center gap-3">
+                <button type="button" class="btn btn-sm btn-secondary rounded-pill px-4">Go Back</button>
+                <button type="button" class="btn btn-sm btn-danger rounded-pill px-4">Logout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="demo-label">.modal.confirmation-modal.faux-modal — markup real de home.html:224-242, forzado a estado abierto</span>
+    </div>
 
-    <h3>Transit Time Schedule — tabla Availability (confirmado en 7 páginas)</h3>
-    <p class="text-secondary text-xs">Conteo real: <code class="font-family-roboto-mono">.Availability-table</code> → 7 páginas (<code class="font-family-roboto-mono">transit.html</code>, <code class="font-family-roboto-mono">inland-warehouse.html</code>, <code class="font-family-roboto-mono">reports.html</code> y 4 páginas de reportes). El selector que la envuelve, <code class="font-family-roboto-mono">.availavility-v2</code>, <strong>no es una clase de feature</strong> — es un nombre con typo (falta una segunda "a": "availa<u>vi</u>lity") aplicado como clase de <code class="font-family-roboto-mono">&lt;body&gt;</code> en prácticamente las 32 páginas del sitio (confirmado: <code class="font-family-roboto-mono">home.html:25</code>, <code class="font-family-roboto-mono">&lt;body class="availavility-v2 marketing"&gt;</code>). Es decir, estas reglas son efectivamente globales; el prefijo no acota nada.</p>
+    <h3 id="transit-time-schedule">Transit Time Schedule — tabla Availability (confirmado en 5 páginas)</h3>
+    <p class="text-secondary text-xs">Conteo real: <code class="font-family-roboto-mono">.Availability-table</code> → 5 páginas (<code class="font-family-roboto-mono">transit.html</code>, <code class="font-family-roboto-mono">inland-warehouse.html</code>, <code class="font-family-roboto-mono">reports.html</code>, <code class="font-family-roboto-mono">Reports-Daily_Container_Status.html</code>, <code class="font-family-roboto-mono">Reports-IPI_Destination.html</code>). El selector que la envuelve, <code class="font-family-roboto-mono">.availability-v2</code>, <strong>no es una clase de feature</strong> — es un nombre con typo (falta una segunda "a": "availa<u>vi</u>lity") aplicado como clase de <code class="font-family-roboto-mono">&lt;body&gt;</code> en 30 de las 35 páginas reales del sitio (confirmado: <code class="font-family-roboto-mono">home.html:25</code>, <code class="font-family-roboto-mono">&lt;body class="availability-v2 marketing"&gt;</code>; las 5 excepciones son <code class="font-family-roboto-mono">reports.html</code> y las 4 páginas <code class="font-family-roboto-mono">Reports-*.html</code>, que no llevan el body class de marketing). Es decir, estas reglas son efectivamente casi globales; el prefijo no acota casi nada.</p>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.Availability-table thead th</code></td><td>Fuente Sora, <code>font-size: var(--font-size-xs)</code>, fondo <code>var(--clr-navy-700)</code> — mismo patrón de encabezado que las tablas de reportes (Fase 4b)</td></tr>
@@ -633,29 +993,75 @@
         <tr><td><code>tbody tr>td:first-child</code></td><td><code>padding-right: var(--space-8)</code>, <code>font-weight:bolder</code> — primera columna destacada</td></tr>
       </tbody>
     </table>
-    <pre style="background:var(--clr-azure-99); padding:var(--space-3); border-radius:var(--border-radius-md); font-family:var(--font-monospace); font-size:var(--font-size-xs); overflow-x:auto;">&lt;!-- transit.html:193 --&gt;
-&lt;div class="Availability-table"&gt;
-  &lt;div class="table-responsive"&gt;
-    &lt;table class="table table-striped" id="destinationTable"&gt;
-      &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Destination&lt;/th&gt;...&lt;/tr&gt;&lt;/thead&gt;
-      ...</pre>
+    <div class="demo-row" style="display:block; width:100%;">
+      <div class="Availability-table">
+        <div class="table-responsive">
+          <table class="table table-striped" id="destinationTable-demo">
+            <thead>
+              <tr><th>Destination</th><th>Whse name</th><th>Truck / Rail</th><th>Freq</th><th>Est Loading Day(s)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>ALBUQUERQUE</td><td class="no-wrap">Warehouse name</td><td>Truck</td><td>1</td><td>Friday</td></tr>
+              <tr><td>ATLANTA</td><td class="no-wrap">Warehouse name</td><td>Rail</td><td>3 to 4</td><td>Mon-Fri</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <span class="demo-label">.Availability-table — markup real recortado de transit.html:193-215</span>
+    </div>
     <div class="docs-note">
-      <strong>Hallazgo real — clase con typo aplicada globalmente:</strong> <code class="font-family-roboto-mono">.availavility-v2</code> (con "vi" de más) está en el <code class="font-family-roboto-mono">&lt;body&gt;</code> de casi todas las páginas del sitio, no solo en las relacionadas con disponibilidad. Funciona porque coincide accidentalmente en todos lados, pero el nombre sugiere — incorrectamente — un alcance limitado a una "v2" de la sección Availability.
+      <strong>✅ Corregido y verificado (2026-06-24) — typo en clase aplicada globalmente:</strong> la clase era <code class="font-family-roboto-mono">.availavility-v2</code> (con "vi" de más) y estaba en el <code class="font-family-roboto-mono">&lt;body&gt;</code> de casi todas las páginas del sitio, no solo en las relacionadas con disponibilidad. Se renombró a <code class="font-family-roboto-mono">.availability-v2</code> (ortografía correcta) en los 35 archivos que la usaban (34 HTML + <code class="font-family-roboto-mono">custom-styles.css</code> + <code class="font-family-roboto-mono">terminal-schedule-print.css</code>). Verificado visualmente en 4 páginas: header, breadcrumbs, tabla <code class="font-family-roboto-mono">.Availability-table</code> con striping, forms — todo renderiza igual, sin errores de consola nuevos.
     </div>
 
-    <h3>Charges Page (específico — solo <code class="font-family-roboto-mono">charges.html</code>)</h3>
+    <h3 id="charges-page">Charges Page (específico — solo <code class="font-family-roboto-mono">charges.html</code>)</h3>
     <table class="docs-table">
       <tbody>
-        <tr><td><code>.charges-table .btn-group</code></td><td>Botones en columna (<code>flex-direction:column</code>), fondo <code>var(--clr-cyan-47)</code>, hover <code>var(--clr-azure-19)</code></td></tr>
+        <tr><td><code>.charges-table-heading</code> / <code>.charges-table-item</code></td><td>Filas de la lista de cargos: grid de 3 columnas (checkbox+descripción / monto / estado), fuente <code>var(--font-primary)</code></td></tr>
         <tr><td><code>.charges-page .toast-container</code></td><td><code>min-width:30vw</code> para el toast de validación de tarjeta (<code>#cardValidationToast</code>)</td></tr>
       </tbody>
     </table>
-    <pre style="background:var(--clr-azure-99); padding:var(--space-3); border-radius:var(--border-radius-md); font-family:var(--font-monospace); font-size:var(--font-size-xs); overflow-x:auto;">&lt;!-- charges.html:274 --&gt;
-&lt;div class="charge-step-module d-flex align-items-stretch charges-table py-8 mb-4"&gt;
-  &lt;div class="charges-table-heading"&gt;...&lt;/div&gt;
-  &lt;div class="charges-table-item"&gt;...&lt;/div&gt;</pre>
+    <div class="demo-row" style="display:block; width:100%; max-width:480px;">
+      <section class="mbl-details charges-page" style="padding:0;">
+        <section class="charge-steps">
+          <div class="charge-step-module d-flex align-items-stretch charges-table py-8 mb-4">
+            <div class="charges-table-heading">
+              <label class="form-check-label" for="checkDefault-demo">
+                <input class="form-check-input" type="checkbox" id="checkDefault-demo">
+                Description
+              </label>
+              <span class="text-end">Charge</span>
+              <span class="d-none d-sm-inline">Status</span>
+            </div>
+            <div class="charges-table-item">
+              <label class="form-check-label" for="checkItem-demo">
+                <input class="form-check-input" type="checkbox" id="checkItem-demo">
+                Forklift
+              </label>
+              <span>55.00</span>
+              <span class="paid">PAID</span>
+            </div>
+          </div>
+        </section>
+      </section>
+      <span class="demo-label">.charges-table-heading + .charges-table-item — markup real recortado de charges.html:162,239,274-300 (ancestros <code class="font-family-roboto-mono">.mbl-details.charges-page</code> y <code class="font-family-roboto-mono">.charge-steps</code> necesarios — la regla real está anidada bajo ambos)</span>
+    </div>
+    <div class="docs-note">
+      <strong>Hallazgo real — la regla <code class="font-family-roboto-mono">.charges-table .btn-group</code> nunca se activa:</strong> el selector completo es <code class="font-family-roboto-mono">.availability-v2 .charges-table .btn-group</code> (<code class="font-family-roboto-mono">custom-styles.css:1598</code>, botones en columna con fondo <code>var(--clr-cyan-47)</code>). Verificado con <code class="font-family-roboto-mono">grep</code>: <code class="font-family-roboto-mono">charges.html</code> — la única página con <code class="font-family-roboto-mono">.charges-table</code> — <strong>no tiene ningún elemento con clase <code class="font-family-roboto-mono">btn-group</code></strong>. La regla es CSS muerto en la práctica, no por archivo sin cargar (como <code class="font-family-roboto-mono">extra.css</code>) sino porque el markup que la activaría nunca se escribió. El demo siguiente es <strong>sintético</strong> (clases reales, pero combinación de markup no citada de ninguna página real) — ilustra el efecto de la regla, no algo que exista hoy en producción:
+    </div>
+    <div class="demo-row">
+      <div class="availability-v2" style="display:contents;">
+        <div class="charges-table" style="display:flex; align-items:stretch; border:var(--stroke-width-1) solid var(--clr-border); border-radius:var(--border-radius-md); overflow:hidden;">
+          <div style="padding:var(--space-3) var(--space-4); background:var(--clr-azure-99);">Terminal Handling Charge</div>
+          <div class="btn-group">
+            <button type="button">Edit</button>
+            <button type="button">Remove</button>
+          </div>
+        </div>
+      </div>
+      <span class="demo-label">.availability-v2 .charges-table .btn-group — sintético, sin markup real coincidente hoy</span>
+    </div>
 
-    <h3>Terminal Schedule (específico — solo <code class="font-family-roboto-mono">terminal-schedule.html</code>)</h3>
+    <h3 id="terminal-schedule">Terminal Schedule (específico — solo <code class="font-family-roboto-mono">terminal-schedule.html</code>)</h3>
     <p class="text-secondary text-xs">Bloque grande y autocontenido (<code class="font-family-roboto-mono">.terminal-schedule-main &gt; .terminal-schedule-section</code>): tabla de turnos por puerto con secciones colapsables.</p>
     <table class="docs-table">
       <tbody>
@@ -665,55 +1071,120 @@
         <tr><td><code>.terminal-info h6/span</code></td><td>Nombre de puerto en Sora 800, subtítulo en <code>--font-size-xs</code> color <code>--clr-azure-70</code></td></tr>
       </tbody>
     </table>
-    <pre style="background:var(--clr-azure-99); padding:var(--space-3); border-radius:var(--border-radius-md); font-family:var(--font-monospace); font-size:var(--font-size-xs); overflow-x:auto;">&lt;!-- terminal-schedule.html:273,289,362 --&gt;
-&lt;section class="terminal-schedule-main"&gt;
-  &lt;section id="pola-section" class="terminal-schedule-section mt-6"&gt;
-    ...
-    &lt;td class="shift-badge"&gt;1&lt;sup&gt;ST&lt;/sup&gt;&lt;/td&gt;</pre>
-
-    <h3>Container Level Release (específico — solo <code class="font-family-roboto-mono">container-level-release.html</code>)</h3>
-    <table class="docs-table">
-      <tbody>
-        <tr><td><code>.container-level-release .ams-list-item2</code></td><td>Variante de fila AMS distinta a <code>.ams-list-item</code> (Fase 4c): fondo blanco, <code>border-radius: var(--space-2)</code>, sombra <code>var(--shadow-md)</code>, sin pseudo-elemento de conector</td></tr>
-        <tr><td><code>.container-level-release .hbl-list-item</code></td><td>Variante con pseudo-elemento <code>::before</code> (ícono bootstrap-icons <code>\F132</code>) como conector visual hacia los AMS hijos</td></tr>
-      </tbody>
-    </table>
-    <pre style="background:var(--clr-azure-99); padding:var(--space-3); border-radius:var(--border-radius-md); font-family:var(--font-monospace); font-size:var(--font-size-xs); overflow-x:auto;">&lt;!-- container-level-release.html:217,229 --&gt;
-&lt;div class="list-item hbl-list-item hbl-list-grid d-inline-flex justify-content-start px-3 gap-3 align-items-center"&gt;
-  ...
-&lt;/div&gt;
-&lt;div class="ams-list-item2"&gt;...&lt;/div&gt;</pre>
-
-    <div class="docs-note">
-      <strong>Hallazgo real — CSS muerto heredado de un archivo de respaldo:</strong> <code class="font-family-roboto-mono">custom-styles.css</code> líneas 1660–1742 (<code class="font-family-roboto-mono">.ginfo</code>, <code class="font-family-roboto-mono">.cucc-item</code>, <code class="font-family-roboto-mono">#collapse-cucc</code>, <code class="font-family-roboto-mono">#edit-charge-modal-1</code>, <code class="font-family-roboto-mono">.money-sign</code>) solo aparecen en <code class="font-family-roboto-mono">Content/availability-backup.html</code> — un archivo de respaldo, no una página real servida. Son ~83 líneas de CSS sin destino en producción.
+    <div class="demo-row" style="display:block; width:100%; max-width:480px;">
+      <section class="terminal-schedule-main" style="padding:0; min-height:0;">
+        <section class="terminal-schedule-section">
+          <div class="port-header d-flex align-items-center justify-content-between py-2 border-bottom mb-2">
+            <div class="d-flex align-items-center font-family-sora fw-bold">
+              <span class="bar-indicator bar-blue"></span>
+              PORT OF LOS ANGELES (POLA)
+            </div>
+            <i class="bi bi-chevron-down text-muted"></i>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-striped table-hover">
+              <thead><tr><th>Terminal</th><th>Shift</th><th><span class="day-of-week">Mon</span> <span class="date-sub">02/02</span></th></tr></thead>
+              <tbody>
+                <tr class="terminal-row">
+                  <td rowspan="2" class="terminal-cell bg-white">
+                    <div class="terminal-info"><h6>ITS</h6><span class="terminal-code">(234)</span></div>
+                  </td>
+                  <td class="shift-badge">1<sup>ST</sup></td>
+                  <td>OPEN</td>
+                </tr>
+                <tr class="terminal-row">
+                  <td class="shift-badge">2<sup>ND</sup></td>
+                  <td class="closed">CLOSED</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+      <span class="demo-label">.terminal-schedule-main &gt; .terminal-schedule-section / .port-header / td.shift-badge / td.closed — markup real recortado de terminal-schedule.html:273-369 (el ancestro <code class="font-family-roboto-mono">.terminal-schedule-main</code> es necesario: las reglas reales usan CSS nesting bajo él)</span>
     </div>
 
-    <h3>Information / Marketing Pages (confirmado en 3–14 páginas)</h3>
-    <p class="text-secondary text-xs">Conteo real: <code class="font-family-roboto-mono">.hero-section</code> → 14 páginas, <code class="font-family-roboto-mono">.side-nav</code> / <code class="font-family-roboto-mono">.quote-bubble</code> → 12, <code class="font-family-roboto-mono">.news-item</code> / <code class="font-family-roboto-mono">.btn-marketing</code> → 3. Nota: las reglas de navbar (<code class="font-family-roboto-mono">.pc-menu</code>, <code class="font-family-roboto-mono">.header-top</code>, <code class="font-family-roboto-mono">.header-main</code>, <code class="font-family-roboto-mono">.menu-list</code>, <code class="font-family-roboto-mono">body.on-top</code>) están físicamente dentro de este mismo bloque de comentario (líneas 2311–2496) y ya se documentaron en la Fase 4a — no se repiten aquí.</p>
+    <h3 id="container-level-release">Container Level Release (específico — solo <code class="font-family-roboto-mono">container-level-release.html</code>)</h3>
+    <table class="docs-table">
+      <tbody>
+        <tr><td><code>.ams-list-item2</code></td><td>Fondo blanco, <code>border-radius: var(--space-2)</code>, sombra <code>var(--shadow-md)</code>, sin pseudo-elemento de conector. <strong>No</strong> está anidada dentro de <code>.container-level-release</code> — es una clase global definida en <code>custom-styles.css:1360</code>, dentro del bloque "IPI Tracing page", pero en la práctica solo se usa en <code>container-level-release.html</code> (1 página confirmada)</td></tr>
+        <tr><td><code>.container-level-release .hbl-list-item</code></td><td>Variante con pseudo-elemento <code>::before</code> (ícono bootstrap-icons <code>\F132</code>) como conector visual hacia los AMS hijos. Esta sí está anidada dentro del bloque <code>.container-level-release {}</code> (<code>custom-styles.css:1753</code>)</td></tr>
+      </tbody>
+    </table>
+    <div class="demo-row" style="display:block; width:100%; max-width:480px;">
+      <div class="container-level-release">
+        <div class="mt-4 mb-6 d-flex flew-row gap-3 hbl-wrapper">
+          <div class="list-item hbl-list-item hbl-list-grid d-inline-flex justify-content-start px-3 gap-3 align-items-center">
+            <div class="d-flex justify-content-center align-items-center gap-2 detail-pair mr-4">
+              <p class="detail-label">HBL. </p>
+              <span class="detail-value fw-bold">TCLU1228380</span>
+            </div>
+          </div>
+          <div class="w-100 d-flex flex-column gap-3">
+            <div class="ams-list-item2">
+              <div class="d-flex justify-content-start flex-column hbl"><span class="detail-label mr-2">AMS.</span><b>MNRQLOS2507070</b></div>
+              <div class="d-flex justify-content-end align-items-end px-2 flex-column text-end"><span class="detail-label">Qty.</span>72</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="demo-label">.hbl-list-item (conector ::before) + .ams-list-item2 (sin conector) — markup real recortado de container-level-release.html:215-230</span>
+    </div>
+
+    <div class="docs-note">
+      <strong>✅ Corregido y verificado (2026-06-24) — CSS muerto heredado de un archivo de respaldo:</strong> se eliminaron de <code class="font-family-roboto-mono">custom-styles.css</code> <code class="font-family-roboto-mono">.ginfo</code>, <code class="font-family-roboto-mono">.cucc-item</code>, <code class="font-family-roboto-mono">#collapse-cucc .cucc-amounts-grid</code> (el id <code class="font-family-roboto-mono">#collapse-cucc</code> sigue vivo en el HTML como target de un Bootstrap collapse, pero ningún markup tiene la clase hija <code class="font-family-roboto-mono">.cucc-amounts-grid</code>), <code class="font-family-roboto-mono">#edit-charge-modal-1</code> y <code class="font-family-roboto-mono">.money-sign</code> — confirmado que solo existían en <code class="font-family-roboto-mono">Content/availability-backup.html</code>, archivo de respaldo no servido. Verificado visualmente en <code class="font-family-roboto-mono">availability.html</code>: el toggle "CUCC Charges" sigue abriendo el collapse normalmente, sin errores de consola nuevos.
+    </div>
+
+    <h3 id="information-marketing">Information / Marketing Pages (confirmado en 3–14 páginas)</h3>
+    <p class="text-secondary text-xs">Conteo real: <code class="font-family-roboto-mono">.hero-section</code> → 14 páginas, <code class="font-family-roboto-mono">.side-nav</code> → 12 páginas (corrección: no es el mismo conteo que <code class="font-family-roboto-mono">.quote-bubble</code>, ver abajo), <code class="font-family-roboto-mono">.news-item</code> / <code class="font-family-roboto-mono">.btn-marketing</code> → 3. Nota: las reglas de navbar (<code class="font-family-roboto-mono">.pc-menu</code>, <code class="font-family-roboto-mono">.header-top</code>, <code class="font-family-roboto-mono">.header-main</code>, <code class="font-family-roboto-mono">.menu-list</code>, <code class="font-family-roboto-mono">body.on-top</code>) están físicamente dentro de estos dos bloques de comentario contiguos ("Navbar in marketing pages" + "HEADER SCROLL EFFECT CSS", líneas 2189–2845) y ya se documentaron en la Fase 4a — no se repiten aquí.</p>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.hero-section</code></td><td>Imagen de fondo a pantalla completa con gradiente lateral (desktop) o vertical (≤768px), cambia de imagen en mobile (<code>hero-desktop.webp</code> → <code>hero-mobile.webp</code>); altura <code>calc(100vh - 12.37rem)</code></td></tr>
         <tr><td><code>.hero-section.template</code></td><td>Variante compacta (<code>min-height:12.75rem</code>) para páginas internas, gradiente invertido (de abajo hacia arriba)</td></tr>
         <tr><td><code>.side-nav .card:first-child</code></td><td>Aside de navegación secundaria — primera tarjeta con <code>box-shadow: var(--shadow-lg)</code>, header sin <code>border-radius</code></td></tr>
-        <tr><td><code>.quote-bubble</code></td><td>Botón flotante (FAB) de cotización: oculto por defecto (<code>opacity:0; transform:translateY(3rem) scale(.9)</code>), aparece con <code>.show</code>; efecto "bouncy" con <code>cubic-bezier(0.175,.885,.32,1.275)</code></td></tr>
+        <tr><td><code>.quote-bubble</code></td><td>Botón flotante (FAB) de cotización: oculto por defecto (<code>opacity:0; transform:translateY(3rem) scale(.9)</code>), aparece con <code>.show</code>; efecto "bouncy" con <code>cubic-bezier(0.175,.885,.32,1.275)</code>. Conteo real: 3 páginas (<code>home.html</code>, <code>forms.html</code>, <code>template.html</code>) — muy por debajo de las 12 de <code>.side-nav</code>, pese a vivir en el mismo bloque de comentario</td></tr>
         <tr><td><code>.btn-marketing</code></td><td>Enlace tipo botón con ícono que se desplaza <code>-.5rem</code> en hover; variante <code>.blue</code> cambia el color base</td></tr>
         <tr><td><code>.news-item</code></td><td>Fila de noticia con borde superior, variante <code>.latest</code> sin borde y con <code>&lt;h3&gt;</code> destacado</td></tr>
       </tbody>
     </table>
-    <pre style="background:var(--clr-azure-99); padding:var(--space-3); border-radius:var(--border-radius-md); font-family:var(--font-monospace); font-size:var(--font-size-xs); overflow-x:auto;">&lt;!-- home.html:244 --&gt;
-&lt;header class="hero-section"&gt;...&lt;/header&gt;
-
-&lt;!-- home.html:613 --&gt;
-&lt;button class="btn btn-primary quote-bubble rounded-pill position-fixed bottom-0 end-0 m-4 mb-5 px-4 py-3 shadow border-0"&gt;...&lt;/button&gt;
-
-&lt;!-- home.html:397 --&gt;
-&lt;a href="news-archive.html" class="btn-marketing"&gt;...&lt;/a&gt;</pre>
+    <div class="demo-row availability-v2" style="display:block; width:100%; position:relative; transform:translateZ(0); overflow:hidden;">
+      <header class="hero-section template" style="background-image: linear-gradient(to top, rgba(20, 38, 79, 0.6) 30%, rgba(20, 38, 79, 0) 80%), url('../_images/news_banner.webp'); padding-bottom:3rem;">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-lg hero-text">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/" class="text-white text-decoration-none">Home</a></li>
+                  <li class="breadcrumb-item active text-cyan-primary fw-bold" aria-current="page">News & Announcements</li>
+                </ol>
+              </nav>
+              <h1 class="display-4 text-white">News & Announcements</h1>
+            </div>
+          </div>
+        </div>
+      </header>
+      <button type="button" class="btn btn-primary quote-bubble show rounded-pill position-fixed bottom-0 end-0 m-4 mb-5 px-4 py-3 shadow border-0 fs-6 fw-bold font-family-sora text-xs">Get a Quote</button>
+      <span class="demo-label">.availability-v2 .hero-section.template — markup real de news.html:26,28-42 (el body real lleva <code class="font-family-roboto-mono">.availability-v2</code>, requerido por la regla) + .quote-bubble.show de home.html:613 (forzada visible, contenida en este demo por el transform del wrapper, no por cambiar su position real)</span>
+    </div>
+    <div class="demo-row">
+      <a href="contact.html" class="btn-marketing blue mt-4 ms-auto">More news <i class="bi bi-arrow-right-square-fill ml-4"></i></a>
+      <span class="demo-label">.btn-marketing.blue — markup real de news.html:131-133</span>
+    </div>
+    <div class="demo-row" style="display:block; width:100%; max-width:480px;">
+      <div class="news-item">
+        <a href="#">
+          <p class="text-sm date">11/11/20</p>
+          <h4 class="type-h6">Accepted Forms of Payment for Warehouse Window Fees</h4>
+        </a>
+      </div>
+      <span class="demo-label">.news-item — markup real de news.html:100-105</span>
+    </div>
 
     <div class="docs-note">
       <strong>Específico de 1 página (documentado por referencia, no reutilizable):</strong> <code class="font-family-roboto-mono">.tracking-widget</code>/<code class="font-family-roboto-mono">.widget-tab</code> (solo en la página con el widget de tracking), <code class="font-family-roboto-mono">.feature-card</code>/<code class="font-family-roboto-mono">.feature-icon-box</code>/<code class="font-family-roboto-mono">.core-capabilities</code>/<code class="font-family-roboto-mono">.integration-security</code> (solo <code class="font-family-roboto-mono">technology.html</code> o similar), <code class="font-family-roboto-mono">.news-ticker</code>/<code class="font-family-roboto-mono">.news-post-content</code> (solo páginas de noticias), <code class="font-family-roboto-mono">.photo-banner</code>, <code class="font-family-roboto-mono">.about-section</code>, <code class="font-family-roboto-mono">.download-button</code> — cada uno en 1 sola página real.
     </div>
 
-    <h3>Profile Page Styles</h3>
+    <h3 id="profile-page">Profile Page Styles</h3>
     <p class="text-secondary text-xs">Conteo real: <code class="font-family-roboto-mono">.profile-page</code> / <code class="font-family-roboto-mono">.profile-icon-circle</code> → 2 páginas reales (<code class="font-family-roboto-mono">user-management.html</code>, <code class="font-family-roboto-mono">user-profile.html</code>) — por debajo del umbral habitual de 3, pero son dos páginas genuinamente distintas (no un duplicado), así que se documenta. El resto (<code class="font-family-roboto-mono">.report-btn</code>, <code class="font-family-roboto-mono">.nav-link-custom</code>, <code class="font-family-roboto-mono">.mobile-nav-profile</code>) es específico de <code class="font-family-roboto-mono">user-profile.html</code> únicamente; <code class="font-family-roboto-mono">#payment-successful</code> es específico de <code class="font-family-roboto-mono">payment-confirmation.html</code>.</p>
     <table class="docs-table">
       <tbody>
@@ -724,34 +1195,58 @@
         <tr><td><code>.mobile-nav-profile</code></td><td><em>(específico)</em> Barra de navegación inferior fija, solo visible en ≤992px, oculta en desktop</td></tr>
       </tbody>
     </table>
-    <pre style="background:var(--clr-azure-99); padding:var(--space-3); border-radius:var(--border-radius-md); font-family:var(--font-monospace); font-size:var(--font-size-xs); overflow-x:auto;">&lt;!-- user-profile.html:28,244 --&gt;
-&lt;body class="availavility-v2 profile-page"&gt;
-  ...
-  &lt;a href="#" class="report-btn"&gt;...&lt;/a&gt;</pre>
+    <div class="demo-row">
+      <div class="profile-page" style="display:contents;">
+        <div class="d-flex align-items-center font-family-sora">
+          <div class="profile-icon-circle me-3">
+            <i class="fa-regular fa-user"></i>
+          </div>
+          <div>
+            <div class="text-navy-500 text-sm">Welcome back,</div>
+            <div class="fw-bold h5 mb-0 text-2xl">KEVIN CHEN</div>
+          </div>
+        </div>
+        <a href="#" class="report-btn"><i class="fa-solid fa-list-ul"></i><span>CONTAINER STATUS REPORT</span></a>
+        <a href="#radio-guarantee" class="nav-link-custom"><i class="fa-regular fa-calendar-check"></i> GUARANTEE</a>
+      </div>
+      <span class="demo-label">.profile-icon-circle + .report-btn + .nav-link-custom — markup real recortado de user-profile.html:505-528 (el ancestro <code class="font-family-roboto-mono">.profile-page</code> es necesario: estas 3 reglas viven anidadas bajo él en el archivo fuente)</span>
+    </div>
 
-    <h3>User Management Page — resto (microinteracción global + específicos)</h3>
-    <p class="text-secondary text-xs">Este tramo (líneas 3397–3518, bajo el comentario "User Management Page" aunque solo una pieza es realmente de esa página) mezcla una regla verdaderamente global con CSS específico de otras dos páginas.</p>
+    <h3 id="user-management-resto">User Management Page — resto (microinteracción global + específicos)</h3>
+    <p class="text-secondary text-xs">Este tramo (líneas 3026–3398, bajo el comentario "User Management Page" aunque solo una pieza es realmente de esa página) mezcla una regla verdaderamente global con CSS específico de otras dos páginas.</p>
     <table class="docs-table">
       <tbody>
-        <tr><td><code>.btn:not([disabled]):hover</code></td><td><strong>Global</strong> — confirmado en 39 páginas (cualquier botón Bootstrap no deshabilitado). Microinteracción: <code>translateY(-0.125rem)</code> en hover, vía comentario explícito "Button hover effect Microinteraction"</td></tr>
+        <tr><td><code>.btn:not([disabled]):hover</code></td><td><strong>Global</strong> — confirmado en las 35 páginas reales (cualquier botón Bootstrap no deshabilitado, sin excepción). Microinteracción: <code>translateY(-0.125rem)</code> en hover, vía comentario explícito "Button hover effect Microinteraction"</td></tr>
         <tr><td><code>.animated-success-icon</code></td><td><em>(específico de <code>payment-confirmation.html</code>)</em> Animación de entrada <code>@keyframes icon-pop-in</code> (1s, con rotación y escala) para el ícono de éxito</td></tr>
         <tr><td><code>#warehouseListTable</code> / <code>.inland-warehouse.offcanvas</code></td><td><em>(específico de <code>inland-warehouse.html</code>)</em> Primera columna subrayada con flecha (<code>\F135</code>) en hover; offcanvas de detalle de almacén con tabla de ancho fijo (<code>table-layout:fixed</code>) y primera fila como encabezado con fondo <code>var(--clr-navy-600)</code></td></tr>
       </tbody>
     </table>
-    <pre style="background:var(--clr-azure-99); padding:var(--space-3); border-radius:var(--border-radius-md); font-family:var(--font-monospace); font-size:var(--font-size-xs); overflow-x:auto;">&lt;!-- payment-confirmation.html:113 --&gt;
-&lt;i class="bi bi-check-circle text-5xl text-info animated-success-icon"&gt;&lt;/i&gt;
-
-&lt;!-- inland-warehouse.html:570 --&gt;
-&lt;div class="offcanvas offcanvas-end inland-warehouse" data-bs-scroll="true" tabindex="-1" id="albuquerque-offcanvas"&gt;...&lt;/div&gt;</pre>
-
-    <h3>Responsive styles</h3>
-    <p class="text-secondary text-xs">Este bloque (líneas 3521–3992) no introduce componentes nuevos: son overrides en breakpoints (1920px, 1366px, 1279px, 992px, 768px, 576px) de clases ya documentadas en fases anteriores (<code class="font-family-roboto-mono">.hbl-master-list</code>, <code class="font-family-roboto-mono">.ams-section</code>, <code class="font-family-roboto-mono">.milestone-v2</code>, <code class="font-family-roboto-mono">.container-fluid</code>). Se documenta aquí solo el hallazgo real, no las reglas de detalle (ya cubiertas por sus componentes base).</p>
-    <div class="docs-note">
-      <strong>Hallazgo real — tercera regla <code class="font-family-roboto-mono">html {}</code>, esta vez condicional:</strong> en <code class="font-family-roboto-mono">custom-styles.css:3536</code>, dentro de <code class="font-family-roboto-mono">@media screen and (min-width:1920px)</code>, aparece <code class="font-family-roboto-mono">html { font-size: clamp(1.25rem, -0.5rem + 1.4583vw, 3rem) !important; }</code>. Esto se suma a la regla incondicional ya documentada en <code class="font-family-roboto-mono">custom-styles.css:1219</code> (<code class="font-family-roboto-mono">clamp(1rem, 0.5rem + 0.625vw, 1.25rem)</code>) y a <code class="font-family-roboto-mono">design-system.css:683</code> (<code class="font-family-roboto-mono">scroll-margin-top</code>). Como ambas reglas de <code class="font-family-roboto-mono">font-size</code> tienen la misma especificidad y <code class="font-family-roboto-mono">!important</code>, en pantallas ≥1920px gana esta última por orden de aparición en el archivo — el tamaño base salta de un máximo de <code class="font-family-roboto-mono">1.25rem</code> a hasta <code class="font-family-roboto-mono">3rem</code>. Puede ser intencional (monitores grandes), pero el mecanismo (tres reglas <code class="font-family-roboto-mono">html {}</code> repartidas en 2 archivos) hace difícil verificarlo a simple vista.
+    <div class="demo-row">
+      <button type="button" class="btn btn-accent rounded-full py-2 px-4">Hover me</button>
+      <span class="demo-label">.btn:not([disabled]):hover — clase y regla reales (custom-styles.css), pasa el cursor para ver la microinteracción</span>
+    </div>
+    <div class="demo-row">
+      <i class="bi bi-check-circle text-5xl text-info animated-success-icon"></i>
+      <span class="demo-label">.animated-success-icon — markup real de payment-confirmation.html:113, animación @keyframes icon-pop-in real (se reproduce al cargar la página)</span>
+    </div>
+    <div class="demo-row" style="display:block; width:100%; max-width:420px;">
+      <table class="table table-striped" id="warehouseListTable">
+        <thead><tr><th width="16.66666%">Port</th><th>State</th><th>Warehouse</th></tr></thead>
+        <tbody>
+          <tr><td><a href="#" type="button">ALBUQUERQUE</a></td><td>NM</td><td>MPR LOGISTICS DBA HSS LOGISTICS</td></tr>
+        </tbody>
+      </table>
+      <span class="demo-label">#warehouseListTable — markup real recortado de inland-warehouse.html:197-210 (primera columna con flecha en hover, sin el offcanvas real ligado por JS)</span>
     </div>
 
-    <h3>Utilidades globales finales + scrollbar personalizado</h3>
-    <p class="text-secondary text-xs">Últimas ~115 líneas del archivo (3994–4109). Conteo real: <code class="font-family-roboto-mono">.no-wrap</code> / <code class="font-family-roboto-mono">.filter-cyan</code> → 3 páginas, <code class="font-family-roboto-mono">.truncate-text</code> / <code class="font-family-roboto-mono">.square-bullet</code> → 2 páginas, <code class="font-family-roboto-mono">.custom-scrollbar</code> → 3 páginas reales (<code class="font-family-roboto-mono">availability.html</code>, <code class="font-family-roboto-mono">charges.html</code>, <code class="font-family-roboto-mono">ipi.html</code>).</p>
+    <h3 id="responsive-styles">Responsive styles</h3>
+    <p class="text-secondary text-xs">Este bloque (líneas 3399–3871) no introduce componentes nuevos: son overrides en breakpoints (1920px, 1366px, 1279px, 992px, 768px, 576px) de clases ya documentadas en fases anteriores (<code class="font-family-roboto-mono">.hbl-master-list</code>, <code class="font-family-roboto-mono">.ams-section</code>, <code class="font-family-roboto-mono">.milestone-v2</code>, <code class="font-family-roboto-mono">.container-fluid</code>). Se documenta aquí solo el hallazgo real, no las reglas de detalle (ya cubiertas por sus componentes base).</p>
+    <div class="docs-note">
+      <strong>Hallazgo real — tercera regla <code class="font-family-roboto-mono">html {}</code>, esta vez condicional:</strong> en <code class="font-family-roboto-mono">custom-styles.css:3414</code>, dentro de <code class="font-family-roboto-mono">@media screen and (min-width:1920px)</code>, aparece <code class="font-family-roboto-mono">html { font-size: clamp(1.25rem, -0.5rem + 1.4583vw, 3rem) !important; }</code>. Esto se suma a la regla incondicional ya documentada en <code class="font-family-roboto-mono">custom-styles.css:1219</code> (<code class="font-family-roboto-mono">clamp(1rem, 0.5rem + 0.625vw, 1.25rem)</code>) y a <code class="font-family-roboto-mono">design-system.css:683</code> (<code class="font-family-roboto-mono">scroll-margin-top</code>). Como ambas reglas de <code class="font-family-roboto-mono">font-size</code> tienen la misma especificidad y <code class="font-family-roboto-mono">!important</code>, en pantallas ≥1920px gana esta última por orden de aparición en el archivo — el tamaño base salta de un máximo de <code class="font-family-roboto-mono">1.25rem</code> a hasta <code class="font-family-roboto-mono">3rem</code>. Puede ser intencional (monitores grandes), pero el mecanismo (tres reglas <code class="font-family-roboto-mono">html {}</code> repartidas en 2 archivos) hace difícil verificarlo a simple vista.
+    </div>
+
+    <h3 id="utilidades-finales">Utilidades globales finales + scrollbar personalizado</h3>
+    <p class="text-secondary text-xs">Últimas ~115 líneas del archivo (3872–3987). Conteo real (corregido — los pares no compartían el mismo conteo): <code class="font-family-roboto-mono">.no-wrap</code> → 1 página (<code class="font-family-roboto-mono">transit.html</code>), <code class="font-family-roboto-mono">.filter-cyan</code> → 3 páginas, <code class="font-family-roboto-mono">.truncate-text</code> → 1 página (<code class="font-family-roboto-mono">availability.html</code>), <code class="font-family-roboto-mono">.square-bullet</code> → 2 páginas, <code class="font-family-roboto-mono">.custom-scrollbar</code> → 3 páginas reales (<code class="font-family-roboto-mono">availability.html</code>, <code class="font-family-roboto-mono">charges.html</code>, <code class="font-family-roboto-mono">ipi.html</code>).</p>
     <table class="docs-table">
       <tbody>
         <tr><td><code>.custom-scrollbar</code></td><td>Scrollbar delgado (<code>6px</code>) cross-browser: <code>scrollbar-width:thin</code> + pseudo-elementos <code>::-webkit-scrollbar*</code>; oculta las flechas de inicio/fin</td></tr>
@@ -763,22 +1258,126 @@
         <tr><td><code>input[type="text"]:focus, select:focus</code></td><td>Global: borde <code>2px solid rgb(13,202,240)</code> y fondo <code>rgb(246,253,255)</code> — estado de foco no usa tokens <code>--clr-*</code>, son valores literales</td></tr>
       </tbody>
     </table>
+    <div class="demo-row" style="display:block; width:100%; max-width:420px;">
+      <div class="custom-scrollbar" style="height:90px; border:var(--stroke-width-1) solid var(--clr-border); border-radius:var(--border-radius-md); padding:var(--space-3);">
+        <p style="margin:0 0 var(--space-2);">Línea 1 de contenido largo para forzar scroll.</p>
+        <p style="margin:0 0 var(--space-2);">Línea 2 de contenido largo para forzar scroll.</p>
+        <p style="margin:0 0 var(--space-2);">Línea 3 de contenido largo para forzar scroll.</p>
+        <p style="margin:0;">Línea 4 de contenido largo para forzar scroll.</p>
+      </div>
+      <span class="demo-label">.custom-scrollbar real (scroll para ver el thumb delgado)</span>
+    </div>
+    <div class="demo-row" style="align-items:center; max-width:160px;">
+      <div class="d-flex justify-content-start px-2 flex-column truncate-text"><p class="hide-label">Unit</p>BX</div>
+      <span class="demo-label" style="margin:0;">.truncate-text — markup real de availability.html:680</span>
+    </div>
+    <div class="demo-row" style="align-items:center;">
+      <h2 class="h4 font-family-sora square-bullet pb-2" style="margin:0; font-size:var(--font-size-lg);">U.S. Customs bonded Container Freight Station</h2>
+      <span class="demo-label" style="margin:0;">.square-bullet — markup real de our-services.html:85</span>
+    </div>
+    <div class="demo-row" style="align-items:center;">
+      <img src="../_images/Services-icon-05.png" alt="" class="filter-cyan mb-3" style="width:48px;">
+      <span class="demo-label" style="margin:0;">.filter-cyan — markup real de our-services.html:159 (también nota: <code class="font-family-roboto-mono">.no-wrap</code> ya se ve en la tabla de Transit Time Schedule arriba)</span>
+    </div>
     <div class="docs-note">
-      <strong>Hallazgo real — CSS muerto:</strong> <code class="font-family-roboto-mono">.offcanvas-backdrop { opacity:.7!important; }</code> (línea 4022) no aparece en ninguna página HTML — la clase nativa de Bootstrap existe en el DOM en runtime, pero el override no se confirmó con ningún caso de uso estático en el código fuente.
+      <strong>❌ Hallazgo descartado tras re-verificación (2026-06-24) — no es CSS muerto:</strong> <code class="font-family-roboto-mono">.offcanvas-backdrop { opacity:.7!important; }</code> no aparece en el HTML estático porque Bootstrap la **inyecta dinámicamente por JS** cuando se abre cualquier <code class="font-family-roboto-mono">offcanvas</code> (<code class="font-family-roboto-mono">data-bs-toggle="offcanvas"</code>) — confirmado en 5 páginas reales con disparador funcional <code class="font-family-roboto-mono">data-bs-toggle="offcanvas"</code> (<code class="font-family-roboto-mono">availability.html</code>, <code class="font-family-roboto-mono">inland-warehouse.html</code>, <code class="font-family-roboto-mono">search-availability.html</code>, <code class="font-family-roboto-mono">search-ipi.html</code>, <code class="font-family-roboto-mono">search.html</code>). Corrección: <code class="font-family-roboto-mono">user-profile.html</code> tiene botones con <code class="font-family-roboto-mono">data-bs-dismiss="offcanvas"</code> pero ningún <code class="font-family-roboto-mono">data-bs-toggle="offcanvas"</code> ni contenedor <code class="font-family-roboto-mono">.offcanvas</code> propio — esos botones de cierre no tienen nada que cerrar en esa página. Se conservó sin tocar. Confirmado en navegador: al abrir un offcanvas en <code class="font-family-roboto-mono">availability.html</code>, el backdrop se inyecta correctamente con la opacidad esperada. <strong>Lección de metodología:</strong> el grep estático sobre HTML no detecta elementos creados en runtime por JS — limitación a tener en cuenta para futuras búsquedas de "CSS muerto".
     </div>
 
-    <p class="text-secondary text-xs" style="margin-top:var(--space-4);"><strong>Fin de <code class="font-family-roboto-mono">custom-styles.css</code> (4,109 líneas) — documentación completa.</strong></p>
+    <p class="text-secondary text-xs" style="margin-top:var(--space-4);"><strong>Fin de <code class="font-family-roboto-mono">custom-styles.css</code> (3,987 líneas) — documentación completa.</strong></p>
 
-    <h3>Pendiente — baja muestra, no documentado como reutilizable</h3>
+    <h3 id="hbl-details-modal">HBL Details Modal — offcanvas (específico de <code class="font-family-roboto-mono">availability.html</code>)</h3>
+    <p class="text-secondary text-xs"><code class="font-family-roboto-mono">custom-styles.css</code> líneas 573–992. Re-auditado con matching exacto de clase (sesión 2026-06-24, continuación): de ~25 selectores en este bloque, <strong>todos</strong> se confirman en una sola página real, <code class="font-family-roboto-mono">availability.html</code> (<code class="font-family-roboto-mono">availability3.html</code> es duplicado/borrador, excluido). Se documenta igual que Charges Page / Terminal Schedule en la Fase 4g — específico de 1 página, pero real y con efecto visual confirmado, no descartado.</p>
+    <table class="docs-table">
+      <tbody>
+        <tr><td><code>.hbl-item-details-modal</code></td><td>El offcanvas en sí (<code>min-width:95vw</code>, <code>85vw</code> en móvil), altura <code>100vh</code> con scroll interno propio para evitar doble scrollbar</td></tr>
+        <tr><td><code>.badge.pill-hold</code> / <code>.disabled</code> / <code>.success</code></td><td>Pill de estado de "hold" — rojo por defecto, azure cuando <code>.disabled</code>, verde cuando <code>.success</code></td></tr>
+        <tr><td><code>.ams-section</code> / <code>.ams-release</code> / <code>.ams-list-grid</code></td><td>Grid de líneas AMS dentro del modal — variante global, <strong>distinta</strong> de <code>.container-level-release .ams-list-item</code> (Container Level Release, con conector <code>::before</code>) y de <code>.ams-list-item2</code> (sin scope, ver esa sección)</td></tr>
+        <tr><td><code>.photo-thumbnail</code></td><td>Miniatura de foto en la galería del modal, <code>7.9375rem</code> de ancho, radio de borde estándar</td></tr>
+        <tr><td><code>.ipi-status .status-item.status-success/-disabled/-danger</code></td><td>Línea de tiempo de estado IPI — 3 estados de color (verde/gris/rojo) sobre el mismo marcador circular <code>.status-marker</code>, intercambiando el ícono Bootstrap visible vía <code>display:none</code> condicional</td></tr>
+      </tbody>
+    </table>
+    <div class="demo-row" style="display:block; width:100%; max-width:420px;">
+      <section class="details-card ipi-status">
+        <h2 class="text-xl">IPI Status - <span class="city-code">DAL</span></h2>
+        <ul class="status-timeline pt-3">
+          <li class="status-item status-success">
+            <div class="status-marker"><i class="bi bi-check-lg"></i></div>
+            <div class="status-info">
+              <p class="status-title">DEPARTURE</p>
+              <p class="status-meta"><b>ETD:</b> 08/08/25</p>
+            </div>
+          </li>
+          <li class="status-item status-disabled">
+            <div class="status-marker"><i class="bi bi-flag-fill"></i></div>
+            <div class="status-info">
+              <p class="status-title">TRANSIT</p>
+              <p class="status-meta"><b>Trailer #:</b> 71848</p>
+            </div>
+          </li>
+          <li class="status-item status-danger border-top col-12 pt-3">
+            <div class="status-marker"><i class="bi bi-x-lg"></i></div>
+            <div class="status-info">
+              <a class="status-title btn btn-link font-family-sora pl-0 pt-0 text-capitalize text-base link-offset-2">Rejection Notice <i class="bi bi-printer"></i></a>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <span class="demo-label">.ipi-status .status-timeline — markup real recortado de availability.html:958-1062 (simplificado: el markup real incluye los 3 íconos bi-check-lg/bi-dash-lg/bi-x-lg en cada <code class="font-family-roboto-mono">.status-marker</code> y el CSS alterna cuál se ve solo bajo el modificador <code class="font-family-roboto-mono">.ipi-status.local-pickup</code>, ausente aquí; este demo deja solo el ícono correspondiente por fila para evitar que se superpongan)</span>
+    </div>
     <div class="docs-note">
-      Todo <code class="font-family-roboto-mono">custom-styles.css</code> (4,109 líneas) ya fue revisado bloque por bloque. Lo único que queda sin documentar es lo que se confirmó con muy baja muestra real de uso (1–2 páginas, sin que se trate de un componente claramente reutilizable):
-      <ul style="margin:var(--space-2) 0 0 var(--space-4);">
-        <li>HBL details modal / AMS sections / offcanvas / "Photo gallery" (línea 573–1246 aprox., incluye <code class="font-family-roboto-mono">.photo-thumbnail</code>, <code class="font-family-roboto-mono">.ipi-status</code>, <code class="font-family-roboto-mono">.notes-details</code>, <code class="font-family-roboto-mono">.exam-details</code>, <code class="font-family-roboto-mono">.status-timeline/-marker/-item</code>) — confirmado en solo 1 página real (<code class="font-family-roboto-mono">availability3.html</code> es duplicado de <code class="font-family-roboto-mono">availability.html</code>)</li>
-        <li>Resto del bloque "IPI Tracing page" (<code class="font-family-roboto-mono">.milestone-v2</code>, <code class="font-family-roboto-mono">.ams-list-item2</code>, <code class="font-family-roboto-mono">.warehouse-in-out-details</code>, <code class="font-family-roboto-mono">.hbl-wrapper</code>, <code class="font-family-roboto-mono">.flex-column-sm</code>) — 1–2 páginas reales, pendiente por baja muestra</li>
-      </ul>
+      <strong>Bug real encontrado en este bloque:</strong> <code class="font-family-roboto-mono">custom-styles.css:662</code>, dentro de <code class="font-family-roboto-mono">.hbl-list-item .btn-charges-mbl</code>: <code class="font-family-roboto-mono">padding: var(--space) var();</code> — <code class="font-family-roboto-mono">--space</code> no existe como token (solo <code class="font-family-roboto-mono">--space-1</code> a <code class="font-family-roboto-mono">--space-12</code>) y <code class="font-family-roboto-mono">var()</code> sin argumento es sintaxis inválida. El navegador descarta toda la declaración; el botón <code class="font-family-roboto-mono">.btn-charges-mbl</code> se queda sin el padding que esta regla pretendía dar (recibe solo el de Bootstrap/otras reglas). No corregido — solo documentado, igual que el resto de hallazgos de esta sesión.
+    </div>
+    <div class="docs-note">
+      <strong>CSS muerto adicional encontrado en este bloque (sesión 2026-06-24, continuación):</strong> <code class="font-family-roboto-mono">.info-bar</code>, <code class="font-family-roboto-mono">.hbl-subheader</code>, <code class="font-family-roboto-mono">.info-item-holds</code> (dentro de este bloque, líneas 695–725) e <code class="font-family-roboto-mono">.ipi-warehouse-buttons</code>, <code class="font-family-roboto-mono">.search-error</code> (líneas 1195–1242) — <strong>0 coincidencias</strong> en las 35 páginas reales, incluida <code class="font-family-roboto-mono">availability.html</code> donde vive el resto de este mismo bloque. No se tocó (mismo criterio que los hallazgos #7/#9/#11 ya limpiados: documentar primero, decidir borrado en sesión aparte).
+    </div>
+
+    <h3 id="link-offset-2">.link-offset-2 — utilidad de enlace (reutilizable, 14 páginas)</h3>
+    <p class="text-secondary text-xs"><strong>Corrección importante:</strong> esta clase vivía documentalmente perdida dentro del bloque "HBL details modal" (de ahí que sesiones previas la dejaran sin clasificar), pero no es específica de 1 página — está en <strong>14</strong>: <code class="font-family-roboto-mono">availability.html</code>, <code class="font-family-roboto-mono">charges.html</code>, <code class="font-family-roboto-mono">container-level-release.html</code>, <code class="font-family-roboto-mono">error-404.html</code>, <code class="font-family-roboto-mono">footer.html</code>, <code class="font-family-roboto-mono">home.html</code>, <code class="font-family-roboto-mono">ipi.html</code>, <code class="font-family-roboto-mono">payment-confirmation.html</code>, <code class="font-family-roboto-mono">search-availability.html</code>, <code class="font-family-roboto-mono">search-ipi.html</code>, <code class="font-family-roboto-mono">search.html</code>, <code class="font-family-roboto-mono">terminal-schedule.html</code>, <code class="font-family-roboto-mono">user-management.html</code>, <code class="font-family-roboto-mono">user-profile.html</code> — muy por encima del umbral de ≥3 que el resto del documento usa para "reutilizable". <code class="font-family-roboto-mono">custom-styles.css:971</code>: subraya el enlace y le da color <code class="font-family-roboto-mono">--clr-navy-800</code>, con variante <code class="font-family-roboto-mono">.muted</code> (navy-400) y hover a <code class="font-family-roboto-mono">--clr-cyan-47</code>. Se combina a menudo con <code class="font-family-roboto-mono">.link-disabled</code> (quita subrayado y cursor) para simular un link inactivo sin cambiar el markup a texto plano.</p>
+    <div class="demo-row">
+      <a href="#" class="link-offset-2">Enlace activo</a>
+      <a href="#" class="link-offset-2 muted">Enlace .muted</a>
+      <a href="#" class="link-offset-2 link-disabled">Enlace .link-disabled</a>
+    </div>
+    <span class="demo-label">.link-offset-2 + variantes .muted / .link-disabled</span>
+
+    <h3 id="pendiente-baja-muestra">Pendiente — baja muestra real (1–2 páginas, no reutilizable)</h3>
+    <div class="docs-note">
+      Tras separar el bloque del modal (arriba, en realidad 1 página completa de componentes reales) y <code class="font-family-roboto-mono">.link-offset-2</code> (en realidad 14 páginas), lo que queda genuinamente en baja muestra es el resto del bloque "IPI Tracing page" (<code class="font-family-roboto-mono">custom-styles.css</code> líneas 1247–1383): <code class="font-family-roboto-mono">.milestone-v2</code> → 2 páginas (<code class="font-family-roboto-mono">availability.html</code>, <code class="font-family-roboto-mono">ipi.html</code>), <code class="font-family-roboto-mono">.warehouse-in-out-details</code> → 1 página (<code class="font-family-roboto-mono">ipi.html</code>), <code class="font-family-roboto-mono">.flex-column-sm</code> → 1 página (<code class="font-family-roboto-mono">availability.html</code>), <code class="font-family-roboto-mono">.lfd-godate</code> → 2 páginas (<code class="font-family-roboto-mono">availability.html</code>, <code class="font-family-roboto-mono">ipi.html</code>). <code class="font-family-roboto-mono">.ams-list-item2</code> y <code class="font-family-roboto-mono">.hbl-wrapper</code> de este mismo rango ya están documentadas en la sección "Container Level Release" — no se repiten aquí.
     </div>
   </section>
 
+    </main>
+  </div>
+
 </div>
+<script>
+  (function () {
+    var navLinks = Array.prototype.slice.call(document.querySelectorAll('.docs-nav a'));
+    var linkByHash = {};
+    navLinks.forEach(function (a) { linkByHash[a.getAttribute('href')] = a; });
+
+    var targets = navLinks
+      .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+      .filter(Boolean);
+
+    var current = null;
+    function setActive(hash) {
+      if (hash === current) return;
+      current = hash;
+      navLinks.forEach(function (a) { a.classList.remove('is-active'); });
+      var link = linkByHash[hash];
+      if (link) link.classList.add('is-active');
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      var visible = entries.filter(function (e) { return e.isIntersecting; });
+      if (!visible.length) return;
+      visible.sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      setActive('#' + visible[0].target.id);
+    }, { rootMargin: '-10% 0px -75% 0px', threshold: 0 });
+
+    targets.forEach(function (t) { observer.observe(t); });
+  })();
+</script>
 </body>
 </html>
