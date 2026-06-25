@@ -354,6 +354,27 @@ Balance de tags verificado tras todos los cambios (1:1 en div/section/table/tbod
 
 **Limitación verificada, no oculta:** el Kit de Font Awesome está restringido por dominio. En pruebas locales (`localhost`) el script devuelve **403** — exactamente el mismo comportamiento ya documentado en Fase 6 para este mismo recurso en el sitio real ("`fa-phone` / `fa-angle-down` / `fa` … el CDN de Font Awesome Kit sí se carga, confirmado … aunque devuelve 403 en pruebas locales"). Esto significa que **no se pudo verificar visualmente que los íconos se rendericen** — ni en este documento ni en el sitio real — probando en local; solo se puede confirmar en el dominio de producción autorizado por el kit. Se agregó el script porque es fiel a producción (mismo mecanismo, misma URL), no porque se haya confirmado el render. Balance de tags verificado 1:1 tras el cambio.
 
+## Fase 11 — Reorganizar por Atomic Design: Tokens → Átomos → Moléculas → Organismos → Templates (sesión 2026-06-25)
+
+**Disparador:** Sergio pidió un segundo reorden del documento, esta vez con metodología Atomic Design (Brad Frost), para un orden "más intuitivo" que el eje reutilizable/específico de la Fase 8.
+
+**Mapeo aplicado:** la reorganización de Fase 8 no se descartó — "reutilizable" se subdividió en 3 niveles de granularidad (Átomos/Moléculas/Organismos) y "específico de página" se renombró 1:1 a "Templates". Stack base, Overrides responsive y Pendiente quedaron fuera de la pirámide (no son "diseño"), por decisión explícita de Sergio.
+
+**Criterio operacional acordado con Sergio** (igual que "≥3 páginas" fue el criterio de Fase 8): Átomo = 1 sola pieza/elemento, incluso con ícono adentro (un botón sigue siendo átomo). Molécula = 2+ elementos distintos agrupados como unidad reconocible. Organismo = sección autónoma con estructura interna propia.
+
+**Movimientos ejecutados:**
+- "Utilidades" → renombrada "Átomos", con la fusión de: Botón de acento (clase, ya estaba) + Botón de acento (composición real, movido desde la antigua "Componentes" para quedar sibling inmediato — resuelve la duplicación de nombre que había quedado suelta en Fase 8), Input de solo lectura, Título de sección, `.link-offset-2`, Microinteracción global de hover, Utilidades finales, y 2 ítems nuevos extraídos de "Information/Marketing": `.quote-bubble` y `.btn-marketing` (cada uno con demo propio independiente, splits limpios).
+- "Moléculas" (sección nueva, deliberadamente corta — 2 ítems): Aviso de advertencia + `.news-item` (extraído de Information/Marketing). Se documentó explícitamente que el sitio tiene pocas moléculas reales — no se inventaron para rellenar.
+- "Organismos" (sección nueva): Navbar/Header, Tablas de reportes, HBL Table layout, Modales/Availability, Transit Time Schedule, Information/Marketing (recortada a solo `.hero-section`/`.side-nav` tras extraer quote-bubble/btn-marketing/news-item).
+- "Patrones específicos de página" → renombrada "Templates", contenido sin cambios.
+- Llamada de juicio marcada explícitamente en el doc: `.btn-marketing` (link + ícono) se clasificó como átomo aunque es el caso más debatible — se documentó la ambigüedad en vez de ocultarla.
+
+**Bug real cometido y corregido durante la ejecución (dejar constancia para no repetirlo):** al insertar contenido nuevo dentro de la sección "Utilidades" con un Edit que terminaba justo en el límite con la siguiente sección, quedó un par huérfano `</section><section id="componentes">...` en medio — el contenido que debía seguir fluyendo dentro de "Átomos" terminó atrapado en una sección fantasma con el nombre viejo, y más abajo quedaron 3 ids duplicados (`hover-global`, `link-offset-2`, `utilidades-finales`) por la misma causa. Se detectó con el mismo script de verificación de ids duplicados ya usado en Fase 8 — confirma que ese paso de verificación no es opcional en ediciones grandes de múltiples pasos. Corregido eliminando el par huérfano y los 3 duplicados; balance de tags y anchors re-verificado 1:1 después.
+
+**También se recuperó un docs-note que se había perdido al corregir el bug anterior** ("Fuera de alcance, a propósito": `.card-shadow.destination`, `.summary-card`, `.shift-badge`) — quedó restaurado al inicio de Átomos con la referencia a `.shift-badge` actualizada (ahora vive en Templates → Terminal Schedule).
+
+**Verificación:** balance de tags 1:1, 69 anchors del nav resueltos contra ids reales (0 rotos, 0 duplicados tras la corrección), servidor local + Playwright — consola con los mismos 7 errores ya documentados (5 404 de infraestructura + favicon + el 403 del kit de Font Awesome por restricción de dominio, ya esperado desde Fase 10), sin errores nuevos. Scrollspy confirmado en `#atomos` y dentro de `#moleculas`.
+
 ## Archivos relevantes
 
 - `docs/design-system.html` — el entregable (documentación viva, Fases 1–7 completas; ahora carga el stack CSS real completo — Bootstrap, css.css, design-system.css, custom-styles.css — no solo design-system.css)
