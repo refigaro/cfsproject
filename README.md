@@ -6,11 +6,11 @@ This repository holds the **frontend handoff** for the **Imperial CFS, Inc.** ma
 
 ## Role in the project
 
-| In this repo | In production |
-|--------------|---------------|
+| In this repo                                             | In production                                                             |
+| -------------------------------------------------------- | ------------------------------------------------------------------------- |
 | Authoritative markup, layout, and styles for each screen | Razor views, partials, and bundles generated or adapted from this handoff |
-| Commits and PRs as features evolved | Server-side data binding, auth, validation, and APIs |
-| Full pages you can open locally for review | Same URLs served by MVC with live data |
+| Commits and PRs as features evolved                      | Server-side data binding, auth, validation, and APIs                      |
+| Full pages you can open locally for review               | Same URLs served by MVC with live data                                    |
 
 ## About Imperial CFS
 
@@ -18,11 +18,11 @@ This repository holds the **frontend handoff** for the **Imperial CFS, Inc.** ma
 
 ## What this repo is (and isn’t)
 
-| This repo | Production app |
-|-----------|----------------|
-| **Handoff deliverables:** static `.html` plus shared CSS/JS/images | ASP.NET MVC app with live data, sessions, and security |
-| Preview by opening files or serving this folder locally | Real routes such as `/Availability/TerminalStatus`, `/bundles/...`, `/Charges/...` |
-| No build step, no `package.json` | Bundled scripts, server rendering, APIs |
+| This repo                                                          | Production app                                                                     |
+| ------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| **Handoff deliverables:** static `.html` plus shared CSS/JS/images | ASP.NET MVC app with live data, sessions, and security                             |
+| Preview by opening files or serving this folder locally            | Real routes such as `/Availability/TerminalStatus`, `/bundles/...`, `/Charges/...` |
+| No build step, no `package.json`                                   | Bundled scripts, server rendering, APIs                                            |
 
 Placeholders like `/Availability/Index`, `/bundles/main_jquery`, and `/Home/CustomerLogin` point at the **production** app. They **will not resolve** when you only open this repo in a browser unless that backend is running—that is expected for a static handoff.
 
@@ -92,80 +92,65 @@ Serve from the **repo root** so paths like `/_images/...` and `/Content/...` res
 
 **Marketing & corporate**
 
-| File | Description |
-|------|-------------|
-| `home.html` | Marketing home / availability landing |
-| `about-us.html` | Company overview |
-| `our-services.html` | CFS services |
-| `inland.html` | Inland consolidation services |
-| `trucking.html` | Dedicated trucking |
-| `technology.html` | Technology offering |
-| `security.html` | Security |
-| `contact.html` | Contact & pickup hours |
-| `forms.html` | Downloadable forms |
-| `news.html` | News listing |
-| `news-post.html` | Single news article layout |
-| `privacy-policy.html` | Privacy / cookie policy |
-| `terms.html` | Terms and conditions |
+| File                  | Description                           |
+| --------------------- | ------------------------------------- |
+| `home.html`           | Marketing home / availability landing |
+| `about-us.html`       | Company overview                      |
+| `our-services.html`   | CFS services                          |
+| `inland.html`         | Inland consolidation services         |
+| `trucking.html`       | Dedicated trucking                    |
+| `technology.html`     | Technology offering                   |
+| `security.html`       | Security                              |
+| `contact.html`        | Contact & pickup hours                |
+| `forms.html`          | Downloadable forms                    |
+| `news.html`           | News listing                          |
+| `news-post.html`      | Single news article layout            |
+| `privacy-policy.html` | Privacy / cookie policy               |
+| `terms.html`          | Terms and conditions                  |
 
 **Customer portal & operations**
 
-| File | Description |
-|------|-------------|
-| `availability.html` | Master Bill of Lading / availability search |
-| `availability3.html` | Alternate availability layout (backup) |
-| `ipi.html` | IPI tracing search |
-| `search.html` | Generic search results |
-| `search-availability.html` | Availability search results |
-| `search-ipi.html` | IPI search results |
-| `charges.html` | Local pickup estimated charges & PayCargo terms |
-| `terminal-schedule.html` | Terminal gate schedule |
-| `transit.html` | Transit time schedule |
-| `inland-warehouse.html` | Inland warehouse list |
-| `whse-in-out.html` | Warehouse in / out |
-| `container-level-release.html` | Container level release |
-| `mbl.html` | MBL-related view |
-| `payment-confirmation.html` | Payment success confirmation |
+| File                           | Description                                     |
+| ------------------------------ | ----------------------------------------------- |
+| `availability.html`            | Master Bill of Lading / availability search     |
+| `ipi.html`                     | IPI tracing search                              |
+| `search.html`                  | Generic search results                          |
+| `search-availability.html`     | Availability search results                     |
+| `search-ipi.html`              | IPI search results                              |
+| `charges.html`                 | Local pickup estimated charges & PayCargo terms |
+| `terminal-schedule.html`       | Terminal gate schedule                          |
+| `transit.html`                 | Transit time schedule                           |
+| `inland-warehouse.html`        | Inland warehouse list                           |
+| `whse-in-out.html`             | Warehouse in / out                              |
+| `container-level-release.html` | Container level release                         |
+| `mbl.html`                     | MBL-related view                                |
+| `payment-confirmation.html`    | Payment success confirmation                    |
 
 **Reports**
 
-| File | Description |
-|------|-------------|
-| `reports.html` | Container status (portal) |
+| File                                  | Description                   |
+| ------------------------------------- | ----------------------------- |
+| `reports.html`                        | Container status (portal)     |
 | `Reports-Daily_Container_Status.html` | Daily container status report |
-| `Reports-IPI_Destination.html` | IPI destination report |
-| `Reports-InvoiceSearch.html` | Invoice search report |
-| `Reports-LAX_Inventory_Report.html` | LAX inventory report |
+| `Reports-IPI_Destination.html`        | IPI destination report        |
+| `Reports-InvoiceSearch.html`          | Invoice search report         |
+| `Reports-LAX_Inventory_Report.html`   | LAX inventory report          |
 
 **User account**
 
-| File | Description |
-|------|-------------|
-| `user-profile.html` | My account |
+| File                   | Description             |
+| ---------------------- | ----------------------- |
+| `user-profile.html`    | My account              |
 | `user-management.html` | User management (admin) |
 
 **Utility & templates**
 
-| File | Description |
-|------|-------------|
-| `template.html` | Base layout reference |
-| `footer.html` | Footer fragment reference |
-| `email.html` | Transactional email HTML template |
-| `error-404.html` | 404 error page |
-
-### Duplicate / non-canonical files
-
-Prefer the **underscore** variants. These are backups or older copies:
-
-| Avoid (duplicate) | Use instead |
-|-------------------|-------------|
-| `Reports - Daily_Container_Status.html` | `Reports-Daily_Container_Status.html` |
-| `Reports - IPI Destination.html` | `Reports-IPI_Destination.html` |
-| `Reports - InvoiceSearch.html` | `Reports-InvoiceSearch.html` |
-| `Daily Container Status Table.html` | `Daily_Container_Status_Table.html` |
-| `Copia de search-ipi.html` | `search-ipi.html` |
-| `availability3.html` | `availability.html` |
-| `Content/availability-backup.html` | `availability.html` |
+| File             | Description                       |
+| ---------------- | --------------------------------- |
+| `template.html`  | Base layout reference             |
+| `footer.html`    | Footer fragment reference         |
+| `email.html`     | Transactional email HTML template |
+| `error-404.html` | 404 error page                    |
 
 ## Conventions & Gotchas
 
