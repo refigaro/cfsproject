@@ -74,7 +74,6 @@ Serve from the **repo root** so paths like `/_images/...` and `/Content/...` res
 │   ├── design-system.css
 │   ├── extra.css
 │   ├── terminal-schedule-print.css
-│   └── availability-backup.html
 ├── css/                   # Third-party CSS (baguetteBox)
 ├── js/
 │   ├── card.js
